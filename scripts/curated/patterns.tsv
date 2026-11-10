@@ -1,0 +1,22 @@
+# How business names are built, by legal-form group and size band (curated 2026-11-10; design 5.6).
+# Curated estimates, not measured: no source counts names by pattern, and read_registers.py keeps
+# word statistics only. Validation (validate_company.py) compares drawn names with register samples
+# by eye. Language tilts follow in pattern_tilts.tsv. A sole trader trades under its own name, a large company rarely does; an
+# association names its purpose.
+group	band	founder	founder_trade	two_founders	descriptive	coined	initials
+sole_proprietorship	micro	0.40	0.42	0.00	0.12	0.04	0.02
+sole_proprietorship	small	0.30	0.42	0.00	0.18	0.06	0.04
+sole_proprietorship	medium	0.25	0.38	0.00	0.24	0.08	0.05
+sole_proprietorship	large	0.25	0.35	0.00	0.25	0.10	0.05
+partnership	micro	0.28	0.20	0.30	0.14	0.04	0.04
+partnership	small	0.24	0.15	0.30	0.18	0.06	0.07
+partnership	medium	0.20	0.10	0.30	0.22	0.08	0.10
+partnership	large	0.18	0.05	0.32	0.25	0.10	0.10
+limited_liability	micro	0.14	0.20	0.05	0.31	0.22	0.08
+limited_liability	small	0.12	0.15	0.05	0.34	0.22	0.12
+limited_liability	medium	0.10	0.10	0.04	0.36	0.25	0.15
+limited_liability	large	0.08	0.05	0.03	0.38	0.28	0.18
+other	micro	0.02	0.02	0.00	0.86	0.05	0.05
+other	small	0.02	0.02	0.00	0.84	0.06	0.06
+other	medium	0.02	0.02	0.00	0.82	0.07	0.07
+other	large	0.02	0.02	0.00	0.80	0.08	0.08

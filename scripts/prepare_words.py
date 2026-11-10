@@ -29,9 +29,9 @@ class WordError(ValueError):
 
 
 def is_latin(text):
-    """True when every letter in text is Latin (accents allowed)."""
+    """True when every letter in text is Latin (accents allowed; the ordinal indicators ª and º too)."""
     for ch in text:
-        if ch.isalpha() and "LATIN" not in unicodedata.name(ch, ""):
+        if ch.isalpha() and ch not in "ªº" and "LATIN" not in unicodedata.name(ch, ""):
             return False
     return True
 

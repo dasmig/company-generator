@@ -1,0 +1,1944 @@
+# legal forms by country and group: ISO 20275 code (empty for curated forms), abbreviation and name in the name language and in Latin letters (empty: the same), the dates a form was open to new firms, the sections or divisions it is kept to (only) or kept out of (not), and its share of the group among small (micro, small) and large (medium, large) firms (lite: forms under 1% of their group left out)
+country_code	code	group	abbreviation	latin_abbreviation	name	latin_name	from	until	only	not	share_small	share_large	evidence
+AD		sole_proprietorship			empresa individual	sole proprietorship				64,65	1	1	curated
+AD		partnership	S. en N.C.	S. en N.C.	sociedad en nombre colectivo	general partnership				65	0.6	0.6	curated
+AD		partnership	S. en C.	S. en C.	sociedad en comandita simple	limited partnership				65	0.4	0.4	curated
+AD		limited_liability	S. de R.L.	S. de R.L.	sociedad de responsabilidad limitada	limited liability company					0.55	0.3	curated
+AD		limited_liability	S.A.	S.A.	sociedad anónima	public limited company					0.45	0.7	curated
+AD		other			cooperativa	co-operative					1	1	curated
+AE	MV4S	sole_proprietorship			Sole Proprietor					64,65	1	1	gleif
+AE	H8MU	partnership			Limited Partnership					65	0.4557	0.4557	gleif
+AE	V2PA	partnership			Limited Liability Partnership					65	0.3671	0.3671	gleif
+AE	LOL8	partnership			Simple Commandite Company					65	0.08861	0.08861	gleif
+AE	RLB2	partnership			General Partnership					65	0.05063	0.05063	gleif
+AE	F3UE	partnership			General Partnership					65	0.03797	0.03797	gleif
+AE	RWVW	limited_liability			Limited Liability Company						0.6235	0.6121	gleif
+AE	70EO	limited_liability			Private Company Limited by Shares						0.2931	0.2878	gleif
+AE	WR09	limited_liability			Private Joint Stock Company						0.02433	0.02389	gleif
+AE	B13W	limited_liability			Restricted Scope Company						0.02386	0.02343	gleif
+AE	QJVN	limited_liability			Company Limited By Shares						0.02271	0.02229	gleif
+AE	UAES	limited_liability	FZ LLC	FZ LLC	RAK Economic Zone Company						0.009268	0.009099	gleif
+AE	JGNU	limited_liability			Public Joint Stock Company						0.001842	0.01206	gleif
+AE	46QC	limited_liability			Public Company Limited by Shares						0.001425	0.009327	gleif
+AE	375P	other			Foundation				P,Q,R,S,M,N,I		0.9902	0.9902	gleif
+AE	KAEM	other			Private Company Unlimited with Shares						0.009804	0.009804	gleif
+AF		sole_proprietorship			تشبث انفرادی	sole proprietorship				64,65	1	1	curated
+AF		partnership			شرکت تضامنی	partnership				65	1	1	curated
+AF		limited_liability		LLC	شرکت با مسئولیت محدود	limited liability company					0.95	0.7	curated
+AF		limited_liability		JSC	شرکت سهامی	joint-stock company					0.05	0.3	curated
+AF		other			کوپراتیف	co-operative					1	1	curated
+AG		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+AG		partnership			partnership					65	1	1	curated
+AG		limited_liability	Ltd	Ltd	limited company						0.9	0.9	curated
+AG	CDOV	limited_liability			International Business Corporation						0.1	0.1	gleif
+AL		sole_proprietorship			person fizik	sole trader				64,65	1	1	curated
+AL		partnership	sh.p.	sh.p.	shoqëri e thjeshtë	general partnership				65	1	1	curated
+AL		limited_liability	sh.p.k.	sh.p.k.	shoqëri me përgjegjësi të kufizuar	limited liability company					0.96	0.6	curated
+AL		limited_liability	sh.a.	sh.a.	shoqëri aksionare	joint-stock company					0.04	0.4	curated
+AL		other			kooperativë	co-operative					1	1	curated
+AM		sole_proprietorship	ԱՁ	AdzH	անհատ ձեռնարկատեր	individual entrepreneur				64,65	1	1	curated
+AM	2PRK	partnership	ԼԸ	LĒ	Լիակատար ընկերակցություն	Liakatar enkeraktsʿutʿyun				65	0.5	0.5	gleif
+AM	UGWE	partnership			Վստահության վրա հիմնված ընկերակցություն	Vstahutʿyan vra himnvats enkeraktsʿutʿyun				65	0.5	0.5	gleif
+AM	W9K6	limited_liability	ՓԲԸ	PʿBĒ	Փակ բաժնետիրական ընկերություն	Pʿak bazhnetirakan enkerutʿyun					0.4324	0.4324	gleif
+AM	GBI5	limited_liability	ՍՊԸ	SPĒ	Սահմանափակ պատասխանատվությամբ ընկերություն	Sahmanapʿak patasxanatvutʿyan enkerutʿyun					0.3514	0.3514	gleif
+AM	OLTR	limited_liability	ԲԲԸ	BBĒ	Բաց բաժնետիրական ընկերություն	Bacʿ bazhnetirakan enkerutʿyun					0.1892	0.1892	gleif
+AM	S8ZK	limited_liability	ԼՊԸ	LPĒ	Լրացուցիչ պատասխանատվությամբ ընկերություն	Lracʿucʿič patasxanatvutʿyan enkerutʿyun					0.02703	0.02703	gleif
+AM	BDYL	other			Պետական լիազորություններով օժտված իրավաբանական անձ	Petakan liazorutʿyunnerov ozhdvats iravabanakan andz					0.25	0.25	gleif
+AM	ILEX	other	ՀՄԴ	HMD	Հիմնադրամ	Himnadram					0.25	0.25	gleif
+AM	JEMR	other	ԻԱՄ	IAM	Իրավաբանական անձանց միություն	Iravabanakan andzants miutʿyun					0.25	0.25	gleif
+AM	PAVK	other	ՀԿ	HK	Հասարակական Կազմակեպություն	Hasarakakan Kazmakepʿutʿyun					0.25	0.25	gleif
+AO		sole_proprietorship			empresário em nome individual	sole trader				64,65	1	1	curated
+AO		partnership			sociedade em nome colectivo	general partnership				65	1	1	curated
+AO		limited_liability	Lda	Lda	sociedade por quotas	private limited company					0.7	0.5	curated
+AO		limited_liability	Unipessoal Lda	Unipessoal Lda	sociedade unipessoal por quotas	single-member limited company					0.27	0.1	curated
+AO		limited_liability	S.A.	S.A.	sociedade anónima	public limited company					0.03	0.4	curated
+AO		other			cooperativa	co-operative					1	1	curated
+AR		sole_proprietorship			comerciante individual	sole trader				64,65	1	1	curated
+AR	PLZ6	partnership	S.C.p.A.	S.C.p.A.	Sociedad en Comandita por Acciones					65	1	1	gleif
+AR	F0A6	limited_liability	S.A.	S.A.	Sociedad Anonima						0.5136	0.8756	gleif
+AR	U82F	limited_liability	S.R.L	S.R.L	Sociedad De Responsalided Limitada						0.2594	0.06633	gleif
+AR	WUAZ	limited_liability	S.A.U.	S.A.U.	Sociedad Anonima Unipersonal						0.1816	0.04643	gleif
+AR	FE8K	limited_liability	S.A.S	S.A.S	Sociedad Por Acciones Simplificada		2017-04-12				0.0454	0.01161	gleif
+AR	RDD3	other			Asociacion civil						0.4895	0.4375	gleif
+AR	HZ6C	other	S. Coop.	S. Coop.	Sociedad Cooperativa						0.2098	0.1875	gleif
+AR	LVJZ	other			Fundacion				P,Q,R,S,M,N,I		0.1399	0.125	gleif
+AR	5AWN	other	S.E	S.E	Sociedad del Estado						0.06993	0.0625	gleif
+AR	O7AL	other	SGR	SGR	Sociedad de Garantía Reciproca						0.06993	0.0625	gleif
+AR	L4QF	other			Organismo Publico				O,P,Q,R,E,H		0.02098	0.125	gleif
+AT	ECWU	sole_proprietorship	EU	EU	Einzelunternehmer					64,65	0.9926	0.9926	gleif
+AT	G3R6	sole_proprietorship			Einzelkaufmann					64,65	0.007416	0.007416	gleif
+AT	ONF1	partnership	KG	KG	Kommanditgesellschaft					65	0.7083	0.7083	gleif
+AT	JTAV	partnership	OG	OG	Offene Gesellschaft					65	0.2917	0.2917	gleif
+AT	AXSB	limited_liability	GmbH	GmbH	Gesellschaft mit beschränkter Haftung						0.9967	0.9782	gleif
+AT	EQOV	limited_liability	AG	AG	Aktiengesellschaft						0.003333	0.02181	gleif
+AT	5WWO	other			Privatstiftung				P,Q,R,S,M,N,I		0.3344	0.3344	gleif
+AT	DX6Z	other			Verein				P,Q,R,S,M,N,I		0.3178	0.3178	gleif
+AT	JJYT	other			Körperschaft öffentlichen Rechts						0.1943	0.1943	gleif
+AT	NIJH	other			Erwerbs- und Wirtschaftsgenossenschaft						0.07815	0.07815	gleif
+AT	UI81	other	GesbR	GesbR	Gesellschaft des bürgerlichen Rechts						0.02106	0.02106	gleif
+AT	E9OX	other			Gemeinnützige Stiftung				P,Q,R,S,M,N,I		0.02088	0.02088	gleif
+AT	BCSV	other	FlexKapG	FlexKapG	Flexible Kapitalgesellschaft						0.01681	0.01681	gleif
+AT	CAQ1	other			Versicherungsverein auf Gegenseitigkeit				K		0.00739	0.00739	gleif
+AT	1NOX	other			Sonstiger Rechtsträger						0.005912	0.005912	gleif
+AT	JQOI	other			Sparkasse				K		0.003325	0.003325	gleif
+AU		sole_proprietorship			sole trader					64,65	1	1	curated
+AU		partnership			partnership					65	0.9	0.9	curated
+AU	J4JC	partnership	A Limited Partnership	A Limited Partnership	Limited Partnership					65	0.1	0.1	gleif
+AU	TXVC	limited_liability	Proprietary Limited	Proprietary Limited	Limited Proprietary Company						0.9908	0.9418	gleif
+AU	R4KK	limited_liability	Ltd	Ltd	Public Company limited by shares						0.009178	0.05816	gleif
+AU	7TPC	other			Trust						0.9874	0.973	gleif
+AU	Q82Q	other	Proprietary	Proprietary	Unlimited Proprietary Company						0.005093	0.005019	gleif
+AU	BC38	other	Inc	Inc	Incorporated association				P,Q,R,S,M,N,I		0.004886	0.004814	gleif
+AU	LZFR	other	Ltd	Ltd	Public Company limited by guarantee				P,Q,R,S,M,N,I		0.002619	0.01721	gleif
+AZ		sole_proprietorship	FŞ	FS	fərdi sahibkar	individual entrepreneur				64,65	1	1	curated
+AZ	MEJT	partnership			Tam ortaqlıq					65	0.5	0.5	gleif
+AZ	TD56	partnership			Komandit ortaqlıq					65	0.5	0.5	gleif
+AZ	K81Q	limited_liability	ASC	ASC	Açıq səhmdar cəmiyyəti						0.3898	0.3898	gleif
+AZ	6JHZ	limited_liability	MMC	MMC	Məhdud məsuliyyətli cəmiyyəti						0.3559	0.3559	gleif
+AZ	M4LU	limited_liability	QSC	QSC	Qapalı səhmdar cəmiyyəti						0.2373	0.2373	gleif
+AZ	SLXJ	limited_liability			Asılı təsərrüfat cəmiyyəti						0.01695	0.01695	gleif
+AZ	U0SP	other			İctimai birliklər						1	1	gleif
+BA		sole_proprietorship	s.p.	s.p.	samostalni preduzetnik	sole trader				64,65	1	1	curated
+BA		partnership	o.d.	o.d.	ortačko društvo	general partnership				65	1	1	curated
+BA		limited_liability	d.o.o.	d.o.o.	društvo sa ograničenom odgovornošću	limited liability company					0.96	0.6	curated
+BA		limited_liability	d.d.	d.d.	dioničko društvo	joint-stock company					0.04	0.4	curated
+BA		other			zadruga	co-operative					1	1	curated
+BB	5IL6	sole_proprietorship			sole proprietorship					64,65	1	1	gleif
+BB	X2X1	partnership			limited partnership					65	1	1	gleif
+BB	HTBY	limited_liability	ltd.	ltd.	company						0.4607	0.4583	gleif
+BB	Q9Y1	limited_liability			international business company						0.4008	0.3988	gleif
+BB	2T7B	limited_liability	SRL	SRL	society with restricted liability						0.1197	0.119	gleif
+BB	EKJG	limited_liability			segregated cell company						0.01795	0.01786	gleif
+BB	TEPY	limited_liability	ltd.	ltd.	public company						0.0008974	0.005952	gleif
+BB	KYFD	other			non-profit company				P,Q,R,S,M,N,I		1	1	gleif
+BD		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+BD		partnership			partnership	general partnership				65	1	1	curated
+BD		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+BD		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+BD		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+BD		other			co-operative society						0.3	0.5	curated
+BE		sole_proprietorship			eenmanszaak	sole proprietorship				64,65	1	1	curated
+BE	MQH3	partnership	CommV	CommV	Commanditaire vennootschap					65	0.7017	0.7017	gleif
+BE	UW1Y	partnership	V.O.F.	V.O.F.	Vennootschap onder firma					65	0.2349	0.2349	gleif
+BE	U2PN	partnership	Comm.VA	Comm.VA	Commanditaire vennootschap op aandelen					65	0.03847	0.03847	gleif
+BE	KM6O	partnership	MS	MS	Maatschap					65	0.02059	0.02059	gleif
+BE	1TX8	partnership	CVA SO	CVA SO	Commanditaire vennootschap op aandelen met een sociaal oogmerk					65	0.004387	0.004387	gleif
+BE	3W7E	limited_liability	BV	BV	Besloten Vennootschap						0.9374	0.6919	gleif
+BE	R85P	limited_liability	NV	NV	Naamloze vennootschap						0.0626	0.3081	gleif
+BE	W3WH	other	VZW	VZW	Vereniging zonder winstoogmerk				P,Q,R,S,M,N,I		0.4219	0.4203	gleif
+BE	CFH5	other	VVZRL	VVZRL	Vennootschap of vereniging zonder rechtspersoonlijkheid				P,Q,R,S,M,N,I		0.3634	0.3621	gleif
+BE	Y1Q4	other	PRIV ST.	PRIV ST.	Private stichting				P,Q,R,S,M,N,I		0.05476	0.05456	gleif
+BE	QZIS	other	OI	OI	Openbare instelling						0.04909	0.04891	gleif
+BE	28FE	other	CV	CV	Coöperatieve vennootschap						0.03824	0.0381	gleif
+BE	ZUHK	other	SON	SON	Stichting van openbaar nut				P,Q,R,S,M,N,I		0.02673	0.02663	gleif
+BE	V03J	other	IVZW	IVZW	Internationale vereniging zonder winstoogmerk				P,Q,R,S,M,N,I		0.02203	0.02195	gleif
+BE	LWHF	other	CVOA	CVOA	Coöperatieve vennootschap met onbeperkte aansprakelijkheid						0.01005	0.01001	gleif
+BE	3N94	other	ONP	ONP	Onderneming-natuurlijk persoon						0.008263	0.008232	gleif
+BE	ZOK2	other	LV	LV	Landbouwvennootschap				A		0.002754	0.002744	gleif
+BE	MGCM	other			Opdrachthoudende vereniging (Vlaams Gewest)				O,P,Q,R,E,H		0.002106	0.002098	gleif
+BE	TPTU	other	NV PR	NV PR	Naamloze vennootschap van publiek recht						0.0006562	0.004358	gleif
+BF		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+BF		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+BF		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+BF		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+BF		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+BF		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+BF		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+BF		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+BG	946C	sole_proprietorship	ЕТ	ET	Едноличен търговец	Ednolichen targovets				64,65	1	1	gleif
+BG	S94S	partnership	КД	KD	Командитно дружество	Komanditno druzhestvo				65	0.3878	0.3878	gleif
+BG	HN63	partnership	КДА	KDA	Командитно дружество с акции	Komanditno druzhestvo s aktsii				65	0.2449	0.2449	gleif
+BG	FPP2	partnership	С-ие	SD/S-ie	Събирателно дружество (СД)/Съдружие	Sabiratelno druzhestvo (SD)/Sadruzhie				65	0.2041	0.2041	gleif
+BG	TCGV	partnership	ДЗЗД	DZZD	Дружество учредено по Закона за задълженията и договорите	Druzhestvo uchredeno po Zakona za zadalzheniyata i dogovorite				65	0.1633	0.1633	gleif
+BG	WVIN	limited_liability	ЕООД	EOOD	Еднолично дружество с ограничена отговорност	Ednolichno druzhestvo s ogranichena otgovornost					0.522	0.522	gleif
+BG	VJ3G	limited_liability	ООД	OOD	Дружество с ограничена отговорност	Druzhestvo s ogranichena otgovornost					0.2169	0.2169	gleif
+BG	WTK4	limited_liability	АД	AD	Акционерно дружество	Aktsionerno druzhestvo					0.188	0.188	gleif
+BG	EJ06	limited_liability	ЕАД	EAD	Еднолично акционерно дружество	Ednolichno aktsionerno druzhestvo					0.06345	0.06345	gleif
+BG	PW3Y	limited_liability	АДСИЦ	ADSIC	Акционерно дружество със специална инвестиционна цел	Aktsionerno druzhestvo sas spetsialna investitsionna tsel					0.009624	0.009624	gleif
+BG	CTCH	other		Coop	Кооперация	Kooperatsia					0.4507	0.4507	gleif
+BG	UFG8	other			Фондация	Fondatsia					0.2394	0.2394	gleif
+BG	3FUP	other			Европейско кооперативно дружество с ограничена отговорност	Evropeysko kooperativno druzhestvo s ogranichena otgovornost					0.09859	0.09859	gleif
+BG	3SHX	other			Сдружение в обществена полза	Sdruzhenie v obshtestvena polza					0.07042	0.07042	gleif
+BG	LECS	other			Сдружение в частна полза	Sdruzhenie v chastna polza					0.05634	0.05634	gleif
+BG	SZW0	other	ЕД	ED	Eвропейско дружество	Evropeysko druzhestvo					0.04225	0.04225	gleif
+BG	U8LM	other	ЕКД	EKD	Eвропейско кооперативно дружество	Evropeysko kooperativno druzhestvo					0.02817	0.02817	gleif
+BG	RYDY	other	ЕОИИ	EEIG	Европейско обединение по икономически интереси	Evropeysko obedinenie po ikonomicheski interesi					0.01408	0.01408	gleif
+BH		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+BH	990B	partnership			وصية الشراكة من قبل شركة الأسهم (شركة التوصية بالأسهم)	Wasiat alshirakat min qibal sharikat al'ashum				65	0.5714	0.5714	gleif
+BH	SWH1	partnership			شركة تضامن	Sharikat tadamun				65	0.2857	0.2857	gleif
+BH	SRQE	partnership			شركة التوصية البسيطة للشراكة (شركة التوصية البسيطة)	Sharikat altawsiat albasitat lilshiraka				65	0.1429	0.1429	gleif
+BH	JNJI	limited_liability	ذ.م.م	ذ.م.م	الشركة ذات المسؤولية المحدودة	Sharika That Almasuliah Almahduda					1	1	gleif
+BH	2MAO	other			الشركة غير هادفة للربح	Alsharikat ghayr hadifat lilribih					1	1	gleif
+BI		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+BI		partnership			partnership	general partnership				65	1	1	curated
+BI		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+BI		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+BI		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+BI		other			co-operative society						0.3	0.5	curated
+BJ	B2N4	sole_proprietorship			Entreprise Individuelle					64,65	1	1	gleif
+BJ	6X4Q	partnership	SCS	SCS	Société en Commandite Simple					65	0.5	0.5	gleif
+BJ	XXQQ	partnership	SNC	SNC	Société en Nom Collectif					65	0.5	0.5	gleif
+BJ		limited_liability	SARL	SARL	société à responsabilité limitée	limited liability company					0.8	0.8	curated
+BJ	CSUT	limited_liability	SA	SA	Société Anonyme						0.2	0.2	gleif
+BJ	5F9K	other	GIE	GIE	Groupement d'intérêt Économique						1	1	gleif
+BN	VHOW	sole_proprietorship			Sole-Proprietorship					64,65	1	1	gleif
+BN	J98R	partnership			Partnership					65	1	1	gleif
+BN	EULU	limited_liability	Sdn Bhd	Sdn Bhd	Private Limited Company						0.9524	0.75	gleif
+BN	2DGO	limited_liability	Sdn Bhd	Sdn Bhd	Public Company						0.04762	0.25	gleif
+BO	38JQ	sole_proprietorship			Empresa Unipersonal					64,65	1	1	gleif
+BO	PJ29	partnership	S.C.A.	S.C.A.	Sociedad en Comandita por Acciones.					65	0.3333	0.3333	gleif
+BO	TNHO	partnership	S.C.	S.C.	Sociedad Colectiva					65	0.3333	0.3333	gleif
+BO	XTCQ	partnership	S.C.S.	S.C.S.	Sociedad en Comandita Simple.					65	0.3333	0.3333	gleif
+BO	PM48	limited_liability	S.R.L.	S.R.L.	Sociedad de Responsabilidad Limitada.						0.7812	0.3488	gleif
+BO	5T3W	limited_liability	S.A.	S.A.	Sociedad Anónima						0.2188	0.6512	gleif
+BO	70BS	other			Empresa Estatal						0.1667	0.1667	gleif
+BO	DSML	other			Institución Financiera De Desarrollo						0.1667	0.1667	gleif
+BO	JYAN	other			Empresa Estatal Intergubernamental						0.1667	0.1667	gleif
+BO	LN9O	other			Entidad Financiera De Vivienda						0.1667	0.1667	gleif
+BO	MGOU	other			Empresa Mixta						0.1667	0.1667	gleif
+BO	RXJN	other			Empresa Estatal Mixta						0.1667	0.1667	gleif
+BR		sole_proprietorship	MEI	MEI	microempreendedor individual	individual micro-entrepreneur				64,65	0.9	0.9	curated
+BR		sole_proprietorship	EI	EI	empresário individual	sole trader				64,65	0.1	0.1	curated
+BR	X2ZT	partnership	C/A	C/A	Sociedade em Comandita por Ações					65	0.6538	0.6538	gleif
+BR	8GEA	partnership	S/S	S/S	Sociedade Simples					65	0.3077	0.3077	gleif
+BR	529B	partnership	S.N.C.	S.N.C.	Sociedade em Nome Coletivo					65	0.03846	0.03846	gleif
+BR	QHW1	limited_liability	LTDA.	LTDA.	Sociedade Limitada						0.8563	0.6497	gleif
+BR	AL8W	limited_liability	SLU	SLU	Sociedade Limitada Unipessoal		2019-09-20				0.08762	0.06648	gleif
+BR	X0SD	limited_liability	S.A.	S.A.	Sociedade Anônima						0.05612	0.2839	gleif
+BR	PC5A	other			Sociedade Cooperativa						0.6937	0.6937	gleif
+BR	I4T1	other	Fund.	Fund.	Fundação				P,Q,R,S,M,N,I		0.1712	0.1712	gleif
+BR	J7G9	other	Assoc.	Assoc.	Associação				P,Q,R,S,M,N,I		0.08108	0.08108	gleif
+BR	4LKN	other	EP	EP	Empresa Pública						0.04505	0.04505	gleif
+BR	9BIS	other			Organização Religiosa				P,Q,R,S,M,N,I		0.009009	0.009009	gleif
+BS	XDKS	sole_proprietorship			Sole Proprietor					64,65	1	1	gleif
+BS	SQ8U	partnership			Exempted Limited Partnership					65	0.6897	0.6897	gleif
+BS	78QF	partnership			Partnership					65	0.2586	0.2586	gleif
+BS	1W6I	partnership	LLP	LLP	Limited Liability Partnership					65	0.05172	0.05172	gleif
+BS	A9N4	limited_liability			International Business Company						0.7496	0.7496	gleif
+BS	HP0B	limited_liability	Ltd	Ltd	Company Limited both by Shares and by Guarantee				P,Q,R,S,M,N,I		0.1336	0.1336	gleif
+BS	98A8	limited_liability	Ltd	Ltd	Company Limited by Shares						0.1168	0.1168	gleif
+BS	VVOW	other			Foundation				P,Q,R,S,M,N,I		0.875	0.875	gleif
+BS	PICJ	other			Non-Profit Company				P,Q,R,S,M,N,I		0.125	0.125	gleif
+BT		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+BT		partnership			partnership	general partnership				65	1	1	curated
+BT		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+BT		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+BT		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+BT		other			co-operative society						0.3	0.5	curated
+BW		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+BW		partnership			partnership					65	1	1	curated
+BW	771I	limited_liability			Private Limited Liability Companies						0.9544	0.7586	gleif
+BW	QK1F	limited_liability			Public Limited Liability Companies						0.04555	0.2414	gleif
+BW	Y2L3	other			Companies limited by Guarantee				P,Q,R,S,M,N,I		1	1	gleif
+BY		sole_proprietorship	ІП	IP	індывідуальны прадпрымальнік	individual entrepreneur				64,65	1	1	curated
+BY		partnership			поўнае таварыства	general partnership				65	1	1	curated
+BY	AABD	limited_liability	ООО	ООО	Общество с ограниченной ответственностью	Obshchestvo s ogranichennoj otvetstvennost'yu					0.5747	0.4444	gleif
+BY	106J	limited_liability	ЗАО	ZAО	Закрытое акционерное общество	Zakrytoe akcionernoe obshchestvo					0.3736	0.2889	gleif
+BY	MR85	limited_liability	ОАО	ОАО	Открытое акционерное общество	Otkrytoe akcionernoe obshchestvo					0.05172	0.2667	gleif
+BY	SMCI	other	Учр	Uchr	Учреждение	Uchrezhdeniye					1	1	gleif
+BZ		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+BZ	D1SL	partnership			Partnership					65	1	1	gleif
+BZ	84DD	limited_liability			International Business Company						0.7413	0.7413	gleif
+BZ	EAD0	limited_liability			Company Limited by Shares						0.2526	0.2526	gleif
+BZ	ZHT0	limited_liability			Company Limited by Guarantee				P,Q,R,S,M,N,I		0.00616	0.00616	gleif
+BZ	AO0O	other			Unlimited Company						0.5	0.5	gleif
+BZ	GJKF	other			Association				P,Q,R,S,M,N,I		0.5	0.5	gleif
+CA	456Q	sole_proprietorship			business name/sole proprietorship					64,65	0.5946	0.5946	gleif
+CA	1CML	sole_proprietorship			Sole proprietorship					64,65	0.2162	0.2162	gleif
+CA	UR1O	sole_proprietorship			entreprise individuelle					64,65	0.1081	0.1081	gleif
+CA	1EQC	sole_proprietorship			trade name/sole proprietorship					64,65	0.05405	0.05405	gleif
+CA	I8VP	sole_proprietorship			Sole Proprietors					64,65	0.02703	0.02703	gleif
+CA	1JGX	partnership			Limited Partnership					65	0.7001	0.7001	gleif
+CA	RQIC	partnership	S.E.C.	S.E.C.	Société en commandite					65	0.111	0.111	gleif
+CA	RN4K	partnership			Alberta limited partnership					65	0.09112	0.09112	gleif
+CA	HQKE	partnership			general partnership					65	0.05213	0.05213	gleif
+CA	YRUJ	partnership	S.E.N.C.	S.E.N.C.	Société en nom collectif					65	0.01661	0.01661	gleif
+CA	LNBY	partnership	LLP	LLP	Limited liability partnership		1998-01-01			65	0.01084	0.01084	gleif
+CA	LMSY	partnership			Partnership					65	0.007843	0.007843	gleif
+CA	T0CV	partnership	Limited Partnership	Limited Partnership	limited partnerships formed in NS					65	0.00669	0.00669	gleif
+CA	U938	partnership			Alberta limited liability partnership		1998-01-01			65	0.003691	0.003691	gleif
+CA	O90R	limited_liability			Business corporations (which includes professional corporations)				M,Q		0.3865	0.3271	gleif
+CA	YG5M	limited_liability	Ltd.	Ltd.	Company (includes community contribution company and unlimited liability company)						0.2022	0.1712	gleif
+CA	UDLA	limited_liability	Ltd.	Ltd.	business corporation						0.1812	0.1534	gleif
+CA	8ZH8	limited_liability			Alberta Business Corporation						0.1054	0.08923	gleif
+CA	UG3Z	limited_liability	s.a.	corp.	Société par actions par Loi sur les sociétés par actions						0.03201	0.1807	gleif
+CA	FN6X	limited_liability	Limited	Limited	Share corporations (including professional corporations)				M,Q		0.0271	0.02294	gleif
+CA	UWMY	limited_liability	Ltd.	Ltd.	Business Corporations						0.02196	0.01859	gleif
+CA	B3RX	limited_liability	Ltd.	Ltd.	corporation						0.01497	0.01267	gleif
+CA	ULJ1	limited_liability	limited company	limited company	company limited by shares (limited company)				P,Q,R,S,M,N,I		0.01372	0.01161	gleif
+CA	CMB6	limited_liability			Not-For-Profit corporations						0.006728	0.005695	gleif
+CA	BOYK	limited_liability			Corporations formed by an Act of the Ontario Legislative Assembly						0.003213	0.002719	gleif
+CA	ASWX	limited_liability	Limited	Limited	share corporations						0.002948	0.002495	gleif
+CA	C9KZ	limited_liability			Alberta professional corporation				M,Q		0.002041	0.001728	gleif
+CA	B69V	other			Alberta private non-profit company				P,Q,R,S,M,N,I		0.1532	0.1532	curated
+CA	42GN	other	Unlimited company	Unlimited company	unlimited company						0.1486	0.1475	gleif
+CA	D2T8	other			Personne morale sans but lucratif par Loi sur les compagnies (Partie II et Partie III)						0.1379	0.1379	curated
+CA	WFPH	other			Society (includes member-funded society)						0.09958	0.09958	curated
+CA	3OVJ	other	Inc.	Inc.	Non-profit Corporations				P,Q,R,S,M,N,I		0.07149	0.07149	curated
+CA	QB2W	other	coopérative	cooperative	Coopérative						0.04618	0.04583	gleif
+CA	ESVK	other			Credit Union				K		0.04402	0.04368	gleif
+CA	YIIS	other			Personne morale sans but lucratif par Loi sur les corporations religieuses						0.03319	0.03319	curated
+CA	J3C5	other			Alberta unlimited liability corporation						0.03247	0.03222	gleif
+CA	Q8NY	other			Personne morale sans but lucratif par Loi sur les syndicats professionnels				P,Q,R,S,M,N,I		0.02043	0.02043	curated
+CA	VRVJ	other			Personne morale sans but lucratif par Code des professions						0.01532	0.01532	curated
+CA	FBQL	other			Co-operative Corporation						0.01515	0.01504	gleif
+CA	Y485	other	credit union Limited	credit union Limited	Credit union	Credit union or Caisse Populaire			K		0.01155	0.01146	gleif
+CA	Z6MF	other			Selon la loi par Loi spéciale du Québec à caractère privé				M,Q		0.01082	0.01074	gleif
+CA	RHVP	other			private act non-profit corp				P,Q,R,S,M,N,I		0.01021	0.01021	curated
+CA	VHXN	other			public non-profit company				P,Q,R,S,M,N,I		0.01021	0.01021	curated
+CA	FYYY	other			Credit Unions				K		0.0101	0.01003	gleif
+CA	MGE0	other	coop	coop	cooperative						0.0101	0.01003	gleif
+CA	AW80	other	coop	coop	Association (includes housing cooperative and community service cooperative)				L,F		0.00938	0.009309	gleif
+CA	IKMB	other	Ltd.	Ltd.	co-operative association				P,Q,R,S,M,N,I		0.00938	0.009309	gleif
+CA	K1QX	other			Alberta society						0.007937	0.007877	gleif
+CA	87OW	other			Personne morale sans but lucratif par Loi sur les collèges d'enseignement général et professionnel						0.00766	0.00766	curated
+CA	F9CT	other			Personne morale sans but lucratif par Loi sur l’instruction publique						0.00766	0.00766	curated
+CA	MQT7	other			Personne morale sans but lucratif par Loi sur la santé et la sécurité du travail						0.00766	0.00766	curated
+CA	TWLR	other			Association				P,Q,R,S,M,N,I		0.007216	0.007161	gleif
+CA	3Y5V	other	Co-operative	Co-operative	co-operatives						0.005773	0.005729	gleif
+CA	60MF	other			Alberta trust corporation						0.005773	0.005729	gleif
+CA	BASA	other			Alberta cooperative						0.005773	0.005729	gleif
+CA	16GH	other			Personne morale sans but lucratif par Loi sur les cercles agricoles				A		0.005107	0.005107	curated
+CA	16RL	other			Personne morale sans but lucratif par Loi sur la mise en marché des produits agricoles				A		0.005107	0.005107	curated
+CA	G65S	other			Alberta credit union				K		0.004329	0.004296	gleif
+CA	GM04	other	Cooperative Limited	Cooperative Limited	Cooperative						0.002886	0.002864	gleif
+CA	L2NN	other			Joint Ventures						0.002886	0.002864	gleif
+CA	27WJ	other			Personne morale sans but lucratif par Loi sur les cités et villes						0.002553	0.002553	curated
+CA	3M14	other	Community Interest Company	Community Interest Company	A company formed under the Companies Act may seek designation as a Community Interest Company (a hybrid structure having characteristics of both for profit and non-profit entities)				P,Q,R,S,M,N,I		0.002553	0.002553	curated
+CA	790T	other	Ltd.	Ltd.	non-profit company				P,Q,R,S,M,N,I		0.002553	0.002553	curated
+CA	9IF2	other			Personne morale sans but lucratif par Loi sur les associations coopératives				P,Q,R,S,M,N,I		0.002553	0.002553	curated
+CA	I3UX	other			Personne morale sans but lucratif par Loi sur les services de santé et les services sociaux						0.002553	0.002553	curated
+CA	MCY8	other			Personne morale sans but lucratif par Loi sur les sociétés d'agriculture						0.002553	0.002553	curated
+CA	WGEA	other			Personne morale sans but lucratif par Loi sur l’organisation municipale de certains territoires				O,P,Q,R,E,H		0.002553	0.002553	curated
+CA	9CB2	other			Société par actions constitué par Loi sur les syndicats d'élevage				P,Q,R,S,M,N,I		0.002165	0.002148	gleif
+CA	9XHE	other			business names						0.002165	0.002148	gleif
+CA	TS9O	other			religious society				P,Q,R,S,M,N,I		0.002165	0.002148	gleif
+CA	A7KA	other			Selon la loi par Loi spéciale du Québec à caractère public				M,Q		0.0005412	0.00358	gleif
+CD		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+CD		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+CD		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+CD		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+CD		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+CD		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+CD		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+CD		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+CF		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+CF		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+CF		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+CF		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+CF		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+CF		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+CF		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+CF		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+CG		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+CG		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+CG		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+CG		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+CG		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+CG		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+CG		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+CG		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+CH	AZA0	sole_proprietorship	Einzelfirma	Einzelfirma	Einzelunternehmen					64,65	1	1	gleif
+CH	CQMY	partnership	KmG	KmG	Kommanditgesellschaft					65	0.4023	0.3836	gleif
+CH	MRSY	partnership	KlG	KlG	Kollektivgesellschaft					65	0.3305	0.3151	gleif
+CH	2B81	partnership	Einfache Gesellsch.	Einfache Gesellsch.	Einfache Gesellschaft					65	0.2155	0.2055	gleif
+CH	TL87	partnership	Kommandit. Kapitalanlagen	Kommandit. Kapitalanlagen	Kommanditgesellschaft fuer kollektive Kapitalanlagen					65	0.0431	0.0411	gleif
+CH	W6A7	partnership	KmAG	KmAG	Kommanditaktiengesellschaft					65	0.008621	0.05479	gleif
+CH	3EKS	limited_liability	GmbH	GmbH	Gesellschaft mit beschränkter Haftung						0.6059	0.1883	gleif
+CH	MVII	limited_liability	AG	AG	Aktiengesellschaft						0.3913	0.8108	gleif
+CH	HX77	limited_liability	öff. Unt. Kanton	öff. Unt. Kanton	Unternehmen des Kantons						0.002771	0.0008612	gleif
+CH	2JZ4	other			Stiftung				P,Q,R,S,M,N,I		0.5306	0.5306	gleif
+CH	FJG4	other			Trust						0.2643	0.2643	gleif
+CH	H781	other			Verein				P,Q,R,S,M,N,I		0.1029	0.1029	gleif
+CH	QSI2	other	Gen	Gen	Genossenschaft						0.06416	0.06416	gleif
+CH	7MNN	other	Inst. öff. Recht	Inst. öff. Recht	Institut des öffentlichen Rechts						0.02026	0.02026	gleif
+CH	E0NE	other	öff.-rechtl. Körp.	öff.-rechtl. Körp.	öffentlich-rechtliche Körperschaft (Verwaltung)						0.00923	0.00923	gleif
+CH	GP8M	other	Gemeinde	Gemeinde	Verwaltung der Gemeinde				O,P,Q,R,E,H		0.004502	0.004502	gleif
+CH	FFTN	other	Kanton	Kanton	Verwaltung des Kantons				O,P,Q,R,E,H		0.004052	0.004052	gleif
+CI		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+CI		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+CI		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+CI		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+CI		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+CI		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+CI		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+CI		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+CL	QFYC	sole_proprietorship	E.I.R.L	E.I.R.L	Empresa Individual de Responsabilidad Limitada					64,65	1	1	gleif
+CL	VZ3G	partnership			Sociedad en Comandita Civil					65	0.4286	0.4286	gleif
+CL	2UZP	partnership			Sociedad Colectiva Civil					65	0.2857	0.2857	gleif
+CL	EE3W	partnership			Sociedad en Comandita Comercial					65	0.2857	0.2857	gleif
+CL	KUUZ	limited_liability	SpA	SpA	Sociedad por Acciones		2007-06-05				0.6722	0.4617	gleif
+CL	CVDP	limited_liability	SRL	SRL	Sociedad de Responsabilidad Limitada						0.2474	0.1699	gleif
+CL	OA6N	limited_liability	S.A.	S.A.	Sociedad Anónima						0.08046	0.3684	gleif
+CL	Q1J0	other	SCM	SCM	Sociedad Contractual Minera						0.5385	0.5385	gleif
+CL	YDNQ	other			Fundación				P,Q,R,S,M,N,I		0.1538	0.1538	gleif
+CL	7T6S	other	SLM	SLM	Sociedad Legal Minera						0.07692	0.07692	gleif
+CL	B8OI	other			Entidad religiosa				P,Q,R,S,M,N,I		0.07692	0.07692	gleif
+CL	C6AH	other			Cooperativa						0.07692	0.07692	gleif
+CL	RNQ0	other			Organización Comunitaria						0.07692	0.07692	gleif
+CM		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+CM		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+CM		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+CM		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+CM		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+CM		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+CM		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+CM		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+CN	RV48	sole_proprietorship			个体工商户	Geti Gongshanghu				64,65	0.95	0.95	gleif
+CN		sole_proprietorship	个人独资企业	Geren Duzi Qiye	个人独资企业	sole investor enterprise				64,65	0.05	0.05	curated
+CN		partnership	普通合伙企业	Putong Hehuo Qiye	普通合伙企业	general partnership				65	0.75	0.75	curated
+CN	J7SF	partnership			有限合伙企业	Youxian Hehuo Qiye	1997-08-01			65	0.25	0.25	gleif
+CN		limited_liability	有限公司	Co., Ltd.	有限责任公司	limited liability company					0.94	0.94	curated
+CN		limited_liability	股份有限公司	Co., Ltd.	股份有限公司	company limited by shares					0.06	0.06	curated
+CN	UMCR	other			农民专业合作社	Nongmin Zhuanye Hezuoshe					0.5035	0.5035	curated
+CN	B5UZ	other			事业单位	Shiye Danwei					0.1511	0.1511	curated
+CN	E4FG	other			民办非企业单位	Minban Feiqiye Danwei					0.1208	0.1208	curated
+CN	GGZ5	other			社会团体	Shehui Tuanti					0.1208	0.1208	curated
+CN	I39S	other			机关	Jiguan					0.03021	0.03021	curated
+CN	6NSC	other			律师执业机构	Lvshi Zhiye Jigou					0.02014	0.02014	curated
+CN	ESZ8	other			其他（农业）	qi ta（ nong ye ）					0.0141	0.0141	gleif
+CN	2M6Y	other			基金会	Jijinhui					0.01007	0.01007	curated
+CN	SH05	other			其他（机构编制）	qi ta（ ji gou bian zhi ）					0.008056	0.008056	gleif
+CN	OH9O	other			基层工会	ji ceng gong hui					0.004028	0.004028	gleif
+CN	V816	other			组级集体经济组织	zu ji ji ti jing ji zu zhi					0.004028	0.004028	gleif
+CN	BDTI	other			编办直接管理机构编制的群众团体	bian ban zhi jie guan li ji gou bian zhi de qun zhong tuan ti					0.003021	0.003021	gleif
+CN	DLEK	other			乡镇级集体经济组织	xiang zhen ji ji ti jing ji zu zhi					0.003021	0.003021	gleif
+CN	YXJ5	other			宗教活动场所	zong jiao huo dong chang suo					0.003021	0.003021	gleif
+CN	E88S	other			公证处	gong zheng chu					0.002014	0.002014	gleif
+CN	GPHT	other			其他（文化）	qi ta（ wen hua ）					0.002014	0.002014	gleif
+CO	1PAD	sole_proprietorship	E.U.	E.U.	Empresa Unipersonal					64,65	1	1	gleif
+CO	N1TE	partnership	Cía SCA.	Cía SCA.	Sociedad en comandita por acciones					65	0.5455	0.5455	gleif
+CO	IUIY	partnership	Cía S. en C.	Cía S. en C.	Sociedad en comandita simple					65	0.3636	0.3636	gleif
+CO	DEJ0	partnership			Sociedad Colectiva					65	0.09091	0.09091	gleif
+CO	KYVO	limited_liability	S.A.S	S.A.S	Sociedad por Acciones Simplificada		2008-12-05				0.8962	0.6771	gleif
+CO	3RHN	limited_liability	S.A.	S.A.	Sociedad Anónima						0.05711	0.2876	gleif
+CO	WX45	limited_liability	Ltda.	Ltda.	Sociedad de Responsabilidad Limitada						0.04673	0.03531	gleif
+CO	KC51	other			Sociedad de Economía Mixta						0.5	0.5	gleif
+CO	SJB8	other	SAT	SAT	Sociedades Agrarias de Transformación				A		0.5	0.5	gleif
+CR	YW6W	sole_proprietorship	E.I.R.L.	E.I.R.L.	Empresa Individual de Responsabilidad Limitada					64,65	1	1	gleif
+CR	E26K	partnership			Sociedad Profesional				M,Q	65	0.25	0.25	gleif
+CR	H2BW	partnership	A.C.	A.C.	Sociedad civil					65	0.25	0.25	gleif
+CR	SBQF	partnership	S.C.	S.C.	Sociedad colectiva					65	0.25	0.25	gleif
+CR	YP63	partnership	S. en C.	S. en C.	Sociedad en comandita					65	0.25	0.25	gleif
+CR	P864	limited_liability	S.R.L.	S.R.L.	Sociedad de Responsabilidad Limitada o Sociedad Limitada						0.6723	0.2353	gleif
+CR	YOIW	limited_liability	S.A.	S.A.	Sociedad Anónima						0.3277	0.7647	gleif
+CR	YYZO	other			Asociación Cooperativa						0.5	0.5	gleif
+CR	EFE3	other			Municipalidad				O,P,Q,R,E,H		0.25	0.25	gleif
+CR	O4X3	other			Asociación civil, Asociación deportiva, Federación						0.25	0.25	gleif
+CU		sole_proprietorship			trabajador por cuenta propia	self-employed worker			M,Q	64,65	1	1	curated
+CU		limited_liability	MIPYME S.R.L.	MIPYME S.R.L.	micro, pequeña y mediana empresa privada	private small and medium enterprise					1	0.5	curated
+CU		limited_liability	S.A.	S.A.	sociedad mercantil	trading company					0	0.5	curated
+CU		other			cooperativa no agropecuaria	non-agricultural co-operative			A		0.6	0.1	curated
+CU		other			empresa estatal	state enterprise					0.4	0.9	curated
+CV		sole_proprietorship			empresário em nome individual	sole trader				64,65	1	1	curated
+CV		partnership			sociedade em nome colectivo	general partnership				65	1	1	curated
+CV		limited_liability	Lda	Lda	sociedade por quotas	private limited company					0.7	0.5	curated
+CV		limited_liability	Unipessoal Lda	Unipessoal Lda	sociedade unipessoal por quotas	single-member limited company					0.27	0.1	curated
+CV		limited_liability	S.A.	S.A.	sociedade anónima	public limited company					0.03	0.4	curated
+CV		other			cooperativa	co-operative					1	1	curated
+CY		sole_proprietorship			ατομική επιχείρηση	sole proprietorship				64,65	1	1	curated
+CY		partnership			ομόρρυθμος συνεταιρισμός	general partnership				65	1	1	curated
+CY	RCPI	limited_liability			Ιδιωτική Εταιρεία	Idiotiki Etaireia					0.7415	0.7415	gleif
+CY	K9L6	limited_liability			Ιδιωτική Εταιρεία Περιορισμένης Ευθύνης με μετοχές	Idiotiki Etaireia Periorismenis Efthynis me metoches					0.2179	0.2179	gleif
+CY	MYKG	limited_liability			Δημόσια Εταιρεία	Dimosia Etaireia					0.01635	0.01635	gleif
+CY	INTY	limited_liability			Εταιρεία Περιορισμένης Ευθύνης με εγγύηση, και που έχει μετοχικό κεφάλαιο	Etaireia Periorismenis Efthynis me engyisi, kai pou echei metochiko kefalaio					0.01449	0.01449	gleif
+CY	W86L	limited_liability			Εταιρεία Περιορισμένης Ευθύνης με εγγύηση, χωρίς μετοχικό κεφάλαιο	Etaireia Periorismenis Efthynis me engyisi, choris metochiko kefalaio					0.005637	0.005637	gleif
+CY	BCF5	limited_liability			Δημόσια Εταιρεία Περιορισμένης Ευθύνης με μετοχές	Dimosia Etaireia Periorismenis Efthynis me metoches					0.004107	0.004107	gleif
+CY	8VZ0	other			Trust						0.7778	0.7778	gleif
+CY	GLCH	other			Σωματεία και Ιδρυμάτα	Somateia kai Idrymata					0.09428	0.09428	gleif
+CY	233U	other			Συνεταιρισμός	Synetairismos					0.07744	0.07744	gleif
+CY	T1JS	other			Οντότητες που διέπονται από το δημόσιο δίκαιο	Ontotites pou diepontai apo to dimosio dikaio					0.03367	0.03367	gleif
+CY	U24X	other			Συνεργατικά Πιστωτικά Ιδρύματα	Synergatika Pistotika Idrymata					0.0101	0.0101	gleif
+CY	P5JT	other	ΕΟΟΣ	ΕΟΟΣ	Ευρωπαϊκός Όμιλος Οικονομικού Σκοπού	Evropaikos Omilos Oikonomikou Skopou					0.006734	0.006734	gleif
+CZ	95G8	sole_proprietorship			Podnikající fyzická osoba tuzemská					64,65	0.9955	0.9955	gleif
+CZ	CZUA	sole_proprietorship			Zahraniční fyzická osoba					64,65	0.004474	0.004474	gleif
+CZ	CD28	partnership			Společnost komanditní					65	0.5179	0.5179	gleif
+CZ	5KU5	partnership			Veřejná obchodní společnost					65	0.4821	0.4821	gleif
+CZ	9HLU	limited_liability			Společnost s ručením omezeným						0.9446	0.7557	gleif
+CZ	6CQN	limited_liability			Akciová společnost						0.04412	0.2353	gleif
+CZ	ZQO8	limited_liability	SE	SE	Evropská společnost						0.01128	0.009023	gleif
+CZ	J8PB	other			Obec						0.3426	0.3426	gleif
+CZ	9RVC	other			Družstvo						0.1523	0.1523	gleif
+CZ	CATU	other			Spolek						0.1199	0.1199	gleif
+CZ	JCAD	other			Evidované církevní právnické osoby						0.1057	0.1057	gleif
+CZ	3G3D	other			Nadace						0.0625	0.0625	gleif
+CZ	IQ9O	other			Společenství vlastníků jednotek						0.04886	0.04886	gleif
+CZ	INIG	other			Odborová organizace						0.03693	0.03693	gleif
+CZ	G2I3	other			Pobočný spolek						0.0358	0.0358	gleif
+CZ	QJ0F	other			Ústav						0.01705	0.01705	gleif
+CZ	BL4B	other			Obecně prospěšná společnost						0.01648	0.01648	gleif
+CZ	FY1B	other			Církve a náboženské společnosti						0.01534	0.01534	gleif
+CZ	VIE3	other			Zájmové sdružení právnických osob						0.009659	0.009659	gleif
+CZ	6FAI	other			Státní podnik						0.006818	0.006818	gleif
+CZ	MAVU	other			Dobrovolný svazek obcí						0.00625	0.00625	gleif
+CZ	QIEL	other			Kraj						0.005114	0.005114	gleif
+CZ	LJL0	other			Organizační složka státu						0.003977	0.003977	gleif
+CZ	OVKW	other			Vysoká škola (veřejná, státní)						0.003977	0.003977	gleif
+CZ	HQPK	other			Komora (hospodářská, agrární)						0.002841	0.002841	gleif
+CZ	HY6K	other			Organizační složka zahraničního nadačního fondu						0.002841	0.002841	gleif
+CZ	MBUU	other			Příspěvková organizace zřízená územním samosprávným celkem						0.002841	0.002841	gleif
+CZ	D1VK	other			Školská právnická osoba						0.002273	0.002273	gleif
+DE	OL20	sole_proprietorship	e. K.	e. K.	Einzelunternehmen, eingetragener Kaufmann, eingetragene Kauffrau					64,65	1	1	gleif
+DE	FR3V	partnership	GbR	GbR	Gesellschaft bürgerlichen Rechts					65	0.5	0.5	curated
+DE	8Z6G	partnership	KG	KG	Kommanditgesellschaft				P,Q,R,S,M,N,I	65	0.4698	0.4698	gleif
+DE	PDNU	partnership	eGbR	eGbR	eingetragene Gesellschaft bürgerlichen Rechts					65	0.01033	0.01033	gleif
+DE	40DB	partnership	OHG	OHG	Offene Handelsgesellschaft					65	0.01011	0.01011	gleif
+DE	T0YJ	partnership	KGaA	KGaA	Kommanditgesellschaft auf Aktien				P,Q,R,S,M,N,I	65	0.004118	0.004118	gleif
+DE	2YZO	partnership	PartG mbB	PartG mbB	Partnerschaftsgesellschaft mit beschränkter Berufshaftung				M,Q	65	0.002898	0.002898	gleif
+DE	8CM0	partnership	PartG	PartG	Partnerschaftsgesellschaft				M,Q	65	0.002751	0.002751	gleif
+DE	2HBR	limited_liability	GmbH	GmbH	Gesellschaft mit beschränkter Haftung						0.964	0.936	gleif
+DE	63KS	limited_liability	GmbH UG	GmbH UG	Unternehmergesellschaft		2008-11-01				0.03068	0.02979	gleif
+DE	6QQB	limited_liability	AG	AG	Aktiengesellschaft						0.004703	0.03044	gleif
+DE	SGST	limited_liability	SE	SE	Europäische Aktiengesellschaft						0.0005742	0.003717	gleif
+DE	QZ3L	other	e.V.	e.V.	eingetragener Verein				P,Q,R,S,M,N,I		0.6006	0.6013	curated
+DE	YJ4C	other			Kirchliche Stiftung des öffentlichen Rechts				P,Q,R,S,M,N,I		0.09709	0.0966	gleif
+DE	SCE1	other	gGmbH	gGmbH	Gemeinnützige Gesellschaft mit beschränkter Haftung						0.06006	0.06013	curated
+DE	79H0	other			Nicht eingetragener Verein				P,Q,R,S,M,N,I		0.05005	0.05011	curated
+DE	AZFE	other	eG	eG	Eingetragene Genossenschaft						0.04004	0.04008	curated
+DE	V2YH	other			Stiftung des privaten Rechts				P,Q,R,S,M,N,I		0.04004	0.04008	curated
+DE	13AV	other	VVaG	VVaG	Versicherungsverein auf Gegenseitigkeit				K		0.03063	0.03048	gleif
+DE	SQKS	other			Körperschaft des öffentlichen Rechts						0.03003	0.03006	curated
+DE	XLWA	other			Anstalt des öffentlichen Rechts						0.02691	0.02677	gleif
+DE	FEBD	other			Stiftung des öffentlichen Rechts				P,Q,R,S,M,N,I		0.01548	0.0154	gleif
+DE	US8E	other			Genossenschaft						0.00321	0.003193	gleif
+DE	D40E	other			Verein alten Rechts				P,Q,R,S,M,N,I		0.003021	0.003006	gleif
+DE	7J3S	other			Wirtschaftlicher Verein				P,Q,R,S,M,N,I		0.002832	0.002818	gleif
+DJ		sole_proprietorship			entreprise individuelle	sole proprietorship				64,65	1	1	curated
+DJ		partnership	SNC	SNC	société en nom collectif	general partnership				65	1	1	curated
+DJ		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.7	0.45	curated
+DJ		limited_liability	SARL AU	SARL AU	société à responsabilité limitée à associé unique	single-member limited company					0.25	0.05	curated
+DJ		limited_liability	SA	SA	société anonyme	public limited company					0.05	0.5	curated
+DJ		other			coopérative	co-operative					1	1	curated
+DK	FUKI	sole_proprietorship			Enkeltmandsvirksomhed					64,65	1	1	gleif
+DK	7WRN	partnership	I/S	I/S	Interessentskab					65	0.6464	0.6464	gleif
+DK	NUL8	partnership	K/S	K/S	Kommanditselskab					65	0.3536	0.3536	gleif
+DK	H8VP	limited_liability	ApS	ApS	Anpartsselskab						0.9807	0.8839	gleif
+DK	ZRPO	limited_liability	A/S	A/S	Aktieselskab						0.01932	0.1161	gleif
+DK	40R4	other			Forening				P,Q,R,S,M,N,I		0.3857	0.3857	gleif
+DK	599X	other			Fonde og andre selvejende institutioner				M,Q		0.3263	0.3263	gleif
+DK	D4PU	other			Frivillig forening				P,Q,R,S,M,N,I		0.1499	0.1499	gleif
+DK	WU7R	other	FMBA	FMBA	Forening med begrænset ansvar				P,Q,R,S,M,N,I		0.03744	0.03744	gleif
+DK	9KSX	other	P/S	P/S	Partnerselskab						0.02564	0.02564	gleif
+DK	PMJW	other			Andelsselskab						0.02035	0.02035	gleif
+DK	PZ6Y	other	AMBA	AMBA	Andelsselskab med begrænset ansvar						0.0172	0.0172	gleif
+DK	GFXN	other			Primærkommune				O,P,Q,R,E,H		0.01079	0.01079	gleif
+DK	UX9X	other			Personligt ejet Mindre Virksomhed						0.01023	0.01023	gleif
+DK	F7JY	other			Særlig Finansiel virksomhed						0.007758	0.007758	gleif
+DK	GULL	other	SMBA	SMBA	Selskab med begrænset ansvar				M,Q		0.004722	0.004722	gleif
+DK	FW7S	other	SCE-selskab	SCE-selskab	Europæisk andelsselskab				M,Q		0.004048	0.004048	gleif
+DM		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+DM		partnership			partnership	general partnership				65	1	1	curated
+DM		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+DM		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+DM		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+DM		other			co-operative society						0.3	0.5	curated
+DO	K4CD	sole_proprietorship	EIRL	EIRL	Empresa Individual de Responsabilidad Limitada					64,65	1	1	gleif
+DO	T4LC	partnership			Sociedad en Comandita por Acciones					65	1	1	gleif
+DO	SWO8	limited_liability	S. R. L.	S. R. L.	Sociedad de Responsaibilidad Limitada						0.7028	0.3789	gleif
+DO	3ZBR	limited_liability	S. A.	S. A.	Sociedad Anónima						0.1508	0.5421	gleif
+DO	DQAU	limited_liability	SAS	SAS	Sociedad Anónima Simplificada						0.1464	0.07895	gleif
+DO	B35X	other			Sociedad en Participación(sin personalidad jurídica)						1	1	gleif
+DZ		sole_proprietorship			entreprise individuelle	sole proprietorship				64,65	1	1	curated
+DZ		partnership	SNC	SNC	société en nom collectif	general partnership				65	1	1	curated
+DZ		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.7	0.45	curated
+DZ		limited_liability	SARL AU	SARL AU	société à responsabilité limitée à associé unique	single-member limited company					0.25	0.05	curated
+DZ		limited_liability	SA	SA	société anonyme	public limited company					0.05	0.5	curated
+DZ		other			coopérative	co-operative					1	1	curated
+EC		sole_proprietorship			persona natural obligada a llevar contabilidad	sole trader				64,65	1	1	curated
+EC	FKVG	partnership	CCSDA	CCSDA	Compañía en Comandita Simple y dividida por acciones					65	1	1	gleif
+EC	J3T2	limited_liability	SA	SA	Compañía Anónima						0.4286	0.8333	gleif
+EC	XOAD	limited_liability	CIA LTDA	CIA LTDA	Compañía de Responsabilidad Limitada						0.4211	0.1228	gleif
+EC	GKUL	limited_liability	SAS	SAS	Sociedad por Acciones Simplificada		2020-03-10				0.1504	0.04386	gleif
+EC	AVFT	other			Cooperativa						0.6667	0.6667	gleif
+EC	ZUDG	other			Fundacion				P,Q,R,S,M,N,I		0.3333	0.3333	gleif
+EE	3UPJ	sole_proprietorship	FIE	FIE	Füüsilisest isikust ettevõtja					64,65	1	1	gleif
+EE	LVEQ	partnership	UÜ	UÜ	Usaldusühing					65	0.8298	0.8298	gleif
+EE	I1UP	partnership	TÜ	TÜ	Täisühing					65	0.1702	0.1702	gleif
+EE	JC0Y	limited_liability	OÜ	OÜ	Osaühing						0.9804	0.9804	gleif
+EE	9LJA	limited_liability	AS	AS	Aktsiaselts						0.01958	0.01958	gleif
+EE	PRTB	other	MTÜ	MTÜ	Mittetulundusühing				P,Q,R,S,M,N,I		0.678	0.5476	gleif
+EE	VSEV	other	TÜH	TÜH	Tulundusühistu						0.2211	0.1786	gleif
+EE	1NKP	other	SA	SA	Sihtasutus						0.042	0.2262	gleif
+EE	BE56	other			Avalik-õiguslik juriidiline isik						0.02211	0.01786	gleif
+EE	J34T	other	AÜ	AÜ	Ametiühing						0.01474	0.0119	gleif
+EE	LA47	other	EMHÜ	EMHÜ	Euroopa majandushuviühing						0.01474	0.0119	gleif
+EE	PMOF	other			Loomeliit						0.007369	0.005952	gleif
+EG		sole_proprietorship		Est.	منشأة فردية	sole proprietorship				64,65	1	1	curated
+EG		partnership		Partnership	شركة تضامن	general partnership				65	0.6	0.6	curated
+EG		partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership				65	0.4	0.4	curated
+EG		limited_liability	ش.ذ.م.م	LLC	شركة ذات مسئولية محدودة	limited liability company					0.8	0.4	curated
+EG		limited_liability	ش.م.م	S.A.E.	شركة مساهمة مصرية	Egyptian joint-stock company					0.15	0.55	curated
+EG		limited_liability	ش.ش.و	OPC	شركة الشخص الواحد	one-person company					0.05	0.05	curated
+EG		other		Cooperative	جمعية تعاونية	co-operative					1	1	curated
+ER		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+ER		partnership			partnership					65	1	1	curated
+ER		limited_liability	PLC	PLC	private limited company						0.95	0.6	curated
+ER		limited_liability	S.C.	S.C.	share company						0.05	0.4	curated
+ER		other			co-operative						1	1	curated
+ES	1SL4	sole_proprietorship			Empresario Individual					64,65	1	1	gleif
+ES	UFBW	partnership	CB	CB	Comunidad de Bienes					65	0.6169	0.6169	gleif
+ES	2W1A	partnership	SC	SC	Sociedad Civil					65	0.2704	0.2704	gleif
+ES	S6X7	partnership	S.C.	S.C.	Sociedad Colectiva					65	0.05133	0.05133	gleif
+ES	1ZHJ	partnership	S.C.P.	S.C.P.	Sociedad Colectiva Profesional (o Sociedad regular colectiva profesional)				M,Q	65	0.0385	0.0385	gleif
+ES	TDD5	partnership	S. en C.	S. en C.	Sociedad Comanditaria Simple					65	0.01925	0.01925	gleif
+ES	GJL1	partnership	S.Com. p. A.	S.Com. p. A.	Sociedad Comanditaria por Acciones					65	0.003666	0.003666	gleif
+ES	DP3Q	limited_liability	S.L.	S.L.	Sociedad de Responsabilidad Limitada						0.8896	0.7816	gleif
+ES	R6UT	limited_liability	SLU	SLU	Sociedad Limitada Unipersonal						0.07069	0.06211	gleif
+ES	5RDO	limited_liability	S.A.	S.A.	Sociedad Anonima						0.02438	0.1428	gleif
+ES	JB2M	limited_liability	S.R.L.P.	S.R.L.P.	Sociedad Limitada Profesional				M,Q		0.01275	0.0112	gleif
+ES	1G29	limited_liability	S.R.L.L.	S.R.L.L.	Sociedad Limitada Laboral (o Sociedad de Responsabilidad Limitada laboral)						0.002535	0.002227	gleif
+ES	MDOL	other			Fundación				P,Q,R,S,M,N,I		0.2911	0.2911	gleif
+ES	S6MS	other			Congregación						0.2264	0.2264	gleif
+ES	A0J6	other			Asociación						0.1747	0.1747	gleif
+ES	1QU8	other	S.Coop	S.Coop	Sociedad Cooperativa						0.1733	0.1733	gleif
+ES	TUHS	other			Corporación de Derecho Público						0.05186	0.05186	gleif
+ES	I2WU	other	A.I.E.	A.I.E.	Agrupacion de Interes Economico						0.02034	0.02034	gleif
+ES	AXS5	other	SCR	SCR	Sociedad de Capital-Riesgo						0.0191	0.0191	gleif
+ES	A97B	other	M.P.S.	M.P.S.	Mutualidad de Prevision Social				K		0.01025	0.01025	gleif
+ES	SS0L	other			Cooperativa de Credito						0.01009	0.01009	gleif
+ES	NFHN	other	EPSV	EPSV	Entidades de Previsión Social Voluntaria						0.009783	0.009783	gleif
+ES	CUIH	other			Mutua						0.007919	0.007919	gleif
+ES	IAS6	other	S.G.R.	S.G.R.	Sociedad de Garantia Reciproca						0.002795	0.002795	gleif
+ES	TLCJ	other			junta de compensación						0.002329	0.002329	gleif
+ET		sole_proprietorship			ግለሰብ ነጋዴ	sole proprietor				64,65	1	1	curated
+ET		partnership			ተራ የሽርክና ማኅበር	ordinary partnership				65	1	1	curated
+ET		limited_liability	ኃ.የተ.የግ.ማ.	PLC	ኃላፊነቱ የተወሰነ የግል ማኅበር	private limited company					0.95	0.6	curated
+ET		limited_liability	አ.ማ.	S.C.	የአክሲዮን ማኅበር	share company					0.05	0.4	curated
+ET		other			የኅብረት ሥራ ማኅበር	co-operative society					1	1	curated
+FI	K09E	sole_proprietorship			Yksityinen elinkeinonharjoittaja					64,65	1	1	gleif
+FI	HEOB	partnership	ky	ky	Kommandiittiyhtiö					65	0.7251	0.7251	gleif
+FI	PPMX	partnership			Avoin yhtiö					65	0.2749	0.2749	gleif
+FI	DKUW	limited_liability	oy	oy	Osakeyhtiö						0.9735	0.9687	gleif
+FI	V0TJ	limited_liability			Asunto-osakeyhtiö						0.01602	0.01594	gleif
+FI	8WJ7	limited_liability			Keskinäinen kiinteistöosakeyhtiö						0.009592	0.009544	gleif
+FI	K6VE	limited_liability	oyj	oyj	Julkinen osakeyhtiö						0.0008785	0.005828	gleif
+FI	UXEW	other			Aatteellinen yhdistys				P,Q,R,S,M,N,I		0.483	0.483	gleif
+FI	YK5G	other	sr	sr	Säätiö				P,Q,R,S,M,N,I		0.292	0.292	gleif
+FI	2RK5	other			Kunta				O,P,Q,R,E,H		0.04476	0.04476	gleif
+FI	IYF9	other			Evankelis-luterilainen kirkko						0.02745	0.02745	gleif
+FI	NV7C	other			Muu säätiö				P,Q,R,S,M,N,I		0.02708	0.02708	gleif
+FI	EE90	other	osk	osk	Osuuskunta						0.02542	0.02542	gleif
+FI	SJL9	other			Osuuspankki						0.0105	0.0105	gleif
+FI	SKGX	other			Yhteisetuudet						0.009394	0.009394	gleif
+FI	8HGS	other			Erityislainsäädäntöön perustuva yhdistys				P,Q,R,S,M,N,I		0.00921	0.00921	gleif
+FI	97PB	other			Vakuutuskassa				K		0.00921	0.00921	gleif
+FI	MRW9	other			Muu julkisoikeudellinen oikeushenkilö						0.007736	0.007736	gleif
+FI	VOTI	other			Kuntayhtymä				O,P,Q,R,E,H		0.006999	0.006999	gleif
+FI	4H61	other			Keskinäinen vakuutusyhtiö				K		0.005894	0.005894	gleif
+FI	5WI2	other			Eläkesäätiö				P,Q,R,S,M,N,I		0.005526	0.005526	gleif
+FI	N3LC	other			Rekisteröity uskonnollinen yhdyskunta						0.005157	0.005157	gleif
+FI	EDZP	other			Ylioppilaskunta tai osakunta						0.004973	0.004973	gleif
+FI	T3K4	other			Yhteismetsä						0.004605	0.004605	gleif
+FI	760X	other			Muu yhdistys				P,Q,R,S,M,N,I		0.004421	0.004421	gleif
+FI	6PEQ	other			Paikallisyhteisö						0.003131	0.003131	gleif
+FI	BKQO	other			Valtio ja sen laitokset						0.002947	0.002947	gleif
+FI	R6UB	other			Verotusyhtymä						0.002947	0.002947	gleif
+FI	UMF0	other			Konkurssipesä						0.002763	0.002763	gleif
+FI	R39F	other			Kauppakamari						0.002579	0.002579	gleif
+FI	SDPE	other			Työttömyyskassa						0.002395	0.002395	gleif
+FJ	43JO	sole_proprietorship			Sole Trader					64,65	1	1	gleif
+FJ	QP3O	partnership			Partnership					65	1	1	gleif
+FJ	IOFN	limited_liability	Pte Ltd	Pte Ltd	Private Limited Company						0.979	0.875	gleif
+FJ	7AWY	limited_liability			Public Limited Company						0.02098	0.125	gleif
+FJ	ND7S	other			Co-operative						0.3333	0.3333	gleif
+FJ	XHWP	other			Non-Profit Organisation				P,Q,R,S,M,N,I		0.3333	0.3333	gleif
+FJ	YN9X	other			Government Owned Trading Entity				O,P,Q,R,E,H		0.3333	0.3333	gleif
+FM		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+FM		partnership			partnership					65	1	1	curated
+FM		limited_liability	Inc.	Inc.	corporation						0.7	0.8	curated
+FM		limited_liability	LLC	LLC	limited liability company						0.3	0.2	curated
+FM		other			co-operative association				P,Q,R,S,M,N,I		1	1	curated
+FR	ZY9X	sole_proprietorship			Entrepreneur individuel					64,65	1	1	register
+FR	FY0F	partnership			Société civile immobilière				L,F	65	0.7526	0	register
+FR	1L24	partnership			Autre société civile					65	0.1355	0.2484	register
+FR	H1U2	partnership			Société en nom collectif					65	0.03902	0.6384	register
+FR	M673	partnership			Société civile d'exploitation agricole				A	65	0.01904	0.03459	register
+FR	8R2G	partnership			Société civile immobilière de construction-vente				L,F	65	0.01784	0	register
+FR	QCWO	partnership			Groupement agricole d'exploitation en commun (GAEC)				A	65	0.01653	0.001572	register
+FR	59F9	partnership			Groupement foncier agricole				A	65	0.01443	0	register
+FR	7O94	partnership			Groupement forestier				A	65	0.003678	0	register
+FR	VD7Z	partnership			Société en commandite simple					65	0.001074	0.04717	register
+FR	DEG4	partnership			Société en commandite par actions					65	0.0002867	0.02987	register
+FR	V9QP	limited_liability			Société à responsabilité limitée (sans autre indication)						0.5218	0.1005	register
+FR	6CHY	limited_liability	SAS	SAS	société par actions simplifiée		1994-01-03				0.4261	0.8131	register
+FR	BAK2	limited_liability			Exploitation agricole à responsabilité limitée				A		0.01898	0.0002317	register
+FR	K65D	limited_liability			SA à conseil d'administration (s.a.i.)				O,P,Q,R,E,H		0.01587	0.06732	register
+FR	J9OZ	limited_liability			Société d'exercice libéral à responsabilité limitée				M,Q		0.01414	0.00224	register
+FR	3FCU	limited_liability			Société d'exercice libéral par action simplifiée				M,Q		0.00256	0.007183	register
+FR	5VCF	limited_liability			SA à directoire (s.a.i.)						0.0005954	0.0095	register
+FR	BEWI	other			Association déclarée				P,Q,R,S,M,N,I		0.8829	0.29	register
+FR	FFQL	other			Commune et commune nouvelle				O,P,Q,R,E,H		0.05415	0.6477	register
+FR	HF2L	other			Association de droit local (Bas-Rhin, Haut-Rhin et Moselle)				P,Q,R,S,M,N,I		0.02509	0.01224	register
+FR	2XIK	other			Mutuelle				K		0.01792	0.02453	register
+FR	211B	other			Société coopérative agricole				A		0.009547	0.006955	register
+FR	R0B6	other			Groupement d'intérêt économique (GIE)						0.006682	0.01131	register
+FR	9T5S	other			Fondation				P,Q,R,S,M,N,I		0.003731	0.007322	register
+GA		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+GA		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+GA		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+GA		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+GA		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+GA		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+GA		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+GA		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+GB		sole_proprietorship			sole trader					64,65	1	1	curated
+GB		partnership			partnership	ordinary partnership				65	0.7704	0.7706	curated
+GB	ID30	partnership	LP	LP	Limited Partnership					65	0.132	0.1008	register
+GB	Z0EY	partnership	limited liability partnership	limited liability partnership	Limited Liability Partnership		2001-04-06			65	0.09761	0.1286	register
+GB	H0PO	limited_liability	Ltd	Ltd	Private Limited Company						0.9895	0.9595	register
+GB	17R0	limited_liability	CIC	CIC	Community Interest Company		2005-07-01				0.009698	0.0002364	register
+GB	B6ES	limited_liability	PLC	PLC	Public Limited Company						0.000763	0.03627	register
+GB	4A3J	limited_liability			Northern Ireland Company						0	0.004041	gleif
+GB	4GJI	other	Ltd	Ltd	Private Limited by Guarantee				P,Q,R,S,M,N,I		0.5794	0.4109	register
+GB	7T8N	other			Charitable Incorporated Organisation		2013-01-02		P,Q,R,S,M,N,I		0.2695	0.2059	register
+GB	XLZV	other			Registered Society						0.0708	0.03854	register
+GB	STX7	other			Scottish Charitable Incorporated Organisation		2011-04-01		P,Q,R,S,M,N,I		0.05284	0.02474	register
+GB	57V7	other			Private Unlimited						0.02741	0.2266	register
+GB	60IF	other			Private Unlimited/No Share Capital						0	0.003172	gleif
+GB	AVYY	other			Government Entity				O,P,Q,R,E,H		0	0.05012	gleif
+GB	BX6Y	other			Friendly Society						0	0.007454	gleif
+GB	E12O	other			Building Society						0	0.006979	gleif
+GB	IYXU	other	BenCom	BenCom	Community Benefit Society						0	0.009358	gleif
+GB	JTCO	other			Credit Union (Northern Ireland)				K		0	0.003013	gleif
+GB	TRWS	other			Unincorporated Association				P,Q,R,S,M,N,I		0	0.004917	gleif
+GB	WBQU	other			Credit Union				K		0	0.008247	gleif
+GD		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+GD		partnership			partnership	general partnership				65	1	1	curated
+GD		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+GD		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+GD		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+GD		other			co-operative society						0.3	0.5	curated
+GE		sole_proprietorship	ი/მ	I/E	ინდივიდუალური მეწარმე	individual entrepreneur				64,65	1	1	curated
+GE		partnership	სპს	GP	სოლიდარული პასუხისმგებლობის საზოგადოება	general partnership				65	1	1	curated
+GE		limited_liability	შპს	LLC	შეზღუდული პასუხისმგებლობის საზოგადოება	limited liability company					0.97	0.65	curated
+GE		limited_liability	სს	JSC	სააქციო საზოგადოება	joint-stock company					0.03	0.35	curated
+GE		other			კოოპერატივი	co-operative					1	1	curated
+GH	4HD1	sole_proprietorship			Sole Proprietorship					64,65	1	1	gleif
+GH	WP5I	partnership			Partnership					65	1	1	gleif
+GH	56NA	limited_liability			Private Limited By Share						0.9691	0.8247	gleif
+GH	VBJW	limited_liability			Public Limited Company						0.03089	0.1753	gleif
+GH	J5RC	other			Private Limited By Guarantee				P,Q,R,S,M,N,I		0.7767	0.6667	gleif
+GH	I0X7	other			Private Unlimited By Share						0.1942	0.1667	gleif
+GH	PH5T	other			Public Unlimited Company						0.02913	0.1667	gleif
+GM		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+GM		partnership			partnership	general partnership				65	1	1	curated
+GM		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+GM		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+GM		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+GM		other			co-operative society						0.3	0.5	curated
+GN		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+GN		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+GN		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+GN		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+GN		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+GN		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+GN		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+GN		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+GQ		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+GQ		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+GQ		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+GQ		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+GQ		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+GQ		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+GQ		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+GQ		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+GR		sole_proprietorship			ατομική επιχείρηση	sole proprietorship				64,65	1	1	curated
+GR	54AL	partnership	EE	EE	Ετερόρρυθμη Εταιρία	Eterórithmi Etería				65	0.5154	0.5154	gleif
+GR	TIZ2	partnership	OE	OE	Ομόρρυθμη Εταιρία	Omórithmi Etería				65	0.4479	0.4479	gleif
+GR	HKVP	partnership	SP	SP	Αστική (Προσωπική) Εταιρία	Astiki (Proswpiki) Eteria				65	0.03084	0.03084	gleif
+GR	L8D6	partnership	SLP	SLP	Αφανής Εταιρία	Afanis Eteria				65	0.005874	0.005874	gleif
+GR	QCA0	limited_liability	IKE	IKE	Ιδιωτική Κεφαλαιουχική Εταιρία	Idiotiki kefaleouhiki Eteria	2012-04-01				0.5055	0.1986	gleif
+GR	W2NK	limited_liability	SA	SA	Ανώνυμη Εταιρία	Anónimi Etería					0.2726	0.7141	gleif
+GR	H6OR	limited_liability	EPE	EPE	Εταιρία Περιορισμένης Ευθύνης	Etería Periorisménis Euthínis					0.2126	0.08356	gleif
+GR	3RHO	limited_liability	SC	SC	Ναυτική εταιρία	Naftiki eteria					0.009337	0.003669	gleif
+GR	J3VJ	other	COOP	COOP	Συνεταιρισμός	Sinetairismos					0.5105	0.5105	gleif
+GR	QSYQ	other	CLF	CLF	Σωματεία - Ιδρύματα	Somatia - Idrimata					0.4105	0.4105	gleif
+GR	L6IY	other	PL	PL	Νομικά Πρόσωπα Δημοσίου Δικαίου	Nomika Prosopa Dimosiou Dikeou					0.07895	0.07895	gleif
+GT		sole_proprietorship			comerciante individual	sole trader				64,65	1	1	curated
+GT	F0IC	partnership	Cía., S.C.A.	Cía., S.C.A.	Sociedad en Comandita por Acciones					65	1	1	gleif
+GT	XH5R	limited_liability	S.A.	S.A.	Sociedad Anónima						0.8162	0.9673	gleif
+GT	RK88	limited_liability	Ltda	Ltda	Sociedad de Responsabilidad Limitada						0.1471	0.02614	gleif
+GT	YMB7	limited_liability			Sociedad de Emprendimiento						0.03676	0.006536	gleif
+GT	DLUP	other			Asociacion civil						0.3333	0.3333	gleif
+GT	KPHM	other	ONG	ONG	Organizacion No Gubernamental						0.3333	0.3333	gleif
+GT	XDZ7	other			Fundacion				P,Q,R,S,M,N,I		0.3333	0.3333	gleif
+GW		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+GW		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+GW		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+GW		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+GW		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+GW		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+GW		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+GW		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+GY		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+GY		partnership			partnership	general partnership				65	1	1	curated
+GY		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+GY		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+GY		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+GY		other			co-operative society						0.3	0.5	curated
+HK		sole_proprietorship			獨資經營	sole proprietorship				64,65	1	1	curated
+HK		partnership			合夥經營	partnership				65	0.5	0.5	curated
+HK	XPE5	partnership	LP	LP	有限責任合夥	you xian ze ren he huo				65	0.5	0.5	gleif
+HK	254M	limited_liability	有限公司	有限公司	私人股份有限公司	Si ren gu fen you xian gong si					0.9448	0.9448	gleif
+HK	EPG7	limited_liability	有限公司	有限公司	公眾股份有限公司	Gong zhong gu fen you xian gong si					0.0384	0.0384	gleif
+HK	S2E3	limited_liability	有限公司	有限公司	擔保有限公司	Dan bao you xian gong si			P,Q,R,S,M,N,I		0.01684	0.01684	gleif
+HK	2QMJ	other			Trust						0.5556	0.5556	gleif
+HK	E1SE	other			根據法例成立的實體	gen ju fa li cheng li de shi ti					0.4167	0.4167	gleif
+HK	UDG6	other	無限公司	無限公司	有股本的私人無限公司	You gu ben de si ren wu xian gong si					0.02778	0.02778	gleif
+HN	E7JZ	sole_proprietorship			Comerciante Individual					64,65	1	1	gleif
+HN	6ETM	partnership	S. en C.	S. en C.	Sociedad en Comandita por Acciones.	Sociedad en Comandita por Acciones				65	0.3333	0.3333	gleif
+HN	O2M6	partnership			Sociedad Colectiva					65	0.3333	0.3333	gleif
+HN	RF41	partnership	S. en C.	S. en C.	Sociedad en Comandita Simple					65	0.3333	0.3333	gleif
+HN	12F9	limited_liability	de C. V.	de C. V.	Sociedades de Capital Variable						0.5415	0.25	gleif
+HN	XE7O	limited_liability	S. De R. L.	S. De R. L.	Sociedad de Responsabilidad Limitada						0.2527	0.1167	gleif
+HN	JUDZ	limited_liability	S.A.	S.A.	Sociedad Anónima						0.2058	0.6333	gleif
+HR	9D9U	sole_proprietorship	t.p.	t.p.	Trgovac pojedinac					64,65	1	1	gleif
+HR	KP34	partnership	j.t.d.	j.t.d.	Javno trgovačko društvo					65	0.7778	0.7778	gleif
+HR	MF7P	partnership	k.d.	k.d.	Komanditno društvo					65	0.2222	0.2222	gleif
+HR	OQWO	limited_liability	d.o.o.	d.o.o.	Društvo s ograničenom odgovornošću (jednostavno društvo s ograničenom odgovornošću)						0.7752	0.7752	gleif
+HR	LUMA	limited_liability	d.d.	d.d.	Dioničko društvo						0.2248	0.2248	gleif
+HR	ZFQS	other			Ustanova						0.3818	0.3818	gleif
+HR	274G	other			Udruga				P,Q,R,S,M,N,I		0.1455	0.1455	gleif
+HR	ZMY8	other			Zaklada				P,Q,R,S,M,N,I		0.1273	0.1273	gleif
+HR	XQLW	other			Jedinica lokalne ili područne (regionalne) samouprave						0.1091	0.1091	gleif
+HR	6RD2	other			Agencije I druge samostalne pravne osobe s javnim ovlastima						0.05455	0.05455	gleif
+HR	TSA0	other			Tijelo državne uprave						0.05455	0.05455	gleif
+HR	6Q6D	other			Pravna osoba Katoličke Crkve						0.03636	0.03636	gleif
+HR	G5RH	other			Zadruge						0.03636	0.03636	gleif
+HR	SPJ7	other			Vjerska zajednica						0.03636	0.03636	gleif
+HR	YA9S	other			Zajednica ustanova						0.01818	0.01818	gleif
+HT		sole_proprietorship			entreprise individuelle	sole proprietorship				64,65	1	1	curated
+HT		partnership	SNC	SNC	société en nom collectif	general partnership				65	1	1	curated
+HT		limited_liability	S.A.	S.A.	société anonyme	public limited company					1	1	curated
+HT		other			coopérative	co-operative					1	1	curated
+HU	BJ8Q	sole_proprietorship			Egyéni vállalkozás					64,65	0.848	0.848	gleif
+HU	2A44	sole_proprietorship			Egyéni cég					64,65	0.152	0.152	gleif
+HU	S3DA	partnership	Bt.	Bt.	Betéti társaság					65	0.9832	0.9832	gleif
+HU	J6MO	partnership	Kkt.	Kkt.	Közkereseti társaság					65	0.01678	0.01678	gleif
+HU	P9F2	limited_liability	Kft.	Kft.	Korlátolt felelősségű társaság						0.8488	0.8003	gleif
+HU	BKUX	limited_liability	Zrt.	Zrt.	Zártkörűen működő részvénytársaság						0.1405	0.1325	gleif
+HU	EO9F	limited_liability	Rt.	Rt.	Részvénytársaság						0.0103	0.06474	gleif
+HU	8UEG	limited_liability	Nyrt.	Nyrt.	Nyilvánosan működő részvénytársaság						0.0003976	0.002499	gleif
+HU	BMYJ	other			Egyéb alapítvány						0.1959	0.1959	gleif
+HU	876R	other			Egyéb egyesület						0.1912	0.1912	gleif
+HU	4C5L	other			Ügyvédi Iroda						0.1282	0.1282	gleif
+HU	ESTU	other			Társasház						0.08891	0.08891	gleif
+HU	4QRE	other			Önkormányzat						0.08104	0.08104	gleif
+HU	DPY1	other			Egyéb szövetkezet						0.06294	0.06294	gleif
+HU	LNY0	other			Egyházi szervezetek						0.05429	0.05429	gleif
+HU	2LB5	other			Munkavállalói Résztulajdonosi Program szervezet						0.03619	0.03619	gleif
+HU	M1DW	other			Önkéntes kölcsönös biztosítópénztár						0.0299	0.0299	gleif
+HU	BSK1	other			Oktatási intézmények						0.02203	0.02203	gleif
+HU	QYV5	other			Költségvetési szerv						0.01967	0.01967	gleif
+HU	4WV7	other			Egyéb köztestület						0.01652	0.01652	gleif
+HU	TSVO	other	kbe	kbe	Szövetség (kivéve sportszövetség)						0.01652	0.01652	gleif
+HU	V3LT	other			Erdőbirtokossági Társulat						0.01338	0.01338	gleif
+HU	ZQAQ	other			Közjegyzői iroda						0.01259	0.01259	gleif
+HU	995K	other			Magánnyugdíjpénztár						0.01101	0.01101	gleif
+HU	OII5	other			Egyéni ügyvéd						0.007081	0.007081	gleif
+HU	8VH3	other			Befektetési alap						0.003934	0.003934	gleif
+HU	HTJD	other	Kht.	Kht.	Közhasznú társaság						0.003147	0.003147	gleif
+HU	YOMR	other	ÖCSG	ÖCSG	Őstermelők családi gazdasága						0.003147	0.003147	gleif
+HU	Y64R	other	OBA	OBA	Országos betétbiztosítási alap						0.00236	0.00236	gleif
+ID	XFHP	sole_proprietorship			Usaha Dagang					64,65	1	1	gleif
+ID	B8VT	partnership	CV	CV	Commanditaire Vennootschap					65	0.48	0.48	gleif
+ID	BJT3	partnership	Fa	Fa	Firma					65	0.32	0.32	gleif
+ID	V05A	partnership			Persekutuan Perdata					65	0.2	0.2	gleif
+ID	UD1V	limited_liability	PT	PT	Perseroan Terbatas Penanaman Modal Dalam Negeri						0.7724	0.7724	gleif
+ID	JAJS	limited_liability	PT PMA	PT PMA	Perseroan Terbatas Penanaman Modal Asing						0.1615	0.1615	gleif
+ID	AEZW	limited_liability	Tbk	Tbk	Perseroan Terbuka						0.05447	0.05447	gleif
+ID	F77L	limited_liability	Persero	Persero	Perusahaan Perseroan						0.006809	0.006809	gleif
+ID	2ZB3	limited_liability			Perseroan Publik						0.004864	0.004864	gleif
+ID	HELT	other			Yayasan						0.8333	0.8333	gleif
+ID	72I6	other			Koperasi						0.1667	0.1667	gleif
+IE		sole_proprietorship			sole trader					64,65	1	1	curated
+IE	HNJK	partnership			Limited Partnership					65	0.5336	0.5336	gleif
+IE	DWS3	partnership			General Partnership					65	0.4374	0.4374	gleif
+IE	LZIC	partnership	ilp	ilp	Investment Limited Partnership					65	0.02904	0.02904	gleif
+IE	MNQ7	limited_liability	Ltd	Ltd	Private Company Limited by Shares						0.6717	0.6452	gleif
+IE	LGWG	limited_liability	DAC – (limited by shares)	DAC – (limited by shares)	Designated Activity Company						0.321	0.3083	gleif
+IE	VYAX	limited_liability	PLC	PLC	Public Limited Company						0.007256	0.04646	gleif
+IE	KMFX	other	ULC / uc	ULC / uc	Private Unlimited Company						0.6056	0.5891	gleif
+IE	C58S	other	CLG	CLG	Company Limited by Guarantee				P,Q,R,S,M,N,I		0.1641	0.1596	gleif
+IE	9BPE	other			Credit Union				K		0.1509	0.1468	gleif
+IE	5AX8	other	DAC – (limited by guarantee)	DAC – (limited by guarantee)	Designated Activity Company Limited by Guarantee				P,Q,R,S,M,N,I		0.03756	0.03654	gleif
+IE	54SK	other			Friendly Society						0.02702	0.02628	gleif
+IE	ZJS8	other	I&PS	I&PS	Industrial and Provident Society						0.009885	0.009615	gleif
+IE	URQH	other	PUC / uc	PUC / uc	Public Unlimited Company						0.00425	0.02756	gleif
+IE	FF1D	other	PULC / uc	PULC / uc	Public Unlimited Company that has no share capital						0.0006919	0.004487	gleif
+IL	5Q1W	sole_proprietorship			עוסק מורשה	Osek Murshe				64,65	0.5	0.5	gleif
+IL	THVZ	sole_proprietorship			עוסק פטור	Osek Patur				64,65	0.5	0.5	gleif
+IL	3YIH	partnership			שׁוּתָפוּת	shutafut				65	1	1	gleif
+IL	PDQC	limited_liability			חברה פרטית בע"מ	Chevra Pratit Ba'am					0.9211	0.9211	gleif
+IL	QZP3	limited_liability			חברה פרטית בלתי מוגבלת	havra partit lele hagbala					0.04829	0.04829	gleif
+IL	328X	limited_liability			חברה ציבורית בע"מ	Chevra Tziburit					0.03062	0.03062	gleif
+IL	BY2Z	other			אגודה שיתופית	Aguda Shitufit					1	1	gleif
+IN	4QIE	sole_proprietorship			Sole Proprietorship					64,65	1	1	gleif
+IN	A0PS	partnership			Partnership Firm					65	0.7888	0.7888	gleif
+IN	U5S6	partnership	LLP	LLP	Limited Liability Partnership		2009-03-31			65	0.2012	0.2012	gleif
+IN	K4OX	partnership			Special Purpose Vehicle - Partnership Firm					65	0.01	0.01	curated
+IN	YSP9	limited_liability	Pvt Ltd	Pvt Ltd	Private Limited Company						0.9692	0.8914	gleif
+IN	DDKQ	limited_liability	Ltd	Ltd	Public Limited Company						0.01525	0.09351	gleif
+IN	2Y95	limited_liability			Special Purpose Vehicle - Company						0.01004	0.01003	curated
+IN	NFPC	limited_liability			Non-Banking Finance Company				K		0.003358	0.003089	gleif
+IN	9ME5	limited_liability			Non profit company						0.002108	0.001939	gleif
+IN	W9FI	other			Trust						0.35	0.35	curated
+IN		other			society	registered society					0.25	0.25	curated
+IN	QCSO	other			Multistate Cooperative Society						0.2215	0.2215	curated
+IN	2DVA	other			Cooperative Society						0.1285	0.1285	curated
+IN	X4IT	other			Government Company				O,P,Q,R,E,H		0.01502	0.01502	curated
+IN	8ZLF	other			Special Purpose Vehicle - Trust						0.009982	0.009982	curated
+IN	36YD	other			Unlimited Company						0.00838	0.00375	gleif
+IN	FPZK	other			Banking Company - Scheduled Urban Cooperative Bank				K		0.005	0.005	curated
+IN	70GJ	other			Government Organization				O,P,Q,R,E,H		0.004985	0.004985	curated
+IN	180P	other			Stand Alone Primary Dealer						0.003352	0.0015	gleif
+IN	3VSP	other			Public Financial Institutions						0.003268	0.00975	gleif
+IQ		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+IQ		partnership		Partnership	شركة تضامن	general partnership				65	0.75	0.6	curated
+IQ		partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership				65	0.25	0.4	curated
+IQ		limited_liability	ذ.م.م	LLC	شركة ذات مسؤولية محدودة	limited liability company					0.93	0.55	curated
+IQ		limited_liability	ش.م.	JSC	شركة مساهمة	joint-stock company					0.07	0.45	curated
+IQ		other		Cooperative	جمعية تعاونية	co-operative					1	1	curated
+IR		sole_proprietorship			شرکت انفرادی	sole proprietorship				64,65	1	1	curated
+IR		partnership			شرکت تضامنی	general partnership				65	1	1	curated
+IR		limited_liability	با مسئولیت محدود	Ltd.	شرکت با مسئولیت محدود	limited liability company					0.6	0.2	curated
+IR		limited_liability	سهامی خاص	PJS	شرکت سهامی خاص	private joint-stock company					0.38	0.6	curated
+IR		limited_liability	سهامی عام	PJSC	شرکت سهامی عام	public joint-stock company					0.02	0.2	curated
+IR		other			شرکت تعاونی	co-operative					1	1	curated
+IS		sole_proprietorship			einstaklingsrekstur	sole proprietorship				64,65	1	1	curated
+IS	8T79	partnership	slf.	slf.	Samlagsfélag					65	1	1	gleif
+IS	M8SS	limited_liability	ehf.	ehf.	Einkahlutafélag						0.9454	0.9454	gleif
+IS	E4KB	limited_liability	hf.	hf.	Hlutafélag						0.04224	0.04224	gleif
+IS	2OJP	limited_liability	slhf.	slhf.	Samlagshlutafélag						0.01236	0.01236	gleif
+IT	LHBB	sole_proprietorship			Impresa Individuale					64,65	1	1	gleif
+IT	T2X1	partnership	SNC	SNC	Società In Nome Collettivo					65	0.3748	0.374	gleif
+IT	CGSO	partnership			Società in Accomandita Semplice					65	0.3696	0.3689	gleif
+IT	2XXH	partnership	SS	SS	Società Semplice					65	0.2552	0.2547	gleif
+IT	DLS4	partnership			Società in Accomandita per Azioni					65	0.0003542	0.002357	gleif
+IT	OV32	limited_liability	SRL	SRL	Società A Responsabilità Limitata						0.9401	0.8641	gleif
+IT	8GU1	limited_liability	S.R.L.S.	S.R.L.S.	Società A Responsabilità Limitata Semplificata		2012-01-24				0.02547	0.02341	gleif
+IT	B5TO	limited_liability			Società a Responsabilità Limitata con Unico Socio						0.01633	0.01501	gleif
+IT	P418	limited_liability	SPA	SPA	Società Per Azioni						0.01554	0.0952	gleif
+IT	BL52	limited_liability	S.C.A.R.L.	S.C.A.R.L.	Società Consortile A Responsabilità Limitata						0.002526	0.002321	gleif
+IT	QRZJ	other	S.C.	S.C.	Società Cooperativa						0.273	0.273	gleif
+IT	1TON	other			Associazione				P,Q,R,S,M,N,I		0.261	0.261	gleif
+IT	75WC	other			Fondazione						0.1808	0.1808	gleif
+IT	IMHA	other			Ente Ecclesiastico						0.1232	0.1232	gleif
+IT	2HC6	other			pubblica amministrazione				O,P,Q,R,E,H		0.05932	0.05932	gleif
+IT	HN75	other	societa' cooperativa	societa' cooperativa	Consorzio						0.01831	0.01831	gleif
+IT	K26L	other			Ente						0.01518	0.01518	gleif
+IT	ADAZ	other			Istituto Religioso				P,Q,R,S,M,N,I		0.01352	0.01352	gleif
+IT	CTNS	other			Società Cooperativa a Responsabilità Limitata						0.01198	0.01198	gleif
+IT	1RI9	other			Ente Ecclesiastico Civilmente Riconosciuto						0.01059	0.01059	gleif
+IT	2J7Z	other			Consorzio con attività Esterna						0.006925	0.006925	gleif
+IT	PHMS	other			Cooperativa Sociale						0.006458	0.006458	gleif
+IT	ARJF	other			Ente Morale						0.003795	0.003795	gleif
+IT	C1IC	other			Società Cooperativa Consortile						0.003662	0.003662	gleif
+IT	70X0	other			Fondazione Impresa						0.002863	0.002863	gleif
+IT	VA1V	other			Società Di Mutuo Soccorso						0.002464	0.002464	gleif
+IT	WPED	other			Associazione Impresa				P,Q,R,S,M,N,I		0.002464	0.002464	gleif
+IT	KCSG	other	consorzio	consorzio	Ente Impresa						0.00233	0.00233	gleif
+IT	OQ8C	other			Fondo Pensione						0.002064	0.002064	gleif
+JM	WVQN	sole_proprietorship			sole trader					64,65	1	1	gleif
+JM	PFY0	partnership			partnership					65	1	1	gleif
+JM	HCBE	limited_liability			company limited by shares						0.9697	0.9697	gleif
+JM	N97C	limited_liability			company limited by guarantee				P,Q,R,S,M,N,I		0.0303	0.0303	gleif
+JM	EBRQ	other			unlimited company						1	1	gleif
+JO		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+JO	6KSC	partnership	توصية بسيطة	توصية بسيطة	شركة التوصية البسيطة	sharikat altawsia albasita				65	0.7143	0.7143	gleif
+JO	9NBN	partnership			شركة التضامن	sharikat altadamun				65	0.2857	0.2857	gleif
+JO	6B39	limited_liability	ذ.م.م	ذ.م.م	الشركة ذات المسؤولية المحدودة	alsharika zat almasuwliat almahduda					0.7706	0.7706	gleif
+JO	BL60	limited_liability	ش.م.ع	ش.م.ع	الشركة المساهمة العامة	alsharika almusahama aleama					0.156	0.156	gleif
+JO	FZAC	limited_liability	ش.م.خ	ش.م.خ	الشركة المساهمة الخاصة	alsharika almusahama alkhasa					0.07339	0.07339	gleif
+JO	SAST	other	لا تهدف لتحقيق الربح	لا تهدف لتحقيق الربح	الشركة التي لا تهدف لتحقيق الربح	alsharika alty la tahdof litahqiq alribh					1	1	gleif
+JP		sole_proprietorship			個人事業主	sole proprietor				64,65	1	1	curated
+JP	5MVV	partnership	資	資	合資会社	gousigaisya				65	0.5	0.5	gleif
+JP	IUVI	partnership	名	名	合名会社	goumeigaisya				65	0.5	0.5	gleif
+JP	T417	limited_liability	株	株	株式会社	kabusikigaisya					0.8734	0.8734	gleif
+JP	7QQ0	limited_liability	合	合	合同会社	goudougaisya	2006-05-01				0.0932	0.0932	gleif
+JP	DYQK	limited_liability	有	有	有限会社	yugengaisya		2006-04-30			0.03336	0.03336	gleif
+JP		other	一般社団法人	Ippan Shadan Hojin	一般社団法人	general incorporated association			P,Q,R,S,M,N,I		0.25	0.25	curated
+JP		other	医療法人	Iryo Hojin	医療法人	medical corporation					0.2	0.2	curated
+JP		other	NPO法人	NPO Hojin	特定非営利活動法人	specified non-profit corporation			P,Q,R,S,M,N,I		0.15	0.15	curated
+JP		other	協同組合	Kyodo Kumiai	協同組合	co-operative					0.1	0.1	curated
+JP		other	宗教法人	Shukyo Hojin	宗教法人	religious corporation			P,Q,R,S,M,N,I		0.1	0.1	curated
+JP		other	社会福祉法人	Shakai Fukushi Hojin	社会福祉法人	social welfare corporation					0.08	0.08	curated
+JP	N3JU	other			その他の設立登記法人	Sonota Setsuritsu Toki Hojin					0.07	0.07	curated
+JP	2NRQ	other			地方公共団体	Chiho Kokyo Dantai					0.05	0.05	curated
+KE		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+KE		partnership			partnership	general partnership				65	1	1	curated
+KE		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+KE		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+KE		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+KE		other			co-operative society						0.3	0.5	curated
+KG		sole_proprietorship	ИП	IP	индивидуальный предприниматель	individual entrepreneur				64,65	1	1	curated
+KG		partnership			полное товарищество	general partnership				65	1	1	curated
+KG		limited_liability	ООО	OOO	общество с ограниченной ответственностью	limited liability company					0.95	0.6	curated
+KG		limited_liability	АО	AO	акционерное общество	joint-stock company					0.05	0.4	curated
+KG		other			производственный кооператив	production co-operative					1	1	curated
+KH	KD84	sole_proprietorship			Sole Proprietorship					64,65	1	1	gleif
+KH	D3UY	partnership			Limited Partnership					65	0.5	0.5	gleif
+KH	Z4YC	partnership			General Partnership					65	0.5	0.5	gleif
+KH	15BP	limited_liability			Private Limited Company						0.8879	0.5429	gleif
+KH	BQ0P	limited_liability			Public Limited Company						0.1121	0.4571	gleif
+KI		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+KI		partnership			partnership					65	1	1	curated
+KI		limited_liability	Ltd	Ltd	limited company						1	1	curated
+KI		other			co-operative society						1	1	curated
+KM		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+KM		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+KM		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+KM		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+KM		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+KM		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+KM		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+KM		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+KN		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+KN	AHRM	partnership			limited partnership					65	0.875	0.875	gleif
+KN	OTE3	partnership			exempt limited partnership					65	0.125	0.125	gleif
+KN	2F0A	limited_liability	LLC	LLC	limited liability company						0.3807	0.37	gleif
+KN	WFYL	limited_liability			private company						0.2289	0.2225	gleif
+KN	HW77	limited_liability	IBC	IBC	International Business Company						0.2108	0.2048	gleif
+KN	H64R	limited_liability			private company						0.1632	0.1586	gleif
+KN	ZJZB	limited_liability			exempt private company						0.009065	0.008811	gleif
+KN	I93O	limited_liability			public company						0.003399	0.02203	gleif
+KN	I8G4	limited_liability			exempt private company						0.002266	0.002203	gleif
+KN	7Z3M	limited_liability			public company						0.0017	0.01101	gleif
+KN	4EP1	other			multiform foundation				P,Q,R,S,M,N,I		0.4737	0.4737	gleif
+KN	29OB	other			foundation				P,Q,R,S,M,N,I		0.4474	0.4474	gleif
+KN	I03S	other			international exempt trust						0.05263	0.05263	gleif
+KN	EF4Y	other			foundation				P,Q,R,S,M,N,I		0.02632	0.02632	gleif
+KP		other			기업소	state enterprise					1	1	curated
+KR	GF7G	sole_proprietorship			개인사업자	Gaein Saeopja				64,65	1	1	gleif
+KR	BW92	partnership			합자회사	Hapja Hoesa				65	0.6667	0.6667	gleif
+KR	AXEQ	partnership			합명회사	Hapmyeong Hoesa				65	0.3333	0.3333	gleif
+KR	5RCH	limited_liability	㈜	(Ju)	주식회사	Jusik Hoesa					0.7798	0.7798	gleif
+KR	J3U5	limited_liability	(유)	(Yu)	유한회사	Yuhan Hoesa					0.2082	0.2082	gleif
+KR	UDJG	limited_liability			유한책임회사	Yuhan Chaegim Hoesa	2012-04-15				0.01208	0.01208	gleif
+KR	VTH4	other			비영리 사단법인	Biyeongri Sadan Beobin					0.35	0.35	curated
+KR	AKF5	other			재단법인	Jaedan Beobin					0.25	0.25	curated
+KR		other	협동조합	Hyeopdong Johap	협동조합	co-operative					0.15	0.15	curated
+KR	W61J	other			기타 법인	Gita Beobin					0.1	0.1	curated
+KR	WUJC	other			공공단체	Gonggong Danche					0.1	0.1	curated
+KR	S1IS	other			일반 법인 협회	Ilban Beobin Hyeophoe					0.05	0.05	curated
+KW	3GQ5	sole_proprietorship			ملكية فردية ( شركة الشخص الواحد)	Milkiat fardia				64,65	1	1	gleif
+KW	93LG	partnership			شركة التوصية البسيطة	Sharikat altawsiat albasitat lilshiraka				65	0.25	0.25	gleif
+KW	JLNM	partnership			شركة تضامن	Sharikat tadamun				65	0.25	0.25	gleif
+KW	PZCW	partnership			شركة التوصية بالأسهم	Wasiat alshirakat min qibal sharikat al'ashum				65	0.25	0.25	gleif
+KW	W9RU	partnership			الشركة المھنیة	Alsharikat almuھnay				65	0.25	0.25	gleif
+KW	QZCG	limited_liability	ذ.م.م	ذ.م.م	الشركة ذات المسؤولية المحدودة	Sharika That Almasuliah Almahduda					0.625	0.625	gleif
+KW	5OKA	limited_liability			شركة المساھمة المقفلة	Sharikat almusaھmat almuqfala					0.2404	0.2404	gleif
+KW	7CAL	limited_liability			شركة المساهمة العامة	Sharikat musahima					0.1346	0.1346	gleif
+KW	8CIC	other			الشركات غیر الھادفة للربح.	Alsharikat ghayr alھadifat lilrabhi.					1	1	gleif
+KZ		sole_proprietorship	ИП	IP	индивидуальный предприниматель	individual entrepreneur				64,65	1	1	curated
+KZ		partnership			полное товарищество	general partnership				65	1	1	curated
+KZ		limited_liability	ТОО	TOO	товарищество с ограниченной ответственностью	limited liability partnership					0.97	0.65	curated
+KZ		limited_liability	АО	AO	акционерное общество	joint-stock company					0.03	0.35	curated
+KZ		other			производственный кооператив	production co-operative					1	1	curated
+LA		sole_proprietorship			ວິສາຫະກິດສ່ວນບຸກຄົນ	sole enterprise				64,65	1	1	curated
+LA		partnership			ຫ້າງຫຸ້ນສ່ວນ	partnership				65	1	1	curated
+LA		limited_liability	ບໍລິສັດ ຈຳກັດ	Co., Ltd.	ບໍລິສັດຈຳກັດ	limited company					0.97	0.7	curated
+LA		limited_liability	ບໍລິສັດ ມະຫາຊົນ	Public Co., Ltd.	ບໍລິສັດມະຫາຊົນ	public company					0.03	0.3	curated
+LA		other			ສະຫະກອນ	co-operative					1	1	curated
+LB		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+LB		partnership		SNC	شركة تضامن	general partnership				65	1	1	curated
+LB		limited_liability	ش.م.م	SARL	شركة محدودة المسؤولية	private limited company					0.85	0.35	curated
+LB		limited_liability	ش.م.ل	SAL	شركة مساهمة لبنانية	Lebanese joint-stock company					0.15	0.65	curated
+LB		other		Cooperative	جمعية تعاونية	co-operative					1	1	curated
+LC		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+LC		partnership			partnership	general partnership				65	1	1	curated
+LC		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+LC		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+LC		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+LC		other			co-operative society						0.3	0.5	curated
+LI	EV7F	sole_proprietorship			Einzelfirma					64,65	1	1	gleif
+LI	ANSR	partnership	KG	KG	Kommanditgesellschaft					65	1	1	gleif
+LI	TMU1	limited_liability			Anstalt						0.716	0.3847	gleif
+LI	7RRP	limited_liability	AG	AG	Aktiengesellschaft						0.1511	0.5412	gleif
+LI	Y8LH	limited_liability	GmbH	GmbH	Gesellschaft mit beschränkter Haftung						0.1321	0.07096	gleif
+LI	WAK8	limited_liability	SE	SE	Europäische Gesellschaft						0.0008739	0.00313	gleif
+LI	BSZ8	other			Stiftung				P,Q,R,S,M,N,I		0.8959	0.8959	gleif
+LI	53QF	other			Treuhänderschaft						0.07197	0.07197	gleif
+LI	1DGT	other	Trust reg.	Trust reg.	Treuunternehmen						0.03002	0.03002	gleif
+LI	32HC	other	e.V.	e.V.	Verein				P,Q,R,S,M,N,I		0.002135	0.002135	gleif
+LK		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+LK		partnership			partnership	general partnership				65	1	1	curated
+LK		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+LK		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+LK		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+LK		other			co-operative society						0.3	0.5	curated
+LR		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+LR		partnership			partnership	general partnership				65	1	1	curated
+LR		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+LR		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+LR		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+LR		other			co-operative society						0.3	0.5	curated
+LS		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+LS		partnership			partnership					65	1	1	curated
+LS	K6G7	limited_liability			Public Company						1	1	gleif
+LS	CD8F	other			Non-profit Company				P,Q,R,S,M,N,I		1	1	gleif
+LT	A338	sole_proprietorship	II	II	Individualios įmonės					64,65	1	1	gleif
+LT	SFYA	partnership	MB	MB	Mažosios bendrijos					65	0.9725	0.9725	gleif
+LT	LUOA	partnership	KB	KB	Komanditinės ūkinės bendrijos					65	0.02176	0.02176	gleif
+LT	5CIE	partnership	APB	APB	Advokatų profesinės bendrijos				M,Q	65	0.005727	0.005727	gleif
+LT	BPLS	limited_liability	UAB	UAB	Uždarosios akcinės bendrovės						0.9699	0.9699	gleif
+LT	81KA	limited_liability	AB	AB	Akcinės bendrovės						0.03014	0.03014	gleif
+LT	LUGM	other	KO	KO	Kooperatinės bendrovės (kooperatyvai)						0.3216	0.3216	gleif
+LT	KWBA	other	VS	VS	Viešosios įstaigos						0.2105	0.2105	gleif
+LT	HGMH	other	LF	LF	Labdaros ir paramos fondai						0.1404	0.1404	gleif
+LT	F2ZF	other	A	A	Asociacijos						0.07018	0.07018	gleif
+LT	5BY2	other	EKB	EKB	Europos kooperatinės bendrovės						0.06433	0.06433	gleif
+LT	UHNL	other	ZUB	ZUB	Žemės ūkio bendrovės						0.04094	0.04094	gleif
+LT	K4GR	other	BI	BI	Biudžetinės įstaigos						0.02924	0.02924	gleif
+LT	13T9	other	EB	EB	Europos bendrovės						0.02339	0.02339	gleif
+LT	4ZF3	other	VI	VI	Valstybės įmonės						0.02339	0.02339	gleif
+LT	F2TQ	other	TR	TR	Tradicinės religinės bendruomenės ar bendrijos						0.02339	0.02339	gleif
+LT	6JDN	other	PS	PS	Profesinės sąjungos ir jų susivienijimai						0.0117	0.0117	gleif
+LT	DLCX	other	TUB	TUB	Tikrosios ūkinės bendrijos						0.0117	0.0117	gleif
+LT	Q8UI	other	NA	NA	Nuolatinės arbitražo institucijos						0.0117	0.0117	gleif
+LT	A2GC	other	RB	RB	Religines bendruomenes, bendrijos ir centrai						0.005848	0.005848	gleif
+LT	HJ1Y	other	BN	BN	Bendrijos						0.005848	0.005848	gleif
+LT	QG9Y	other	SD	SD	Sodininkų bendrijos						0.005848	0.005848	gleif
+LU	2IGL	sole_proprietorship	EI	EI	Entreprise individuelle					64,65	1	1	gleif
+LU	U8KA	partnership	SECSP	SECSP	Société en commandite spéciale					65	0.6978	0.6978	gleif
+LU	81G5	partnership	SECA	SECA	Société en commandite par actions					65	0.1321	0.1321	gleif
+LU	63P9	partnership	SECS	SECS	Société en commandite simple					65	0.1259	0.1259	gleif
+LU	SQ1A	partnership	SCI	SCI	Société civile					65	0.04412	0.04412	gleif
+LU	DVXS	limited_liability	SARL	SARL	Société à responsabilité limitée						0.9199	0.6657	gleif
+LU	5GGB	limited_liability	SA	SA	Société anonyme						0.06739	0.3251	gleif
+LU	EUT4	limited_liability	S.à r.l.-S	S.à r.l.-S	Société à responsabilité limitée simplifiée	société à responsabilité limitée simplifiée	2017-01-18				0.007017	0.005078	gleif
+LU	HHR4	limited_liability	S.A.S.	S.A.S.	Société par actions simplifiée						0.003703	0.00268	gleif
+LU	WCEP	limited_liability	SE	SE	Société Européenne	société européenne					0.002014	0.001458	gleif
+LU	2JEI	other	ASBL	ASBL	Association sans but lucratif				P,Q,R,S,M,N,I		0.3615	0.3068	gleif
+LU	V5OS	other	SC	SC	Société coopérative						0.2455	0.2083	gleif
+LU	V19Y	other	FON	FON	Fondation				P,Q,R,S,M,N,I		0.2366	0.2008	gleif
+LU	9C91	other	SEPCAV	SEPCAV	Société d’épargne-pension à capital variable						0.04463	0.03788	gleif
+LU	7SIZ	other			Mutuelle				K		0.03124	0.02652	gleif
+LU	2S2U	other	ASSEP	ASSEP	Association d'épargne pension				P,Q,R,S,M,N,I		0.02232	0.01894	gleif
+LU	STBC	other			Société coopérative organisée sous forme de société anonyme						0.02008	0.1136	gleif
+LU	BKAB	other	AAM	AAM	Association d'assurances mutuelles				K		0.01785	0.01515	gleif
+LU	ZFFA	other	EP	EP	Etablissement public						0.01138	0.06439	gleif
+LU	68J6	other	AA	AA	Association agricole				A		0.004463	0.003788	gleif
+LU	LCR0	other	GIE	GIE	Groupement d'intérêt économique						0.004463	0.003788	gleif
+LV	BS22	sole_proprietorship	IK	IK	Individuālais komersants					64,65	1	1	gleif
+LV	1IPK	partnership	KS	KS	Komandītsabiedrība					65	1	1	gleif
+LV	ES2D	limited_liability	SIA	SIA	Sabiedrība ar ierobežotu atbildību						0.9374	0.9374	gleif
+LV	VJBO	limited_liability	AS	AS	Akciju sabiedrība						0.0626	0.0626	gleif
+LV		other	biedrība	biedriba	biedrība	association			P,Q,R,S,M,N,I		0.7292	0.7292	curated
+LV		other	KS	KS	kooperatīvā sabiedrība	co-operative society					0.1563	0.1563	curated
+LV		other	nodibinājums	nodibinajums	nodibinājums	foundation			P,Q,R,S,M,N,I		0.1042	0.1042	curated
+LV	5ULL	other	EEIG	EEIG	Eiropas Ekonomisko interešu grupa						0.01042	0.01042	curated
+LY		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+LY		partnership		Partnership	شركة تضامن	general partnership				65	0.75	0.6	curated
+LY		partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership				65	0.25	0.4	curated
+LY		limited_liability	ذ.م.م	LLC	شركة ذات مسؤولية محدودة	limited liability company					0.93	0.55	curated
+LY		limited_liability	ش.م.	JSC	شركة مساهمة	joint-stock company					0.07	0.45	curated
+LY		other		Cooperative	جمعية تعاونية	co-operative					1	1	curated
+MA		sole_proprietorship			entreprise individuelle	sole proprietorship				64,65	1	1	curated
+MA		partnership	SNC	SNC	société en nom collectif	general partnership				65	1	1	curated
+MA		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.7	0.45	curated
+MA		limited_liability	SARL AU	SARL AU	société à responsabilité limitée à associé unique	single-member limited company					0.25	0.05	curated
+MA		limited_liability	SA	SA	société anonyme	public limited company					0.05	0.5	curated
+MA		other			coopérative	co-operative					1	1	curated
+MC	X7W6	sole_proprietorship			Entreprise en Nom Personnel					64,65	1	1	gleif
+MC	GWZF	partnership	SCP	SCP	Société Civile Particulière					65	0.9887	0.9887	gleif
+MC	528Z	partnership	SCS	SCS	Société en Commandite Simple					65	0.008475	0.008475	gleif
+MC	TU6A	partnership	SNC	SNC	Société en Nom Collectif					65	0.002825	0.002825	gleif
+MC	DA06	limited_liability	SARL	SARL	Société à Responsabilité Limitée						0.7636	0.3323	gleif
+MC	CWTQ	limited_liability	SAM	SAM	Société Anonyme Monégasque						0.2291	0.6646	gleif
+MC	TFXK	limited_liability	SURL	SURL	Société Unipersonelle à Responsabilité Limitée						0.007273	0.003165	gleif
+MC	KPG6	other			Association				P,Q,R,S,M,N,I		1	1	gleif
+MD		sole_proprietorship	ÎI	II	întreprindere individuală	sole proprietorship				64,65	1	1	curated
+MD		partnership	SNC	SNC	societate în nume colectiv	general partnership				65	1	1	curated
+MD		limited_liability	SRL	SRL	societate cu răspundere limitată	limited liability company					0.95	0.6	curated
+MD		limited_liability	SA	SA	societate pe acțiuni	joint-stock company					0.05	0.4	curated
+MD		other			cooperativă	co-operative					1	1	curated
+ME		sole_proprietorship	s.p.	s.p.	samostalni preduzetnik	sole trader				64,65	1	1	curated
+ME		partnership	o.d.	o.d.	ortačko društvo	general partnership				65	1	1	curated
+ME		limited_liability	d.o.o.	d.o.o.	društvo sa ograničenom odgovornošću	limited liability company					0.96	0.6	curated
+ME		limited_liability	d.d.	d.d.	dioničko društvo	joint-stock company					0.04	0.4	curated
+ME		other			zadruga	co-operative					1	1	curated
+MG		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+MG		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+MG		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+MG		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+MG		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+MG		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+MG		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+MG		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+MH		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+MH	S69C	partnership			Limited Partnership					65	0.9444	0.9444	gleif
+MH	UW1C	partnership			Partnership					65	0.05556	0.05556	gleif
+MH	DSII	limited_liability			Corporation						0.839	0.839	gleif
+MH	EZL8	limited_liability			Limited Liability Company						0.161	0.161	gleif
+MK	VPFY	sole_proprietorship	TP	TP	Трговец поединец	Trgovec poedinec				64,65	1	1	gleif
+MK	149O	partnership	KDA	KDA	Командитно друштво со акции	Komanditno drustvo so akcii				65	1	1	gleif
+MK	KHAB	limited_liability	DOO	DOO	Друштво со ограничена одговрност	Drustvo so ogranicena odgvornost					0.6066	0.6066	gleif
+MK	DTIU	limited_liability	AD	AD	Акционерско друштво	Akcionersko drustvo					0.3934	0.3934	gleif
+MK	JCK1	other	SIZ	SIZ	Стопанска интересна заедница	Stopanska interesna zaednica					1	1	gleif
+ML		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+ML		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+ML		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+ML		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+ML		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+ML		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+ML		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+ML		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+MM		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+MM		partnership			partnership					65	1	1	curated
+MM	478A	limited_liability	Co., Ltd.	Co., Ltd.	Private Company Limited by Shares						0.97	0.97	curated
+MM	QUC7	limited_liability	Public Co., Ltd.	Public Co., Ltd.	Public Company Limited by Shares						0.03	0.03	gleif
+MM	3FI5	other	Ltd.	Ltd.	Company Limited by Guarantee						0.3333	0.3333	gleif
+MM	CPNU	other			Business Association						0.3333	0.3333	gleif
+MM	G54B	other			Unlimited Company						0.3333	0.3333	gleif
+MN		sole_proprietorship			хувиараа хөдөлмөр эрхлэгч	sole proprietorship				64,65	1	1	curated
+MN		partnership	ХН	KhN	хоршоолсон нөхөрлөл	partnership				65	1	1	curated
+MN		limited_liability	ХХК	KhKhK	хязгаарлагдмал хариуцлагатай компани	limited liability company					0.97	0.7	curated
+MN		limited_liability	ХК	KhK	хувьцаат компани	joint-stock company					0.03	0.3	curated
+MN		other			хоршоо	co-operative					1	1	curated
+MO		sole_proprietorship			empresário comercial	sole trader				64,65	1	1	curated
+MO		partnership			sociedade em nome colectivo	general partnership				65	1	1	curated
+MO		limited_liability	Lda.	Lda.	sociedade por quotas	private limited company					0.96	0.6	curated
+MO		limited_liability	S.A.	S.A.	sociedade anónima	public limited company					0.04	0.4	curated
+MO		other			cooperativa	co-operative					1	1	curated
+MR		sole_proprietorship			entreprise individuelle	sole proprietorship				64,65	1	1	curated
+MR		partnership	SNC	SNC	société en nom collectif	general partnership				65	1	1	curated
+MR		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.7	0.45	curated
+MR		limited_liability	SARL AU	SARL AU	société à responsabilité limitée à associé unique	single-member limited company					0.25	0.05	curated
+MR		limited_liability	SA	SA	société anonyme	public limited company					0.05	0.5	curated
+MR		other			coopérative	co-operative					1	1	curated
+MT	DJ2D	sole_proprietorship			sole trader					64,65	1	1	gleif
+MT	BVJ0	partnership	LP	LP	Partnership en commendite or limited partnership					65	0.7037	0.7037	gleif
+MT	JOZN	partnership			Partnership en nom collectif					65	0.2963	0.2963	gleif
+MT	V89C	limited_liability	Ltd	Ltd	Private Limited Liability Company						0.986	0.9292	gleif
+MT	C061	limited_liability	PLC	PLC	Public Limited Liability Company						0.01079	0.06781	gleif
+MT	CR7N	limited_liability	SE	SE	European Company						0.00316	0.002978	gleif
+MT	3U3Y	other			foundation				P,Q,R,S,M,N,I		0.5347	0.5347	gleif
+MT	J4S1	other			association				P,Q,R,S,M,N,I		0.2772	0.2772	gleif
+MT	9QHJ	other			government entity				O,P,Q,R,E,H		0.1188	0.1188	gleif
+MT	F5X7	other			cooperative						0.0495	0.0495	gleif
+MT	YB0U	other	EEIG	EEIG	European Economic Interest Grouping						0.0198	0.0198	gleif
+MU	4AJY	sole_proprietorship			Business					64,65	1	1	gleif
+MU	J76S	partnership	Limited Partnership	Limited Partnership	Limited Partnership					65	0.5	0.5	gleif
+MU	O786	partnership	SOCIETE	SOCIETE	Société					65	0.3636	0.3636	gleif
+MU	RTVE	partnership	LLP	LLP	Limited Liability Partnership					65	0.1364	0.1364	gleif
+MU	G7H0	limited_liability	PT	PT	Private Company						0.9741	0.8838	gleif
+MU	XXCZ	limited_liability	PC	PC	Public company limited by shares						0.01802	0.109	gleif
+MU	AOS4	limited_liability	PT	PT	Private Company Limited By Guarantee				P,Q,R,S,M,N,I		0.007931	0.007197	gleif
+MU	JWWT	other	F	F	Foundation				P,Q,R,S,M,N,I		0.9231	0.9231	gleif
+MU	RJYT	other	TU	TU	Trade Union				P,Q,R,S,M,N,I		0.07692	0.07692	gleif
+MV		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+MV		partnership			partnership	general partnership				65	1	1	curated
+MV		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+MV		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+MV		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+MV		other			co-operative society						0.3	0.5	curated
+MW		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+MW		partnership			partnership	general partnership				65	1	1	curated
+MW		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+MW		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+MW		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+MW		other			co-operative society						0.3	0.5	curated
+MX		sole_proprietorship			persona física con actividad empresarial	sole trader				64,65	1	1	curated
+MX	7H63	partnership	S. C.	S. C.	Sociedad civil					65	0.9697	0.9697	gleif
+MX	A2A8	partnership	S. en C. por A.	S. en C. por A.	Sociedad en comandita por acciones					65	0.01515	0.01515	gleif
+MX	ZXVG	partnership	S. en C. por A. de C. V.	S. en C. por A. de C. V.	Sociedad en comandita por acciones de capital variable					65	0.01515	0.01515	gleif
+MX	XLVZ	limited_liability	S. de R. L. de C. V.	S. de R. L. de C. V.	Sociedad de responsabilidad limitada de capital variable						0.5228	0.1566	gleif
+MX	JGV1	limited_liability	S. A. de C. V.	S. A. de C. V.	Sociedad anónima de capital variable						0.3178	0.6348	gleif
+MX	VATV	limited_liability	S.A. P.I. de C.V.	S.A. P.I. de C.V.	Sociedad anónima promotora de inversión de capital variable						0.04929	0.09845	gleif
+MX	QAUY	limited_liability	SPR	SPR	Sociedad de producción rural de responsabilidad limitada				A		0.02304	0.006903	gleif
+MX	761Z	limited_liability	S.P.R. DE R.L. DE C.V.	S.P.R. DE R.L. DE C.V.	Sociedad de producción rural de responsabilidad limitada de capital variable				A		0.02194	0.006575	gleif
+MX	449I	limited_liability	S. de R. L.	S. de R. L.	Sociedad de responsabilidad limitada						0.01646	0.004931	gleif
+MX	HKWO	limited_liability	S.A. de C.V., SOFOM E.N.R.	S.A. de C.V., SOFOM E.N.R.	Sociedad anónima de capital variable, sociedad financiera de objeto múltiple, entidad no regulada						0.009874	0.01972	gleif
+MX	2RVP	limited_liability	S.A.P.I. DE C.V., SOFOM E.N.R.	S.A.P.I. DE C.V., SOFOM E.N.R.	Sociedad anónima promotora de inversión de capital variable, sociedad financiera de objeto múltiple, entidad no regulada						0.008064	0.01611	gleif
+MX	L9JC	limited_liability	S.A.B. de C.V.	S.A.B. de C.V.	Sociedad anónima bursátil de capital variable						0.007406	0.01479	gleif
+MX	B8CE	limited_liability	S. A.	S. A.	Sociedad anónima						0.005348	0.01068	gleif
+MX	P8D7	limited_liability			Sociedad anónima institución de banca múltiple				K		0.004114	0.008218	gleif
+MX	6EYT	limited_liability	S. A. S. de C. V.	S. A. S. de C. V.	Sociedad por acciones simplificada de capital variable		2016-03-14				0.003291	0.0009862	gleif
+MX	EHWD	limited_liability	S. A. de C.V., Siefore	S. A. de C.V., Siefore	Sociedad anónima de capital variable, de inversión especializada de fondos para el retiro						0.003209	0.00641	gleif
+MX	QM7Z	limited_liability			Sociedad anónima de capital variable, casa de bolsa						0.002139	0.004274	gleif
+MX	P28E	limited_liability	S.A. de C.V., SOFOM E.R.	S.A. de C.V., SOFOM E.R.	Sociedad anónima de capital variable, sociedad financiera de objeto múltiple, entidad regulada						0.001563	0.003123	gleif
+MX	TPJZ	limited_liability	S.A. P.I.	S.A. P.I.	Sociedad anónima promotora de inversión						0.001399	0.002794	gleif
+MX	G3JV	limited_liability			Sociedad anónima de capital variable, operadora de fondos de inversión						0.001234	0.002465	gleif
+MX	GNNT	limited_liability	S. A. de C.V., Afore	S. A. de C.V., Afore	Sociedad anónima de capital variable, administradora de fondos para el retiro				O,P,Q,R,E,H		0.00107	0.002137	gleif
+MX	5AWU	other	A. C.	A. C.	Asociación civil						0.5	0.5	curated
+MX	8QZA	other	S.C. DE R.L. DE C.V.	S.C. DE R.L. DE C.V.	Sociedad cooperativa de responsabilidad limitada de capital variable						0.087	0.087	gleif
+MX	776G	other			Sociedad de producción rural de responsabilidad ilimitada				A		0.04971	0.04971	gleif
+MX	7L83	other			Unión ganadera regional especializada						0.04971	0.04971	gleif
+MX	MAM6	other	I.A.P.	I.A.P.	Institución de asistencia privada						0.04971	0.04971	gleif
+MX	S6M8	other			Sociedad nacional de crédito institución de banca de desarrollo				K		0.03729	0.03729	gleif
+MX	W9WS	other	E.P.E.	E.P.E.	Empresa productiva del estado						0.03729	0.03729	gleif
+MX	96OC	other			Sociedad cooperativa						0.02486	0.02486	gleif
+MX	LOB9	other			Sociedad propietaria de tierras agrícolas, ganaderas o forestales				A		0.02486	0.02486	gleif
+MX	M0SL	other	Mpo.	Mpo.	Municipio						0.02	0.02	curated
+MX	RCJS	other			Corporaciones de carácter público reconocidos por la legislación mexicana						0.02	0.02	curated
+MX	YRI0	other			Fideicomiso público de fomento económico						0.02	0.02	curated
+MX	7G15	other	S.N.C.	S.N.C.	Sociedad Nacional de Crédito				K		0.01243	0.01243	gleif
+MX	CU68	other	S.C.L. de C.V.	S.C.L. de C.V.	Sociedad cooperativa limitada de capital variable						0.01243	0.01243	gleif
+MX	F3L5	other			Fondos de Aseguramiento Agropecuario y Rural				A		0.01243	0.01243	gleif
+MX	JN6Y	other			Sociedad cooperativa de capital variable						0.01243	0.01243	gleif
+MX	JRAQ	other	A.F.	A.F.	Agrupaciones financieras						0.01243	0.01243	gleif
+MX	NA09	other			Asociación religiosa				P,Q,R,S,M,N,I		0.01243	0.01243	gleif
+MX	VIOQ	other	Edo.	Edo.	Estado						0.005	0.005	curated
+MY	SV3F	sole_proprietorship			Sole Proprietorship					64,65	1	1	gleif
+MY	SP51	partnership	PLT	PLT	Perkongsian Liabiliti Terhad					65	0.5758	0.5758	gleif
+MY	COZR	partnership			Partnership					65	0.3636	0.3636	gleif
+MY	P0TZ	partnership			Labuan Limited Liability Partnerships					65	0.06061	0.06061	gleif
+MY	XEOV	limited_liability	Sdn Bhd	Sdn Bhd	Sendirian Berhad						0.6079	0.6079	gleif
+MY	7OYN	limited_liability	Bhd	Bhd	Berhad						0.2428	0.2428	gleif
+MY	ZWYK	limited_liability			Labuan Company (Limited By Share)						0.1493	0.1493	gleif
+MY	P0LR	other			Labuan Company (Unlimited)						0.4444	0.4444	gleif
+MY	QAEW	other			Pertubuhan				P,Q,R,S,M,N,I		0.2778	0.2778	gleif
+MY	SP0A	other			Labuan Foundation				P,Q,R,S,M,N,I		0.2778	0.2778	gleif
+MZ		sole_proprietorship			empresário em nome individual	sole trader				64,65	1	1	curated
+MZ		partnership			sociedade em nome colectivo	general partnership				65	1	1	curated
+MZ		limited_liability	Lda	Lda	sociedade por quotas	private limited company					0.7	0.5	curated
+MZ		limited_liability	Unipessoal Lda	Unipessoal Lda	sociedade unipessoal por quotas	single-member limited company					0.27	0.1	curated
+MZ		limited_liability	S.A.	S.A.	sociedade anónima	public limited company					0.03	0.4	curated
+MZ		other			cooperativa	co-operative					1	1	curated
+NA		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+NA		partnership			partnership					65	1	1	curated
+NA		limited_liability	(Pty) Ltd	(Pty) Ltd	private company						0.85	0.75	curated
+NA		limited_liability	CC	CC	close corporation						0.13	0.05	curated
+NA		limited_liability	Ltd	Ltd	public company						0.02	0.2	curated
+NA		other			co-operative						1	1	curated
+NE	T5MB	sole_proprietorship	EI	EI	Entreprise individuelle					64,65	1	1	gleif
+NE	T3NK	partnership	SNC	SNC	Société en Nom Collectif					65	0.25	0.25	gleif
+NE	VAPL	partnership	SEP	SEP	Société en Participations					65	0.25	0.25	gleif
+NE	Z89H	partnership	SCA	SCA	Société en Commandite par actions					65	0.25	0.25	gleif
+NE	ZOSP	partnership	SCS	SCS	Société en Commandite simple					65	0.25	0.25	gleif
+NE		limited_liability	SARL	SARL	société à responsabilité limitée	limited liability company					0.8	0.8	curated
+NE	9BQH	limited_liability	SA	SA	Société Anonyme						0.2	0.2	gleif
+NE	2L5O	other	GIE	GIE	Groupement d'intérêt économique						0.3333	0.3333	gleif
+NE	BNYZ	other	MUT	MUT	Organisme mutualiste ou mutuel				K		0.3333	0.3333	gleif
+NE	D1IZ	other	COOP	COOP	Coopérative						0.3333	0.3333	gleif
+NG		sole_proprietorship			business name (sole proprietorship)	sole proprietorship				64,65	1	1	curated
+NG		partnership			business name (partnership)	partnership				65	0.5	0.5	curated
+NG	LOJL	partnership	LP	LP	Limited partnership					65	0.25	0.25	gleif
+NG	MT4X	partnership	LLP	LLP	Limited liability partnership					65	0.25	0.25	gleif
+NG	FHZY	limited_liability	Ltd	Ltd	Private company limited by shares						0.95	0.95	curated
+NG	PKBG	limited_liability	PLC	PLC	Public company limited by shares						0.05	0.05	curated
+NG	RIYP	other	Ltd/Gte	Ltd/Gte	Company limited by guarantee				P,Q,R,S,M,N,I		1	1	gleif
+NI		sole_proprietorship			empresa individual	sole proprietorship				64,65	1	1	curated
+NI		partnership	S. en N.C.	S. en N.C.	sociedad en nombre colectivo	general partnership				65	0.6	0.6	curated
+NI		partnership	S. en C.	S. en C.	sociedad en comandita simple	limited partnership				65	0.4	0.4	curated
+NI		limited_liability	S. de R.L.	S. de R.L.	sociedad de responsabilidad limitada	limited liability company					0.55	0.3	curated
+NI		limited_liability	S.A.	S.A.	sociedad anónima	public limited company					0.45	0.7	curated
+NI		other			cooperativa	co-operative					1	1	curated
+NL	4QXM	sole_proprietorship			eenmanszaak					64,65	1	1	gleif
+NL	9AAK	partnership			maatschap					65	0.3599	0.3599	gleif
+NL	62Y3	partnership	VOF	VOF	vennootschap onder firma					65	0.3403	0.3403	gleif
+NL	CODH	partnership	CV	CV	commanditaire vennootschap					65	0.2902	0.2902	gleif
+NL	DEO1	partnership	OWM	OWM	onderlinge waarborgmaatschappij					65	0.0096	0.0096	gleif
+NL	54M6	limited_liability	BV	BV	besloten vennootschap met beperkte aansprakelijkheid						0.9986	0.9909	gleif
+NL	B5PM	limited_liability	NV	NV	naamloze vennootschap						0.001371	0.009072	gleif
+NL	V44D	other			stichting				P,Q,R,S,M,N,I		0.6983	0.6983	gleif
+NL	L7HX	other			kerkgenootschap						0.11	0.11	gleif
+NL	33MN	other			vereniging met volledige rechtsbevoegdheid				P,Q,R,S,M,N,I		0.09177	0.09177	gleif
+NL	NFFH	other	coöperatie	coöperatie	coöperatie						0.04424	0.04424	gleif
+NL	8VFX	other			vereniging met beperkte rechtsbevoegdheid				P,Q,R,S,M,N,I		0.04226	0.04226	gleif
+NL	A0W7	other			publiekrechtelijke rechtspersoon						0.00894	0.00894	gleif
+NL	GNXT	other	VvE	VvE	vereniging van eigenaars				P,Q,R,S,M,N,I		0.004585	0.004585	gleif
+NO	EXD7	sole_proprietorship	ENK	ENK	Enkeltpersonforetak					64,65	1	1	register
+NO	CF5L	partnership	DA	DA	Ansvarlig selskap, delt ansvar				M,Q	65	0.5872	0.6667	register
+NO	326Y	partnership	ANS	ANS	Ansvarlig selskap				M,Q	65	0.3999	0.3333	register
+NO	M9IQ	partnership	KS	KS	Kommandittselskap					65	0.006831	0	register
+NO	AEV1	partnership			Partrederi					65	0.006116	0	register
+NO	YI42	limited_liability	AS	AS	Aksjeselskap						0.9996	0.9914	register
+NO	IQGE	limited_liability	ASA	ASA	Allmennaksjeselskap						0.0003737	0.008571	register
+NO	FSBD	other			Forening				P,Q,R,S,M,N,I		0.9105	0.2477	register
+NO	K5P8	other	SA	SA	Samvirkeforetak						0.04674	0.1143	register
+NO	3C7U	other			Stiftelse				P,Q,R,S,M,N,I		0.04069	0.1715	register
+NO	YTMC	other	IKS	IKS	Interkommunalt selskap				M,Q		0.001031	0.06443	register
+NO	3L58	other	KF	KF	Kommunalt foretak				O,P,Q,R,E,H		0.00084	0.0245	register
+NO	R71C	other			Sparebank				K		0.0001906	0.0363	register
+NO	50TD	other	SF	SF	Statsforetak						0.00002118	0.004537	register
+NO	5V5S	other			Kommune				O,P,Q,R,E,H		0	0.324	gleif
+NO	KX7D	other			Fylkeskommune				O,P,Q,R,E,H		0	0.0127	gleif
+NP	VRSU	sole_proprietorship			Private Firm				A	64,65	1	1	gleif
+NP	4EWZ	partnership			Partnership Firm				A	65	0.5	0.5	gleif
+NP	EM3H	partnership			Partnership					65	0.5	0.5	gleif
+NP	MTLX	limited_liability	Private Limited	Private Limited	Private Company	Private company					0.5479	0.1538	gleif
+NP	7PC4	limited_liability	Limited	Limited	Public Company						0.4521	0.8462	gleif
+NP	UZLR	other			Institution						1	1	gleif
+NR		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+NR		partnership			partnership					65	1	1	curated
+NR		limited_liability	Ltd	Ltd	limited company						1	1	curated
+NR		other			co-operative society						1	1	curated
+NZ	QF8K	sole_proprietorship			Sole Trader					64,65	1	1	gleif
+NZ	F7KI	partnership	Limited Partnership	Limited Partnership	Limited Partnership					65	0.9906	0.9906	gleif
+NZ	WEIB	partnership			Partnership					65	0.009434	0.009434	gleif
+NZ	P2R9	limited_liability	Ltd	Ltd	Limited Liability Company						0.9966	0.9966	gleif
+NZ	3EPR	limited_liability	IS	IS	Incorporated Society				P,Q,R,S,M,N,I		0.003396	0.003396	gleif
+NZ	Q4BE	other			government entity				O,P,Q,R,E,H		0.505	0.505	gleif
+NZ	4LEA	other	Unltd	Unltd	Unlimited Liability Company						0.2079	0.2079	gleif
+NZ	Z6ZU	other	COOP	COOP	Cooperative Company						0.1485	0.1485	gleif
+NZ	TF8L	other	CT	CT	Charitable Trust				P,Q,R,S,M,N,I		0.08911	0.08911	gleif
+NZ	HX4T	other			Building society						0.0198	0.0198	gleif
+NZ	I8Z8	other			Credit union				K		0.0198	0.0198	gleif
+NZ	LFSO	other			Industrial and provident society						0.009901	0.009901	gleif
+OM		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+OM	LNLA	partnership			شركة التضامن	sharikat altadamun				65	0.3333	0.3333	gleif
+OM	SV6U	partnership			شركة التوصية	sharikat altawsia				65	0.3333	0.3333	gleif
+OM	Z9KU	partnership			شركة محاصة	sharikat muhasa				65	0.3333	0.3333	gleif
+OM	CJO4	limited_liability			الشركة محدودة المسؤولية	alsharikat mahdudat almaswuwlia					0.5312	0.5312	gleif
+OM	HA2W	limited_liability			شركة الشخص الواحد	sharikat alshakhs alwahid					0.2031	0.2031	gleif
+OM	NG11	limited_liability			شركة المساهمة مقفلة	sharikat almusahamat muqfala					0.1406	0.1406	gleif
+OM	4H8O	limited_liability			شركة المساهمة عامة	sharikat almusahamat eamatan					0.125	0.125	gleif
+PA		sole_proprietorship			persona natural comerciante	sole trader				64,65	1	1	curated
+PA	PY5Y	partnership			Sociedad en Comandita por acciones					65	0.4286	0.4286	gleif
+PA	GDT9	partnership	S.C.	S.C.	Sociedad Civil					65	0.2857	0.2857	gleif
+PA	NFYA	partnership			Consorcio					65	0.1429	0.1429	gleif
+PA	V5VG	partnership			Sociedad en Comandita simple					65	0.1429	0.1429	gleif
+PA	6TPA	limited_liability	S.A.	S.A.	Sociedad Anónima						0.8901	0.9818	gleif
+PA	JS13	limited_liability	S.R.L.	S.R.L.	Sociedad de Responsabilidad Limitada						0.1099	0.01818	gleif
+PA	UNCO	other	F.I.P.	F.I.P.	Fundación de Interés Privado				P,Q,R,S,M,N,I		0.9958	0.9958	gleif
+PA	BSN7	other			Asociación						0.004184	0.004184	gleif
+PE	H8G2	sole_proprietorship	EIRL	EIRL	Empresa Individual de Responsabilidad Limitada					64,65	1	1	gleif
+PE	1MQ6	partnership	S. en C. por A.	S. en C. por A.	Sociedad en Comandita por Acciones					65	0.5	0.5	gleif
+PE	QQWG	partnership	S. Civil	S. Civil	Sociedad Civil					65	0.5	0.5	gleif
+PE	CHX6	limited_liability	SAC	SAC	Sociedad Anónima Cerrada						0.7667	0.4507	gleif
+PE	I695	limited_liability	SA	SA	Socieda Anónima						0.1114	0.4366	gleif
+PE	73C0	limited_liability	SRL	SRL	Sociedad Comercial de Responsabilidad Limitada						0.1095	0.06439	gleif
+PE	PKRY	limited_liability	SAA	SAA	Socieda Anónima Abierta						0.01232	0.04829	gleif
+PE	P53M	other			Cooperativas						0.8571	0.8571	gleif
+PE	4LCX	other			Empresas de Derecho Público						0.1429	0.1429	gleif
+PG		sole_proprietorship			business name	sole proprietorship				64,65	1	1	curated
+PG		partnership			partnership					65	1	1	curated
+PG	6UED	limited_liability			Local Company						1	1	gleif
+PH		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+PH		partnership			general partnership					65	1	1	curated
+PH	WHGH	limited_liability	Inc.	Inc.	stock corporation						0.9618	0.9618	gleif
+PH	SPX9	limited_liability			close corporation						0.0276	0.0276	gleif
+PH	KJOW	limited_liability	OPC	OPC	one person corporation						0.01062	0.01062	gleif
+PH	76ME	other			nonstock corporation						0.8667	0.8667	gleif
+PH	IODM	other			educational corporation						0.1333	0.1333	gleif
+PK		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+PK		partnership			partnership firm	partnership				65	0.5	0.5	curated
+PK	XBK3	partnership	LLP	LLP	Limited Liability Partnership					65	0.5	0.5	gleif
+PK	4XMS	limited_liability	Pvt. Ltd.	Pvt. Ltd.	Private Limited Company (multi member)						0.5587	0.367	gleif
+PK	88OX	limited_liability	SMC	SMC	Private Limited Company (single member)						0.3492	0.2294	gleif
+PK	VQV6	limited_liability	Ltd	Ltd	Public Limited Company (listed)						0.07542	0.3303	gleif
+PK	RKYF	limited_liability	Ltd	Ltd	Public Limited Company (unlisted)						0.01676	0.07339	gleif
+PK	7IYW	other	(Guarantee) Ltd.	(Guarantee) Ltd.	Company Limited by Guarantee (having share capital)				P,Q,R,S,M,N,I		1	1	gleif
+PL	ZVVM	sole_proprietorship			osoby fizyczne prowadzące działalność gospodarczą					64,65	1	1	gleif
+PL	BSJT	partnership	sp.k.	sp.k.	spółka komandytowa					65	0.6499	0.6499	gleif
+PL	629I	partnership	s.j.	s.j.	spółka jawna					65	0.3464	0.3464	gleif
+PL	3BJG	partnership	sp.p.	sp.p.	spółka partnerska					65	0.003709	0.003709	gleif
+PL	O7XB	limited_liability	sp. z o.o.	sp. z o.o.	spółka z ograniczoną odpowiedzialnością						0.9749	0.8536	gleif
+PL	FJ0E	limited_liability	S.A.	S.A.	spółka akcyjna						0.02126	0.1241	gleif
+PL	OMX0	limited_liability	S.K.A.	S.K.A.	spółka komandytowo-akcyjna						0.002925	0.01707	gleif
+PL	B21W	limited_liability	PSA	PSA	prosta spółka akcyjna		2021-07-01				0.0009094	0.005308	gleif
+PL	96XK	other			fundacja						0.5521	0.5512	gleif
+PL	T7PB	other			wspólnoty samorządowe						0.2366	0.2362	gleif
+PL	8TOF	other			spółdzielnia						0.1332	0.133	gleif
+PL	WUJ2	other			uczelnia						0.0268	0.02676	gleif
+PL	ZZKE	other			stowarzyszenie i związki stowarzyszeń				P,Q,R,S,M,N,I		0.01543	0.01541	gleif
+PL	SP4S	other			kościoł i związki wyznaniowe						0.01381	0.01378	gleif
+PL	LT9U	other			związek zawodowy						0.006295	0.006284	gleif
+PL	JCKO	other			państwowe jednostki organizacyjne						0.004874	0.004865	gleif
+PL	H7OD	other			spółdzielcza kasa oszczędnościowo-kredytowa						0.003655	0.003649	gleif
+PL	AL9T	other			samorządowe jednostki organizacyjne						0.002843	0.002838	gleif
+PL	FQ5Y	other			organizacje społeczne i zawodowe						0.002031	0.002027	gleif
+PL	WNX1	other	TUW	TUW	towarzystwo ubezpieczeń wzajemnych						0.002031	0.002027	gleif
+PL	13ZV	other			samodzielny publiczny zakład opieki zdrowotnej						0.0003046	0.002027	gleif
+PS		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+PS		partnership		Partnership	شركة تضامن	general partnership				65	0.75	0.6	curated
+PS		partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership				65	0.25	0.4	curated
+PS		limited_liability	ذ.م.م	LLC	شركة ذات مسؤولية محدودة	limited liability company					0.93	0.55	curated
+PS		limited_liability	ش.م.	JSC	شركة مساهمة	joint-stock company					0.07	0.45	curated
+PS		other		Cooperative	جمعية تعاونية	co-operative					1	1	curated
+PT	ZILA	sole_proprietorship			Estabelecimento Individual de Responsabilidade Limitada					64,65	1	1	gleif
+PT	N66B	partnership			Sociedade em Nome Coletivo					65	0.5	0.5	gleif
+PT	OXUC	partnership			Sociedade em Comandita					65	0.5	0.5	gleif
+PT	USOG	limited_liability			Sociedade por Quotas						0.9194	0.7169	gleif
+PT	DFE5	limited_liability			Sociedade Anónima						0.04986	0.2592	gleif
+PT	VF4C	limited_liability			Sociedade Unipessoal por Quotas		1996-11-06				0.03076	0.02398	gleif
+PT	ALPT	other			Associação				P,Q,R,S,M,N,I		0.3848	0.3848	gleif
+PT	Z0NE	other			Fundação				P,Q,R,S,M,N,I		0.2801	0.2801	gleif
+PT	1HGD	other			Cooperativa						0.08639	0.08639	gleif
+PT	ZSWE	other			Empresa Regional						0.08377	0.08377	gleif
+PT	P5S3	other			Pessoa Coletiva de Direito Público						0.04188	0.04188	gleif
+PT	PIDC	other			Empresa Municipal				O,P,Q,R,E,H		0.02356	0.02356	gleif
+PT	A8CT	other			Entidade Pública Empresarial						0.01832	0.01832	gleif
+PT	VALH	other			Empresário em Nome Individual						0.01309	0.01309	gleif
+PT	YMLD	other			Agrupamento Complementar de Empresas						0.01309	0.01309	gleif
+PT	6IK8	other			Entidade Empresarial Intermunicipal				O,P,Q,R,E,H		0.01047	0.01047	gleif
+PT	KUUV	other			Organismo da Administração Pública				O,P,Q,R,E,H		0.01047	0.01047	gleif
+PT	XD16	other			Empresa Metropolitana						0.01047	0.01047	gleif
+PT	IKBN	other			Trust						0.007853	0.007853	gleif
+PT	IX01	other			Empresa Intermunicipal				O,P,Q,R,E,H		0.005236	0.005236	gleif
+PT	QFXD	other			Pessoa Coletiva Internacional						0.005236	0.005236	gleif
+PT	5KVH	other			Cooperativa de 2º Grau						0.002618	0.002618	gleif
+PT	99JD	other	AEIE	AEIE	Agrupamento Europeu de Interesse Económico						0.002618	0.002618	gleif
+PW		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+PW		partnership			partnership					65	1	1	curated
+PW		limited_liability	Inc.	Inc.	corporation						0.7	0.8	curated
+PW		limited_liability	LLC	LLC	limited liability company						0.3	0.2	curated
+PW		other			co-operative association				P,Q,R,S,M,N,I		1	1	curated
+PY		sole_proprietorship			comerciante individual	sole trader				64,65	1	1	curated
+PY	4QBB	partnership	S.C	S.C	Sociedad En Comandita Simple					65	0.5	0.5	gleif
+PY	LNG8	partnership	S.C.A	S.C.A	Sociedad En Comandita Por Acciones					65	0.5	0.5	gleif
+PY	IJAO	limited_liability	S.A.	S.A.	Sociedad Anonima						0.5095	0.8738	gleif
+PY	K08V	limited_liability	S.R.L	S.R.L	Sociedad De Responsabilidad Limitada						0.436	0.1121	gleif
+PY	78SG	limited_liability	E.U	E.U	Empresa Unipersonal						0.03633	0.009346	gleif
+PY	48X2	limited_liability	E.I.R.L	E.I.R.L	Empresa Unipersonal De Responsabilidad Limitada						0.01817	0.004673	gleif
+QA		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+QA	B4L0	partnership			شركة المحاصة	Sharikat Almahasah				65	0.6	0.6	gleif
+QA	RN1W	partnership			شركة التوصية بالأسهم	Sharikat Altawsia Blas'hoom				65	0.4	0.4	gleif
+QA	ADV0	limited_liability	ذ.م.م	ذ.م.م	الشركة ذات المسؤولية المحدودة	Sharika That Almasuliah Almahduda					0.8127	0.8127	gleif
+QA	QZ84	limited_liability	ش.م.ع	ش.م.ع	شركة المساهمة العامة	Sharikat Almusahama Alaamah					0.1137	0.1137	gleif
+QA	W50Q	limited_liability	ش.م.خ	ش.م.خ	شركة المساهمة الخاصة	Sharikat Almusahama Alkhasa					0.07358	0.07358	gleif
+RO	DUGD	sole_proprietorship	II	II	Intreprindere individuala					64,65	0.5156	0.5156	gleif
+RO	FJQ8	sole_proprietorship	PFA	PFA	Persoana fizica autorizata					64,65	0.4062	0.4062	gleif
+RO	TH8A	sole_proprietorship	AF	AF	Asociatie familiala					64,65	0.07812	0.07812	gleif
+RO	V0FL	partnership	SCS	SCS	Societate în comandită simplă					65	0.9091	0.9091	gleif
+RO	F68H	partnership	SNC	SNC	Societate în nume colectiv					65	0.09091	0.09091	gleif
+RO	XHN1	limited_liability	SRL	SRL	Societate cu răspundere limitată						0.9715	0.8365	gleif
+RO	ANDT	limited_liability	SA	SA	Societate pe acţiuni						0.02849	0.1635	gleif
+RO	CTBD	other			Alte forme de proprietate						0.7092	0.7029	gleif
+RO	5NCK	other	ONG	ONG	Organizație non-guvernamentală						0.1646	0.1632	gleif
+RO	7B9H	other			Societate cooperativă						0.03588	0.03556	gleif
+RO	37II	other			Cooperativă meșteșugărească						0.019	0.01883	gleif
+RO	I15K	other			Cooperativă agricolă				A		0.01689	0.01674	gleif
+RO	F0BK	other			Societate agricolă				A		0.01055	0.01046	gleif
+RO	Q89X	other			Sindicatul				P,Q,R,S,M,N,I		0.01055	0.01046	gleif
+RO	CUGP	other	RA	RA	Regie autonomă						0.008443	0.008368	gleif
+RO	SWMK	other	SCA	SCA	Societate în comandită pe acţiuni						0.006332	0.006276	gleif
+RO	7W9B	other			Organizații cooperatiste de credit și casele centrale ale acestora						0.004222	0.004184	gleif
+RO	AI01	other	PFI	PFI	Persoana fizica independentă						0.004222	0.004184	gleif
+RO	PE9A	other			Federatja						0.004222	0.004184	gleif
+RO	4V0A	other	GEIE	GEIE	Grupul european de interes economic						0.002111	0.002092	gleif
+RO	8FD2	other			Cooperativă de consum						0.002111	0.002092	gleif
+RO	SFZM	other			Persoană juridică de drept public						0.0009499	0.006276	gleif
+RO	W7HT	other			Autoritatea Administratiei Publice Locale				O,P,Q,R,E,H		0.0006332	0.004184	gleif
+RS	9O67	sole_proprietorship	ПР	PR	Предузетник	Preduzetnik				64,65	1	1	gleif
+RS	73PZ	partnership	к.д	k.d.	Командитно друштво	Komanditno društvo				65	0.5	0.5	gleif
+RS	ZPOY	partnership	о.д.	o.d.	Ортачко друштво	Ortačko društvo				65	0.5	0.5	gleif
+RS	YVPW	limited_liability	а.д	a.d	Акционарско друштво	Akcionarsko društvo					0.662	0.2271	gleif
+RS	KIU5	limited_liability	д.о.о.	d.o.o.	Друштво са ограниченом одговорношћу	Društvo sa ograničenom odgovornošću					0.338	0.7729	gleif
+RS	6UPM	other			Задружни савез	Zadružni savez					0.5	0.5	gleif
+RS	DEF6	other	ЈП	JP	Јавно предузеће	Javno preduzeće					0.5	0.5	gleif
+RU	P9CF	sole_proprietorship			Индивидуальные предприниматели	Individual'nyye predprinimateli				64,65	1	1	gleif
+RU	J18N	partnership			Товарищества на вере (коммандитные товарищества)	Tovarishchestva na vere (kommanditnyye tovarishchestva)				65	0.45	0.45	gleif
+RU	KLA2	partnership			Хозяйственные товарищества	Khozyaystvennyye tovarishchestva				65	0.45	0.45	gleif
+RU	AS78	partnership			Адвокатские бюро	Advokatskiye byuro			M,Q	65	0.1	0.1	curated
+RU	17R7	limited_liability			Общества с ограниченной ответственностью	Obshchestva s ogranichennoy otvetstvennost'yu					0.657	0.5955	gleif
+RU	R71T	limited_liability			Акционерные общества	Aktsionernyye obshchestva					0.1675	0.1519	gleif
+RU	JZBN	limited_liability			Непубличные акционерные общества	Nepublichnyye aktsionernyye obshchestva	2014-09-01				0.1573	0.1426	gleif
+RU	4TYO	limited_liability			Публичные акционерные общества	Publichnyye aktsionernyye obshchestva	2014-09-01				0.0158	0.09549	gleif
+RU	MT3A	limited_liability			Открытое акционерное общество	Otkrytoye aktsionernoye obshchestvo		2014-08-31			0.002414	0.01459	gleif
+RU	QFGM	other			Потребительские кооперативы	Potrebitel'skiye kooperativy					0.381	0.381	gleif
+RU	4VTZ	other			Ассоциации (союзы)	Assotsiatsii (soyuzy)					0.1429	0.1429	gleif
+RU	KZC6	other			Фонды	Fondy					0.1429	0.1429	gleif
+RU	1RJ2	other			Автономные некоммерческие организации	Avtonomnyye nekommercheskiye organizatsii					0.09524	0.09524	gleif
+RU	E0VI	other			Государственные корпорации	Gosudarstvennyye korporatsii					0.04762	0.04762	gleif
+RU	JPMQ	other			Организационно-правовые формы организаций, созданных без прав юридического лица	Organizatsionno-pravovyye formy organizatsiy, sozdannykh bez prav yuridicheskogo litsa					0.04762	0.04762	gleif
+RU	QQS1	other			Организационно-правовые формы международных организаций, осуществляющих деятельность на территории российской федерации	Organizatsionno-pravovyye formy mezhdunarodnykh organizatsiy, osushchestvlyayushchikh deyatel'nost' na territorii rossiyskoy federatsii					0.04762	0.04762	gleif
+RU	TMIG	other			Федеральные государственные казенные учреждения	Federal'nyye gosudarstvennyye kazennyye uchrezhdeniya					0.04762	0.04762	gleif
+RU	YA7H	other			Частные учреждения	Chastnyye uchrezhdeniya					0.04762	0.04762	gleif
+RW		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+RW		partnership			partnership	general partnership				65	1	1	curated
+RW		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+RW		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+RW		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+RW		other			co-operative society						0.3	0.5	curated
+SA		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+SA	B3JS	partnership			شركات  اشخاص	sharikat 'ashkhas				65	0.9431	0.9431	gleif
+SA	T2NA	partnership			شركة التضامن	sharikat altadamun				65	0.02438	0.02438	gleif
+SA	DW9N	partnership			شركة توصية بالأسهم	sharikat tawsiat bial'ashum				65	0.02004	0.02004	gleif
+SA	YVGA	partnership			شركة محاصة	sharikat muhasa				65	0.008667	0.008667	gleif
+SA	WHCI	partnership			شركه توصية بسيطة	sharakah tawsiat basita				65	0.003792	0.003792	gleif
+SA	TTE8	limited_liability			شركه ذات مسؤولية محدودة	sharakah dhat maswuwliat mahduda					0.8544	0.8544	gleif
+SA	78VH	limited_liability			شركة مساهمة	sharikat musahama					0.1305	0.1305	gleif
+SA	PT6M	limited_liability			شركات أموال	sharikat 'amwal					0.01276	0.01276	gleif
+SA	N10C	limited_liability			شركات ذات رأس مال قابل للتغيير	sharikat dhat ras mal qabil liltaghyir					0.00229	0.00229	gleif
+SB		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+SB		partnership			partnership					65	1	1	curated
+SB	8PIA	limited_liability			Private Company						1	1	gleif
+SC		sole_proprietorship			sole trader					64,65	1	1	curated
+SC	VA1X	partnership	LP	LP	Limited Partnership					65	1	1	gleif
+SC	7QEH	limited_liability	IBC	IBC	International Business Company - Company Limited by Shares						0.5183	0.5141	gleif
+SC	6MS4	limited_liability			Company Limited by Shares						0.4646	0.4608	gleif
+SC	KGUS	limited_liability	IBC	IBC	International Business Company - Company Limited by Shares and Guarantee				P,Q,R,S,M,N,I		0.006712	0.006657	gleif
+SC	H987	limited_liability			Proprietary Company						0.003729	0.003698	gleif
+SC	KOFC	limited_liability	IBC	IBC	International Business Company - Company Limited by Guarantee				P,Q,R,S,M,N,I		0.002983	0.002959	gleif
+SC	E3YL	limited_liability			Company Limited by Shares and Guarantee				P,Q,R,S,M,N,I		0.002237	0.002219	gleif
+SC	H35I	limited_liability			Public Company						0.001454	0.009615	gleif
+SC	3YUS	other			Foundation				P,Q,R,S,M,N,I		0.8095	0.8095	gleif
+SC	BB5Y	other			International Trust						0.1905	0.1905	gleif
+SD		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+SD		partnership		Partnership	شركة تضامن	general partnership				65	0.75	0.6	curated
+SD		partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership				65	0.25	0.4	curated
+SD		limited_liability	ذ.م.م	LLC	شركة ذات مسؤولية محدودة	limited liability company					0.93	0.55	curated
+SD		limited_liability	ش.م.	JSC	شركة مساهمة	joint-stock company					0.07	0.45	curated
+SD		other		Cooperative	جمعية تعاونية	co-operative					1	1	curated
+SE		sole_proprietorship	EF	EF	enskild näringsidkare	sole trader				64,65	1	1	curated
+SE	CX05	partnership	KB	KB	Kommanditbolag					65	0.5293	0.5293	gleif
+SE	BEAY	partnership	HB	HB	Handelsbolag					65	0.4707	0.4707	gleif
+SE	XJHM	limited_liability	AB	AB	Aktiebolag						1	1	gleif
+SE	E9BI	other			stiftelse				P,Q,R,S,M,N,I		0.5591	0.5591	gleif
+SE	1TN0	other	I	I	Ideell förening (som bedriver näringsverksamhet)				P,Q,R,S,M,N,I		0.3195	0.3195	gleif
+SE	2UAX	other	TSF	TSF	Trossamfund (som bedriver näringsverksamhet)						0.0525	0.0525	gleif
+SE	C61P	other	Ek. för.	Ek. för.	Ekonomisk förening				P,Q,R,S,M,N,I		0.03403	0.03403	gleif
+SE	WKFL	other			Kommun				O,P,Q,R,E,H		0.01404	0.01404	gleif
+SE	G04R	other	SB	SB	Sparbank				K		0.006714	0.006714	gleif
+SE	O1QI	other	OFB	OFB	Ömsesidigt försäkringsbolag				K		0.006409	0.006409	gleif
+SE	AZTO	other	SF	SF	Sambruksförening				P,Q,R,S,M,N,I		0.002747	0.002747	gleif
+SE	WZDB	other			Bostadsförening				P,Q,R,S,M,N,I		0.002594	0.002594	gleif
+SE	M0Y0	other	FOF	FOF	Försäkringsförening				K		0.002289	0.002289	gleif
+SG	NFDF	sole_proprietorship			Sole-Proprietorship					64,65	1	1	gleif
+SG	17FJ	partnership	LP	LP	Limited Partnership					65	0.7773	0.7773	gleif
+SG	5SGV	partnership	limited liability partnership	limited liability partnership	Limited Liability Partnership		2005-04-11			65	0.2009	0.2009	gleif
+SG	0NYS	partnership			Partnership					65	0.02183	0.02183	gleif
+SG	IWZF	limited_liability			Private Company Limited by Shares						0.875	0.855	gleif
+SG	Y8W9	limited_liability			Exempt Private Company						0.1208	0.1181	gleif
+SG	VVOX	limited_liability			Public Company Limited by Shares						0.003547	0.0231	gleif
+SG	HRKG	limited_liability			Public Company Limited by Guarantee				P,Q,R,S,M,N,I		0.0005838	0.003803	gleif
+SG	BAMJ	other			Unlimited Private Company						0.9091	0.6	gleif
+SG	QGSA	other			Unlimited Public Company						0.09091	0.4	gleif
+SI	QW8S	sole_proprietorship	s.p.	s.p.	Samostojni podjetnik posameznik					64,65	1	1	gleif
+SI	SD81	partnership	d.n.o.	d.n.o.	družba z neomejeno odgovornostjo					65	0.75	0.75	gleif
+SI	OPDJ	partnership	k.d.	k.d.	komanditna družba					65	0.25	0.25	gleif
+SI	KBKD	limited_liability	d.o.o.	d.o.o.	družba z omejeno odgovornostjo						0.9119	0.9119	gleif
+SI	1OR3	limited_liability	d.d.	d.d.	delniška družba						0.08813	0.08813	gleif
+SI	RAX7	other	z.o.o.	z.o.o.	Zadruga z omejeno odgovornostjo						0.2867	0.2867	gleif
+SI	HJCS	other			Društvo, zveza društev				P,Q,R,S,M,N,I		0.28	0.28	gleif
+SI	5LXY	other			Verska skupnost in podobne verske organizacije						0.1733	0.1733	gleif
+SI	6MPY	other			Ustanova						0.06667	0.06667	gleif
+SI	2CTG	other			zadruga						0.03333	0.03333	gleif
+SI	UDQJ	other	GIZ	GIZ	Gospodarsko interesno združenje						0.02667	0.02667	gleif
+SI	UESF	other			Javni sklad						0.02667	0.02667	gleif
+SI	14AT	other			Javna agencija						0.02	0.02	gleif
+SI	D64E	other			Gospodarska zbornica						0.02	0.02	gleif
+SI	I7MN	other			Javno podjetje						0.01333	0.01333	gleif
+SI	X94Z	other			Republika Slovenija						0.01333	0.01333	gleif
+SI	34PA	other			Centralna banka				K		0.006667	0.006667	gleif
+SI	ICQT	other	d.v.z.	d.v.z.	Družba za vzajemno zavarovanje						0.006667	0.006667	gleif
+SI	JQA2	other			Kmetijska zadruga						0.006667	0.006667	gleif
+SI	LNYR	other			Obrtna zadruga						0.006667	0.006667	gleif
+SI	S1UI	other			Civilna odvetniška družba						0.006667	0.006667	gleif
+SI	TMVE	other	z.b.o.	z.b.o.	Zadruga brez odgovornosti						0.006667	0.006667	gleif
+SK	C4PZ	sole_proprietorship	Živnostník	Živnostník	Podnikateľ-fyzická osoba-nezapísaný v obchodnom registri					64,65	0.75	0.75	gleif
+SK	N5MX	sole_proprietorship	Samostatne podnikajúca FO	Samostatne podnikajúca FO	Samostatne podnikajúca fyzická osoba					64,65	0.125	0.125	gleif
+SK	93WZ	sole_proprietorship	Živ. a SHR roľník v OR	Živ. a SHR roľník v OR	Podnikateľ-fyzická osoba-zapís.v OR-podnikajúca súčasne ako sam.hosp.roľník					64,65	0.08333	0.08333	gleif
+SK	95MS	sole_proprietorship	FO-slob.povolanie	FO-slob.povolanie	Slobodné povolanie-fyzická osoba podnikajúca na základe iného ako živnostenského zákona					64,65	0.04167	0.04167	gleif
+SK	KB52	partnership	Kom. spol.	Kom. spol.	Komanditná spoločnosť					65	1	1	gleif
+SK	VSZS	limited_liability	Spol. s r. o.	Spol. s r. o.	Spoločnosť s ručením obmedzeným						0.8644	0.7182	gleif
+SK	D18J	limited_liability	Jednoduchá spol. na akcie	Jednoduchá spol. na akcie	Jednoduchá spoločnosť na akcie						0.09546	0.07931	gleif
+SK	2EEG	limited_liability	Akc. spol.	Akc. spol.	Akciová spoločnosť						0.03593	0.199	gleif
+SK	BUMI	limited_liability	SE	SE	Európska spoločnosť						0.004206	0.003494	gleif
+SK	I7AS	other			Družstvo						0.3529	0.3529	gleif
+SK	GY5R	other			Cirkevná organizácia						0.1393	0.1393	gleif
+SK	RF3D	other			Združenie (zväz, spolok, spoločnosť, klub ai.)						0.1362	0.1362	gleif
+SK	L9WT	other	Obec, mesto (o.,m.úrad)	Obec, mesto (o.,m.úrad)	Obec (obecný úrad), mesto (mestský úrad)						0.09907	0.09907	gleif
+SK	U7QK	other			Nadácia						0.03715	0.03715	gleif
+SK	YRIU	other			Nezisková organizácia						0.03715	0.03715	gleif
+SK	ZG2I	other	Spoločenstvá vlastníkov	Spoločenstvá vlastníkov	Spoločenstvá vlastníkov pozemkov, bytov a pod.						0.02786	0.02786	gleif
+SK	9L9V	other	Poľnohospodár.družstvo	Poľnohospodár.družstvo	Poľnohospodárske družstvo						0.01858	0.01858	gleif
+SK	SIRY	other	Záujm. združ. práv.osôb	Záujm. združ. práv.osôb	Záujmové združenie právnických osôb						0.01858	0.01858	gleif
+SK	SMUS	other			Záujmové združenie						0.01548	0.01548	gleif
+SK	VRJP	other	Nezisk.org.poskyt.všeob.prosp.služby	Nezisk.org.poskyt.všeob.prosp.služby	Nezisková organizácia poskytujúca všeobecne prospešné služby						0.01548	0.01548	gleif
+SK	1HEP	other			Rozpočtová organizácia						0.01238	0.01238	gleif
+SK	5J5Y	other	Ver. obch. spol.	Ver. obch. spol.	Verejná obchodná spoločnosť						0.009288	0.009288	gleif
+SK	6R72	other	SHR roľník	SHR roľník	Samostatne hospodáriaci roľník nezapísaný v obchodnom registri						0.009288	0.009288	gleif
+SK	PX29	other			Iná právnicka osoba						0.009288	0.009288	gleif
+SK	E4CI	other			Bytové družstvo						0.006192	0.006192	gleif
+SK	1CSW	other			Obecný podnik						0.003096	0.003096	gleif
+SK	1W8B	other			Zahraničná osoba						0.003096	0.003096	gleif
+SK	2KMA	other			Štátny podnik v oddieli Pšn						0.003096	0.003096	gleif
+SK	2XNE	other			Komoditná burza						0.003096	0.003096	gleif
+SK	5YBL	other			Stavovská organizácia - profesná komora						0.003096	0.003096	gleif
+SK	8RE3	other	Družstevný podnik poľ.	Družstevný podnik poľ.	Družstevný podnik poľnohospodársky						0.003096	0.003096	gleif
+SK	F560	other	Spoločná záuj.org.druž.	Spoločná záuj.org.druž.	Spoločná záujmová organizácia družstiev						0.003096	0.003096	gleif
+SK	HZG7	other			Vysoká škola						0.003096	0.003096	gleif
+SK	HZI2	other	Banka-štát.peňaž.ústav	Banka-štát.peňaž.ústav	Banka-štátny peňažný ústav				K		0.003096	0.003096	gleif
+SK	J8DW	other	Podnik zahr. osoby, org. zložka	Podnik zahr. osoby, org. zložka	Podnik zahraničnej osoby (organizačná zložka podniku zahraničnej osoby)						0.003096	0.003096	gleif
+SK	KWFE	other			Komora (s výnimkou profesných komôr)						0.003096	0.003096	gleif
+SK	OKAZ	other			Obecný úrad						0.003096	0.003096	gleif
+SK	QACV	other			Spotrebné družstvo						0.003096	0.003096	gleif
+SK	STUP	other	NBS	NBS	Národná banka Slovenska				K		0.003096	0.003096	gleif
+SK	TAV3	other	Iná org.verejnej správy	Iná org.verejnej správy	Iná organizácia verejnej správy						0.003096	0.003096	gleif
+SK	VSC1	other	Zahr.kul.,inf.strediská	Zahr.kul.,inf.strediská	Zahraničné kultúrne, informačné stredisko, rozhlasová, tlačová a televízna agentúra						0.003096	0.003096	gleif
+SK	XLXU	other			Politická strana, politické hnutie						0.003096	0.003096	gleif
+SK	YVE8	other	Európ.zoskup.hosp.záujm.	Európ.zoskup.hosp.záujm.	Európske zoskupenie hospodárskych záujmov						0.003096	0.003096	gleif
+SL		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+SL		partnership			partnership	general partnership				65	1	1	curated
+SL		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+SL		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+SL		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+SL		other			co-operative society						0.3	0.5	curated
+SM		sole_proprietorship			ditta individuale	sole proprietorship				64,65	1	1	curated
+SM	7CKN	partnership	SNC	SNC	Società in nome collettivo					65	1	1	gleif
+SM	6JS5	limited_liability	SRL	SRL	Società a responsabilità limitata						0.9302	0.6667	gleif
+SM	AZ8V	limited_liability	SPA	SPA	Società per azioni						0.06977	0.3333	gleif
+SN		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+SN		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+SN		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+SN		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+SN		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+SN		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+SN		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+SN		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+SO		sole_proprietorship			ganacsi shakhsi	sole proprietorship				64,65	1	1	curated
+SO		partnership			shirkad iskaashi	partnership				65	1	1	curated
+SO		limited_liability		Ltd	shirkad xaddidan	private limited company					1	1	curated
+SO		other			iskaashato	co-operative					1	1	curated
+SR	R6BI	sole_proprietorship			Eenmanszaak					64,65	1	1	gleif
+SR	OBTO	partnership	CV	CV	Commanditaire vennootschap (op aandelen) met een beherende vennoot					65	0.3333	0.3333	gleif
+SR	QWWY	partnership	CV	CV	Commanditaire vennootschap (op aandelen) met meer dan een beherende vennoot					65	0.3333	0.3333	gleif
+SR	WBWC	partnership	VOF	VOF	Vennootschap onder een firma					65	0.3333	0.3333	gleif
+SR	TCVB	limited_liability	NV	NV	Naamloze Vennootschap / Limited Company by Shares						1	1	gleif
+SR	8MS6	other			Stichting				P,Q,R,S,M,N,I		1	1	gleif
+SS		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+SS		partnership			partnership	general partnership				65	1	1	curated
+SS		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+SS		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+SS		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+SS		other			co-operative society						0.3	0.5	curated
+ST		sole_proprietorship			empresário em nome individual	sole trader				64,65	1	1	curated
+ST		partnership			sociedade em nome colectivo	general partnership				65	1	1	curated
+ST		limited_liability	Lda	Lda	sociedade por quotas	private limited company					0.7	0.5	curated
+ST		limited_liability	Unipessoal Lda	Unipessoal Lda	sociedade unipessoal por quotas	single-member limited company					0.27	0.1	curated
+ST		limited_liability	S.A.	S.A.	sociedade anónima	public limited company					0.03	0.4	curated
+ST		other			cooperativa	co-operative					1	1	curated
+SV		sole_proprietorship			empresa individual	sole proprietorship				64,65	1	1	curated
+SV		partnership	S. en N.C.	S. en N.C.	sociedad en nombre colectivo	general partnership				65	0.6	0.6	curated
+SV		partnership	S. en C.	S. en C.	sociedad en comandita simple	limited partnership				65	0.4	0.4	curated
+SV		limited_liability	S. de R.L.	S. de R.L.	sociedad de responsabilidad limitada	limited liability company					0.55	0.3	curated
+SV		limited_liability	S.A.	S.A.	sociedad anónima	public limited company					0.45	0.7	curated
+SV		other			cooperativa	co-operative					1	1	curated
+SY		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+SY		partnership		Partnership	شركة تضامن	general partnership				65	0.75	0.6	curated
+SY		partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership				65	0.25	0.4	curated
+SY		limited_liability	ذ.م.م	LLC	شركة ذات مسؤولية محدودة	limited liability company					0.93	0.55	curated
+SY		limited_liability	ش.م.	JSC	شركة مساهمة	joint-stock company					0.07	0.45	curated
+SY		other		Cooperative	جمعية تعاونية	co-operative					1	1	curated
+SZ		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+SZ		partnership			partnership					65	1	1	curated
+SZ		limited_liability	(Pty) Ltd	(Pty) Ltd	private company						0.85	0.75	curated
+SZ		limited_liability	CC	CC	close corporation						0.13	0.05	curated
+SZ		limited_liability	Ltd	Ltd	public company						0.02	0.2	curated
+SZ		other			co-operative						1	1	curated
+TD		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+TD		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+TD		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+TD		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+TD		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+TD		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+TD		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+TD		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+TG		sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship				64,65	1	1	curated
+TG		partnership	SNC	SNC	société en nom collectif	general partnership				65	0.8	0.7	curated
+TG		partnership	SCS	SCS	société en commandite simple	limited partnership				65	0.2	0.3	curated
+TG		limited_liability	SARL	SARL	société à responsabilité limitée	private limited company					0.86	0.45	curated
+TG		limited_liability	SA	SA	société anonyme	public limited company					0.08	0.45	curated
+TG		limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company					0.06	0.1	curated
+TG		other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative					0.7	0.7	curated
+TG		other	GIE	GIE	groupement d'intérêt économique	economic interest grouping					0.3	0.3	curated
+TH		sole_proprietorship			กิจการเจ้าของคนเดียว	sole proprietorship				64,65	1	1	curated
+TH	JUEU	partnership	หจก.	Ltd. Part.	ห้างหุ้นส่วนจำกัด	Hang Hunsuan Chamkat				65	1	1	gleif
+TH	K09K	limited_liability	บจก.	Co., Ltd.	บริษัทจำกัด	Borisat Chamkat					0.8403	0.8403	gleif
+TH	O0OZ	limited_liability	บมจ.	PCL	บริษัทมหาชนจำกัด	Borisat Mahachon Chamkat					0.1597	0.1597	gleif
+TH	FDRT	other			สมาคมจดทะเบียน	Samakhom Chotthabian					0.4348	0.4348	curated
+TH	D87D	other			มูลนิธิจดทะเบียน	Mulanithi Chotthabian					0.3261	0.3261	curated
+TH	N8FJ	other			ส่วนราชการ	Suan Ratchakan					0.1087	0.1087	curated
+TH	VSTJ	other			นิติบุคคลอื่นที่จัดตั้งขึ้นตามกฎหมายพิเศษ	Nitibukkhon Uen Tam Kotmai Phiset					0.1087	0.1087	curated
+TH	46FG	other			จังหวัด	Changwat					0.02174	0.02174	curated
+TJ		sole_proprietorship	ИП	IP	индивидуальный предприниматель	individual entrepreneur				64,65	1	1	curated
+TJ		partnership			полное товарищество	general partnership				65	1	1	curated
+TJ		limited_liability	ООО	OOO	общество с ограниченной ответственностью	limited liability company					0.95	0.6	curated
+TJ		limited_liability	АО	AO	акционерное общество	joint-stock company					0.05	0.4	curated
+TJ		other			производственный кооператив	production co-operative					1	1	curated
+TL		sole_proprietorship			empresário em nome individual	sole trader				64,65	1	1	curated
+TL		partnership			sociedade em nome colectivo	general partnership				65	1	1	curated
+TL		limited_liability	Lda	Lda	sociedade por quotas	private limited company					0.7	0.5	curated
+TL		limited_liability	Unipessoal Lda	Unipessoal Lda	sociedade unipessoal por quotas	single-member limited company					0.27	0.1	curated
+TL		limited_liability	S.A.	S.A.	sociedade anónima	public limited company					0.03	0.4	curated
+TL		other			cooperativa	co-operative					1	1	curated
+TM		sole_proprietorship	ИП	IP	индивидуальный предприниматель	individual entrepreneur				64,65	1	1	curated
+TM		partnership			полное товарищество	general partnership				65	1	1	curated
+TM		limited_liability	ООО	OOO	общество с ограниченной ответственностью	limited liability company					0.95	0.6	curated
+TM		limited_liability	АО	AO	акционерное общество	joint-stock company					0.05	0.4	curated
+TM		other			производственный кооператив	production co-operative					1	1	curated
+TN	F502	sole_proprietorship			Entreprise individuelle					64,65	1	1	gleif
+TN		partnership	SNC	SNC	société en nom collectif	general partnership				65	1	1	curated
+TN	WSE1	limited_liability	SARL	SARL	Société à responsabilité limitée						0.6865	0.3435	gleif
+TN	YVSL	limited_liability	SA	SA	Société anonyme						0.1762	0.5878	gleif
+TN	AF67	limited_liability	SUARL	SUARL	Société unipersonnelle à responsabilité limitée						0.1373	0.0687	gleif
+TO		sole_proprietorship			sole trader					64,65	1	1	curated
+TO		partnership			partnership					65	1	1	curated
+TO	UZUP	limited_liability			Local Company						1	1	gleif
+TR	W8V9	sole_proprietorship			şahıs şirketi					64,65	1	1	gleif
+TR	JMQU	partnership	Koll.Şti.	Koll.Şti.	kollektif şirket					65	1	1	gleif
+TR	W2SQ	limited_liability	A.Ş.	A.Ş.	anonim şirket						0.7463	0.7463	gleif
+TR	R5UT	limited_liability	Ltd. Şti.	Ltd. Şti.	limited şirket						0.2537	0.2537	gleif
+TR	RLSQ	other			vakif						0.75	0.75	gleif
+TR	D4KQ	other			özel mevzuat ile kurulmuş kuruluş						0.125	0.125	gleif
+TR	2DY1	other			kamu tüzel kişiliği						0.0625	0.0625	gleif
+TR	LYA0	other			dernek						0.0625	0.0625	gleif
+TT		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+TT		partnership			partnership	general partnership				65	1	1	curated
+TT		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+TT		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+TT		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+TT		other			co-operative society						0.3	0.5	curated
+TV		sole_proprietorship			sole trader					64,65	1	1	curated
+TV	LZI3	partnership			partnership					65	1	1	gleif
+TV	AJ2Y	limited_liability	PTY	PTY	proprietary company						0.3333	0.3333	gleif
+TV	PKOR	limited_liability	LTD	LTD	public company						0.3333	0.3333	gleif
+TV	W3YV	limited_liability			international company						0.3333	0.3333	gleif
+TV	OTC0	other			co-operative society						0.5	0.5	gleif
+TV	RS5D	other			association				P,Q,R,S,M,N,I		0.5	0.5	gleif
+TW	IUOP	sole_proprietorship			商號	shāng hào				64,65	1	1	gleif
+TW	K9SK	partnership			合夥	hé huǒ				65	1	1	gleif
+TW	TD8P	limited_liability			股份有限公司	gǔ fèn yǒu xiàn gōng sī					0.8093	0.8093	gleif
+TW	Y45C	limited_liability			有限公司	Yǒuxiàn gōngsī					0.1878	0.1878	gleif
+TW	14U1	limited_liability			兩合公司	Wúxiàn zérèn gǔdōng de wúxiàn gōngsī					0.002911	0.002911	gleif
+TW	6LI8	other			營利社團法人	Yíng lì shè tuán fǎ rén					0.8	0.8	gleif
+TW	F5VB	other			財團法人	cái tuán fǎ rén					0.2	0.2	gleif
+TZ	RDZR	sole_proprietorship			Sole proprietorship					64,65	1	1	gleif
+TZ	YPG1	partnership			Partnership					65	1	1	gleif
+TZ	7QWA	limited_liability	LTD	LTD	Private Limited Company						0.9769	0.8636	gleif
+TZ	JZED	limited_liability	PLC	PLC	Public Limited Company						0.02314	0.1364	gleif
+TZ	ND8M	other	NGO	NGO	Non-Governmental Organisation				O,P,Q,R,E,H		1	1	gleif
+UA		sole_proprietorship	ФОП	FOP	фізична особа-підприємець	individual entrepreneur				64,65	1	1	curated
+UA		partnership			повне товариство	general partnership				65	1	1	curated
+UA		limited_liability	ТОВ	TOV	товариство з обмеженою відповідальністю	limited liability company					0.95	0.55	curated
+UA		limited_liability	ПрАТ	PrAT	приватне акціонерне товариство	private joint-stock company					0.04	0.3	curated
+UA		limited_liability	ПАТ	PAT	публічне акціонерне товариство	public joint-stock company					0.01	0.15	curated
+UA		other			кооператив	co-operative					1	1	curated
+UG		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+UG		partnership			partnership	general partnership				65	1	1	curated
+UG		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+UG		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+UG		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+UG		other			co-operative society						0.3	0.5	curated
+US	4BEM	sole_proprietorship	Sole Proprietor	Sole Proprietor	Assumed Business Name					64,65	0.6	0.6	curated
+US	XHT1	sole_proprietorship			Sole Proprietorship					64,65	0.4	0.4	gleif
+US	7TJ1	partnership			General Partnership					65	0.6019	0.6019	curated
+US	T91T	partnership			Limited Partnership					65	0.3836	0.3836	gleif
+US	1HXP	partnership			Limited Liability Partnership		1991-01-01			65	0.01005	0.01005	gleif
+US	D155	partnership	L.L.L.P.	L.L.L.P.	Limited Liability Limited Partnership					65	0.004359	0.004359	gleif
+US	HZEH	limited_liability			Limited Liability Company		1977-03-04				0.7774	0.7774	gleif
+US	XTIQ	limited_liability			Corporation						0.06849	0.06849	gleif
+US	PJ10	limited_liability			Business Corporation						0.04511	0.04511	gleif
+US	TRI2	limited_liability	Corporation	Corporation	Profit Corporation						0.02736	0.02736	gleif
+US	C5K7	limited_liability			For-Profit Corporation						0.01948	0.01948	gleif
+US	H1UM	limited_liability	Corporation	Corporation	For-Profit Corporation General Stock						0.01599	0.01599	gleif
+US	BTQ1	limited_liability	company, co.	company, co.	Corporation (For-Profit)						0.01356	0.01356	gleif
+US	HOV4	limited_liability			Stock Corporation						0.006796	0.006796	gleif
+US	CD9O	limited_liability	limited liability company	limited liability company	Domestic Limited Liability Company		1977-03-04				0.006742	0.006742	gleif
+US	HTV5	limited_liability			Commercial Bank				K		0.00604	0.00604	gleif
+US	3ZXC	limited_liability	L.L.C.	L.L.C.	Limited Liability Company (LLC)		1977-03-04				0.004506	0.004506	gleif
+US	F2QV	limited_liability	LLC	LLC	Limited Liability Company (profit)		1977-03-04				0.00331	0.00331	gleif
+US	ZJTK	limited_liability	Company	Company	Domestic Business  Corporation						0.003089	0.003089	gleif
+US	G76T	limited_liability			Savings Bank				K		0.002102	0.002102	gleif
+US	9EJ6	other			Nonprofit Corporation				P,Q,R,S,M,N,I		0.4387	0.4387	curated
+US	380O	other	FSA	FSA	Federal Savings Association				K		0.09647	0.09647	gleif
+US	7VK5	other			Corporation (Nonprofit)				P,Q,R,S,M,N,I		0.09325	0.09325	curated
+US	Z73Z	other			Voluntary Association and Business Trusts				P,Q,R,S,M,N,I		0.06833	0.06833	gleif
+US	G0HE	other	corp.	corp.	Statutory Close Corporation				O,P,Q,R,E,H		0.05091	0.05091	gleif
+US	K7YU	other			Nonprofit Corporation Public Benefit				P,Q,R,S,M,N,I		0.03964	0.03964	curated
+US	32AX	other			Cooperative Association				P,Q,R,S,M,N,I		0.03618	0.03618	gleif
+US	B12O	other			Business Trust						0.03149	0.03149	gleif
+US	4FSX	other			Statutory Trust				O,P,Q,R,E,H		0.03063	0.03063	curated
+US	14OD	other			credit union				K		0.01818	0.01818	curated
+US	CVXK	other			Nonprofit Corporation Religious				P,Q,R,S,M,N,I		0.01436	0.01436	curated
+US	EVBW	other			Corporation Nonstock Nonprofit				P,Q,R,S,M,N,I		0.01357	0.01357	curated
+US	S97G	other			Investment Trust						0.01306	0.01306	gleif
+US	2R1N	other			Savings and Loan Association				K		0.01038	0.01038	gleif
+US	LDBS	other			Cooperative (Producer)						0.009044	0.009044	gleif
+US	G1P6	other			Nonprofit Corporation Mutual Benefit				K		0.0054	0.0054	curated
+US	6EDK	other			Domestic Non-Profit Corporation				P,Q,R,S,M,N,I		0.004741	0.004741	curated
+US	MXWB	other			Professional Association				M,Q		0.004355	0.004355	gleif
+US	UQWQ	other	Cooperative	Cooperative	Cooperative Corporation						0.004355	0.004355	gleif
+US	WRF9	other			Religious Corporation				P,Q,R,S,M,N,I		0.00402	0.00402	gleif
+US	7G8G	other			Cooperative Bank				K		0.003015	0.003015	gleif
+US	72CA	other			Non-deposit Trust Company						0.00268	0.00268	gleif
+US	MY61	other	LLC	LLC	Limited Liability Company (non-profit)		1977-03-04		P,Q,R,S,M,N,I		0.002634	0.002634	curated
+US	MI0H	other	Cooperative	Cooperative	for profit and not-for profit co-operatives						0.002345	0.002345	gleif
+US	828X	other			credit union				K		0.002244	0.002244	curated
+UY	ETZT	sole_proprietorship			Empresa Unipersonal					64,65	1	1	gleif
+UY		partnership	S.C.	S.C.	sociedad colectiva	general partnership				65	1	1	curated
+UY	YRMK	limited_liability	S.A.	S.A.	Sociedad Anónima						0.5492	0.8904	gleif
+UY	32J9	limited_liability	S.A.S.	S.A.S.	Sociedad por Acciones Simplificada		2019-07-16				0.2529	0.0615	gleif
+UY	FKG5	limited_liability	S.R.L.	S.R.L.	Sociedad de Responsabilidad Limitada						0.1979	0.04813	gleif
+UY	QO9Q	other			Cooperativa						0.3333	0.3333	gleif
+UY	TMHL	other			Asociacion						0.3333	0.3333	gleif
+UY	ZYQX	other			Persona Jurídica de Derecho Público No Estatal						0.3333	0.3333	gleif
+UZ		sole_proprietorship	YaTT	YaTT	yakka tartibdagi tadbirkor	individual entrepreneur				64,65	1	1	curated
+UZ		partnership			to'liq shirkat	general partnership				65	1	1	curated
+UZ		limited_liability	MChJ	MChJ	mas'uliyati cheklangan jamiyat	limited liability company					0.95	0.6	curated
+UZ		limited_liability	AJ	AJ	aksiyadorlik jamiyati	joint-stock company					0.05	0.4	curated
+UZ		other			kooperativ	co-operative					1	1	curated
+VA		other			ente	entity of the Holy See					1	1	curated
+VC	QYZD	sole_proprietorship			sole proprietorship					64,65	1	1	gleif
+VC	I9K6	partnership			partnership					65	1	1	gleif
+VC	5EKE	limited_liability	Ltd	Ltd	international business company - company limited by shares						0.7012	0.6964	gleif
+VC	FG2L	limited_liability	Ltd	Ltd	company						0.2528	0.251	gleif
+VC	3QSG	limited_liability	LDC	LDC	international business company - limited duration company						0.02038	0.02024	gleif
+VC	REVF	limited_liability	Ltd	Ltd	international business company - company limited by guarantee authorised to issue shares				P,Q,R,S,M,N,I		0.01223	0.01215	gleif
+VC	YN9Y	limited_liability	SCC Limited	SCC Limited	international business company - company limited by shares - segregated cell company						0.008153	0.008097	gleif
+VC	LCVA	limited_liability	Ltd	Ltd	international business company - company limited by guarantee not authorised to issue shares				P,Q,R,S,M,N,I		0.004077	0.004049	gleif
+VC	1PWF	limited_liability			public company						0.001223	0.008097	gleif
+VC	10ST	other			association				P,Q,R,S,M,N,I		1	1	gleif
+VE		sole_proprietorship	F.P.	F.P.	firma personal	sole proprietorship				64,65	1	1	curated
+VE		partnership	S.N.C.	S.N.C.	sociedad en nombre colectivo	general partnership				65	1	1	curated
+VE		limited_liability	C.A.	C.A.	compañía anónima	public limited company					0.75	0.8	curated
+VE		limited_liability	S.R.L.	S.R.L.	sociedad de responsabilidad limitada	limited liability company					0.2	0.05	curated
+VE		limited_liability	S.A.	S.A.	sociedad anónima	public limited company					0.05	0.15	curated
+VE		other			cooperativa	co-operative					1	1	curated
+VN	BB0P	sole_proprietorship			doanh nghiệp tư nhân					64,65	1	1	gleif
+VN	QYCU	partnership			công ty hợp danh					65	1	1	gleif
+VN	0OCP	limited_liability			công ty trách nhiệm hữu hạn						0.3661	0.3661	gleif
+VN	4RXL	limited_liability			công ty trách nhiệm hữu hạn một thành viên						0.3214	0.3214	gleif
+VN	OMP4	limited_liability			công ty cổ phần						0.3125	0.3125	gleif
+VN	S97E	other			Hợp tác xã						0.8	0.8	gleif
+VN	CZPI	other			doanh nghiệp nhà nước						0.2	0.2	gleif
+VU		sole_proprietorship			sole trader					64,65	1	1	curated
+VU		partnership			partnership					65	1	1	curated
+VU	JTJE	limited_liability			Local Company						0.5741	0.5741	gleif
+VU	5Q66	limited_liability			International Company						0.4259	0.4259	gleif
+VU	WMJ9	other			Foundation				P,Q,R,S,M,N,I		1	1	gleif
+WS		sole_proprietorship			sole trader					64,65	1	1	curated
+WS		partnership			partnership					65	1	1	curated
+WS	M6YY	limited_liability			Private limited company						0.99	0.937	gleif
+WS	7WL9	limited_liability			Public limited company						0.009992	0.06304	gleif
+WS	SXY3	other			Incorporated society				P,Q,R,S,M,N,I		0.9091	0.9091	gleif
+WS	BCM3	other			Credit Union				K		0.09091	0.09091	gleif
+XK	QZEN	sole_proprietorship	BI	BI	Biznes Individual					64,65	1	1	gleif
+XK	T2X0	partnership	OP	OP	Ortakëri e Përgjithshme					65	0.5	0.5	gleif
+XK	W7KV	partnership	OK	OK	Ortakëri e Kufizuar					65	0.5	0.5	gleif
+XK	D37H	limited_liability	SHPK	SHPK	Shoqëri me Përgjegjësi të Kufizuar						0.6316	0.6316	gleif
+XK	Q22D	limited_liability	SHA	SHA	Shoqëri aksionare						0.3684	0.3684	gleif
+XK	W5H8	other	NP	NP	Ndërmarrjet publike sipas ligjit në fuqi për ndërmarrjet publike						1	1	gleif
+YE		sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship				64,65	1	1	curated
+YE		partnership		Partnership	شركة تضامن	general partnership				65	0.75	0.6	curated
+YE		partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership				65	0.25	0.4	curated
+YE		limited_liability	ذ.م.م	LLC	شركة ذات مسؤولية محدودة	limited liability company					0.93	0.55	curated
+YE		limited_liability	ش.م.	JSC	شركة مساهمة	joint-stock company					0.07	0.45	curated
+YE		other		Cooperative	جمعية تعاونية	co-operative					1	1	curated
+ZA		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+ZA		partnership			partnership					65	1	1	curated
+ZA	GQVQ	limited_liability	Pty Ltd	Pty Ltd	Private Company						0.933	0.8279	gleif
+ZA	4YUU	limited_liability	CC	CC	Close Corporation						0.03341	0.02965	gleif
+ZA	XE4Z	limited_liability	Ltd	Ltd	Public Company						0.0224	0.1325	gleif
+ZA	U89P	limited_liability	Inc	Inc	Personal Liability Company						0.01114	0.009883	gleif
+ZA	J7L0	other	NPC	NPC	Non-Profit Company				P,Q,R,S,M,N,I		0.6	0.6	curated
+ZA	MZT6	other			Co-operatives (Primary)						0.3	0.3	curated
+ZA	CXWJ	other			Co-operatives (Secondary)						0.04	0.04	gleif
+ZA	ZE81	other			Co-operatives (Tertiary)						0.04	0.04	gleif
+ZA	R155	other	SOC	SOC	State Owned Company						0.02	0.02	curated
+ZM		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+ZM		partnership			partnership	general partnership				65	1	1	curated
+ZM		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+ZM		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+ZM		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+ZM		other			co-operative society						0.3	0.5	curated
+ZW		sole_proprietorship			sole proprietorship					64,65	1	1	curated
+ZW		partnership			partnership	general partnership				65	1	1	curated
+ZW		limited_liability	Ltd	Ltd	private limited company	private company limited by shares					0.97	0.75	curated
+ZW		limited_liability	PLC	PLC	public limited company						0.03	0.25	curated
+ZW		other			company limited by guarantee				P,Q,R,S,M,N,I		0.7	0.5	curated
+ZW		other			co-operative society						0.3	0.5	curated
