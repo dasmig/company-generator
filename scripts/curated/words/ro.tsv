@@ -1,0 +1,46 @@
+# Romanian business-name words (curated 2026-11-10). Romanian names join a founder or brand word with a trade or one of the stock endings (Impex, Prod,
+# Com, Serv): Popescu Construct SRL, Agro Popa, Dacris Impex.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2;{surname} Com:1;{surname} Impex:1
+template	founder_trade	{surname} {trade}:2;{trade} {surname}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{adjective} {trade}:2;{trade} {place}:1;{coined} {trade}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;și
+family	*	& Fiii;și Fiii
+adjective	*	Euro;Inter;Mega;Total;Prima;Nova;Max;Pro;Top;Dacia;Carpați;Dunărea;Transilvania;Moldova;Muntenia;Romstar;Gold;Alfa;Delta;Royal
+region	*	Nord;Sud;Est;Vest;Centru;Ardeal;Banat;Oltenia;Dobrogea;Bucovina
+coined_head	*	Dac;Rom;Car;Tra;Mol;Ban;Ol;Dob;Euro;Tech;Agro;Med;Con;Vit
+coined_tail	*	ex;rom;com;prod;serv;con;tex;tech;impex;star;mar;ia;on
+trade	A	Agro;Ferma;Agricola;Zootehnie
+trade	B	Cariera;Exploatare;Minerale
+trade	C	Prod;Industrie;Fabrica;Producție
+trade	10	Panificație;Brutăria;Lactate;Carne;Patiserie
+trade	11	Vinuri;Crama;Bere
+trade	16	Lemn;Forest;Tâmplărie
+trade	25	Metal;Construcții Metalice;Prelucrări Metalice
+trade	31	Mobila;Mobilă
+trade	D	Energy;Energie;Solar;Electric
+trade	E	Apă;Eco;Reciclare;Salubritate
+trade	F	Construct;Construcții;Instal;Build;Edil
+trade	43	Instal;Electric;Construct;Amenajări;Finisaje
+trade	G	Impex;Com;Trading;Distribuție;Comerț;Trade
+trade	45	Auto;Service Auto;Autoservice;Anvelope
+trade	47	Market;Magazin;Farmacia;Shop
+trade	H	Trans;Transport;Logistic;Expres;Taxi;Curierat
+trade	I	Hotel;Pensiunea;Restaurant;Pizzeria;Bistro;Catering
+trade	J	Soft;IT;Software;Media;Digital;Telecom
+trade	K	Invest;Capital;Finance;Asigurări;Broker
+trade	L	Imobiliare;Residence;Development;Real Estate
+trade	M	Consulting;Expert;Contabilitate;Audit;Proiect;Design;Advertising;Avocat
+trade	N	Serv;Services;Rent;Turism;Pază;Curățenie;Travel
+trade	O	Primăria
+trade	P	Școala;Academia;Educație;Training
+trade	Q	Medical;Clinica;Dental;Med;Farm
+trade	R	Sport;Fitness;Art
+trade	S	Serv;Salon;Beauty;Coafură;Funerare

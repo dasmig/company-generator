@@ -1,0 +1,44 @@
+# Hungarian business-name words (curated 2026-11-10). Hungarian names often spell out the activity: Nagy és Társa Kft., Kovács Építőipari és Kereskedelmi Kft.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:1;{surname} és Társa:2
+template	founder_trade	{surname} {trade}:3
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{place} {trade}:1;{adjective} {trade}:2;{trade} {region}:0.5
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	és;&
+family	*	és Fia;és Társa;és Fiai
+adjective	*	Magyar;Új;Euro;Inter;Pannon;Duna;Tisza;Mátra;Hungária;Arany;Alfa;Delta;Profi;Pro;Mega;Top;Turul;Korona;Bakony
+region	*	Alföld;Dunántúl;Pannónia;Kelet;Nyugat;Észak;Dél;Balaton
+coined_head	*	Pan;Hun;Dun;Tis;Tech;Euro;Med;Kom;Agro;Ker;Neo;Vit
+coined_tail	*	tech;ex;kom;ker;bau;tex;plan;ia;on;nova;ix
+trade	A	Mezőgazdasági;Agrár;Gazdaság;Farm;Állattenyésztő
+trade	B	Bánya;Kavicsbánya;Kőbánya
+trade	C	Gyártó;Ipari;Termelő;Üzem
+trade	10	Pékség;Húsüzem;Tejüzem;Cukrászda;Élelmiszeripari
+trade	11	Pincészet;Sörfőzde;Borászat
+trade	16	Faipari;Fűrészüzem;Asztalos
+trade	25	Fémipari;Lakatos;Fémszerkezet
+trade	D	Energia;Napenergia;Energetikai
+trade	E	Víziközmű;Hulladékgazdálkodási;Újrahasznosító
+trade	F	Építőipari;Építő;Építőipari és Kereskedelmi;Generálkivitelező
+trade	43	Villanyszerelő;Épületgépészeti;Festő;Burkoló;Tetőfedő
+trade	G	Kereskedelmi;Kereskedelmi és Szolgáltató;Nagykereskedelmi;Import-Export;Trade
+trade	45	Autószerviz;Autóház;Gumiszerviz;Autó
+trade	47	Bolt;Üzlet;Patika;Gyógyszertár;Élelmiszer
+trade	H	Fuvarozó;Szállítmányozási;Logisztikai;Taxi;Személyszállító
+trade	I	Szálloda;Panzió;Étterem;Vendéglátó;Pizzéria;Kávézó
+trade	J	Informatikai;Szoftver;Média;Telekommunikációs;Digital
+trade	K	Befektetési;Pénzügyi;Biztosítási;Capital;Invest
+trade	L	Ingatlan;Ingatlanfejlesztő;Ingatlankezelő
+trade	M	Tanácsadó;Könyvelő;Ügyvédi Iroda;Mérnöki Iroda;Tervező;Reklám;Design
+trade	N	Szolgáltató;Takarító;Biztonsági;Utazási Iroda;Bérbeadó;Munkaerő-kölcsönző
+trade	O	Önkormányzat
+trade	P	Oktatási;Iskola;Autósiskola;Képzési Központ
+trade	Q	Egészségügyi;Fogászat;Orvosi Rendelő;Klinika
+trade	R	Sport;Fitness;Kulturális
+trade	S	Szolgáltató;Fodrászat;Kozmetika;Szerviz;Temetkezési

@@ -1,0 +1,88 @@
+# The legal tradition of each served country that ISO 20275 does not list (form_templates.tsv).
+country	template	note
+AD	hispanic	Andorra: S.L. and S.A. (Llei 20/2007); the Hispanic set is the nearest
+AF	afghan
+AL	balkan_sh
+AO	lusophone
+BA	balkan_doo
+BD	common_law	Companies Act 1994
+BF	ohada
+BI	common_law	Burundi's code des sociétés follows the Belgian model; SPRL/SA read as Ltd/PLC
+BT	common_law	Companies Act of Bhutan 2016
+CD	ohada	OHADA member since 2012
+CF	ohada
+CG	ohada
+CI	ohada
+CM	ohada
+CU	cuba	Decreto-Ley 88/2024 (MIPYME); state enterprises dominate employment
+CV	lusophone
+DJ	maghreb	Djibouti's code de commerce: SARL, SA, SNC
+DM	common_law
+DZ	maghreb	SARL, EURL (read as SARL AU), SPA (read as SA)
+EG	egypt	Companies Law 159/1981
+ER	eritrea	Commercial Code of Eritrea (Ethiopian 1960 model)
+ET	ethiopia	Commercial Code 2021 (Proclamation 1243/2021)
+FM	micronesia_us
+GA	ohada
+GD	common_law
+GE	georgia	Law on Entrepreneurs 2021
+GM	common_law
+GN	ohada
+GQ	ohada
+GW	ohada	OHADA member; Portuguese-speaking
+GY	common_law
+HT	haiti
+IQ	arab_east	Companies Law 21/1997
+IR	iran	Commercial Code 1932 and its 1968 amendment
+KE	common_law	Companies Act 2015
+KG	cis_ru
+KI	pacific
+KM	ohada
+KP	dprk	state enterprises only
+KZ	kazakhstan	ТОО is the limited liability partnership of the Civil Code, the common small company
+LA	indochina	Enterprise Law 2013
+LB	lebanon	Code of Commerce 1942
+LC	common_law
+LK	common_law	Companies Act No. 7 of 2007
+LR	common_law	Associations Law of Liberia
+LY	arab_east
+MA	maghreb	Law 5-96 (SARL, SARL AU) and Law 17-95 (SA)
+MD	moldova
+ME	balkan_doo	d.o.o. and a.d.
+MG	ohada	Malagasy law on commercial companies 2003 (SARL, SA, SNC); the OHADA set is the nearest
+ML	ohada
+MN	mongolia	Company Law 2011
+MO	macau	Commercial Code of Macau
+MR	maghreb
+MV	common_law	Companies Act 2023
+MW	common_law
+MZ	lusophone
+NA	southern_africa	Companies Act 2004 and Close Corporations Act 1988
+NI	hispanic
+NR	pacific
+PS	arab_east
+PW	micronesia_us
+RW	common_law	Law No. 007/2021 governing companies
+SD	arab_east	Companies Act 2015
+SL	common_law
+SN	ohada
+SO	somalia	Company Law 2019
+SS	common_law	Companies Act 2012
+ST	lusophone
+SV	hispanic
+SY	arab_east
+SZ	southern_africa	Companies Act 2009
+TD	ohada
+TG	ohada
+TJ	cis_ru
+TL	lusophone
+TM	cis_ru
+TT	common_law
+UA	ukraine	Civil and Commercial Codes; the 2018 law on LLCs
+UG	common_law	Companies Act 2012
+UZ	uzbek
+VA	holy_see
+VE	venezuela	Código de Comercio
+YE	arab_east
+ZM	common_law	Companies Act 2017
+ZW	common_law	Companies and Other Business Entities Act 2019

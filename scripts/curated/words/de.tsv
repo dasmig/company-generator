@@ -1,0 +1,103 @@
+# German business-name words (curated 2026-11-10), checked against the words GLEIF's German,
+# Austrian and Swiss names use most. German compounds trade words with the founder's name
+# (Bäckerei Hoffmann, Hoffmann Bau) and with places (Bauunternehmen Nord). Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2;{surname} {family}:1
+template	founder_trade	{trade} {surname}:2;{surname} {trade}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{trade} {region}:1;{place}er {trade}:1;{trade} {place}:2;{adjective} {trade}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;+;und
+family	*	& Söhne;& Sohn;& Co.;+ Partner;& Partner;Gebrüder
+adjective	*	Neue;Deutsche;Moderne;Allgemeine;Vereinigte;Erste;Profi;Premium;Euro;Inter;Top;Pro;Mega;Plus;Express;Alpen;Nord;Süd;Rhein;Elbe;Blau;Grün;Gold;Stern;Adler;Phönix;Kristall;Sonnen;Berg;Wald
+region	*	Nord;Süd;Ost;West;Mitte;Rhein-Main;Rheinland;Ruhr;Bayern;Franken;Schwaben;Sachsen;Nordsee;Ostsee;Alpen;Allgäu;Bodensee;Harz
+coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Nex;Ori;Sol;Dyn;Gen;Hel;Kin;Lin;Mar;Neo;Opt;Pro;Ren;Syn;Tec;Ul;Vit;Wen;Zen;Bra;Fal;Hor
+coined_tail	*	ion;ex;ar;on;ix;ea;um;ens;is;tec;tronic;matik;lux;plan;form;werk;haus;feld;berg;stein
+trade	01	Landwirtschaft;Hof;Agrar;Gartenbau;Gärtnerei;Milchhof;Geflügelhof
+trade	02	Forst;Forstbetrieb;Holz;Baumpflege;Forstservice
+trade	03	Fischerei;Fischzucht;Aquakultur
+trade	05	Bergbau;Kohle
+trade	06	Erdöl;Erdgas;Energie
+trade	07	Bergbau;Erz
+trade	08	Kieswerk;Steinbruch;Kies und Sand;Natursteine;Baustoffe
+trade	09	Bohrtechnik;Bohrservice
+trade	10	Bäckerei;Metzgerei;Konditorei;Feinkost;Lebensmittel;Molkerei;Brot
+trade	11	Brauerei;Brennerei;Weingut;Kellerei;Getränke
+trade	12	Tabakwaren
+trade	13	Textil;Weberei;Stickerei;Textilwerk
+trade	14	Mode;Bekleidung;Schneiderei;Moden;Trachten
+trade	15	Lederwaren;Schuhe;Sattlerei
+trade	16	Holzbau;Sägewerk;Zimmerei;Holz;Holzwerk
+trade	17	Verpackung;Papier;Kartonagen;Wellpappe
+trade	18	Druckerei;Druck;Druckhaus;Medien;Werbetechnik
+trade	19	Mineralöl;Raffinerie
+trade	20	Chemie;Farben;Lacke;Kosmetik;Chemische Werke
+trade	21	Pharma;Arzneimittel;Pharmazeutika
+trade	22	Kunststofftechnik;Kunststoffe;Gummi;Kunststoffwerk
+trade	23	Betonwerk;Glas;Keramik;Naturstein;Ziegelwerk;Fertigteile
+trade	24	Stahl;Gießerei;Metallwerk;Aluminium
+trade	25	Metallbau;Stahlbau;Maschinenbau;Präzisionstechnik;Schlosserei;Blechtechnik;Metalltechnik
+trade	26	Elektronik;Messtechnik;Sensorik;Systeme;Technologies
+trade	27	Elektrotechnik;Lichttechnik;Antriebstechnik;Kabel
+trade	28	Maschinenbau;Anlagenbau;Automation;Fördertechnik;Hydraulik;Werkzeugbau
+trade	29	Fahrzeugbau;Karosseriebau;Anhänger;Automotive
+trade	30	Bootsbau;Werft;Luftfahrttechnik;Fahrradbau
+trade	31	Möbel;Möbelwerkstätten;Küchen;Tischlerei;Schreinerei;Polsterei
+trade	32	Zahntechnik;Dentallabor;Schmuck;Goldschmiede;Orthopädietechnik
+trade	33	Industrieservice;Instandhaltung;Wartung;Anlagenservice;Reparaturservice
+trade	35	Energie;Solar;Windpark;Stadtwerke;Photovoltaik;Bioenergie;Energieversorgung
+trade	36	Wasserversorgung;Wasserwerk;Wasser
+trade	37	Abwasser;Kanalservice;Entwässerung
+trade	38	Entsorgung;Recycling;Containerdienst;Abfallwirtschaft;Schrott
+trade	39	Sanierung;Altlastensanierung;Umwelttechnik
+trade	41	Bau;Bauunternehmen;Hochbau;Bauträger;Wohnbau;Baugesellschaft;Projektentwicklung
+trade	42	Tiefbau;Straßenbau;Erdbau;Kanalbau;Gleisbau
+trade	43	Elektro;Sanitär;Heizung;Dachdeckerei;Malerbetrieb;Fliesen;Trockenbau;Haustechnik;Gerüstbau
+trade	45	Autohaus;Kfz;Autoservice;Reifen;Automobile;Kfz-Werkstatt
+trade	46	Handel;Großhandel;Handelsgesellschaft;Vertrieb;Import Export;Trading
+trade	47	Handel;Markt;Apotheke;Shop;Fachgeschäft;Blumen;Kiosk
+trade	49	Transporte;Spedition;Logistik;Taxi;Umzüge;Busreisen;Kurierdienst
+trade	50	Reederei;Schifffahrt;Schiffahrt
+trade	51	Luftfahrt;Aviation;Air;Flugdienst
+trade	52	Logistik;Lagerlogistik;Spedition;Abschleppdienst;Hafen
+trade	53	Kurierdienst;Paketdienst;Express
+trade	55	Hotel;Gasthof;Pension;Ferienwohnungen;Campingplatz;Gästehaus
+trade	56	Restaurant;Gastronomie;Café;Pizzeria;Imbiss;Catering;Bar;Gasthaus
+trade	58	Verlag;Verlagsgruppe;Software;Medien
+trade	59	Filmproduktion;Film;Studios;Musik;Records
+trade	60	Radio;Rundfunk;TV;Medien
+trade	61	Telekom;Kommunikation;Netze;Glasfaser
+trade	62	IT;Software;IT-Service;Informatik;Systemhaus;Digital;IT-Solutions
+trade	63	Daten;Datenservice;Web;Online
+trade	64	Holding;Beteiligungen;Invest;Capital;Vermögensverwaltung;Bank
+trade	65	Versicherung;Versicherungen;Lebensversicherung
+trade	66	Finanzberatung;Versicherungsmakler;Vermögensberatung;Finanzservice
+trade	68	Immobilien;Grundbesitz;Hausverwaltung;Vermietung;Wohnbau;Verwaltungs
+trade	69	Steuerberatung;Rechtsanwälte;Kanzlei;Wirtschaftsprüfung;Treuhand;Buchhaltung
+trade	70	Consulting;Unternehmensberatung;Management;Beratung;Partner
+trade	71	Ingenieurbüro;Architekten;Planung;Vermessung;Ingenieure;Prüftechnik
+trade	72	Forschung;Labor;Biotech;Institut;Innovation
+trade	73	Werbeagentur;Marketing;Kommunikation;Medien;Werbung;Agentur
+trade	74	Design;Fotografie;Fotostudio;Übersetzungen;Gutachten
+trade	75	Tierarztpraxis;Tierklinik;Tierärzte
+trade	77	Vermietung;Autovermietung;Verleih;Maschinenverleih;Leasing
+trade	78	Personalservice;Personal;Zeitarbeit;Personaldienstleistungen
+trade	79	Reisen;Reisebüro;Touristik;Reisedienst
+trade	80	Sicherheit;Sicherheitsdienst;Wachschutz;Detektei
+trade	81	Gebäudereinigung;Reinigung;Hausmeisterservice;Gartenbau;Facility Services;Gebäudeservice
+trade	82	Service;Dienstleistungen;Büroservice;Events;Callcenter
+trade	84	Gemeinde;Stadt;Amt;Landratsamt
+trade	85	Akademie;Schule;Fahrschule;Bildung;Nachhilfe;Bildungszentrum
+trade	86	Praxis;Zahnarztpraxis;Physiotherapie;Pflege;Medizin;Arztpraxis
+trade	87	Pflegeheim;Seniorenheim;Pflege;Seniorenresidenz;Wohnheim
+trade	88	Pflegedienst;Kita;Kinderbetreuung;Sozialstation
+trade	90	Theater;Kultur;Musik;Kunst;Bühne
+trade	91	Museum;Bibliothek;Archiv
+trade	92	Spielhalle;Lotto;Spielbank
+trade	93	Fitness;Sportverein;Sport;Tennisclub;Golfclub
+trade	94	Verein;Verband;Stiftung;Gemeinschaft
+trade	95	Reparatur;Schuhmacher;Handyreparatur;Elektroservice
+trade	96	Friseur;Kosmetik;Haarstudio;Nagelstudio;Bestattungen;Reinigung

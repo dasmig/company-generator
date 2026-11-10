@@ -1,0 +1,40 @@
+# Hebrew business-name words (curated 2026-11-10). Israeli names are a family name or a brand word
+# and the trade: כהן הנדסה, אורן השקעות. Many Israeli firms use English names (name_languages.tsv
+# gives English half the share). Words carry the Latin form these firms use after "=", used for
+# domains. A section key serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Hebr
+style	form_position	suffix
+template	founder	{surname}:1;{surname} ובניו={surname} & Sons:1
+template	founder_trade	{surname} {trade}:4
+template	two_founders	{surname} ו{surname2}={surname} & {surname2}:1
+template	descriptive	{adjective} {trade}:3;{place} {trade}:1
+template	coined	{adjective}:2;{adjective} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:1
+surname	*	כהן=Cohen:1;לוי=Levi:0.8;מזרחי=Mizrahi:0.5;פרץ=Peretz:0.4;ביטון=Biton:0.4;דהן=Dahan:0.35;אברהם=Avraham:0.35;פרידמן=Friedman:0.35;אזולאי=Azoulay:0.3;מלכה=Malka:0.3;כץ=Katz:0.3;יוסף=Yosef:0.3;דוד=David:0.3;עמר=Amar:0.3;אוחיון=Ohayon:0.25;חדד=Hadad:0.25;גבאי=Gabay:0.25;בן דוד=Ben David:0.25;אדרי=Edri:0.2;לוין=Levin:0.25
+place	IL	ישראל=Israel:3;הגליל=Galil:1;הנגב=Negev:1;השרון=Sharon:1;הכרמל=Carmel:0.8;ירושלים=Jerusalem:1;תל אביב=Tel Aviv:1;הצפון=Tzafon:0.6;המרכז=Merkaz:0.6;הדרום=Darom:0.6
+adjective	*	אורן=Oren;אלון=Alon;ארז=Erez;דקל=Dekel;רימון=Rimon;שקד=Shaked;תמר=Tamar;אופק=Ofek;אור=Or;גל=Gal;זהב=Zahav;ים=Yam;כוכב=Kochav;שחר=Shachar;נוף=Nof;ענבר=Inbar;יהלום=Yahalom;אביב=Aviv;לב=Lev;ברק=Barak
+trade	A	חקלאות=Agriculture;משק=Meshek;מטעים=Orchards
+trade	B	מחצבות=Quarries;כרייה=Mining
+trade	C	תעשיות=Industries;ייצור=Manufacturing;מפעלי=Mif'alei
+trade	10	מזון=Food;מאפיות=Bakeries;מוצרי חלב=Dairy
+trade	D	אנרגיה=Energy;סולאר=Solar;חשמל=Electric
+trade	E	מים=Water;מיחזור=Recycling;איכות סביבה=Environment
+trade	F	בנייה=Construction;הנדסה אזרחית=Civil Engineering;קבלנות=Contractors;יזמות=Development
+trade	43	חשמל=Electric;אינסטלציה=Plumbing;שיפוצים=Renovations;מיזוג אוויר=Air Conditioning
+trade	G	סחר=Trade;יבוא=Import;שיווק=Marketing;הפצה=Distribution
+trade	45	רכב=Motors;מוסך=Garage
+trade	47	מרכול=Market;בית מרקחת=Pharmacy;חנות=Store
+trade	H	הובלות=Transport;לוגיסטיקה=Logistics;שילוח=Shipping
+trade	I	מסעדות=Restaurants;בתי מלון=Hotels;קייטרינג=Catering;אירוח=Hospitality
+trade	J	טכנולוגיות=Technologies;תוכנה=Software;מערכות=Systems;תקשורת=Communications;מדיה=Media
+trade	K	השקעות=Investments;אחזקות=Holdings;ביטוח=Insurance;פיננסים=Finance;הון=Capital
+trade	L	נדל"ן=Real Estate;נכסים=Properties;ניהול נכסים=Property Management
+trade	M	ייעוץ=Consulting;הנדסה=Engineering;אדריכלים=Architects;רואי חשבון=Accountants;משרד עורכי דין=Law Office;פרסום=Advertising
+trade	N	שירותים=Services;אבטחה=Security;ניקיון=Cleaning;תיירות=Tourism;השכרה=Rental;כוח אדם=Staffing
+trade	O	מועצה=Council
+trade	P	חינוך=Education;הדרכה=Training;בית ספר=School
+trade	Q	רפואה=Medical;מרפאה=Clinic;שיניים=Dental;בריאות=Health
+trade	R	ספורט=Sports;אומנויות=Arts;בידור=Entertainment
+trade	S	שירותים=Services;מספרה=Hair Salon;יופי=Beauty;תיקונים=Repairs

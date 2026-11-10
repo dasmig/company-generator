@@ -1,0 +1,170 @@
+# Legal forms of countries that ISO 20275 does not list (86 of the 199), by legal tradition,
+# curated 2026-11-10 from each tradition's company law (the OHADA Uniform Act on commercial
+# companies, 2014; the Companies Acts of the common-law countries; the civil codes of the
+# Lusophone and Hispanic countries; the CIS model civil code). The forms carry no ISO code.
+# share_small / share_large: the form's share of its group among micro and small firms, and
+# among medium and large ones. public: a form for large or listed firms.
+template	group	abbreviation	latin_abbreviation	local_name	english_name	share_small	share_large	public
+common_law	sole_proprietorship			sole proprietorship	sole proprietorship	1	1	0
+common_law	partnership			partnership	general partnership	1	1	0
+common_law	limited_liability	Ltd	Ltd	private limited company	private company limited by shares	0.97	0.75	0
+common_law	limited_liability	PLC	PLC	public limited company	public limited company	0.03	0.25	1
+common_law	other			company limited by guarantee	company limited by guarantee	0.7	0.5	0
+common_law	other			co-operative society	co-operative society	0.3	0.5	0
+southern_africa	sole_proprietorship			sole proprietorship	sole proprietorship	1	1	0
+southern_africa	partnership			partnership	partnership	1	1	0
+southern_africa	limited_liability	(Pty) Ltd	(Pty) Ltd	private company	private company	0.85	0.75	0
+southern_africa	limited_liability	CC	CC	close corporation	close corporation	0.13	0.05	0
+southern_africa	limited_liability	Ltd	Ltd	public company	public company	0.02	0.2	1
+southern_africa	other			co-operative	co-operative	1	1	0
+ohada	sole_proprietorship	EI	EI	entreprise individuelle	sole proprietorship	1	1	0
+ohada	partnership	SNC	SNC	société en nom collectif	general partnership	0.8	0.7	0
+ohada	partnership	SCS	SCS	société en commandite simple	limited partnership	0.2	0.3	0
+ohada	limited_liability	SARL	SARL	société à responsabilité limitée	private limited company	0.86	0.45	0
+ohada	limited_liability	SA	SA	société anonyme	public limited company	0.08	0.45	1
+ohada	limited_liability	SAS	SAS	société par actions simplifiée	simplified joint-stock company	0.06	0.1	0
+ohada	other	GIE	GIE	groupement d'intérêt économique	economic interest grouping	0.3	0.3	0
+ohada	other	SCOOPS	SCOOPS	société coopérative simplifiée	simplified co-operative	0.7	0.7	0
+maghreb	sole_proprietorship			entreprise individuelle	sole proprietorship	1	1	0
+maghreb	partnership	SNC	SNC	société en nom collectif	general partnership	1	1	0
+maghreb	limited_liability	SARL	SARL	société à responsabilité limitée	private limited company	0.7	0.45	0
+maghreb	limited_liability	SARL AU	SARL AU	société à responsabilité limitée à associé unique	single-member limited company	0.25	0.05	0
+maghreb	limited_liability	SA	SA	société anonyme	public limited company	0.05	0.5	1
+maghreb	other			coopérative	co-operative	1	1	0
+lusophone	sole_proprietorship			empresário em nome individual	sole trader	1	1	0
+lusophone	partnership			sociedade em nome colectivo	general partnership	1	1	0
+lusophone	limited_liability	Lda	Lda	sociedade por quotas	private limited company	0.7	0.5	0
+lusophone	limited_liability	Unipessoal Lda	Unipessoal Lda	sociedade unipessoal por quotas	single-member limited company	0.27	0.1	0
+lusophone	limited_liability	S.A.	S.A.	sociedade anónima	public limited company	0.03	0.4	1
+lusophone	other			cooperativa	co-operative	1	1	0
+hispanic	sole_proprietorship			empresa individual	sole proprietorship	1	1	0
+hispanic	partnership	S. en C.	S. en C.	sociedad en comandita simple	limited partnership	0.4	0.4	0
+hispanic	partnership	S. en N.C.	S. en N.C.	sociedad en nombre colectivo	general partnership	0.6	0.6	0
+hispanic	limited_liability	S. de R.L.	S. de R.L.	sociedad de responsabilidad limitada	limited liability company	0.55	0.3	0
+hispanic	limited_liability	S.A.	S.A.	sociedad anónima	public limited company	0.45	0.7	1
+hispanic	other			cooperativa	co-operative	1	1	0
+venezuela	sole_proprietorship	F.P.	F.P.	firma personal	sole proprietorship	1	1	0
+venezuela	partnership	S.N.C.	S.N.C.	sociedad en nombre colectivo	general partnership	1	1	0
+venezuela	limited_liability	C.A.	C.A.	compañía anónima	public limited company	0.75	0.8	0
+venezuela	limited_liability	S.R.L.	S.R.L.	sociedad de responsabilidad limitada	limited liability company	0.2	0.05	0
+venezuela	limited_liability	S.A.	S.A.	sociedad anónima	public limited company	0.05	0.15	1
+venezuela	other			cooperativa	co-operative	1	1	0
+arab_east	sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship	1	1	0
+arab_east	partnership		Partnership	شركة تضامن	general partnership	0.75	0.6	0
+arab_east	partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership	0.25	0.4	0
+arab_east	limited_liability	ذ.م.م	LLC	شركة ذات مسؤولية محدودة	limited liability company	0.93	0.55	0
+arab_east	limited_liability	ش.م.	JSC	شركة مساهمة	joint-stock company	0.07	0.45	1
+arab_east	other		Cooperative	جمعية تعاونية	co-operative	1	1	0
+lebanon	sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship	1	1	0
+lebanon	partnership		SNC	شركة تضامن	general partnership	1	1	0
+lebanon	limited_liability	ش.م.م	SARL	شركة محدودة المسؤولية	private limited company	0.85	0.35	0
+lebanon	limited_liability	ش.م.ل	SAL	شركة مساهمة لبنانية	Lebanese joint-stock company	0.15	0.65	1
+lebanon	other		Cooperative	جمعية تعاونية	co-operative	1	1	0
+egypt	sole_proprietorship		Est.	منشأة فردية	sole proprietorship	1	1	0
+egypt	partnership		Partnership	شركة تضامن	general partnership	0.6	0.6	0
+egypt	partnership		Ltd. Partnership	شركة توصية بسيطة	limited partnership	0.4	0.4	0
+egypt	limited_liability	ش.ذ.م.م	LLC	شركة ذات مسئولية محدودة	limited liability company	0.8	0.4	0
+egypt	limited_liability	ش.م.م	S.A.E.	شركة مساهمة مصرية	Egyptian joint-stock company	0.15	0.55	1
+egypt	limited_liability	ش.ش.و	OPC	شركة الشخص الواحد	one-person company	0.05	0.05	0
+egypt	other		Cooperative	جمعية تعاونية	co-operative	1	1	0
+iran	sole_proprietorship			شرکت انفرادی	sole proprietorship	1	1	0
+iran	partnership			شرکت تضامنی	general partnership	1	1	0
+iran	limited_liability	با مسئولیت محدود	Ltd.	شرکت با مسئولیت محدود	limited liability company	0.6	0.2	0
+iran	limited_liability	سهامی خاص	PJS	شرکت سهامی خاص	private joint-stock company	0.38	0.6	0
+iran	limited_liability	سهامی عام	PJSC	شرکت سهامی عام	public joint-stock company	0.02	0.2	1
+iran	other			شرکت تعاونی	co-operative	1	1	0
+afghan	sole_proprietorship			تشبث انفرادی	sole proprietorship	1	1	0
+afghan	partnership			شرکت تضامنی	partnership	1	1	0
+afghan	limited_liability		LLC	شرکت با مسئولیت محدود	limited liability company	0.95	0.7	0
+afghan	limited_liability		JSC	شرکت سهامی	joint-stock company	0.05	0.3	1
+afghan	other			کوپراتیف	co-operative	1	1	0
+cis_ru	sole_proprietorship	ИП	IP	индивидуальный предприниматель	individual entrepreneur	1	1	0
+cis_ru	partnership			полное товарищество	general partnership	1	1	0
+cis_ru	limited_liability	ООО	OOO	общество с ограниченной ответственностью	limited liability company	0.95	0.6	0
+cis_ru	limited_liability	АО	AO	акционерное общество	joint-stock company	0.05	0.4	1
+cis_ru	other			производственный кооператив	production co-operative	1	1	0
+kazakhstan	sole_proprietorship	ИП	IP	индивидуальный предприниматель	individual entrepreneur	1	1	0
+kazakhstan	partnership			полное товарищество	general partnership	1	1	0
+kazakhstan	limited_liability	ТОО	TOO	товарищество с ограниченной ответственностью	limited liability partnership	0.97	0.65	0
+kazakhstan	limited_liability	АО	AO	акционерное общество	joint-stock company	0.03	0.35	1
+kazakhstan	other			производственный кооператив	production co-operative	1	1	0
+uzbek	sole_proprietorship	YaTT	YaTT	yakka tartibdagi tadbirkor	individual entrepreneur	1	1	0
+uzbek	partnership			to'liq shirkat	general partnership	1	1	0
+uzbek	limited_liability	MChJ	MChJ	mas'uliyati cheklangan jamiyat	limited liability company	0.95	0.6	0
+uzbek	limited_liability	AJ	AJ	aksiyadorlik jamiyati	joint-stock company	0.05	0.4	1
+uzbek	other			kooperativ	co-operative	1	1	0
+ukraine	sole_proprietorship	ФОП	FOP	фізична особа-підприємець	individual entrepreneur	1	1	0
+ukraine	partnership			повне товариство	general partnership	1	1	0
+ukraine	limited_liability	ТОВ	TOV	товариство з обмеженою відповідальністю	limited liability company	0.95	0.55	0
+ukraine	limited_liability	ПрАТ	PrAT	приватне акціонерне товариство	private joint-stock company	0.04	0.3	0
+ukraine	limited_liability	ПАТ	PAT	публічне акціонерне товариство	public joint-stock company	0.01	0.15	1
+ukraine	other			кооператив	co-operative	1	1	0
+moldova	sole_proprietorship	ÎI	II	întreprindere individuală	sole proprietorship	1	1	0
+moldova	partnership	SNC	SNC	societate în nume colectiv	general partnership	1	1	0
+moldova	limited_liability	SRL	SRL	societate cu răspundere limitată	limited liability company	0.95	0.6	0
+moldova	limited_liability	SA	SA	societate pe acțiuni	joint-stock company	0.05	0.4	1
+moldova	other			cooperativă	co-operative	1	1	0
+georgia	sole_proprietorship	ი/მ	I/E	ინდივიდუალური მეწარმე	individual entrepreneur	1	1	0
+georgia	partnership	სპს	GP	სოლიდარული პასუხისმგებლობის საზოგადოება	general partnership	1	1	0
+georgia	limited_liability	შპს	LLC	შეზღუდული პასუხისმგებლობის საზოგადოება	limited liability company	0.97	0.65	0
+georgia	limited_liability	სს	JSC	სააქციო საზოგადოება	joint-stock company	0.03	0.35	1
+georgia	other			კოოპერატივი	co-operative	1	1	0
+mongolia	sole_proprietorship			хувиараа хөдөлмөр эрхлэгч	sole proprietorship	1	1	0
+mongolia	partnership	ХН	KhN	хоршоолсон нөхөрлөл	partnership	1	1	0
+mongolia	limited_liability	ХХК	KhKhK	хязгаарлагдмал хариуцлагатай компани	limited liability company	0.97	0.7	0
+mongolia	limited_liability	ХК	KhK	хувьцаат компани	joint-stock company	0.03	0.3	1
+mongolia	other			хоршоо	co-operative	1	1	0
+balkan_sh	sole_proprietorship			person fizik	sole trader	1	1	0
+balkan_sh	partnership	sh.p.	sh.p.	shoqëri e thjeshtë	general partnership	1	1	0
+balkan_sh	limited_liability	sh.p.k.	sh.p.k.	shoqëri me përgjegjësi të kufizuar	limited liability company	0.96	0.6	0
+balkan_sh	limited_liability	sh.a.	sh.a.	shoqëri aksionare	joint-stock company	0.04	0.4	1
+balkan_sh	other			kooperativë	co-operative	1	1	0
+balkan_doo	sole_proprietorship	s.p.	s.p.	samostalni preduzetnik	sole trader	1	1	0
+balkan_doo	partnership	o.d.	o.d.	ortačko društvo	general partnership	1	1	0
+balkan_doo	limited_liability	d.o.o.	d.o.o.	društvo sa ograničenom odgovornošću	limited liability company	0.96	0.6	0
+balkan_doo	limited_liability	d.d.	d.d.	dioničko društvo	joint-stock company	0.04	0.4	1
+balkan_doo	other			zadruga	co-operative	1	1	0
+indochina	sole_proprietorship			ວິສາຫະກິດສ່ວນບຸກຄົນ	sole enterprise	1	1	0
+indochina	partnership			ຫ້າງຫຸ້ນສ່ວນ	partnership	1	1	0
+indochina	limited_liability	ບໍລິສັດ ຈຳກັດ	Co., Ltd.	ບໍລິສັດຈຳກັດ	limited company	0.97	0.7	0
+indochina	limited_liability	ບໍລິສັດ ມະຫາຊົນ	Public Co., Ltd.	ບໍລິສັດມະຫາຊົນ	public company	0.03	0.3	1
+indochina	other			ສະຫະກອນ	co-operative	1	1	0
+dprk	other			기업소	state enterprise	1	1	0
+macau	sole_proprietorship			empresário comercial	sole trader	1	1	0
+macau	partnership			sociedade em nome colectivo	general partnership	1	1	0
+macau	limited_liability	Lda.	Lda.	sociedade por quotas	private limited company	0.96	0.6	0
+macau	limited_liability	S.A.	S.A.	sociedade anónima	public limited company	0.04	0.4	1
+macau	other			cooperativa	co-operative	1	1	0
+pacific	sole_proprietorship			sole proprietorship	sole proprietorship	1	1	0
+pacific	partnership			partnership	partnership	1	1	0
+pacific	limited_liability	Ltd	Ltd	limited company	limited company	1	1	0
+pacific	other			co-operative society	co-operative society	1	1	0
+micronesia_us	sole_proprietorship			sole proprietorship	sole proprietorship	1	1	0
+micronesia_us	partnership			partnership	partnership	1	1	0
+micronesia_us	limited_liability	Inc.	Inc.	corporation	corporation	0.7	0.8	0
+micronesia_us	limited_liability	LLC	LLC	limited liability company	limited liability company	0.3	0.2	0
+micronesia_us	other			co-operative association	co-operative association	1	1	0
+ethiopia	sole_proprietorship			ግለሰብ ነጋዴ	sole proprietor	1	1	0
+ethiopia	partnership			ተራ የሽርክና ማኅበር	ordinary partnership	1	1	0
+ethiopia	limited_liability	ኃ.የተ.የግ.ማ.	PLC	ኃላፊነቱ የተወሰነ የግል ማኅበር	private limited company	0.95	0.6	0
+ethiopia	limited_liability	አ.ማ.	S.C.	የአክሲዮን ማኅበር	share company	0.05	0.4	1
+ethiopia	other			የኅብረት ሥራ ማኅበር	co-operative society	1	1	0
+eritrea	sole_proprietorship			sole proprietorship	sole proprietorship	1	1	0
+eritrea	partnership			partnership	partnership	1	1	0
+eritrea	limited_liability	PLC	PLC	private limited company	private limited company	0.95	0.6	0
+eritrea	limited_liability	S.C.	S.C.	share company	share company	0.05	0.4	1
+eritrea	other			co-operative	co-operative	1	1	0
+haiti	sole_proprietorship			entreprise individuelle	sole proprietorship	1	1	0
+haiti	partnership	SNC	SNC	société en nom collectif	general partnership	1	1	0
+haiti	limited_liability	S.A.	S.A.	société anonyme	public limited company	1	1	1
+haiti	other			coopérative	co-operative	1	1	0
+cuba	other			empresa estatal	state enterprise	0.4	0.9	0
+cuba	limited_liability	S.A.	S.A.	sociedad mercantil	trading company	0.0	0.05	0
+cuba	limited_liability	MIPYME S.R.L.	MIPYME S.R.L.	micro, pequeña y mediana empresa privada	private small and medium enterprise	1	0.05	0
+cuba	sole_proprietorship			trabajador por cuenta propia	self-employed worker	1	1	0
+cuba	other			cooperativa no agropecuaria	non-agricultural co-operative	0.6	0.1	0
+holy_see	other			ente	entity of the Holy See	1	1	0
+somalia	sole_proprietorship			ganacsi shakhsi	sole proprietorship	1	1	0
+somalia	partnership			shirkad iskaashi	partnership	1	1	0
+somalia	limited_liability		Ltd	shirkad xaddidan	private limited company	1	1	0
+somalia	other			iskaashato	co-operative	1	1	0

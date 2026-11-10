@@ -1,0 +1,102 @@
+# Italian business-name words (curated 2026-11-10), checked against the words GLEIF's Italian
+# names use most (agricola, immobiliare, costruzioni, servizi, impianti, farmacia). Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2;{surname} {family}:1
+template	founder_trade	{trade} {surname}:3
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{trade} {adjective}:2;{trade} del {region}:1;{trade} {place}:2
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;e
+family	*	& Figli;e Figli;Fratelli;& C.
+adjective	*	Italiana;Generale;Moderna;Nuova;Centrale;Unita;Italia;Europea;Globale;Professionale;Tecnica;Industriale;Express;Plus;Pro;Mediterranea;Adriatica;Tirrena;Alpina;Padana;Sole;Stella
+region	*	Nord;Sud;Centro;Nord Est;Nord Ovest;Adriatico;Tirreno;Brianza;Riviera;Valle;Lagune;Colline
+coined_head	*	Nov;Vel;Ax;Lum;Ver;Tri;Ori;Sol;Cal;Dyn;Gen;Ital;Mar;Neo;Opt;Ren;Val;Vit;Ar;Ter;Fer;Cor
+coined_tail	*	ia;ex;al;ova;eo;ix;ica;ena;ora;ium;ana;tec;one;ello;ina;ital
+trade	01	Azienda Agricola;Agricola;Vivai;Allevamenti;Agriturismo;Tenuta
+trade	02	Forestale;Legnami;Boschi
+trade	03	Pesca;Ittica;Acquacoltura;Molluschi
+trade	05	Carbonifera
+trade	06	Petroli;Idrocarburi
+trade	07	Miniere;Minerali
+trade	08	Cave;Inerti;Marmi;Graniti
+trade	09	Perforazioni
+trade	10	Panificio;Pasticceria;Salumificio;Caseificio;Pastificio;Alimentari;Oleificio
+trade	11	Cantina;Cantine;Birrificio;Distilleria;Vini;Bevande
+trade	12	Tabacchi
+trade	13	Tessile;Tessuti;Filati;Maglificio;Ricami
+trade	14	Confezioni;Moda;Abbigliamento;Sartoria
+trade	15	Calzaturificio;Pelletteria;Conceria;Calzature
+trade	16	Legnami;Falegnameria;Segheria;Imballaggi in Legno
+trade	17	Cartotecnica;Cartiera;Imballaggi
+trade	18	Tipografia;Grafiche;Arti Grafiche;Stampa
+trade	19	Raffineria
+trade	20	Chimica;Vernici;Cosmetici;Detergenti
+trade	21	Farmaceutici;Laboratori Farmaceutici
+trade	22	Materie Plastiche;Plastica;Gomma;Stampaggio
+trade	23	Calcestruzzi;Ceramica;Vetreria;Marmi;Prefabbricati
+trade	24	Acciai;Fonderia;Metalli;Acciaieria
+trade	25	Meccanica;Carpenteria Metallica;Officina Meccanica;Minuterie;Lavorazioni Meccaniche
+trade	26	Elettronica;Sistemi;Tecnologie
+trade	27	Elettrica;Illuminazione;Cavi
+trade	28	Meccanica;Macchine;Automazione;Impianti Industriali;Oleodinamica
+trade	29	Carrozzeria;Rimorchi;Componenti Auto
+trade	30	Cantiere Navale;Nautica;Aeronautica
+trade	31	Mobili;Mobilificio;Arredamenti;Cucine;Falegnameria
+trade	32	Gioielleria;Laboratorio Odontotecnico;Ortopedia
+trade	33	Manutenzioni;Assistenza Tecnica;Riparazioni Industriali
+trade	35	Energia;Solare;Fotovoltaico;Eolico;Energie Rinnovabili
+trade	36	Acque;Acquedotto
+trade	37	Spurghi;Depurazione
+trade	38	Ecologia;Rottami;Recuperi;Rifiuti;Riciclaggio
+trade	39	Bonifiche;Ambiente
+trade	41	Costruzioni;Edilizia;Edil;Immobiliare;Impresa Edile
+trade	42	Scavi;Movimento Terra;Strade;Asfalti;Infrastrutture
+trade	43	Impianti;Impianti Elettrici;Idraulica;Termoidraulica;Edilizia;Pitture;Coperture
+trade	45	Autofficina;Auto;Autosalone;Pneumatici;Carrozzeria;Moto
+trade	46	Commerciale;Distribuzione;Import Export;Forniture;Trading;Ingrosso
+trade	47	Farmacia;Market;Negozio;Alimentari;Boutique;Tabaccheria;Ferramenta
+trade	49	Trasporti;Autotrasporti;Traslochi;Taxi;Autolinee;Logistica
+trade	50	Navigazione;Marittima;Traghetti
+trade	51	Aviazione;Air;Voli
+trade	52	Logistica;Magazzini;Spedizioni;Soccorso Stradale
+trade	53	Corriere;Consegne;Express
+trade	55	Hotel;Albergo;Residence;Bed & Breakfast;Camping;Agriturismo
+trade	56	Ristorante;Pizzeria;Bar;Trattoria;Osteria;Caffè;Ristorazione
+trade	58	Editrice;Edizioni;Editoria;Software
+trade	59	Produzioni;Film;Studio;Cinematografica
+trade	60	Radio;Televisione;Emittente
+trade	61	Telecomunicazioni;Reti;Fibra
+trade	62	Informatica;Sistemi;Software;Soluzioni;Consulting;Digital
+trade	63	Dati;Web;Digitale
+trade	64	Holding;Partecipazioni;Finanziaria;Investimenti;Capital
+trade	65	Assicurazioni;Assicurazione
+trade	66	Brokers;Consulenza Finanziaria;Agenzia Assicurativa
+trade	68	Immobiliare;Gestioni Immobiliari;Patrimonio;Immobili
+trade	69	Studio Legale;Studio Associato;Commercialisti;Consulenza;Revisione
+trade	70	Consulting;Consulenze;Management;Gruppo;Servizi
+trade	71	Ingegneria;Architettura;Progettazione;Studio Tecnico;Engineering
+trade	72	Ricerca;Laboratorio;Biotech
+trade	73	Comunicazione;Pubblicità;Marketing;Agenzia
+trade	74	Design;Fotografia;Studio;Traduzioni
+trade	75	Clinica Veterinaria;Ambulatorio Veterinario
+trade	77	Noleggio;Noleggi;Autonoleggio;Leasing
+trade	78	Lavoro;Risorse Umane;Selezione
+trade	79	Viaggi;Turismo;Tour
+trade	80	Vigilanza;Sicurezza;Investigazioni
+trade	81	Pulizie;Servizi;Giardinaggio;Multiservizi;Manutenzione Verde
+trade	82	Servizi;Eventi;Call Center
+trade	84	Comune;Provincia;Ente
+trade	85	Scuola;Autoscuola;Formazione;Istituto;Accademia
+trade	86	Centro Medico;Studio Medico;Studio Dentistico;Fisioterapia;Poliambulatorio;Salute
+trade	87	Residenza;Casa di Riposo;RSA
+trade	88	Cooperativa Sociale;Assistenza;Servizi Sociali;Asilo Nido
+trade	90	Produzioni;Teatro;Spettacoli;Arte
+trade	91	Museo;Biblioteca;Fondazione
+trade	92	Giochi;Sala Giochi;Scommesse
+trade	93	Palestra;Sport;Fitness;Polisportiva;Circolo
+trade	94	Associazione;Circolo;Fondazione;Parrocchia
+trade	95	Riparazioni;Assistenza;Calzolaio
+trade	96	Parrucchiere;Estetica;Barbiere;Lavanderia;Onoranze Funebri

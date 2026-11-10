@@ -1,0 +1,46 @@
+# Persian business-name words (curated 2026-11-10). A name is one or two brand words, then the
+# trade: شرکت پارس سازه, شرکت آریا صنعت البرز. Words carry the Latin form these firms use after
+# "=", used for domains. A section key serves every division of the section that has no row of its
+# own. Columns as in en.tsv.
+kind	key	value
+style	script	Arab
+style	form_position	suffix
+template	founder	{surname}:1;{surname} و پسران={surname} va Pesaran:1
+template	founder_trade	{surname} {trade}:2
+template	descriptive	{adjective} {trade}:3;{adjective} {trade} {place}:1;{place} {trade}:1
+template	coined	{adjective} {adjective2}:2;{adjective} {trade}:1
+template	initials	{initials}:1
+surname	*	محمدی=Mohammadi:1;حسینی=Hosseini:0.9;احمدی=Ahmadi:0.9;رضایی=Rezaei:0.8;کریمی=Karimi:0.7;موسوی=Mousavi:0.7;جعفری=Jafari:0.6;هاشمی=Hashemi:0.6;قاسمی=Ghasemi:0.6;صادقی=Sadeghi:0.5;رحیمی=Rahimi:0.5;نوری=Nouri:0.5;اکبری=Akbari:0.5;مرادی=Moradi:0.5;کاظمی=Kazemi:0.5
+place	IR	ایران=Iran:3;تهران=Tehran:2;اصفهان=Isfahan:1;البرز=Alborz:1;خراسان=Khorasan:0.8;فارس=Fars:0.8;خلیج فارس=Persian Gulf:0.8;کاسپین=Caspian:0.5;زاگرس=Zagros:0.5;شیراز=Shiraz:0.5;تبریز=Tabriz:0.6
+place	AF	افغان=Afghan:3;کابل=Kabul:2;هرات=Herat:1;آریانا=Ariana:1;بلخ=Balkh:0.5
+adjective	*	پارس=Pars;آریا=Arya;سپهر=Sepehr;نوین=Novin;پویا=Pouya;آسیا=Asia;کیان=Kian;مهر=Mehr;نیک=Nik;فراز=Faraz;دنا=Dena;رایان=Rayan;سپید=Sepid;آفتاب=Aftab;ستاره=Setareh;پیشرو=Pishro;نگین=Negin;ایده=Ideh;بهین=Behin;آرمان=Arman;صبا=Saba;کاوه=Kaveh;پارسیان=Parsian;آتی=Ati
+trade	A	کشاورزی=Keshavarzi;دامپروری=Damparvari;کشت و صنعت=Kesht o Sanat
+trade	B	معدن=Madan;معدنی=Madani;نفت و گاز=Naft o Gaz
+trade	C	صنعت=Sanat;صنایع=Sanaye;تولیدی=Tolidi
+trade	10	غذایی=Ghazaei;لبنیات=Labaniyat;نان=Nan
+trade	13	نساجی=Nasaji
+trade	20	شیمی=Shimi;رنگ=Rang
+trade	21	دارو=Darou;داروسازی=Darousazi
+trade	22	پلاستیک=Plastic;پلیمر=Polymer
+trade	24	فولاد=Foulad;آهن=Ahan
+trade	25	فلز=Felez
+trade	28	ماشین=Mashin;صنعت=Sanat
+trade	31	مبل=Mobl
+trade	D	انرژی=Energy;نیرو=Niroo;برق=Bargh
+trade	E	آب=Ab;محیط زیست=Mohit Zist;بازیافت=Bazyaft
+trade	F	سازه=Sazeh;ساختمانی=Sakhtemani;عمران=Omran;ساختمان=Sakhteman
+trade	G	تجارت=Tejarat;بازرگانی=Bazargani;تجاری=Tejari;پخش=Pakhsh
+trade	45	خودرو=Khodro;یدک=Yadak
+trade	47	فروشگاه=Foroushgah;داروخانه=Darukhaneh
+trade	H	ترابری=Tarabari;حمل و نقل=Haml o Naghl;لجستیک=Logistic
+trade	I	هتل=Hotel;رستوران=Restaurant;گردشگری=Gardeshgari
+trade	J	رایانه=Rayaneh;نرم افزار=Narm Afzar;ارتباطات=Ertebatat;داده=Dadeh;رسانه=Resaneh
+trade	K	سرمایه=Sarmayeh;سرمایه گذاری=Sarmaye Gozari;بیمه=Bimeh
+trade	L	املاک=Amlak;مسکن=Maskan
+trade	M	مشاوره=Moshavereh;مهندسی=Mohandesi;طراحی=Tarahi;تبلیغات=Tablighat;حسابداری=Hesabdari
+trade	N	خدمات=Khadamat;گردشگری=Gardeshgari;خدماتی=Khadamati
+trade	O	سازمان=Sazman
+trade	P	آموزش=Amuzesh;آموزشی=Amuzeshi
+trade	Q	پزشکی=Pezeshki;درمان=Darman;سلامت=Salamat
+trade	R	ورزش=Varzesh;هنر=Honar
+trade	S	خدمات=Khadamat;آرایش=Arayesh;تعمیرات=Tamirat

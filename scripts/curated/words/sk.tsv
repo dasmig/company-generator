@@ -1,0 +1,44 @@
+# Slovak business-name words (curated 2026-11-10). Slovak names follow the Czech model: Kováč Stavby, Stavby Kováč, Elektro Horváth.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{surname} {trade}:2;{trade} {surname}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{trade} {place}:2;{adjective} {trade}:1;{trade} {region}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	a;&
+family	*	a syn;a synovia;a spol.
+adjective	*	Slovenská;Nová;Moderná;Euro;Inter;Pro;Eko;Profi;Max;Mega;Tatra;Dunaj;Váh;Zlatá;Top
+region	*	Tatry;Záhorie;Orava;Spiš;Liptov;Juh;Sever;Východ;Západ
+coined_head	*	Tech;Pro;Slov;Tat;Eko;Med;Kom;Trans;Stav;Agro;Neo;Vit
+coined_tail	*	tech;stav;ex;kom;mont;servis;trans;plast;tex;ia;on
+trade	A	Poľnohospodárstvo;Farma;Agro;Poľnohospodárske Družstvo
+trade	B	Lomy;Ťažba
+trade	C	Výroba;Strojárne;Závody;Priemysel
+trade	10	Pekáreň;Mäsiarstvo;Mliekáreň;Cukráreň
+trade	11	Pivovar;Vinárstvo
+trade	16	Píla;Drevo
+trade	25	Kovovýroba;Zámočníctvo;Strojárstvo
+trade	D	Energia;Solar
+trade	E	Vodárne;Odpady;Recyklácia
+trade	F	Stavby;Stavebná Firma;Stavebníctvo
+trade	43	Elektro;Inštalatérstvo;Kúrenárstvo;Maliarstvo;Stavby
+trade	G	Obchod;Veľkoobchod;Trade;Distribúcia
+trade	45	Autoservis;Auto;Pneuservis
+trade	47	Predajňa;Obchod;Lekáreň;Potraviny
+trade	H	Doprava;Logistika;Špedícia;Taxi;Autodoprava
+trade	I	Hotel;Penzión;Reštaurácia;Pizzeria;Kaviareň
+trade	J	Software;IT;Systems;Media;Digital
+trade	K	Invest;Finance;Capital;Poisťovňa
+trade	L	Reality;Nehnuteľnosti;Development
+trade	M	Poradenstvo;Consulting;Účtovníctvo;Advokátska Kancelária;Projekt;Reklama
+trade	N	Služby;Servis;Upratovanie;Požičovňa;SBS;Cestovná Kancelária
+trade	O	Obecný Úrad
+trade	P	Škola;Autoškola;Vzdelávanie
+trade	Q	Zdravotné Stredisko;Stomatológia;Ambulancia
+trade	R	Šport;Fitness
+trade	S	Služby;Kaderníctvo;Kozmetika;Opravy;Pohrebníctvo

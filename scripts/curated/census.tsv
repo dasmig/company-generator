@@ -1,0 +1,44 @@
+# National business counts read by hand (2026-11-10) for countries no machine-readable source covers.
+# isic: "*" for the whole economy, else the ISIC Rev. 4 divisions a row covers ("05-09 35"), split
+# by the country's employment in them. enterprises: all units of the row (legal and natural
+# persons); sole_proprietors: those of them that are natural persons (self-employed units,
+# individual entrepreneurs, MEI). employment: persons employed. micro_share: units under 10
+# persons. Empty: not published. Units are counted as the source counts them (enterprises,
+# establishments or registrations, see note); the share of a row is used, and the "*" total sets
+# the country's weight when it draws by enterprises.
+country	year	isic	enterprises	sole_proprietors	employment	micro_share	source	note
+CN	2023	*	121265000	87995000	608548000		NBS, Fifth National Economic Census, Communiqué No. 1 and 2 (2024-12-26), tables 2-1 to 2-3	33.27M legal entities + 88.0M self-employed units (个体经营户), secondary and tertiary industries; legal entities: 89.6% corporate enterprises, 2.9% government and institutions, 0.9% social organisations, 6.6% other
+CN	2023	01-03	1255000	983000	3412000		NBS census Communiqué No. 2, table 2-2	agriculture: services to agriculture and legal entities only (the census covers secondary and tertiary industries)
+CN	2023	05-09	69000	17000	4766000		NBS census Communiqué No. 2, table 2-2
+CN	2023	10-33	9172000	5123000	123176000		NBS census Communiqué No. 2, table 2-2
+CN	2023	35 36	320000	184000	5078000		NBS census Communiqué No. 2, table 2-2	production and supply of electricity, heat, gas and water
+CN	2023	41-43	6456000	3734000	60790000		NBS census Communiqué No. 2, table 2-2
+CN	2023	45-47	54988000	44791000	135499000		NBS census Communiqué No. 2, table 2-2
+CN	2023	49-53	9108000	8169000	28554000		NBS census Communiqué No. 2, table 2-2
+CN	2023	55-56	11634000	10922000	34352000		NBS census Communiqué No. 2, table 2-2
+CN	2023	61-63	2529000	833000	16721000		NBS census Communiqué No. 2, table 2-2	information transmission, software and IT services
+CN	2023	64-66	108000		12484000		NBS census Communiqué No. 2, table 2-2
+CN	2023	68	1399000	357000	15199000		NBS census Communiqué No. 2, table 2-2
+CN	2023	69 70 73 77-82	7113000	2504000	44082000		NBS census Communiqué No. 2, table 2-2	leasing and business services
+CN	2023	71 72 74 75	2584000	466000	18120000		NBS census Communiqué No. 2, table 2-2	scientific research and technical services
+CN	2023	37-39	371000	148000	5375000		NBS census Communiqué No. 2, table 2-2	water conservancy, environment and public facilities
+CN	2023	95 96	8651000	7749000	21710000		NBS census Communiqué No. 2, table 2-2	household services, repair and other services
+CN	2023	85	1103000	285000	27541000		NBS census Communiqué No. 2, table 2-2
+CN	2023	86-88	898000	561000	15947000		NBS census Communiqué No. 2, table 2-2
+CN	2023	58-60 90-93	1986000	1169000	7929000		NBS census Communiqué No. 2, table 2-2	culture, sports and entertainment
+CN	2023	84 94	1521000		27811000		NBS census Communiqué No. 2, table 2-2	public management, social security and social organisations
+IN	2025	*	73000000				Ministry of MSME, year-end review 2025: Udyam Registration Portal and Udyam Assist Platform, 2020-07-01 to 2025-12-17	registrations: 4.37 crore on the Udyam Portal, 2.92 crore on the Udyam Assist Platform (informal micro units); MSMEs only
+ID	2016	*	26710000				BPS, Sensus Ekonomi 2016, listing results (press release 2017-04-27)	non-farm businesses; 98.33% micro and small (UMK)
+ID	2016	45-47	12330000				BPS, Sensus Ekonomi 2016, listing results	wholesale and retail trade, 46.17%
+PK	2023	*	7100000				Pakistan Bureau of Statistics, Economic Census 2023	establishments
+BD	2024	*	11700000				Bangladesh Bureau of Statistics, Economic Census 2024	economic units
+RU	2025	*	6836000	4640000			Federal Tax Service, register of SMEs, end of 2025	SMEs only: 2,196,400 legal entities and about 4.64M individual entrepreneurs
+BR	2025	*	24200000	12600000			Mapa de Empresas (Ministério do Empreendedorismo / Serpro), 2025	active CNPJ; MEI (microempreendedor individual) counted as sole proprietors
+MX	2023	*	7093631		36592279		INEGI, Censos Económicos 2024, definitive results (2025-07-24)	establishments
+JP	2021	*	3684049		57950000		Statistics Bureau, Economic Census for Business Activity 2021, final results	enterprises, etc. (companies, sole proprietorships and other bodies); 5,156,063 private establishments
+VN	2025	*	6180000	5300000			GSO; 880,000 enterprises and cooperatives and 5.3M individual business households	households counted as sole proprietors
+EG	2018	*	3740000				CAPMAS, Economic Census 2017/18	establishments
+GB	2025	*	5700000	3249000		0.9493	DBT, Business Population Estimates 2025 (2025-10-02)	private sector businesses, registered or not: 57% sole proprietorships, 37% companies, 6% ordinary partnerships; 4.27M without employees, 1.15M with 1-9
+AU	2025	*	2729648			0.95	ABS, Counts of Australian Businesses, June 2025	actively trading businesses; 994,178 employing; micro share approximate (non-employing and 1-19 employees)
+CA	2025	*	5040000			0.93	Statistics Canada, Canadian Business Counts, December 2025	1.37M employer and 3.67M non-employer businesses; micro share approximate
+KR	2023	*	7539000				Statistics Korea, Business Birth and Death statistics 2023	active enterprises with sales or regular employees

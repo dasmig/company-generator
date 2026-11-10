@@ -1,0 +1,57 @@
+# Vietnamese business-name words (curated 2026-11-10), checked against GLEIF's Vietnamese names
+# (thương mại, đầu tư, phát triển, xây dựng, dịch vụ). A name is the form, the trade, then a
+# two-word Sino-Vietnamese trade name: Công ty TNHH Xây dựng Hoàng Phát, Công ty Cổ phần Thương mại
+# Dịch vụ Minh Anh. The Latin form after "=" drops the diacritics, as domains do. A section key
+# serves every division of the section that has no row of its own. Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	prefix
+style	coined_join	space
+template	founder	{surname}:1
+template	founder_trade	{trade} {surname}:1
+template	descriptive	{trade} {coined}:5;{trade} {region} {coined}:1
+template	coined	{trade} {coined}:3;{coined}:1
+template	initials	{trade} {initials}:1
+region	*	Việt Nam=Viet Nam;Sài Gòn=Sai Gon;Hà Nội=Ha Noi;Miền Nam=Mien Nam;Miền Bắc=Mien Bac;Miền Trung=Mien Trung;Á Châu=A Chau;Quốc Tế=Quoc Te
+coined_head	*	Hoàng=Hoang;Minh=Minh;Phú=Phu;Thành=Thanh;Đức=Duc;Việt=Viet;Tân=Tan;An=An;Hưng=Hung;Thịnh=Thinh;Phát=Phat;Long=Long;Kim=Kim;Đại=Dai;Hải=Hai;Sao=Sao;Nam=Nam;Bảo=Bao;Gia=Gia;Quốc=Quoc;Trường=Truong;Hòa=Hoa;Thiên=Thien;Ngọc=Ngoc
+coined_tail	*	Phát=Phat;Anh=Anh;Thịnh=Thinh;Long=Long;Hưng=Hung;Thành=Thanh;Việt=Viet;Phú=Phu;An=An;Gia=Gia;Khang=Khang;Lộc=Loc;Tín=Tin;Đạt=Dat;Nguyên=Nguyen;Huy=Huy;Phong=Phong;Sơn=Son;Hà=Ha;Linh=Linh;Vũ=Vu;Tiến=Tien;Hoàng=Hoang;Lợi=Loi
+trade	A	Nông nghiệp=Nong nghiep;Nông sản=Nong san;Chăn nuôi=Chan nuoi;Cà phê=Ca phe
+trade	03	Thủy sản=Thuy san;Hải sản=Hai san
+trade	B	Khoáng sản=Khoang san;Khai thác Mỏ=Khai thac Mo;Dầu khí=Dau khi
+trade	C	Sản xuất=San xuat;Công nghiệp=Cong nghiep;Sản xuất Thương mại=San xuat Thuong mai
+trade	10	Thực phẩm=Thuc pham;Chế biến Thực phẩm=Che bien Thuc pham
+trade	11	Đồ uống=Do uong;Bia=Bia
+trade	13	Dệt may=Det may
+trade	14	May mặc=May mac;Thời trang=Thoi trang
+trade	15	Da giày=Da giay
+trade	16	Gỗ=Go;Chế biến Gỗ=Che bien Go
+trade	18	In ấn=In an;Bao bì=Bao bi
+trade	20	Hóa chất=Hoa chat;Sơn=Son
+trade	21	Dược phẩm=Duoc pham
+trade	22	Nhựa=Nhua;Bao bì Nhựa=Bao bi Nhua
+trade	23	Vật liệu Xây dựng=Vat lieu Xay dung;Bê tông=Be tong
+trade	24	Thép=Thep;Kim khí=Kim khi
+trade	25	Cơ khí=Co khi;Kết cấu Thép=Ket cau Thep
+trade	26	Điện tử=Dien tu
+trade	27	Thiết bị Điện=Thiet bi Dien
+trade	28	Máy móc=May moc;Thiết bị=Thiet bi;Cơ khí=Co khi
+trade	31	Nội thất=Noi that
+trade	D	Năng lượng=Nang luong;Điện=Dien;Điện mặt trời=Dien mat troi
+trade	E	Cấp nước=Cap nuoc;Môi trường=Moi truong
+trade	F	Xây dựng=Xay dung;Đầu tư Xây dựng=Dau tu Xay dung;Xây lắp=Xay lap
+trade	43	Xây dựng=Xay dung;Điện nước=Dien nuoc;Nội thất=Noi that;Cơ điện=Co dien
+trade	G	Thương mại=Thuong mai;Thương mại Dịch vụ=Thuong mai Dich vu;Xuất nhập khẩu=Xuat nhap khau;Phân phối=Phan phoi
+trade	45	Ô tô=O to;Phụ tùng=Phu tung
+trade	H	Vận tải=Van tai;Vận tải Logistics=Van tai Logistics;Giao nhận=Giao nhan
+trade	50	Vận tải Biển=Van tai Bien;Hàng hải=Hang hai
+trade	I	Khách sạn=Khach san;Nhà hàng=Nha hang;Ẩm thực=Am thuc;Du lịch=Du lich
+trade	J	Công nghệ=Cong nghe;Phần mềm=Phan mem;Truyền thông=Truyen thong;Viễn thông=Vien thong
+trade	K	Đầu tư=Dau tu;Tài chính=Tai chinh;Bảo hiểm=Bao hiem
+trade	L	Bất động sản=Bat dong san;Địa ốc=Dia oc;Đầu tư Phát triển=Dau tu Phat trien
+trade	M	Tư vấn=Tu van;Tư vấn Thiết kế=Tu van Thiet ke;Kiến trúc=Kien truc;Quảng cáo=Quang cao;Kế toán=Ke toan
+trade	N	Dịch vụ=Dich vu;Du lịch=Du lich;Bảo vệ=Bao ve;Cho thuê=Cho thue
+trade	O	Ban Quản lý=Ban Quan ly
+trade	P	Giáo dục=Giao duc;Đào tạo=Dao tao
+trade	Q	Y tế=Y te;Phòng khám=Phong kham;Nha khoa=Nha khoa
+trade	R	Giải trí=Giai tri;Thể thao=The thao
+trade	S	Dịch vụ=Dich vu;Sửa chữa=Sua chua;Làm đẹp=Lam dep

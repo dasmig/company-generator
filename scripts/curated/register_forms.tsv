@@ -1,0 +1,96 @@
+# The registers' own form codes mapped to ISO 20275 forms and groups (curated 2026-11-10).
+# form: the register's code (INSEE catégorie juridique for France, organisasjonsform for Norway,
+# CompanyCategory for the UK); a trailing * matches a prefix, the longest match wins.
+# code: the ISO 20275 form, empty when the unit counts towards its group only. group "drop": not
+# counted (foreign firms and branches, condominiums, co-ownerships, bankruptcy estates, funds).
+country	form	code	group	note
+FR	1*	ZY9X	sole_proprietorship	entrepreneur individuel
+FR	21*		drop	indivision
+FR	2*		drop	other unincorporated group (fiducie and others)
+FR	22*		partnership	société créée de fait
+FR	23*		partnership	société en participation
+FR	27*		other	paroisse hors zone concordataire
+FR	29*		drop	other unincorporated group
+FR	3*		drop	foreign legal person
+FR	4*		other	public body under commercial law
+FR	5*		limited_liability	other société commerciale
+FR	51*		other	co-operative société commerciale
+FR	52*	H1U2	partnership	société en nom collectif
+FR	53*	VD7Z	partnership	société en commandite
+FR	5308	DEG4	partnership	société en commandite par actions
+FR	54*	V9QP	limited_liability	SARL
+FR	5485	J9OZ	limited_liability	SELARL
+FR	5470	S82R	limited_liability	SPFPL SARL
+FR	55*	K65D	limited_liability	SA à conseil d'administration
+FR	56*	5VCF	limited_liability	SA à directoire
+FR	57*	6CHY	limited_liability	SAS
+FR	5785	3FCU	limited_liability	SELAS
+FR	58*	TPNT	limited_liability	société européenne
+FR	6*		other	other registered legal person
+FR	61*		other	caisse d'épargne
+FR	62*	R0B6	other	GIE
+FR	63*	211B	other	agricultural co-operative
+FR	64*	8VDW	other	mutual insurer
+FR	65*	1L24	partnership	société civile
+FR	6540	FY0F	partnership	société civile immobilière
+FR	6541	8R2G	partnership	SCI de construction-vente
+FR	6533	QCWO	partnership	GAEC
+FR	6534	59F9	partnership	groupement foncier agricole
+FR	6536	7O94	partnership	groupement forestier
+FR	6597	M673	partnership	société civile d'exploitation agricole
+FR	6598	BAK2	limited_liability	EARL
+FR	69*		other	other registered legal person
+FR	7*	FFQL	other	public administrative body
+FR	8*	2XIK	other	private body under special law
+FR	9110		drop	syndicat de copropriété
+FR	9150		drop	association syndicale libre
+FR	92*	BEWI	other	association
+FR	9260	HF2L	other	association de droit local
+FR	93*	9T5S	other	foundation
+FR	9*		other	other private group
+NO	ENK	EXD7	sole_proprietorship	enkeltpersonforetak
+NO	AS	YI42	limited_liability	aksjeselskap
+NO	ASA	IQGE	limited_liability	allmennaksjeselskap
+NO	ANS	326Y	partnership	ansvarlig selskap
+NO	DA	CF5L	partnership	ansvarlig selskap med delt ansvar
+NO	KS	M9IQ	partnership	kommandittselskap
+NO	SA	K5P8	other	samvirkeforetak
+NO	FLI	FSBD	other	forening, lag, innretning
+NO	STI	3C7U	other	stiftelse
+NO	BRL	O0EU	other	borettslag
+NO	ANNA		other	other legal person
+NO	KOMM	5V5S	other	kommune
+NO	KF	3L58	other	kommunalt foretak
+NO	IKS	YTMC	other	interkommunalt selskap
+NO	SF	50TD	other	statsforetak
+NO	ORGL		other	organisational unit of the state
+NO	STAT		other	the state
+NO	FYLK	KX7D	other	fylkeskommune
+NO	SPA	R71C	other	sparebank
+NO	PRE	AEV1	partnership	partrederi
+NO	BA	Q0Q1	limited_liability	selskap med begrenset ansvar
+NO	ESEK		drop	eierseksjonssameie
+NO	UTLA		drop	foreign unit
+NO	NUF		drop	Norwegian branch of a foreign firm
+NO	KBO		drop	bankruptcy estate
+NO	SAM		drop	co-ownership
+NO	VPFO		drop	securities fund
+NO	*		other	other forms
+GB	Private Limited Company	H0PO	limited_liability	private limited company
+GB	Public Limited Company	B6ES	limited_liability	public limited company
+GB	PRI/LTD BY GUAR/NSC (Private, limited by guarantee, no share capital)	4GJI	other	guarantee company
+GB	PRI/LBG/NSC (Private, Limited by guarantee, no share capital, use of 'Limited' exemption)	4GJI	other	guarantee company
+GB	Limited Partnership	ID30	partnership	limited partnership
+GB	Limited Liability Partnership	Z0EY	partnership	limited liability partnership
+GB	Community Interest Company	17R0	limited_liability	community interest company
+GB	Charitable Incorporated Organisation	7T8N	other	CIO
+GB	Scottish Charitable Incorporated Organisation	STX7	other	SCIO
+GB	Registered Society	XLZV	other	registered society
+GB	Private Unlimited Company	57V7	other	unlimited company
+GB	Private Unlimited	57V7	other	unlimited company
+GB	Royal Charter Company	9B78	limited_liability	royal charter company
+GB	Scottish Partnership	NBTW	partnership	Scottish partnership
+GB	Overseas Entity		drop	overseas entity
+GB	Investment Company with Variable Capital		drop	fund
+GB	Other company type		drop	not classified
+GB	*		other	other forms

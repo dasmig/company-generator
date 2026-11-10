@@ -1,0 +1,40 @@
+# When legal forms opened and closed to new firms (curated 2026-11-10 from the company laws named).
+# A firm's founding date is never before "from" nor after "until". Only forms that were new, not
+# renamed, carry a "from": a form that older firms were converted into (Belgium's BV in 2019,
+# Ireland's LTD in 2015) would wrongly make every such firm young. Forms abolished before 2026
+# are dropped in elf_overrides.tsv. code: an ISO 20275 code, or empty with "match", a regular
+# expression on the form's names (for forms listed once per US state or Canadian province).
+country	code	match	from	until	note
+DE	63KS		2008-11-01		Unternehmergesellschaft (haftungsbeschränkt), MoMiG 2008
+FR	6CHY		1994-01-03		SAS, law of 3 January 1994
+IT	8GU1		2012-01-24		S.r.l. semplificata, D.L. 1/2012
+PL	B21W		2021-07-01		prosta spółka akcyjna
+CL	KUUZ		2007-06-05		Sociedad por Acciones, Ley 20.190
+PE	37G2		2021-01-01		S.A.C.S., D.L. 1409 in force with its rules
+MX	LJTR		2016-03-14		S.A.S., reform of the Ley General de Sociedades Mercantiles
+MX	6EYT		2016-03-14		S.A.S. de C.V.
+AR	FE8K		2017-04-12		S.A.S., Ley 27.349
+CO	KYVO		2008-12-05		S.A.S., Ley 1258 de 2008
+UY	32J9		2019-07-16		S.A.S., Ley 19.820
+EC	GKUL		2020-03-10		S.A.S., Ley Orgánica de Emprendimiento e Innovación
+BR	AL8W		2019-09-20		Sociedade Limitada Unipessoal, Lei 13.874
+PT	VF4C		1996-11-06		Sociedade Unipessoal por Quotas, D.L. 257/96
+GR	QCA0		2012-04-01		Idiotiki Kefalaiouchiki Etaireia, Law 4072/2012
+GB	Z0EY		2001-04-06		Limited Liability Partnership, LLP Act 2000
+GB	17R0		2005-07-01		Community Interest Company
+GB	7T8N		2013-01-02		Charitable Incorporated Organisation
+GB	STX7		2011-04-01		Scottish CIO
+IN	U5S6		2009-03-31		Limited Liability Partnership Act 2008
+IN	I47Z		2014-04-01		One Person Company, Companies Act 2013
+SG	5SGV		2005-04-11		Limited Liability Partnership Act 2005
+JP	7QQ0		2006-05-01		合同会社, Companies Act 2005
+JP	DYQK			2006-04-30	有限会社: none founded after the Companies Act of 2005
+KR	UDJG		2012-04-15		유한책임회사, Commercial Act amendment 2011
+RU	4TYO		2014-09-01		публичное акционерное общество, Civil Code reform 2014
+RU	JZBN		2014-09-01		непубличное акционерное общество
+RU	MT3A			2014-08-31	открытое акционерное общество: none founded after the 2014 reform
+LU	EUT4		2017-01-18		S.à r.l. simplifiée, law of 23 January 2016 in force 2017
+CN	J7SF		1997-08-01		合伙企业 (limited partnership from 2007, general from 1997)
+US		limited liability company	1977-03-04		the first LLC act, Wyoming 1977; every state by 1996
+US		limited liability partnership	1991-01-01		Texas 1991
+CA		limited liability partnership	1998-01-01		Ontario 1998

@@ -1,0 +1,92 @@
+# Legal forms ISO 20275 does not list for a served country that has other ISO forms (curated
+# 2026-11-10): mostly sole traders, who register with the tax office or a municipality rather
+# than a company registry, and general partnerships of the common-law countries. They carry no
+# ISO code. Countries with no ISO forms at all are in form_templates.tsv.
+# share: the form's share of its group where known (the UK's 0.36M ordinary partnerships beside
+# 0.11M registered LPs and LLPs; Brazil's 12.6M MEI beside about 1M other sole traders); empty
+# rows share what is left equally with the ISO forms.
+country	group	abbreviation	latin_abbreviation	local_name	english_name	share
+AG	sole_proprietorship			sole proprietorship	sole proprietorship	
+AG	partnership			partnership	partnership	
+AG	limited_liability	Ltd	Ltd	limited company	limited company	0.9
+AM	sole_proprietorship	ԱՁ	AdzH	անհատ ձեռնարկատեր	individual entrepreneur	
+AR	sole_proprietorship			comerciante individual	sole trader	
+AU	sole_proprietorship			sole trader	sole trader	
+AU	partnership			partnership	partnership	0.9
+AZ	sole_proprietorship	FŞ	FS	fərdi sahibkar	individual entrepreneur	
+BE	sole_proprietorship			eenmanszaak	sole proprietorship	
+BH	sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship	
+BJ	limited_liability	SARL	SARL	société à responsabilité limitée	limited liability company	0.8
+BR	sole_proprietorship	MEI	MEI	microempreendedor individual	individual micro-entrepreneur	0.9
+BR	sole_proprietorship	EI	EI	empresário individual	sole trader	0.1
+BW	sole_proprietorship			sole proprietorship	sole proprietorship	
+BW	partnership			partnership	partnership	
+BY	sole_proprietorship	ІП	IP	індывідуальны прадпрымальнік	individual entrepreneur	
+BY	partnership			поўнае таварыства	general partnership	
+BZ	sole_proprietorship			sole proprietorship	sole proprietorship	
+CN	sole_proprietorship	个人独资企业	Geren Duzi Qiye	个人独资企业	sole investor enterprise	0.05
+CN	partnership	普通合伙企业	Putong Hehuo Qiye	普通合伙企业	general partnership	0.75
+CN	limited_liability	有限公司	Co., Ltd.	有限责任公司	limited liability company	0.94
+CN	limited_liability	股份有限公司	Co., Ltd.	股份有限公司	company limited by shares	0.06
+CY	sole_proprietorship			ατομική επιχείρηση	sole proprietorship	
+CY	partnership			ομόρρυθμος συνεταιρισμός	general partnership	
+EC	sole_proprietorship			persona natural obligada a llevar contabilidad	sole trader	
+GB	sole_proprietorship			sole trader	sole trader	
+GB	partnership			partnership	ordinary partnership	0.77
+GR	sole_proprietorship			ατομική επιχείρηση	sole proprietorship	
+GT	sole_proprietorship			comerciante individual	sole trader	
+HK	sole_proprietorship			獨資經營	sole proprietorship	
+HK	partnership			合夥經營	partnership	
+IE	sole_proprietorship			sole trader	sole trader	
+IN	other			society	registered society	0.25
+IS	sole_proprietorship			einstaklingsrekstur	sole proprietorship	
+JO	sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship	
+JP	sole_proprietorship			個人事業主	sole proprietor	
+JP	other	一般社団法人	Ippan Shadan Hojin	一般社団法人	general incorporated association	0.25
+JP	other	医療法人	Iryo Hojin	医療法人	medical corporation	0.20
+JP	other	NPO法人	NPO Hojin	特定非営利活動法人	specified non-profit corporation	0.15
+JP	other	社会福祉法人	Shakai Fukushi Hojin	社会福祉法人	social welfare corporation	0.08
+JP	other	協同組合	Kyodo Kumiai	協同組合	co-operative	0.10
+JP	other	宗教法人	Shukyo Hojin	宗教法人	religious corporation	0.10
+KN	sole_proprietorship			sole proprietorship	sole proprietorship	
+KR	other	협동조합	Hyeopdong Johap	협동조합	co-operative	0.15
+LS	sole_proprietorship			sole proprietorship	sole proprietorship	
+LS	partnership			partnership	partnership	
+LV	other	biedrība	biedriba	biedrība	association	0.70
+LV	other	nodibinājums	nodibinajums	nodibinājums	foundation	0.10
+LV	other	KS	KS	kooperatīvā sabiedrība	co-operative society	0.15
+MH	sole_proprietorship			sole proprietorship	sole proprietorship	
+MM	sole_proprietorship			sole proprietorship	sole proprietorship	
+MM	partnership			partnership	partnership	
+MX	sole_proprietorship			persona física con actividad empresarial	sole trader	
+NE	limited_liability	SARL	SARL	société à responsabilité limitée	limited liability company	0.8
+NG	sole_proprietorship			business name (sole proprietorship)	sole proprietorship	
+NG	partnership			business name (partnership)	partnership	
+OM	sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship	
+PA	sole_proprietorship			persona natural comerciante	sole trader	
+PG	sole_proprietorship			business name	sole proprietorship	
+PG	partnership			partnership	partnership	
+PH	sole_proprietorship			sole proprietorship	sole proprietorship	
+PH	partnership			general partnership	general partnership	
+PK	sole_proprietorship			sole proprietorship	sole proprietorship	
+PK	partnership			partnership firm	partnership	
+PY	sole_proprietorship			comerciante individual	sole trader	
+QA	sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship	
+SA	sole_proprietorship		Est.	مؤسسة فردية	sole proprietorship	
+SB	sole_proprietorship			sole proprietorship	sole proprietorship	
+SB	partnership			partnership	partnership	
+SC	sole_proprietorship			sole trader	sole trader	
+SE	sole_proprietorship	EF	EF	enskild näringsidkare	sole trader	
+SM	sole_proprietorship			ditta individuale	sole proprietorship	
+TH	sole_proprietorship			กิจการเจ้าของคนเดียว	sole proprietorship	
+TN	partnership	SNC	SNC	société en nom collectif	general partnership	
+TO	sole_proprietorship			sole trader	sole trader	
+TO	partnership			partnership	partnership	
+TV	sole_proprietorship			sole trader	sole trader	
+UY	partnership	S.C.	S.C.	sociedad colectiva	general partnership	
+VU	sole_proprietorship			sole trader	sole trader	
+VU	partnership			partnership	partnership	
+WS	sole_proprietorship			sole trader	sole trader	
+WS	partnership			partnership	partnership	
+ZA	sole_proprietorship			sole proprietorship	sole proprietorship	
+ZA	partnership			partnership	partnership	

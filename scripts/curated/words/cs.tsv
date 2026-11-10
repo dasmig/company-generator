@@ -1,0 +1,47 @@
+# Czech business-name words (curated 2026-11-10). Czech names put the founder or a brand word before the trade: Novák Stavby, Stavby Novák, Elektro Dvořák.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{surname} {trade}:2;{trade} {surname}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{trade} {place}:2;{adjective} {trade}:1;{trade} {region}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	a;&
+family	*	a syn;a synové;a spol.
+adjective	*	Česká;Nová;Moderní;Euro;Inter;Pro;Eko;Profi;Max;Mega;Bohemia;Morava;Vltava;Lev;Zlatá;Top
+region	*	Morava;Čechy;Bohemia;Vysočina;Jih;Sever;Východ;Západ;Krkonoše;Šumava
+coined_head	*	Tech;Pro;Bo;Mor;Eko;Med;Kom;Trans;Stav;Agro;Neo;Vit;Lum
+coined_tail	*	tech;stav;ex;kom;mont;servis;trans;plast;tex;bo;ia;on
+trade	A	Zemědělství;Farma;Agro;Statek;Zemědělské Družstvo
+trade	B	Lomy;Těžba;Pískovna
+trade	C	Výroba;Strojírny;Závody;Průmysl
+trade	10	Pekárna;Řeznictví;Masna;Mlékárna;Cukrárna
+trade	11	Pivovar;Vinařství;Lihovar
+trade	16	Pila;Dřevo;Truhlářství
+trade	18	Tiskárna;Tisk
+trade	25	Kovovýroba;Zámečnictví;Strojírenství;Kovo
+trade	31	Nábytek;Truhlářství
+trade	D	Energie;Solar;Elektrárna
+trade	E	Vodárny;Odpady;Recyklace;Ekologie
+trade	F	Stavby;Stavební;Stavitelství;Stavební Firma
+trade	43	Elektro;Instalatérství;Topenářství;Malířství;Pokrývačství;Stavby
+trade	G	Obchod;Velkoobchod;Trade;Distribuce;Import Export
+trade	45	Autoservis;Auto;Pneuservis;Autosalon
+trade	47	Prodejna;Obchod;Lékárna;Potraviny;Market
+trade	H	Doprava;Logistika;Spedice;Taxi;Autodoprava;Přeprava
+trade	I	Hotel;Penzion;Restaurace;Pizzerie;Kavárna;Gastro
+trade	J	Software;IT;Systems;Media;Digital;Telekom
+trade	K	Invest;Finance;Capital;Pojišťovna
+trade	L	Reality;Nemovitosti;Development;Správa Nemovitostí
+trade	M	Poradenství;Consulting;Účetnictví;Advokátní Kancelář;Projekt;Architekti;Reklama;Design
+trade	75	Veterina;Veterinární Klinika
+trade	N	Služby;Servis;Úklid;Půjčovna;Ostraha;Cestovní Kancelář;Personální Agentura
+trade	O	Obecní Úřad
+trade	P	Škola;Autoškola;Vzdělávání;Akademie
+trade	Q	Zdravotní Středisko;Stomatologie;Fyzioterapie;Klinika;Ordinace
+trade	R	Sport;Fitness;Kultura
+trade	S	Služby;Kadeřnictví;Kosmetika;Opravy;Čistírna;Pohřební Služba

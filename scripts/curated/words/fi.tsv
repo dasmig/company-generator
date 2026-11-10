@@ -1,0 +1,46 @@
+# Finnish business-name words (curated 2026-11-10). Finnish names: Virtanen Rakennus Oy, Kuljetus Korhonen, Pohjolan Sähkö.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{surname} {trade}:2;{trade} {surname}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{adjective} {trade}:2;{region} {trade}:1;{place} {trade}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;ja
+family	*	& Pojat;& Co
+adjective	*	Suomen;Uusi;Pohjolan;Etelä;Itä;Länsi;Keski;Nordic;Euro;Pro;Eko;Top;Kulta;Sini;Tähti;Revontuli;Kallio;Mänty
+region	*	Pohjola;Lappi;Savo;Karjala;Häme;Pohjanmaa;Uusimaa;Etelä;Pohjoinen
+coined_head	*	Suo;Nor;Lap;Sav;Kar;Tek;Lin;Vir;Hel;Pol;Ari
+coined_tail	*	tek;ia;la;nen;ex;on;ra;tec;lux;ko
+trade	A	Maatila;Maatalous;Puutarha;Agro
+trade	02	Metsä;Metsäpalvelu;Puunkorjuu
+trade	03	Kalastus
+trade	B	Sora;Kaivos;Louhinta
+trade	C	Tehdas;Teollisuus;Valmistus
+trade	10	Leipomo;Lihajaloste;Meijeri
+trade	16	Saha;Puu;Puusepänliike
+trade	25	Konepaja;Metalli;Hitsaus
+trade	D	Energia;Aurinkoenergia;Sähkö
+trade	E	Vesihuolto;Kierrätys;Ympäristö
+trade	F	Rakennus;Rakennuspalvelu;Rakentajat
+trade	43	Sähkö;LVI;Maalaus;Putki;Kattotyö;Remontti
+trade	42	Maanrakennus;Kaivinkone
+trade	G	Kauppa;Tukku;Trading;Agentuuri
+trade	45	Auto;Autokorjaamo;Rengas
+trade	47	Kauppa;Myymälä;Apteekki;Kukka
+trade	H	Kuljetus;Logistiikka;Taksi;Muutto;Rahti
+trade	I	Hotelli;Ravintola;Kahvila;Pizzeria
+trade	J	IT;Ohjelmisto;Data;Media;Digital
+trade	K	Invest;Pääoma;Rahoitus;Holding;Vakuutus
+trade	L	Kiinteistöt;Kiinteistöpalvelu;Asunnot
+trade	M	Konsultointi;Tilitoimisto;Asianajotoimisto;Arkkitehdit;Insinööritoimisto;Mainos;Design
+trade	N	Palvelu;Siivous;Vuokraus;Vartiointi;Matkat;Henkilöstöpalvelu
+trade	O	Kunta
+trade	P	Koulutus;Koulu;Autokoulu
+trade	Q	Klinikka;Hammaslääkäri;Fysioterapia;Terveys
+trade	R	Urheilu;Kuntosali;Kulttuuri
+trade	S	Kampaamo;Kauneus;Palvelu;Korjaamo;Hautaustoimisto

@@ -1,0 +1,50 @@
+# Swedish business-name words (curated 2026-11-10). Checked against the words GLEIF's Swedish names use most (bygg, fastigheter, konsult,
+# förvaltning, entreprenad, redovisning). Swedish names: Anderssons Bygg AB, Bygg & Måleri i Göteborg AB.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:1;{surname}s:2
+template	founder_trade	{surname}s {trade}:3;{surname} {trade}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{place} {trade}:2;{trade} i {place}:1;{adjective} {trade}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;och
+family	*	& Söner;& Son;& Co
+adjective	*	Nya;Svenska;Nordiska;Norra;Södra;Västra;Östra;Total;Proffs;Prima;Euro;Nord;Sol;Fjäll;Skog;Sjö;Kust;Gyllene;Blå
+region	*	Norrland;Svealand;Götaland;Skåne;Väst;Öst;Mälardalen;Norrbotten;Bergslagen
+coined_head	*	Nor;Sve;Vik;Ask;Björ;Hav;Lys;Skog;Sol;Stor;Ny;Tek;Lin;Al
+coined_tail	*	ia;tek;ra;sta;vik;nes;heim;dal;on;ex;lux
+trade	A	Lantbruk;Gård;Jordbruk;Lantbruksfirma;Handelsträdgård
+trade	02	Skog;Skogsentreprenad;Skogstjänst
+trade	03	Fiske;Vattenbruk
+trade	B	Grus;Gruv;Bergtäkt;Ballast
+trade	C	Industri;Tillverkning;Verkstad
+trade	10	Bageri;Konditori;Charkuteri;Mejeri
+trade	11	Bryggeri;Destilleri
+trade	16	Snickeri;Sågverk;Trä
+trade	18	Tryckeri;Tryck
+trade	25	Mekaniska;Svets;Smide;Plåt;Mekaniska Verkstad
+trade	D	Energi;Kraft;Sol;Vindkraft
+trade	E	Vatten;Återvinning;Miljö;Avfall
+trade	F	Bygg;Byggnads;Entreprenad;Byggservice;Byggtjänst
+trade	43	El;VVS;Måleri;Rör;Golv;Plåtslageri;Tak;Bygg & Måleri
+trade	42	Mark;Markentreprenad;Schakt;Anläggning
+trade	G	Handel;Trading;Import;Försäljning;Agentur;Partihandel
+trade	45	Bil;Bilservice;Bilverkstad;Motor;Däck
+trade	47	Butik;Handel;Livs;Blommor;Apotek
+trade	H	Transport;Åkeri;Logistik;Taxi;Frakt;Flytt
+trade	I	Hotell;Restaurang;Café;Pizzeria;Krog;Catering
+trade	J	IT;Konsult;Data;Media;Software;Digital
+trade	K	Invest;Kapital;Finans;Holding;Försäkring
+trade	L	Fastigheter;Fastighets;Förvaltning;Bostäder
+trade	M	Konsult;Redovisning;Advokatbyrå;Revision;Arkitekter;Reklam;Design;Teknik
+trade	75	Djurklinik;Veterinär
+trade	N	Service;Städ;Bemanning;Uthyrning;Bevakning;Resor
+trade	O	Kommun
+trade	P	Utbildning;Skola;Trafikskola
+trade	Q	Vård;Tandvård;Klinik;Fysioterapi;Hälsa
+trade	R	Sport;Gym;Kultur;Musik
+trade	S	Frisör;Skönhet;Service;Reparation;Begravningsbyrå

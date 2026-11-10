@@ -1,0 +1,103 @@
+# French business-name words (curated 2026-11-10). Trade words were read by hand from the words
+# most over-represented in each division's names in the SIRENE register (read_registers.py), brands,
+# place names and the register's own abbreviations (asa, gpt, sccv, spfpl) left out. Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2;Établissements {surname}:1;{surname} {family}:1
+template	founder_trade	{trade} {surname}:2;{trade} de {surname}:0.5
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{trade} {adjective}:2;{trade} du {region}:1;{trade} de {place}:2;{adjective} {trade}:0.5
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;et
+family	*	& Fils;Frères;& Cie;Père & Fils;Famille
+adjective	*	Moderne;Nouvelle;Générale;Centrale;Royale;Grande;Française;Européenne;Internationale;Express;Prestige;Élite;Premier;Plus;Pro;Services;Solutions;Concept;Création;Tradition;Artisanale;Qualité;Avenir;Horizon;Azur;Atlantique;Alpine;Bleue;Verte;Or
+region	*	Nord;Sud;Est;Ouest;Centre;Sud-Ouest;Grand Ouest;Littoral;Vallée;Plaine;Pays;Région;Méditerranée;Atlantique;Montagne
+coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Néo;Sol;Cal;Dyn;Gen;Ori;Opt;Ren;Syn;Val;Ar;Bel;Cor;Dom;Fer;Lor;Mar;Sav;Vin
+coined_tail	*	alis;éo;ia;ys;ance;ix;ane;or;ea;elle;ium;ens;is;on;ova;ure;étis;ica;ence;ora
+trade	01	Exploitation Agricole;Ferme;Domaine;Élevage;Maraîchage;Earl
+trade	02	Exploitation Forestière;Bois;Forêts;Sylviculture
+trade	03	Pêche;Armement;Huîtres;Pisciculture;Aquaculture;Coquillages
+trade	05	Charbonnages
+trade	06	Pétrole;Énergie;Exploration
+trade	07	Mines;Minerais
+trade	08	Carrières;Granulats;Sablières;Matériaux
+trade	09	Forage;Services Pétroliers
+trade	10	Boulangerie;Pâtisserie;Fournil;Boucherie;Charcuterie;Fromagerie;Délices
+trade	11	Brasserie;Distillerie;Cave;Vignobles;Vins;Champagne
+trade	12	Tabacs
+trade	13	Textiles;Broderie;Bâches;Voilerie;Tissage;Confection
+trade	14	Couture;Mode;Confection;Création;Prêt-à-Porter
+trade	15	Maroquinerie;Sellerie;Cuir;Chaussures
+trade	16	Scierie;Menuiserie;Charpente;Bois;Palettes;Tonnellerie
+trade	17	Cartonnages;Emballages;Papeterie;Étiquettes
+trade	18	Imprimerie;Impression;Sérigraphie;Imprimeurs;Graphique
+trade	19	Raffinerie;Carburants
+trade	20	Laboratoires;Cosmétiques;Parfums;Savonnerie;Peintures;Chimie
+trade	21	Laboratoires;Pharma;Pharmaceutique
+trade	22	Plastiques;Composites;Caoutchouc;Injection;Plasturgie
+trade	23	Béton;Marbrerie;Verre;Miroiterie;Céramique;Préfa;Pierre
+trade	24	Fonderie;Métaux;Aciers;Aluminium
+trade	25	Mécanique;Métallerie;Usinage;Chaudronnerie;Serrurerie;Soudure
+trade	26	Électronique;Technologies;Systèmes;Instruments
+trade	27	Électricité;Câblage;Enseignes;Éclairage
+trade	28	Mécanique;Machines;Hydraulique;Automatismes;Équipements;Froid Industriel
+trade	29	Carrosserie;Remorques;Automobile;Véhicules Industriels
+trade	30	Chantier Naval;Marine;Cycles;Aéronautique;Nautisme
+trade	31	Ébénisterie;Agencement;Meubles;Mobilier;Cuisines
+trade	32	Laboratoire Dentaire;Prothèses;Orthopédie;Joaillerie;Bijouterie
+trade	33	Maintenance;Tuyauterie;Chaudronnerie;Maintenance Industrielle;Réparation
+trade	35	Énergie;Énergies;Solaire;Éolien;Centrale Solaire;Parc Éolien
+trade	36	Eaux;Eau Potable;Adduction d'Eau
+trade	37	Assainissement;Vidange;Débouchage
+trade	38	Recyclage;Récupération;Déchets;Valorisation;Débarras;Environnement
+trade	39	Désamiantage;Dépollution;Environnement
+trade	41	Construction;Bâtiment;Rénovation;Promotion;Constructions;Maisons
+trade	42	Travaux Publics;Terrassement;Aménagement;Voirie;Réseaux
+trade	43	Bâtiment;Plomberie;Électricité;Peinture;Menuiserie;Maçonnerie;Couverture;Chauffage
+trade	45	Garage;Automobiles;Auto;Carrosserie;Pneus;Motos
+trade	46	Distribution;Import Export;Négoce;Diffusion;Trading;Commerce
+trade	47	Boutique;Commerce;Épicerie;Pharmacie;Magasin;Market;Fleurs;Tabac Presse
+trade	49	Transports;Transport;Taxi;VTC;Ambulances;Déménagements;Autocars
+trade	50	Croisières;Transport Fluvial;Maritime;Navigation
+trade	51	Aviation;Air;Aéro
+trade	52	Logistique;Transit;Stockage;Dépannage;Entrepôts
+trade	53	Livraison;Coursier;Courses;Express;Colis
+trade	55	Hôtel;Camping;Gîte;Gîtes;Chambres d'Hôtes;Résidence
+trade	56	Restaurant;Pizza;Café;Bar;Brasserie;Traiteur;Restauration;Bistrot
+trade	58	Éditions;Édition;Presse;Publications;Logiciels
+trade	59	Productions;Films;Production;Studio;Cinéma;Musique
+trade	60	Radio;Télévision;Médias
+trade	61	Télécom;Réseaux;Fibre;Télécommunications
+trade	62	Informatique;Consulting;Solutions;Digital;Technologies;Systèmes
+trade	63	Data;Web;Informatique;Numérique
+trade	64	Holding;Invest;Financière;Participations;Capital;Finances
+trade	65	Assurances;Mutuelle;Prévoyance
+trade	66	Courtage;Patrimoine;Gestion;Conseil Patrimonial;Assurances
+trade	68	Immobilier;Immo;Immobilière;Foncière;Patrimoine;Habitat
+trade	69	Avocats;Expertise Comptable;Audit;Notaires;Conseil;Associés
+trade	70	Conseil;Consulting;Conseils;Management;Groupe;Stratégie
+trade	71	Architecture;Ingénierie;Études;Contrôle;Bureau d'Études;Diagnostics
+trade	72	Recherche;Institut;Laboratoire;Innovation
+trade	73	Communication;Publicité;Marketing;Agence;Régie
+trade	74	Design;Photo;Photographie;Studio;Traduction;Décoration
+trade	75	Clinique Vétérinaire;Vétérinaires;Cabinet Vétérinaire
+trade	77	Location;Loc;Location de Matériel;Location Auto
+trade	78	Intérim;Emploi;Recrutement;Travail Temporaire
+trade	79	Voyages;Tourisme;Tours;Évasion
+trade	80	Sécurité;Protection;Surveillance;Gardiennage;Sécurité Privée
+trade	81	Nettoyage;Propreté;Entretien;Jardins;Espaces Verts;Multiservices
+trade	82	Services;Événements;Gestion;Secrétariat;Centre d'Appels
+trade	84	Commune;Syndicat Intercommunal;Direction;Communauté de Communes
+trade	85	Formation;École;Auto-École;Académie;Enseignement;Soutien Scolaire
+trade	86	Cabinet Médical;Santé;Centre Dentaire;Ambulances;Kinésithérapie;Soins
+trade	87	Résidence;EHPAD;Maison de Retraite;Accueil
+trade	88	Aide à Domicile;Accueil;Services à la Personne;Crèche
+trade	90	Compagnie;Théâtre;Productions;Spectacles;Arts;Musique
+trade	91	Musée;Bibliothèque;Patrimoine
+trade	92	Casino;Jeux;Loisirs
+trade	93	Club;Sports;Fitness;Tennis Club;Loisirs
+trade	94	Association;Amicale;Comité;Union
+trade	95	Cordonnerie;Retouches;Dépannage;Réparation;Informatique
+trade	96	Coiffure;Beauté;Institut;Barbier;Esthétique;Laverie;Pressing

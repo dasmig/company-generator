@@ -1,0 +1,105 @@
+# Turkish business-name words (curated 2026-11-10), checked against the words GLEIF's Turkish names
+# use most (inşaat, tekstil, gıda, turizm, enerji, otomotiv, makina, yazılım, danışmanlık, lojistik,
+# "sanayi ve ticaret"). A name is a founder's surname or a brand word, the trades, and often
+# "Sanayi ve Ticaret" before the form: Yılmaz İnşaat Taahhüt Sanayi ve Ticaret Ltd. Şti.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:1;{surname} {family}:1
+template	founder_trade	{surname} {trade}:3;{surname} {trade} Sanayi ve Ticaret:2;{surname} {trade} San. ve Tic.:1
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{adjective} {trade}:3;{adjective} {trade} Sanayi ve Ticaret:2;{place} {trade}:1
+template	coined	{coined}:2;{coined} {trade}:2
+template	initials	{initials} {trade}:2;{initials}:1
+joiner	*	ve;&
+family	*	ve Oğulları;Kardeşler;Grup;Aile
+adjective	*	Anadolu;Ege;Akdeniz;Marmara;Karadeniz;Yıldız;Güneş;Doğan;Kartal;Başak;Özgür;Yeni;Mavi;Altın;Gül;Ak;Has;Öz;Uğur;Bereket;Hilal;Nur;Çağ;Kale;Ata;Türk;Star;Mega;Pro;Global
+region	*	Anadolu;Ege;Akdeniz;Marmara;Karadeniz;Trakya;Kuzey;Güney;Doğu;Batı
+coined_head	*	Tek;Net;Med;Akt;Bil;Pro;Ser;Kar;Tur;Ata;Ay;Er;Gen;Kur;Lin;Mar;Neo;Opt;Syn;Ufu
+coined_tail	*	ko;sa;tas;tek;san;kom;tim;pa;net;sis;ix;on;tur;lar;mak;yap;port
+trade	01	Tarım;Hayvancılık;Tarım Ürünleri;Seracılık;Süt Ürünleri
+trade	02	Ormancılık;Orman Ürünleri
+trade	03	Su Ürünleri;Balıkçılık
+trade	05	Kömür;Madencilik
+trade	06	Petrol;Enerji
+trade	07	Madencilik;Maden
+trade	08	Mermer;Taş Ocağı;Agrega;Madencilik
+trade	09	Sondaj
+trade	10	Gıda;Unlu Mamuller;Et Ürünleri;Süt Ürünleri;Fırın
+trade	11	İçecek;Meşrubat;Şarapçılık
+trade	12	Tütün
+trade	13	Tekstil;İplik;Örme;Dokuma
+trade	14	Tekstil;Konfeksiyon;Giyim;Moda
+trade	15	Deri;Ayakkabı;Saraciye
+trade	16	Ağaç;Orman Ürünleri;Kereste;Palet
+trade	17	Ambalaj;Kağıt;Karton
+trade	18	Matbaa;Basım;Baskı;Reklam ve Matbaacılık
+trade	19	Petrol Ürünleri;Akaryakıt
+trade	20	Kimya;Boya;Kozmetik
+trade	21	İlaç
+trade	22	Plastik;Kauçuk;Ambalaj
+trade	23	Beton;Cam;Seramik;Mermer;Yapı Malzemeleri
+trade	24	Çelik;Döküm;Metal;Demir Çelik
+trade	25	Metal;Makina;Çelik Yapı;Kalıp;Sac
+trade	26	Elektronik;Teknoloji;Sistemleri
+trade	27	Elektrik;Aydınlatma;Kablo
+trade	28	Makina;Makine;Otomasyon;Hidrolik
+trade	29	Otomotiv;Yedek Parça;Karoser
+trade	30	Tersanecilik;Denizcilik;Havacılık
+trade	31	Mobilya;Dekorasyon
+trade	32	Kuyumculuk;Medikal;Oyuncak
+trade	33	Bakım Onarım;Teknik Servis
+trade	35	Enerji;Elektrik Üretim;Güneş Enerjisi;Rüzgar Enerjisi
+trade	36	Su
+trade	37	Arıtma
+trade	38	Geri Dönüşüm;Hurda;Atık Yönetimi
+trade	39	Çevre
+trade	41	İnşaat;Yapı;İnşaat Taahhüt;Gayrimenkul Geliştirme
+trade	42	Taahhüt;Yol Yapım;Altyapı;Hafriyat
+trade	43	Tesisat;Elektrik;Yapı Dekorasyon;Mekanik Tesisat;İzolasyon
+trade	45	Otomotiv;Oto;Yedek Parça;Lastik
+trade	46	Ticaret;Dış Ticaret;İthalat İhracat;Pazarlama;Dağıtım;Toptan
+trade	47	Market;Mağazacılık;Eczane;Gıda
+trade	49	Nakliyat;Taşımacılık;Lojistik;Turizm Taşımacılık
+trade	50	Denizcilik;Gemi İşletmeciliği
+trade	51	Havacılık;Hava Yolları
+trade	52	Lojistik;Depolama;Gümrük Müşavirliği
+trade	53	Kargo;Kurye
+trade	55	Turizm;Otelcilik;Otel
+trade	56	Restoran;Gıda;Yemek;Kafe;Catering
+trade	58	Yayıncılık;Yazılım
+trade	59	Film;Prodüksiyon;Yapım
+trade	60	Radyo;Televizyon;Yayıncılık
+trade	61	Telekomünikasyon;İletişim
+trade	62	Yazılım;Bilişim;Teknoloji;Bilgi Teknolojileri
+trade	63	Bilişim;Veri;İnternet
+trade	64	Yatırım;Holding;Finans
+trade	65	Sigorta
+trade	66	Sigorta Aracılık;Portföy;Danışmanlık
+trade	68	Gayrimenkul;Emlak;Gayrimenkul Yatırım
+trade	69	Hukuk;Mali Müşavirlik;Muhasebe;Denetim
+trade	70	Danışmanlık;Yönetim Danışmanlığı
+trade	71	Mühendislik;Mimarlık;Proje;Etüt
+trade	72	Ar-Ge;Laboratuvar;Biyoteknoloji
+trade	73	Reklam;Reklamcılık;Pazarlama;Medya
+trade	74	Tasarım;Fotoğrafçılık;Tercüme
+trade	75	Veteriner
+trade	77	Kiralama;Oto Kiralama;Araç Kiralama
+trade	78	İnsan Kaynakları
+trade	79	Turizm;Seyahat
+trade	80	Güvenlik;Özel Güvenlik
+trade	81	Temizlik;Peyzaj;Tesis Yönetimi
+trade	82	Hizmetleri;Organizasyon;Çağrı Merkezi
+trade	84	Belediye
+trade	85	Eğitim;Kurs;Sürücü Kursu;Kolej
+trade	86	Sağlık;Medikal;Tıp Merkezi;Ağız ve Diş Sağlığı
+trade	87	Huzurevi;Bakım Merkezi
+trade	88	Bakım Hizmetleri;Kreş
+trade	90	Sanat;Organizasyon
+trade	91	Müze
+trade	92	Şans Oyunları
+trade	93	Spor;Fitness
+trade	94	Derneği;Vakfı
+trade	95	Teknik Servis;Tamir
+trade	96	Kuaför;Güzellik;Kuru Temizleme

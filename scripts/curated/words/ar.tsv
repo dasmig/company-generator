@@ -1,0 +1,58 @@
+# Arabic business-name words (curated 2026-11-10). A name is a trade name (often an Arabic noun
+# with the article: النور, الأمل) or a family name, then the trade with the preposition لل ("for"):
+# مؤسسة النور للتجارة, شركة العتيبي للمقاولات. Words carry the Latin form these firms use
+# themselves (Al Noor Trading, Al Otaibi Contracting) after "=", used for domains. Coined names are
+# not an Arabic pattern; a coined pattern falls back to {adjective}. A section key serves every
+# division of the section that has no row of its own. Columns as in en.tsv.
+kind	key	value
+style	script	Arab
+style	form_position	suffix
+template	founder	{surname}:1;أبناء {surname}=Abna {surname}:1
+template	founder_trade	{surname} {trade}:3
+template	two_founders	{surname} و{surname2}={surname} & {surname2}:1
+template	descriptive	{adjective} {trade}:4;{place} {trade}:1
+template	coined	{adjective}:2;{adjective} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:1
+surname	*	العتيبي=Al Otaibi:1;القحطاني=Al Qahtani:1;الشمري=Al Shammari:0.9;الحربي=Al Harbi:0.9;الغامدي=Al Ghamdi:0.8;الزهراني=Al Zahrani:0.8;المطيري=Al Mutairi:0.8;الدوسري=Al Dosari:0.7;حسن=Hassan:1;محمود=Mahmoud:0.9;إبراهيم=Ibrahim:0.9;عبدالله=Abdullah:0.9;خليل=Khalil:0.7;يوسف=Youssef:0.7;سليمان=Suleiman:0.6;الخطيب=Al Khatib:0.6;النجار=Al Najjar:0.6;الحداد=Al Haddad:0.6;منصور=Mansour:0.6;صالح=Saleh:0.6;العلي=Al Ali:0.6;المصري=Al Masri:0.5;الأحمد=Al Ahmad:0.5;الكعبي=Al Kaabi:0.5;البلوشي=Al Balushi:0.5
+place	SA	الرياض=Riyadh:2;جدة=Jeddah:1.5;الخليج=Al Khaleej:1;المملكة=Al Mamlaka:0.6;الجزيرة=Al Jazeera:1;نجد=Najd:0.6;الحجاز=Al Hijaz:0.5;الشرقية=Al Sharqiya:0.6
+place	AE	الإمارات=Emirates:2;دبي=Dubai:2;أبوظبي=Abu Dhabi:1.5;الخليج=Al Khaleej:1;الشارقة=Sharjah:0.6
+place	EG	مصر=Misr:3;القاهرة=Cairo:1.5;النيل=Al Nil:1.5;الإسكندرية=Alexandria:0.8;الدلتا=Delta:0.6;الصعيد=Al Saeed:0.4
+place	*	العربية=Al Arabiya:2;الخليج=Al Khaleej:1;الشرق=Al Sharq:1;المشرق=Al Mashriq:0.5;المغرب=Al Maghrib:0.5
+adjective	*	النور=Al Noor;الأمل=Al Amal;الفجر=Al Fajr;الرواد=Al Rowad;النخبة=Al Nokhba;الصفوة=Al Safwa;الوطنية=Al Wataniya;المتحدة=Al Muttahida;الهلال=Al Hilal;البيان=Al Bayan;الريادة=Al Riyada;الأفق=Al Ofoq;السلام=Al Salam;الاتحاد=Al Ittihad;الماسة=Al Masa;الدرة=Al Durra;الواحة=Al Waha;النجمة=Al Najma;البركة=Al Baraka;الإبداع=Al Ibdaa;الرائد=Al Raed;الأصالة=Al Asala;التميز=Al Tamayoz;الحديثة=Al Haditha;الدولية=International;الذهبية=Golden
+trade	A	للزراعة=Agriculture;للإنتاج الزراعي=Agricultural Production;للدواجن=Poultry;للثروة الحيوانية=Livestock
+trade	03	للأسماك=Fisheries;للثروة السمكية=Fisheries
+trade	B	للتعدين=Mining;للمحاجر=Quarries;للنفط والغاز=Oil & Gas
+trade	C	للصناعة=Industries;للصناعات=Industries;للتصنيع=Manufacturing
+trade	10	للأغذية=Foods;للصناعات الغذائية=Food Industries;للمخبوزات=Bakeries;للألبان=Dairy
+trade	11	للمشروبات=Beverages;للمياه المعدنية=Mineral Water
+trade	13	للنسيج=Textiles;للغزل والنسيج=Spinning & Weaving
+trade	14	للملابس=Garments;للأزياء=Fashion
+trade	20	للكيماويات=Chemicals;للدهانات=Paints
+trade	21	للأدوية=Pharmaceuticals
+trade	22	للبلاستيك=Plastics
+trade	23	للخرسانة=Concrete;للزجاج=Glass;للرخام=Marble;للأسمنت=Cement
+trade	24	للحديد والصلب=Steel;للمعادن=Metals
+trade	25	للصناعات المعدنية=Metal Industries;للحدادة=Blacksmithing;للألمنيوم=Aluminium
+trade	31	للأثاث=Furniture;للموبيليا=Furniture
+trade	D	للطاقة=Energy;للكهرباء=Electricity;للطاقة الشمسية=Solar Energy
+trade	E	للمياه=Water;للبيئة=Environment;لإعادة التدوير=Recycling;للنظافة=Cleaning
+trade	F	للمقاولات=Contracting;للمقاولات العامة=General Contracting;للإنشاءات=Construction;للبناء=Building
+trade	43	للتشطيبات=Finishing;للأعمال الكهربائية=Electrical Works;للسباكة=Plumbing;للتكييف=Air Conditioning
+trade	G	للتجارة=Trading;للتجارة العامة=General Trading;للاستيراد والتصدير=Import & Export;للتوزيع=Distribution
+trade	45	للسيارات=Motors;لقطع غيار السيارات=Auto Parts
+trade	47	للتجزئة=Retail;ماركت=Market;صيدلية=Pharmacy
+trade	H	للنقل=Transport;للنقليات=Transport;للشحن=Shipping;للخدمات اللوجستية=Logistics
+trade	50	للملاحة=Navigation;للنقل البحري=Marine Transport
+trade	51	للطيران=Aviation
+trade	I	للفنادق=Hotels;للسياحة والفنادق=Tourism & Hotels;للمطاعم=Restaurants;للتموين=Catering
+trade	J	لتقنية المعلومات=IT;للبرمجيات=Software;للاتصالات=Telecom;للإعلام=Media;للنشر=Publishing
+trade	K	للاستثمار=Investment;القابضة=Holding;للتمويل=Finance;للتأمين=Insurance;للصرافة=Exchange
+trade	L	العقارية=Real Estate;للعقارات=Real Estate;للتطوير العقاري=Real Estate Development
+trade	M	للاستشارات=Consulting;للاستشارات الهندسية=Engineering Consultants;للمحاماة=Law;للمحاسبة=Accounting;للدعاية والإعلان=Advertising;للتصميم=Design
+trade	75	للخدمات البيطرية=Veterinary
+trade	N	للخدمات=Services;للخدمات العامة=General Services;للتأجير=Rental;للحراسات الأمنية=Security;للسفر والسياحة=Travel & Tourism;للتوظيف=Recruitment
+trade	O	للخدمات الحكومية=Government Services
+trade	P	للتعليم=Education;للتدريب=Training;مدارس=Schools
+trade	Q	الطبية=Medical;للخدمات الطبية=Medical Services;مستوصف=Clinic;لطب الأسنان=Dental
+trade	R	للترفيه=Entertainment;الرياضية=Sports;للفنون=Arts
+trade	S	للصيانة=Maintenance;للتجميل=Beauty;صالون=Salon;للخياطة=Tailoring;لغسيل الملابس=Laundry

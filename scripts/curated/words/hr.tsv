@@ -1,0 +1,43 @@
+# Croatian business-name words (curated 2026-11-10). Croatian (also read for Bosnian) names: Horvat Gradnja, Elektro Kovačević, Građevinar d.o.o.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{trade} {surname}:2;{surname} {trade}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{adjective} {trade}:2;{trade} {place}:1;{trade} {region}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	i;&
+family	*	i Sinovi;i Partneri
+adjective	*	Euro;Inter;Pro;Eko;Max;Mega;Top;Adria;Jadran;Dalmacija;Slavonija;Nova;Prima;Royal;Zlatna;Plava;Delta;Alfa
+region	*	Jadran;Adria;Dalmacija;Slavonija;Istra;Zagorje;Sjever;Jug;Istok;Zapad
+coined_head	*	Adr;Dal;Slav;Ist;Tech;Euro;Med;Kom;Agro;Grad;Neo;Vit
+coined_tail	*	tech;ex;kom;grad;plast;tex;ia;on;ing;line;mont
+trade	A	Poljoprivreda;Farma;Agro;OPG;Vinogradarstvo
+trade	B	Kamenolom;Šljunčara;Rudnik
+trade	C	Proizvodnja;Industrija;Tvornica
+trade	10	Pekara;Mesnica;Mljekara
+trade	16	Pilana;Drvo;Stolarija
+trade	25	Metal;Bravarija;Metaloprerada
+trade	D	Energija;Solar;Elektro
+trade	E	Vodovod;Eko;Reciklaža;Komunalac
+trade	F	Gradnja;Građevinarstvo;Graditeljstvo;Građevinar;Niskogradnja
+trade	43	Elektro;Vodoinstalacije;Termo;Soboslikarstvo;Instalacije
+trade	G	Trgovina;Trade;Commerce;Distribucija;Veletrgovina
+trade	45	Auto;Autoservis;Auto Centar;Vulkanizer
+trade	47	Trgovina;Market;Ljekarna;Butik
+trade	H	Prijevoz;Transport;Logistika;Taxi;Špedicija
+trade	I	Hotel;Apartmani;Restoran;Pizzeria;Caffe Bar;Konoba
+trade	J	Software;IT;Informatika;Media;Digital;Telekom
+trade	K	Invest;Capital;Financije;Osiguranje
+trade	L	Nekretnine;Real Estate;Development
+trade	M	Savjetovanje;Consulting;Računovodstvo;Odvjetnički Ured;Projekt;Arhitekti;Marketing
+trade	N	Usluge;Servis;Čišćenje;Zaštita;Turistička Agencija;Rent a Car
+trade	O	Općina
+trade	P	Škola;Autoškola;Edukacija;Akademija
+trade	Q	Poliklinika;Ordinacija;Stomatologija;Fizioterapija
+trade	R	Sport;Fitness;Kultura
+trade	S	Usluge;Frizerski Salon;Kozmetika;Popravci;Pogrebne Usluge

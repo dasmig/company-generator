@@ -1,0 +1,44 @@
+# Serbian business-name words (curated 2026-11-10). Serbian names are written in Latin script here, as most firms register a Latin form:
+# Jovanović Gradnja, Elektro Petrović, Agro Nikolić.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{trade} {surname}:2;{surname} {trade}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{adjective} {trade}:2;{trade} {place}:1;{trade} {region}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	i;&
+family	*	i Sinovi;i Partneri
+adjective	*	Euro;Inter;Pro;Eko;Max;Mega;Top;Srbija;Dunav;Morava;Sava;Nova;Prima;Royal;Zlatna;Delta;Alfa;Beo;Balkan
+region	*	Vojvodina;Šumadija;Srem;Banat;Bačka;Sever;Jug;Istok;Zapad;Balkan
+coined_head	*	Beo;Srb;Dun;Mor;Tech;Euro;Med;Kom;Agro;Grad;Neo;Vit
+coined_tail	*	tech;ex;kom;grad;plast;tex;ia;on;ing;line;mont;promet
+trade	A	Poljoprivreda;Farma;Agro;Voćarstvo;Stočarstvo
+trade	B	Kamenolom;Rudnik;Šljunkara
+trade	C	Proizvodnja;Industrija;Fabrika
+trade	10	Pekara;Mesara;Mlekara;Mesna Industrija
+trade	16	Strugara;Drvo;Stolarija
+trade	25	Metal;Bravarija;Metaloprerada
+trade	D	Energija;Solar;Elektro
+trade	E	Vodovod;Eko;Reciklaža;Komunalno
+trade	F	Gradnja;Građevinarstvo;Gradnja Inženjering;Niskogradnja;Izgradnja
+trade	43	Elektro;Vodoinstalacije;Termo;Molerski Radovi;Instalacije
+trade	G	Promet;Trgovina;Trade;Komerc;Distribucija;Export Import
+trade	45	Auto;Autoservis;Auto Centar;Vulkanizer
+trade	47	Prodavnica;Market;Apoteka;Butik
+trade	H	Prevoz;Transport;Logistika;Taxi;Špedicija
+trade	I	Hotel;Restoran;Kafana;Picerija;Kafe;Ketering
+trade	J	Software;IT;Informatika;Media;Digital;Telekom
+trade	K	Invest;Capital;Finansije;Osiguranje
+trade	L	Nekretnine;Real Estate;Development
+trade	M	Konsalting;Računovodstvo;Advokatska Kancelarija;Projekt;Inženjering;Marketing
+trade	N	Usluge;Servis;Čišćenje;Obezbeđenje;Turistička Agencija;Rent a Car
+trade	O	Opština
+trade	P	Škola;Auto Škola;Edukacija;Akademija
+trade	Q	Poliklinika;Ordinacija;Stomatologija;Fizioterapija
+trade	R	Sport;Fitnes;Kultura
+trade	S	Usluge;Frizerski Salon;Kozmetika;Popravke;Pogrebne Usluge

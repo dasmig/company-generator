@@ -1,0 +1,43 @@
+# Bulgarian business-name words (curated 2026-11-10), also read for North Macedonia's Cyrillic
+# names. Names follow the form-and-quotes model of the region or stand alone: Иванов Строй,
+# Агро Петров, Балкан Транс. Words carry the official Bulgarian transliteration (2009) after "=",
+# used for domains. A section key serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Cyrl
+style	form_position	suffix
+template	founder	{surname}:2;{surname} и Сие={surname} i Sie:1
+template	founder_trade	{surname} {trade}:2;{trade} {surname}:2
+template	two_founders	{surname} и {surname2}={surname} i {surname2}:1
+template	descriptive	{adjective} {trade}:2;{trade} {place}:1
+template	coined	{coined}:2;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:1
+surname	*	Иванов=Ivanov:1;Георгиев=Georgiev:0.9;Димитров=Dimitrov:0.9;Петров=Petrov:0.8;Николов=Nikolov:0.7;Христов=Hristov:0.6;Стоянов=Stoyanov:0.6;Тодоров=Todorov:0.5;Илиев=Iliev:0.5;Василев=Vasilev:0.5;Атанасов=Atanasov:0.5;Петков=Petkov:0.4;Ангелов=Angelov:0.4;Колев=Kolev:0.4;Йорданов=Yordanov:0.4;Стефанов=Stefanov:0.35;Попов=Popov:0.35;Михайлов=Mihaylov:0.35
+place	BG	България=Bulgaria:2;София=Sofia:1.5;Пловдив=Plovdiv:0.8;Варна=Varna:0.8;Бургас=Burgas:0.6;Тракия=Trakia:0.6;Добруджа=Dobrudzha:0.4;Родопи=Rodopi:0.4;Балкан=Balkan:1;Дунав=Dunav:0.4
+place	MK	Македонија=Makedonija:2;Скопје=Skopje:1.5;Вардар=Vardar:0.8;Охрид=Ohrid:0.5;Битола=Bitola:0.4
+adjective	*	Евро=Evro;Интер=Inter;Про=Pro;Еко=Eko;Мега=Mega;Макс=Maks;Топ=Top;Нова=Nova;Прима=Prima;Делта=Delta;Алфа=Alfa;Глобал=Global;Балкан=Balkan;Златна=Zlatna;Стар=Star
+coined_head	*	Бал=Bal;Тра=Tra;Род=Rod;Евро=Evro;Тех=Teh;Агро=Agro;Мед=Med;Ком=Kom;Нео=Neo;Вит=Vit;Стр=Str
+coined_tail	*	екс=eks;ком=kom;тех=teh;строй=stroy;пласт=plast;текс=teks;ия=iya;он=on;инвест=invest;транс=trans
+trade	A	Агро=Agro;Земеделие=Zemedelie;Ферма=Ferma
+trade	B	Кариери=Karieri;Минерали=Minerali
+trade	C	Индустрия=Industria;Производство=Proizvodstvo;Завод=Zavod
+trade	10	Хлебозавод=Hlebozavod;Млечни Продукти=Mlechni Produkti;Месокомбинат=Mesokombinat
+trade	D	Енерджи=Enerdzhi;Енергия=Energia;Солар=Solar
+trade	E	Еко=Eko;ВиК=ViK;Рециклиране=Retsiklirane
+trade	F	Строй=Stroy;Строителство=Stroitelstvo;Билд=Bild;Инженеринг=Inzhenering
+trade	43	Електро=Elektro;ВиК=ViK;Ремонти=Remonti;Инсталации=Instalatsii
+trade	G	Трейд=Treyd;Търговия=Targovia;Комерс=Komers;Дистрибуция=Distributsia
+trade	45	Ауто=Auto;Автосервиз=Avtoserviz;Автокъща=Avtokashta
+trade	47	Маркет=Market;Аптека=Apteka;Магазин=Magazin
+trade	H	Транс=Trans;Транспорт=Transport;Логистик=Logistik;Такси=Taksi
+trade	I	Хотел=Hotel;Ресторант=Restorant;Пицария=Pitsaria;Кафе=Kafe
+trade	J	Софт=Soft;ИТ=IT;Медия=Media;Дигитал=Digital;Телеком=Telekom
+trade	K	Инвест=Invest;Капитал=Kapital;Финанс=Finans;Застраховане=Zastrahovane
+trade	L	Имоти=Imoti;Пропърти=Property;Девелопмънт=Development
+trade	M	Консулт=Konsult;Консултинг=Konsulting;Счетоводство=Schetovodstvo;Адвокатско Дружество=Advokatsko Druzhestvo;Проект=Proekt;Реклама=Reklama
+trade	N	Сервиз=Serviz;Услуги=Uslugi;Охрана=Ohrana;Туризъм=Turizam;Рент=Rent
+trade	O	Община=Obshtina
+trade	P	Училище=Uchilishte;Академия=Akademia;Обучение=Obuchenie
+trade	Q	Медикъл=Medikal;Медицински Център=Meditsinski Tsentar;Дентал=Dental
+trade	R	Спорт=Sport;Фитнес=Fitnes;Арт=Art
+trade	S	Услуги=Uslugi;Салон=Salon;Козметика=Kozmetika;Ремонт=Remont
