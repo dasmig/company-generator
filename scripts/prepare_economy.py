@@ -18,7 +18,6 @@ Model:
   NO), and per country the share of firms up to five years old (Eurostat business demography,
   else the shape's), which scales the shape's young classes.
 """
-import math
 import statistics
 from collections import defaultdict
 
@@ -353,9 +352,3 @@ def build(info):
             "sizes": (size_rows, size_ev), "occupations": (occ_rows, occ_ev), "ages": (age_rows, young),
             "topup": topup, "levels": {"pool": base_level, "level": level, "income": income_level, "world": world_level,
                        "epw_rel": epw_rel}}
-
-
-def round_sig(x, sig=4):
-    if x is None or x == 0:
-        return x
-    return round(x, sig - 1 - int(math.floor(math.log10(abs(x)))))

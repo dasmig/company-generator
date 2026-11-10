@@ -1,0 +1,69 @@
+# registration and tax numbers by country: how each is built (builder, pattern, check; see scripts/curated/schemes.tsv for the notation), the legal-form groups holding it (S, P, L, O) and its safe method; from the number survey (designs/company-generator-numbers.tsv); sources in the full tier
+key	country_code	kind	label	native_label	builder	display	pattern	check	groups	safe_method	optional	from	until	params	evidence
+lei	*	lei	Legal Entity Identifier	LEI (ISO 17442)	lei	####00############		mod97_10	SPLO	reserved_range	0			decision 9: 250+ persons or section K; lou=TBD;safe_prefix=TBD	issuer
+ar-cuit	AR	tax	Unique Tax Identification Code	CUIT	ar_cuit	##-########-#	30#{8}	weights:5 4 3 2 7 6 5 4 3 2:11-r,11=0,10=prefix33	PLO	wrong_check	0				reference
+at-fn	AT	register	Company register number	Firmenbuchnummer (FN)	at_fn	FN ######@	#{3,6}	unpublished	SPLO	none	0			check letter drawn at random (its algorithm is not published)	reference
+at-uid	AT	vat	VAT identification number	Umsatzsteuer-Identifikationsnummer (UID)	generic	ATU########	ATU#{7}	at_uid	SPLO	wrong_check	0				reference
+au-abn	AU	tax	Australian Business Number	ABN	au_abn	## ### ### ###	#{9}	au_abn	SPLO	wrong_check	0			companies: the ACN after the two check digits	issuer
+au-acn	AU	register	Australian Company Number	ACN	generic	### ### ###	#{8}	weights:8 7 6 5 4 3 2 1:10-s%10,10=0	LO	wrong_check	0				issuer
+be-kbo	BE	register	Enterprise number	ondernemingsnummer / numéro d'entreprise	generic	####.###.###	[01]#{7}	be_kbo	SPLO	wrong_check	0			the check pair is 97 - (first 8 digits mod 97)	reference
+br-cnpj	BR	register	National Registry of Legal Entities number	CNPJ	br_cnpj	##.###.###/####-##	#{8}0001	br_cnpj	SPLO	wrong_check	0			alphanumeric_root_from=2026-07-31	issuer
+ca-bn	CA	tax	Business Number	Business Number / numéro d'entreprise	generic	######### RC0001	#{8}	luhn	SPLO	wrong_check	0			suffix=RC0001	issuer
+ch-uid	CH	register	Enterprise identification number	UID / IDE / IDI	generic	CHE-###.###.###	#{8}	weights:5 4 3 2 7 6 5 4:11-r,11=0,10=redraw	SPLO	wrong_check	0				issuer
+cl-rut	CL	tax	Tax roll number	RUT	generic	##.###.###-#	[5-9]#{7}	weights:3 2 7 6 5 4 3 2:11-r,11=0,10=K	PLO	wrong_check	0			legal persons are numbered from 50,000,000	reference
+cn-uscc	CN	register	Unified Social Credit Code	统一社会信用代码	cn_uscc	##################		cn_uscc	SPLO	wrong_check	0			type=S:92,O:93,*:91;counties=TBD	issuer
+co-nit	CO	tax	Tax identification number	NIT	generic	###.###.###-#	[89]#{8}	weights:41 37 29 23 19 17 13 7 3:11-r,11=0,10=1	PLO	wrong_check	0			legal persons are numbered from 800,000,000	reference
+cz-ico	CZ	register	Identification number	IČO	generic	########	#{7}	weights:8 7 6 5 4 3 2:(11-r)%10	SPLO	wrong_check	0				reference
+de-hrn	DE	register	Commercial register number	Handelsregisternummer	de_hrn	{court} HR@ #####	#{3,6}	none	SPLO	none	0			section=S:HRA,P:HRA,L:HRB,O:GnR|VR;courts=TBD	reference
+de-ustid	DE	vat	VAT identification number	Umsatzsteuer-Identifikationsnummer (USt-IdNr.)	generic	DE#########	DE#{8}	mod11_10	SPLO	wrong_check	0				reference
+dk-cvr	DK	register	Central Business Register number	CVR-nummer	generic	########	[1-9]#{6}	weights:2 7 6 5 4 3 2:11-r,11=0,10=redraw	SPLO	wrong_check	0				reference
+eg-tn	EG	tax	Tax registration number	رقم التسجيل الضريبي	generic	###-###-###	#{9}	none	SPLO	none	0				single
+es-nif-entity	ES	tax	Tax identification number of an entity	NIF (formerly CIF)	es_nif	@########	@#{7}	es_nif	PLO	wrong_check	0			letter=SA:A,SL:B,colectiva:C,comanditaria:D,CB:E,cooperativa:F,asociación|fundación:G,civil:J,religious:R,public:P|Q|S,other:V	issuer
+fi-ytunnus	FI	register	Business ID	Y-tunnus	generic	#######-#	#{7}	weights:7 9 10 5 8 4 2:11-r,11=0,10=redraw	SPLO	wrong_check	0				reference
+fr-siren	FR	register	SIREN number	numéro SIREN	fr_siren	### ### ###	#{8}	luhn	SPLO	wrong_check	0			anchors=fr-siren	issuer
+fr-siret	FR	register	SIRET number	numéro SIRET	fr_siret	### ### ### #####	{siren}0001	luhn	SPLO	wrong_check	0			the head office's NIC; the check makes the 14 digits pass Luhn	issuer
+fr-tva	FR	vat	VAT number	numéro de TVA intracommunautaire	fr_tva	FR## #########	FR{key}{siren}	fr_tva	SPLO	wrong_check	0			key = (12 + 3 x (SIREN mod 97)) mod 97	reference
+gb-crn	GB	register	Company registration number	Company number	gb_crn	########	#{8}	none	PLO	above_issued	0			prefix=England and Wales company:,Scotland company:SC,Northern Ireland company:NI,LLP:OC|SO|NC,LP:LP|SL|NL;scotland=0.085;northern_ireland=0.03;anchors=gb-crn	issuer
+gb-vat	GB	vat	VAT registration number	VAT number	gb_vat	GB### #### ##	GB#{7}	gb_vat	SPLO	wrong_check	0			series_9755_from=2010-01-01;registered=micro:0.45,small:0.95,medium:1,large:1	reference
+gr-afm	GR	tax	Tax registration number	ΑΦΜ	generic	#########	[89]#{7}	weights:256 128 64 32 16 8 4 2:r%10	PLO	wrong_check	0				reference
+hu-adoszam	HU	tax	Tax number	adószám	hu_adoszam	########-#-##	#{7}	weights:9 7 3 1 9 7 3:(10-s%10)%10	SPLO	wrong_check	0			vat_code=2;county=TBD	reference
+id-npwp	ID	tax	Taxpayer registration number	NPWP	id_npwp	################	0#{2}#{6}	id_npwp	SPLO	wrong_check	0			tax_office=TBD	reference
+ie-cro	IE	register	Company number	CRO number	generic	######	#{6}	none	LO	above_issued	0			highest=TBD	issuer
+ie-vat	IE	vat	VAT number	VAT number	ie_vat	IE#######@@	#{7}	ie_vat	SPLO	wrong_check	0				reference
+il-hp	IL	register	Company number	מספר חברה (ח.פ.)	il_hp	#########	5[1258]#{6}	luhn	PLO	wrong_check	0			prefix=P:55,L:51|52,O:57|58	reference
+in-cin	IN	register	Corporate Identification Number	CIN	in_cin	@#####@@####@@@######		none	LO	none	0			ownership=L:PTC|PLC,O:NPL;states=TBD	reference
+in-gstin	IN	vat	GST identification number	GSTIN	in_gstin	##@@@@@####@#Z#		in_gstin	SPLO	wrong_check	0			states=TBD;registered=micro:0.3,small:0.9,medium:1,large:1	reference
+in-pan	IN	tax	Permanent Account Number	PAN	in_pan	@@@@@####@	@@@[CFPAT]@#{4}@	unpublished	SPLO	none	0			type=S:P,P:F,L:C,O:A|T;fifth=the name's first letter	reference
+it-piva	IT	vat	VAT number	Partita IVA	it_piva	###########	#{7}{office}	luhn	SPLO	wrong_check	0			office=001-100 by province	reference
+it-rea	IT	register	Economic and administrative index number	numero REA	it_rea	@@-#######	@@-#{1,7}	none	SPLO	none	1			optional; per-province anchors not found	single
+jp-cn	JP	register	Corporate Number	法人番号	jp_cn	#############	{office}{class}#{6}	jp_cn	PLO	wrong_check	0			office=TBD;class=TBD	issuer
+ke-pin	KE	tax	KRA PIN	KRA PIN	generic	@#########@	P05#{7}@	none	SPLO	none	0				issuer
+kr-brn	KR	tax	Business registration number	사업자등록번호	kr_brn	###-##-#####	{office}{type}#{4}	kr_brn	SPLO	wrong_check	0			type=S:01-79,P|L:81|86|87|88,O:82;office=TBD	reference
+kr-crn	KR	register	Corporate registration number	법인등록번호	kr_crn	######-#######	{office}{type}#{6}	weights:1 2 1 2 1 2 1 2 1 2 1 2:(10-s%10)%10	PLO	wrong_check	1			optional; the check is from one source	single
+mx-rfc-moral	MX	tax	Federal Taxpayer Registry code (legal entity)	RFC de persona moral	mx_rfc	@@@######@@#		mx_rfc	PLO	wrong_check	0			the first letters of the name's first three words and the date of incorporation	reference
+ng-rc	NG	register	Registration number	RC number	ng_rc	RC#######	RC#{1,7}	none	SPLO	above_issued	0			prefix=S:BN,P:BN,L:RC,O:IT;highest=TBD	single
+nl-btw	NL	vat	VAT identification number	btw-identificatienummer	nl_btw	NL#########B##		nl_btw	SPLO	wrong_check	0			legal entities: the RSIN + B01; sole traders since 2020: a separate number with the mod 97 check	reference
+nl-kvk	NL	register	Chamber of Commerce number	KVK-nummer	generic	########	#{8}	none	SPLO	none	0				reference
+nl-rsin	NL	tax	Legal entities and partnerships information number	RSIN	generic	#########	#{8}	weights:9 8 7 6 5 4 3 2:r,10=redraw	PLO	wrong_check	0				reference
+no-orgnr	NO	register	Organisation number	organisasjonsnummer	generic	### ### ###	[89]#{7}	weights:3 2 7 6 5 4 3 2:11-r,11=0,10=redraw	SPLO	wrong_check	0			anchors=no-orgnr	reference
+nz-nzbn	NZ	register	New Zealand Business Number	NZBN	generic	#############	94#{10}	gtin	SPLO	wrong_check	0				reference
+pe-ruc	PE	tax	Taxpayer registry number	RUC	generic	###########	20#{8}	weights:5 4 3 2 7 6 5 4 3 2:11-r,10=0,11=1	PLO	wrong_check	0				issuer
+pl-krs	PL	register	National Court Register number	numer KRS	generic	##########	#{10}	none	PLO	above_issued	0			highest=TBD	reference
+pl-nip	PL	tax	Tax identification number	NIP	generic	###-###-##-##	#{9}	weights:6 5 7 2 3 4 5 6 7:r,10=redraw	SPLO	wrong_check	0				reference
+pl-regon	PL	statistical	Statistical number	REGON	generic	#########	#{8}	weights:8 9 2 3 4 5 6 7:r,10=0	SPLO	wrong_check	0				issuer
+pt-nipc	PT	tax	Legal person identification number	NIPC	generic	#########	5#{7}	weights:9 8 7 6 5 4 3 2:11-r,10=0,11=0	PLO	wrong_check	0				reference
+ro-cui	RO	tax	Unique registration code	CUI / CIF	generic	##########	[1-9]#{1,8}	ro_cui	SPLO	wrong_check	0				reference
+ro-onrc	RO	register	Trade register number	număr de ordine în Registrul Comerțului	ro_onrc	J####/######/##	J{year}#{6}{county}	TBD	SPLO	wrong_check	0			prefix=S:F,P|L:J,O:C;new_format_from=2024-07-26;check=TBD;county=TBD	reference
+ru-inn	RU	tax	Taxpayer identification number	ИНН	ru_inn	##########	{region}{inspection}#{5}	weights:2 4 10 3 5 9 4 6 8:r%10	PLO	wrong_check	0			region=TBD	reference
+ru-ogrn	RU	register	Primary State Registration Number	ОГРН	ru_ogrn	#############	{sign}{yy}{region}#{7}	ru_ogrn	SPLO	wrong_check	0			sole traders: the 15-digit OGRNIP starting with 3; region=TBD	reference
+se-orgnr	SE	register	Organisation number	organisationsnummer	se_orgnr	######-####	{group}#{8}	luhn	PLO	wrong_check	0			group=P:9,L:5,O:7|8|2;digits 3-4 at least 20	issuer
+sg-uen	SG	register	Unique Entity Number	UEN	sg_uen	##########@		sg_uen	SPLO	wrong_check	0			S|P: ROB 8 digits; L: YYYY + 5 digits; O: T + YY + entity type + 4 digits	reference
+th-juristic	TH	register	Juristic person registration number	เลขทะเบียนนิติบุคคล	th_juristic	#############	0{office}{type}{be_year}#{5}	weights:13 12 11 10 9 8 7 6 5 4 3 2:(11-r)%10	PLO	wrong_check	1			optional; positions to confirm with DBD	single
+tr-mersis	TR	register	Central Registry System number	MERSİS numarası	tr_mersis	################	0{vkn}00011		PLO	wrong_check	1			optional; the rule to confirm	single
+tr-vkn	TR	tax	Tax identification number	Vergi Kimlik Numarası	generic	##########	#{9}	tr_vkn	PLO	wrong_check	0				reference
+tw-ubn	TW	tax	Unified Business Number	統一編號	generic	########	#{7}	tw_ubn	SPLO	wrong_check	0				reference
+ua-edrpou	UA	register	Unified state register code	код ЄДРПОУ	generic	########	#{7}	ua_edrpou	PLO	wrong_check	0				reference
+us-ein	US	tax	Employer Identification Number	EIN	us_ein	##-#######	{prefix}#{7}	none	SPLO	reserved_range	0			internet_from=2001-01-01;internet=20 26 27 45 46 47 81 82 83 84 85 86 87 88 92 93 99;reserved=00 07 08 09 17 18 19 28 29 49 69 70 78 79 89 96 97;sole traders without employees use their SSN	issuer
+vn-mst	VN	tax	Enterprise code (tax code)	mã số doanh nghiệp / mã số thuế	vn_mst	##########	{province}#{7}	vn_mst	SPLO	wrong_check	0			province=TBD	reference
+za-cipc	ZA	register	Company registration number	CIPC registration number	za_cipc	####/######/##	{year}/#{6}/{type}	none	LO	above_issued	0			type=private:07,public:06,non-profit:08,personal liability:21,close corporation:23,co-operative:24;close_corporation_until=2011-05-01;safe_from=900000	reference
+za-vat	ZA	vat	VAT number	VAT registration number	generic	##########	4#{8}	luhn	SPLO	wrong_check	1			optional	single

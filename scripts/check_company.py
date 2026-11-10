@@ -144,6 +144,26 @@ def check_tier(tier, info):
         if abs(dom.get(cc, 0) - 1) > TOL:
             say(f"domains.tsv: {cc} sums to {dom.get(cc, 0)}")
 
+    # schemes: every served scheme of the survey, a known country, valid groups; anchors ordered
+    survey = {r["scheme"] for r in read_tsv(CURATED / "survey_numbers.tsv") if r["served"] != "no"}
+    keys = set()
+    for r in t("schemes.tsv"):
+        keys.add(r["key"])
+        if r["country_code"] != "*" and r["country_code"] not in info:
+            say(f"schemes.tsv: {r['key']} country {r['country_code']}")
+        if not r["groups"] or set(r["groups"]) - set("SPLO"):
+            say(f"schemes.tsv: {r['key']} groups {r['groups']!r}")
+        if r["safe_method"] not in ("wrong_check", "above_issued", "reserved_range", "none"):
+            say(f"schemes.tsv: {r['key']} safe_method {r['safe_method']!r}")
+    if keys != survey:
+        say(f"schemes.tsv: missing {sorted(survey - keys)}, extra {sorted(keys - survey)}")
+    for r in t("anchors.tsv"):
+        if r["year"] == "highest":
+            continue
+        qs = [int(r[c]) for c in ("q001", "q10", "q25", "q50", "q75", "q90", "q999")]
+        if qs != sorted(qs):
+            say(f"anchors.tsv: {r['scheme']} {r['series']} {r['year']} quantiles out of order")
+
     # surnames and places: Latin forms
     for r in t("surnames.tsv"):
         if not is_latin(r["surname"]) and not r["latin"]:

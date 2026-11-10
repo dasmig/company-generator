@@ -17,7 +17,7 @@ from collections import Counter, defaultdict
 import prepare_economy
 import prepare_forms
 from companygen_data import (AGE_CLASSES, BAND_LIMITS, BANDS, CURATED, GROUPS, RESOURCES, SIBLINGS, SECTIONS,
-                             countries, read_tsv, section_of, write_table)
+                             countries, load_work, read_tsv, section_of, write_table)
 from prepare_words import PATTERNS, is_latin, load_words, words_rows
 
 SECTS = [s for s in SECTIONS if s not in "TU"]
@@ -43,9 +43,9 @@ REGION_TLDS = {
     "Africa": "cc:0.25;com:0.67;net:0.04;org:0.04",
     "Oceania": "cc:0.4;com:0.54;net:0.03;org:0.03",
 }
-# The share of firms without a website by size band and income group (curated: Eurostat's
-# isoc_ciweb has 78% of EU firms with 10-49 persons, 91% with 50-249 and 95% with 250+ holding a
-# website in 2023; micro firms and poorer countries are estimated lower)
+# The share of firms without a website by size band and income group (curated estimates, guided by
+# Eurostat's isoc_ciweb: about 78% of EU firms with 10-49 persons, 91% with 50-249 and 95% with 250+
+# had a website in 2023, as recalled, not downloaded; micro firms and poorer countries lower)
 NO_DOMAIN = {
     "High income": (0.50, 0.22, 0.09, 0.04),
     "Upper middle income": (0.70, 0.40, 0.20, 0.08),
@@ -244,6 +244,58 @@ def domain_rows(info):
     return rows, ev
 
 
+# ------------------------------------------------------------------ numbers
+
+LITE_ANCHOR_FIRMS = 10000
+ANCHOR_COLUMNS = ("q001", "q10", "q25", "q50", "q75", "q90", "q999")
+
+
+def first_url(sources):
+    for part in sources.split(";"):
+        part = part.strip()
+        if part.startswith("http"):
+            return part.split(" ")[0]
+    return sources.split(";")[0].strip()
+
+
+def scheme_rows():
+    """curated/schemes.tsv joined with the number survey (labels, safe method, evidence, sources)."""
+    survey = {r["scheme"]: r for r in read_tsv(CURATED / "survey_numbers.tsv")}
+    rows = []
+    for r in read_tsv(CURATED / "schemes.tsv"):
+        v = survey[r["key"]]
+        if v["served"] == "no":
+            continue
+        rows.append({"key": r["key"], "country_code": v["cc"] or "*", "kind": v["kind"], "label": v["label"],
+                     "native_label": v["native_label"], "builder": r["builder"], "display": r["display"],
+                     "pattern": r["pattern"], "check": r["check"], "groups": r["groups"],
+                     "safe_method": v["safe_method"], "optional": v["served"] == "optional",
+                     "from": r["from"], "until": r["until"], "params": r["params"], "evidence": v["evidence"],
+                     "source": first_url(v["sources"])})
+    missing = set(k for k, v in survey.items() if v["served"] != "no") - {r["key"] for r in rows}
+    if missing:
+        raise ValueError(f"schemes.tsv: no row for {sorted(missing)}")
+    return sorted(rows, key=lambda r: (r["country_code"], r["key"]))
+
+
+def anchor_rows(tier):
+    """lite keeps the yearly rows of series with LITE_ANCHOR_FIRMS firms or more (the small UK
+    series keep their highest number only, enough for safe mode)."""
+    rows = []
+    for scheme, v in sorted(load_work("anchors.json").items()):
+        for series, s in sorted(v["series"].items()):
+            firms = sum(x[-1] for x in s["years"].values())
+            years = s["years"] if tier == "full" or firms >= LITE_ANCHOR_FIRMS else {}
+            if tier == "lite":   # every year from 1990, every fifth before; readers interpolate between years
+                years = {y: x for y, x in years.items() if int(y) >= 1990 or int(y) % 5 == 0}
+            for year, (*qs, n) in sorted(years.items()):
+                rows.append({"scheme": scheme, "series": series or "-", "year": int(year),
+                             **dict(zip(ANCHOR_COLUMNS, qs)), "count": n})
+            rows.append({"scheme": scheme, "series": series or "-", "year": "highest", "q999": s["highest"],
+                         "source": v["source"]})
+    return rows
+
+
 # ------------------------------------------------------------------ main
 
 def main():
@@ -439,6 +491,19 @@ def main():
     write_both("domains.tsv", "top-level domains of company websites by country (curated estimates, "
                "scripts/curated/domains.tsv; regional defaults where it has no row)", ["country_code", "tld", "share"],
                lambda tier, n: [{**r, "share": sig(r["share"], n)} for r in dom_rows])
+
+    write_both("schemes.tsv", "registration and tax numbers by country: how each is built (builder, pattern, check; "
+               "see scripts/curated/schemes.tsv for the notation), the legal-form groups holding it (S, P, L, O) and "
+               "its safe method; from the number survey (designs/company-generator-numbers.tsv)",
+               ["key", "country_code", "kind", "label", "native_label", "builder", "display", "pattern", "check",
+                "groups", "safe_method", "optional", "from", "until", "params", "evidence", "source"],
+               lambda tier, n: scheme_rows())
+    write_both("anchors.tsv", "issue anchors of sequential numbers, from the whole registers: for the firms registered "
+               "in a year, the 0.1, 10, 25, 50, 75, 90 and 99.9% points of their numbers (without the check digit) "
+               "and their count; the row \"highest\" holds the highest number issued by the snapshot in q999 (lite: "
+               "the yearly rows of series with 10,000 firms or more, every fifth year before 1990)",
+               ["scheme", "series", "year", *ANCHOR_COLUMNS, "count", "source"],
+               lambda tier, n: anchor_rows(tier))
 
     for tier in TIERS:
         total = sum(p.stat().st_size for p in (RESOURCES / tier).glob("*.tsv"))

@@ -1,3 +1,43 @@
-The data in the resources/ directory is a sample written for this library.
-List each source here with its licence before the first release (see
-doc/data.md).
+company-generator data (resources/) — sources and licences
+==========================================================
+
+The code is under the MIT licence (LICENSE.MIT). The tables in resources/ are
+derived from the sources below; only counts, shares and word statistics are
+kept from them, never a firm's name or number. See doc/data.md for what each
+source is used for.
+
+Eurostat (structural business statistics, business demography, legal form,
+labour force survey) — © European Union, reuse authorised under the Eurostat
+reuse policy (Commission Decision 2011/833/EU), source acknowledged.
+
+OECD Structural and Demographic Business Statistics — © OECD, CC BY 4.0.
+
+ILOSTAT (International Labour Organization) — CC BY 4.0.
+
+US Census Bureau (Business Dynamics Statistics, Nonemployer Statistics) and
+the IRS Statistics of Income — US Government works, public domain.
+
+GLEIF (Entity Legal Forms code list, ISO 20275; LEI golden copy) — CC0 1.0.
+
+Companies House, Basic Company Data — contains public sector information
+licensed under the Open Government Licence v3.0.
+
+INSEE, base SIRENE des entreprises et de leurs établissements — Licence
+Ouverte / Etalab 2.0.
+
+Brønnøysund Register Centre, Enhetsregisteret — Norwegian Licence for Open
+Government Data (NLOD) 2.0.
+
+National statistics offices' published business counts (China NBS, India
+Ministry of MSME, Indonesia BPS, Pakistan PBS, Bangladesh BBS, Russia FTS,
+Brazil Mapa de Empresas, Mexico INEGI, Japan Statistics Bureau, Vietnam GSO,
+Egypt CAPMAS, UK DBT, ABS, Statistics Canada, Statistics Korea) — facts read
+from their publications; see scripts/curated/census.tsv for each.
+
+Places: address-generator's places, from GeoNames — CC BY 4.0.
+
+Surnames: name-generator (dasmig) — MIT.
+
+Curated tables in scripts/curated/ (word lists, legal-form templates and
+overrides, name patterns, TLD shares, number schemes) — written for this
+library, MIT.
