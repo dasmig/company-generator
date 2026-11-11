@@ -1,0 +1,182 @@
+# Code lists the number builders draw from (curated 2026-11-11, Milestone 5), beside the lists copied
+# at build time from id-generator (Chinese counties, Russian regions, Romanian counties, Thai provinces)
+# and from GLEIF (LEI issuers). weight: relative; extra: per list (see each block).
+#
+# in-state: the GST state codes (CBIC, GST state code list) with the RoC letters of the CIN (MCA) in
+# extra; weight: about the share of companies registered in the state (MCA, rounded, as known in 2025).
+# hu-county: the area code ending a Hungarian tax number (NAV): 02-20 the counties, 41-44 Budapest's
+# directorates, 51 the large taxpayers' directorate; weight: about the share of enterprises.
+# de-court: the local courts that keep the commercial register (Handelsregister), by Land (the Land
+# justice ministries' lists; Baden-Württemberg keeps it at four courts, Berlin at Charlottenburg);
+# weight: about the court's share of registered firms; extra: about the highest HRB number issued, or
+# lo-hi where the Land numbers in a block (Baden-Württemberg from 700001, Lower Saxony from 200001,
+# Thuringia from 500001). Tostedt keeps the register of the Stade district.
+list	code	label	weight	extra
+in-state	01	Jammu and Kashmir	0.6	JK
+in-state	02	Himachal Pradesh	0.6	HP
+in-state	03	Punjab	2	PB
+in-state	04	Chandigarh	0.5	CH
+in-state	05	Uttarakhand	0.8	UR
+in-state	06	Haryana	3.5	HR
+in-state	07	Delhi	15	DL
+in-state	08	Rajasthan	3.5	RJ
+in-state	09	Uttar Pradesh	6	UP
+in-state	10	Bihar	2.5	BR
+in-state	11	Sikkim	0.05	SK
+in-state	12	Arunachal Pradesh	0.05	AR
+in-state	13	Nagaland	0.05	NL
+in-state	14	Manipur	0.1	MN
+in-state	15	Mizoram	0.05	MZ
+in-state	16	Tripura	0.1	TR
+in-state	17	Meghalaya	0.1	ML
+in-state	18	Assam	0.8	AS
+in-state	19	West Bengal	7	WB
+in-state	20	Jharkhand	1	JH
+in-state	21	Odisha	1.5	OR
+in-state	22	Chhattisgarh	0.8	CT
+in-state	23	Madhya Pradesh	2.5	MP
+in-state	24	Gujarat	6	GJ
+in-state	26	Dadra and Nagar Haveli and Daman and Diu	0.1	DN
+in-state	27	Maharashtra	19	MH
+in-state	29	Karnataka	8	KA
+in-state	30	Goa	0.4	GA
+in-state	32	Kerala	2.5	KL
+in-state	33	Tamil Nadu	7	TN
+in-state	34	Puducherry	0.2	PY
+in-state	35	Andaman and Nicobar Islands	0.02	AN
+in-state	36	Telangana	5	TG
+in-state	37	Andhra Pradesh	2.5	AP
+hu-county	02	Baranya	3
+hu-county	03	Bács-Kiskun	5
+hu-county	04	Békés	3
+hu-county	05	Borsod-Abaúj-Zemplén	5
+hu-county	06	Csongrád-Csanád	4
+hu-county	07	Fejér	4
+hu-county	08	Győr-Moson-Sopron	5
+hu-county	09	Hajdú-Bihar	5
+hu-county	10	Heves	3
+hu-county	11	Komárom-Esztergom	3
+hu-county	12	Nógrád	1.5
+hu-county	13	Pest	13
+hu-county	14	Somogy	3
+hu-county	15	Szabolcs-Szatmár-Bereg	4
+hu-county	16	Jász-Nagykun-Szolnok	3
+hu-county	17	Tolna	2
+hu-county	18	Vas	2.5
+hu-county	19	Veszprém	3.5
+hu-county	20	Zala	3
+hu-county	41	Budapest (Észak-budapesti)	8
+hu-county	42	Budapest (Kelet-budapesti)	8
+hu-county	43	Budapest (Dél-budapesti)	8
+hu-county	44	Budapest (Kelet-budapesti II)	4
+hu-county	51	Kiemelt Adózók Adóigazgatósága	0.3
+de-court	Freiburg	Amtsgericht Freiburg	4	700001-720000
+de-court	Mannheim	Amtsgericht Mannheim	5	700001-740000
+de-court	Stuttgart	Amtsgericht Stuttgart	9	700001-790000
+de-court	Ulm	Amtsgericht Ulm	3.5	700001-740000
+de-court	Amberg	Amtsgericht Amberg	0.6	6000
+de-court	Ansbach	Amtsgericht Ansbach	0.8	8000
+de-court	Aschaffenburg	Amtsgericht Aschaffenburg	0.8	16000
+de-court	Augsburg	Amtsgericht Augsburg	2	37000
+de-court	Bamberg	Amtsgericht Bamberg	0.8	10000
+de-court	Bayreuth	Amtsgericht Bayreuth	0.6	7000
+de-court	Coburg	Amtsgericht Coburg	0.5	6000
+de-court	Fürth	Amtsgericht Fürth	1	20000
+de-court	Hof	Amtsgericht Hof	0.5	6000
+de-court	Ingolstadt	Amtsgericht Ingolstadt	1	11000
+de-court	Kempten	Amtsgericht Kempten (Allgäu)	1	16000
+de-court	Landshut	Amtsgericht Landshut	1	13000
+de-court	Memmingen	Amtsgericht Memmingen	0.8	20000
+de-court	München	Amtsgericht München	8	295000
+de-court	Nürnberg	Amtsgericht Nürnberg	3	42000
+de-court	Passau	Amtsgericht Passau	0.8	12000
+de-court	Regensburg	Amtsgericht Regensburg	1.2	20000
+de-court	Schweinfurt	Amtsgericht Schweinfurt	0.6	8000
+de-court	Straubing	Amtsgericht Straubing	0.5	5000
+de-court	Traunstein	Amtsgericht Traunstein	1	30000
+de-court	Weiden	Amtsgericht Weiden i. d. OPf.	0.4	5000
+de-court	Würzburg	Amtsgericht Würzburg	1	15000
+de-court	Charlottenburg	Amtsgericht Charlottenburg (Berlin)	9	270000
+de-court	Cottbus	Amtsgericht Cottbus	0.8	20000
+de-court	Frankfurt (Oder)	Amtsgericht Frankfurt (Oder)	0.8	18000
+de-court	Neuruppin	Amtsgericht Neuruppin	0.8	14000
+de-court	Potsdam	Amtsgericht Potsdam	1.5	38000
+de-court	Bremen	Amtsgericht Bremen	1.5	38000
+de-court	Hamburg	Amtsgericht Hamburg	6	190000
+de-court	Bad Homburg	Amtsgericht Bad Homburg v.d.H.	0.8	17000
+de-court	Darmstadt	Amtsgericht Darmstadt	2	105000
+de-court	Frankfurt am Main	Amtsgericht Frankfurt am Main	5	135000
+de-court	Friedberg	Amtsgericht Friedberg (Hessen)	0.6	9000
+de-court	Fulda	Amtsgericht Fulda	0.5	8000
+de-court	Gießen	Amtsgericht Gießen	0.7	11000
+de-court	Hanau	Amtsgericht Hanau	0.8	99000
+de-court	Kassel	Amtsgericht Kassel	1	19000
+de-court	Königstein	Amtsgericht Königstein im Taunus	0.5	10000
+de-court	Limburg	Amtsgericht Limburg a. d. Lahn	0.4	7000
+de-court	Marburg	Amtsgericht Marburg	0.4	7000
+de-court	Offenbach am Main	Amtsgericht Offenbach am Main	1	52000
+de-court	Wetzlar	Amtsgericht Wetzlar	0.4	9000
+de-court	Wiesbaden	Amtsgericht Wiesbaden	1	33000
+de-court	Neubrandenburg	Amtsgericht Neubrandenburg	0.4	8000
+de-court	Rostock	Amtsgericht Rostock	0.7	15000
+de-court	Schwerin	Amtsgericht Schwerin	0.5	13000
+de-court	Stralsund	Amtsgericht Stralsund	0.4	8000
+de-court	Aurich	Amtsgericht Aurich	0.6	200001-210000
+de-court	Braunschweig	Amtsgericht Braunschweig	1.2	200001-208000
+de-court	Göttingen	Amtsgericht Göttingen	0.8	200001-208000
+de-court	Hannover	Amtsgericht Hannover	2.5	200001-230000
+de-court	Hildesheim	Amtsgericht Hildesheim	0.8	200001-206000
+de-court	Lüneburg	Amtsgericht Lüneburg	1.2	200001-210000
+de-court	Oldenburg	Amtsgericht Oldenburg (Oldenburg)	1.5	200001-220000
+de-court	Osnabrück	Amtsgericht Osnabrück	1.2	200001-219000
+de-court	Tostedt	Amtsgericht Tostedt	1.2	200001-209000
+de-court	Walsrode	Amtsgericht Walsrode	0.6	200001-206000
+de-court	Aachen	Amtsgericht Aachen	1.2	26000
+de-court	Arnsberg	Amtsgericht Arnsberg	0.7	13000
+de-court	Bad Oeynhausen	Amtsgericht Bad Oeynhausen	0.7	17000
+de-court	Bielefeld	Amtsgericht Bielefeld	1	45000
+de-court	Bochum	Amtsgericht Bochum	0.8	20000
+de-court	Bonn	Amtsgericht Bonn	1.2	26000
+de-court	Coesfeld	Amtsgericht Coesfeld	0.6	20000
+de-court	Dortmund	Amtsgericht Dortmund	1.5	34000
+de-court	Duisburg	Amtsgericht Duisburg	1	36000
+de-court	Düren	Amtsgericht Düren	0.5	8000
+de-court	Düsseldorf	Amtsgericht Düsseldorf	3.5	105000
+de-court	Essen	Amtsgericht Essen	1.5	34000
+de-court	Gelsenkirchen	Amtsgericht Gelsenkirchen	0.6	15000
+de-court	Gütersloh	Amtsgericht Gütersloh	0.7	12000
+de-court	Hagen	Amtsgericht Hagen	0.6	11000
+de-court	Hamm	Amtsgericht Hamm	0.5	10000
+de-court	Iserlohn	Amtsgericht Iserlohn	0.6	9000
+de-court	Kleve	Amtsgericht Kleve	0.6	17000
+de-court	Köln	Amtsgericht Köln	4	115000
+de-court	Krefeld	Amtsgericht Krefeld	0.7	18000
+de-court	Lemgo	Amtsgericht Lemgo	0.5	9000
+de-court	Mönchengladbach	Amtsgericht Mönchengladbach	0.6	22000
+de-court	Münster	Amtsgericht Münster	1	21000
+de-court	Neuss	Amtsgericht Neuss	0.8	23000
+de-court	Paderborn	Amtsgericht Paderborn	0.6	14000
+de-court	Recklinghausen	Amtsgericht Recklinghausen	0.7	10000
+de-court	Siegburg	Amtsgericht Siegburg	0.8	17000
+de-court	Siegen	Amtsgericht Siegen	0.6	12000
+de-court	Steinfurt	Amtsgericht Steinfurt	0.7	14000
+de-court	Wuppertal	Amtsgericht Wuppertal	1	31000
+de-court	Bad Kreuznach	Amtsgericht Bad Kreuznach	0.4	22000
+de-court	Kaiserslautern	Amtsgericht Kaiserslautern	0.5	33000
+de-court	Koblenz	Amtsgericht Koblenz	1	27000
+de-court	Landau	Amtsgericht Landau in der Pfalz	0.5	32000
+de-court	Ludwigshafen	Amtsgericht Ludwigshafen a. Rhein	0.7	67000
+de-court	Mainz	Amtsgericht Mainz	1	50000
+de-court	Montabaur	Amtsgericht Montabaur	0.6	26000
+de-court	Wittlich	Amtsgericht Wittlich	0.5	42000
+de-court	Zweibrücken	Amtsgericht Zweibrücken	0.3	31000
+de-court	Saarbrücken	Amtsgericht Saarbrücken	1.2	110000
+de-court	Chemnitz	Amtsgericht Chemnitz	1.5	34000
+de-court	Dresden	Amtsgericht Dresden	2	44000
+de-court	Leipzig	Amtsgericht Leipzig	1.8	42000
+de-court	Stendal	Amtsgericht Stendal	1.5	36000
+de-court	Flensburg	Amtsgericht Flensburg	0.6	16000
+de-court	Kiel	Amtsgericht Kiel	1.2	26000
+de-court	Lübeck	Amtsgericht Lübeck	1	22000
+de-court	Pinneberg	Amtsgericht Pinneberg	1	20000
+de-court	Jena	Amtsgericht Jena	1.6	500001-521000

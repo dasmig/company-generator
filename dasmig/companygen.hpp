@@ -15,6 +15,7 @@
 #include <cstdint>
 #include <filesystem>
 #include <format>
+#include <initializer_list>
 #include <map>
 #include <optional>
 #include <ostream>
@@ -76,7 +77,9 @@ enum class company_table : std::uint8_t
     places,      ///< places.tsv: places for names.
     domains,     ///< domains.tsv: top-level domains of company websites.
     schemes,     ///< schemes.tsv: registration and tax numbers.
-    anchors      ///< anchors.tsv: issue anchors of sequential numbers.
+    anchors,     ///< anchors.tsv: issue anchors of sequential numbers.
+    codes,       ///< codes.tsv: code lists the number builders draw from.
+    fold         ///< fold.tsv: letters and their ASCII form, for domains.
 };
 
 /// @brief The key of a size band, as in the tables and JSON.
@@ -109,27 +112,27 @@ struct company_request
     std::optional<std::uint32_t> employees{};     ///< Forced head count (1 or more); sets the band.
     std::optional<std::string> legal_form{};      ///< Forced: an ISO 20275 code or the country's abbreviation ("GmbH").
     bool incorporated_only{false};                ///< No sole traders or partnerships.
-    std::optional<std::string> founder_surname{}; ///< From name-generator (used from Milestone 5).
-    std::optional<std::string> place{};           ///< From city-generator (used from Milestone 5).
+    std::optional<std::string> founder_surname{}; ///< Used in the name where a template has a surname and the script fits.
+    std::optional<std::string> place{};           ///< Used in the name where a template has a place and the script fits.
     std::chrono::year_month_day reference_date{default_reference_date}; ///< Bounds the founding date and picks the number rules in force.
-    bool safe{false};                             ///< Numbers and domains nobody holds (used from Milestone 5).
+    bool safe{false};                             ///< Numbers nobody holds and `.example` domains; schemes with no safe method are left out.
     bool weighted{true};                          ///< False: countries uniform, the rest by the data.
 };
 
 /// @brief One number a company holds.
 struct registration
 {
-    std::string scheme;  ///< The scheme id: `"fr-siren"`, `"de-ust-idnr"`, `"lei"`.
+    std::string scheme;  ///< The scheme id: `"fr-siren"`, `"de-ustid"`, `"lei"`.
     std::string label;   ///< `"SIREN"`, `"USt-IdNr."`, `"LEI"`.
     std::string value;   ///< As printed: `"552 100 554"`, `"DE123456789"`.
-    std::string compact; ///< Digits and letters only.
+    std::string compact; ///< Digits and letters only (a German register number keeps its court and section).
     bool reserved{false}; ///< Drawn so that no company holds it (safe mode).
 };
 
 /// @brief Where the data behind each field of a country comes from.
 ///
-/// Each is `"measured"`, `"modelled"` or `"filled"`; empty for a field not
-/// yet drawn by this version.
+/// Each is `"measured"`, `"modelled"` or `"filled"`; `numbers` is `"none"`
+/// for a country with no number schemes.
 struct company_evidence
 {
     std::string industry; ///< Industry shares.
@@ -160,8 +163,8 @@ class company
 {
   public:
     std::string country_code;                  ///< ISO alpha-2.
-    std::string name;                          ///< `"Bäckerei Hoffmann GmbH"` (from Milestone 5).
-    std::string short_name;                    ///< The name without the legal form (from Milestone 5).
+    std::string name;                          ///< `"Bäckerei Hoffmann GmbH"`.
+    std::string short_name;                    ///< The name without the legal form.
     std::string isic;                          ///< The ISIC Rev. 4 division: `"10"`.
     std::string isic_label;                    ///< Its title: `"manufacture of food products"`.
     char isic_section{'A'};                    ///< Its section: `'C'`.
@@ -171,9 +174,9 @@ class company
     std::string legal_form_code;               ///< ISO 20275 code: `"2HBR"`; empty for curated forms.
     std::string legal_form_group;              ///< `"sole_proprietorship"`, `"partnership"`, `"limited_liability"` or `"other"`.
     std::chrono::year_month_day founded{};     ///< The founding date.
-    std::vector<registration> numbers;         ///< The register's, then tax and VAT, then the LEI (from Milestone 5).
-    std::string domain;                        ///< `"baeckerei-hoffmann.de"` (from Milestone 5).
-    std::string evidence;                      ///< The weakest of the fields drawn: `"measured"`, `"modelled"` or `"filled"`.
+    std::vector<registration> numbers;         ///< The register's, then statistical, tax and VAT, then the LEI.
+    std::string domain;                        ///< `"baeckerei-hoffmann.de"`.
+    std::string evidence;                      ///< The weakest of the statistical fields: `"measured"`, `"modelled"` or `"filled"`.
 
     /// @brief Retrieve the random seed used to generate this company.
     /// @return The call seed; pass it to get_company(request, seed) with
@@ -493,11 +496,13 @@ struct age_ref
 
 struct form_row
 {
+    std::string key;
     std::string code;
     std::string abbreviation;
     std::string latin_abbreviation;
     std::string name;
     std::string latin_name;
+    std::string in_name;           // how the form is written in a name (legal_forms.tsv)
     std::uint8_t group{0};
     std::optional<std::chrono::sys_days> from;
     std::optional<std::chrono::sys_days> until;
@@ -535,6 +540,13 @@ struct country_model
     std::array<std::array<std::array<double, group_count>, section_count>, 2> base{};
     std::vector<form_row> forms;
     std::size_t occupation_table{0}; // into model.occupations
+    std::vector<std::pair<std::size_t, double>> name_languages; // into model.languages, with weights
+    std::size_t surnames{no_index};  // into model.surnames: the culture's
+    std::size_t places{no_index};    // into model.places
+    std::vector<std::pair<std::string, double>> tlds;
+    std::vector<std::size_t> schemes; // into model.schemes, in drawing order
+    std::optional<evidence_level> numbers_evidence; // none without a scheme
+    evidence_level name_evidence{evidence_level::filled};
 };
 
 using isco_row = std::array<double, section_count>;
@@ -543,6 +555,519 @@ struct occupation_table
     std::array<isco_row, isco_groups> rows{};
     std::array<bool, isco_groups> present{};
 };
+
+
+// ------------------------------------------------------------------ text
+
+// The code point at text[i]; `used` gets its length (1 for a byte that starts none, read as U+FFFD).
+inline char32_t decode_utf8(std::string_view text, std::size_t i, std::size_t& used)
+{
+    const auto b0 = static_cast<unsigned char>(text[i]);
+    used = 1;
+    if (b0 < 0x80U) return b0;
+    std::size_t len = 0;
+    char32_t cp = 0;
+    if ((b0 & 0xE0U) == 0xC0U) { len = 2; cp = b0 & 0x1FU; }
+    else if ((b0 & 0xF0U) == 0xE0U) { len = 3; cp = b0 & 0x0FU; }
+    else if ((b0 & 0xF8U) == 0xF0U) { len = 4; cp = b0 & 0x07U; }
+    else return 0xFFFD;
+    if (i + len > text.size()) return 0xFFFD;
+    for (std::size_t k = 1; k < len; ++k)
+    {
+        const auto b = static_cast<unsigned char>(text[i + k]);
+        if ((b & 0xC0U) != 0x80U) return 0xFFFD;
+        cp = (cp << 6U) | (b & 0x3FU);
+    }
+    used = len;
+    return cp;
+}
+
+// A letter of a script other than Latin: punctuation, symbols, CJK punctuation and full-width forms
+// count for no script.
+constexpr bool foreign_letter(char32_t cp) noexcept
+{
+    if (cp < 0x370) return false;
+    if (cp >= 0x1E00 && cp <= 0x1EFF) return false; // Latin Extended Additional (Vietnamese)
+    if (cp >= 0x2000 && cp <= 0x2BFF) return false; // punctuation, symbols, enclosed forms
+    if (cp >= 0x3000 && cp <= 0x303F) return false; // CJK punctuation
+    if (cp >= 0xFF00 && cp <= 0xFF20) return false; // full-width punctuation
+    return true;
+}
+
+// Whether text is written in Latin letters (or has no letters at all).
+inline bool latin_text(std::string_view text)
+{
+    for (std::size_t i = 0; i < text.size();)
+    {
+        std::size_t used = 1;
+        const char32_t cp = decode_utf8(text, i, used);
+        if (foreign_letter(cp)) return false;
+        i += used;
+    }
+    return true;
+}
+
+// The text before the first and after the last occurrence of `sep`-separated items.
+inline std::vector<std::string_view> split_view(std::string_view text, char sep)
+{
+    std::vector<std::string_view> out;
+    std::size_t start = 0;
+    while (true)
+    {
+        const auto at = text.find(sep, start);
+        out.push_back(text.substr(start, at == std::string_view::npos ? std::string_view::npos : at - start));
+        if (at == std::string_view::npos) break;
+        start = at + 1;
+    }
+    return out;
+}
+
+inline bool all_digits(std::string_view s) noexcept
+{
+    return !s.empty() && std::ranges::all_of(s, [](char c) { return c >= '0' && c <= '9'; });
+}
+
+inline std::uint64_t to_number(std::string_view s)
+{
+    std::uint64_t v = 0;
+    const auto [ptr, ec] = std::from_chars(s.data(), s.data() + s.size(), v);
+    if (ec != std::errc{} || ptr != s.data() + s.size()) throw std::invalid_argument("not a number: '" + std::string{s} + "'");
+    return v;
+}
+
+inline double to_double(std::string_view s)
+{
+    const auto v = core::detail::parse_decimal_fast(s);
+    if (!v) throw std::invalid_argument("not a number: '" + std::string{s} + "'");
+    return *v;
+}
+
+inline std::string zero_pad(std::uint64_t v, std::size_t width)
+{
+    std::string s = std::to_string(v);
+    if (s.size() < width) s.insert(0, width - s.size(), '0');
+    return s;
+}
+
+// ------------------------------------------------------------------ check digits
+
+// How a scheme's check characters are computed (schemes.tsv, column check).
+struct check_rule
+{
+    enum class kind : std::uint8_t { none, unpublished, luhn, gtin, mod11_10, mod97_10, weights, named };
+    enum class base : std::uint8_t { eleven_minus_r, r, r_mod_10, eleven_minus_r_mod_10, ten_minus_s, ten_minus_s_mod_10 };
+    kind type{kind::none};
+    std::string name;  // a named algorithm
+    std::vector<unsigned> weights;
+    base rule{base::r};
+    std::vector<std::pair<int, std::string>> except; // a result and how it is written ("" for redraw)
+};
+
+inline check_rule parse_check(std::string_view text)
+{
+    using k = check_rule::kind;
+    using b = check_rule::base;
+    check_rule c;
+    if (text.empty() || text == "none") return c;
+    if (text == "unpublished") { c.type = k::unpublished; return c; }
+    if (text == "luhn") { c.type = k::luhn; return c; }
+    if (text == "gtin") { c.type = k::gtin; return c; }
+    if (text == "mod11_10") { c.type = k::mod11_10; return c; }
+    if (text == "mod97_10") { c.type = k::mod97_10; return c; }
+    if (!text.starts_with("weights:"))
+    {
+        c.type = k::named;
+        c.name = std::string{text};
+        return c;
+    }
+    const auto rest = text.substr(8);
+    const auto colon = rest.find(':');
+    if (colon == std::string_view::npos) throw std::invalid_argument("weights need a rule");
+    for (const auto w : split_view(rest.substr(0, colon), ' ')) c.weights.push_back(static_cast<unsigned>(to_number(w)));
+    const auto parts = split_view(rest.substr(colon + 1), ',');
+    const auto rule = parts.front();
+    if (rule == "11-r") c.rule = b::eleven_minus_r;
+    else if (rule == "r") c.rule = b::r;
+    else if (rule == "r%10") c.rule = b::r_mod_10;
+    else if (rule == "(11-r)%10") c.rule = b::eleven_minus_r_mod_10;
+    else if (rule == "10-s%10") c.rule = b::ten_minus_s;
+    else if (rule == "(10-s%10)%10") c.rule = b::ten_minus_s_mod_10;
+    else throw std::invalid_argument("unknown check rule '" + std::string{rule} + "'");
+    for (std::size_t i = 1; i < parts.size(); ++i)
+    {
+        const auto eq = parts[i].find('=');
+        if (eq == std::string_view::npos) throw std::invalid_argument("a check exception needs a=b");
+        const auto to = parts[i].substr(eq + 1);
+        c.except.emplace_back(static_cast<int>(to_number(parts[i].substr(0, eq))), to == "redraw" ? std::string{} : std::string{to});
+    }
+    c.type = k::weights;
+    return c;
+}
+
+inline unsigned luhn_checksum(std::string_view digits)
+{
+    unsigned sum = 0;
+    for (std::size_t i = 0; i < digits.size(); ++i)
+    {
+        unsigned d = static_cast<unsigned>(digits[digits.size() - 1 - i] - '0');
+        if (i % 2 == 1)
+        {
+            d *= 2;
+            if (d > 9) d -= 9;
+        }
+        sum += d;
+    }
+    return sum % 10;
+}
+
+// The check characters of a body of digits under a generic rule; nullopt when no number has this body.
+inline std::optional<std::string> compute_check(const check_rule& c, std::string_view body)
+{
+    using k = check_rule::kind;
+    using b = check_rule::base;
+    switch (c.type)
+    {
+    case k::none:
+    case k::unpublished: return std::string{};
+    case k::luhn: return std::string(1, core::luhn_digit(body));
+    case k::gtin: return std::string(1, core::gtin_digit(body));
+    case k::mod11_10: return std::string(1, core::mod11_10_digit(body));
+    case k::mod97_10:
+    {
+        const auto d = core::mod97_10_digits(body);
+        return std::string{d[0], d[1]};
+    }
+    case k::weights:
+    {
+        std::uint64_t s = 0;
+        for (std::size_t i = 0; i < body.size() && i < c.weights.size(); ++i)
+        {
+            s += static_cast<std::uint64_t>(body[i] - '0') * c.weights[i];
+        }
+        const int r = static_cast<int>(s % 11);
+        const int s10 = static_cast<int>(s % 10);
+        int v = 0;
+        switch (c.rule)
+        {
+        case b::eleven_minus_r: v = 11 - r; break;
+        case b::r: v = r; break;
+        case b::r_mod_10: v = r % 10; break;
+        case b::eleven_minus_r_mod_10: v = (11 - r) % 10; break;
+        case b::ten_minus_s: v = 10 - s10; break;
+        case b::ten_minus_s_mod_10: v = (10 - s10) % 10; break;
+        }
+        for (const auto& [from, to] : c.except)
+        {
+            if (from == v)
+            {
+                if (to.empty()) return std::nullopt;
+                return to;
+            }
+        }
+        if (v > 9) return std::nullopt;
+        return std::string(1, static_cast<char>('0' + v));
+    }
+    case k::named:
+    {
+        if (c.name == "at_uid") return std::string(1, static_cast<char>('0' + (16 - luhn_checksum(body)) % 10));
+        if (c.name == "be_kbo") return zero_pad(97 - to_number(body) % 97, 2);
+        if (c.name == "ro_cui")
+        {
+            constexpr std::array<unsigned, 9> w{7, 5, 3, 2, 1, 7, 5, 3, 2};
+            const std::string padded = zero_pad(to_number(body), 9);
+            std::uint64_t s = 0;
+            for (std::size_t i = 0; i < 9; ++i) s += static_cast<std::uint64_t>(padded[i] - '0') * w.at(i);
+            return std::string(1, static_cast<char>('0' + (10 * s) % 11 % 10));
+        }
+        if (c.name == "tr_vkn")
+        {
+            unsigned s = 0;
+            for (std::size_t i = 0; i < 9; ++i)
+            {
+                const unsigned c1 = (static_cast<unsigned>(body[i] - '0') + 9 - static_cast<unsigned>(i)) % 10;
+                unsigned c2 = (c1 * (1U << (9 - i))) % 9;
+                if (c1 != 0 && c2 == 0) c2 = 9;
+                s += c2;
+            }
+            return std::string(1, static_cast<char>('0' + (10 - s % 10) % 10));
+        }
+        if (c.name == "tw_ubn")
+        {
+            // the digit that makes the sum of the digits of the weighted products a multiple of 10
+            constexpr std::array<unsigned, 7> w{1, 2, 1, 2, 1, 2, 4};
+            unsigned s = 0;
+            for (std::size_t i = 0; i < 7; ++i)
+            {
+                const unsigned p = static_cast<unsigned>(body[i] - '0') * w.at(i);
+                s += p / 10 + p % 10;
+            }
+            return std::string(1, static_cast<char>('0' + (10 - s % 10) % 10));
+        }
+        if (c.name == "ua_edrpou")
+        {
+            std::array<unsigned, 7> w{1, 2, 3, 4, 5, 6, 7};
+            if (body[0] == '3' || body[0] == '4' || body[0] == '5') w = {7, 1, 2, 3, 4, 5, 6};
+            const auto total = [&]
+            {
+                unsigned s = 0;
+                for (std::size_t i = 0; i < 7; ++i) s += static_cast<unsigned>(body[i] - '0') * w.at(i);
+                return s;
+            };
+            unsigned s = total();
+            if (s % 11 < 10) return std::string(1, static_cast<char>('0' + s % 11));
+            for (auto& x : w) x += 2;
+            s = total();
+            return std::string(1, static_cast<char>('0' + s % 11 % 10));
+        }
+        throw std::invalid_argument("unknown check '" + c.name + "'");
+    }
+    }
+    return std::string{};
+}
+
+// Another character of the same kind: a digit for a digit, a letter for a letter (the case kept).
+inline char other_char(char c, core::rng& r)
+{
+    const auto step = core::uniform_int<int>(r, 1, c >= '0' && c <= '9' ? 9 : 25);
+    if (c >= '0' && c <= '9') return static_cast<char>('0' + (c - '0' + step) % 10);
+    if (c >= 'a' && c <= 'z') return static_cast<char>('a' + (c - 'a' + step) % 26);
+    if (c >= 'A' && c <= 'Z') return static_cast<char>('A' + (c - 'A' + step) % 26);
+    return c;
+}
+
+// ------------------------------------------------------------------ names and numbers
+
+inline constexpr std::size_t pattern_count = 6;
+inline constexpr std::array<std::string_view, pattern_count> pattern_keys{"founder", "founder_trade", "two_founders",
+                                                                         "descriptive", "coined", "initials"};
+
+// The parts a name template can ask for, as bits.
+enum part : std::uint16_t
+{
+    p_surname = 1U << 0U, p_surname2 = 1U << 1U, p_trade = 1U << 2U, p_adjective = 1U << 3U,
+    p_adjective2 = 1U << 4U, p_adjective3 = 1U << 5U, p_region = 1U << 6U, p_place = 1U << 7U,
+    p_family = 1U << 8U, p_joiner = 1U << 9U, p_coined = 1U << 10U, p_coined_head = 1U << 11U,
+    p_coined_tail = 1U << 12U, p_initials = 1U << 13U
+};
+inline constexpr std::array<std::pair<std::string_view, std::uint16_t>, 14> part_names{
+    {{"surname", p_surname}, {"surname2", p_surname2}, {"trade", p_trade}, {"adjective", p_adjective},
+     {"adjective2", p_adjective2}, {"adjective3", p_adjective3}, {"region", p_region}, {"place", p_place},
+     {"family", p_family}, {"joiner", p_joiner}, {"coined", p_coined}, {"coined_head", p_coined_head},
+     {"coined_tail", p_coined_tail}, {"initials", p_initials}}};
+
+// A piece of a name template: literal text, or a part.
+struct template_piece
+{
+    std::string text;
+    std::uint16_t part{0};
+};
+
+struct name_template
+{
+    std::vector<template_piece> pieces;
+    std::uint16_t needs{0};
+    double weight{1.0};
+};
+
+// A word with its Latin form (empty: the word itself) and weight.
+struct word_entry
+{
+    std::string word;
+    std::string latin;
+    double weight{1.0};
+};
+
+struct word_list
+{
+    std::vector<word_entry> items;
+    core::weighted_table<std::uint32_t> table;
+    bool latin{true}; // every word in Latin letters
+    void add(word_entry e)
+    {
+        if (latin && !latin_text(e.word)) latin = false;
+        table.add(static_cast<std::uint32_t>(items.size()), e.weight);
+        items.push_back(std::move(e));
+    }
+    [[nodiscard]] bool empty() const { return items.empty() || !(table.total_weight() > 0.0); }
+};
+
+struct language_model
+{
+    std::string code;
+    std::string script{"Latn"};
+    bool latin{true};
+    int form_position{0}; // 0 suffix, 1 prefix, 2 either
+    bool spaced{true};
+    std::string coined_join;
+    std::string quote_open;
+    std::string quote_close;
+    std::array<std::vector<name_template>, pattern_count> templates;
+    std::unordered_map<std::string, word_list> trade; // by division or section letter
+    word_list adjective, family, joiner, coined_head, coined_tail, surname;
+    std::unordered_map<std::string, word_list> region; // by country or "*"
+    std::unordered_map<std::string, word_list> place;  // by country or "*"
+};
+
+// A code list (codes.tsv).
+struct code_list
+{
+    std::vector<std::string> code;
+    std::vector<std::string> label;
+    std::vector<std::string> extra;
+    core::weighted_table<std::uint32_t> table;
+};
+
+// The issue anchors of one series: by year, the quantiles of the numbers issued.
+struct anchor_series
+{
+    std::vector<int> years;
+    std::vector<std::array<double, 7>> points;
+    std::optional<std::uint64_t> highest;
+};
+inline constexpr std::array<double, 7> anchor_probs{0.001, 0.1, 0.25, 0.5, 0.75, 0.9, 0.999};
+
+enum class safe_method : std::uint8_t { none, wrong_check, reserved_range, above_issued };
+
+struct scheme_model
+{
+    std::string key;
+    std::string country;
+    int kind_order{0}; // register, statistical, tax, vat, lei
+    std::string short_label;
+    std::string builder;
+    std::string display;
+    std::optional<core::pattern> pattern;
+    check_rule check;
+    unsigned groups{0}; // a bit per legal-form group
+    safe_method safe{safe_method::none};
+    std::optional<std::chrono::sys_days> from;
+    std::optional<std::chrono::sys_days> until;
+    std::vector<std::pair<std::string, std::string>> params;
+    evidence_level evidence{evidence_level::modelled};
+
+    [[nodiscard]] std::string_view param(std::string_view name) const
+    {
+        for (const auto& [k, v] : params)
+        {
+            if (k == name) return v;
+        }
+        return {};
+    }
+};
+
+// The value a mapping "K:V,K:V" gives the keys tried in turn; nullopt when none matches.
+inline std::optional<std::string> map_lookup(std::string_view mapping, std::initializer_list<std::string_view> keys)
+{
+    const auto items = split_view(mapping, ',');
+    for (const auto key : keys)
+    {
+        if (key.empty()) continue;
+        for (const auto item : items)
+        {
+            const auto colon = item.find(':');
+            if (colon != std::string_view::npos && item.substr(0, colon) == key) return std::string{item.substr(colon + 1)};
+        }
+    }
+    return std::nullopt;
+}
+
+// One alternative of "a|b|c", drawn evenly; then a range "lo-hi" of numbers drawn evenly, zero-padded
+// to the width of lo.
+inline std::string draw_choice(std::string_view text, core::rng& r)
+{
+    const auto alts = split_view(text, '|');
+    std::string_view pick = alts.front();
+    if (alts.size() > 1) pick = alts.at(static_cast<std::size_t>(core::uniform_int<std::size_t>(r, 0, alts.size() - 1)));
+    const auto dash = pick.find('-');
+    if (dash != std::string_view::npos && dash > 0 && all_digits(pick.substr(0, dash)) && all_digits(pick.substr(dash + 1)))
+    {
+        const auto lo = to_number(pick.substr(0, dash));
+        const auto hi = to_number(pick.substr(dash + 1));
+        return zero_pad(core::uniform_int<std::uint64_t>(r, lo, std::max(lo, hi)), dash);
+    }
+    return std::string{pick};
+}
+
+// A number in a "lo-hi" range.
+inline std::pair<std::uint64_t, std::uint64_t> parse_range(std::string_view text)
+{
+    const auto dash = text.find('-');
+    if (dash == std::string_view::npos) throw std::invalid_argument("expected a range lo-hi, got '" + std::string{text} + "'");
+    return {to_number(text.substr(0, dash)), to_number(text.substr(dash + 1))};
+}
+
+// The index in the compact form (the alphanumeric characters of the printed number) of each of the
+// mask's `slots` slots; position k when the mask has another number of slots.
+inline std::vector<std::size_t> slot_positions(std::string_view mask, std::size_t slots)
+{
+    std::vector<std::size_t> out;
+    const auto n = static_cast<std::size_t>(std::ranges::count_if(mask, [](char c) { return c == '#' || c == '@'; }));
+    if (mask.empty() || n != slots)
+    {
+        for (std::size_t k = 0; k < slots; ++k) out.push_back(k);
+        return out;
+    }
+    std::size_t alnum = 0;
+    for (const char c : mask)
+    {
+        if (c == '#' || c == '@') out.push_back(alnum++);
+        else if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) ++alnum;
+    }
+    return out;
+}
+
+inline bool is_alnum(char c) noexcept
+{
+    return (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+}
+
+// The digits and letters of a printed number.
+inline std::string alnum_of(std::string_view text)
+{
+    std::string out;
+    for (const char c : text)
+    {
+        if (is_alnum(c)) out += c;
+    }
+    return out;
+}
+
+// Luhn over the alphabet 0-9A-Z (mod 36), as python-stdnum's luhn with that alphabet: the checksum.
+inline unsigned luhn36_checksum(std::string_view s)
+{
+    unsigned sum = 0;
+    for (std::size_t i = 0; i < s.size(); ++i)
+    {
+        const unsigned v = core::alnum_value(s[s.size() - 1 - i]);
+        if (i % 2 == 0) sum += v;
+        else sum += (v * 2) / 36 + (v * 2) % 36;
+    }
+    return sum % 36;
+}
+
+inline char luhn36_char(std::string_view body)
+{
+    constexpr std::string_view alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const unsigned ck = luhn36_checksum(std::string{body} + "0");
+    return alphabet[(36 - ck) % 36];
+}
+
+// Fills a display mask: each '#' or '@' takes the next character of `compact`; other characters are
+// copied. A mask with another number of slots than `compact` has characters gives `compact` itself.
+inline std::string apply_display(std::string_view mask, std::string_view compact)
+{
+    if (mask.empty()) return std::string{compact};
+    const auto slots = static_cast<std::size_t>(std::ranges::count_if(mask, [](char c) { return c == '#' || c == '@'; }));
+    if (slots != compact.size()) return std::string{compact};
+    std::string out;
+    std::size_t k = 0;
+    for (const char c : mask)
+    {
+        if (c == '#' || c == '@') out += compact[k++];
+        else out += c;
+    }
+    return out;
+}
 
 struct model
 {
@@ -563,6 +1088,19 @@ struct model
     std::array<std::array<std::array<double, group_count>, band_count>, section_count + 1> odds{};
     std::array<std::array<bool, band_count>, section_count + 1> odds_present{};
     std::vector<occupation_table> occupations; // [0] is the pooled table (country "*")
+
+    // Names, domains and numbers
+    std::vector<language_model> languages;
+    std::unordered_map<std::string, std::size_t> language_index;
+    std::unordered_map<std::string, std::array<double, pattern_count>> patterns; // "language|group|band"
+    std::vector<word_list> surnames;                                     // by culture
+    std::unordered_map<std::string, std::size_t> surname_index;
+    std::vector<word_list> places;                                       // by country
+    std::vector<scheme_model> schemes;
+    std::size_t lei{no_index};                                           // the LEI scheme
+    std::unordered_map<std::string, code_list> codes;
+    std::unordered_map<std::string, anchor_series> anchors;             // "scheme|series"
+    std::unordered_map<char32_t, std::string> fold;
 };
 
 } // namespace companygen_detail
@@ -571,8 +1109,8 @@ struct model
 /// @brief Company Generator: companies by country.
 ///
 /// The call seed splits into the streams `"country"`, `"industry"`, `"size"`,
-/// `"employees"`, `"form"` and `"founded"` (and, from Milestone 5, `"name"`,
-/// `"numbers"`, `"domain"` and `"lei"`). A given field skips its draw and
+/// `"employees"`, `"form"`, `"founded"`, `"name"`, `"numbers"` (one split per
+/// scheme), `"domain"` and `"lei"`. A given field skips its draw and
 /// leaves every other stream's draws unchanged. Output is identical on every
 /// compiler and platform (dasmig-core).
 ///
@@ -651,6 +1189,10 @@ class cpg
         d::weaken(evidence, c.age_evidence);
 
         const d::form_row& f = c.forms.at(form);
+        const drawn_name name = draw_name_(c, request, f, division, section, band, call);
+        number_context numbers{.c = c, .f = f, .band = band, .division = division, .section = section,
+                               .employees = employees, .founded = founded, .p = p, .safe = request.safe, .name = name,
+                               .numbers = call.split("numbers"), .lei = call.split("lei"), .chosen = {}, .built = {}};
         company out;
         out._signature = {.seed = call_seed, .data = data_hash()};
         out.country_code = c.code;
@@ -663,6 +1205,10 @@ class cpg
         out.legal_form_code = f.code;
         out.legal_form_group = std::string{d::group_keys.at(f.group)};
         out.founded = founded;
+        out.name = name.name;
+        out.short_name = name.short_name;
+        out.numbers = draw_numbers_(numbers);
+        out.domain = draw_domain_(c, name, request.safe, call);
         out.evidence = d::evidence_name(evidence);
         return out;
     }
@@ -780,8 +1326,8 @@ class cpg
 
     /// @brief The evidence behind each field of a country's data.
     /// @param country ISO alpha-2, any case.
-    /// @return Per field: measured, modelled or filled (name and numbers are
-    ///         empty until Milestone 5).
+    /// @return Per field: measured, modelled or filled; numbers is "none" for
+    ///         a country with no number schemes.
     /// @throws std::invalid_argument For an unknown country.
     [[nodiscard]] company_evidence evidence(std::string_view country) const
     {
@@ -791,9 +1337,27 @@ class cpg
                 .size = d::evidence_name(c.size_evidence),
                 .legal_form = d::evidence_name(c.form_evidence),
                 .age = d::evidence_name(c.age_evidence),
-                .name = {},
-                .numbers = {},
+                .name = d::evidence_name(c.name_evidence),
+                .numbers = c.numbers_evidence ? std::string{d::evidence_name(*c.numbers_evidence)} : std::string{"none"},
                 .domain = d::evidence_name(c.domain_evidence)};
+    }
+
+    /// @brief Whether a number passes its scheme's check, as python-stdnum
+    ///        checks it (for a scheme without a check: its structure).
+    ///
+    /// Cannot tell whether a number is in use.
+    /// @param scheme A scheme id, such as `"fr-siren"` or `"lei"`.
+    /// @param number The number, printed (`"552 008 443"`) or compact.
+    /// @return True when it passes.
+    /// @throws std::invalid_argument For an unknown scheme.
+    [[nodiscard]] bool is_valid(std::string_view scheme, std::string_view number) const
+    {
+        for (const auto& s : _model.schemes)
+        {
+            if (s.key != scheme) continue;
+            return number_valid_(s, s.builder == "de_hrn" ? std::string{number} : companygen_detail::alnum_of(number));
+        }
+        throw std::invalid_argument("unknown number scheme '" + std::string{scheme} + "'");
     }
 
     // -- Data management --------------------------------------------------
@@ -947,11 +1511,11 @@ class cpg
     // -- Tables -----------------------------------------------------------
 
     static constexpr std::string_view library_name_ = "company-generator";
-    static constexpr std::size_t table_count_ = 16;
+    static constexpr std::size_t table_count_ = 18;
     static constexpr std::array<table, table_count_> all_tables_{
         table::countries, table::isic,        table::industries, table::sizes,   table::ages,    table::groups,
         table::form_odds, table::legal_forms, table::occupations, table::words,  table::patterns, table::surnames,
-        table::places,    table::domains,     table::schemes,    table::anchors};
+        table::places,    table::domains,     table::schemes,    table::anchors, table::codes,   table::fold};
 
     using documents = std::array<std::optional<core::tsv_document>, table_count_>;
     using tables = std::array<core::layered_table, table_count_>;
@@ -963,7 +1527,7 @@ class cpg
         constexpr std::array<std::string_view, table_count_> names{
             "countries.tsv",   "isic.tsv",    "industries.tsv", "sizes.tsv",  "ages.tsv",     "groups.tsv",
             "form_odds.tsv",   "legal_forms.tsv", "occupations.tsv", "words.tsv", "patterns.tsv", "surnames.tsv",
-            "places.tsv",      "domains.tsv", "schemes.tsv",    "anchors.tsv"};
+            "places.tsv",      "domains.tsv", "schemes.tsv",    "anchors.tsv", "codes.tsv",    "fold.tsv"};
         return names.at(index_(t));
     }
 
@@ -1011,7 +1575,7 @@ class cpg
             return {.key = {"country_code", "key"},
                     .required = {"code", "group", "abbreviation", "latin_abbreviation", "name", "latin_name", "from",
                                  "until", "only", "not", "share_small", "share_large", "evidence"},
-                    .optional = {}};
+                    .optional = {"in_name"}};
         case table::occupations:
             return {.key = {"country_code", "isco"}, .required = section_letters_(), .optional = {}};
         case table::words:
@@ -1028,13 +1592,17 @@ class cpg
             return {.key = {"country_code", "tld"}, .required = {"share"}, .optional = {}};
         case table::schemes:
             return {.key = {"key"},
-                    .required = {"country_code", "kind", "label", "native_label", "builder", "display", "pattern",
-                                 "check", "groups", "safe_method", "optional", "from", "until", "params", "evidence"},
+                    .required = {"country_code", "kind", "label", "native_label", "short", "builder", "display",
+                                 "pattern", "check", "groups", "safe_method", "from", "until", "params", "evidence"},
                     .optional = {"source"}};
         case table::anchors:
             return {.key = {"scheme", "series", "year"},
                     .required = {"q001", "q10", "q25", "q50", "q75", "q90", "q999", "count"},
                     .optional = {"source"}};
+        case table::codes:
+            return {.key = {"list", "code"}, .required = {"label", "weight", "extra"}, .optional = {}};
+        case table::fold:
+            return {.key = {"from"}, .required = {"to"}, .optional = {}};
         }
         return {};
     }
@@ -1048,7 +1616,8 @@ class cpg
                 core::layered_table{schema_(table::occupations)}, core::layered_table{schema_(table::words)},
                 core::layered_table{schema_(table::patterns)},    core::layered_table{schema_(table::surnames)},
                 core::layered_table{schema_(table::places)},      core::layered_table{schema_(table::domains)},
-                core::layered_table{schema_(table::schemes)},     core::layered_table{schema_(table::anchors)}};
+                core::layered_table{schema_(table::schemes)},     core::layered_table{schema_(table::anchors)},
+                core::layered_table{schema_(table::codes)},       core::layered_table{schema_(table::fold)}};
     }
 
     static documents read_directory_(const std::filesystem::path& dir)
@@ -1248,6 +1817,8 @@ class cpg
         case table::domains:
         case table::schemes:
         case table::anchors:
+        case table::codes:
+        case table::fold:
             break;
         }
     }
@@ -1257,11 +1828,13 @@ class cpg
     {
         namespace d = companygen_detail;
         form_row f;
+        f.key = std::string{row["key"]};
         f.code = std::string{row["code"]};
         f.abbreviation = std::string{row["abbreviation"]};
         f.latin_abbreviation = std::string{row["latin_abbreviation"]};
         f.name = std::string{row["name"]};
         f.latin_name = std::string{row["latin_name"]};
+        f.in_name = std::string{row.has("in_name") ? row["in_name"] : std::string_view{}};
         if (f.name.empty() && f.abbreviation.empty()) throw row.error("name", "needs a name or an abbreviation");
         f.group = static_cast<std::uint8_t>(group_(row, "group"));
         const auto date = [&](std::string_view column, std::optional<std::chrono::sys_days>& slot)
@@ -1651,6 +2224,9 @@ class cpg
             if (const auto it = occupation_of.find(code); it != occupation_of.end()) c.occupation_table = it->second;
         }
 
+        build_names_(t, m, by_code);
+        build_numbers_(t, m, by_code);
+
         // ---- the countries, sorted by code, and their draw weights
         for (auto& [code, c] : by_code)
         {
@@ -1661,6 +2237,288 @@ class cpg
             m.countries.push_back(std::move(c));
         }
         return m;
+    }
+
+    // ---- names: words.tsv, patterns.tsv, surnames.tsv, places.tsv, domains.tsv, fold.tsv
+    static companygen_detail::name_template parse_template_(std::string_view text, double weight)
+    {
+        namespace d = companygen_detail;
+        d::name_template tpl;
+        tpl.weight = weight;
+        std::string literal;
+        for (std::size_t i = 0; i < text.size();)
+        {
+            if (text[i] != '{')
+            {
+                literal += text[i++];
+                continue;
+            }
+            const auto close = text.find('}', i);
+            if (close == std::string_view::npos) throw bad_("words.tsv: unclosed { in the template '" + std::string{text} + "'");
+            const auto name = text.substr(i + 1, close - i - 1);
+            std::uint16_t bit = 0;
+            for (const auto& [part_name, part_bit] : d::part_names)
+            {
+                if (part_name == name) bit = part_bit;
+            }
+            if (bit == 0) throw bad_("words.tsv: unknown part {" + std::string{name} + "} in the template '" + std::string{text} + "'");
+            if (!literal.empty()) tpl.pieces.push_back({.text = std::exchange(literal, {}), .part = 0});
+            tpl.pieces.push_back({.text = {}, .part = bit});
+            tpl.needs |= bit;
+            i = close + 1;
+        }
+        if (!literal.empty()) tpl.pieces.push_back({.text = literal, .part = 0});
+        return tpl;
+    }
+
+    static void build_names_(const tables& t, companygen_detail::model& m, std::map<std::string, country_model>& by_code)
+    {
+        namespace d = companygen_detail;
+        const auto language = [&](std::string_view code) -> d::language_model&
+        {
+            const auto [it, fresh] = m.language_index.try_emplace(std::string{code}, m.languages.size());
+            if (fresh)
+            {
+                m.languages.emplace_back();
+                m.languages.back().code = std::string{code};
+            }
+            return m.languages.at(it->second);
+        };
+        for (const auto& row : t.at(index_(table::words)).rows())
+        {
+            auto& lang = language(row["language"]);
+            const auto kind = row["kind"];
+            const std::string key{row["key"]};
+            const std::string word{row["word"]};
+            d::word_entry e{.word = word, .latin = std::string{row["latin"]}, .weight = row.get<double>("weight")};
+            if (kind == "style")
+            {
+                if (key == "form_position") lang.form_position = word == "prefix" ? 1 : word == "both" ? 2 : 0;
+                else if (key == "script")
+                {
+                    lang.script = word;
+                    lang.latin = word == "Latn";
+                }
+                else if (key == "space") lang.spaced = word != "none";
+                else if (key == "coined_join") lang.coined_join = word == "space" ? " " : "";
+                else if (key == "quotes")
+                {
+                    std::size_t used = 1;
+                    (void)d::decode_utf8(word, 0, used);
+                    lang.quote_open = word.substr(0, used);
+                    lang.quote_close = word.substr(used);
+                }
+            }
+            else if (kind == "template")
+            {
+                const auto p = d::index_of(d::pattern_keys, key);
+                if (!p) throw bad_("words.tsv: unknown pattern " + key);
+                lang.templates.at(*p).push_back(parse_template_(word, e.weight));
+            }
+            else if (kind == "trade") lang.trade[key].add(std::move(e));
+            else if (kind == "adjective") lang.adjective.add(std::move(e));
+            else if (kind == "family") lang.family.add(std::move(e));
+            else if (kind == "joiner") lang.joiner.add(std::move(e));
+            else if (kind == "coined_head") lang.coined_head.add(std::move(e));
+            else if (kind == "coined_tail") lang.coined_tail.add(std::move(e));
+            else if (kind == "surname") lang.surname.add(std::move(e));
+            else if (kind == "region") lang.region[key].add(std::move(e));
+            else if (kind == "place") lang.place[key].add(std::move(e));
+            else throw bad_("words.tsv: unknown kind " + std::string{kind});
+        }
+        for (const auto& row : t.at(index_(table::patterns)).rows())
+        {
+            std::array<double, d::pattern_count> w{};
+            for (std::size_t p = 0; p < d::pattern_count; ++p) w.at(p) = row.get<double>(d::pattern_keys.at(p));
+            m.patterns[std::string{row["language"]} + "|" + std::string{row["group"]} + "|" + std::string{row["band"]}] = w;
+        }
+        for (const auto& row : t.at(index_(table::surnames)).rows())
+        {
+            const auto [it, fresh] = m.surname_index.try_emplace(std::string{row["culture"]}, m.surnames.size());
+            if (fresh) m.surnames.emplace_back();
+            m.surnames.at(it->second).add({.word = std::string{row["surname"]}, .latin = std::string{row["latin"]},
+                                           .weight = row.get<double>("weight")});
+        }
+        std::unordered_map<std::string, std::size_t> place_index;
+        for (const auto& row : t.at(index_(table::places)).rows())
+        {
+            const auto [it, fresh] = place_index.try_emplace(std::string{row["country_code"]}, m.places.size());
+            if (fresh) m.places.emplace_back();
+            m.places.at(it->second).add({.word = std::string{row["place"]}, .latin = {}, .weight = row.get<double>("weight")});
+        }
+        for (const auto& row : t.at(index_(table::domains)).rows())
+        {
+            const auto it = by_code.find(std::string{row["country_code"]});
+            if (it == by_code.end()) throw bad_("domains.tsv: unknown country " + std::string{row["country_code"]});
+            it->second.tlds.emplace_back(std::string{row["tld"]}, row.get<double>("share"));
+        }
+        for (const auto& row : t.at(index_(table::fold)).rows())
+        {
+            const auto from = row["from"];
+            std::size_t used = 1;
+            const char32_t cp = from.empty() ? 0 : d::decode_utf8(from, 0, used);
+            if (from.empty() || used != from.size()) throw bad_("fold.tsv: '" + std::string{from} + "' is not one letter");
+            m.fold[cp] = std::string{row["to"]};
+        }
+        const auto english = m.language_index.find("en");
+        for (auto& [code, c] : by_code)
+        {
+            bool own = true;
+            for (const auto item : d::split_view(c.languages, ';'))
+            {
+                if (item.empty()) continue;
+                const auto colon = item.find(':');
+                const std::string lang{item.substr(0, colon)};
+                const double w = colon == std::string_view::npos ? 1.0 : d::to_double(item.substr(colon + 1));
+                const auto it = m.language_index.find(lang);
+                if (it == m.language_index.end())
+                {
+                    own = false;
+                    continue;
+                }
+                if (w > 0.0) c.name_languages.emplace_back(it->second, w);
+            }
+            if (c.name_languages.empty())
+            {
+                if (english == m.language_index.end()) throw bad_("words.tsv: no language for " + code + "'s names");
+                c.name_languages.emplace_back(english->second, 1.0);
+                own = false;
+            }
+            c.name_evidence = own ? d::evidence_level::modelled : d::evidence_level::filled;
+            if (const auto it = m.surname_index.find(c.culture); it != m.surname_index.end()) c.surnames = it->second;
+            if (const auto it = place_index.find(code); it != place_index.end()) c.places = it->second;
+        }
+    }
+
+    // ---- numbers: codes.tsv, anchors.tsv, schemes.tsv
+    static void build_numbers_(const tables& t, companygen_detail::model& m, std::map<std::string, country_model>& by_code)
+    {
+        namespace d = companygen_detail;
+        for (const auto& row : t.at(index_(table::codes)).rows())
+        {
+            auto& list = m.codes[std::string{row["list"]}];
+            list.table.add(static_cast<std::uint32_t>(list.code.size()), row.get<double>("weight"));
+            list.code.emplace_back(row["code"]);
+            list.label.emplace_back(row["label"]);
+            list.extra.emplace_back(row["extra"]);
+        }
+        for (const auto& row : t.at(index_(table::anchors)).rows())
+        {
+            auto& series = m.anchors[std::string{row["scheme"]} + "|" + std::string{row["series"]}];
+            if (row["year"] == "highest")
+            {
+                series.highest = static_cast<std::uint64_t>(row.get<double>("q999"));
+                continue;
+            }
+            std::array<double, 7> q{};
+            constexpr std::array<std::string_view, 7> columns{"q001", "q10", "q25", "q50", "q75", "q90", "q999"};
+            for (std::size_t i = 0; i < 7; ++i) q.at(i) = row.get<double>(columns.at(i));
+            const int year = row.get<int>("year");
+            const auto at = std::ranges::upper_bound(series.years, year) - series.years.begin();
+            series.years.insert(series.years.begin() + at, year);
+            series.points.insert(series.points.begin() + at, q);
+        }
+        constexpr std::array<std::string_view, 5> kinds{"register", "statistical", "tax", "vat", "lei"};
+        for (const auto& row : t.at(index_(table::schemes)).rows())
+        {
+            d::scheme_model s;
+            s.key = std::string{row["key"]};
+            s.country = std::string{row["country_code"]};
+            const auto kind = d::index_of(kinds, row["kind"]);
+            if (!kind) throw bad_("schemes.tsv: " + s.key + ": unknown kind " + std::string{row["kind"]});
+            s.kind_order = static_cast<int>(*kind);
+            s.short_label = std::string{row["short"]};
+            s.builder = std::string{row["builder"]};
+            s.display = std::string{row["display"]};
+            try
+            {
+                if (!row["pattern"].empty()) s.pattern = core::pattern::parse(row["pattern"]);
+                s.check = d::parse_check(row["check"]);
+                for (const auto item : d::split_view(row["params"], ';'))
+                {
+                    if (item.empty()) continue;
+                    const auto eq = item.find('=');
+                    if (eq == std::string_view::npos) throw std::invalid_argument("params need name=value");
+                    s.params.emplace_back(std::string{item.substr(0, eq)}, std::string{item.substr(eq + 1)});
+                }
+            }
+            catch (const std::invalid_argument& e)
+            {
+                throw bad_("schemes.tsv: " + s.key + ": " + e.what());
+            }
+            for (const char g : row["groups"])
+            {
+                const auto at = std::string_view{"SPLO"}.find(g);
+                if (at == std::string_view::npos) throw bad_("schemes.tsv: " + s.key + ": groups must be letters of SPLO");
+                s.groups |= 1U << at;
+            }
+            const auto safe = row["safe_method"];
+            s.safe = safe == "wrong_check" ? d::safe_method::wrong_check
+                     : safe == "reserved_range" ? d::safe_method::reserved_range
+                     : safe == "above_issued" ? d::safe_method::above_issued
+                                              : d::safe_method::none;
+            const auto ev = row["evidence"];
+            s.evidence = ev == "issuer" ? d::evidence_level::measured
+                         : ev == "reference" ? d::evidence_level::modelled
+                                             : d::evidence_level::filled;
+            const auto date = [&](std::string_view column, std::optional<std::chrono::sys_days>& slot)
+            {
+                if (row[column].empty()) return;
+                slot = d::parse_date(row[column]);
+                if (!slot) throw bad_("schemes.tsv: " + s.key + ": " + std::string{column} + " must be a date");
+            };
+            date("from", s.from);
+            date("until", s.until);
+            if (!known_builder_(s.builder)) throw bad_("schemes.tsv: " + s.key + ": unknown builder " + s.builder);
+            for (const auto list_param : {"court", "county", "region", "state"})
+            {
+                const auto v = s.param(list_param);
+                if (!v.empty() && !m.codes.contains(std::string{v})) throw bad_("schemes.tsv: " + s.key + ": no code list " + std::string{v});
+            }
+            if (s.builder == "th_juristic" && !m.codes.contains(std::string{s.param("office")}))
+            {
+                throw bad_("schemes.tsv: " + s.key + ": no code list " + std::string{s.param("office")});
+            }
+            const std::size_t index = m.schemes.size();
+            if (s.country == "*")
+            {
+                if (s.builder != "lei") throw bad_("schemes.tsv: " + s.key + ": only the LEI serves every country");
+                m.lei = index;
+            }
+            else
+            {
+                const auto it = by_code.find(s.country);
+                if (it == by_code.end()) throw bad_("schemes.tsv: unknown country " + s.country);
+                it->second.schemes.push_back(index);
+            }
+            m.schemes.push_back(std::move(s));
+        }
+        for (auto& [code, c] : by_code)
+        {
+            std::ranges::sort(c.schemes, [&](std::size_t a, std::size_t b)
+                              {
+                                  const auto& x = m.schemes.at(a);
+                                  const auto& y = m.schemes.at(b);
+                                  return std::tie(x.kind_order, x.key) < std::tie(y.kind_order, y.key);
+                              });
+            for (const auto i : c.schemes)
+            {
+                const auto ev = m.schemes.at(i).evidence;
+                if (!c.numbers_evidence) c.numbers_evidence = ev;
+                else d::weaken(*c.numbers_evidence, ev);
+            }
+        }
+    }
+
+    static bool known_builder_(std::string_view b)
+    {
+        constexpr std::array<std::string_view, 37> names{
+            "generic", "serial",  "lei",      "ar_cuit",  "at_fn",      "au_abn",     "br_cnpj",  "cn_uscc",
+            "de_hrn",  "es_nif",  "fr_siret", "fr_tva",   "gb_crn",     "gb_vat",     "hu_adoszam", "id_npwp",
+            "ie_vat",  "il_hp",   "in_cin",   "in_pan",   "in_gstin",   "it_piva",    "jp_cn",    "kr_brn",
+            "mx_rfc",  "ng_rc",   "nl_btw",   "ro_onrc",  "ru_inn",     "ru_ogrn",    "se_orgnr", "sg_uen",
+            "th_juristic", "us_ein", "vn_mst", "za_cipc", "fr_siren"};
+        return std::ranges::find(names, b) != names.end();
     }
 
     static std::string two_digits_(std::size_t division)
@@ -2171,6 +3029,1580 @@ class cpg
         }
         const auto day = core::uniform_int<std::int64_t>(r, allowed.at(age).first, allowed.at(age).last);
         return ch::year_month_day{ch::sys_days{ch::days{static_cast<int>(day)}}};
+    }
+
+    // -- Names ----------------------------------------------------------------
+
+    // A drawn name: the name with its legal form, the name without it, and its Latin form.
+    struct drawn_name
+    {
+        std::string name;
+        std::string short_name;
+        std::string latin;        // the short name in Latin letters (text without a Latin form left out)
+        std::string surname_latin; // the first founder's surname in Latin letters, if any
+        std::string language;      // the language the name is written in
+    };
+
+    struct name_text
+    {
+        std::string text;
+        std::string latin;
+    };
+
+    static name_text word_text_(const companygen_detail::word_entry& e)
+    {
+        return {.text = e.word, .latin = e.latin.empty() ? e.word : e.latin};
+    }
+
+    // Initials in the script's capitals (Latin for scripts without a list), with their Latin form.
+    static name_text initials_(const companygen_detail::language_model& lang, core::rng& r)
+    {
+        static constexpr std::array<std::pair<std::string_view, std::string_view>, 27> cyrillic{
+            {{"А", "A"}, {"Б", "B"}, {"В", "V"}, {"Г", "G"}, {"Д", "D"}, {"Е", "E"}, {"Ж", "Zh"}, {"З", "Z"}, {"И", "I"},
+             {"К", "K"}, {"Л", "L"}, {"М", "M"}, {"Н", "N"}, {"О", "O"}, {"П", "P"}, {"Р", "R"}, {"С", "S"}, {"Т", "T"},
+             {"У", "U"}, {"Ф", "F"}, {"Х", "Kh"}, {"Ц", "Ts"}, {"Ч", "Ch"}, {"Ш", "Sh"}, {"Э", "E"}, {"Ю", "Yu"}, {"Я", "Ya"}}};
+        static constexpr std::array<std::pair<std::string_view, std::string_view>, 24> greek{
+            {{"Α", "A"}, {"Β", "V"}, {"Γ", "G"}, {"Δ", "D"}, {"Ε", "E"}, {"Ζ", "Z"}, {"Η", "I"}, {"Θ", "Th"},
+             {"Ι", "I"}, {"Κ", "K"}, {"Λ", "L"}, {"Μ", "M"}, {"Ν", "N"}, {"Ξ", "X"}, {"Ο", "O"}, {"Π", "P"},
+             {"Ρ", "R"}, {"Σ", "S"}, {"Τ", "T"}, {"Υ", "Y"}, {"Φ", "F"}, {"Χ", "Ch"}, {"Ψ", "Ps"}, {"Ω", "O"}}};
+        static constexpr std::string_view latin = "ABCDEFGHIJKLMNOPRSTUVW";
+        const auto n = core::uniform_int<int>(r, 2, 3);
+        name_text out;
+        for (int i = 0; i < n; ++i)
+        {
+            if (lang.script == "Cyrl")
+            {
+                const auto& [c, l] = cyrillic.at(core::uniform_int<std::size_t>(r, 0, cyrillic.size() - 1));
+                out.text += c;
+                out.latin += l;
+            }
+            else if (lang.script == "Grek")
+            {
+                const auto& [c, l] = greek.at(core::uniform_int<std::size_t>(r, 0, greek.size() - 1));
+                out.text += c;
+                out.latin += l;
+            }
+            else
+            {
+                const char c = latin.at(core::uniform_int<std::size_t>(r, 0, latin.size() - 1));
+                out.text += c;
+                out.latin += c;
+            }
+        }
+        return out;
+    }
+
+    // Collapses runs of spaces and trims.
+    static std::string tidy_(std::string_view text)
+    {
+        std::string out;
+        for (const char c : text)
+        {
+            if (c == ' ' && (out.empty() || out.back() == ' ')) continue;
+            out += c;
+        }
+        while (!out.empty() && out.back() == ' ') out.pop_back();
+        return out;
+    }
+
+    [[nodiscard]] drawn_name draw_name_(const country_model& c, const company_request& request, const form_row& f,
+                                        std::size_t division, std::size_t section, std::size_t band,
+                                        const core::rng& call) const
+    {
+        namespace d = companygen_detail;
+        const auto r = call.split("name");
+
+        // The language: by the country's shares.
+        std::size_t li = c.name_languages.front().first;
+        if (c.name_languages.size() > 1)
+        {
+            auto lr = r.split("language");
+            double total = 0.0;
+            for (const auto& [i, w] : c.name_languages) total += w;
+            const double target = core::uniform01(lr) * total;
+            double acc = 0.0;
+            for (const auto& [i, w] : c.name_languages)
+            {
+                acc += w;
+                li = i;
+                if (target < acc) break;
+            }
+        }
+        const auto& lang = _model.languages.at(li);
+
+        // The sources of each part, and the parts this company can have.
+        const auto fits = [&](const std::optional<std::string>& given)
+        { return given && !given->empty() && d::latin_text(*given) == lang.latin; };
+        const bool given_surname = fits(request.founder_surname);
+        const bool given_place = fits(request.place);
+        const d::word_list* surnames = nullptr;
+        bool romanize = false; // a Latin-script name takes the Latin form of the culture's surnames
+        if (!lang.surname.empty()) surnames = &lang.surname;
+        else if (c.surnames != d::no_index)
+        {
+            const auto& list = _model.surnames.at(c.surnames);
+            if (!list.empty() && (lang.latin || !list.latin)) surnames = &list;
+            romanize = lang.latin && !list.latin;
+        }
+        const auto find_list = [](const std::unordered_map<std::string, d::word_list>& lists, const std::string& key) -> const d::word_list*
+        {
+            const auto it = lists.find(key);
+            return it == lists.end() || it->second.empty() ? nullptr : &it->second;
+        };
+        const d::word_list* trade = find_list(lang.trade, two_digits_(division));
+        if (!trade) trade = find_list(lang.trade, std::string(1, static_cast<char>('A' + section)));
+        const d::word_list* region = find_list(lang.region, c.code);
+        if (!region) region = find_list(lang.region, "*");
+        const d::word_list* place = find_list(lang.place, c.code);
+        if (!place && lang.latin && c.places != d::no_index && _model.places.at(c.places).latin && !_model.places.at(c.places).empty())
+        {
+            place = &_model.places.at(c.places);
+        }
+        if (!place) place = find_list(lang.place, "*");
+
+        std::uint16_t have = d::p_initials;
+        if (surnames || given_surname) have |= d::p_surname;
+        if (surnames) have |= d::p_surname2;
+        if (trade) have |= d::p_trade;
+        if (!lang.adjective.empty()) have |= d::p_adjective | d::p_adjective2 | d::p_adjective3;
+        if (region) have |= d::p_region;
+        if (place || given_place) have |= d::p_place;
+        if (!lang.family.empty()) have |= d::p_family;
+        if (!lang.joiner.empty()) have |= d::p_joiner;
+        if (!lang.coined_head.empty()) have |= d::p_coined_head;
+        if (!lang.coined_tail.empty()) have |= d::p_coined_tail;
+        if (!lang.coined_head.empty() && !lang.coined_tail.empty()) have |= d::p_coined;
+        const auto usable = [&](const d::name_template& tpl) { return (tpl.needs & ~have) == 0 && tpl.weight > 0.0; };
+
+        // The pattern, by the shares of the language (or *), group and band, among those with a usable template.
+        const std::string tail = "|" + std::string{d::group_keys.at(f.group)} + "|" + std::string{d::band_keys.at(band)};
+        auto shares = _model.patterns.find(lang.code + tail);
+        if (shares == _model.patterns.end()) shares = _model.patterns.find("*" + tail);
+        std::array<double, d::pattern_count> w{};
+        double total = 0.0;
+        for (int pass = 0; pass < 2 && !(total > 0.0); ++pass)
+        {
+            for (std::size_t p = 0; p < d::pattern_count; ++p)
+            {
+                const bool any = std::ranges::any_of(lang.templates.at(p), usable);
+                const double share = pass == 0 && shares != _model.patterns.end() ? shares->second.at(p) : 1.0;
+                w.at(p) = any ? share : 0.0;
+                total += w.at(p);
+            }
+        }
+        const d::name_template fallback = parse_template_("{initials}", 1.0);
+        const d::name_template* tpl = &fallback;
+        if (total > 0.0)
+        {
+            auto pr = r.split("pattern");
+            const double target = core::uniform01(pr) * total;
+            double acc = 0.0;
+            std::size_t pattern = 0;
+            for (std::size_t p = 0; p < d::pattern_count; ++p)
+            {
+                if (!(w.at(p) > 0.0)) continue;
+                acc += w.at(p);
+                pattern = p;
+                if (target < acc) break;
+            }
+            const auto& list = lang.templates.at(pattern);
+            double tw = 0.0;
+            for (const auto& x : list)
+            {
+                if (usable(x)) tw += x.weight;
+            }
+            auto tr = r.split("template");
+            const double t2 = core::uniform01(tr) * tw;
+            acc = 0.0;
+            for (const auto& x : list)
+            {
+                if (!usable(x)) continue;
+                acc += x.weight;
+                tpl = &x;
+                if (t2 < acc) break;
+            }
+        }
+
+        // The parts, each from a stream of its own.
+        const auto pick = [&](const d::word_list& list, std::string_view stream, const std::vector<std::string>& avoid = {})
+        {
+            auto pr = r.split(stream);
+            const d::word_entry* e = &list.items.at(list.table.pick(pr));
+            for (int i = 0; i < 8 && std::ranges::find(avoid, e->word) != avoid.end(); ++i)
+            {
+                e = &list.items.at(list.table.pick(pr));
+            }
+            return word_text_(*e);
+        };
+        drawn_name out;
+        out.language = lang.code;
+        std::string text;
+        std::string latin;
+        std::vector<std::string> surnames_used;
+        std::vector<std::string> adjectives_used;
+        for (const auto& piece : tpl->pieces)
+        {
+            name_text part;
+            switch (piece.part)
+            {
+            case 0:
+                part.text = piece.text;
+                part.latin = d::latin_text(piece.text) ? piece.text : " ";
+                break;
+            case d::p_surname:
+                part = given_surname ? name_text{*request.founder_surname, *request.founder_surname} : pick(*surnames, "surname");
+                if (romanize && !given_surname) part.text = part.latin;
+                surnames_used.push_back(part.text);
+                if (out.surname_latin.empty()) out.surname_latin = part.latin;
+                break;
+            case d::p_surname2:
+                part = pick(*surnames, "surname2", surnames_used);
+                if (romanize) part.text = part.latin;
+                surnames_used.push_back(part.text);
+                break;
+            case d::p_trade: part = pick(*trade, "trade"); break;
+            case d::p_adjective:
+            case d::p_adjective2:
+            case d::p_adjective3:
+                part = pick(lang.adjective, piece.part == d::p_adjective ? "adjective" : piece.part == d::p_adjective2 ? "adjective2" : "adjective3",
+                            adjectives_used);
+                adjectives_used.push_back(part.text);
+                break;
+            case d::p_region: part = pick(*region, "region"); break;
+            case d::p_place: part = given_place ? name_text{*request.place, *request.place} : pick(*place, "place"); break;
+            case d::p_family: part = pick(lang.family, "family"); break;
+            case d::p_joiner: part = pick(lang.joiner, "joiner"); break;
+            case d::p_coined_head: part = pick(lang.coined_head, "coined_head"); break;
+            case d::p_coined_tail: part = pick(lang.coined_tail, "coined_tail"); break;
+            case d::p_coined:
+            {
+                const auto head = pick(lang.coined_head, "coined_head");
+                const auto end = pick(lang.coined_tail, "coined_tail");
+                part.text = head.text + lang.coined_join + end.text;
+                part.latin = head.latin + lang.coined_join + end.latin;
+                break;
+            }
+            case d::p_initials:
+            {
+                auto ir = r.split("initials");
+                part = initials_(lang, ir);
+                break;
+            }
+            default: break;
+            }
+            text += part.text;
+            latin += part.latin;
+        }
+        out.short_name = tidy_(text);
+        out.latin = tidy_(latin);
+
+        // The legal form: its in_name text when its script fits, else the abbreviation, placed by the style.
+        auto fr = r.split("form");
+        std::string form_text;
+        bool done = false;
+        if (!f.in_name.empty())
+        {
+            const auto alts = d::split_view(f.in_name, '|');
+            const auto alt = alts.at(alts.size() == 1 ? 0 : core::uniform_int<std::size_t>(fr, 0, alts.size() - 1));
+            const auto at = alt.find("{name}");
+            std::string bare{alt};
+            if (at != std::string_view::npos) bare.erase(at, 6);
+            if (alt == "-")
+            {
+                done = true;
+                out.name = out.short_name;
+            }
+            else if (d::latin_text(bare) == lang.latin)
+            {
+                if (at != std::string_view::npos)
+                {
+                    out.name = std::string{alt.substr(0, at)} + out.short_name + std::string{alt.substr(at + 6)};
+                    done = true;
+                }
+                else form_text = std::string{alt};
+            }
+            else if (lang.latin) form_text = f.latin_abbreviation;
+        }
+        else if (!f.abbreviation.empty() && d::latin_text(f.abbreviation) == lang.latin) form_text = f.abbreviation;
+        else if (lang.latin) form_text = f.latin_abbreviation; // a name in another script takes no Latin form
+        if (!done)
+        {
+            if (form_text.empty()) out.name = out.short_name;
+            else
+            {
+                int position = lang.form_position;
+                if (position == 2) position = core::uniform_int<int>(fr, 0, 1);
+                const std::string sep = lang.spaced ? " " : "";
+                if (position == 1)
+                {
+                    out.name = lang.quote_open.empty() ? form_text + sep + out.short_name
+                                                       : form_text + " " + lang.quote_open + out.short_name + lang.quote_close;
+                }
+                else out.name = out.short_name + sep + form_text;
+            }
+        }
+        return out;
+    }
+
+    // -- Domains --------------------------------------------------------------
+
+    [[nodiscard]] std::string draw_domain_(const country_model& c, const drawn_name& name, bool safe, const core::rng& call) const
+    {
+        namespace d = companygen_detail;
+        auto r = call.split("domain");
+        // The Latin form folded to lowercase ASCII words (German umlauts as ae, oe, ue).
+        const bool german = name.language == "de";
+        std::vector<std::string> words(1);
+        for (std::size_t i = 0; i < name.latin.size();)
+        {
+            std::size_t used = 1;
+            const char32_t cp = d::decode_utf8(name.latin, i, used);
+            i += used;
+            if ((cp >= 'a' && cp <= 'z') || (cp >= '0' && cp <= '9')) words.back() += static_cast<char>(cp);
+            else if (cp >= 'A' && cp <= 'Z') words.back() += static_cast<char>(cp - 'A' + 'a');
+            else if (cp == 0x2019 || cp == 0x27) continue;
+            else if (german && (cp == U'ä' || cp == U'ö' || cp == U'ü' || cp == U'Ä' || cp == U'Ö' || cp == U'Ü'))
+            {
+                words.back() += cp == U'ä' || cp == U'Ä' ? "ae" : cp == U'ö' || cp == U'Ö' ? "oe" : "ue";
+            }
+            else if (const auto it = _model.fold.find(cp); it != _model.fold.end())
+            {
+                for (const char ch : it->second)
+                {
+                    if (ch >= 'A' && ch <= 'Z') words.back() += static_cast<char>(ch - 'A' + 'a');
+                    else if ((ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9')) words.back() += ch;
+                }
+            }
+            else if (!words.back().empty()) words.emplace_back();
+        }
+        std::erase_if(words, [](const std::string& w) { return w.empty(); });
+        const bool hyphens = core::uniform01(r) < 0.25;
+        // as many words as fit in 24 characters, not ending on a short word ("de", "ve") when cut
+        std::size_t kept = 0;
+        std::size_t length = 0;
+        for (const auto& w : words)
+        {
+            const std::size_t extra = (kept == 0 ? 0 : (hyphens ? 1 : 0)) + w.size();
+            if (kept > 0 && length + extra > 24) break;
+            length += extra;
+            ++kept;
+        }
+        while (kept > 1 && kept < words.size() && words.at(kept - 1).size() <= 2) --kept;
+        std::string label;
+        for (std::size_t i = 0; i < kept; ++i)
+        {
+            if (i > 0 && hyphens) label += '-';
+            label += words.at(i);
+        }
+        if (label.size() > 30) label.resize(30);
+        if (label.empty())
+        {
+            const auto n = core::uniform_int<int>(r, 4, 6);
+            for (int i = 0; i < n; ++i) label += static_cast<char>('a' + core::uniform_int<int>(r, 0, 25));
+        }
+        if (safe) return label + ".example";
+        std::string tld = "com";
+        double total = 0.0;
+        for (const auto& [t, share] : c.tlds) total += share;
+        if (total > 0.0)
+        {
+            const double target = core::uniform01(r) * total;
+            double acc = 0.0;
+            for (const auto& [t, share] : c.tlds)
+            {
+                acc += share;
+                tld = t;
+                if (target < acc) break;
+            }
+        }
+        return label + "." + tld;
+    }
+
+    // -- Numbers --------------------------------------------------------------
+
+    // What a builder makes: the number as printed and the positions of its check characters in the
+    // compact form (its digits and letters).
+    struct built_number
+    {
+        std::string value;
+        std::vector<std::size_t> check_at;
+        bool reserved{false};
+        std::string compact; // set only where the compact form is not the value's digits and letters
+    };
+
+    struct number_context
+    {
+        const country_model& c;
+        const form_row& f;
+        std::size_t band;
+        std::size_t division;
+        std::size_t section;
+        std::uint32_t employees;
+        std::chrono::year_month_day founded;
+        const plan& p;
+        bool safe;
+        const drawn_name& name;
+        core::rng numbers;
+        core::rng lei;
+        std::unordered_map<std::string, std::size_t> chosen;  // code list -> the company's entry
+        std::unordered_map<std::string, std::string> built;   // scheme -> its compact number
+    };
+
+    [[nodiscard]] int founded_year_(const number_context& x) const { return static_cast<int>(x.founded.year()); }
+
+    [[nodiscard]] std::chrono::sys_days founded_days_(const number_context& x) const { return std::chrono::sys_days{x.founded}; }
+
+    // The value a parameter maps the company's form to (its ISO code, its key, its group letter, else *).
+    [[nodiscard]] static std::optional<std::string> mapped_(const companygen_detail::scheme_model& s, std::string_view param,
+                                                            const number_context& x)
+    {
+        const auto text = s.param(param);
+        if (text.empty()) return std::nullopt;
+        const std::array<char, 1> g{"SPLO"[x.f.group]};
+        return companygen_detail::map_lookup(text, {x.f.code, x.f.key, std::string_view{g.data(), 1}, "*"});
+    }
+
+    [[nodiscard]] const companygen_detail::code_list& list_(std::string_view name) const
+    {
+        const auto it = _model.codes.find(std::string{name});
+        if (it == _model.codes.end() || it->second.code.empty())
+        {
+            throw std::runtime_error("company data: no code list " + std::string{name});
+        }
+        return it->second;
+    }
+
+    // The company's entry of a code list: one per company, shared by its numbers.
+    std::size_t choose_(number_context& x, const std::string& name) const
+    {
+        if (const auto it = x.chosen.find(name); it != x.chosen.end()) return it->second;
+        auto r = x.numbers.split("list").split(name);
+        const std::size_t i = list_(name).table.pick(r);
+        x.chosen.emplace(name, i);
+        return i;
+    }
+
+    // The parts in order: the elements of a braced list are evaluated left to right, so draws made
+    // inside them come in the same order on every compiler (the operands of + are unsequenced).
+    static std::string join_(std::initializer_list<std::string> parts)
+    {
+        std::string out;
+        for (const auto& p : parts) out += p;
+        return out;
+    }
+
+    static std::string digits_(core::rng& r, std::size_t n)
+    {
+        std::string out;
+        for (std::size_t i = 0; i < n; ++i) out += static_cast<char>('0' + core::uniform_int<int>(r, 0, 9));
+        return out;
+    }
+
+    // A number of an anchored series issued in `year`: between the quantile points of that year (the
+    // nearest year with anchors).
+    static std::uint64_t anchor_draw_(const companygen_detail::anchor_series& s, int year, core::rng& r)
+    {
+        namespace d = companygen_detail;
+        auto at = static_cast<std::size_t>(std::ranges::upper_bound(s.years, year) - s.years.begin());
+        if (at > 0) --at;
+        const auto& q = s.points.at(at);
+        const double u = core::uniform01(r);
+        double v = q.front();
+        if (u >= d::anchor_probs.back()) v = q.back();
+        else if (u > d::anchor_probs.front())
+        {
+            std::size_t k = 0;
+            while (k + 2 < d::anchor_probs.size() && u >= d::anchor_probs.at(k + 1)) ++k;
+            const double t = (u - d::anchor_probs.at(k)) / (d::anchor_probs.at(k + 1) - d::anchor_probs.at(k));
+            v = q.at(k) + t * (q.at(k + 1) - q.at(k));
+        }
+        return static_cast<std::uint64_t>(std::max(1.0, std::floor(v + 0.5)));
+    }
+
+    // A serial number by the founding year: from start (number lo) to the reference date (hi), as
+    // ((year - start) / (ref - start))^power; firms older than start share its first years.
+    [[nodiscard]] std::uint64_t serial_by_year_(const companygen_detail::scheme_model& s, const number_context& x,
+                                                std::uint64_t lo, std::uint64_t hi, core::rng& r) const
+    {
+        namespace d = companygen_detail;
+        const int year = founded_year_(x);
+        const auto start_text = s.param("start");
+        double q = core::uniform01(r);
+        if (!start_text.empty())
+        {
+            const auto start = static_cast<int>(d::to_number(start_text));
+            const double power = s.param("power").empty() ? 1.0 : d::to_double(s.param("power"));
+            const double span = std::max(1.0, static_cast<double>(x.p.reference_year - start + 1));
+            const double t = year < start ? 0.02 * q : (static_cast<double>(year - start) + q) / span;
+            q = t > 0.0 ? core::math::exp(power * core::math::log(std::min(1.0, t))) : 0.0;
+        }
+        const auto v = static_cast<double>(lo) + q * static_cast<double>(hi - lo);
+        return std::clamp(static_cast<std::uint64_t>(v), lo, hi);
+    }
+
+    // A number in the safe range of a scheme ("safe=lo-hi"), or above the highest issued.
+    [[nodiscard]] static std::uint64_t safe_draw_(const companygen_detail::scheme_model& s, std::uint64_t highest,
+                                                  std::uint64_t top, core::rng& r)
+    {
+        const auto text = s.param("safe");
+        if (!text.empty())
+        {
+            const auto [lo, hi] = companygen_detail::parse_range(text);
+            return core::uniform_int<std::uint64_t>(r, lo, hi);
+        }
+        const std::uint64_t lo = highest + std::max<std::uint64_t>(1, (top - std::min(top, highest)) / 2);
+        return core::uniform_int<std::uint64_t>(r, std::min(lo, top), top);
+    }
+
+    // The generic builder: the pattern (or the anchors) and the check characters, printed by the mask.
+    [[nodiscard]] std::optional<built_number> build_generic_(const companygen_detail::scheme_model& s, number_context& x,
+                                                             core::rng& r) const
+    {
+        namespace d = companygen_detail;
+        const auto anchors = s.param("anchors");
+        const auto mask_slots = static_cast<std::size_t>(std::ranges::count_if(s.display, [](char ch) { return ch == '#' || ch == '@'; }));
+        for (int attempt = 0; attempt < 200; ++attempt)
+        {
+            std::string body;
+            if (!anchors.empty())
+            {
+                const auto it = _model.anchors.find(std::string{anchors} + "|-");
+                const std::size_t width = mask_slots - (s.check.type == d::check_rule::kind::none ? 0 : 1);
+                if (it == _model.anchors.end() || it->second.years.empty()) body = digits_(r, width);
+                else body = d::zero_pad(anchor_draw_(it->second, founded_year_(x), r), width);
+            }
+            else if (s.pattern) body = s.pattern->draw(r);
+            const auto check = d::compute_check(s.check, body);
+            if (!check) continue;
+            if (x.safe && s.check.name == "tw_ubn" && body.size() > 6 && body[6] == '7') continue; // two checks pass
+            const std::string slots = body + *check;
+            built_number out{.value = d::apply_display(s.display, slots), .check_at = {}, .reserved = false, .compact = {}};
+            const auto pos = d::slot_positions(s.display, slots.size());
+            for (std::size_t k = body.size(); k < slots.size(); ++k) out.check_at.push_back(pos.at(k));
+            return out;
+        }
+        throw std::runtime_error("company: could not draw a " + s.key + " number");
+    }
+
+    // India's PAN: the holder's type in the fourth letter, the first letter of its name in the fifth.
+    [[nodiscard]] std::string pan_(number_context& x) const
+    {
+        namespace d = companygen_detail;
+        if (const auto it = x.built.find("in-pan"); it != x.built.end()) return it->second;
+        const auto at = std::ranges::find_if(x.c.schemes, [&](std::size_t i) { return _model.schemes.at(i).key == "in-pan"; });
+        auto r = x.numbers.split("in-pan");
+        std::string type = "C";
+        if (at != x.c.schemes.end())
+        {
+            if (const auto m = mapped_(_model.schemes.at(*at), "type", x)) type = *m;
+        }
+        const auto letter = [&] { return static_cast<char>('A' + core::uniform_int<int>(r, 0, 25)); };
+        std::string out;
+        for (int i = 0; i < 3; ++i) out += letter();
+        out += type.empty() ? 'C' : type.front();
+        const std::string& from = x.f.group == 0 && !x.name.surname_latin.empty() ? x.name.surname_latin : x.name.latin;
+        char initial = '\0';
+        for (const char ch : from)
+        {
+            if (ch >= 'A' && ch <= 'Z') initial = ch;
+            else if (ch >= 'a' && ch <= 'z') initial = static_cast<char>(ch - 'a' + 'A');
+            if (initial != '\0') break;
+        }
+        out += initial != '\0' ? initial : letter();
+        out += d::zero_pad(core::uniform_int<std::uint64_t>(r, 1, 9999), 4);
+        out += letter();
+        x.built.emplace("in-pan", out);
+        return out;
+    }
+
+    // The base number a dependent number wraps (SIREN, ACN, RSIN), drawn by its own scheme when the
+    // company has it, else as that scheme would.
+    [[nodiscard]] std::optional<std::string> base_(number_context& x, std::string_view key) const
+    {
+        if (const auto it = x.built.find(std::string{key}); it != x.built.end()) return it->second;
+        return std::nullopt;
+    }
+
+    // The check characters each named builder's numbers carry, as python-stdnum checks them.
+    static char ar_cuit_check_(std::string_view ten)
+    {
+        constexpr std::array<unsigned, 10> w{5, 4, 3, 2, 7, 6, 5, 4, 3, 2};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 10; ++i) s += static_cast<unsigned>(ten[i] - '0') * w.at(i);
+        return std::string_view{"012345678990"}[11 - s % 11];
+    }
+
+    static std::string au_abn_check_(std::string_view nine)
+    {
+        constexpr std::array<unsigned, 9> w{3, 5, 7, 9, 11, 13, 15, 17, 19};
+        unsigned t = 0;
+        for (std::size_t i = 0; i < 9; ++i) t += static_cast<unsigned>(nine[i] - '0') * w.at(i);
+        return std::to_string(11 + (89 - (t + 1) % 89) % 89);
+    }
+
+    static std::string br_cnpj_check_(std::string_view twelve)
+    {
+        std::vector<unsigned> v;
+        for (const char ch : twelve.substr(0, 12)) v.push_back(static_cast<unsigned>(static_cast<unsigned char>(ch)) - 48U);
+        const auto digit = [&](std::span<const unsigned> w)
+        {
+            unsigned s = 0;
+            for (std::size_t i = 0; i < w.size(); ++i) s += w[i] * v.at(i);
+            return (11 - s % 11) % 11 % 10;
+        };
+        constexpr std::array<unsigned, 12> w1{5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
+        constexpr std::array<unsigned, 13> w2{6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
+        const unsigned d1 = digit(w1);
+        v.push_back(d1);
+        const unsigned d2 = digit(w2);
+        return std::string{static_cast<char>('0' + d1), static_cast<char>('0' + d2)};
+    }
+
+    static constexpr std::string_view uscc_alphabet_ = "0123456789ABCDEFGHJKLMNPQRTUWXY";
+
+    static char cn_uscc_check_(std::string_view seventeen)
+    {
+        constexpr std::array<unsigned, 17> w{1, 3, 9, 27, 19, 26, 16, 17, 20, 29, 25, 13, 8, 24, 10, 30, 28};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 17; ++i)
+        {
+            const auto at = uscc_alphabet_.find(seventeen[i]);
+            if (at == std::string_view::npos) return '?';
+            s += static_cast<unsigned>(at) * w.at(i);
+        }
+        return uscc_alphabet_[(31 - s % 31) % 31];
+    }
+
+    // GB 11714: the check of an organisation code (8 characters).
+    static char org_code_check_(std::string_view eight)
+    {
+        constexpr std::array<unsigned, 8> w{3, 7, 9, 10, 5, 8, 4, 2};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 8; ++i) s += core::alnum_value(eight[i]) * w.at(i);
+        const unsigned c = 11 - s % 11;
+        return c == 10 ? 'X' : c == 11 ? '0' : static_cast<char>('0' + c);
+    }
+
+    static std::string es_cif_checks_(std::string_view seven)
+    {
+        const char d = core::luhn_digit(seven);
+        return std::string{d, std::string_view{"JABCDEFGHI"}[static_cast<std::size_t>(d - '0')]};
+    }
+
+    static unsigned gb_vat_sum_(std::string_view nine)
+    {
+        constexpr std::array<unsigned, 9> w{8, 7, 6, 5, 4, 3, 2, 10, 1};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 9; ++i) s += static_cast<unsigned>(nine[i] - '0') * w.at(i);
+        return s % 97;
+    }
+
+    static constexpr std::string_view ie_alphabet_ = "WABCDEFGHIJKLMNOPQRSTUV";
+
+    static char ie_vat_check_(std::string_view seven, std::string_view second)
+    {
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 7; ++i) s += static_cast<unsigned>(8 - i) * static_cast<unsigned>(seven[i] - '0');
+        const auto at = second.empty() ? 0 : ie_alphabet_.find(second.front());
+        if (at == std::string_view::npos) return '?';
+        s += 9 * static_cast<unsigned>(at);
+        return ie_alphabet_[s % 23];
+    }
+
+    static char jp_cn_check_(std::string_view twelve)
+    {
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 12; ++i) s += static_cast<unsigned>(twelve[11 - i] - '0') * (i % 2 == 0 ? 1U : 2U);
+        return static_cast<char>('0' + 9 - s % 9);
+    }
+
+    static char kr_brn_check_(std::string_view nine)
+    {
+        constexpr std::array<unsigned, 9> w{1, 3, 7, 1, 3, 7, 1, 3, 5};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 9; ++i) s += static_cast<unsigned>(nine[i] - '0') * w.at(i);
+        s += (static_cast<unsigned>(nine[8] - '0') * 5) / 10;
+        return static_cast<char>('0' + (10 - s % 10) % 10);
+    }
+
+    static constexpr std::string_view rfc_alphabet_ = "0123456789ABCDEFGHIJKLMN&OPQRSTUVWXYZ ";
+
+    static char mx_rfc_check_(std::string_view eleven)
+    {
+        const std::string twelve = " " + std::string{eleven};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 12; ++i)
+        {
+            const auto at = rfc_alphabet_.find(twelve[i]);
+            if (at == std::string_view::npos) return '?';
+            s += static_cast<unsigned>(at) * static_cast<unsigned>(13 - i);
+        }
+        return rfc_alphabet_[(11 - s % 11) % 11];
+    }
+
+    static char ro_onrc_check_(std::string_view thirteen)
+    {
+        unsigned s = static_cast<unsigned>(static_cast<unsigned char>(thirteen[0])) % 10;
+        for (std::size_t i = 1; i < 13; ++i) s += static_cast<unsigned>(thirteen[i] - '0');
+        return static_cast<char>('0' + s % 10);
+    }
+
+    static std::optional<char> ru_ogrn_check_(std::string_view head)
+    {
+        const auto v = companygen_detail::to_number(head);
+        const auto c = head.size() == 12 ? v % 11 % 10 : v % 13;
+        if (c > 9) return std::nullopt;
+        return static_cast<char>('0' + c);
+    }
+
+    static char sg_check_(std::string_view body, std::string_view kind)
+    {
+        if (kind == "business")
+        {
+            constexpr std::array<unsigned, 8> w{10, 4, 9, 3, 8, 2, 7, 1};
+            unsigned s = 0;
+            for (std::size_t i = 0; i < 8; ++i) s += static_cast<unsigned>(body[i] - '0') * w.at(i);
+            return std::string_view{"XMKECAWLJDB"}[s % 11];
+        }
+        if (kind == "local")
+        {
+            constexpr std::array<unsigned, 9> w{10, 8, 6, 4, 9, 7, 5, 3, 1};
+            unsigned s = 0;
+            for (std::size_t i = 0; i < 9; ++i) s += static_cast<unsigned>(body[i] - '0') * w.at(i);
+            return std::string_view{"ZKCMDNERGWH"}[s % 11];
+        }
+        constexpr std::string_view alphabet = "ABCDEFGHJKLMNPQRSTUVWX0123456789";
+        constexpr std::array<unsigned, 9> w{4, 3, 5, 3, 10, 2, 2, 5, 7};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 9; ++i)
+        {
+            const auto at = alphabet.find(body[i]);
+            if (at == std::string_view::npos) return '?';
+            s += static_cast<unsigned>(at) * w.at(i);
+        }
+        return alphabet[(s + 11 - 5) % 11];
+    }
+
+    static std::optional<char> vn_mst_check_(std::string_view nine)
+    {
+        constexpr std::array<unsigned, 9> w{31, 29, 23, 19, 17, 13, 7, 5, 3};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 9; ++i) s += static_cast<unsigned>(nine[i] - '0') * w.at(i);
+        if (s % 11 == 0) return std::nullopt;
+        return static_cast<char>('0' + 10 - s % 11);
+    }
+
+    static bool hu_anum_valid_(std::string_view eight)
+    {
+        constexpr std::array<unsigned, 8> w{9, 7, 3, 1, 9, 7, 3, 1};
+        unsigned s = 0;
+        for (std::size_t i = 0; i < 8; ++i) s += static_cast<unsigned>(eight[i] - '0') * w.at(i);
+        return s % 10 == 0;
+    }
+
+    static bool bsn_valid_(std::string_view nine)
+    {
+        if (nine.size() != 9 || !companygen_detail::all_digits(nine)) return false;
+        int s = 0;
+        for (std::size_t i = 0; i < 8; ++i) s += static_cast<int>(9 - i) * (nine[i] - '0');
+        s -= nine[8] - '0';
+        return ((s % 11) + 11) % 11 == 0;
+    }
+
+    // Whether a compact number passes its scheme's check, as python-stdnum checks it (structure only
+    // where the scheme has no check).
+    [[nodiscard]] bool number_valid_(const companygen_detail::scheme_model& s, std::string_view n) const
+    {
+        namespace d = companygen_detail;
+        const auto& b = s.builder;
+        const auto digits = [&](std::size_t from, std::size_t len)
+        { return n.size() >= from + len && d::all_digits(n.substr(from, len)); };
+        if (b == "generic" || b == "ru_inn" || b == "th_juristic" || b == "it_piva" || b == "il_hp" || b == "se_orgnr")
+        {
+            // the slots of the mask: the compact form without the mask's literal letters and digits
+            std::string slots{n};
+            const auto mask_slots = static_cast<std::size_t>(std::ranges::count_if(s.display, [](char ch) { return ch == '#' || ch == '@'; }));
+            const auto full = d::alnum_of(s.display).size() + mask_slots;
+            if (!s.display.empty() && n.size() == full && n.size() != mask_slots)
+            {
+                slots.clear();
+                for (std::size_t i = 0, k = 0; i < s.display.size(); ++i)
+                {
+                    const char ch = s.display[i];
+                    if (ch == '#' || ch == '@') slots += n[k++];
+                    else if (d::is_alnum(ch))
+                    {
+                        if (n[k] != ch) return false;
+                        ++k;
+                    }
+                }
+            }
+            if (b == "it_piva")
+            {
+                return slots.size() == 11 && d::all_digits(slots) && slots.substr(0, 7) != "0000000" && slots.substr(7, 3) >= "001" &&
+                       slots.substr(7, 3) <= "100" && core::luhn_valid(slots);
+            }
+            if (b == "il_hp") return slots.size() == 9 && d::all_digits(slots) && slots[0] == '5' && core::luhn_valid(slots);
+            if (b == "se_orgnr") return slots.size() == 10 && d::all_digits(slots) && core::luhn_valid(slots);
+            if (s.check.type == d::check_rule::kind::none || s.check.type == d::check_rule::kind::unpublished)
+            {
+                return !slots.empty() && (!s.pattern || s.pattern->matches(slots));
+            }
+            const std::size_t width = s.check.type == d::check_rule::kind::mod97_10 || s.check.name == "be_kbo" ? 2 : 1;
+            if (slots.size() <= width) return false;
+            const auto body = std::string_view{slots}.substr(0, slots.size() - width);
+            if (s.check.type != d::check_rule::kind::named || s.check.name != "be_kbo")
+            {
+                if (!d::all_digits(body)) return false;
+            }
+            const auto check = d::compute_check(s.check, body);
+            const auto given = std::string_view{slots}.substr(slots.size() - width);
+            if (check && *check == given) return true;
+            if (s.check.name == "tw_ubn" && body.size() > 6 && body[6] == '7' && check)
+            {
+                return given.front() == static_cast<char>('0' + (check->front() - '0' + 9) % 10);
+            }
+            return false;
+        }
+        if (b == "serial") return !n.empty() && d::all_digits(n);
+        if (b == "lei") return n.size() == 20 && core::detail::all_digits_or_capitals(n) && core::mod97_10_valid(n);
+        if (b == "ar_cuit") return n.size() == 11 && d::all_digits(n) && ar_cuit_check_(n.substr(0, 10)) == n[10];
+        if (b == "at_fn")
+        {
+            const auto body = n.starts_with("FN") ? n.substr(2) : n;
+            return body.size() >= 2 && d::all_digits(body.substr(0, body.size() - 1)) && body.back() >= 'a' && body.back() <= 'z';
+        }
+        if (b == "au_abn") return n.size() == 11 && d::all_digits(n) && au_abn_check_(n.substr(2)) == n.substr(0, 2);
+        if (b == "br_cnpj")
+        {
+            return n.size() == 14 && core::detail::all_digits_or_capitals(n.substr(0, 12)) && digits(12, 2) &&
+                   !n.starts_with("000000000000") && br_cnpj_check_(n) == n.substr(12);
+        }
+        if (b == "cn_uscc") return n.size() == 18 && digits(0, 8) && cn_uscc_check_(n) == n[17];
+        if (b == "de_hrn")
+        {
+            for (const auto section : {"HRA ", "HRB ", "GnR ", "VR ", "PR "})
+            {
+                if (n.find(section) != std::string_view::npos) return true;
+            }
+            return false;
+        }
+        if (b == "es_nif")
+        {
+            return n.size() == 9 && std::string_view{"ABCDEFGHJNPQRSUVW"}.find(n[0]) != std::string_view::npos && digits(1, 7) &&
+                   es_cif_checks_(n.substr(1, 7)).find(n[8]) != std::string::npos;
+        }
+        if (b == "fr_siret") return n.size() == 14 && d::all_digits(n) && core::luhn_valid(n) && core::luhn_valid(n.substr(0, 9));
+        if (b == "fr_tva")
+        {
+            const auto body = n.starts_with("FR") ? n.substr(2) : n;
+            if (body.size() != 11 || !d::all_digits(body) || !core::luhn_valid(body.substr(2))) return false;
+            return d::to_number(body.substr(0, 2)) == (d::to_number(body.substr(2)) * 100 + 12) % 97;
+        }
+        if (b == "gb_crn")
+        {
+            return n.size() == 8 && (d::all_digits(n) || (n[0] >= 'A' && n[0] <= 'Z' && n[1] >= 'A' && n[1] <= 'Z' && digits(2, 6)));
+        }
+        if (b == "gb_vat")
+        {
+            const auto body = n.starts_with("GB") ? n.substr(2) : n;
+            if ((body.size() != 9 && body.size() != 12) || !d::all_digits(body)) return false;
+            const auto sum = gb_vat_sum_(body);
+            if (d::to_number(body.substr(0, 3)) >= 100) return sum == 0 || sum == 42 || sum == 55;
+            return sum == 0;
+        }
+        if (b == "hu_adoszam") return n.size() == 11 && d::all_digits(n) && hu_anum_valid_(n.substr(0, 8));
+        if (b == "id_npwp")
+        {
+            if (!d::all_digits(n)) return false;
+            if (n.size() == 15) return core::luhn_valid(n.substr(0, 9));
+            return n.size() == 16 && n[0] == '0' && core::luhn_valid(n.substr(0, 10));
+        }
+        if (b == "ie_vat")
+        {
+            const auto body = n.starts_with("IE") ? n.substr(2) : n;
+            if ((body.size() != 8 && body.size() != 9) || !d::all_digits(body.substr(0, 7))) return false;
+            return ie_vat_check_(body.substr(0, 7), body.substr(8)) == body[7];
+        }
+        if (b == "in_cin")
+        {
+            return n.size() == 21 && (n[0] == 'L' || n[0] == 'U') && digits(1, 5) && digits(8, 4) && digits(15, 6);
+        }
+        if (b == "in_pan")
+        {
+            return n.size() == 10 && std::ranges::all_of(n.substr(0, 5), [](char ch) { return ch >= 'A' && ch <= 'Z'; }) && digits(5, 4) &&
+                   n[9] >= 'A' && n[9] <= 'Z';
+        }
+        if (b == "in_gstin")
+        {
+            return n.size() == 15 && core::detail::all_digits_or_capitals(n) && digits(0, 2) && n[12] != '0' && n[13] == 'Z' &&
+                   d::luhn36_checksum(n) == 0;
+        }
+        if (b == "jp_cn") return n.size() == 13 && d::all_digits(n) && jp_cn_check_(n.substr(1)) == n[0];
+        if (b == "kr_brn") return n.size() == 10 && d::all_digits(n) && kr_brn_check_(n.substr(0, 9)) == n[9];
+        if (b == "mx_rfc") return n.size() == 12 && digits(3, 6) && mx_rfc_check_(n.substr(0, 11)) == n[11];
+        if (b == "ng_rc") return n.size() > 2 && d::all_digits(n.substr(2));
+        if (b == "nl_btw")
+        {
+            const auto body = n.starts_with("NL") ? n.substr(2) : n;
+            if (body.size() != 12 || !d::all_digits(body.substr(0, 9)) || body[9] != 'B' || !d::all_digits(body.substr(10))) return false;
+            if (d::to_number(body.substr(0, 9)) == 0 || d::to_number(body.substr(10)) == 0) return false;
+            return bsn_valid_(body.substr(0, 9)) || core::mod97_10_valid("NL" + std::string{body});
+        }
+        if (b == "ro_onrc")
+        {
+            if (n.size() == 14 && d::all_digits(n.substr(1))) return ro_onrc_check_(n) == n[13];
+            return n.size() >= 6 && (n[0] == 'J' || n[0] == 'F' || n[0] == 'C');
+        }
+        if (b == "ru_ogrn")
+        {
+            if (!d::all_digits(n) || (n.size() != 13 && n.size() != 15)) return false;
+            if (n.size() == 13 && n[0] == '0') return false;
+            if (n.size() == 15 && n[0] != '3' && n[0] != '4') return false;
+            const auto c = ru_ogrn_check_(n.substr(0, n.size() - 1));
+            return c && *c == n.back();
+        }
+        if (b == "sg_uen")
+        {
+            if (n.size() == 9 && digits(0, 8)) return sg_check_(n, "business") == n[8];
+            if (n.size() == 10 && digits(0, 9)) return sg_check_(n, "local") == n[9];
+            return n.size() == 10 && (n[0] == 'R' || n[0] == 'S' || n[0] == 'T') && digits(1, 2) && digits(5, 4) &&
+                   sg_check_(n, "other") == n[9];
+        }
+        if (b == "us_ein")
+        {
+            if (n.size() != 9 || !d::all_digits(n)) return false;
+            const auto prefix = n.substr(0, 2);
+            for (const auto list : {"internet", "campus"})
+            {
+                for (const auto p : d::split_view(s.param(list), ' '))
+                {
+                    if (p == prefix) return true;
+                }
+            }
+            return false;
+        }
+        if (b == "vn_mst")
+        {
+            if (n.size() != 10 || !d::all_digits(n)) return false;
+            const auto c = vn_mst_check_(n.substr(0, 9));
+            return c && *c == n[9];
+        }
+        if (b == "za_cipc") return n.size() == 12 && d::all_digits(n);
+        return false;
+    }
+
+    std::optional<built_number> build_named_(const companygen_detail::scheme_model& s, number_context& x, core::rng& r) const
+    {
+        namespace d = companygen_detail;
+        namespace ch = std::chrono;
+        const auto& b = s.builder;
+        const int year = founded_year_(x);
+        const auto shown = [&](std::string slots, std::vector<std::size_t> check_slots) -> built_number
+        {
+            const auto pos = d::slot_positions(s.display, slots.size());
+            built_number out{.value = d::apply_display(s.display, slots), .check_at = {}, .reserved = false, .compact = {}};
+            for (const auto k : check_slots) out.check_at.push_back(pos.at(k));
+            return out;
+        };
+        const auto registered = [&]
+        {
+            const auto share = s.param("registered");
+            if (share.empty()) return true;
+            const auto v = d::map_lookup(share, {d::band_keys.at(x.band)});
+            return !v || core::uniform01(r) < d::to_double(*v);
+        };
+
+        if (b == "serial")
+        {
+            const auto [lo, hi] = d::parse_range(s.param("range"));
+            built_number out;
+            std::uint64_t v = 0;
+            if (x.safe)
+            {
+                v = safe_draw_(s, hi, hi * 10, r);
+                out.reserved = true;
+            }
+            else v = serial_by_year_(s, x, lo, hi, r);
+            const auto slots = static_cast<std::size_t>(std::ranges::count(s.display, '#'));
+            out.value = slots > 0 ? d::zero_pad(v, slots) : std::to_string(v);
+            return out;
+        }
+        if (b == "lei")
+        {
+            built_number out;
+            std::string prefix = "ZZZZ";
+            if (x.safe && s.safe == d::safe_method::reserved_range)
+            {
+                prefix = std::string{s.param("safe_prefix")};
+                out.reserved = true;
+            }
+            else
+            {
+                const std::string base{s.param("lou")};
+                const auto own = _model.codes.find(base + ":" + x.c.code);
+                const auto& list = own != _model.codes.end() && !own->second.code.empty() ? own->second : list_(base + ":*");
+                prefix = list.code.at(list.table.pick(r));
+            }
+            std::string body = prefix;
+            constexpr std::string_view alnum = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for (int i = 0; i < 14; ++i) body += alnum.at(core::uniform_int<std::size_t>(r, 0, alnum.size() - 1));
+            const auto c = core::mod97_10_digits(body);
+            out.value = body + std::string{c[0], c[1]};
+            out.check_at = {18, 19};
+            return out;
+        }
+        if (b == "ar_cuit")
+        {
+            const std::string body = digits_(r, 8);
+            std::string prefix = "30";
+            const std::string first = prefix + body;
+            if (ar_cuit_check_(first) == '9')
+            {
+                // 11 - r = 10 with 30: AFIP gives the number 33 instead
+                constexpr std::array<unsigned, 10> w{5, 4, 3, 2, 7, 6, 5, 4, 3, 2};
+                unsigned sum = 0;
+                for (std::size_t i = 0; i < 10; ++i) sum += static_cast<unsigned>(first[i] - '0') * w.at(i);
+                if (11 - sum % 11 == 10) prefix = "33";
+            }
+            const std::string ten = prefix + body;
+            return shown(ten + ar_cuit_check_(ten), {10});
+        }
+        if (b == "at_fn")
+        {
+            constexpr std::string_view letters = "abdfghikmpstvwxyz";
+            built_number out;
+            out.value = join_({"FN ", std::to_string(core::uniform_int<std::uint64_t>(r, 1, 620000)),
+                               std::string(1, letters.at(core::uniform_int<std::size_t>(r, 0, letters.size() - 1)))});
+            return out;
+        }
+        if (b == "au_abn")
+        {
+            std::string nine;
+            if (x.f.group >= 2)
+            {
+                if (const auto acn = base_(x, "au-acn")) nine = *acn;
+            }
+            if (nine.size() != 9) nine = digits_(r, 9);
+            const std::string prefix = au_abn_check_(nine);
+            return shown(prefix + nine, {0, 1});
+        }
+        if (b == "br_cnpj")
+        {
+            const auto from = d::parse_date(s.param("alphanumeric_from"));
+            const bool alnum = from && founded_days_(x) >= *from;
+            constexpr std::string_view chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            std::string root;
+            while (root.empty() || root == "00000000")
+            {
+                root.clear();
+                for (int i = 0; i < 8; ++i)
+                {
+                    root += alnum ? chars.at(core::uniform_int<std::size_t>(r, 0, chars.size() - 1))
+                                  : static_cast<char>('0' + core::uniform_int<int>(r, 0, 9));
+                }
+            }
+            const std::string twelve = root + "0001";
+            return shown(twelve + br_cnpj_check_(twelve), {12, 13});
+        }
+        if (b == "cn_uscc")
+        {
+            const auto type = mapped_(s, "type", x);
+            if (!type || *type == "-") return std::nullopt;
+            const std::string list{s.param("county")};
+            const auto& county = list_(list).code.at(choose_(x, list));
+            std::string org;
+            if (founded_days_(x) >= ch::sys_days{ch::year{2015} / ch::October / 1})
+            {
+                org = "MA";
+                for (int i = 0; i < 6; ++i) org += uscc_alphabet_.at(core::uniform_int<std::size_t>(r, 0, uscc_alphabet_.size() - 1));
+            }
+            else org = digits_(r, 8);
+            org += org_code_check_(org);
+            const std::string seventeen = *type + county + org;
+            built_number out;
+            out.value = seventeen + cn_uscc_check_(seventeen);
+            out.check_at = {17};
+            return out;
+        }
+        if (b == "de_hrn")
+        {
+            const auto section = mapped_(s, "section", x);
+            if (!section || section->empty() || *section == "-") return std::nullopt;
+            const std::string list{s.param("court")};
+            const auto& courts = list_(list);
+            const auto i = choose_(x, list);
+            const auto& extra = courts.extra.at(i);
+            std::uint64_t lo = 1;
+            std::uint64_t hi = 0;
+            if (extra.find('-') != std::string::npos) std::tie(lo, hi) = d::parse_range(extra);
+            else hi = extra.empty() ? 20000 : d::to_number(extra);
+            const double span = static_cast<double>(hi - lo);
+            const double share = *section == "HRB" ? 1.0 : *section == "HRA" ? 0.4 : *section == "VR" ? 0.15 : 0.02;
+            const auto top = lo + static_cast<std::uint64_t>(span * share);
+            // register numbers grow with the year of entry, most entered or renumbered since 1990
+            const double u = core::uniform01(r);
+            const double q = year < 1990 ? 0.1 * u : 0.1 + 0.9 * (static_cast<double>(year - 1990) + u) /
+                                                              static_cast<double>(std::max(1, x.p.reference_year - 1990 + 1));
+            const auto n = std::clamp(lo + static_cast<std::uint64_t>(q * static_cast<double>(top - lo)), lo, std::max(lo, top));
+            const auto suffix = d::map_lookup(s.param("suffix"), {courts.code.at(i)});
+            const std::string number = *section + " " + std::to_string(n) + (suffix ? *suffix : "");
+            built_number out;
+            out.value = courts.label.at(i) + " " + number;
+            out.compact = courts.code.at(i) + " " + number;
+            return out;
+        }
+        if (b == "es_nif")
+        {
+            const auto letter = mapped_(s, "letter", x);
+            if (!letter || letter->size() != 1) return std::nullopt;
+            const std::string body = s.pattern ? s.pattern->draw(r) : digits_(r, 7);
+            const auto checks = es_cif_checks_(body);
+            const bool letter_check = std::string_view{"NPQRSW"}.find(letter->front()) != std::string_view::npos;
+            return shown(*letter + body + (letter_check ? checks[1] : checks[0]), {8});
+        }
+        if (b == "fr_siret" || b == "fr_tva")
+        {
+            auto siren = base_(x, "fr-siren");
+            if (!siren || siren->size() != 9)
+            {
+                const auto eight = digits_(r, 8);
+                siren = eight + core::luhn_digit(eight);
+            }
+            if (b == "fr_siret")
+            {
+                const std::string head = *siren + "0001";
+                return shown(head + core::luhn_digit(head), {13});
+            }
+            const auto key = (d::to_number(*siren) * 100 + 12) % 97;
+            return shown(d::zero_pad(key, 2) + *siren, {0, 1});
+        }
+        if (b == "gb_crn")
+        {
+            const auto series = mapped_(s, "series", x);
+            if (!series || *series == "-") return std::nullopt;
+            const double u = core::uniform01(r);
+            const double scotland = d::to_double(s.param("scotland"));
+            const double ni = d::to_double(s.param("northern_ireland"));
+            const std::size_t region = u < scotland ? 1 : u < scotland + ni ? 2 : 0;
+            std::string prefix;
+            if (series->empty()) prefix = region == 1 ? "SC" : region == 2 ? "NI" : "";
+            else
+            {
+                const auto alts = d::split_view(*series, '|');
+                prefix = std::string{alts.at(std::min(region, alts.size() - 1))};
+            }
+            const std::size_t width = 8 - prefix.size();
+            std::uint64_t top = 1;
+            for (std::size_t i = 0; i < width; ++i) top *= 10;
+            --top;
+            const auto it = _model.anchors.find("gb-crn|" + (prefix.empty() ? std::string{"-"} : prefix));
+            const d::anchor_series* a = it == _model.anchors.end() ? nullptr : &it->second;
+            built_number out;
+            std::uint64_t v = 0;
+            if (x.safe)
+            {
+                v = safe_draw_(s, a && a->highest ? *a->highest : top * 9 / 10, top, r);
+                out.reserved = true;
+            }
+            else if (a && !a->years.empty()) v = std::min(top, anchor_draw_(*a, year, r));
+            else v = core::uniform_int<std::uint64_t>(r, 1, a && a->highest ? std::min(top, *a->highest) : (top + 1) / 10);
+            out.value = prefix + d::zero_pad(v, width);
+            return out;
+        }
+        if (b == "gb_vat")
+        {
+            if (!registered()) return std::nullopt;
+            const auto from = d::parse_date(s.param("series_9755_from"));
+            const bool v9755 = from && founded_days_(x) >= *from;
+            std::string body = digits_(r, 7);
+            while (body.front() == '0') body = digits_(r, 7);
+            const unsigned sum = gb_vat_sum_(body + "00");
+            const unsigned cc = ((v9755 ? 42U : 0U) + 97U - sum) % 97U;
+            return shown(body + d::zero_pad(cc, 2), {7, 8});
+        }
+        if (b == "hu_adoszam")
+        {
+            const std::string seven = digits_(r, 7);
+            const auto check = d::compute_check(s.check, seven);
+            const std::string list{s.param("county")};
+            const auto& county = list_(list).code.at(choose_(x, list));
+            return shown(seven + *check + std::string{s.param("vat_code")} + county, {7});
+        }
+        if (b == "id_npwp")
+        {
+            const auto type = mapped_(s, "type", x);
+            if (!type) return std::nullopt;
+            const std::string eight = join_({d::draw_choice(*type, r), digits_(r, 6)});
+            const std::string fifteen = eight + core::luhn_digit(eight) + d::draw_choice(s.param("kpp"), r) + "000";
+            const auto from = d::parse_date(s.param("new_from"));
+            built_number out;
+            if (from && x.p.reference >= *from)
+            {
+                out.value = "0" + fifteen;
+                out.check_at = {9};
+            }
+            else
+            {
+                out.value = d::apply_display("##.###.###.#-###.###", fifteen);
+                out.check_at = {8};
+            }
+            return out;
+        }
+        if (b == "ie_vat")
+        {
+            const std::string seven = digits_(r, 7);
+            const auto from = d::parse_date(s.param("second_letter_from"));
+            std::string second;
+            if (from && founded_days_(x) >= *from) second = d::draw_choice(s.param("second"), r);
+            built_number out;
+            out.value = "IE" + seven + ie_vat_check_(seven, second) + second;
+            out.check_at = {9};
+            return out;
+        }
+        if (b == "il_hp")
+        {
+            const auto prefix = mapped_(s, "prefix", x);
+            if (!prefix || *prefix == "-") return std::nullopt;
+            const std::string eight = join_({d::draw_choice(*prefix, r), digits_(r, 6)});
+            return shown(eight + core::luhn_digit(eight), {8});
+        }
+        if (b == "in_cin")
+        {
+            const auto ownership = mapped_(s, "ownership", x);
+            const auto listing = mapped_(s, "listing", x);
+            if (!ownership || *ownership == "-") return std::nullopt;
+            const std::string list{s.param("state")};
+            const auto& state = list_(list).extra.at(choose_(x, list));
+            const std::string nic = join_({two_digits_(x.division), std::to_string(core::uniform_int<int>(r, 1, 9)),
+                                           digits_(r, 1), std::to_string(core::uniform_int<int>(r, 1, 9))});
+            const std::string listed = listing ? d::draw_choice(*listing, r) : std::string{"U"};
+            built_number out;
+            out.value = listed + nic + state + std::to_string(year) + *ownership +
+                        d::zero_pad(core::uniform_int<std::uint64_t>(r, 1, 450000), 6);
+            return out;
+        }
+        if (b == "in_pan")
+        {
+            const auto type = mapped_(s, "type", x);
+            if (!type || *type == "-") return std::nullopt;
+            built_number out;
+            out.value = pan_(x);
+            return out;
+        }
+        if (b == "in_gstin")
+        {
+            if (!registered()) return std::nullopt;
+            const std::string list{s.param("state")};
+            const auto& state = list_(list).code.at(choose_(x, list));
+            const std::string fourteen = state + pan_(x) + "1Z";
+            built_number out;
+            out.value = fourteen + d::luhn36_char(fourteen);
+            out.check_at = {14};
+            return out;
+        }
+        if (b == "it_piva")
+        {
+            std::string seven = digits_(r, 7);
+            while (seven == "0000000") seven = digits_(r, 7);
+            const std::string ten = seven + d::draw_choice(s.param("office"), r);
+            return shown(ten + core::luhn_digit(ten), {10});
+        }
+        if (b == "jp_cn")
+        {
+            const auto cls = mapped_(s, "class", x);
+            if (!cls || *cls == "-") return std::nullopt;
+            const std::string twelve = join_({d::draw_choice(s.param("office"), r), *cls, digits_(r, 6)});
+            return shown(jp_cn_check_(twelve) + twelve, {0});
+        }
+        if (b == "kr_brn")
+        {
+            const auto type = mapped_(s, "type", x);
+            if (!type || *type == "-") return std::nullopt;
+            const std::string nine = join_({d::draw_choice(s.param("office"), r), d::draw_choice(*type, r),
+                                            d::zero_pad(core::uniform_int<std::uint64_t>(r, 1, 9999), 4)});
+            return shown(nine + kr_brn_check_(nine), {9});
+        }
+        if (b == "mx_rfc")
+        {
+            // the first letters of the name's words, the stopwords skipped
+            static constexpr std::array<std::string_view, 22> stop{
+                "DE", "DEL", "LA", "LAS", "LOS", "EL", "Y", "E", "EN", "CON", "POR", "PARA", "THE", "AND", "OF",
+                "SA", "CV", "SC", "COMPANIA", "CIA", "SOCIEDAD", "A"};
+            std::vector<std::string> words(1);
+            for (std::size_t i = 0; i < x.name.latin.size();)
+            {
+                std::size_t used = 1;
+                const char32_t cp = d::decode_utf8(x.name.latin, i, used);
+                i += used;
+                std::string letters;
+                if (cp >= 'a' && cp <= 'z') letters = std::string(1, static_cast<char>(cp - 'a' + 'A'));
+                else if (cp >= 'A' && cp <= 'Z') letters = std::string(1, static_cast<char>(cp));
+                else if (const auto it = _model.fold.find(cp); it != _model.fold.end())
+                {
+                    for (const char c2 : it->second)
+                    {
+                        if (c2 >= 'a' && c2 <= 'z') letters += static_cast<char>(c2 - 'a' + 'A');
+                        else if (c2 >= 'A' && c2 <= 'Z') letters += c2;
+                    }
+                }
+                if (!letters.empty()) words.back() += letters;
+                else if (cp != '.' && !words.back().empty()) words.emplace_back();
+            }
+            std::erase_if(words, [](const std::string& w) { return w.empty() || std::ranges::find(stop, w) != stop.end(); });
+            std::string head;
+            if (words.size() >= 3) head = std::string{words[0][0], words[1][0], words[2][0]};
+            else if (words.size() == 2) head = std::string(1, words[0][0]) + words[1].substr(0, 2);
+            else if (words.size() == 1) head = words[0].substr(0, 3);
+            while (head.size() < 3) head += 'X';
+            const auto ymd = x.founded;
+            const std::string date = d::zero_pad(static_cast<std::uint64_t>(static_cast<int>(ymd.year()) % 100), 2) +
+                                     d::zero_pad(static_cast<unsigned>(ymd.month()), 2) + d::zero_pad(static_cast<unsigned>(ymd.day()), 2);
+            constexpr std::string_view first = "123456789ABCDEFGHIJKLMNOPQRSTUV";
+            constexpr std::string_view second = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const std::string eleven = join_({head, date, std::string(1, first.at(core::uniform_int<std::size_t>(r, 0, first.size() - 1))),
+                                              std::string(1, second.at(core::uniform_int<std::size_t>(r, 0, second.size() - 1)))});
+            built_number out;
+            out.value = eleven + mx_rfc_check_(eleven);
+            out.check_at = {11};
+            return out;
+        }
+        if (b == "ng_rc")
+        {
+            const auto prefix = mapped_(s, "prefix", x);
+            if (!prefix || *prefix == "-") return std::nullopt;
+            const auto highest = d::map_lookup(s.param("highest"), {*prefix});
+            const std::uint64_t hi = highest ? d::to_number(*highest) : 1000000;
+            built_number out;
+            std::uint64_t v = 0;
+            if (x.safe)
+            {
+                v = safe_draw_(s, hi, 9999999, r);
+                out.reserved = true;
+            }
+            else v = serial_by_year_(s, x, 1, hi, r);
+            out.value = *prefix + " " + std::to_string(v);
+            return out;
+        }
+        if (b == "nl_btw")
+        {
+            if (x.f.group == 0)
+            {
+                // in safe mode not a number the 11-proof accepts, which passes whatever its suffix
+                std::string nine = digits_(r, 9);
+                while (d::to_number(nine) == 0 || (x.safe && bsn_valid_(nine))) nine = digits_(r, 9);
+                const auto c = core::mod97_10_digits("NL" + nine + "B");
+                return shown(nine + std::string{c[0], c[1]}, {9, 10});
+            }
+            auto rsin = base_(x, "nl-rsin");
+            if (!rsin || rsin->size() != 9)
+            {
+                const auto at = std::ranges::find_if(x.c.schemes, [&](std::size_t i) { return _model.schemes.at(i).key == "nl-rsin"; });
+                if (at == x.c.schemes.end()) return std::nullopt;
+                auto rr = x.numbers.split("nl-rsin");
+                const auto made = build_generic_(_model.schemes.at(*at), x, rr);
+                if (!made) return std::nullopt;
+                rsin = d::alnum_of(made->value);
+            }
+            return shown(*rsin + "01", {8});
+        }
+        if (b == "ro_onrc")
+        {
+            const auto prefix = mapped_(s, "prefix", x);
+            if (!prefix || *prefix == "-") return std::nullopt;
+            const std::string list{s.param("county")};
+            const auto& county = list_(list).code.at(choose_(x, list));
+            const auto serial = core::uniform_int<std::uint64_t>(r, 1, county == "40" ? 60000 : 9000);
+            const int entered = std::max(year, 1990);
+            const auto from = d::parse_date(s.param("new_format_from"));
+            built_number out;
+            if (from && x.p.reference >= *from)
+            {
+                const std::string thirteen = *prefix + std::to_string(entered) + d::zero_pad(serial, 6) +
+                                             (founded_days_(x) >= *from ? std::string{"00"} : county);
+                out.value = thirteen + ro_onrc_check_(thirteen);
+                out.check_at = {13};
+                return out;
+            }
+            if (x.safe) return std::nullopt; // the old format has no check
+            out.value = *prefix + county + "/" + std::to_string(serial) + "/" + std::to_string(entered);
+            return out;
+        }
+        if (b == "ru_inn")
+        {
+            const std::string list{s.param("region")};
+            const auto& region = list_(list).code.at(choose_(x, list));
+            for (int attempt = 0; attempt < 50; ++attempt)
+            {
+                const std::string nine = join_({region, d::draw_choice(s.param("inspection"), r), digits_(r, 5)});
+                const auto check = d::compute_check(s.check, nine);
+                if (check) return shown(nine + *check, {9});
+            }
+            return std::nullopt;
+        }
+        if (b == "ru_ogrn")
+        {
+            const std::string list{s.param("region")};
+            const auto& region = list_(list).code.at(choose_(x, list));
+            const auto start = d::parse_date(s.param("start"));
+            int entered = year;
+            if (start && founded_days_(x) < *start) entered = core::uniform_int<int>(r, 2002, 2003);
+            const std::string yy = d::zero_pad(static_cast<std::uint64_t>(entered % 100), 2);
+            for (int attempt = 0; attempt < 50; ++attempt)
+            {
+                std::string head;
+                if (x.f.group == 0) head = "3" + yy + region + digits_(r, 9);
+                else
+                {
+                    head = join_({std::string(1, core::uniform01(r) < 0.6 ? '1' : '5'), yy, region,
+                                  d::zero_pad(core::uniform_int<std::uint64_t>(r, 1, 99), 2), digits_(r, 5)});
+                }
+                const auto c = ru_ogrn_check_(head);
+                if (c) return shown(head + *c, {head.size()});
+            }
+            return std::nullopt;
+        }
+        if (b == "se_orgnr")
+        {
+            const auto group = mapped_(s, "group", x);
+            if (!group || *group == "-") return std::nullopt;
+            const std::string nine = join_({d::draw_choice(*group, r), digits_(r, 1),
+                                            std::to_string(core::uniform_int<int>(r, 20, 99)), digits_(r, 5)});
+            return shown(nine + core::luhn_digit(nine), {9});
+        }
+        if (b == "sg_uen")
+        {
+            const auto format = mapped_(s, "format", x);
+            if (!format || *format == "-") return std::nullopt;
+            std::string body;
+            if (*format == "business") body = digits_(r, 8);
+            else if (*format == "local") body = std::to_string(year) + digits_(r, 5);
+            else
+            {
+                const char era = year >= 2000 ? 'T' : year >= 1900 ? 'S' : 'R';
+                body = join_({std::string(1, era), d::zero_pad(static_cast<std::uint64_t>(year % 100), 2),
+                              d::draw_choice(s.param("other_type"), r), digits_(r, 4)});
+            }
+            built_number out;
+            out.value = body + sg_check_(body, *format == "business" || *format == "local" ? std::string_view{*format} : "other");
+            out.check_at = {body.size()};
+            return out;
+        }
+        if (b == "th_juristic")
+        {
+            const auto type = mapped_(s, "type", x);
+            if (!type || *type == "-") return std::nullopt;
+            const std::string list{s.param("office")};
+            const auto& office = list_(list).code.at(choose_(x, list));
+            const std::string twelve = "0" + office + *type + d::zero_pad(static_cast<std::uint64_t>((year + 543) % 1000), 3) +
+                                       d::zero_pad(core::uniform_int<std::uint64_t>(r, 1, office == "10" ? 40000 : 3000), 5);
+            const auto check = d::compute_check(s.check, twelve);
+            return shown(twelve + *check, {12});
+        }
+        if (b == "us_ein")
+        {
+            if (x.f.group == 0 && x.employees <= 1) return std::nullopt; // the owner's SSN
+            built_number out;
+            std::string_view list = "campus";
+            if (x.safe)
+            {
+                list = "reserved";
+                out.reserved = true;
+            }
+            else
+            {
+                const auto from = d::parse_date(s.param("internet_from"));
+                if (from && founded_days_(x) >= *from && core::uniform01(r) < d::to_double(s.param("internet_share"))) list = "internet";
+            }
+            const auto prefixes = d::split_view(s.param(list), ' ');
+            const auto prefix = prefixes.at(core::uniform_int<std::size_t>(r, 0, prefixes.size() - 1));
+            const auto shown_number = shown(std::string{prefix} + digits_(r, 7), {});
+            out.value = shown_number.value;
+            return out;
+        }
+        if (b == "vn_mst")
+        {
+            for (int attempt = 0; attempt < 50; ++attempt)
+            {
+                const std::string nine = join_({d::draw_choice(s.param("province"), r), digits_(r, 7)});
+                if (const auto c = vn_mst_check_(nine)) return shown(nine + *c, {9});
+            }
+            return std::nullopt;
+        }
+        if (b == "za_cipc")
+        {
+            const auto type = mapped_(s, "type", x);
+            if (!type || *type == "-") return std::nullopt;
+            built_number out;
+            std::uint64_t v = 0;
+            if (x.safe)
+            {
+                v = safe_draw_(s, 0, 999999, r);
+                out.reserved = true;
+            }
+            else
+            {
+                const auto [lo, hi] = d::parse_range(s.param("range"));
+                v = core::uniform_int<std::uint64_t>(r, lo, hi);
+            }
+            out.value = std::to_string(year) + "/" + d::zero_pad(v, 6) + "/" + *type;
+            return out;
+        }
+        throw std::runtime_error("company: no builder " + b);
+    }
+
+    // The company's numbers, register first, then statistical, tax and VAT numbers, then the LEI.
+    [[nodiscard]] std::vector<registration> draw_numbers_(number_context& x) const
+    {
+        namespace d = companygen_detail;
+        std::vector<registration> out;
+        const auto one = [&](const d::scheme_model& s, core::rng r)
+        {
+            if (((s.groups >> x.f.group) & 1U) == 0) return;
+            if ((s.from && x.p.reference < *s.from) || (s.until && x.p.reference > *s.until)) return;
+            const bool needed = s.key == "in-pan"; // the GSTIN wraps the PAN
+            if (x.safe && s.safe == d::safe_method::none && !needed) return;
+            auto made = s.builder == "generic" ? build_generic_(s, x, r) : build_named_(s, x, r);
+            if (!made) return;
+            if (x.safe && s.safe == d::safe_method::wrong_check)
+            {
+                // change a check character until the number fails its check
+                auto sr = r.split("safe");
+                for (int attempt = 0; attempt < 64; ++attempt)
+                {
+                    const auto compact = d::alnum_of(made->value);
+                    if (attempt > 0 && !number_valid_(s, compact)) break;
+                    if (made->check_at.empty()) break;
+                    const auto at = made->check_at.at(core::uniform_int<std::size_t>(sr, 0, made->check_at.size() - 1));
+                    std::size_t k = 0;
+                    for (auto& c : made->value)
+                    {
+                        if (!d::is_alnum(c)) continue;
+                        if (k++ == at)
+                        {
+                            c = d::other_char(c, sr);
+                            break;
+                        }
+                    }
+                }
+                made->reserved = true;
+            }
+            const std::string compact = made->compact.empty() ? d::alnum_of(made->value) : made->compact;
+            x.built[s.key] = compact;
+            if (x.safe && s.safe == d::safe_method::none) return; // built only for the numbers that wrap it
+            out.push_back({.scheme = s.key, .label = s.short_label, .value = made->value, .compact = compact, .reserved = made->reserved});
+        };
+        for (const auto i : x.c.schemes)
+        {
+            const auto& s = _model.schemes.at(i);
+            one(s, x.numbers.split(s.key));
+        }
+        // decision 9: an LEI for companies with 250 persons or more or in finance, never for sole traders
+        if (_model.lei != d::no_index && (x.employees >= 250 || x.section == 10))
+        {
+            one(_model.schemes.at(_model.lei), x.lei);
+        }
+        return out;
     }
 
     // -- State ------------------------------------------------------------

@@ -1,81 +1,91 @@
 # How each registration or tax number is built (curated 2026-11-10 from the number survey,
 # designs/company-generator-numbers.tsv, which has the structure, the check, worked examples and the
-# sources of every row; labels, safe methods and sources are taken from there, not repeated here).
-# builder: generic (pattern + check) or a builder named after the scheme, for numbers that encode
-# the company (its form, region, year or name). pattern: # a digit, @ a capital letter, [..] a
-# class, {n} or {m,n} a repeat, other characters literal; the check digit comes last and is not in
-# the pattern. check: luhn, gtin, mod11_10 (ISO 7064 MOD 11,10), mod97_10 (ISO 7064), a named
-# algorithm (the builder's), or weights:W...:RULE, where s = sum of digit x weight from the left,
-# r = s mod 11 and RULE gives the digit (11-r, r, r%10, 10-r%10 ...) with exceptions "a=b" (a result
-# a written b; "redraw": no number has it, draw another). groups: the legal-form groups holding the
-# number (S sole proprietorship, P partnership, L limited liability, O other). params: the
-# builder's settings; "anchors=" names a series read by read_anchors.py; TBD marks a code list or
-# limit still to research (the builder then falls back to its pattern).
-key	builder	display	pattern	check	groups	from	until	params
-ar-cuit	ar_cuit	##-########-#	30#{8}	weights:5 4 3 2 7 6 5 4 3 2:11-r,11=0,10=prefix33	PLO
-at-fn	at_fn	FN ######@	#{3,6}	unpublished	SPLO			check letter drawn at random (its algorithm is not published)
-at-uid	generic	ATU########	ATU#{7}	at_uid	SPLO
-au-acn	generic	### ### ###	#{8}	weights:8 7 6 5 4 3 2 1:10-s%10,10=0	LO
-au-abn	au_abn	## ### ### ###	#{9}	au_abn	SPLO			companies: the ACN after the two check digits
-be-kbo	generic	####.###.###	[01]#{7}	be_kbo	SPLO			the check pair is 97 - (first 8 digits mod 97)
-br-cnpj	br_cnpj	##.###.###/####-##	#{8}0001	br_cnpj	SPLO			alphanumeric_root_from=2026-07-31
-ca-bn	generic	######### RC0001	#{8}	luhn	SPLO			suffix=RC0001
-ch-uid	generic	CHE-###.###.###	#{8}	weights:5 4 3 2 7 6 5 4:11-r,11=0,10=redraw	SPLO
-cl-rut	generic	##.###.###-#	[5-9]#{7}	weights:3 2 7 6 5 4 3 2:11-r,11=0,10=K	PLO			legal persons are numbered from 50,000,000
-cn-uscc	cn_uscc	##################		cn_uscc	SPLO			type=S:92,O:93,*:91;counties=TBD
-co-nit	generic	###.###.###-#	[89]#{8}	weights:41 37 29 23 19 17 13 7 3:11-r,11=0,10=1	PLO			legal persons are numbered from 800,000,000
-cz-ico	generic	########	#{7}	weights:8 7 6 5 4 3 2:(11-r)%10	SPLO
-de-hrn	de_hrn	{court} HR@ #####	#{3,6}	none	SPLO			section=S:HRA,P:HRA,L:HRB,O:GnR|VR;courts=TBD
-de-ustid	generic	DE#########	DE#{8}	mod11_10	SPLO
-dk-cvr	generic	########	[1-9]#{6}	weights:2 7 6 5 4 3 2:11-r,11=0,10=redraw	SPLO
-eg-tn	generic	###-###-###	#{9}	none	SPLO
-es-nif-entity	es_nif	@########	@#{7}	es_nif	PLO			letter=SA:A,SL:B,colectiva:C,comanditaria:D,CB:E,cooperativa:F,asociación|fundación:G,civil:J,religious:R,public:P|Q|S,other:V
-fi-ytunnus	generic	#######-#	#{7}	weights:7 9 10 5 8 4 2:11-r,11=0,10=redraw	SPLO
-fr-siren	fr_siren	### ### ###	#{8}	luhn	SPLO			anchors=fr-siren
-fr-siret	fr_siret	### ### ### #####	{siren}0001	luhn	SPLO			the head office's NIC; the check makes the 14 digits pass Luhn
-fr-tva	fr_tva	FR## #########	FR{key}{siren}	fr_tva	SPLO			key = (12 + 3 x (SIREN mod 97)) mod 97
-gb-crn	gb_crn	########	#{8}	none	PLO			prefix=England and Wales company:,Scotland company:SC,Northern Ireland company:NI,LLP:OC|SO|NC,LP:LP|SL|NL;scotland=0.085;northern_ireland=0.03;anchors=gb-crn
-gb-vat	gb_vat	GB### #### ##	GB#{7}	gb_vat	SPLO			series_9755_from=2010-01-01;registered=micro:0.45,small:0.95,medium:1,large:1
-gr-afm	generic	#########	[89]#{7}	weights:256 128 64 32 16 8 4 2:r%10	PLO
-hu-adoszam	hu_adoszam	########-#-##	#{7}	weights:9 7 3 1 9 7 3:(10-s%10)%10	SPLO			vat_code=2;county=TBD
-id-npwp	id_npwp	################	0#{2}#{6}	id_npwp	SPLO			tax_office=TBD
-ie-cro	generic	######	#{6}	none	LO			highest=TBD
-ie-vat	ie_vat	IE#######@@	#{7}	ie_vat	SPLO
-il-hp	il_hp	#########	5[1258]#{6}	luhn	PLO			prefix=P:55,L:51|52,O:57|58
-in-cin	in_cin	@#####@@####@@@######		none	LO			ownership=L:PTC|PLC,O:NPL;states=TBD
-in-gstin	in_gstin	##@@@@@####@#Z#		in_gstin	SPLO			states=TBD;registered=micro:0.3,small:0.9,medium:1,large:1
-in-pan	in_pan	@@@@@####@	@@@[CFPAT]@#{4}@	unpublished	SPLO			type=S:P,P:F,L:C,O:A|T;fifth=the name's first letter
-it-piva	it_piva	###########	#{7}{office}	luhn	SPLO			office=001-100 by province
-it-rea	it_rea	@@-#######	@@-#{1,7}	none	SPLO			optional; per-province anchors not found
-jp-cn	jp_cn	#############	{office}{class}#{6}	jp_cn	PLO			office=TBD;class=TBD
-ke-pin	generic	@#########@	P05#{7}@	none	SPLO
-kr-brn	kr_brn	###-##-#####	{office}{type}#{4}	kr_brn	SPLO			type=S:01-79,P|L:81|86|87|88,O:82;office=TBD
-kr-crn	kr_crn	######-#######	{office}{type}#{6}	weights:1 2 1 2 1 2 1 2 1 2 1 2:(10-s%10)%10	PLO			optional; the check is from one source
-mx-rfc-moral	mx_rfc	@@@######@@#		mx_rfc	PLO			the first letters of the name's first three words and the date of incorporation
-ng-rc	ng_rc	RC#######	RC#{1,7}	none	SPLO			prefix=S:BN,P:BN,L:RC,O:IT;highest=TBD
-nl-btw	nl_btw	NL#########B##		nl_btw	SPLO			legal entities: the RSIN + B01; sole traders since 2020: a separate number with the mod 97 check
-nl-kvk	generic	########	#{8}	none	SPLO
-nl-rsin	generic	#########	#{8}	weights:9 8 7 6 5 4 3 2:r,10=redraw	PLO
-no-orgnr	generic	### ### ###	[89]#{7}	weights:3 2 7 6 5 4 3 2:11-r,11=0,10=redraw	SPLO			anchors=no-orgnr
-nz-nzbn	generic	#############	94#{10}	gtin	SPLO
-pe-ruc	generic	###########	20#{8}	weights:5 4 3 2 7 6 5 4 3 2:11-r,10=0,11=1	PLO
-pl-krs	generic	##########	#{10}	none	PLO			highest=TBD
-pl-nip	generic	###-###-##-##	#{9}	weights:6 5 7 2 3 4 5 6 7:r,10=redraw	SPLO
-pl-regon	generic	#########	#{8}	weights:8 9 2 3 4 5 6 7:r,10=0	SPLO
-pt-nipc	generic	#########	5#{7}	weights:9 8 7 6 5 4 3 2:11-r,10=0,11=0	PLO
-ro-cui	generic	##########	[1-9]#{1,8}	ro_cui	SPLO
-ro-onrc	ro_onrc	J####/######/##	J{year}#{6}{county}	TBD	SPLO			prefix=S:F,P|L:J,O:C;new_format_from=2024-07-26;check=TBD;county=TBD
-ru-inn	ru_inn	##########	{region}{inspection}#{5}	weights:2 4 10 3 5 9 4 6 8:r%10	PLO			region=TBD
-ru-ogrn	ru_ogrn	#############	{sign}{yy}{region}#{7}	ru_ogrn	SPLO			sole traders: the 15-digit OGRNIP starting with 3; region=TBD
-se-orgnr	se_orgnr	######-####	{group}#{8}	luhn	PLO			group=P:9,L:5,O:7|8|2;digits 3-4 at least 20
-sg-uen	sg_uen	##########@		sg_uen	SPLO			S|P: ROB 8 digits; L: YYYY + 5 digits; O: T + YY + entity type + 4 digits
-th-juristic	th_juristic	#############	0{office}{type}{be_year}#{5}	weights:13 12 11 10 9 8 7 6 5 4 3 2:(11-r)%10	PLO			optional; positions to confirm with DBD
-tr-mersis	tr_mersis	################	0{vkn}00011		PLO			optional; the rule to confirm
-tr-vkn	generic	##########	#{9}	tr_vkn	PLO
-tw-ubn	generic	########	#{7}	tw_ubn	SPLO
-ua-edrpou	generic	########	#{7}	ua_edrpou	PLO
-us-ein	us_ein	##-#######	{prefix}#{7}	none	SPLO			internet_from=2001-01-01;internet=20 26 27 45 46 47 81 82 83 84 85 86 87 88 92 93 99;reserved=00 07 08 09 17 18 19 28 29 49 69 70 78 79 89 96 97;sole traders without employees use their SSN
-vn-mst	vn_mst	##########	{province}#{7}	vn_mst	SPLO			province=TBD
-za-cipc	za_cipc	####/######/##	{year}/#{6}/{type}	none	LO			type=private:07,public:06,non-profit:08,personal liability:21,close corporation:23,co-operative:24;close_corporation_until=2011-05-01;safe_from=900000
-za-vat	generic	##########	4#{8}	luhn	SPLO			optional
-lei	lei	####00############		mod97_10	SPLO			decision 9: 250+ persons or section K; lou=TBD;safe_prefix=TBD
+# sources of every row; labels, safe methods and sources are taken from there, not repeated here;
+# rewritten 2026-11-11 for Milestone 5 with the code lists filled and the parameters made exact).
+# short: the label printed with the number. serve: "no" leaves a scheme out (its rule is from one
+# source only), "yes" serves one the survey left optional after Milestone 5 confirmed it, empty: as
+# the survey says.
+# builder: generic (pattern + check), serial (a number up to the highest issued), or a builder
+# named after the scheme, for numbers that encode the company (its form, region, year or name).
+# display: how the number is printed, # or @ standing for its characters in turn (generic and serial
+# numbers; empty: as the builder writes it). pattern: # a digit, @ a capital letter, [..] a class,
+# {n} or {m,n} a repeat, other characters literal; the check characters come last and are not in it.
+# check: none, unpublished (drawn at random), luhn, gtin, mod11_10 (ISO 7064 MOD 11,10), mod97_10
+# (ISO 7064), a named algorithm, or weights:W...:RULE, where s = sum of digit x weight from the left,
+# r = s mod 11 and RULE is 11-r, r, r%10, (11-r)%10, 10-s%10 or (10-s%10)%10, with exceptions "a=b"
+# (a result a written b; "redraw": no number has it, draw another). groups: the legal-form groups
+# holding the number (S sole proprietorship, P partnership, L limited liability, O other).
+# params: name=value;...; a value "K:V,K:V" maps the company's legal form (its ISO code or key), else
+# its group letter, else "*", to V; "a|b" are alternatives drawn evenly; "-" means the company holds
+# no such number; "lo-hi" is a range of numbers drawn evenly; a value naming a list (cn-county,
+# de-court, ...) draws from codes.tsv; anchors= names a series of anchors.tsv. A serial number grows
+# with the founding year from start (number 1) to the reference date (the highest) as
+# ((year - start) / (ref - start))^power; firms older than start share its first years.
+key	short	serve	builder	display	pattern	check	groups	from	until	params	note
+ar-cuit	CUIT		ar_cuit	##-########-#	#{8}	ar_cuit	PLO				30, or 33 where 30 would give a check of 10 (AFIP)
+at-fn	FN		at_fn				SPLO				the check letter's algorithm is not published: drawn at random
+at-uid	UID		generic	ATU########	#{7}	at_uid	SPLO
+au-acn	ACN		generic	### ### ###	#{8}	weights:8 7 6 5 4 3 2 1:10-s%10,10=0	LO
+au-abn	ABN		au_abn	## ### ### ###			SPLO				companies: the ACN after the two check digits
+be-kbo	KBO/BCE		generic	####.###.###	[01]#{7}	be_kbo	SPLO				the check pair is 97 - (first 8 digits mod 97)
+br-cnpj	CNPJ		br_cnpj	##.###.###/####-##		br_cnpj	SPLO			alphanumeric_from=2026-07-31	the head office's order 0001; roots alphanumeric for new numbers from 2026-07-31
+ca-bn	BN		generic	######### RC0001	#{8}	luhn	SPLO				with the corporate income tax programme account RC0001
+ch-uid	UID		generic	CHE-###.###.###	#{8}	weights:5 4 3 2 7 6 5 4:11-r,11=0,10=redraw	SPLO
+cl-rut	RUT		generic	##.###.###-#	[5-9]#{7}	weights:3 2 7 6 5 4 3 2:11-r,11=0,10=K	PLO				legal persons are numbered from 50,000,000
+cn-uscc	USCC		cn_uscc			cn_uscc	SPLO			type=S:92,UMCR:93,B5UZ:12,I39S:11,GGZ5:51,E4FG:52,6NSC:31,*:91;county=cn-county	authority and type: 91 enterprise, 92 individual business, 93 farmers' cooperative (market regulation), 11 and 12 government bodies and public institutions, 51 and 52 social organisations, 31 law firms
+co-nit	NIT		generic	###.###.###-#	[89]#{8}	weights:41 37 29 23 19 17 13 7 3:11-r,11=0,10=1	PLO				legal persons are numbered from 800,000,000
+cz-ico	IČO		generic	########	[0-8]#{6}	weights:8 7 6 5 4 3 2:(11-r)%10	SPLO
+de-hrn	HR		de_hrn			none	SPLO			court=de-court;section=FR3V:-,79H0:-,V2YH:-,QZ3L:VR,AZFE:GnR,S:HRA,P:HRA,L:HRB,SCE1:HRB,13AV:HRB,*:-;suffix=Charlottenburg: B	sole merchants and partnerships in HRA, companies in HRB, co-operatives in GnR, associations in VR; a GbR, an unregistered association or a foundation has none; Berlin's numbers end in B
+de-ustid	USt-IdNr.		generic	DE#########	[1-9]#{7}	mod11_10	SPLO
+dk-cvr	CVR		generic	########	[1-9]#{6}	weights:2 7 6 5 4 3 2:11-r,11=0,10=redraw	SPLO
+eg-tn	TN		generic	###-###-###	#{9}	none	SPLO
+es-nif-entity	NIF		es_nif	@########	#{7}	es_nif	PLO			letter=5RDO:A,DP3Q:B,R6UT:B,JB2M:B,1G29:B,S6X7:C,1ZHJ:C,TDD5:D,GJL1:D,UFBW:E,1QU8:F,SS0L:F,MDOL:G,A0J6:G,2W1A:J,S6MS:R,TUHS:Q,*:V	the letter is the legal form (Orden EHA/451/2008); a digit after A to H, J, U and V, a letter after N, P, Q, R, S and W
+fi-ytunnus	Y-tunnus		generic	#######-#	#{7}	weights:7 9 10 5 8 4 2:11-r,11=0,10=redraw	SPLO
+fr-siren	SIREN		generic	### ### ###		luhn	SPLO			anchors=fr-siren	sole traders and legal persons share one sequence
+fr-siret	SIRET		fr_siret	### ### ### #####		luhn	SPLO				the head office's NIC 0001 and a key making the 14 digits pass Luhn
+fr-tva	TVA		fr_tva	FR## #########		fr_tva	SPLO				key = (12 + 3 x (SIREN mod 97)) mod 97
+gb-crn	CRN		gb_crn			none	PLO			anchors=gb-crn;series=Z0EY:OC|SO|NC,ID30:LP|SL|NL,7T8N:CE,STX7:CS,XLZV:RS,ordinary_partnership:-,AVYY:-,*:;scotland=0.085;northern_ireland=0.03	companies: 8 digits in England and Wales, SC and NI and six digits in Scotland and Northern Ireland; LLPs OC, SO, NC; LPs LP, SL, NL; CIOs CE, CS; registered societies RS
+gb-vat	VAT		gb_vat	GB### #### ##	#{7}	gb_vat	SPLO			series_9755_from=2010-01-01;registered=micro:0.45,small:0.95,medium:1,large:1	only registered firms hold one (turnover above the threshold, or by choice)
+gr-afm	ΑΦΜ		generic	#########	[89]#{7}	weights:256 128 64 32 16 8 4 2:r%10	PLO
+hu-adoszam	adószám		hu_adoszam	########-#-##	#{7}	weights:9 7 3 1 9 7 3:(10-s%10)%10	SPLO			vat_code=2;county=hu-county	the VAT code 2 (VAT payer) and the tax directorate's area code
+id-npwp	NPWP		id_npwp				SPLO			type=S:04|06,*:01|02|03;kpp=001-999;new_from=2024-07-01	16 digits since 2024: 0 and the 15-digit number (type, serial, Luhn check, tax office, 000 for the head office)
+ie-cro	CRO		serial			none	LO			range=1-800889;start=1950;power=2.6;safe=990000-999999	highest issued 800,889 on 2025-11-05 (CRO Gazette, new companies 12 November 2025)
+ie-vat	VAT		ie_vat	IE#########			SPLO			second_letter_from=2013-01-01;second=A|H	7 digits, the check letter and, for numbers issued from 2013, a second letter
+il-hp	ח.פ.		il_hp	#########		luhn	PLO			prefix=P:55,L:51|52,O:57|58
+in-cin	CIN		in_cin				LO			state=in-state;ownership=DDKQ:PLC,L:PTC,O:NPL;listing=DDKQ:L|U,*:U	listing, NIC 2008 industry (the division and three digits), state, year, ownership and serial
+in-pan	PAN		in_pan			unpublished	SPLO			type=S:P,P:F,L:C,W9FI:T,O:A	the fourth letter is the holder's type, the fifth the first letter of its name (a sole trader's surname); the check letter's algorithm is not published
+in-gstin	GSTIN		in_gstin			in_gstin	SPLO			state=in-state;registered=micro:0.3,small:0.9,medium:1,large:1	the state, the PAN, 1, Z and a Luhn mod 36 check
+it-piva	P.IVA		it_piva	###########	#{7}	luhn	SPLO			office=001-100	the provincial office in digits 8 to 10
+it-rea	REA	no	generic	@@-#######	@@-#{1,7}	none	SPLO				per-province anchors not found
+jp-cn	法人番号		jp_cn	#############		jp_cn	PLO			office=0100-4999;class=T417:01,DYQK:02,7QQ0:03,5MVV:03,IUVI:03,L:01,*:05	the 12-digit base is the commercial registry number: registry office, class (01 kabushiki kaisha, 02 tokurei yugen kaisha, 03 gomei, goshi and godo kaisha, 05 other legal persons) and serial, after a leading check digit
+ke-pin	PIN		generic	@#########@	P05#{7}@	none	SPLO
+kr-brn	사업자등록번호		kr_brn	###-##-#####		kr_brn	SPLO			office=101-699;type=S:01-79,P:81|86|87|88,L:81|86|87|88,O:82	the tax office, the type (01-79 individuals, 81-88 corporations, 82 non-profit) and a serial
+kr-crn	법인등록번호	no	generic	######-#######	#{12}	weights:1 2 1 2 1 2 1 2 1 2 1 2:(10-s%10)%10	PLO				the check is from one source
+mx-rfc-moral	RFC		mx_rfc			mx_rfc	PLO				the first letters of the name's first three words, the date of incorporation, a two-character homoclave and a check
+ng-rc	RC		ng_rc			none	SPLO			prefix=S:BN,P:BN,*:RC;highest=BN:3500000,RC:2300000;start=1960;power=3;safe=9000000-9999999	business names (BN) for sole traders and partnerships; the highest numbers are estimates (one source)
+nl-kvk	KVK		generic	########	#{8}	none	SPLO
+nl-rsin	RSIN		generic	#########	#{8}	weights:9 8 7 6 5 4 3 2:r,10=redraw	PLO
+nl-btw	btw-id		nl_btw	NL#########B##		nl_btw	SPLO				legal entities: the RSIN and B01; sole traders since 2020: a number of its own with the mod 97 check
+no-orgnr	Org.nr.		generic	### ### ###		weights:3 2 7 6 5 4 3 2:11-r,11=0,10=redraw	SPLO			anchors=no-orgnr
+nz-nzbn	NZBN		generic	#############	94#{10}	gtin	SPLO
+pe-ruc	RUC		generic	###########	20#{8}	weights:5 4 3 2 7 6 5 4 3 2:11-r,10=0,11=1	PLO
+pl-krs	KRS		serial	##########		none	PLO			range=1-1205080;start=2001;power=1;safe=9000000-9999999	highest issued about 1,205,080 in October 2025 (KRS search)
+pl-nip	NIP		generic	###-###-##-##	#{9}	weights:6 5 7 2 3 4 5 6 7:r,10=redraw	SPLO
+pl-regon	REGON		generic	#########	#{8}	weights:8 9 2 3 4 5 6 7:r,10=0	SPLO
+pt-nipc	NIPC		generic	#########	5#{7}	weights:9 8 7 6 5 4 3 2:11-r,10=0,11=0	PLO
+ro-cui	CUI		generic		[1-9]#{1,8}	ro_cui	SPLO
+ro-onrc	Nr. ORC		ro_onrc			ro_onrc	SPLO			prefix=S:F,O:C,*:J;county=ro-county;new_format_from=2024-07-26	J companies, F sole traders, C co-operatives; from 2024-07-26 the 14-character form (year, serial, county or 00, digit-sum check, python-stdnum ro.onrc)
+ru-inn	ИНН		ru_inn			weights:2 4 10 3 5 9 4 6 8:r%10	PLO			region=ru-region;inspection=01-49	the region and the inspection, a serial and the check
+ru-ogrn	ОГРН		ru_ogrn			ru_ogrn	SPLO			region=ru-region;start=2002-07-01	sign, year of the entry, region, serial and check; sole traders: the 15-digit ОГРНИП
+se-orgnr	Org.nr		se_orgnr	######-####		luhn	PLO			group=P:9,L:5,O:7|8|2	the first digit is the form group, digits 3-4 at least 20
+sg-uen	UEN		sg_uen			sg_uen	SPLO			format=S:business,P:business,L:local,*:other;other_type=SS|CC|CP|MB	businesses: 8 digits and a letter; local companies: the year, 5 digits and a letter; other entities: T, the year, the entity type, 4 digits and a check
+th-juristic	เลขทะเบียน	yes	th_juristic	#-##-#-###-#####-#		weights:13 12 11 10 9 8 7 6 5 4 3 2:(11-r)%10	PLO			office=th-province;type=JUEU:3,K09K:5,O0OZ:7,P:2,L:5,*:-	0, the registering province, the type (2 ordinary partnership, 3 limited partnership, 5 limited company, 7 public company), the Buddhist-era year, a serial and the check (python-stdnum th.moa and the DBD's guide)
+tr-mersis	MERSİS	no	generic	################	0#{10}00011		PLO				the rule to confirm
+tr-vkn	VKN		generic	##########	#{9}	tr_vkn	PLO
+tw-ubn	統一編號		generic	########	#{7}	tw_ubn	SPLO
+ua-edrpou	ЄДРПОУ		generic	########	#{7}	ua_edrpou	PLO
+us-ein	EIN		us_ein	##-#######		none	SPLO			internet_from=2001-01-01;internet_share=0.7;internet=20 26 27 45 46 47 81 82 83 84 85 86 87 88 92 93 99;campus=01 02 03 04 05 06 10 11 12 13 14 15 16 21 22 23 24 25 30 32 33 34 35 36 37 38 39 40 41 42 43 44 48 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 71 72 73 74 75 76 77 80 90 91 94 95 98;reserved=00 07 08 09 17 18 19 28 29 49 69 70 78 79 89 96 97	the prefix: the IRS campus, or Internet from 2001; sole traders without employees use their SSN
+vn-mst	MST		vn_mst	##########		vn_mst	SPLO			province=01|03|01-64	the province (01 Hanoi, 03 Ho Chi Minh City; the others from the range, their list not found), a serial and the check
+za-cipc	Reg. No.		za_cipc	####/######/##		none	LO			type=GQVQ:07,XE4Z:06,4YUU:23,J7L0:08,R155:30,MZT6:24,CXWJ:24,ZE81:24,L:07,*:08;range=1-600000;safe=900000-999999	the year, a serial within it and the type
+za-vat	VAT	no	generic	##########	4#{8}	luhn	SPLO				the check is from one source
+lei	LEI		lei			mod97_10	PLO			lou=lei-lou;safe_prefix=ZZZZ	decision 9: 250 or more persons, or section K; never sole traders; the prefix from the issuers serving the country

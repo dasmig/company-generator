@@ -18,6 +18,8 @@ US Census Bureau (Business Dynamics Statistics, Nonemployer Statistics) and
 the IRS Statistics of Income — US Government works, public domain.
 
 GLEIF (Entity Legal Forms code list, ISO 20275; LEI golden copy) — CC0 1.0.
+From the golden copy only counts are kept: legal forms by country, and the
+four-character issuer (LOU) prefixes of each country's LEIs in codes.tsv.
 
 Companies House, Basic Company Data — contains public sector information
 licensed under the Open Government Licence v3.0.
@@ -36,8 +38,19 @@ from their publications; see scripts/curated/census.tsv for each.
 
 Places: address-generator's places, from GeoNames — CC BY 4.0.
 
+Code lists in codes.tsv copied from id-generator (dasmig, MIT): Chinese
+counties and Thai provinces, which id-generator takes from Wikidata (CC0 1.0);
+Russian regions and Romanian counties, curated there (MIT).
+
+fold.tsv: email-generator's fold table (dasmig, MIT), built from the Unicode
+Character Database's decompositions.
+
 Surnames: name-generator (dasmig) — MIT.
 
 Curated tables in scripts/curated/ (word lists, legal-form templates and
-overrides, name patterns, TLD shares, number schemes) — written for this
-library, MIT.
+overrides, name patterns, TLD shares, number schemes, code lists) — written
+for this library, MIT.
+
+python-stdnum (LGPL 2.1) is used by scripts/check_numbers.py to check the
+numbers the library draws. Nothing of it is shipped in resources/ or the
+header, and it is not needed to build or use the library.

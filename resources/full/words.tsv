@@ -812,8 +812,6 @@ de	coined_tail	*	stein		1
 de	family	*	& Söhne		1
 de	family	*	& Sohn		1
 de	family	*	& Co.		1
-de	family	*	+ Partner		1
-de	family	*	& Partner		1
 de	family	*	Gebrüder		1
 de	joiner	*	&		1
 de	joiner	*	+		1
@@ -839,8 +837,7 @@ de	region	*	Harz		1
 de	template	coined	{coined}		3
 de	template	coined	{coined} {trade}		2
 de	template	descriptive	{trade} {region}		1
-de	template	descriptive	{place}er {trade}		1
-de	template	descriptive	{trade} {place}		2
+de	template	descriptive	{trade} {place}		3
 de	template	descriptive	{adjective} {trade}		1
 de	template	founder	{surname}		2
 de	template	founder	{surname} {family}		1
@@ -1141,7 +1138,6 @@ de	trade	70	Consulting		1
 de	trade	70	Unternehmensberatung		1
 de	trade	70	Management		1
 de	trade	70	Beratung		1
-de	trade	70	Partner		1
 de	trade	71	Ingenieurbüro		1
 de	trade	71	Architekten		1
 de	trade	71	Planung		1
@@ -1533,7 +1529,6 @@ en	template	coined	{coined} {trade}		2
 en	template	descriptive	{region} {trade}		2
 en	template	descriptive	{adjective} {trade}		2
 en	template	descriptive	{place} {trade}		2
-en	template	descriptive	{trade} {region}		0.5
 en	template	founder	{surname}		3
 en	template	founder	{surname} {family}		1
 en	template	founder_trade	{surname} {trade}		1
@@ -2040,25 +2035,25 @@ es	family	*	y Asociados		1
 es	family	*	y Cía.		1
 es	joiner	*	y		1
 es	joiner	*	&		1
-es	region	*	Norte		1
-es	region	*	Sur		1
-es	region	*	Este		1
-es	region	*	Oeste		1
-es	region	*	Centro		1
-es	region	*	Levante		1
-es	region	*	Noroeste		1
-es	region	*	Sureste		1
-es	region	*	Pacífico		1
-es	region	*	Caribe		1
-es	region	*	Altiplano		1
-es	region	*	Valle		1
-es	region	*	Costa		1
-es	region	*	Sierra		1
-es	region	*	Bajío		1
-es	region	*	Golfo		1
+es	region	*	del Norte		1
+es	region	*	del Sur		1
+es	region	*	del Este		1
+es	region	*	del Oeste		1
+es	region	*	del Centro		1
+es	region	*	de Levante		1
+es	region	*	del Noroeste		1
+es	region	*	del Sureste		1
+es	region	*	del Pacífico		1
+es	region	*	del Caribe		1
+es	region	*	del Altiplano		1
+es	region	*	del Valle		1
+es	region	*	de la Costa		1
+es	region	*	de la Sierra		1
+es	region	*	del Bajío		1
+es	region	*	del Golfo		1
 es	template	coined	{coined}		3
 es	template	coined	{coined} {trade}		2
-es	template	descriptive	{trade} del {region}		1
+es	template	descriptive	{trade} {region}		1
 es	template	descriptive	{trade} {place}		2
 es	template	descriptive	{trade} {adjective}		2
 es	template	descriptive	{adjective} {trade}		0.3
@@ -2968,25 +2963,25 @@ fr	family	*	Père & Fils		1
 fr	family	*	Famille		1
 fr	joiner	*	&		1
 fr	joiner	*	et		1
-fr	region	*	Nord		1
-fr	region	*	Sud		1
-fr	region	*	Est		1
-fr	region	*	Ouest		1
-fr	region	*	Centre		1
-fr	region	*	Sud-Ouest		1
-fr	region	*	Grand Ouest		1
-fr	region	*	Littoral		1
-fr	region	*	Vallée		1
-fr	region	*	Plaine		1
-fr	region	*	Pays		1
-fr	region	*	Région		1
-fr	region	*	Méditerranée		1
-fr	region	*	Atlantique		1
-fr	region	*	Montagne		1
+fr	region	*	du Nord		1
+fr	region	*	du Sud		1
+fr	region	*	de l'Est		1
+fr	region	*	de l'Ouest		1
+fr	region	*	du Centre		1
+fr	region	*	du Sud-Ouest		1
+fr	region	*	du Grand Ouest		1
+fr	region	*	du Littoral		1
+fr	region	*	de la Vallée		1
+fr	region	*	de la Plaine		1
+fr	region	*	du Pays		1
+fr	region	*	de la Région		1
+fr	region	*	de la Méditerranée		1
+fr	region	*	de l'Atlantique		1
+fr	region	*	de la Montagne		1
 fr	template	coined	{coined}		3
 fr	template	coined	{coined} {trade}		2
 fr	template	descriptive	{trade} {adjective}		2
-fr	template	descriptive	{trade} du {region}		1
+fr	template	descriptive	{trade} {region}		1
 fr	template	descriptive	{trade} de {place}		2
 fr	template	descriptive	{adjective} {trade}		0.5
 fr	template	founder	{surname}		2
@@ -4190,22 +4185,22 @@ it	family	*	Fratelli		1
 it	family	*	& C.		1
 it	joiner	*	&		1
 it	joiner	*	e		1
-it	region	*	Nord		1
-it	region	*	Sud		1
-it	region	*	Centro		1
-it	region	*	Nord Est		1
-it	region	*	Nord Ovest		1
-it	region	*	Adriatico		1
-it	region	*	Tirreno		1
-it	region	*	Brianza		1
-it	region	*	Riviera		1
-it	region	*	Valle		1
-it	region	*	Lagune		1
-it	region	*	Colline		1
+it	region	*	del Nord		1
+it	region	*	del Sud		1
+it	region	*	del Centro		1
+it	region	*	del Nord Est		1
+it	region	*	del Nord Ovest		1
+it	region	*	dell'Adriatico		1
+it	region	*	del Tirreno		1
+it	region	*	della Brianza		1
+it	region	*	della Riviera		1
+it	region	*	della Valle		1
+it	region	*	delle Lagune		1
+it	region	*	delle Colline		1
 it	template	coined	{coined}		3
 it	template	coined	{coined} {trade}		2
 it	template	descriptive	{trade} {adjective}		2
-it	template	descriptive	{trade} del {region}		1
+it	template	descriptive	{trade} {region}		1
 it	template	descriptive	{trade} {place}		2
 it	template	founder	{surname}		2
 it	template	founder	{surname} {family}		1
@@ -6783,23 +6778,23 @@ pt	family	*	Irmãos		1
 pt	family	*	& Cia		1
 pt	joiner	*	&		1
 pt	joiner	*	e		1
-pt	region	*	Norte		1
-pt	region	*	Sul		1
-pt	region	*	Nordeste		1
-pt	region	*	Centro-Oeste		1
-pt	region	*	Sudeste		1
-pt	region	*	Litoral		1
-pt	region	*	Vale		1
-pt	region	*	Serra		1
-pt	region	*	Planalto		1
-pt	region	*	Cerrado		1
-pt	region	*	Minho		1
-pt	region	*	Alentejo		1
-pt	region	*	Algarve		1
+pt	region	*	do Norte		1
+pt	region	*	do Sul		1
+pt	region	*	do Nordeste		1
+pt	region	*	do Centro-Oeste		1
+pt	region	*	do Sudeste		1
+pt	region	*	do Litoral		1
+pt	region	*	do Vale		1
+pt	region	*	da Serra		1
+pt	region	*	do Planalto		1
+pt	region	*	do Cerrado		1
+pt	region	*	do Minho		1
+pt	region	*	do Alentejo		1
+pt	region	*	do Algarve		1
 pt	template	coined	{coined}		3
 pt	template	coined	{coined} {trade}		2
 pt	template	descriptive	{trade} {adjective}		2
-pt	template	descriptive	{trade} do {region}		1
+pt	template	descriptive	{trade} {region}		1
 pt	template	descriptive	{trade} {place}		2
 pt	template	founder	{surname}		2
 pt	template	founder	{surname} {family}		1

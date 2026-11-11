@@ -6,13 +6,13 @@ style	form_position	suffix
 template	founder	{surname}:2;{surname} {family}:1
 template	founder_trade	{trade} {surname}:3
 template	two_founders	{surname} {joiner} {surname2}:1
-template	descriptive	{trade} {adjective}:2;{trade} del {region}:1;{trade} {place}:2
+template	descriptive	{trade} {adjective}:2;{trade} {region}:1;{trade} {place}:2
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;e
 family	*	& Figli;e Figli;Fratelli;& C.
 adjective	*	Italiana;Generale;Moderna;Nuova;Centrale;Unita;Italia;Europea;Globale;Professionale;Tecnica;Industriale;Express;Plus;Pro;Mediterranea;Adriatica;Tirrena;Alpina;Padana;Sole;Stella
-region	*	Nord;Sud;Centro;Nord Est;Nord Ovest;Adriatico;Tirreno;Brianza;Riviera;Valle;Lagune;Colline
+region	*	del Nord;del Sud;del Centro;del Nord Est;del Nord Ovest;dell'Adriatico;del Tirreno;della Brianza;della Riviera;della Valle;delle Lagune;delle Colline
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Tri;Ori;Sol;Cal;Dyn;Gen;Ital;Mar;Neo;Opt;Ren;Val;Vit;Ar;Ter;Fer;Cor
 coined_tail	*	ia;ex;al;ova;eo;ix;ica;ena;ora;ium;ana;tec;one;ello;ina;ital
 trade	01	Azienda Agricola;Agricola;Vivai;Allevamenti;Agriturismo;Tenuta

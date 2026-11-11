@@ -17,6 +17,12 @@ Companies by country: industry, size, legal form, founding date, name, registrat
 
 - **Country-true Companies**. The industry, size, legal form and age of a company follow the statistics of its country (199 served): Eurostat, the OECD, ILOSTAT, the US Census Bureau, and the whole business registers of the UK, France and Norway. Every company says how well its fields are known (`measured`, `modelled`, `filled`).
 
+- **Names in the Country's Languages**. Names in each country's business-name languages and scripts, with the legal form written the local way: "Fotografie Schmidt e. K.", "ООО «СтройМаркет»", "株式会社渡辺商店", "PT Nusantara Mitra Apotek". A founder surname or place you pass in is used where it fits.
+
+- **Valid Registration Numbers**. 64 register, tax, VAT and LEI schemes, each passing its check digits and encoding what the real one encodes (the RFC's founding date, the SIREN inside the SIRET), checked against python-stdnum on 100,000 numbers per scheme. `is_valid()` checks numbers of your own.
+
+- **Safe Mode**. Numbers no company holds (wrong check digits, reserved prefixes, above the highest issued) and `.example` domains, for test data that leaves the test environment.
+
 - **Forced Fields**. Ask for a country, industry, size, head count or legal form; the rest is drawn to fit, and a request no company can meet throws.
 
 - **Deterministic Seeding**. Per-call `get_company(request, seed)` for reproducible results, and `company::seed()` for replaying a previous generation with the same request and data.
@@ -52,8 +58,8 @@ to the files you want to use it in, and supply the [`resources`](https://github.
 auto& gen = dasmig::cpg::instance(); // loads the lite tier
 
 auto v = gen.get_company(dasmig::company_request{});
-std::cout << v << '\n';           // DE, GmbH, specialized construction activities (43), 8 persons, founded 2011-03-14
-std::cout << v.to_json() << '\n'; // {"country_code":"DE","isic":"43",...,"signature":{...}}
+std::cout << v << '\n';           // DE, Fotografie Schmidt e. K., other professional, scientific and technical activities (74), 2 persons, founded 2021-09-06
+std::cout << v.to_json() << '\n'; // {"country_code":"DE","name":"Fotografie Schmidt e. K.",...,"numbers":[...],"domain":"fotografieschmidt.com",...}
 
 // Force what you need; the rest is drawn to fit.
 dasmig::company_request r;
@@ -62,6 +68,10 @@ r.isic = "F";                     // construction
 r.size = dasmig::size_band::small;
 r.incorporated_only = true;
 auto builder = gen.get_company(r);
+builder.numbers;                  // SIREN, SIRET, TVA: each passes its check
+
+r.safe = true;                    // numbers nobody holds, .example domains
+auto test_only = gen.get_company(r);
 
 // The same seed gives the same result everywhere.
 auto again = gen.get_company(dasmig::company_request{}, v.seed());

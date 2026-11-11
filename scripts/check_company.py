@@ -162,8 +162,11 @@ def check_tier(tier, info):
         if abs(dom.get(cc, 0) - 1) > TOL:
             say(f"domains.tsv: {cc} sums to {dom.get(cc, 0)}")
 
-    # schemes: every served scheme of the survey, a known country, valid groups; anchors ordered
-    survey = {r["scheme"] for r in read_tsv(CURATED / "survey_numbers.tsv") if r["served"] != "no"}
+    # schemes: every scheme served (the curated serve column, else the survey's), a known country,
+    # valid groups; anchors ordered
+    serve = {r["key"]: r["serve"] for r in read_tsv(CURATED / "schemes.tsv")}
+    survey = {r["scheme"] for r in read_tsv(CURATED / "survey_numbers.tsv")
+              if serve.get(r["scheme"]) == "yes" or (serve.get(r["scheme"]) == "" and r["served"] == "yes")}
     keys = set()
     for r in t("schemes.tsv"):
         keys.add(r["key"])

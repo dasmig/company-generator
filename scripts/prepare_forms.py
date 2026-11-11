@@ -570,6 +570,33 @@ def apply_overrides(forms):
             raise ValueError(f"form_overrides.tsv: no {r['country']} form for {r['code'] or r['match']!r}")
 
 
+def apply_name_forms(rows):
+    """name_forms.tsv: how each form is written in a name (and abbreviations ISO 20275 lacks).
+    `rows` are legal_forms rows with their keys; each gets an in_name."""
+    for r in rows:
+        r.setdefault("in_name", "")
+    missing = []
+    for c in read_tsv(CURATED / "name_forms.tsv"):
+        m = c["match"]
+        if m.startswith("/") and m.endswith("/") and len(m) > 2:
+            rx = re.compile(m[1:-1], re.I)
+            hit = lambda r: any(rx.search(t) for t in (r["name"], r["latin_name"], r["abbreviation"]) if t)
+        else:
+            hit = lambda r: r["code"] == m or r["key"] == m
+        found = [r for r in rows if r["country_code"] == c["country"] and hit(r)]
+        if not found:
+            missing.append(f"{c['country']} {m!r}")
+            continue
+        for r in found:
+            for col in ("abbreviation", "latin_abbreviation"):
+                if c[col]:
+                    r[col] = "" if c[col] == "-" else c[col]
+            if c["in_name"]:
+                r["in_name"] = c["in_name"]
+    if missing:
+        raise ValueError("name_forms.tsv: no form matches " + ", ".join(missing))
+
+
 def constraints(f):
     text = " | ".join(sorted(f["names"]))
     only = next((o for rx, o, _ in RESERVED if rx.search(text)), "")

@@ -187,6 +187,18 @@ def surname_rows(words, names, limit):
     return rows
 
 
+# GeoNames gives some capitals and large cities their English names; a company name uses the local one.
+EXONYMS = {
+    ("AL", "Tirana"): "Tiranë", ("AT", "Vienna"): "Wien", ("CZ", "Prague"): "Praha", ("DE", "Munich"): "München",
+    ("DK", "Copenhagen"): "København", ("IT", "Rome"): "Roma", ("IT", "Milan"): "Milano", ("IT", "Naples"): "Napoli",
+    ("IT", "Turin"): "Torino", ("IT", "Genoa"): "Genova", ("IT", "Florence"): "Firenze", ("IT", "Padua"): "Padova",
+    ("LV", "Riga"): "Rīga", ("MD", "Chisinau"): "Chișinău", ("MX", "Mexico City"): "Ciudad de México",
+    ("NL", "The Hague"): "Den Haag", ("PL", "Warsaw"): "Warszawa", ("PT", "Lisbon"): "Lisboa",
+    ("RO", "Bucharest"): "București", ("RS", "Belgrade"): "Beograd", ("VN", "Hanoi"): "Hà Nội",
+    ("VN", "Ho Chi Minh City"): "Hồ Chí Minh",
+}
+
+
 def place_rows(words, names, info, limit):
     """Places for the {place} part where the name language has none of its own: the country's
     largest places in address-generator, weighted by the square root of their population."""
@@ -203,6 +215,7 @@ def place_rows(words, names, info, limit):
         top = sorted(by_cc.get(cc, []), key=lambda t: (-t[0], t[1]))
         kept = []
         for pop, name in top:
+            name = EXONYMS.get((cc, name), name)
             if name in seen or not is_latin(name):
                 continue
             seen.add(name)
@@ -266,23 +279,70 @@ def first_url(sources):
 
 
 def scheme_rows():
-    """curated/schemes.tsv joined with the number survey (labels, safe method, evidence, sources)."""
+    """curated/schemes.tsv joined with the number survey (labels, safe method, evidence, sources). A
+    scheme is served when the curated row says so, else when the survey does ("optional" is not)."""
     survey = {r["scheme"]: r for r in read_tsv(CURATED / "survey_numbers.tsv")}
-    rows = []
+    rows, curated = [], set()
     for r in read_tsv(CURATED / "schemes.tsv"):
         v = survey[r["key"]]
-        if v["served"] == "no":
+        curated.add(r["key"])
+        if r["serve"] not in ("", "yes", "no"):
+            raise ValueError(f"schemes.tsv: {r['key']}: serve must be empty, yes or no")
+        if r["serve"] == "no" or (r["serve"] == "" and v["served"] != "yes"):
             continue
         rows.append({"key": r["key"], "country_code": v["cc"] or "*", "kind": v["kind"], "label": v["label"],
-                     "native_label": v["native_label"], "builder": r["builder"], "display": r["display"],
-                     "pattern": r["pattern"], "check": r["check"], "groups": r["groups"],
-                     "safe_method": v["safe_method"], "optional": v["served"] == "optional",
-                     "from": r["from"], "until": r["until"], "params": r["params"], "evidence": v["evidence"],
-                     "source": first_url(v["sources"])})
-    missing = set(k for k, v in survey.items() if v["served"] != "no") - {r["key"] for r in rows}
+                     "native_label": v["native_label"], "short": r["short"], "builder": r["builder"],
+                     "display": r["display"], "pattern": r["pattern"], "check": r["check"], "groups": r["groups"],
+                     "safe_method": v["safe_method"], "from": r["from"], "until": r["until"], "params": r["params"],
+                     "evidence": v["evidence"], "source": first_url(v["sources"])})
+    missing = set(k for k, v in survey.items() if v["served"] != "no") - curated
     if missing:
         raise ValueError(f"schemes.tsv: no row for {sorted(missing)}")
     return sorted(rows, key=lambda r: (r["country_code"], r["key"]))
+
+
+# Code lists copied from id-generator's places.tsv: (its scheme, our list, the codes kept)
+ID_LISTS = (("cn-ric", "cn-county", None), ("ru-inn", "ru-region", None),
+            ("ro-cnp", "ro-county", {f"{i:02d}" for i in list(range(1, 41)) + [51, 52]}),
+            ("th-pin", "th-province", None))
+LITE_COUNTIES = 300       # lite: the most populous Chinese counties
+LEI_SHARE = 0.995         # the issuers holding this share of a country's LEIs
+LEI_LITE = 4              # lite: at most this many issuers per country
+
+
+def code_rows(tier):
+    """codes.tsv: the curated lists, id-generator's place codes and GLEIF's LEI issuers by country."""
+    rows = [{**r, "weight": float(r["weight"])} for r in read_tsv(CURATED / "codes.tsv")]
+    places = read_tsv(SIBLINGS / "id-generator/resources/full/places.tsv")
+    for scheme, name, keep in ID_LISTS:
+        got = {}
+        for r in places:
+            if r["scheme"] != scheme or r["until"] or (keep and r["code"] not in keep):
+                continue
+            w = float(r["weight"] or 0)
+            if w > 0 and r["code"] not in got:
+                got[r["code"]] = {"list": name, "code": r["code"], "label": r["label"], "weight": w, "extra": ""}
+        part = sorted(got.values(), key=lambda r: r["code"])
+        if name == "cn-county" and tier == "lite":
+            top = sorted(part, key=lambda r: (-r["weight"], r["code"]))[:LITE_COUNTIES]
+            part = sorted(top, key=lambda r: r["code"])
+        rows += part
+    lei = load_work("lei.json")
+    pooled = Counter()
+    for cc, prefixes in lei["prefixes"].items():
+        pooled.update(prefixes)
+    for cc, prefixes in [("*", dict(pooled)), *sorted(lei["prefixes"].items())]:
+        if cc != "*" and len(cc) != 2:
+            continue
+        total, acc = sum(prefixes.values()), 0
+        for i, (prefix, n) in enumerate(sorted(prefixes.items(), key=lambda kv: (-kv[1], kv[0]))):
+            if (tier == "lite" and i >= LEI_LITE) or (i > 0 and acc >= LEI_SHARE * total):
+                break
+            rows.append({"list": f"lei-lou:{cc}", "code": prefix, "label": "", "weight": float(n), "extra": ""})
+            acc += n
+    if any(p == "ZZZZ" for p in lei["every"]):
+        raise ValueError("the safe LEI prefix ZZZZ is held by an LEI in the golden copy")
+    return rows
 
 
 def anchor_rows(tier):
@@ -419,6 +479,7 @@ def main():
                 key, i = f"{base}_{i}", i + 1
             used.add((r["country_code"], key))
             keyed.append({"key": key, **r})
+        prepare_forms.apply_name_forms(keyed)
         for r in keyed:   # sorted by share within each group: the first is the top form
             key = (r["country_code"], r["group"])
             first = key not in top
@@ -439,9 +500,10 @@ def main():
                "abbreviation and name in the name language and in Latin letters (empty: the same), the dates a "
                "form was open to new firms, the sections or divisions it is kept to (only) or kept out of (not), "
                "and its share of the group among small (micro, small) and large (medium, large) firms (lite: forms "
-               "under 1% of their group left out)",
-               ["country_code", "key", "code", "group", "abbreviation", "latin_abbreviation", "name", "latin_name", "from",
-                "until", "only", "not", "share_small", "share_large", "evidence"], forms_rows)
+               "under 1% of their group left out); in_name: how the form is written in a name (scripts/curated/"
+               "name_forms.tsv; empty: the abbreviation, by the name language's style)",
+               ["country_code", "key", "code", "group", "abbreviation", "latin_abbreviation", "name", "latin_name", "in_name",
+                "from", "until", "only", "not", "share_small", "share_large", "evidence"], forms_rows)
 
     def groups_rows(tier, n):
         cells = defaultdict(dict)
@@ -514,9 +576,19 @@ def main():
     write_both("schemes.tsv", "registration and tax numbers by country: how each is built (builder, pattern, check; "
                "see scripts/curated/schemes.tsv for the notation), the legal-form groups holding it (S, P, L, O) and "
                "its safe method; from the number survey (designs/company-generator-numbers.tsv)",
-               ["key", "country_code", "kind", "label", "native_label", "builder", "display", "pattern", "check",
-                "groups", "safe_method", "optional", "from", "until", "params", "evidence", "source"],
+               ["key", "country_code", "kind", "label", "native_label", "short", "builder", "display", "pattern",
+                "check", "groups", "safe_method", "from", "until", "params", "evidence", "source"],
                lambda tier, n: scheme_rows())
+    write_both("codes.tsv", "code lists the number builders draw from: Indian states, Hungarian tax directorates and "
+               "German register courts (curated, scripts/curated/codes.tsv), Chinese counties, Russian regions, "
+               "Romanian counties and Thai provinces (copied from id-generator), and the issuers (LOU prefixes) of "
+               "each country's active LEIs (GLEIF golden copy, CC0; * pools every country); weight relative (lite: "
+               f"the {LITE_COUNTIES} most populous Chinese counties, at most {LEI_LITE} issuers a country)",
+               ["list", "code", "label", "weight", "extra"],
+               lambda tier, n: [{**r, "weight": sig(r["weight"], n)} for r in code_rows(tier)])
+    fold = read_tsv(SIBLINGS / "email-generator/resources/full/fold.tsv")
+    write_both("fold.tsv", "letters and their ASCII form, for domains (copied from email-generator)", ["from", "to"],
+               lambda tier, n: fold)
     write_both("anchors.tsv", "issue anchors of sequential numbers, from the whole registers: for the firms registered "
                "in a year, the 0.1, 10, 25, 50, 75, 90 and 99.9% points of their numbers (without the check digit) "
                "and their count; the row \"highest\" holds the highest number issued by the snapshot in q999 (lite: "

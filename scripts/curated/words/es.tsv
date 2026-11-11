@@ -7,13 +7,13 @@ style	form_position	suffix
 template	founder	{surname}:2;{surname} {family}:1
 template	founder_trade	{trade} {surname}:3
 template	two_founders	{surname} {joiner} {surname2}:1
-template	descriptive	{trade} del {region}:1;{trade} {place}:2;{trade} {adjective}:2;{adjective} {trade}:0.3
+template	descriptive	{trade} {region}:1;{trade} {place}:2;{trade} {adjective}:2;{adjective} {trade}:0.3
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{trade} {initials}:2
 joiner	*	y;&
 family	*	e Hijos;Hermanos;y Asociados;y Cía.
 adjective	*	Integrales;Generales;Modernos;Unidos;Nacionales;Globales;Internacionales;Profesionales;Avanzados;Express;Premium;Plus;Total;Pro;Ibéricos;Latinos;Andinos;del Pacífico;del Caribe;Reunidos;Asociados;Hispanos
-region	*	Norte;Sur;Este;Oeste;Centro;Levante;Noroeste;Sureste;Pacífico;Caribe;Altiplano;Valle;Costa;Sierra;Bajío;Golfo
+region	*	del Norte;del Sur;del Este;del Oeste;del Centro;de Levante;del Noroeste;del Sureste;del Pacífico;del Caribe;del Altiplano;del Valle;de la Costa;de la Sierra;del Bajío;del Golfo
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Nex;Ori;Sol;Cal;Dyn;Gen;Ib;Lat;Mar;Neo;Opt;Pro;Ren;Syn;Val;Vit;Ar;Ter
 coined_tail	*	ia;ex;al;ova;eo;ix;ica;ena;ora;ium;ana;ez;ur;itec;sa;mex;tec;nova
 trade	01	Agrícola;Granja;Agropecuaria;Explotaciones Agrícolas;Ganadería;Viveros;Hacienda

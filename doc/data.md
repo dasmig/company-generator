@@ -2,14 +2,14 @@
 
 The data in `resources/` and how company-generator uses it (rule 6 of the dasmig standard). The design is in `designs/company-generator.md` of the meta repository; this page describes what was built.
 
-**Status:** the tables are built (Milestone 3) and the engine draws the country, industry, size band and head count, legal form and founding date from them (Milestone 4). The name, registration numbers and domain are Milestone 5: their tables (`words`, `patterns`, `surnames`, `places`, `domains`, `schemes`, `anchors`) are loaded and checked but not yet drawn from.
+**Status:** the tables are built (Milestone 3); the engine draws the country, industry, size band and head count, legal form and founding date (Milestone 4), and the name, registration numbers and domain (Milestone 5).
 
 ## Tiers
 
 | Tier | Size | What it holds |
 | --- | --- | --- |
-| `full` | 4.05 MB | Every table at ISIC division level, source texts, 1,000 surnames per culture, 40 places per country, the whole word lists |
-| `lite` | 1.03 MB (compiled in with `DASMIG_COMPANY_EMBED`) | Sizes by ISIC section, three significant digits, no source texts, legal forms under 1% of their group left out, 30 surnames per culture, 8 places per country, shorter word lists |
+| `full` | 4.36 MB | Every table at ISIC division level, source texts, 1,000 surnames per culture, 40 places per country, the whole word lists, every Chinese county, the LEI issuers that hold 99.5% of each country's LEIs |
+| `lite` | 1.10 MB (compiled in with `DASMIG_COMPANY_EMBED`) | Sizes by ISIC section, three significant digits, no source texts, legal forms under 1% of their group left out, 30 surnames per culture, 8 places per country, shorter word lists, the 300 most populous Chinese counties, at most 4 LEI issuers per country |
 
 Readers normalise every row, so the rounding and the left-out entries do not bias a draw.
 
@@ -25,7 +25,7 @@ All countries are the 199 the other Tier 5 libraries serve, keyed by `country_co
 | `sizes.tsv` | country, division (`lite`: section), band | share of enterprises and of persons employed, mean head count in the band |
 | `ages.tsv` | country, section, band | share of firms by age: 0 to 5 years, then 6-10, 11-15, 16-20, 21-25, 26+ |
 | `occupations.tsv` | country, ISCO-08 major group | persons employed per million of the country's total, by ISIC section |
-| `legal_forms.tsv` | country, key (the ISO 20275 code, else the Latin name) | group, ISO 20275 code, abbreviation and name (with Latin forms), the dates the form was open to new firms, the sections it is kept to or out of, its share of the group among small and among large firms |
+| `legal_forms.tsv` | country, key (the ISO 20275 code, else the Latin name) | group, ISO 20275 code, abbreviation and name (with Latin forms), the dates the form was open to new firms, the sections it is kept to or out of, its share of the group among small and among large firms, how it is written in a name (`in_name`) |
 | `groups.tsv` | country, section | the base weight of each legal-form group |
 | `form_odds.tsv` | section, band | the odds of each legal-form group by size |
 | `words.tsv` | language | name styles, templates, trade words per division, adjectives, region words, places, family words, joiners, coined-name syllables |
@@ -33,8 +33,10 @@ All countries are the 199 the other Tier 5 libraries serve, keyed by `country_co
 | `surnames.tsv` | culture | surnames for countries whose name language has none of its own |
 | `places.tsv` | country | places for names, where the name language has none of its own |
 | `domains.tsv` | country | top-level domains of company websites |
-| `schemes.tsv` | scheme | how each registration and tax number is built, who holds it, its safe method |
+| `schemes.tsv` | scheme | how each registration and tax number is built (builder, display mask, pattern, check, parameters), who holds it, the dates it applies, its safe method |
 | `anchors.tsv` | scheme, series, year | the distribution of numbers issued each year, and the highest issued |
+| `codes.tsv` | list, code | the codes number builders draw from: Indian states, Hungarian tax directorates, German register courts, Chinese counties, Russian regions, Romanian counties, Thai provinces, each country's LEI issuers |
+| `fold.tsv` | letter | the ASCII form of Latin letters, for domains |
 
 ## Sources
 
@@ -45,17 +47,21 @@ All countries are the 199 the other Tier 5 libraries serve, keyed by `country_co
 | ILOSTAT: `EMP_TEMP_SEX_EC2_NB_A`, `EMP_TEMP_SEX_ECO_NB_A`, `EMP_TEMP_ECO_OCU_NB_A` | CC BY 4.0 | Employment by division (153 areas) or section, and by occupation × section |
 | US Census Bureau: Business Dynamics Statistics 2023, Nonemployer Statistics 2022, the NAICS 2017 to ISIC 4 concordance | Public domain | Firm age by sector and size; nonemployers by sector |
 | IRS Statistics of Income (returns by entity type, 2021) and exempt organisations | Public domain | The US's legal-form split (`scripts/curated/group_splits.tsv`) |
-| GLEIF: the Entity Legal Forms code list (ISO 20275, v1.6) and the LEI golden copy | CC0 | Legal forms, and their shares where no register is open |
+| GLEIF: the Entity Legal Forms code list (ISO 20275, v1.6) and the LEI golden copy | CC0 | Legal forms, and their shares where no register is open; the issuer (LOU) prefixes of each country's LEIs |
 | Companies House, Basic Company Data (2026-11-01) | Open Government Licence v3.0 | UK legal forms by industry and age, issue anchors of company numbers, English trade words |
 | INSEE, SIRENE stock of legal units | Licence Ouverte / Etalab 2.0 | French legal forms by industry, size and age, SIREN anchors, French trade words |
 | Brønnøysund Register Centre, Enhetsregisteret | NLOD 2.0 | Norwegian legal forms by industry, size and age, organisation-number anchors, Norwegian trade words |
 | National economic censuses and business counts (CN, IN, ID, PK, BD, RU, BR, MX, JP, VN, EG, GB, AU, CA, KR), read by hand | Facts reported by the statistics offices; see `scripts/curated/census.tsv` | Enterprise totals, sector shares and legal-form splits where no machine-readable source exists |
 | name-generator surnames (dasmig) | MIT | Surnames by culture (decision 7) |
-| address-generator places (GeoNames) | CC BY 4.0 | Places for names |
+| address-generator places (GeoNames) | CC BY 4.0 | Places for names (22 capitals and large cities given their local names) |
+| id-generator code lists (Chinese counties and Thai provinces from Wikidata, CC0; Russian regions and Romanian counties curated, MIT) | CC0, MIT | Region codes inside Chinese, Russian, Romanian and Thai numbers |
+| email-generator's fold table (Unicode decomposition) | MIT | The ASCII form of names in domains |
 | country-generator (dasmig) | MIT | Countries, regions, income groups, ccTLDs |
 | The number survey (`designs/company-generator-numbers.tsv`, copied to `scripts/curated/survey_numbers.tsv`) | MIT | Every registration and tax number: structure, check, worked examples, sources per row |
 
-Only counts and word statistics are kept from the registers and GLEIF, never a name or a number of a real firm.
+Only counts and word statistics are kept from the registers and GLEIF, never a name or a number of a real firm (from the LEI golden copy, only the four-character issuer prefixes and their counts).
+
+python-stdnum (LGPL 2.1) checks the numbers in `scripts/check_numbers.py`; nothing of it is shipped or needed to build or use the library.
 
 ## Evidence
 
@@ -125,17 +131,26 @@ A year is picked by those weights, then a day inside it, never after the referen
 
 ### Name
 
-A pattern (founder, founder and trade, two founders, descriptive, coined, initials) from `patterns.tsv` by the name language, the group and the band; then the language's template for the pattern, filled with surnames, trade words of the division, adjectives, places and coined syllables from `words.tsv`, `surnames.tsv` and `places.tsv`; the legal form placed as the language's style says.
+The name language by the country's shares in `countries.tsv`. A pattern (founder, founder and trade, two founders, descriptive, coined, initials) from `patterns.tsv` by the language, the group and the band, among the patterns whose parts the language has; then the language's template for the pattern, filled with surnames, trade words of the division (else its section), adjectives, regions, places and coined syllables. Surnames are the language's own, else the country's culture's from `surnames.tsv`; a Latin-script name takes a non-Latin culture's surnames in their Latin form. Places are the language's own, else the country's from `places.tsv` (for Latin-script languages). Each part is drawn from its own stream, so a given `founder_surname` or `place` changes only that part; either is used only when its script fits the language.
+
+The legal form is written as `in_name` says where it is set (`ООО «…»`, `株式会社…` or `…株式会社`), else as its abbreviation, or its Latin abbreviation when the abbreviation's script does not fit the name, before or after the name as the language's style says. `short_name` is the name without the form.
 
 The trade words were read by hand: for English, French and Norwegian from the words most over-represented in each division's names in the register (lift of 3 or more, in 40 or more names), for the other 35 languages against GLEIF's most frequent words. Brands and place names were left out.
 
 ### Numbers
 
-Each country's schemes in `schemes.tsv`, held by the legal-form groups named in `groups` (a sole trader has no UK company number). Numbers that encode the company (Mexico's RFC its initials and date, India's CIN its year and form, Russia's OGRN its year and region, Spain's NIF its form, South Africa's its year and type) are built from it. Sequential numbers are drawn from their founding year's distribution in `anchors.tsv`. Safe numbers: a wrong check digit, a reserved range (the 17 EIN prefixes the IRS gives no campus), or a number above the highest issued; a scheme with none of these is left out in safe mode (decision 10).
+Each country's schemes in `schemes.tsv` (64 schemes), held by the legal-form groups named in `groups` (a sole trader has no UK company number) and in force at the founding date or the reference date (`from`, `until`). They are listed register first, then statistical, tax and VAT numbers, then the LEI.
+
+- **Generic schemes** draw the pattern's digits and compute the check (Luhn, GTIN, ISO 7064 mod 11,10 and mod 97-10, weighted sums with the scheme's rule, or a named algorithm such as Belgium's or Taiwan's).
+- **Built schemes** encode the company: Mexico's RFC its initials and founding date, India's CIN its listing, division, state, year and ownership, Russia's OGRN its year and region, Spain's NIF its form, Japan's corporate number its registry office and class, South Africa's its year and type, Korea's business number its tax office and type. Numbers that share a part share it: the SIREN in the SIRET and the TVA, the ACN in the ABN, the PAN in the GSTIN, the RSIN in the Dutch VAT number.
+- **Sequential numbers** (UK company numbers, Irish CRO, Polish KRS, Nigerian RC and BN, South African and German register numbers) are drawn from their founding year's distribution in `anchors.tsv`, interpolated between quantiles, or from a curve between the first year and the highest issued.
+- **The LEI** goes to firms with 250 or more persons or in section K (decision 9), never to sole traders; its prefix is an issuer of the country's LEIs, by their counts.
+
+Safe numbers: a wrong check digit, a reserved range (the 17 EIN prefixes the IRS gives no campus; the LEI prefix `ZZZZ`, which no issuer has), or a number above the highest issued. A scheme with none of these is left out in safe mode (decision 10): the German, Austrian and Dutch register numbers, India's CIN and PAN, and Egypt's and Kenya's tax numbers. Safe numbers are marked `reserved`.
 
 ### Domain
 
-The name's Latin form, lower-cased, with a TLD from `domains.tsv`; a firm has none at the rate of `no_domain_<band>` in `countries.tsv`. Safe mode uses `.example` (RFC 2606).
+Every company has a domain (decision 8): the name's Latin form without the legal form, folded to ASCII (German ä, ö and ü as ae, oe and ue; the rest by `fold.tsv`), as one word or with hyphens (a quarter of firms), cut to whole words within 24 characters and not ending on a word of one or two letters, with a TLD from `domains.tsv`. Safe mode uses `.example` (RFC 2606). The `no_domain_<band>` columns of `countries.tsv` are kept but not used.
 
 ## Curated Estimates
 
@@ -150,6 +165,8 @@ These are set by hand and not measured; each file says so:
 
 `scripts/validate_company.py` builds `scripts/draw_companies.cpp`, draws 20,000 companies per country on both tiers and both weightings (16 million in all), and compares them with the tables by recomputing, independently of the engine, what the counts should be: the shares of the 19 sections, the four size bands, the mean head count of the finite bands, the four legal-form groups (from `groups.tsv`, `form_odds.tsv` and the forms open on 2025-07-01) and the share of firms up to five years old where Eurostat measures it. Each comparison is a z test at 5 standard errors. All 199 countries pass on both tiers (2026-11-11). This checks that the engine draws what the tables say; it does not check the tables against the world, which `check_company.py` and the sources do.
 
+`scripts/check_numbers.py` builds `scripts/draw_numbers.cpp`, draws at least 100,000 numbers of every scheme with safe mode off and on (the LEI pooled over the countries) and checks each with python-stdnum: real numbers must pass and not be marked reserved; safe numbers must be marked reserved and fail stdnum (a wrong check), carry a reserved prefix, or lie above the highest issued. It also checks that an RFC's date is the founding date and a Japanese corporate number's class is one the scheme lists. Seven schemes stdnum lacks are checked by their structure, and Korea's business number also by its check digit, which stdnum does not test. All 126 scheme and mode pairs pass (2026-11-11). The tests check the number survey's worked examples with `is_valid`.
+
 ## Rebuilding the Data
 
 ```
@@ -157,10 +174,12 @@ python scripts/fetch_raw.py          # downloads to raw_data/ (about 2.5 GB, not
 python scripts/read_sources.py       # Eurostat, SDBS, ILOSTAT, US: raw_data/work/stats.json
 python scripts/read_registers.py     # UK, FR, NO registers and GLEIF: counts and word statistics
 python scripts/read_anchors.py       # issue anchors of sequential numbers
+python scripts/read_lei.py           # GLEIF golden copy: the issuer prefixes of each country's LEIs
 python scripts/prepare_words.py      # checks the word lists
 python scripts/prepare_tables.py     # writes resources/full and resources/lite
 python scripts/check_company.py      # checks both tiers, prints the coverage
 python scripts/validate_company.py   # draws from both tiers and compares with the tables (needs a C++23 compiler)
+python scripts/check_numbers.py      # checks 100,000 numbers per scheme with python-stdnum (pip install python-stdnum)
 python scripts/embed.py resources --tier lite --name companygen --output dasmig/companygen_data.hpp
 ```
 
@@ -171,5 +190,6 @@ A rebuild from the same downloads is byte-identical (also under a random `PYTHON
 - **Names may exist.** A name made of a common surname and a trade word ("Müller Bau GmbH") surely belongs to a real firm somewhere. Safe mode changes numbers and domains, not names; nothing in the data can rule a name out without shipping the registers.
 - **Size outside the OECD** is the subregion's pooled distribution for most countries (82% of the population).
 - **Legal forms outside Europe** come from an overall split and Europe's odds by section and size; within groups from LEI counts, which over-represent large firms (damped, not removed).
-- **Some places** are GeoNames' English names ("Munich" beside "Köln").
-- **Number code lists** some builders need (German courts, Chinese counties, Japanese registry offices, Korean tax offices, Russian regions, Vietnamese provinces, Indian states) are still to be added (`TBD` in `scripts/curated/schemes.tsv`); until then those parts are drawn from their patterns.
+- **Some code ranges are estimated.** The highest Nigerian RC and BN numbers and the block numbering of some German register courts are estimated from published examples, not read from a register. Japanese registry offices, Korean tax offices, Vietnamese provinces and Indonesian tax offices are drawn from ranges, not from lists of the codes in use.
+- **A number can be held.** Outside safe mode a number passes its check and lies in the issued range, so it may belong to a real firm. Use safe mode for anything that leaves a test environment.
+- **Name grammar is simple.** Templates join words without inflection: German names avoid adjectival place forms ("Münchner") rather than build them, and a German sole trader can still be "& Co.", which a register would refuse as misleading.

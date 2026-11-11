@@ -1,17 +1,18 @@
 # German business-name words (curated 2026-11-10), checked against the words GLEIF's German,
 # Austrian and Swiss names use most. German compounds trade words with the founder's name
 # (Bäckerei Hoffmann, Hoffmann Bau) and with places (Bauunternehmen Nord). Columns as in en.tsv.
+# "Partner" is left out: since 1995 only a Partnerschaftsgesellschaft may use it (§ 11 PartGG).
 kind	key	value
 style	script	Latn
 style	form_position	suffix
 template	founder	{surname}:2;{surname} {family}:1
 template	founder_trade	{trade} {surname}:2;{surname} {trade}:2
 template	two_founders	{surname} {joiner} {surname2}:1
-template	descriptive	{trade} {region}:1;{place}er {trade}:1;{trade} {place}:2;{adjective} {trade}:1
+template	descriptive	{trade} {region}:1;{trade} {place}:3;{adjective} {trade}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;+;und
-family	*	& Söhne;& Sohn;& Co.;+ Partner;& Partner;Gebrüder
+family	*	& Söhne;& Sohn;& Co.;Gebrüder
 adjective	*	Neue;Deutsche;Moderne;Allgemeine;Vereinigte;Erste;Profi;Premium;Euro;Inter;Top;Pro;Mega;Plus;Express;Alpen;Nord;Süd;Rhein;Elbe;Blau;Grün;Gold;Stern;Adler;Phönix;Kristall;Sonnen;Berg;Wald
 region	*	Nord;Süd;Ost;West;Mitte;Rhein-Main;Rheinland;Ruhr;Bayern;Franken;Schwaben;Sachsen;Nordsee;Ostsee;Alpen;Allgäu;Bodensee;Harz
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Nex;Ori;Sol;Dyn;Gen;Hel;Kin;Lin;Mar;Neo;Opt;Pro;Ren;Syn;Tec;Ul;Vit;Wen;Zen;Bra;Fal;Hor
@@ -77,7 +78,7 @@ trade	65	Versicherung;Versicherungen;Lebensversicherung
 trade	66	Finanzberatung;Versicherungsmakler;Vermögensberatung;Finanzservice
 trade	68	Immobilien;Grundbesitz;Hausverwaltung;Vermietung;Wohnbau;Verwaltungs
 trade	69	Steuerberatung;Rechtsanwälte;Kanzlei;Wirtschaftsprüfung;Treuhand;Buchhaltung
-trade	70	Consulting;Unternehmensberatung;Management;Beratung;Partner
+trade	70	Consulting;Unternehmensberatung;Management;Beratung
 trade	71	Ingenieurbüro;Architekten;Planung;Vermessung;Ingenieure;Prüftechnik
 trade	72	Forschung;Labor;Biotech;Institut;Innovation
 trade	73	Werbeagentur;Marketing;Kommunikation;Medien;Werbung;Agentur

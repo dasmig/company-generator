@@ -148,10 +148,9 @@ CM	cm	0.25
 CM	net	0.04
 CM	org	0.04
 CN	com	0.38
-CN	cn	0.35
+CN	cn	0.37
 CN	com.cn	0.2
 CN	net	0.05
-CN	中国	0.02
 CO	com.co	0.45
 CO	com	0.39
 CO	co	0.12
@@ -619,9 +618,8 @@ RS	rs	0.62
 RS	com	0.3
 RS	net	0.04
 RS	org	0.04
-RU	ru	0.72
+RU	ru	0.77
 RU	com	0.18
-RU	рф	0.05
 RU	net	0.03
 RU	org	0.02
 RW	com	0.67

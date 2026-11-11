@@ -12,7 +12,7 @@ style	form_position	suffix
 template	founder	{surname}:3;{surname} {family}:1
 template	founder_trade	{surname} {trade}:1
 template	two_founders	{surname} {joiner} {surname2}:1
-template	descriptive	{region} {trade}:2;{adjective} {trade}:2;{place} {trade}:2;{trade} {region}:0.5
+template	descriptive	{region} {trade}:2;{adjective} {trade}:2;{place} {trade}:2
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;and

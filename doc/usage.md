@@ -2,8 +2,6 @@
 
 This guide covers every feature of the company-generator library. For a quick overview, see the [README](../README.md); for the sources and the model behind the data, see [Data and Method](data.md). For the full API reference, run `doxygen Doxyfile` from the repository root and open `doc/api/html/index.html`.
 
-> **Status.** The industry, size, head count, legal form and founding date are drawn (this version). The name, registration numbers and domain follow in the next milestone; until then `name`, `short_name`, `numbers` and `domain` are empty, and `safe`, `founder_surname` and `place` in the request have no effect.
-
 [TOC]
 
 <!-- GitHub-rendered TOC (Doxygen uses [TOC] above instead) -->
@@ -14,6 +12,8 @@ This guide covers every feature of the company-generator library. For a quick ov
 <li><a href="#generating">Generating</a></li>
 <li><a href="#forcing-fields">Forcing Fields</a></li>
 <li><a href="#weighting">Weighting</a></li>
+<li><a href="#names-numbers-and-domains">Names, Numbers and Domains</a></li>
+<li><a href="#safe-mode">Safe Mode</a></li>
 <li><a href="#evidence">Evidence</a></li>
 <li><a href="#seeding-and-deterministic-generation">Seeding and Deterministic Generation</a></li>
 <li><a href="#extending-data">Extending Data</a></li>
@@ -34,7 +34,7 @@ int main()
 {
     auto& gen = dasmig::cpg::instance();
     std::cout << gen.get_company(dasmig::company_request{}) << '\n';
-    // DE, GmbH, specialized construction activities (43), 8 persons, founded 2011-03-14
+    // DE, Fotografie Schmidt e. K., other professional, scientific and technical activities (74), 2 persons, founded 2021-09-06
 }
 ```
 
@@ -55,7 +55,7 @@ gen.countries();  // the 199 countries served
 gen.divisions();  // the 85 ISIC Rev. 4 divisions
 ```
 
-Each `load` replaces the data and every layer loaded before. The data is 16 tables; see [Data and Method](data.md).
+Each `load` replaces the data and every layer loaded before. The data is 18 tables; see [Data and Method](data.md).
 
 ## Generating
 
@@ -64,6 +64,8 @@ auto c = gen.get_company(dasmig::company_request{});      // draws a seed from t
 auto d = gen.get_company(dasmig::company_request{}, 1234); // deterministic; does not touch the engine
 
 c.country_code;      // "DE"
+c.name;              // "Fotografie Schmidt e. K."
+c.short_name;        // "Fotografie Schmidt", the name without the legal form
 c.isic;              // "43", the ISIC Rev. 4 division
 c.isic_label;        // "specialized construction activities"
 c.isic_section;      // 'F'
@@ -73,10 +75,12 @@ c.legal_form;        // "GmbH" (the local name when the form has no abbreviation
 c.legal_form_code;   // "2HBR", ISO 20275; empty for forms the standard lacks
 c.legal_form_group;  // "limited_liability"
 c.founded;           // std::chrono::year_month_day
+c.numbers;           // registration, tax and VAT numbers, then the LEI
+c.domain;            // "fotografieschmidt.com"
 c.evidence;          // "measured", "modelled" or "filled"
 ```
 
-Fields are drawn in turn, each conditioned on the ones before: country, industry, size band and head count, legal form, founding date. The industry, size and legal form follow the country's own statistics where it has them (Europe, the US and the OECD), else the subregion's. A company is a registered business: most of the world's informal trade is not in the counts (see [Known Limitations](data.md#known-limitations)).
+Fields are drawn in turn, each conditioned on the ones before: country, industry, size band and head count, legal form, founding date, then the name, numbers and domain. The industry, size and legal form follow the country's own statistics where it has them (Europe, the US and the OECD), else the subregion's. A company is a registered business: most of the world's informal trade is not in the counts (see [Known Limitations](data.md#known-limitations)).
 
 Queries:
 
@@ -100,7 +104,7 @@ r.incorporated_only = true;               // no sole traders or partnerships
 r.reference_date = std::chrono::year{2010} / 1 / 1; // bounds the founding date; default 2025-07-01
 ```
 
-- `legal_form` is checked against the country's forms (`legal_forms()`) and against the reference date: the German Unternehmergesellschaft ("GmbH UG") is not yet in force before 2008-11-01.
+- `legal_form` is checked against the country's forms (`legal_forms()`) and against the reference date: the German Unternehmergesellschaft ("UG (haftungsbeschränkt)") is not yet in force before 2008-11-01.
 - A form has the dates it was open to new firms (`from`, `until`) and the industries it is barred from or reserved to (a sole trader cannot be a bank). The founding date and the industry respect them; a request that no company can meet (a forced "e. K." in division 64) throws rather than drawing something else.
 - The founding date is bounded by the reference date and by the form's dates; ages follow the country's own distribution, or the US's shape scaled to the country's share of firms up to five years old.
 
@@ -115,6 +119,62 @@ r.reference_date = std::chrono::year{2010} / 1 / 1; // bounds the founding date;
 
 `weighted = false` draws countries uniformly; the rest still follows the data.
 
+## Names, Numbers and Domains
+
+The name is written in one of the country's business-name languages, in its script, from a pattern that fits the legal form and size: a founder ("Weber e. K."), a founder and a trade ("Fotografie Schmidt"), two founders, a descriptive name ("Logística Culiacán S. A. de C. V."), a coined name ("Korion Bau GmbH") or initials. The legal form is written the way the country writes it in names (`ООО «СтройМаркет»`, `株式会社渡辺商店`, `PT Nusantara Mitra Apotek`).
+
+```cpp
+dasmig::company_request r;
+r.country = "DE";
+r.founder_surname = "Hoffmann";  // e.g. from name-generator
+r.place = "Bremen";              // e.g. from city-generator
+for (std::uint64_t s = 0; s < 12; ++s) gen.get_company(r, s).name;
+// "Hoffmann Energie GmbH", "Finanzberatung Bremen GmbH", "Hausverwaltung Hoffmann GbR", "Hoffmann & Sohn e. K.", ...
+```
+
+`founder_surname` and `place` fill the parts of the name that take a surname or a place; a name without such a part ignores them, and so does a name whose script does not fit (a Latin surname is not put in a Japanese name). They change only those parts: the other fields and draws stay the same.
+
+`numbers` lists the numbers a company of its form holds, the register's first, then statistical, tax and VAT numbers, then the LEI:
+
+```cpp
+for (const auto& n : c.numbers)
+{
+    n.scheme;   // "de-hrn", "de-ustid", "lei"
+    n.label;    // "HR", "USt-IdNr.", "LEI"
+    n.value;    // "Amtsgericht Coburg HRA 2106", "DE296418722", as printed
+    n.compact;  // "Coburg HRA 2106", "DE296418722": digits and letters
+    n.reserved; // true in safe mode
+}
+gen.is_valid("de-ustid", "DE296418722"); // checks a number's structure and check digits
+```
+
+- A number passes its scheme's check and encodes what the scheme encodes: a Mexican RFC holds the founding date, a French SIRET and TVA hold the SIREN, an Indian GSTIN holds the PAN, an Indian CIN holds the division, state and year.
+- Sequential numbers (UK company numbers, Polish KRS, ...) follow the founding year: an old firm has a low number.
+- Schemes apply to the legal-form groups that hold them (a sole trader has no UK company number) and from the dates they began.
+- An LEI is given to firms with 250 or more persons or in finance (section K), never to sole traders.
+- `is_valid(scheme, number)` accepts the printed or the compact form; it throws `std::invalid_argument` for an unknown scheme. The 64 schemes are in `resources/*/schemes.tsv`.
+- A country without schemes has no numbers (`evidence(country).numbers` is `"none"`).
+
+`domain` is the name's Latin form folded to ASCII (`ü` as `ue` in German), with the country's usual TLD. Every company has one.
+
+## Safe Mode
+
+```cpp
+dasmig::company_request r;
+r.country = "DE";
+r.safe = true;
+auto c = gen.get_company(r, 14); // "Korion Bau GmbH": the same name, form and dates as without safe
+c.domain;                        // "korionbau.example"
+c.numbers[0].reserved;           // true
+```
+
+`safe` gives numbers and domains no company holds, for data that may leave a test environment:
+
+- Domains end in `.example` (RFC 2606).
+- A number has a wrong check digit, a prefix no issuer uses (an EIN prefix the IRS gives no campus, the LEI prefix `ZZZZ`), or is above the highest number issued. It is marked `reserved`, and `is_valid` rejects the ones with a wrong check.
+- A scheme with none of these safe methods is left out (the German, Austrian and Dutch register numbers, India's CIN and PAN, Egypt's and Kenya's tax numbers).
+- The name, industry, size, form and dates do not change. A name can still belong to a real firm; nothing rules that out (see [Known Limitations](data.md#known-limitations)).
+
 ## Evidence
 
 Each field of a country's data has a level, and every company carries the weakest of the fields it drew:
@@ -125,14 +185,14 @@ Each field of a country's data has a level, and every company carries the weakes
 | `modelled` | derived: employment by activity with the subregion's enterprises per worker, curated shares, GLEIF's legal-form counts |
 | `filled` | the subregion's or the pooled default |
 
-`evidence(country)` lists the level of the industry, size, legal form, age and domain data. Treat `filled` as plausible, not measured. Coverage by field is in [Data and Method](data.md#coverage).
+`evidence(country)` lists the level of the industry, size, legal form, age, name, numbers and domain data (`numbers` is `"none"` for a country with no schemes). Treat `filled` as plausible, not measured. Coverage by field is in [Data and Method](data.md#coverage).
 
 ## Seeding and Deterministic Generation
 
 - `get_company(request, seed)` gives the same result for the same request, seed and data, on every platform, without advancing the instance engine.
 - `get_company(request)` draws a fresh seed from the instance engine, initially seeded from system entropy. There are no generator-level `seed()` or `unseed()` controls; for deterministic sequences, keep a `dasmig::core::rng` in the caller and pass its next value as the seed.
 - `c.seed()` is the seed a result was generated from: `get_company(request, c.seed())` replays it with the same request and data.
-- The call seed splits into the streams `country`, `industry`, `size`, `employees`, `form` and `founded`. Forcing the country or the division to the value that would have been drawn changes nothing else; forcing a size or a legal form can move the draws after it, because they are conditioned on it.
+- The call seed splits into the streams `country`, `industry`, `size`, `employees`, `form`, `founded`, `name` (one split per part of the name), `numbers` (one split per scheme), `domain` and `lei`. Forcing the country or the division to the value that would have been drawn changes nothing else; forcing a size or a legal form can move the draws after it, because they are conditioned on it. Safe mode changes only the numbers and the domain.
 
 ## Extending Data
 
@@ -213,5 +273,5 @@ gen.for_each_company(request, {.count = 1'000'000, .threads = 0}, 42, lines);
 | Exception | When |
 |-----------|------|
 | `std::runtime_error` | Any generation or query call before data is loaded |
-| `std::invalid_argument` | An unknown country or ISIC code; a legal form the country does not have, not yet in force at the reference date, or not incorporated with `incorporated_only`; a head count of 0 or outside the forced band; `occupation_isco` that is not ISCO-08; a reference date that is invalid or outside 1900 to 2100; a request no company can meet (a forced form barred from the forced industry); tables that do not fit together after a layer |
+| `std::invalid_argument` | An unknown country, ISIC code or number scheme (`is_valid`); a legal form the country does not have, not yet in force at the reference date, or not incorporated with `incorporated_only`; a head count of 0 or outside the forced band; `occupation_isco` that is not ISCO-08; a reference date that is invalid or outside 1900 to 2100; a request no company can meet (a forced form barred from the forced industry); tables that do not fit together after a layer |
 | `dasmig::core::tsv_error` | A malformed table or layer (message gives file, line and column); the data is unchanged |

@@ -25,7 +25,7 @@ DK	cc:0.75;com:0.2;net:0.02;eu:0.03
 SE	cc:0.65;com:0.3;net:0.02;eu:0.03
 NO	cc:0.78;com:0.18;net:0.02;org:0.02
 FI	cc:0.72;com:0.23;net:0.02;eu:0.03
-RU	cc:0.72;com:0.18;рф:0.05;net:0.03;org:0.02	.рф holds about 0.7M names beside .ru's 5M
+RU	cc:0.77;com:0.18;net:0.03;org:0.02	.ru holds about 5M names; .рф (0.7M) is left out, since domains are built in Latin letters
 UA	com.ua:0.45;cc:0.15;com:0.32;net:0.04;org:0.04
 US	com:0.82;net:0.05;org:0.06;us:0.03;biz:0.02;co:0.02	.com is the American default
 CA	cc:0.48;com:0.45;net:0.03;org:0.04	CIRA: 3.3M .ca names
@@ -33,7 +33,7 @@ AU	com.au:0.72;net.au:0.05;com:0.18;org.au:0.03;au:0.02	auDA: 4.2M names, mostly
 NZ	co.nz:0.65;nz:0.07;com:0.24;org.nz:0.04
 JP	co.jp:0.42;cc:0.18;com:0.32;net:0.05;or.jp:0.03	JPRS: .co.jp is one per registered company
 KR	co.kr:0.35;cc:0.15;com:0.43;net:0.04;or.kr:0.03
-CN	cc:0.35;com.cn:0.2;com:0.38;net:0.05;中国:0.02	CNNIC: 20M .cn names
+CN	cc:0.37;com.cn:0.2;com:0.38;net:0.05	CNNIC: 20M .cn names; .中国 is left out, since domains are built in Latin letters
 TW	com.tw:0.55;cc:0.08;com:0.33;net:0.04
 HK	com.hk:0.4;cc:0.15;com:0.41;net:0.04
 SG	com.sg:0.45;cc:0.1;com:0.41;net:0.04

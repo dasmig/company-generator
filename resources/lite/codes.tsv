@@ -1,0 +1,1458 @@
+# code lists the number builders draw from: Indian states, Hungarian tax directorates and German register courts (curated, scripts/curated/codes.tsv), Chinese counties, Russian regions, Romanian counties and Thai provinces (copied from id-generator), and the issuers (LOU prefixes) of each country's active LEIs (GLEIF golden copy, CC0; * pools every country); weight relative (lite: the 300 most populous Chinese counties, at most 4 issuers a country)
+list	code	label	weight	extra
+in-state	01	Jammu and Kashmir	0.6	JK
+in-state	02	Himachal Pradesh	0.6	HP
+in-state	03	Punjab	2	PB
+in-state	04	Chandigarh	0.5	CH
+in-state	05	Uttarakhand	0.8	UR
+in-state	06	Haryana	3.5	HR
+in-state	07	Delhi	15	DL
+in-state	08	Rajasthan	3.5	RJ
+in-state	09	Uttar Pradesh	6	UP
+in-state	10	Bihar	2.5	BR
+in-state	11	Sikkim	0.05	SK
+in-state	12	Arunachal Pradesh	0.05	AR
+in-state	13	Nagaland	0.05	NL
+in-state	14	Manipur	0.1	MN
+in-state	15	Mizoram	0.05	MZ
+in-state	16	Tripura	0.1	TR
+in-state	17	Meghalaya	0.1	ML
+in-state	18	Assam	0.8	AS
+in-state	19	West Bengal	7	WB
+in-state	20	Jharkhand	1	JH
+in-state	21	Odisha	1.5	OR
+in-state	22	Chhattisgarh	0.8	CT
+in-state	23	Madhya Pradesh	2.5	MP
+in-state	24	Gujarat	6	GJ
+in-state	26	Dadra and Nagar Haveli and Daman and Diu	0.1	DN
+in-state	27	Maharashtra	19	MH
+in-state	29	Karnataka	8	KA
+in-state	30	Goa	0.4	GA
+in-state	32	Kerala	2.5	KL
+in-state	33	Tamil Nadu	7	TN
+in-state	34	Puducherry	0.2	PY
+in-state	35	Andaman and Nicobar Islands	0.02	AN
+in-state	36	Telangana	5	TG
+in-state	37	Andhra Pradesh	2.5	AP
+hu-county	02	Baranya	3	
+hu-county	03	Bács-Kiskun	5	
+hu-county	04	Békés	3	
+hu-county	05	Borsod-Abaúj-Zemplén	5	
+hu-county	06	Csongrád-Csanád	4	
+hu-county	07	Fejér	4	
+hu-county	08	Győr-Moson-Sopron	5	
+hu-county	09	Hajdú-Bihar	5	
+hu-county	10	Heves	3	
+hu-county	11	Komárom-Esztergom	3	
+hu-county	12	Nógrád	1.5	
+hu-county	13	Pest	13	
+hu-county	14	Somogy	3	
+hu-county	15	Szabolcs-Szatmár-Bereg	4	
+hu-county	16	Jász-Nagykun-Szolnok	3	
+hu-county	17	Tolna	2	
+hu-county	18	Vas	2.5	
+hu-county	19	Veszprém	3.5	
+hu-county	20	Zala	3	
+hu-county	41	Budapest (Észak-budapesti)	8	
+hu-county	42	Budapest (Kelet-budapesti)	8	
+hu-county	43	Budapest (Dél-budapesti)	8	
+hu-county	44	Budapest (Kelet-budapesti II)	4	
+hu-county	51	Kiemelt Adózók Adóigazgatósága	0.3	
+de-court	Freiburg	Amtsgericht Freiburg	4	700001-720000
+de-court	Mannheim	Amtsgericht Mannheim	5	700001-740000
+de-court	Stuttgart	Amtsgericht Stuttgart	9	700001-790000
+de-court	Ulm	Amtsgericht Ulm	3.5	700001-740000
+de-court	Amberg	Amtsgericht Amberg	0.6	6000
+de-court	Ansbach	Amtsgericht Ansbach	0.8	8000
+de-court	Aschaffenburg	Amtsgericht Aschaffenburg	0.8	16000
+de-court	Augsburg	Amtsgericht Augsburg	2	37000
+de-court	Bamberg	Amtsgericht Bamberg	0.8	10000
+de-court	Bayreuth	Amtsgericht Bayreuth	0.6	7000
+de-court	Coburg	Amtsgericht Coburg	0.5	6000
+de-court	Fürth	Amtsgericht Fürth	1	20000
+de-court	Hof	Amtsgericht Hof	0.5	6000
+de-court	Ingolstadt	Amtsgericht Ingolstadt	1	11000
+de-court	Kempten	Amtsgericht Kempten (Allgäu)	1	16000
+de-court	Landshut	Amtsgericht Landshut	1	13000
+de-court	Memmingen	Amtsgericht Memmingen	0.8	20000
+de-court	München	Amtsgericht München	8	295000
+de-court	Nürnberg	Amtsgericht Nürnberg	3	42000
+de-court	Passau	Amtsgericht Passau	0.8	12000
+de-court	Regensburg	Amtsgericht Regensburg	1.2	20000
+de-court	Schweinfurt	Amtsgericht Schweinfurt	0.6	8000
+de-court	Straubing	Amtsgericht Straubing	0.5	5000
+de-court	Traunstein	Amtsgericht Traunstein	1	30000
+de-court	Weiden	Amtsgericht Weiden i. d. OPf.	0.4	5000
+de-court	Würzburg	Amtsgericht Würzburg	1	15000
+de-court	Charlottenburg	Amtsgericht Charlottenburg (Berlin)	9	270000
+de-court	Cottbus	Amtsgericht Cottbus	0.8	20000
+de-court	Frankfurt (Oder)	Amtsgericht Frankfurt (Oder)	0.8	18000
+de-court	Neuruppin	Amtsgericht Neuruppin	0.8	14000
+de-court	Potsdam	Amtsgericht Potsdam	1.5	38000
+de-court	Bremen	Amtsgericht Bremen	1.5	38000
+de-court	Hamburg	Amtsgericht Hamburg	6	190000
+de-court	Bad Homburg	Amtsgericht Bad Homburg v.d.H.	0.8	17000
+de-court	Darmstadt	Amtsgericht Darmstadt	2	105000
+de-court	Frankfurt am Main	Amtsgericht Frankfurt am Main	5	135000
+de-court	Friedberg	Amtsgericht Friedberg (Hessen)	0.6	9000
+de-court	Fulda	Amtsgericht Fulda	0.5	8000
+de-court	Gießen	Amtsgericht Gießen	0.7	11000
+de-court	Hanau	Amtsgericht Hanau	0.8	99000
+de-court	Kassel	Amtsgericht Kassel	1	19000
+de-court	Königstein	Amtsgericht Königstein im Taunus	0.5	10000
+de-court	Limburg	Amtsgericht Limburg a. d. Lahn	0.4	7000
+de-court	Marburg	Amtsgericht Marburg	0.4	7000
+de-court	Offenbach am Main	Amtsgericht Offenbach am Main	1	52000
+de-court	Wetzlar	Amtsgericht Wetzlar	0.4	9000
+de-court	Wiesbaden	Amtsgericht Wiesbaden	1	33000
+de-court	Neubrandenburg	Amtsgericht Neubrandenburg	0.4	8000
+de-court	Rostock	Amtsgericht Rostock	0.7	15000
+de-court	Schwerin	Amtsgericht Schwerin	0.5	13000
+de-court	Stralsund	Amtsgericht Stralsund	0.4	8000
+de-court	Aurich	Amtsgericht Aurich	0.6	200001-210000
+de-court	Braunschweig	Amtsgericht Braunschweig	1.2	200001-208000
+de-court	Göttingen	Amtsgericht Göttingen	0.8	200001-208000
+de-court	Hannover	Amtsgericht Hannover	2.5	200001-230000
+de-court	Hildesheim	Amtsgericht Hildesheim	0.8	200001-206000
+de-court	Lüneburg	Amtsgericht Lüneburg	1.2	200001-210000
+de-court	Oldenburg	Amtsgericht Oldenburg (Oldenburg)	1.5	200001-220000
+de-court	Osnabrück	Amtsgericht Osnabrück	1.2	200001-219000
+de-court	Tostedt	Amtsgericht Tostedt	1.2	200001-209000
+de-court	Walsrode	Amtsgericht Walsrode	0.6	200001-206000
+de-court	Aachen	Amtsgericht Aachen	1.2	26000
+de-court	Arnsberg	Amtsgericht Arnsberg	0.7	13000
+de-court	Bad Oeynhausen	Amtsgericht Bad Oeynhausen	0.7	17000
+de-court	Bielefeld	Amtsgericht Bielefeld	1	45000
+de-court	Bochum	Amtsgericht Bochum	0.8	20000
+de-court	Bonn	Amtsgericht Bonn	1.2	26000
+de-court	Coesfeld	Amtsgericht Coesfeld	0.6	20000
+de-court	Dortmund	Amtsgericht Dortmund	1.5	34000
+de-court	Duisburg	Amtsgericht Duisburg	1	36000
+de-court	Düren	Amtsgericht Düren	0.5	8000
+de-court	Düsseldorf	Amtsgericht Düsseldorf	3.5	105000
+de-court	Essen	Amtsgericht Essen	1.5	34000
+de-court	Gelsenkirchen	Amtsgericht Gelsenkirchen	0.6	15000
+de-court	Gütersloh	Amtsgericht Gütersloh	0.7	12000
+de-court	Hagen	Amtsgericht Hagen	0.6	11000
+de-court	Hamm	Amtsgericht Hamm	0.5	10000
+de-court	Iserlohn	Amtsgericht Iserlohn	0.6	9000
+de-court	Kleve	Amtsgericht Kleve	0.6	17000
+de-court	Köln	Amtsgericht Köln	4	115000
+de-court	Krefeld	Amtsgericht Krefeld	0.7	18000
+de-court	Lemgo	Amtsgericht Lemgo	0.5	9000
+de-court	Mönchengladbach	Amtsgericht Mönchengladbach	0.6	22000
+de-court	Münster	Amtsgericht Münster	1	21000
+de-court	Neuss	Amtsgericht Neuss	0.8	23000
+de-court	Paderborn	Amtsgericht Paderborn	0.6	14000
+de-court	Recklinghausen	Amtsgericht Recklinghausen	0.7	10000
+de-court	Siegburg	Amtsgericht Siegburg	0.8	17000
+de-court	Siegen	Amtsgericht Siegen	0.6	12000
+de-court	Steinfurt	Amtsgericht Steinfurt	0.7	14000
+de-court	Wuppertal	Amtsgericht Wuppertal	1	31000
+de-court	Bad Kreuznach	Amtsgericht Bad Kreuznach	0.4	22000
+de-court	Kaiserslautern	Amtsgericht Kaiserslautern	0.5	33000
+de-court	Koblenz	Amtsgericht Koblenz	1	27000
+de-court	Landau	Amtsgericht Landau in der Pfalz	0.5	32000
+de-court	Ludwigshafen	Amtsgericht Ludwigshafen a. Rhein	0.7	67000
+de-court	Mainz	Amtsgericht Mainz	1	50000
+de-court	Montabaur	Amtsgericht Montabaur	0.6	26000
+de-court	Wittlich	Amtsgericht Wittlich	0.5	42000
+de-court	Zweibrücken	Amtsgericht Zweibrücken	0.3	31000
+de-court	Saarbrücken	Amtsgericht Saarbrücken	1.2	110000
+de-court	Chemnitz	Amtsgericht Chemnitz	1.5	34000
+de-court	Dresden	Amtsgericht Dresden	2	44000
+de-court	Leipzig	Amtsgericht Leipzig	1.8	42000
+de-court	Stendal	Amtsgericht Stendal	1.5	36000
+de-court	Flensburg	Amtsgericht Flensburg	0.6	16000
+de-court	Kiel	Amtsgericht Kiel	1.2	26000
+de-court	Lübeck	Amtsgericht Lübeck	1	22000
+de-court	Pinneberg	Amtsgericht Pinneberg	1	20000
+de-court	Jena	Amtsgericht Jena	1.6	500001-521000
+cn-county	110102	Xicheng District	1240000	
+cn-county	110105	Chaoyang District	3920000	
+cn-county	110106	Fengtai District	2300000	
+cn-county	110108	Haidian District	3130000	
+cn-county	110111	Fangshan District	1310000	
+cn-county	110112	Tongzhou District	1840000	
+cn-county	110113	Shunyi District	1320000	
+cn-county	110114	Changping District	2270000	
+cn-county	110115	Daxing District	1990000	
+cn-county	120111	Xiqing District	1180000	
+cn-county	120114	Wuqing District	1150000	
+cn-county	120116	Binhai New Area	1970000	
+cn-county	130102	Chang'an District	1060000	
+cn-county	130104	Qiaoxi District	980000	
+cn-county	130302	Haigang District	1020000	
+cn-county	130408	Yongnian District	1020000	
+cn-county	130682	Dingzhou	1170000	
+cn-county	140105	Xiaodian District	1140000	
+cn-county	140213	Pingcheng District	1100000	
+cn-county	210106	Tiexi District	1340000	
+cn-county	210114	Yuhong District	1070000	
+cn-county	210211	Ganjingzi District	1800000	
+cn-county	210213	Jinzhou District	1550000	
+cn-county	210281	Wafangdian	1020000	
+cn-county	210381	Haicheng	1290000	
+cn-county	220122	Nong'an County	1110000	
+cn-county	220182	Yushu	1300000	
+cn-county	220184	Gongzhuling	1090000	
+cn-county	230102	Daoli District	1100000	
+cn-county	230103	Nangang District	1390000	
+cn-county	230110	Xiangfang District	1120000	
+cn-county	231282	Zhaodong	980000	
+cn-county	310104	Xuhui District	1110000	
+cn-county	310106	Jing'an District	976000	
+cn-county	310107	Putuo District	1240000	
+cn-county	310110	Yangpu District	1240000	
+cn-county	310112	Minhang District	2650000	
+cn-county	310113	Baoshan District	2240000	
+cn-county	310114	Jiading	1830000	
+cn-county	310115	Pudong	5680000	
+cn-county	310117	Songjiang	1910000	
+cn-county	310118	Qingpu	1270000	
+cn-county	310120	Fengxian District	1140000	
+cn-county	320111	Pukou District	1170000	
+cn-county	320113	Qixia District	988000	
+cn-county	320115	Jiangning District	1930000	
+cn-county	320213	Liangxi District	985000	
+cn-county	320281	Jiangyin	1290000	
+cn-county	320282	Yixing	1290000	
+cn-county	320312	Tongshan District	1240000	
+cn-county	320322	Pei County	1040000	
+cn-county	320324	Suining County	1090000	
+cn-county	320381	Xinyi	970000	
+cn-county	320382	Pizhou	1460000	
+cn-county	320412	Wujin District	1700000	
+cn-county	320506	Wuzhong District	1390000	
+cn-county	320509	Wujiang District	1550000	
+cn-county	320581	Changshu	1680000	
+cn-county	320582	Zhangjiagang	1430000	
+cn-county	320583	Kunshan	2090000	
+cn-county	320612	Tongzhou District	1260000	
+cn-county	320614	Haimen District	992000	
+cn-county	320623	Rudong County	996000	
+cn-county	320682	Rugao	1240000	
+cn-county	320707	Ganyu District	1000000	
+cn-county	320722	Donghai County	1050000	
+cn-county	321012	Jiangdu District	1020000	
+cn-county	321181	Danyang	989000	
+cn-county	321281	Xinghua	1130000	
+cn-county	321283	Taixing	994000	
+cn-county	321322	Shuyang County	1670000	
+cn-county	330106	Xihu District	1170000	
+cn-county	330109	Xiaoshan District	2260000	
+cn-county	330110	Yuhang District	2400000	
+cn-county	330203	Haishu District	1050000	
+cn-county	330212	Yinzhou District	1590000	
+cn-county	330281	Yuyao City	1250000	
+cn-county	330282	Cixi City	1830000	
+cn-county	330302	Lucheng District	1290000	
+cn-county	330304	Ouhai District	997000	
+cn-county	330327	Cangnan County	1180000	
+cn-county	330381	Rui'an	1520000	
+cn-county	330382	Yueqing	1450000	
+cn-county	330481	Haining	1080000	
+cn-county	330483	Tongxiang City	1030000	
+cn-county	330502	Wuxing District	1020000	
+cn-county	330602	Yuecheng District	1020000	
+cn-county	330603	Keqiao District	1100000	
+cn-county	330681	Zhuji	1220000	
+cn-county	330782	Yiwu	1860000	
+cn-county	330783	Dongyang	1090000	
+cn-county	331081	Wenling	1420000	
+cn-county	331082	Linhai	1110000	
+cn-county	340104	Shushan District	1050000	
+cn-county	340111	Baohe District	1220000	
+cn-county	340123	Feixi County	968000	
+cn-county	340281	Wuwei City	1180000	
+cn-county	340321	Huaiyuan County	1030000	
+cn-county	340621	Suixi County	1000000	
+cn-county	341221	Linquan County	1660000	
+cn-county	341222	Taihe County	1380000	
+cn-county	341225	Funan County	1180000	
+cn-county	341226	Yingshang County	1200000	
+cn-county	341302	Yongqiao District	1660000	
+cn-county	341322	Xiao County	1050000	
+cn-county	341323	Lingbi County	975000	
+cn-county	341602	Qiaocheng District	1540000	
+cn-county	341621	Guoyang County	1210000	
+cn-county	341622	Mengcheng County	1100000	
+cn-county	341623	Lixin County	1190000	
+cn-county	350104	Cangshan District	1140000	
+cn-county	350121	Minhou County	988000	
+cn-county	350181	Fuqing	1390000	
+cn-county	350203	Siming District	1070000	
+cn-county	350206	Huli District	1040000	
+cn-county	350211	Jimei District	1040000	
+cn-county	350521	Hui'an County	1030000	
+cn-county	350524	Anxi County	1000000	
+cn-county	350582	Jinjiang	2060000	
+cn-county	350583	Nan'an	1520000	
+cn-county	360111	Qingshanhu District	1310000	
+cn-county	360121	Nanchang County	1450000	
+cn-county	360702	Zhanggong District	1120000	
+cn-county	360902	Yuanzhou District	1120000	
+cn-county	360981	Fengcheng	1070000	
+cn-county	361002	Linchuan District	1100000	
+cn-county	361128	Poyang County	1180000	
+cn-county	370112	Licheng District	1320000	
+cn-county	370114	Zhangqiu District	1080000	
+cn-county	370116	Laiwu District	995000	
+cn-county	370203	Shibei District	1100000	
+cn-county	370211	Huangdao District	1900000	
+cn-county	370214	Chengyang District	1070000	
+cn-county	370215	Jimo District	1340000	
+cn-county	370281	Jiaozhou City	988000	
+cn-county	370283	Pingdu	1190000	
+cn-county	370303	Zhangdian District	1270000	
+cn-county	370481	Tengzhou	1570000	
+cn-county	370705	Kuiwen District	976000	
+cn-county	370782	Zhucheng	1080000	
+cn-county	370783	Shouguang	1160000	
+cn-county	370811	Rencheng District	1250000	
+cn-county	370883	Zoucheng	1170000	
+cn-county	370911	Daiyue District	1050000	
+cn-county	370982	Xintai	1340000	
+cn-county	371102	Donggang District	1000000	
+cn-county	371122	Ju County	973000	
+cn-county	371302	Lanshan District	1840000	
+cn-county	371323	Yishui County	968000	
+cn-county	371324	Lanling County	1100000	
+cn-county	371502	Dongchangfu District	1490000	
+cn-county	371702	Mudan District	1350000	
+cn-county	371721	Cao County	1380000	
+cn-county	371722	Shan County	1060000	
+cn-county	371725	Yuncheng County	1120000	
+cn-county	410103	Erqi District	1060000	
+cn-county	410105	Jinshui District	2150000	
+cn-county	410122	Zhongmu County	974000	
+cn-county	410184	Xinzheng	1170000	
+cn-county	410482	Ruzhou	975000	
+cn-county	410526	Hua County	1200000	
+cn-county	410581	Linzhou	1160000	
+cn-county	410928	Puyang County	1050000	
+cn-county	411081	Yuzhou	1110000	
+cn-county	411328	Tanghe County	1080000	
+cn-county	411381	Dengzhou	1250000	
+cn-county	411425	Yucheng County	972000	
+cn-county	411481	Yongcheng	1260000	
+cn-county	411525	Gushi County	1040000	
+cn-county	411603	Huaiyang District	1020000	
+cn-county	411625	Dancheng County	1060000	
+cn-county	411627	Taikang County	1150000	
+cn-county	411681	Xiangcheng City	1000000	
+cn-county	411722	Shangcai County	1010000	
+cn-county	420106	Wuchang District	1270000	
+cn-county	420111	Hongshan District	2550000	
+cn-county	420115	Jiangxia District	1310000	
+cn-county	420116	Huangpi District	1150000	
+cn-county	420683	Zaoyang City	1000000	
+cn-county	420881	Zhongxiang City	1020000	
+cn-county	420902	Xiaonan District	988000	
+cn-county	420984	Hanchuan City	1090000	
+cn-county	421088	Jianli	1160000	
+cn-county	429004	Xiantao	1270000	
+cn-county	429006	Tianmen	1250000	
+cn-county	430104	Yuelu District	1530000	
+cn-county	430111	Yuhua District	1260000	
+cn-county	430121	Changsha County	1380000	
+cn-county	430181	Liuyang	1430000	
+cn-county	430182	Ningxiang City	1370000	
+cn-county	430281	Liling	1060000	
+cn-county	430421	Hengyang County	1100000	
+cn-county	430426	Qidong County	980000	
+cn-county	430481	Leiyang	1150000	
+cn-county	430524	Longhui County	1230000	
+cn-county	430582	Shaodong City	1340000	
+cn-county	430602	Yueyanglou District	980000	
+cn-county	431322	Xinhua County	1200000	
+cn-county	431382	Lianyuan	1160000	
+cn-county	440103	Liwan District	1240000	
+cn-county	440104	Yuexiu District	1040000	
+cn-county	440105	Haizhu District	1820000	
+cn-county	440106	Tianhe District	2240000	
+cn-county	440111	Baiyun District	3740000	
+cn-county	440112	Huangpu District	1260000	
+cn-county	440113	Panyu District	2660000	
+cn-county	440114	Huadu District	1640000	
+cn-county	440118	Zengcheng District	1470000	
+cn-county	440303	Luohu District	1140000	
+cn-county	440304	Futian District	1550000	
+cn-county	440305	Nanshan District	1800000	
+cn-county	440306	Bao'an District	4480000	
+cn-county	440307	Longgang District	4140000	
+cn-county	440309	Longhua District	2530000	
+cn-county	440311	Guangming District	1100000	
+cn-county	440402	Xiangzhou District	1380000	
+cn-county	440513	Chaoyang District	1650000	
+cn-county	440514	Chaonan District	1230000	
+cn-county	440604	Chancheng District	1330000	
+cn-county	440605	Nanhai District	3670000	
+cn-county	440606	Shunde District	3230000	
+cn-county	440881	Lianjiang	1360000	
+cn-county	440882	Leizhou	1320000	
+cn-county	440902	Maonan District	1040000	
+cn-county	440904	Dianbai District	1500000	
+cn-county	440981	Gaozhou	1330000	
+cn-county	440982	Huazhou	1290000	
+cn-county	440983	Xinyi	1010000	
+cn-county	441302	Huicheng District	2090000	
+cn-county	441303	Huiyang District	1400000	
+cn-county	441322	Boluo County	1210000	
+cn-county	441323	Huidong County	1020000	
+cn-county	441581	Lufeng	1240000	
+cn-county	441802	Qingcheng District	1120000	
+cn-county	441900	Dongguan	10500000	
+cn-county	442000	Zhongshan	4420000	
+cn-county	445103	Chao'an District	1180000	
+cn-county	445224	Huilai County	1040000	
+cn-county	445281	Puning	2000000	
+cn-county	450103	Qingxiu District	1120000	
+cn-county	450105	Jiangnan District	990000	
+cn-county	450107	Xixiangtang District	1640000	
+cn-county	450721	Lingshan County	1220000	
+cn-county	450821	Pingnan County	1100000	
+cn-county	450881	Guiping	1510000	
+cn-county	450923	Bobai County	1390000	
+cn-county	450981	Beiliu	1210000	
+cn-county	500101	Wanzhou	1560000	
+cn-county	500102	Fuling District	1120000	
+cn-county	500106	Shapingba District	1480000	
+cn-county	500107	Jiulongpo District	1530000	
+cn-county	500108	Nan'an District	1200000	
+cn-county	500110	Qijiang District	1010000	
+cn-county	500112	Yubei District	2190000	
+cn-county	500113	Banan District	1180000	
+cn-county	500116	Jiangjin District	1360000	
+cn-county	500117	Hechuan District	1250000	
+cn-county	500118	Yongchuan District	1150000	
+cn-county	500154	Kaizhou District	1200000	
+cn-county	500157	Liangjiang New Area	3520000	
+cn-county	510106	Jinniu District	1270000	
+cn-county	510107	Wuhou District	1860000	
+cn-county	510108	Chenghua District	1380000	
+cn-county	510112	Longquanyi District	1350000	
+cn-county	510114	Xindu District	1560000	
+cn-county	510115	Wenjiang District	968000	
+cn-county	510116	Shuangliu District	2660000	
+cn-county	510117	Pidu District	1670000	
+cn-county	510185	Jianyang	1120000	
+cn-county	510623	Zhongjiang County	1190000	
+cn-county	510703	Fucheng District	1300000	
+cn-county	510722	Santai County	1040000	
+cn-county	511025	Zizhong County	1190000	
+cn-county	511421	Renshou County	1230000	
+cn-county	511703	Dachuan District	1200000	
+cn-county	511722	Xuanhan County	1010000	
+cn-county	511725	Qu County	1160000	
+cn-county	512002	Yanjiang District	1090000	
+cn-county	512021	Anyue County	1140000	
+cn-county	520102	Nanming District	1050000	
+cn-county	520103	Yunyan District	1060000	
+cn-county	520281	Panzhou City	1070000	
+cn-county	520302	Honghuagang District	971000	
+cn-county	520502	Qixingguan District	1310000	
+cn-county	520526	Weining Yi, Hui, and Miao Autonomous County	1280000	
+cn-county	522301	Xingyi	1000000	
+cn-county	530102	Wuhua District	1140000	
+cn-county	530103	Panlong District	988000	
+cn-county	530111	Guandu District	1600000	
+cn-county	530302	Qilin District	996000	
+cn-county	530381	Xuanwei	1190000	
+cn-county	530627	Zhenxiong County	1350000	
+cn-county	610104	Lianhu District	1020000	
+cn-county	610111	Baqiao District	1020000	
+cn-county	610112	Weiyang District	1890000	
+cn-county	610113	Yanta District	2050000	
+cn-county	610116	Chang'an District	1750000	
+cn-county	610802	Yuyang District	968000	
+cn-county	620102	Chengguan District	1480000	
+cn-county	650104	Xinshi District	1010000	
+ru-region	01	Adygea	307000	
+ru-region	02	Bashkortostan	2980000	
+ru-region	03	Buryatia	696000	
+ru-region	04	Altai Republic	142000	
+ru-region	05	Dagestan	1850000	
+ru-region	06	Ingushetia	545000	
+ru-region	07	Kabardino-Balkaria	720000	
+ru-region	08	Kalmykia	204000	
+ru-region	09	Karachay-Cherkessia	327000	
+ru-region	10	Karelia	594000	
+ru-region	11	Komi	846000	
+ru-region	12	Mari El	487000	
+ru-region	13	Mordovia	572000	
+ru-region	14	Sakha	706000	
+ru-region	15	North Ossetia	554000	
+ru-region	16	Tatarstan	3050000	
+ru-region	17	Tyva	223000	
+ru-region	18	Udmurtia	1180000	
+ru-region	19	Khakassia	430000	
+ru-region	20	Chechnya	931000	
+ru-region	21	Chuvashia	890000	
+ru-region	22	Altai Krai	1870000	
+ru-region	23	Krasnodar	4560000	
+ru-region	24	Krasnoyarsk	2530000	
+ru-region	25	Primorye	1810000	
+ru-region	26	Stavropol	2270000	
+ru-region	27	Khabarovsk	1830000	
+ru-region	28	Amur	666000	
+ru-region	29	Arkhangelsk	1060000	
+ru-region	30	Astrakhan	805000	
+ru-region	31	Belgorod	1100000	
+ru-region	32	Bryansk	963000	
+ru-region	33	Vladimir	1250000	
+ru-region	34	Volgograd	2070000	
+ru-region	35	Vologda	948000	
+ru-region	36	Voronezh	1910000	
+ru-region	37	Ivanovo	918000	
+ru-region	38	Irkutsk	2160000	
+ru-region	39	Kaliningrad	817000	
+ru-region	40	Kaluga	850000	
+ru-region	41	Kamchatka	294000	
+ru-region	42	Kemerovo	2640000	
+ru-region	43	Kirov	1100000	
+ru-region	44	Kostroma	523000	
+ru-region	45	Kurgan	598000	
+ru-region	46	Kursk	798000	
+ru-region	47	Leningrad	1990000	
+ru-region	48	Lipetsk	856000	
+ru-region	49	Magadan	152000	
+ru-region	50	Moscow Oblast	7020000	
+ru-region	51	Murmansk	792000	
+ru-region	52	Nizhny Novgorod	2750000	
+ru-region	53	Novgorod	501000	
+ru-region	54	Novosibirsk	2360000	
+ru-region	55	Omsk	1520000	
+ru-region	56	Orenburg	1560000	
+ru-region	57	Oryol	519000	
+ru-region	58	Penza	1090000	
+ru-region	59	Perm	2170000	
+ru-region	60	Pskov	506000	
+ru-region	61	Rostov	3470000	
+ru-region	62	Ryazan	871000	
+ru-region	63	Samara	2780000	
+ru-region	64	Saratov	1990000	
+ru-region	65	Sakhalin	488000	
+ru-region	66	Sverdlovsk	4160000	
+ru-region	67	Smolensk	755000	
+ru-region	68	Tambov	708000	
+ru-region	69	Tver	1110000	
+ru-region	70	Tomsk	920000	
+ru-region	71	Tula	1310000	
+ru-region	72	Tyumen	1210000	
+ru-region	73	Ulyanovsk	1010000	
+ru-region	74	Chelyabinsk	3160000	
+ru-region	75	Zabaykalsky	831000	
+ru-region	76	Yaroslavl	1120000	
+ru-region	77	Moscow	17700000	
+ru-region	78	Saint Petersburg	8360000	
+ru-region	79	Jewish Autonomous Oblast	129000	
+ru-region	83	Nenets	27300	
+ru-region	86	Khanty-Mansi	1450000	
+ru-region	87	Chukotka	36900	
+ru-region	89	Yamalo-Nenets	476000	
+ro-county	01	Alba	441000	
+ro-county	02	Arad	524000	
+ro-county	03	Arges	732000	
+ro-county	04	Bacau	779000	
+ro-county	05	Bihor	671000	
+ro-county	06	Bistrita-Nasaud	381000	
+ro-county	07	Botosani	546000	
+ro-county	08	Brasov	610000	
+ro-county	09	Braila	351000	
+ro-county	10	Buzau	579000	
+ro-county	11	Caras-Severin	383000	
+ro-county	12	Cluj	709000	
+ro-county	13	Constanta	786000	
+ro-county	14	Covasna	247000	
+ro-county	15	Dambovita	685000	
+ro-county	16	Dolj	732000	
+ro-county	17	Galati	603000	
+ro-county	18	Gorj	431000	
+ro-county	19	Harghita	372000	
+ro-county	20	Hunedoara	509000	
+ro-county	21	Ialomita	351000	
+ro-county	22	Iasi	1040000	
+ro-county	23	Ilfov	366000	
+ro-county	24	Maramures	546000	
+ro-county	25	Mehedinti	332000	
+ro-county	26	Mures	717000	
+ro-county	27	Neamt	678000	
+ro-county	28	Olt	575000	
+ro-county	29	Prahova	986000	
+ro-county	30	Satu Mare	428000	
+ro-county	31	Salaj	272000	
+ro-county	32	Sibiu	433000	
+ro-county	33	Suceava	825000	
+ro-county	34	Teleorman	516000	
+ro-county	35	Timis	706000	
+ro-county	36	Tulcea	268000	
+ro-county	37	Vaslui	534000	
+ro-county	38	Valcea	486000	
+ro-county	39	Vrancea	437000	
+ro-county	40	Bucuresti	530000	
+ro-county	51	Calarasi	315000	
+ro-county	52	Giurgiu	378000	
+th-province	10	Bangkok	12300000	
+th-province	11	Samut Prakan	645000	
+th-province	12	Nonthaburi	603000	
+th-province	13	Pathum Thani	232000	
+th-province	14	Phra Nakhon Si Ayutthaya	157000	
+th-province	15	Ang Thong	72800	
+th-province	16	Lopburi	83000	
+th-province	17	Sing Buri	43900	
+th-province	18	Chai Nat	15500	
+th-province	19	Saraburi	212000	
+th-province	20	Chon Buri	748000	
+th-province	21	Rayong	208000	
+th-province	22	Chanthaburi	168000	
+th-province	23	Trat	153000	
+th-province	24	Chachoengsao	117000	
+th-province	25	Prachin Buri	580000	
+th-province	26	Nakhon Nayok	34600	
+th-province	27	Sa Kaeo	65000	
+th-province	30	Nakhon Ratchasima	377000	
+th-province	31	Buriram	90900	
+th-province	32	Surin	46700	
+th-province	33	Si Sa Ket	92900	
+th-province	34	Ubon Ratchathani	229000	
+th-province	35	Yasothon	21600	
+th-province	36	Chaiyaphum	136000	
+th-province	37	Amnat Charoen	34800	
+th-province	38	Bueng Kan	26200	
+th-province	39	Nong Bua Lamphu	90100	
+th-province	40	Khon Kaen	229000	
+th-province	41	Udon Thani	252000	
+th-province	42	Loei	82200	
+th-province	43	Nong Khai	132000	
+th-province	44	Maha Sarakham	82700	
+th-province	45	Roi Et	120000	
+th-province	46	Kalasin	157000	
+th-province	47	Sakon Nakhon	117000	
+th-province	48	Nakhon Phanom	62000	
+th-province	49	Mukdahan	40500	
+th-province	50	Chiang Mai	243000	
+th-province	51	Lamphun	68900	
+th-province	52	Lampang	175000	
+th-province	53	Uttaradit	58300	
+th-province	54	Phrae	79400	
+th-province	55	Nan	46400	
+th-province	56	Phayao	82300	
+th-province	57	Chiang Rai	183000	
+th-province	58	Mae Hong Son	9110	
+th-province	60	Nakhon Sawan	144000	
+th-province	61	Uthai Thani	60800	
+th-province	62	Kamphaeng Phet	88300	
+th-province	63	Tak	104000	
+th-province	64	Sukhothai	140000	
+th-province	65	Phitsanulok	146000	
+th-province	66	Phichit	103000	
+th-province	67	Phetchabun	162000	
+th-province	70	Ratchaburi	374000	
+th-province	71	Kanchanaburi	200000	
+th-province	72	Suphan Buri	81500	
+th-province	73	Nakhon Pathom	173000	
+th-province	74	Samut Sakhon	178000	
+th-province	75	Samut Songkhram	35100	
+th-province	76	Phetchaburi	157000	
+th-province	77	Prachuap Khiri Khan	261000	
+th-province	80	Nakhon Si Thammarat	200000	
+th-province	81	Krabi	76100	
+th-province	82	Phang Nga	17100	
+th-province	83	Phuket	434000	
+th-province	84	Surat Thani	293000	
+th-province	85	Ranong	24600	
+th-province	86	Chumphon	98000	
+th-province	90	Songkhla	414000	
+th-province	91	Satun	37900	
+th-province	92	Trang	97500	
+th-province	93	Phatthalung	43500	
+th-province	94	Pattani	101000	
+th-province	95	Yala	123000	
+th-province	96	Narathiwat	139000	
+lei-lou:*	9845		301000	
+lei-lou:*	5493		203000	
+lei-lou:*	2549		178000	
+lei-lou:*	8156		139000	
+lei-lou:AD	2549		106	
+lei-lou:AD	5493		73	
+lei-lou:AD	9598		42	
+lei-lou:AD	8945		26	
+lei-lou:AE	9845		2530	
+lei-lou:AE	2549		1480	
+lei-lou:AE	2138		582	
+lei-lou:AE	5493		405	
+lei-lou:AF	2549		5	
+lei-lou:AF	9845		3	
+lei-lou:AF	5493		1	
+lei-lou:AG	2549		32	
+lei-lou:AG	5299		20	
+lei-lou:AG	2138		8	
+lei-lou:AG	5493		3	
+lei-lou:AI	2549		36	
+lei-lou:AI	5299		29	
+lei-lou:AI	5493		27	
+lei-lou:AI	9845		11	
+lei-lou:AL	2549		20	
+lei-lou:AL	8945		14	
+lei-lou:AL	5299		9	
+lei-lou:AL	2138		4	
+lei-lou:AM	2549		30	
+lei-lou:AM	5299		11	
+lei-lou:AM	5493		8	
+lei-lou:AM	8945		7	
+lei-lou:AO	2549		37	
+lei-lou:AO	5493		7	
+lei-lou:AO	8945		5	
+lei-lou:AO	8755		3	
+lei-lou:AR	2549		109	
+lei-lou:AR	9845		94	
+lei-lou:AR	5493		78	
+lei-lou:AR	5299		33	
+lei-lou:AS	2549		2	
+lei-lou:AS	8945		1	
+lei-lou:AT	5299		20300	
+lei-lou:AT	9845		6960	
+lei-lou:AT	3912		2000	
+lei-lou:AT	8945		978	
+lei-lou:AU	9845		14300	
+lei-lou:AU	2549		5140	
+lei-lou:AU	5493		4520	
+lei-lou:AU	8945		1360	
+lei-lou:AW	2549		5	
+lei-lou:AW	5493		3	
+lei-lou:AW	9845		2	
+lei-lou:AW	2138		1	
+lei-lou:AX	5493		4	
+lei-lou:AX	2138		2	
+lei-lou:AZ	2549		18	
+lei-lou:AZ	8945		10	
+lei-lou:AZ	5299		5	
+lei-lou:AZ	5493		5	
+lei-lou:BA	5299		34	
+lei-lou:BA	2549		19	
+lei-lou:BA	7478		12	
+lei-lou:BA	4851		11	
+lei-lou:BB	5493		62	
+lei-lou:BB	2549		36	
+lei-lou:BB	2138		19	
+lei-lou:BB	9845		15	
+lei-lou:BD	9845		50	
+lei-lou:BD	5493		25	
+lei-lou:BD	2549		19	
+lei-lou:BD	2138		3	
+lei-lou:BE	9845		7140	
+lei-lou:BE	2549		5680	
+lei-lou:BE	6994		5640	
+lei-lou:BE	5493		4600	
+lei-lou:BF	2549		4	
+lei-lou:BF	5493		3	
+lei-lou:BF	2138		1	
+lei-lou:BG	9845		956	
+lei-lou:BG	8945		667	
+lei-lou:BG	4851		469	
+lei-lou:BG	2549		464	
+lei-lou:BH	2549		55	
+lei-lou:BH	9845		37	
+lei-lou:BH	5493		32	
+lei-lou:BH	2138		26	
+lei-lou:BI	2549		2	
+lei-lou:BI	5493		1	
+lei-lou:BJ	2549		4	
+lei-lou:BJ	5493		1	
+lei-lou:BJ	6354		1	
+lei-lou:BL	9845		6	
+lei-lou:BL	8945		2	
+lei-lou:BL	5299		1	
+lei-lou:BL	5493		1	
+lei-lou:BM	5493		749	
+lei-lou:BM	2549		532	
+lei-lou:BM	2138		351	
+lei-lou:BM	9845		124	
+lei-lou:BN	5493		12	
+lei-lou:BN	2549		5	
+lei-lou:BN	2138		3	
+lei-lou:BO	2549		11	
+lei-lou:BO	5299		5	
+lei-lou:BO	5493		3	
+lei-lou:BO	2138		2	
+lei-lou:BQ	2549		9	
+lei-lou:BQ	9845		5	
+lei-lou:BQ	7245		3	
+lei-lou:BQ	5493		1	
+lei-lou:BR	2549		568	
+lei-lou:BR	5493		475	
+lei-lou:BR	9845		467	
+lei-lou:BR	9269		363	
+lei-lou:BS	5299		608	
+lei-lou:BS	2549		505	
+lei-lou:BS	2138		496	
+lei-lou:BS	5493		405	
+lei-lou:BT	2549		13	
+lei-lou:BT	2138		1	
+lei-lou:BW	2549		14	
+lei-lou:BW	2138		12	
+lei-lou:BW	5493		7	
+lei-lou:BW	9845		4	
+lei-lou:BY	2534		12	
+lei-lou:BY	5299		4	
+lei-lou:BY	5493		1	
+lei-lou:BY	6354		1	
+lei-lou:BZ	5493		76	
+lei-lou:BZ	5299		71	
+lei-lou:BZ	2549		58	
+lei-lou:BZ	2138		45	
+lei-lou:CA	5493		12500	
+lei-lou:CA	2549		8190	
+lei-lou:CA	8945		2970	
+lei-lou:CA	9845		2520	
+lei-lou:CD	2549		13	
+lei-lou:CD	5493		4	
+lei-lou:CD	2138		3	
+lei-lou:CD	5299		2	
+lei-lou:CG	2549		2	
+lei-lou:CG	2138		1	
+lei-lou:CG	8945		1	
+lei-lou:CH	5067		6640	
+lei-lou:CH	5493		2840	
+lei-lou:CH	5299		2450	
+lei-lou:CH	2549		1520	
+lei-lou:CI	2549		9	
+lei-lou:CI	5493		7	
+lei-lou:CI	2138		2	
+lei-lou:CI	8945		1	
+lei-lou:CK	2549		56	
+lei-lou:CK	9845		25	
+lei-lou:CK	2138		23	
+lei-lou:CK	5493		22	
+lei-lou:CL	5493		282	
+lei-lou:CL	2549		234	
+lei-lou:CL	9845		170	
+lei-lou:CL	5299		69	
+lei-lou:CM	2549		4	
+lei-lou:CM	5493		4	
+lei-lou:CN	3003		1030	
+lei-lou:CN	8368		598	
+lei-lou:CN	5493		265	
+lei-lou:CN	2549		137	
+lei-lou:CO	5493		209	
+lei-lou:CO	2549		200	
+lei-lou:CO	9845		87	
+lei-lou:CO	5299		37	
+lei-lou:CR	5493		40	
+lei-lou:CR	2549		37	
+lei-lou:CR	9845		31	
+lei-lou:CR	2138		5	
+lei-lou:CV	8945		6	
+lei-lou:CV	5493		2	
+lei-lou:CV	2138		1	
+lei-lou:CV	5299		1	
+lei-lou:CW	2549		116	
+lei-lou:CW	5493		67	
+lei-lou:CW	5299		44	
+lei-lou:CW	9845		29	
+lei-lou:CY	2138		2280	
+lei-lou:CY	2549		1910	
+lei-lou:CY	9845		1640	
+lei-lou:CY	5493		892	
+lei-lou:CZ	3157		15300	
+lei-lou:CZ	9845		1260	
+lei-lou:CZ	8945		834	
+lei-lou:CZ	6488		833	
+lei-lou:DE	3912		78900	
+lei-lou:DE	5299		58400	
+lei-lou:DE	9845		21100	
+lei-lou:DE	8945		12100	
+lei-lou:DJ	5493		4	
+lei-lou:DJ	2138		3	
+lei-lou:DJ	2549		2	
+lei-lou:DJ	3912		1	
+lei-lou:DK	9845		23700	
+lei-lou:DK	5493		19600	
+lei-lou:DK	8945		9470	
+lei-lou:DK	2549		5300	
+lei-lou:DM	2549		8	
+lei-lou:DM	9845		8	
+lei-lou:DM	8945		5	
+lei-lou:DM	2138		3	
+lei-lou:DO	9845		46	
+lei-lou:DO	2549		45	
+lei-lou:DO	5493		29	
+lei-lou:DO	9598		7	
+lei-lou:DZ	2138		3	
+lei-lou:DZ	5493		2	
+lei-lou:DZ	8945		2	
+lei-lou:DZ	2549		1	
+lei-lou:EC	2549		25	
+lei-lou:EC	9845		18	
+lei-lou:EC	5493		16	
+lei-lou:EC	5299		6	
+lei-lou:EE	9845		10300	
+lei-lou:EE	2549		4120	
+lei-lou:EE	8945		3100	
+lei-lou:EE	6488		2590	
+lei-lou:EG	2549		64	
+lei-lou:EG	8945		34	
+lei-lou:EG	5493		25	
+lei-lou:EG	2138		20	
+lei-lou:EH	2138		3	
+lei-lou:ES	9598		88500	
+lei-lou:ES	5299		6160	
+lei-lou:ES	9845		4230	
+lei-lou:ES	8945		3710	
+lei-lou:ET	2549		6	
+lei-lou:FI	7437		39600	
+lei-lou:FI	8945		2000	
+lei-lou:FI	9845		1700	
+lei-lou:FI	5493		723	
+lei-lou:FJ	2549		12	
+lei-lou:FJ	5493		3	
+lei-lou:FK	2138		4	
+lei-lou:FK	2549		3	
+lei-lou:FK	5493		1	
+lei-lou:FM	3912		4	
+lei-lou:FM	5493		2	
+lei-lou:FM	2138		1	
+lei-lou:FM	5299		1	
+lei-lou:FO	5493		92	
+lei-lou:FO	9845		75	
+lei-lou:FO	8945		65	
+lei-lou:FO	6367		47	
+lei-lou:FR	9695		75500	
+lei-lou:FR	8945		12400	
+lei-lou:FR	9845		2900	
+lei-lou:FR	2549		1850	
+lei-lou:GA	5299		2	
+lei-lou:GA	2138		1	
+lei-lou:GA	5493		1	
+lei-lou:GB	2138		50200	
+lei-lou:GB	9845		18000	
+lei-lou:GB	2549		8450	
+lei-lou:GB	5493		7730	
+lei-lou:GD	2549		3	
+lei-lou:GD	5493		2	
+lei-lou:GE	2549		53	
+lei-lou:GE	8945		15	
+lei-lou:GE	2138		5	
+lei-lou:GE	5493		4	
+lei-lou:GF	9845		2	
+lei-lou:GG	2138		2690	
+lei-lou:GG	5493		1010	
+lei-lou:GG	2549		467	
+lei-lou:GG	9845		189	
+lei-lou:GH	2549		31	
+lei-lou:GH	5493		14	
+lei-lou:GH	2138		13	
+lei-lou:GH	8945		9	
+lei-lou:GI	2138		718	
+lei-lou:GI	2549		335	
+lei-lou:GI	9845		135	
+lei-lou:GI	5493		77	
+lei-lou:GL	9845		19	
+lei-lou:GL	5493		5	
+lei-lou:GL	2138		4	
+lei-lou:GL	8945		4	
+lei-lou:GM	2549		2	
+lei-lou:GN	2549		2	
+lei-lou:GP	9845		19	
+lei-lou:GP	8945		2	
+lei-lou:GP	5299		1	
+lei-lou:GP	9695		1	
+lei-lou:GQ	5493		2	
+lei-lou:GR	2138		3080	
+lei-lou:GR	9845		626	
+lei-lou:GR	2549		196	
+lei-lou:GR	5493		143	
+lei-lou:GT	2549		23	
+lei-lou:GT	9845		19	
+lei-lou:GT	5493		16	
+lei-lou:GT	5299		14	
+lei-lou:GU	2549		2	
+lei-lou:GW	2138		1	
+lei-lou:GY	2549		6	
+lei-lou:GY	5493		2	
+lei-lou:HK	2549		2450	
+lei-lou:HK	9845		1900	
+lei-lou:HK	5493		1680	
+lei-lou:HK	2138		736	
+lei-lou:HN	9845		15	
+lei-lou:HN	5493		13	
+lei-lou:HN	2549		11	
+lei-lou:HN	8945		1	
+lei-lou:HR	7478		1230	
+lei-lou:HR	5299		126	
+lei-lou:HR	5493		112	
+lei-lou:HR	9845		79	
+lei-lou:HU	9845		4220	
+lei-lou:HU	5299		3580	
+lei-lou:HU	8755		2130	
+lei-lou:HU	2330		1790	
+lei-lou:ID	2549		344	
+lei-lou:ID	9845		188	
+lei-lou:ID	5493		134	
+lei-lou:ID	9269		67	
+lei-lou:IE	6354		7130	
+lei-lou:IE	5493		4290	
+lei-lou:IE	2549		3190	
+lei-lou:IE	2138		2780	
+lei-lou:IL	2549		488	
+lei-lou:IL	9845		295	
+lei-lou:IL	5493		273	
+lei-lou:IL	2138		256	
+lei-lou:IM	2138		1240	
+lei-lou:IM	2549		180	
+lei-lou:IM	9845		151	
+lei-lou:IM	5493		137	
+lei-lou:IN	3358		134000	
+lei-lou:IN	9845		95900	
+lei-lou:IN	6488		60900	
+lei-lou:IN	8945		40400	
+lei-lou:IQ	2549		37	
+lei-lou:IQ	5493		2	
+lei-lou:IQ	5299		1	
+lei-lou:IR	5493		1	
+lei-lou:IS	6367		948	
+lei-lou:IS	5493		824	
+lei-lou:IS	2549		623	
+lei-lou:IS	6488		600	
+lei-lou:IT	8156		139000	
+lei-lou:IT	9845		14700	
+lei-lou:IT	8945		10300	
+lei-lou:IT	5299		7260	
+lei-lou:JE	2138		4330	
+lei-lou:JE	5493		1230	
+lei-lou:JE	2549		1020	
+lei-lou:JE	9845		348	
+lei-lou:JM	2549		7	
+lei-lou:JM	5493		6	
+lei-lou:JM	9845		5	
+lei-lou:JM	2138		3	
+lei-lou:JO	9845		37	
+lei-lou:JO	5493		15	
+lei-lou:JO	2549		14	
+lei-lou:JO	5586		13	
+lei-lou:JP	3538		9680	
+lei-lou:JP	5493		563	
+lei-lou:JP	5299		242	
+lei-lou:JP	2549		139	
+lei-lou:KE	9845		59	
+lei-lou:KE	2549		45	
+lei-lou:KE	5493		20	
+lei-lou:KE	2138		18	
+lei-lou:KG	2549		27	
+lei-lou:KG	5299		12	
+lei-lou:KG	2138		5	
+lei-lou:KG	2534		3	
+lei-lou:KH	2549		4	
+lei-lou:KH	5493		4	
+lei-lou:KH	9845		3	
+lei-lou:KH	3003		1	
+lei-lou:KI	5493		1	
+lei-lou:KM	2549		19	
+lei-lou:KM	2138		10	
+lei-lou:KM	8945		4	
+lei-lou:KM	5493		1	
+lei-lou:KN	2549		229	
+lei-lou:KN	5493		85	
+lei-lou:KN	2138		71	
+lei-lou:KN	5299		46	
+lei-lou:KR	9884		957	
+lei-lou:KR	5493		186	
+lei-lou:KR	9845		131	
+lei-lou:KR	5299		60	
+lei-lou:KW	2549		57	
+lei-lou:KW	2138		26	
+lei-lou:KW	5493		22	
+lei-lou:KW	5586		12	
+lei-lou:KY	5493		11000	
+lei-lou:KY	2549		8560	
+lei-lou:KY	2138		2470	
+lei-lou:KY	9845		2240	
+lei-lou:KZ	2549		97	
+lei-lou:KZ	9845		43	
+lei-lou:KZ	2138		18	
+lei-lou:KZ	5493		11	
+lei-lou:LA	2549		8	
+lei-lou:LA	2138		3	
+lei-lou:LA	5493		1	
+lei-lou:LB	2549		42	
+lei-lou:LB	5493		33	
+lei-lou:LB	2138		31	
+lei-lou:LB	9845		14	
+lei-lou:LC	2549		63	
+lei-lou:LC	8945		25	
+lei-lou:LC	2138		6	
+lei-lou:LC	5493		5	
+lei-lou:LI	5299		6210	
+lei-lou:LI	9676		625	
+lei-lou:LI	3912		592	
+lei-lou:LI	8755		475	
+lei-lou:LK	2549		57	
+lei-lou:LK	9845		21	
+lei-lou:LK	5493		6	
+lei-lou:LK	2138		5	
+lei-lou:LR	2138		191	
+lei-lou:LR	2549		176	
+lei-lou:LR	5299		75	
+lei-lou:LR	5493		71	
+lei-lou:LS	2549		2	
+lei-lou:LS	2138		1	
+lei-lou:LS	5493		1	
+lei-lou:LT	9845		1160	
+lei-lou:LT	6488		758	
+lei-lou:LT	8945		601	
+lei-lou:LT	2549		405	
+lei-lou:LU	5493		11500	
+lei-lou:LU	5299		6220	
+lei-lou:LU	2138		5760	
+lei-lou:LU	2549		4560	
+lei-lou:LV	9845		1100	
+lei-lou:LV	6488		872	
+lei-lou:LV	2549		300	
+lei-lou:LV	8945		290	
+lei-lou:LY	2549		11	
+lei-lou:LY	5493		2	
+lei-lou:LY	2138		1	
+lei-lou:MA	9845		30	
+lei-lou:MA	2138		23	
+lei-lou:MA	5493		23	
+lei-lou:MA	2549		22	
+lei-lou:MC	2549		240	
+lei-lou:MC	9845		93	
+lei-lou:MC	5493		85	
+lei-lou:MC	2138		83	
+lei-lou:MD	2549		18	
+lei-lou:MD	5299		11	
+lei-lou:MD	8945		10	
+lei-lou:MD	5493		2	
+lei-lou:ME	5299		10	
+lei-lou:ME	8945		8	
+lei-lou:ME	7478		7	
+lei-lou:ME	2549		5	
+lei-lou:MF	9845		1	
+lei-lou:MG	2549		8	
+lei-lou:MG	2138		2	
+lei-lou:MG	5493		1	
+lei-lou:MH	2549		382	
+lei-lou:MH	2138		350	
+lei-lou:MH	9845		231	
+lei-lou:MH	5493		192	
+lei-lou:MK	4851		38	
+lei-lou:MK	2549		34	
+lei-lou:MK	5299		12	
+lei-lou:MK	8945		12	
+lei-lou:ML	2549		7	
+lei-lou:ML	5493		2	
+lei-lou:MM	2549		1	
+lei-lou:MN	2549		17	
+lei-lou:MN	5493		11	
+lei-lou:MN	2138		4	
+lei-lou:MN	8945		1	
+lei-lou:MO	2549		29	
+lei-lou:MO	5493		17	
+lei-lou:MO	8945		5	
+lei-lou:MO	3003		3	
+lei-lou:MP	2549		1	
+lei-lou:MQ	9845		17	
+lei-lou:MQ	8945		3	
+lei-lou:MQ	9695		2	
+lei-lou:MR	2549		9	
+lei-lou:MR	5493		1	
+lei-lou:MR	8945		1	
+lei-lou:MT	9845		1010	
+lei-lou:MT	2138		825	
+lei-lou:MT	2549		723	
+lei-lou:MT	5299		325	
+lei-lou:MU	2549		1200	
+lei-lou:MU	9845		700	
+lei-lou:MU	2138		523	
+lei-lou:MU	5493		456	
+lei-lou:MV	2549		12	
+lei-lou:MV	9845		6	
+lei-lou:MV	5493		2	
+lei-lou:MV	2138		1	
+lei-lou:MW	2549		5	
+lei-lou:MW	2138		1	
+lei-lou:MW	5493		1	
+lei-lou:MX	4469		2130	
+lei-lou:MX	5493		800	
+lei-lou:MX	9845		614	
+lei-lou:MX	2549		461	
+lei-lou:MY	2549		678	
+lei-lou:MY	5493		212	
+lei-lou:MY	2138		195	
+lei-lou:MY	9845		188	
+lei-lou:MZ	2549		9	
+lei-lou:MZ	5493		6	
+lei-lou:MZ	2138		3	
+lei-lou:MZ	5299		1	
+lei-lou:NA	2138		28	
+lei-lou:NA	5493		20	
+lei-lou:NA	2549		13	
+lei-lou:NA	8945		5	
+lei-lou:NC	2138		13	
+lei-lou:NC	5493		12	
+lei-lou:NC	5299		5	
+lei-lou:NC	9695		3	
+lei-lou:NE	2549		3	
+lei-lou:NE	2138		1	
+lei-lou:NG	0292		253	
+lei-lou:NG	9845		96	
+lei-lou:NG	2549		46	
+lei-lou:NG	2138		37	
+lei-lou:NI	4469		2	
+lei-lou:NI	2549		1	
+lei-lou:NI	5493		1	
+lei-lou:NL	7245		117000	
+lei-lou:NL	9845		3690	
+lei-lou:NL	8945		3120	
+lei-lou:NL	5493		1740	
+lei-lou:NO	5493		12300	
+lei-lou:NO	6367		8640	
+lei-lou:NO	2549		6450	
+lei-lou:NO	9845		6230	
+lei-lou:NP	2549		25	
+lei-lou:NP	2138		1	
+lei-lou:NP	5493		1	
+lei-lou:NU	2549		1	
+lei-lou:NU	3912		1	
+lei-lou:NZ	2549		703	
+lei-lou:NZ	9845		574	
+lei-lou:NZ	2138		445	
+lei-lou:NZ	5493		433	
+lei-lou:OM	2549		36	
+lei-lou:OM	2138		21	
+lei-lou:OM	9845		20	
+lei-lou:OM	8945		16	
+lei-lou:PA	2549		822	
+lei-lou:PA	5299		565	
+lei-lou:PA	5493		409	
+lei-lou:PA	2138		273	
+lei-lou:PE	5493		119	
+lei-lou:PE	2549		91	
+lei-lou:PE	9845		61	
+lei-lou:PE	2138		16	
+lei-lou:PF	5493		21	
+lei-lou:PF	5299		17	
+lei-lou:PF	2549		7	
+lei-lou:PF	9695		7	
+lei-lou:PG	5493		3	
+lei-lou:PG	2549		2	
+lei-lou:PG	5299		2	
+lei-lou:PG	2138		1	
+lei-lou:PH	2549		162	
+lei-lou:PH	5493		140	
+lei-lou:PH	9845		84	
+lei-lou:PH	5299		35	
+lei-lou:PK	9845		42	
+lei-lou:PK	2549		19	
+lei-lou:PK	5493		9	
+lei-lou:PK	5299		5	
+lei-lou:PL	2594		21600	
+lei-lou:PL	9845		1500	
+lei-lou:PL	8945		624	
+lei-lou:PL	6488		569	
+lei-lou:PM	9695		3	
+lei-lou:PR	5493		71	
+lei-lou:PR	2549		69	
+lei-lou:PR	9845		34	
+lei-lou:PR	2138		8	
+lei-lou:PS	2549		64	
+lei-lou:PS	5493		4	
+lei-lou:PS	8945		4	
+lei-lou:PS	2138		1	
+lei-lou:PT	8945		3390	
+lei-lou:PT	9845		3280	
+lei-lou:PT	5493		1050	
+lei-lou:PT	2549		1040	
+lei-lou:PY	2549		40	
+lei-lou:PY	5493		37	
+lei-lou:PY	9845		17	
+lei-lou:PY	5299		5	
+lei-lou:QA	2763		73	
+lei-lou:QA	2549		72	
+lei-lou:QA	5493		26	
+lei-lou:QA	9845		20	
+lei-lou:RE	9845		14	
+lei-lou:RE	8945		4	
+lei-lou:RE	5299		3	
+lei-lou:RE	9695		1	
+lei-lou:RO	7872		1690	
+lei-lou:RO	9845		1550	
+lei-lou:RO	2549		607	
+lei-lou:RO	3157		361	
+lei-lou:RS	9845		44	
+lei-lou:RS	5299		34	
+lei-lou:RS	2549		21	
+lei-lou:RS	7478		19	
+lei-lou:RU	2534		428	
+lei-lou:RU	5299		15	
+lei-lou:RU	5493		15	
+lei-lou:RU	2138		8	
+lei-lou:RW	2549		10	
+lei-lou:RW	2138		4	
+lei-lou:RW	5493		1	
+lei-lou:SA	5586		3630	
+lei-lou:SA	9845		86	
+lei-lou:SA	2549		65	
+lei-lou:SA	5493		52	
+lei-lou:SB	2138		1	
+lei-lou:SC	2549		199	
+lei-lou:SC	5493		171	
+lei-lou:SC	9845		138	
+lei-lou:SC	2138		89	
+lei-lou:SD	2549		3	
+lei-lou:SD	5493		2	
+lei-lou:SD	8945		2	
+lei-lou:SE	5493		26500	
+lei-lou:SE	6367		15600	
+lei-lou:SE	9845		14500	
+lei-lou:SE	8945		6240	
+lei-lou:SG	2549		3400	
+lei-lou:SG	9845		2200	
+lei-lou:SG	5493		1850	
+lei-lou:SG	2138		562	
+lei-lou:SH	2138		3	
+lei-lou:SI	4851		2300	
+lei-lou:SI	2549		191	
+lei-lou:SI	5493		143	
+lei-lou:SI	9845		131	
+lei-lou:SK	0979		3010	
+lei-lou:SK	3157		678	
+lei-lou:SK	2549		137	
+lei-lou:SK	9845		133	
+lei-lou:SL	2549		8	
+lei-lou:SM	8945		26	
+lei-lou:SM	9845		23	
+lei-lou:SM	5299		21	
+lei-lou:SM	2549		14	
+lei-lou:SN	5493		5	
+lei-lou:SN	2549		4	
+lei-lou:SN	9845		3	
+lei-lou:SN	2138		2	
+lei-lou:SR	2549		3	
+lei-lou:SR	5493		2	
+lei-lou:SR	2138		1	
+lei-lou:SS	2549		1	
+lei-lou:ST	2549		3	
+lei-lou:ST	5493		1	
+lei-lou:SV	2549		22	
+lei-lou:SV	9845		14	
+lei-lou:SV	4469		7	
+lei-lou:SV	5493		7	
+lei-lou:SX	2549		8	
+lei-lou:SX	5493		2	
+lei-lou:SZ	2138		1	
+lei-lou:SZ	2549		1	
+lei-lou:TC	2138		28	
+lei-lou:TC	2549		24	
+lei-lou:TC	5493		7	
+lei-lou:TC	8945		7	
+lei-lou:TD	2549		5	
+lei-lou:TG	2549		7	
+lei-lou:TG	2138		1	
+lei-lou:TG	5299		1	
+lei-lou:TH	2549		348	
+lei-lou:TH	9845		211	
+lei-lou:TH	5493		130	
+lei-lou:TH	5299		89	
+lei-lou:TJ	2549		9	
+lei-lou:TJ	5493		1	
+lei-lou:TL	2138		1	
+lei-lou:TL	2549		1	
+lei-lou:TL	5299		1	
+lei-lou:TL	5493		1	
+lei-lou:TM	2549		2	
+lei-lou:TM	5493		1	
+lei-lou:TN	4117		48	
+lei-lou:TN	9845		18	
+lei-lou:TN	5493		16	
+lei-lou:TN	2549		9	
+lei-lou:TR	7890		6210	
+lei-lou:TR	9845		616	
+lei-lou:TR	5299		76	
+lei-lou:TR	2138		69	
+lei-lou:TT	5493		18	
+lei-lou:TT	2549		12	
+lei-lou:TT	2138		11	
+lei-lou:TT	9845		6	
+lei-lou:TW	2549		547	
+lei-lou:TW	5493		279	
+lei-lou:TW	2138		86	
+lei-lou:TW	9845		70	
+lei-lou:TZ	9845		21	
+lei-lou:TZ	2549		12	
+lei-lou:TZ	5493		9	
+lei-lou:TZ	2138		4	
+lei-lou:UA	8945		43	
+lei-lou:UA	2549		41	
+lei-lou:UA	9845		38	
+lei-lou:UA	5493		22	
+lei-lou:UG	2549		20	
+lei-lou:UG	9845		19	
+lei-lou:UG	2138		5	
+lei-lou:UG	5493		5	
+lei-lou:UM	2138		1	
+lei-lou:US	2549		65900	
+lei-lou:US	5493		50300	
+lei-lou:US	9845		8210	
+lei-lou:US	5299		4920	
+lei-lou:UY	2549		127	
+lei-lou:UY	5493		79	
+lei-lou:UY	9845		63	
+lei-lou:UY	5299		37	
+lei-lou:UZ	2549		27	
+lei-lou:UZ	2534		7	
+lei-lou:UZ	8945		5	
+lei-lou:UZ	2138		4	
+lei-lou:VA	2549		4	
+lei-lou:VA	5493		1	
+lei-lou:VA	8945		1	
+lei-lou:VC	5299		97	
+lei-lou:VC	2549		34	
+lei-lou:VC	6354		29	
+lei-lou:VC	5493		25	
+lei-lou:VE	2549		33	
+lei-lou:VE	5493		28	
+lei-lou:VE	8945		7	
+lei-lou:VE	5299		5	
+lei-lou:VG	2549		5960	
+lei-lou:VG	5493		3440	
+lei-lou:VG	2138		2630	
+lei-lou:VG	9845		2030	
+lei-lou:VI	2549		19	
+lei-lou:VI	5493		7	
+lei-lou:VI	9845		4	
+lei-lou:VI	8945		2	
+lei-lou:VN	2549		61	
+lei-lou:VN	9845		46	
+lei-lou:VN	5493		42	
+lei-lou:VN	5299		27	
+lei-lou:VU	9845		12	
+lei-lou:VU	2138		11	
+lei-lou:VU	5493		9	
+lei-lou:VU	2549		8	
+lei-lou:WF	5299		1	
+lei-lou:WS	5493		298	
+lei-lou:WS	9845		82	
+lei-lou:WS	2549		69	
+lei-lou:WS	3912		42	
+lei-lou:XK	9845		9	
+lei-lou:XK	5299		5	
+lei-lou:XK	4851		3	
+lei-lou:XK	2549		2	
+lei-lou:YE	2549		25	
+lei-lou:YE	5586		1	
+lei-lou:YT	8945		2	
+lei-lou:YT	9845		1	
+lei-lou:ZA	3789		632	
+lei-lou:ZA	9845		304	
+lei-lou:ZA	2549		293	
+lei-lou:ZA	2138		230	
+lei-lou:ZM	9845		10	
+lei-lou:ZM	2138		8	
+lei-lou:ZM	2549		8	
+lei-lou:ZM	5493		5	
+lei-lou:ZW	2549		9	
+lei-lou:ZW	8945		3	
+lei-lou:ZW	2138		2	

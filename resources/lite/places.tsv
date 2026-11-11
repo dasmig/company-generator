@@ -32,7 +32,7 @@ AG	St. Peter Parish	0.321
 AG	St. Philip Parish	0.254
 AG	Liberta	0.222
 AG	All Saints	0.221
-AL	Tirana	1
+AL	Tiranë	1
 AL	Durrës	0.684
 AL	Vlorë	0.525
 AL	Elbasan	0.491
@@ -64,7 +64,7 @@ AR	San Miguel de Tucumán	0.436
 AR	Salta	0.424
 AR	Santa Fe	0.368
 AR	Corrientes	0.346
-AT	Vienna	1
+AT	Wien	1
 AT	Graz	0.423
 AT	Linz	0.348
 AT	Favoriten	0.345
@@ -328,7 +328,7 @@ CY	Famagusta	0.461
 CY	Káto Lakatámeia	0.447
 CY	Paphos	0.424
 CY	Kyrenia	0.365
-CZ	Prague	1
+CZ	Praha	1
 CZ	Brno	0.571
 CZ	Ostrava	0.49
 CZ	Pilsen	0.38
@@ -338,7 +338,7 @@ CZ	České Budějovice	0.283
 CZ	Hradec Králové	0.279
 DE	Berlin	1
 DE	Hamburg	0.734
-DE	Munich	0.607
+DE	München	0.607
 DE	Köln	0.53
 DE	Frankfurt am Main	0.436
 DE	Stuttgart	0.429
@@ -352,7 +352,7 @@ DJ	Arta	0.167
 DJ	Obock	0.157
 DJ	‘As ‘Êla	0.0909
 DJ	Damêrdjôg	0.0904
-DK	Copenhagen	1
+DK	København	1
 DK	Århus	0.497
 DK	Odense	0.396
 DK	Aalborg	0.352
@@ -648,14 +648,14 @@ IS	Akureyri	0.402
 IS	Keflavík	0.366
 IS	Mosfellsbær	0.319
 IS	Garðabær	0.31
-IT	Rome	1
-IT	Milan	0.769
-IT	Naples	0.626
-IT	Turin	0.604
+IT	Roma	1
+IT	Milano	0.769
+IT	Napoli	0.626
+IT	Torino	0.604
 IT	Palermo	0.529
-IT	Genoa	0.5
+IT	Genova	0.5
 IT	Bologna	0.413
-IT	Florence	0.398
+IT	Firenze	0.398
 JM	Kingston	1
 JM	New Kingston	0.789
 JM	Spanish Town	0.393
@@ -808,7 +808,7 @@ LU	Belair	0.412
 LU	Limpertsberg	0.388
 LU	Gare	0.385
 LU	Kirchberg	0.374
-LV	Riga	1
+LV	Rīga	1
 LV	Daugavpils	0.324
 LV	Liepāja	0.301
 LV	Jelgava	0.272
@@ -832,7 +832,7 @@ MC	Jardin Exotique	0.394
 MC	Fontvieille	0.331
 MC	Moneghetti	0.302
 MC	Saint-Roman	0.302
-MD	Chisinau	1
+MD	Chișinău	1
 MD	Tiraspol	0.497
 MD	Bălţi	0.443
 MD	Bender	0.416
@@ -944,7 +944,7 @@ MW	Karonga	0.25
 MW	Kasungu	0.243
 MW	Mangochi	0.233
 MW	Salima	0.193
-MX	Mexico City	1
+MX	Ciudad de México	1
 MX	Tijuana	0.395
 MX	Iztapalapa	0.386
 MX	Puebla	0.371
@@ -1002,7 +1002,7 @@ NI	Granada	0.303
 NI	Mateare	0.251
 NL	Rotterdam	1
 NL	Amsterdam	0.924
-NL	The Hague	0.739
+NL	Den Haag	0.739
 NL	Utrecht	0.658
 NL	Groningen	0.531
 NL	Eindhoven	0.521
@@ -1088,7 +1088,7 @@ PK	Rawalpindi	0.508
 PK	Gujranwala	0.439
 PK	Multan	0.408
 PK	Hyderabad	0.384
-PL	Warsaw	1
+PL	Warszawa	1
 PL	Kraków	0.687
 PL	Wrocław	0.629
 PL	Łódź	0.616
@@ -1104,7 +1104,7 @@ PS	Hebron	0.612
 PS	Nablus	0.552
 PS	Rafaḩ	0.543
 PS	Dayr al Balaḩ	0.373
-PT	Lisbon	1
+PT	Lisboa	1
 PT	Porto	0.699
 PT	Braga	0.611
 PT	Amadora	0.588
@@ -1136,7 +1136,7 @@ QA	Al Manşūrah	0.436
 QA	Az̧ Z̧a‘āyin	0.397
 QA	Madīnat Khalīfah	0.359
 QA	An Najmah	0.356
-RO	Bucharest	1
+RO	București	1
 RO	Sector 3	0.453
 RO	Iaşi	0.449
 RO	Sector 6	0.443
@@ -1144,7 +1144,7 @@ RO	Constanţa	0.411
 RO	Sector 2	0.393
 RO	Sector 4	0.392
 RO	Cluj-Napoca	0.391
-RS	Belgrade	1
+RS	Beograd	1
 RS	Niš	0.443
 RS	Novi Sad	0.411
 RS	Zemun	0.35
@@ -1457,8 +1457,8 @@ VE	Ciudad Guayana	0.571
 VE	Barcelona	0.521
 VE	Maturín	0.465
 VE	Maracay	0.394
-VN	Ho Chi Minh City	1
-VN	Hanoi	0.758
+VN	Hồ Chí Minh	1
+VN	Hà Nội	0.758
 VN	Haiphong	0.433
 VN	Cần Thơ	0.328
 VN	Huế	0.314

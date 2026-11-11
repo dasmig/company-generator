@@ -1,0 +1,196 @@
+# How a legal form is written in a company's name (curated 2026-11-11 for Milestone 5), where the
+# form's abbreviation is missing, wrong for a name, or not how names are written. Applied by
+# prepare_forms.py after form_overrides.tsv, to ISO, pseudo and template forms alike.
+# match: an ISO 20275 code, a form key (legal_forms.tsv), or /regex/ on the form's name, Latin
+# name or abbreviation (case-insensitive). abbreviation, latin_abbreviation: set the form's own
+# ("-" clears it). in_name: alternatives separated by "|", one picked evenly; "{name}" marks
+# where the rest of the name goes; "-" is the name without the form; text without "{name}" is
+# placed as the language's style says (suffix, prefix, or either). Empty: the abbreviation, placed
+# by the style, and nothing for a form without one. An in_name in another script than the name's
+# language is not used: the Latin abbreviation is placed instead.
+# Sources: the company laws' rules on firm names (e.g. Germany HGB s. 19, France Code de commerce
+# R123-238 and the 2022 "EI" rule, Japan Companies Act art. 6, Russia Civil Code art. 1473, Viet
+# Nam Enterprise Law 2020 art. 38, Thailand Civil and Commercial Code s. 1015 and 1100), and how
+# registered names are written in the registers (Companies House, SIRENE, Enhetsregisteret).
+country	match	abbreviation	latin_abbreviation	in_name	note
+US	HZEH	LLC	LLC	LLC|LLC|{name}, LLC|L.L.C.	Limited Liability Company
+US	XTIQ	Inc.	Inc.	Inc.|{name}, Inc.|Corp.|Corporation	Corporation
+US	PJ10	Inc.	Inc.	Inc.|{name}, Inc.|Corp.|Corporation	Business Corporation
+US	TRI2			Inc.|Corporation|Corp.	Profit Corporation
+US	4BEM	-	-		Assumed Business Name: no form in the name
+US	T91T	LP	LP		Limited Partnership
+US	/limited liability partnership/	LLP	LLP
+US	9EJ6			Inc.|{name}, Inc.|-	Nonprofit Corporation
+US	7VK5			Inc.|{name}, Inc.|-	Corporation (Nonprofit)
+US	K7YU			Inc.|{name}, Inc.|-	Nonprofit Corporation Public Benefit
+GB	H0PO			Ltd|Limited	Private Limited Company
+GB	4GJI			Ltd|Limited	Private Limited by Guarantee
+GB	Z0EY	LLP	LLP		Limited Liability Partnership
+GB	B6ES			PLC|plc	Public Limited Company
+CA	O90R	Inc.	Inc.	Inc.|Ltd.|Corp.	Business corporations
+CA	8ZH8	Inc.	Inc.	Inc.|Ltd.|Corp.	Alberta Business Corporation
+CA	UDLA			Inc.|Ltd.|Corp.	business corporation
+CA	1JGX	LP	LP		Limited Partnership
+CA	RN4K	LP	LP		Alberta limited partnership
+CA	UG3Z			inc.|ltée	Société par actions (Québec)
+AU	TXVC	Pty Ltd	Pty Ltd	Pty Ltd|Pty. Ltd.|Pty Limited	Limited Proprietary Company
+AU	J4JC	LP	LP		Limited Partnership
+AU	7TPC			{name} Trust|{name} Family Trust|{name} Unit Trust	Trust
+NZ	P2R9			Limited|Ltd	Limited Liability Company
+NZ	F7KI	LP	LP		Limited Partnership
+NZ	3EPR	Inc.	Inc.	{name} Incorporated|{name} Society Incorporated	Incorporated Society
+NZ	TF8L			{name} Charitable Trust|{name} Trust	Charitable Trust
+ZA	GQVQ	(Pty) Ltd	(Pty) Ltd		Private Company
+ZA	/co-operatives/			Co-operative Limited|Primary Co-operative
+IN	YSP9	Pvt Ltd	Pvt Ltd	Private Limited|Pvt. Ltd.|Pvt Ltd	Private Limited Company
+IN	DDKQ			Limited|Ltd.	Public Limited Company
+IN	W9FI			{name} Trust|{name} Charitable Trust
+IN	registered_society			{name} Society|{name} Welfare Society
+IN	/cooperative society/			{name} Co-operative Society|{name} Co-operative Society Ltd.
+PH	SPX9	Inc.	Inc.		close corporation
+PH	76ME			{name}, Inc.|{name} Foundation, Inc.	nonstock corporation
+PH	IODM			{name}, Inc.|{name} College, Inc.	educational corporation
+GH	56NA	Ltd	Ltd	Ltd|Limited	Private Limited By Share
+GH	VBJW	PLC	PLC		Public Limited Company
+KH	15BP	Co., Ltd.	Co., Ltd.		Private Limited Company
+KH	BQ0P	PLC	PLC		Public Limited Company
+AE	RWVW	L.L.C.	L.L.C.	L.L.C.|LLC	Limited Liability Company
+AE	70EO	Ltd	Ltd		Private Company Limited by Shares
+AE	WR09	PJSC	PJSC		Private Joint Stock Company
+AE	375P			{name} Foundation
+SA	TTE8	ذ.م.م	LLC		Limited liability company
+SA	78VH	ش.م	JSC		Joint stock company
+MY	ZWYK	Ltd	Ltd		Labuan Company (Limited By Share)
+MY	QAEW			Pertubuhan {name}
+DE	63KS	UG (haftungsbeschränkt)	UG (haftungsbeschränkt)		Unternehmergesellschaft: the list's "GmbH UG" is not how it is written
+DE	8Z6G			KG|GmbH & Co. KG|GmbH & Co. KG	Kommanditgesellschaft, most of them GmbH & Co. KG
+DE	V2YH			{name} Stiftung|Stiftung {name}
+FR	V9QP	SARL	SARL		Société à responsabilité limitée
+FR	K65D	SA	SA		SA à conseil d'administration
+FR	FY0F	SCI	SCI	SCI {name}	Société civile immobilière: the abbreviation leads
+FR	1L24	SC	SC	SC {name}|{name}	Autre société civile
+FR	H1U2	SNC	SNC		Société en nom collectif
+FR	M673	SCEA	SCEA	SCEA {name}	Société civile d'exploitation agricole
+FR	VD7Z	SCS	SCS		Société en commandite simple
+FR	DEG4	SCA	SCA		Société en commandite par actions
+FR	ZY9X	EI	EI	EI|-	Entrepreneur individuel: "EI" in the name since the law of 14 February 2022
+FR	BEWI			Association {name}|{name}	Association déclarée
+FR	HF2L			Association {name}|{name}
+FR	2XIK			Mutuelle {name}
+IT	OV32			S.r.l.|SRL|S.R.L.	Società a responsabilità limitata
+IT	8GU1			S.r.l.s.|SRLS
+IT	P418	S.p.A.	S.p.A.	S.p.A.|SPA	Società per azioni
+IT	T2X1	S.n.c.	S.n.c.	S.n.c.|SNC
+IT	CGSO	S.a.s.	S.a.s.	S.a.s.|SAS	Società in accomandita semplice
+IT	2XXH	S.s.	S.s.	S.s.|Società Semplice
+IT	QRZJ	Soc. Coop.	Soc. Coop.	Società Cooperativa|Soc. Coop.
+IT	1TON			Associazione {name}
+IT	75WC			Fondazione {name}
+ES	UFBW	C.B.	C.B.		Comunidad de Bienes
+ES	2W1A	S.C.	S.C.		Sociedad Civil
+ES	DP3Q			S.L.|SL
+ES	MDOL			Fundación {name}
+ES	A0J6			Asociación {name}
+ES	1QU8			S. Coop.|Sociedad Cooperativa
+PT	USOG	Lda.	Lda.		Sociedade por Quotas
+PT	DFE5	S.A.	S.A.		Sociedade Anónima
+PT	VF4C	Unipessoal Lda.	Unipessoal Lda.		Sociedade Unipessoal por Quotas
+PT	N66B	SNC	SNC		Sociedade em Nome Coletivo
+PT	OXUC	S. em C.	S. em C.		Sociedade em Comandita
+BR	QHW1	Ltda.	Ltda.		Sociedade Limitada
+BR	AL8W	Ltda.	Ltda.		Sociedade Limitada Unipessoal: written Ltda.
+BR	individual_micro_entrepreneur			-	MEI: no form in the trading name
+BR	sole_trader			-
+BR	PC5A			Cooperativa {name}|Cooperativa de {name}
+BR	I4T1			Fundação {name}
+BR	J7G9			Associação {name}
+NL	54M6	B.V.	B.V.	B.V.|BV
+NL	62Y3	V.O.F.	V.O.F.	V.O.F.|VOF
+NL	CODH	C.V.	C.V.
+NL	V44D			Stichting {name}
+NL	/^vereniging/			Vereniging {name}
+NL	NFFH			Coöperatie {name}|Coöperatie {name} U.A.
+BE	/besloten vennootschap/			BV|SRL
+PL	96XK			Fundacja {name}
+PL	8TOF			Spółdzielnia {name}
+CZ	9HLU	s.r.o.	s.r.o.		Společnost s ručením omezeným
+CZ	6CQN	a.s.	a.s.		Akciová společnost
+CZ	CD28	k.s.	k.s.		Společnost komanditní
+CZ	5KU5	v.o.s.	v.o.s.		Veřejná obchodní společnost
+CL	VZ3G			-
+CL	2UZP			-
+CL	EE3W			-
+PE	CHX6	S.A.C.	S.A.C.		Sociedad Anónima Cerrada
+PE	H8G2	E.I.R.L.	E.I.R.L.		Empresa Individual de Responsabilidad Limitada
+PE	73C0	S.R.L.	S.R.L.
+PE	P53M			Cooperativa {name}
+AR	RDD3			Asociación Civil {name}
+AR	LVJZ			Fundación {name}
+MX	5AWU			A.C.
+TR	RLSQ			{name} Vakfı
+TR	LYA0			{name} Derneği
+RU	P9CF	ИП	IP	ИП {name}	Индивидуальный предприниматель
+RU	17R7	ООО	OOO		Общество с ограниченной ответственностью
+RU	R71T	АО	AO		Акционерное общество
+RU	JZBN	АО	AO		Непубличное акционерное общество: written АО since 2014
+RU	4TYO	ПАО	PAO		Публичное акционерное общество
+RU	J18N	ТнВ	TnV		Товарищество на вере
+RU	KLA2	ПТ	PT		Полное товарищество
+RU	AS78			Адвокатское бюро «{name}»
+RU	QFGM	ПК	PK		Потребительский кооператив
+RU	4VTZ			Ассоциация «{name}»
+RU	KZC6			Фонд «{name}»
+RU	1RJ2	АНО	ANO		Автономная некоммерческая организация
+RU	YA7H			Частное учреждение «{name}»
+UA	general_partnership	ПТ	PT		повне товариство
+UA	individual_entrepreneur			ФОП {name}	ФОП takes no quotes
+KZ	general_partnership	ПТ	PT
+UZ	general_partnership	ПТ	PT
+VN	BB0P	DNTN	DNTN	Doanh nghiệp tư nhân	Doanh nghiệp tư nhân
+VN	QYCU	Công ty hợp danh	Cong ty hop danh	Công ty Hợp danh
+VN	0OCP	Công ty TNHH	Cong ty TNHH	Công ty TNHH
+VN	4RXL	Công ty TNHH MTV	Cong ty TNHH MTV	Công ty TNHH MTV|Công ty TNHH Một thành viên|Công ty TNHH
+VN	OMP4	CTCP	CTCP	Công ty Cổ phần|Công ty CP
+VN	S97E	HTX	HTX	Hợp tác xã
+VN	CZPI			-
+ID	XFHP	UD	UD		Usaha Dagang
+ID	JAJS			PT	PT PMA: written PT
+ID	AEZW			PT {name} Tbk	Perseroan Terbuka
+ID	V05A			-
+ID	HELT			Yayasan {name}
+ID	72I6			Koperasi {name}
+JP	T417			株式会社	株式会社, before or after the name
+JP	7QQ0			合同会社
+JP	DYQK			有限会社
+JP	5MVV			合資会社
+JP	IUVI			合名会社
+JP	general_incorporated_association			一般社団法人{name}
+JP	medical_corporation			医療法人{name}|医療法人社団{name}
+JP	specified_non_profit_corporation			特定非営利活動法人{name}|NPO法人{name}
+JP	co_operative			{name}協同組合
+JP	religious_corporation			宗教法人{name}
+JP	social_welfare_corporation			社会福祉法人{name}
+KR	5RCH			주식회사 {name}|{name} 주식회사|(주){name}|{name}(주)
+KR	J3U5			유한회사 {name}|{name} 유한회사|(유){name}
+KR	BW92	합자회사	Hapja Hoesa	합자회사 {name}|{name} 합자회사
+KR	AXEQ	합명회사	Hapmyeong Hoesa	합명회사 {name}|{name} 합명회사
+KR	co_operative			{name} 협동조합|{name}협동조합
+KR	VTH4			사단법인 {name}
+KR	AKF5			재단법인 {name}
+CN	limited_liability_company			{name}有限公司
+CN	company_limited_by_shares			{name}股份有限公司
+CN	general_partnership			{name}（普通合伙）
+CN	J7SF	有限合伙企业	Youxian Hehuo Qiye	{name}（有限合伙）
+CN	sole_investor_enterprise			-	个人独资企业: no form in the name
+CN	UMCR	专业合作社	Zhuanye Hezuoshe	{name}专业合作社
+TW	TD8P	股份有限公司	Co., Ltd.	{name}股份有限公司
+TW	Y45C	有限公司	Co., Ltd.	{name}有限公司
+TH	K09K			บริษัท {name} จำกัด	บริษัทจำกัด
+TH	O0OZ			บริษัท {name} จำกัด (มหาชน)	บริษัทมหาชนจำกัด
+TH	JUEU			ห้างหุ้นส่วนจำกัด {name}
+TH	FDRT			สมาคม{name}
+TH	D87D			มูลนิธิ{name}
+IR	limited_liability_company			شرکت {name} با مسئولیت محدود
+IR	private_joint_stock_company			شرکت {name} (سهامی خاص)
+IR	public_joint_stock_company			شرکت {name} (سهامی عام)
+IR	co_operative			شرکت تعاونی {name}

@@ -7,13 +7,13 @@ style	form_position	suffix
 template	founder	{surname}:2;Établissements {surname}:1;{surname} {family}:1
 template	founder_trade	{trade} {surname}:2;{trade} de {surname}:0.5
 template	two_founders	{surname} {joiner} {surname2}:1
-template	descriptive	{trade} {adjective}:2;{trade} du {region}:1;{trade} de {place}:2;{adjective} {trade}:0.5
+template	descriptive	{trade} {adjective}:2;{trade} {region}:1;{trade} de {place}:2;{adjective} {trade}:0.5
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;et
 family	*	& Fils;Frères;& Cie;Père & Fils;Famille
 adjective	*	Moderne;Nouvelle;Générale;Centrale;Royale;Grande;Française;Européenne;Internationale;Express;Prestige;Élite;Premier;Plus;Pro;Services;Solutions;Concept;Création;Tradition;Artisanale;Qualité;Avenir;Horizon;Azur;Atlantique;Alpine;Bleue;Verte;Or
-region	*	Nord;Sud;Est;Ouest;Centre;Sud-Ouest;Grand Ouest;Littoral;Vallée;Plaine;Pays;Région;Méditerranée;Atlantique;Montagne
+region	*	du Nord;du Sud;de l'Est;de l'Ouest;du Centre;du Sud-Ouest;du Grand Ouest;du Littoral;de la Vallée;de la Plaine;du Pays;de la Région;de la Méditerranée;de l'Atlantique;de la Montagne
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Néo;Sol;Cal;Dyn;Gen;Ori;Opt;Ren;Syn;Val;Ar;Bel;Cor;Dom;Fer;Lor;Mar;Sav;Vin
 coined_tail	*	alis;éo;ia;ys;ance;ix;ane;or;ea;elle;ium;ens;is;on;ova;ure;étis;ica;ence;ora
 trade	01	Exploitation Agricole;Ferme;Domaine;Élevage;Maraîchage;Earl
