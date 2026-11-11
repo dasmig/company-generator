@@ -12,6 +12,17 @@ from companygen_data import (AGE_CLASSES, BAND_LIMITS, BANDS, CURATED, DIVISIONS
 from prepare_words import PATTERNS, is_latin
 
 SECTS = [s for s in SECTIONS if s not in "TU"]
+# Key columns of each table, as companygen.hpp reads them.
+TABLE_KEYS = {
+    "countries": ("country_code",), "isic": ("code",), "industries": ("country_code", "division"),
+    "sizes": ("country_code", "isic", "band"), "ages": ("country_code", "section", "band"),
+    "groups": ("country_code", "section"), "form_odds": ("section", "band"),
+    "legal_forms": ("country_code", "key"),
+    "occupations": ("country_code", "isco"), "words": ("language", "kind", "key", "word"),
+    "patterns": ("language", "group", "band"), "surnames": ("culture", "surname"),
+    "places": ("country_code", "place"), "domains": ("country_code", "tld"), "schemes": ("key",),
+    "anchors": ("scheme", "series", "year"),
+}
 TOL = 0.02   # shares are rounded to three or four significant digits
 
 
@@ -19,6 +30,13 @@ def check_tier(tier, info):
     problems = []
     say = problems.append
     t = lambda name: read_tsv(RESOURCES / tier / name)
+
+    # the engine loads each table by these keys (a repeated key would replace the row before it)
+    for name, key in TABLE_KEYS.items():
+        seen = Counter(tuple(r[c] for c in key) for r in t(name + ".tsv"))
+        for k, n in seen.items():
+            if n > 1:
+                say(f"{name}.tsv: key {'/'.join(key)} = {k} appears {n} times")
 
     cty = {r["country_code"]: r for r in t("countries.tsv")}
     if set(cty) != set(info):

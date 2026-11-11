@@ -20,7 +20,7 @@ family	*	& Sons;& Son;& Co;Brothers;& Daughters;Family
 adjective	*	Premier;Prime;Elite;Apex;Summit;Pioneer;Quality;Precision;Advanced;Modern;Classic;Royal;Golden;Silver;Blue;Green;Red;Bright;Smart;First;Allied;United;Trusted;Express;Rapid;Total;Complete;Integrated;Strategic;Superior;Heritage;Crown;Anchor;Bridge;Oak;Cedar;Phoenix;Eagle;Falcon;Lion
 region	*	North;South;East;West;Central;National;International;Global;Northern;Southern;Eastern;Western;Coastal;Highland;Valley;Metro;City;County;Atlantic;Pacific
 coined_head	*	Nov;Vel;Ax;Zen;Lum;Ver;Kor;Tri;Nex;Ori;Sol;Bri;Cal;Dyn;Ev;Flex;Gen;Hal;Inf;Kin;Lyn;Mar;Neo;Opt;Pro;Qu;Ren;Syn;Tal;Ul;Vant;Wex;Xan;Zy
-coined_tail	*	atek;ora;ix;ion;ex;ara;ium;ity;on;ova;ent;ex;ra;ify;lane;well;point;stone;wave;line;sphere;bridge;field;view;tech;works;labs;hub;ly
+coined_tail	*	atek;ora;ix;ion;ex;ara;ium;ity;on;ova;ent;ra;ify;lane;well;point;stone;wave;line;sphere;bridge;field;view;tech;works;labs;hub;ly
 trade	01	Farms;Farming;Agriculture;Poultry;Dairy;Livestock;Growers
 trade	02	Forestry;Timber;Tree Services;Woodland
 trade	03	Fisheries;Fishing;Seafood;Aquaculture;Shellfish

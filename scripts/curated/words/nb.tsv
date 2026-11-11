@@ -17,7 +17,7 @@ family	*	& Sønn;& Sønner;Brødrene;& Co
 adjective	*	Nye;Norsk;Nordisk;Moderne;Total;Proff;Prima;Ekte;Solid;Smart;Rask;Trygg;Fjell;Fjord;Kyst;Nord;Polar;Viking;Midnatt;Sol
 region	*	Nord;Sør;Øst;Vest;Midt;Nordland;Vestland;Sørlandet;Østlandet;Kysten;Fjellet;Dalen;Fjorden;Vika
 coined_head	*	Nor;Vik;Fjel;Ask;Bjør;Hav;Lys;Mjø;Skog;Sol;Stor;Vin;Ny;Kyr;Al;Ber;Tin;Fro
-coined_tail	*	ia;tek;ra;stad;vik;nes;heim;dal;bø;ik;on;ex;ra;vang
+coined_tail	*	ia;tek;ra;stad;vik;nes;heim;dal;bø;ik;on;ex;vang
 trade	01	Gård;Gårdsdrift;Gartneri;Samdrift;Landbruk;Maskinlag
 trade	02	Skog;Skogsdrift;Skogservice;Trefelling;Ved
 trade	03	Fiskeri;Havfiske;Kystfiske;Havbruk;Settefisk;Fisk

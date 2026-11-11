@@ -12,6 +12,7 @@ in sizes.tsv, fewer words, surnames and places, and three significant digits.
 import math
 import re
 import sys
+import unicodedata
 from collections import Counter, defaultdict
 
 import prepare_economy
@@ -69,6 +70,12 @@ def sig(x, n):
     if not x:
         return 0.0
     return round(x, n - 1 - int(math.floor(math.log10(abs(x)))))
+
+
+def form_slug(text):
+    """A key from a form's name: lower-case ASCII letters and digits, joined by underscores."""
+    plain = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "_", plain.lower()).strip("_") or "form"
 
 
 def write_both(name, comment, columns, rows_for):
@@ -404,7 +411,15 @@ def main():
     # ---- legal_forms.tsv, groups.tsv, form_odds.tsv
     def forms_rows(tier, n):
         rows, top = [], set()
-        for r in forms["legal_forms"]:   # sorted by share within each group: the first is the top form
+        keyed, used = [], set()      # the key: the ISO 20275 code, else the Latin name; the same in both tiers
+        for r in forms["legal_forms"]:
+            base = r["code"] or form_slug(r["latin_name"] or r["name"])
+            key, i = base, 2
+            while (r["country_code"], key) in used:
+                key, i = f"{base}_{i}", i + 1
+            used.add((r["country_code"], key))
+            keyed.append({"key": key, **r})
+        for r in keyed:   # sorted by share within each group: the first is the top form
             key = (r["country_code"], r["group"])
             first = key not in top
             top.add(key)
@@ -425,7 +440,7 @@ def main():
                "form was open to new firms, the sections or divisions it is kept to (only) or kept out of (not), "
                "and its share of the group among small (micro, small) and large (medium, large) firms (lite: forms "
                "under 1% of their group left out)",
-               ["country_code", "code", "group", "abbreviation", "latin_abbreviation", "name", "latin_name", "from",
+               ["country_code", "key", "code", "group", "abbreviation", "latin_abbreviation", "name", "latin_name", "from",
                 "until", "only", "not", "share_small", "share_large", "evidence"], forms_rows)
 
     def groups_rows(tier, n):
@@ -492,6 +507,10 @@ def main():
                "scripts/curated/domains.tsv; regional defaults where it has no row)", ["country_code", "tld", "share"],
                lambda tier, n: [{**r, "share": sig(r["share"], n)} for r in dom_rows])
 
+    write_both("isic.tsv", "ISIC Rev. 4 sections and divisions with their titles (UN Statistics Division, Statistical "
+               "Papers Series M No. 4/Rev.4, 2008), lower-cased as the result's to_string() prints them; a section row "
+               "(a letter) is followed by its divisions", ["code", "label"],
+               lambda tier, n: [{"code": r["code"], "label": r["label"]} for r in read_tsv(CURATED / "isic.tsv")])
     write_both("schemes.tsv", "registration and tax numbers by country: how each is built (builder, pattern, check; "
                "see scripts/curated/schemes.tsv for the notation), the legal-form groups holding it (S, P, L, O) and "
                "its safe method; from the number survey (designs/company-generator-numbers.tsv)",
