@@ -2,7 +2,7 @@
 
 The data in `resources/` and how company-generator uses it (rule 6 of the dasmig standard). The design is in `designs/company-generator.md` of the meta repository; this page describes what was built.
 
-**Status:** the tables are built (Milestone 3). The engine that draws from them is Milestone 4; until then the library still loads the scaffold's sample `company.tsv`.
+**Status:** the tables are built (Milestone 3) and the engine draws the country, industry, size band and head count, legal form and founding date from them (Milestone 4). The name, registration numbers and domain are Milestone 5: their tables (`words`, `patterns`, `surnames`, `places`, `domains`, `schemes`, `anchors`) are loaded and checked but not yet drawn from.
 
 ## Tiers
 
@@ -19,12 +19,13 @@ All countries are the 199 the other Tier 5 libraries serve, keyed by `country_co
 
 | Table | Key | Values |
 | --- | --- | --- |
+| `isic.tsv` | section or division | the ISIC Rev. 4 titles, lower-cased as `to_string()` prints them (sections A to S; divisions 01 to 96) |
 | `countries.tsv` | country | enterprises, persons employed, the languages business names are written in, the surname culture, the evidence (and in `full` the source) of each field, the share of firms up to five years old, the share of firms without a website by size band |
 | `industries.tsv` | country, ISIC Rev. 4 division | enterprises and persons employed per million of the country's total |
 | `sizes.tsv` | country, division (`lite`: section), band | share of enterprises and of persons employed, mean head count in the band |
 | `ages.tsv` | country, section, band | share of firms by age: 0 to 5 years, then 6-10, 11-15, 16-20, 21-25, 26+ |
 | `occupations.tsv` | country, ISCO-08 major group | persons employed per million of the country's total, by ISIC section |
-| `legal_forms.tsv` | country, group, form | ISO 20275 code, abbreviation and name (with Latin forms), the dates the form was open to new firms, the sections it is kept to or out of, its share of the group among small and among large firms |
+| `legal_forms.tsv` | country, key (the ISO 20275 code, else the Latin name) | group, ISO 20275 code, abbreviation and name (with Latin forms), the dates the form was open to new firms, the sections it is kept to or out of, its share of the group among small and among large firms |
 | `groups.tsv` | country, section | the base weight of each legal-form group |
 | `form_odds.tsv` | section, band | the odds of each legal-form group by size |
 | `words.tsv` | language | name styles, templates, trade words per division, adjectives, region words, places, family words, joiners, coined-name syllables |
@@ -86,7 +87,11 @@ Each field is drawn in turn, conditioned on the ones before (design section 5).
 
 ### Industry and Size
 
-The division from `industries.tsv`, by enterprises or by employment. The size band from `sizes.tsv` (the country's row for the division, else its section, else the pooled row); the head count within the band from a discrete power law fitted to the band's mean. A mean outside its band in the source (confidential SBS cells, or persons employed counted without the owner) is replaced by the pooled mean of the division, else a default for the band (2, 19, 100, 900).
+The division from `industries.tsv`, by enterprises or by employment. The size band from `sizes.tsv` (the country's row for the division, else its section, else the pooled division, else the pooled section), by the cell's share of enterprises or of persons employed. A cell with shares of one kind only (the UK register has no persons employed by size) takes the other from the mean head count of each band: the share of persons is the share of enterprises times the mean, and the reverse.
+
+The head count within a band is a discrete power law on the band (1-9, 10-49, 50-249) whose exponent is fitted to the band's mean: the engine tabulates the law at exponents 0, 0.1, ..., 10 and draws from the mixture of the two neighbouring laws whose mean is the band's, so the mean is matched exactly. A mean the laws cannot reach is clamped (above the band's midpoint, the uniform law's; below 1.0008, the steepest). A mean outside its band in the source (confidential SBS cells, or persons employed counted without the owner) is replaced by a default for the band (2, 19, 100, 900).
+
+The open top band (250 and more) is a truncated Pareto on 250 to a cap, its exponent fitted to the band's mean. The cap is the scale of the country's largest employers, which hold about 2% of its persons employed, within 1,000 and 100,000.
 
 ### Legal Form
 
@@ -108,11 +113,15 @@ Then the form within the group (`legal_forms.tsv`), by `share_small` (micro and 
 - Fixed curated shares where LEIs mislead (`scripts/curated/form_overrides.tsv`): foundations, trusts and public bodies hold most LEIs of the "other" group, associations and co-operatives most of its firms.
 - Curated forms where ISO 20275 has none: the sole traders and general partnerships it leaves out (`pseudo_forms.tsv`), and whole sets for the 86 countries it does not cover, by legal tradition (`form_templates.tsv`: common law, OHADA, the Maghreb, lusophone and hispanic law, the CIS, ...).
 
+A request that forces the legal form or `incorporated_only`, or the size band, conditions the industry and the size on it (the weight of a division is multiplied by the probability that a company in it meets the request), so a forced "e. K." comes mostly from retail and crafts, and a request no company can meet throws.
+
 Constraints: `from` and `until` (Germany's UG from 2008, France's SAS from 1994, the US LLC from 1977, Japan's 有限会社 until 2006, Russia's ОАО until 2014; `scripts/curated/form_dates.tsv`), `only` (banks and insurers to section K, agricultural forms to A, professional forms to M and Q, public bodies to O, P, Q, R, E and H, associations and foundations to P, Q, R, S, M, N and I) and `not` (no sole trader in divisions 64 and 65, no partnership in 65).
 
 ### Age
 
-The US's age shape by section and band (BDS), or the register's own (France, Norway, the UK). Countries with Eurostat's measure scale the first five years to their `young_share`.
+The US's age shape by section and band (BDS), or the register's own (France, Norway, the UK). A class of the shape (age 0, 1, ..., 5, 6-10, ..., 26+) is spread evenly over its years; the 26+ class decays over ages 26 to 125 with a 25-year scale (curated). Countries with Eurostat's measure scale the first six classes (ages 0 to 5) by one factor per country, fitted so that the country's own mix of sections and bands gives its `young_share`. The US takes the shape as it is.
+
+A year is picked by those weights, then a day inside it, never after the reference date and never outside the legal form's dates: a form's `from` and `until` cut the weight of the years they overlap in proportion to the days left. A firm older than its form's `from` date (one that converted) is not modelled; its founding date is in the form's years.
 
 ### Name
 
@@ -137,6 +146,10 @@ These are set by hand and not measured; each file says so:
 - The share of firms without a website: guided by Eurostat's `isoc_ciweb` (about 78%, 91% and 95% of EU firms with 10-49, 50-249 and 250+ persons had a website in 2023; recalled, not downloaded) for high-income countries; micro firms and other income groups are estimated.
 - The income-group legal-form splits, the template forms and their shares.
 
+## Validation
+
+`scripts/validate_company.py` builds `scripts/draw_companies.cpp`, draws 20,000 companies per country on both tiers and both weightings (16 million in all), and compares them with the tables by recomputing, independently of the engine, what the counts should be: the shares of the 19 sections, the four size bands, the mean head count of the finite bands, the four legal-form groups (from `groups.tsv`, `form_odds.tsv` and the forms open on 2025-07-01) and the share of firms up to five years old where Eurostat measures it. Each comparison is a z test at 5 standard errors. All 199 countries pass on both tiers (2026-11-11). This checks that the engine draws what the tables say; it does not check the tables against the world, which `check_company.py` and the sources do.
+
 ## Rebuilding the Data
 
 ```
@@ -147,6 +160,7 @@ python scripts/read_anchors.py       # issue anchors of sequential numbers
 python scripts/prepare_words.py      # checks the word lists
 python scripts/prepare_tables.py     # writes resources/full and resources/lite
 python scripts/check_company.py      # checks both tiers, prints the coverage
+python scripts/validate_company.py   # draws from both tiers and compares with the tables (needs a C++23 compiler)
 python scripts/embed.py resources --tier lite --name companygen --output dasmig/companygen_data.hpp
 ```
 

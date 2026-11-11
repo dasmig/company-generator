@@ -15,6 +15,10 @@ Companies by country: industry, size, legal form, founding date, name, registrat
 
 ## Features
 
+- **Country-true Companies**. The industry, size, legal form and age of a company follow the statistics of its country (199 served): Eurostat, the OECD, ILOSTAT, the US Census Bureau, and the whole business registers of the UK, France and Norway. Every company says how well its fields are known (`measured`, `modelled`, `filled`).
+
+- **Forced Fields**. Ask for a country, industry, size, head count or legal form; the rest is drawn to fit, and a request no company can meet throws.
+
 - **Deterministic Seeding**. Per-call `get_company(request, seed)` for reproducible results, and `company::seed()` for replaying a previous generation with the same request and data.
 
 - **Batch Generation**. Generate thousands of results from one seed, on several threads with the same output for any thread count, optionally unique by a key, and stream them as JSON Lines or CSV (see the usage guide).
@@ -48,8 +52,16 @@ to the files you want to use it in, and supply the [`resources`](https://github.
 auto& gen = dasmig::cpg::instance(); // loads the lite tier
 
 auto v = gen.get_company(dasmig::company_request{});
-std::cout << v << '\n';           // the label
-std::cout << v.to_json() << '\n'; // {"key":...,"label":...,"signature":{...}}
+std::cout << v << '\n';           // DE, GmbH, specialized construction activities (43), 8 persons, founded 2011-03-14
+std::cout << v.to_json() << '\n'; // {"country_code":"DE","isic":"43",...,"signature":{...}}
+
+// Force what you need; the rest is drawn to fit.
+dasmig::company_request r;
+r.country = "FR";
+r.isic = "F";                     // construction
+r.size = dasmig::size_band::small;
+r.incorporated_only = true;
+auto builder = gen.get_company(r);
 
 // The same seed gives the same result everywhere.
 auto again = gen.get_company(dasmig::company_request{}, v.seed());
