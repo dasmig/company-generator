@@ -1,0 +1,44 @@
+# Lithuanian business-name words (curated 2026-11-10). Lithuanian names: Kazlausko Statyba UAB, Vilniaus Transportas, Petraičio Elektra.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{surname} {trade}:3
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{place} {trade}:2;{adjective} {trade}:1;{region} {trade}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	ir;&
+family	*	ir Sūnūs;ir Partneriai
+adjective	*	Lietuvos;Baltijos;Nordic;Naujoji;Euro;Inter;Pro;Eko;Max;Top;Mega;Aukso;Gintaro;Nemuno;Ąžuolo
+region	*	Žemaitija;Aukštaitija;Dzūkija;Suvalkija;Baltija;Šiaurė;Pietūs
+coined_head	*	Lit;Balt;Nord;Tech;Euro;Med;Kom;Agro;Neo;Vit;Gin
+coined_tail	*	tech;ex;kom;plast;tex;ia;on;ra;as;us;ita
+trade	A	Ūkis;Žemės Ūkis;Agro
+trade	02	Miškas;Miškininkystė
+trade	B	Karjeras;Kasyba
+trade	C	Gamyba;Gamykla;Pramonė
+trade	10	Kepykla;Mėsinė;Pieninė
+trade	16	Mediena;Lentpjūvė
+trade	25	Metalas;Metalo Apdirbimas
+trade	D	Energija;Saulės Energija;Elektra
+trade	E	Vanduo;Atliekos;Perdirbimas
+trade	F	Statyba;Statybos;Statybų Grupė
+trade	43	Elektra;Santechnika;Apdaila;Stogai
+trade	G	Prekyba;Trade;Didmeninė Prekyba;Importas
+trade	45	Auto;Autoservisas;Padangos
+trade	47	Parduotuvė;Vaistinė
+trade	H	Transportas;Logistika;Pervežimai;Taksi
+trade	I	Viešbutis;Restoranas;Kavinė;Pica
+trade	J	IT;Programinė Įranga;Software;Media;Digital
+trade	K	Invest;Capital;Draudimas;Finansai
+trade	L	Nekilnojamasis Turtas;Real Estate;Vystymas
+trade	M	Konsultacijos;Buhalterija;Advokatų Kontora;Projektai;Architektai;Reklama;Dizainas
+trade	N	Paslaugos;Valymas;Apsauga;Nuoma;Kelionių Agentūra
+trade	O	Savivaldybė
+trade	P	Mokymo Centras;Mokykla;Vairavimo Mokykla
+trade	Q	Klinika;Odontologija;Sveikata
+trade	R	Sportas;Fitnesas;Kultūra
+trade	S	Paslaugos;Kirpykla;Grožio Salonas;Remontas

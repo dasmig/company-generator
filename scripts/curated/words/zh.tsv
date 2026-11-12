@@ -1,0 +1,112 @@
+# Chinese business-name words (curated 2026-11-10), checked against the words GLEIF's Chinese names
+# use most (科技, 贸易, 实业, 商贸, 进出口, 投资管理, 生物科技). A mainland name is
+# place + trade name (字号) + trade + form, with no spaces: 上海华信科技有限公司 (the 2021
+# Regulations on Enterprise Name Registration). The trade name is two characters, coined here from
+# the characters such names favour. Small shops use the owner's surname + 记. Each word carries its
+# pinyin after "=", used for domains. place: per country; surname: the commonest surnames, as
+# name-generator's lists are in Latin script. Traditional characters for TW, HK and MO are made at
+# build time from a fixed table (prepare_tables.py). Columns as in en.tsv.
+kind	key	value
+style	script	Hans
+style	form_position	suffix
+style	space	none
+style	coined_join	none
+template	founder	{surname}记={surname}ji:1
+template	founder_trade	{place}{surname}氏{trade}={place}{surname}shi{trade}:1
+template	descriptive	{place}{coined}{trade}:5;{coined}{trade}:1
+template	coined	{place}{coined}{trade}:3;{coined}{trade}:1
+template	initials	{place}{coined}{trade}:1
+surname	*	王=Wang:7.2;李=Li:7.1;张=Zhang:6.8;刘=Liu:5.4;陈=Chen:4.6;杨=Yang:3.1;黄=Huang:2.4;赵=Zhao:2.3;吴=Wu:2.1;周=Zhou:2;徐=Xu:1.4;孙=Sun:1.4;马=Ma:1.3;朱=Zhu:1.3;胡=Hu:1.2;郭=Guo:1.2;何=He:1.1;林=Lin:1.1;高=Gao:1.1;罗=Luo:1
+place	CN	北京=Beijing:22;上海=Shanghai:25;广州=Guangzhou:19;深圳=Shenzhen:18;重庆=Chongqing:32;天津=Tianjin:14;成都=Chengdu:21;武汉=Wuhan:13;杭州=Hangzhou:12;西安=Xian:13;南京=Nanjing:9;苏州=Suzhou:13;郑州=Zhengzhou:13;青岛=Qingdao:10;长沙=Changsha:10;东莞=Dongguan:10;宁波=Ningbo:9;佛山=Foshan:9;合肥=Hefei:9;福州=Fuzhou:8;厦门=Xiamen:5;济南=Jinan:9;沈阳=Shenyang:9;昆明=Kunming:8;温州=Wenzhou:9;无锡=Wuxi:7;泉州=Quanzhou:9;石家庄=Shijiazhuang:11;南宁=Nanning:9;哈尔滨=Haerbin:10;大连=Dalian:7;长春=Changchun:9;贵阳=Guiyang:6;南昌=Nanchang:6;太原=Taiyuan:5;常州=Changzhou:5;烟台=Yantai:7;徐州=Xuzhou:9;潍坊=Weifang:9;惠州=Huizhou:6
+place	TW	臺北=Taipei:2.6;新北=Xinbei:4;臺中=Taichung:2.8;高雄=Kaohsiung:2.7;桃園=Taoyuan:2.3;臺南=Tainan:1.8;新竹=Hsinchu:1;基隆=Keelung:0.4;彰化=Changhua:1.2;嘉義=Chiayi:0.7
+place	HK	香港=Hongkong:1
+place	MO	澳門=Macau:1
+place	SG	新加坡=Singapore:1
+place	MY	吉隆坡=Kuala Lumpur:1;槟城=Penang:0.4;新山=Johor Bahru:0.5
+coined_head	*	华=Hua;鑫=Xin;恒=Heng;盛=Sheng;宏=Hong;泰=Tai;新=Xin;金=Jin;中=Zhong;天=Tian;东=Dong;永=Yong;佳=Jia;博=Bo;瑞=Rui;嘉=Jia;润=Run;兴=Xing;海=Hai;汇=Hui;联=Lian;合=He;创=Chuang;宇=Yu;万=Wan;国=Guo;远=Yuan;银=Yin;龙=Long;凯=Kai
+coined_tail	*	达=Da;源=Yuan;信=Xin;通=Tong;丰=Feng;和=He;昌=Chang;隆=Long;发=Fa;安=An;宇=Yu;诚=Cheng;创=Chuang;远=Yuan;德=De;力=Li;邦=Bang;辉=Hui;晟=Sheng;域=Yu;星=Xing;腾=Teng;峰=Feng;锦=Jin;程=Cheng;祥=Xiang;顺=Shun;明=Ming;鼎=Ding;阳=Yang
+trade	01	农业=Nongye;种植=Zhongzhi;养殖=Yangzhi;农牧=Nongmu;果蔬=Guoshu;生态农业=Shengtai Nongye
+trade	02	林业=Linye;苗木=Miaomu
+trade	03	渔业=Yuye;水产=Shuichan;水产养殖=Shuichan Yangzhi
+trade	05	煤业=Meiye;煤炭=Meitan
+trade	06	石油=Shiyou;天然气=Tianranqi
+trade	07	矿业=Kuangye
+trade	08	石材=Shicai;砂石=Shashi;矿业=Kuangye
+trade	09	油田服务=Youtian Fuwu
+trade	10	食品=Shipin;粮油=Liangyou;肉类=Roulei;乳业=Ruye;烘焙=Hongbei;茶业=Chaye
+trade	11	酒业=Jiuye;饮品=Yinpin;饮料=Yinliao
+trade	12	烟草=Yancao
+trade	13	纺织=Fangzhi;织造=Zhizao;家纺=Jiafang
+trade	14	服饰=Fushi;服装=Fuzhuang;制衣=Zhiyi
+trade	15	皮革=Pige;鞋业=Xieye;箱包=Xiangbao
+trade	16	木业=Muye;木制品=Muzhipin
+trade	17	纸业=Zhiye;包装=Baozhuang;纸品=Zhipin
+trade	18	印刷=Yinshua;印务=Yinwu;彩印=Caiyin
+trade	19	石化=Shihua
+trade	20	化工=Huagong;涂料=Tuliao;日化=Rihua;新材料=Xin Cailiao
+trade	21	医药=Yiyao;制药=Zhiyao;药业=Yaoye
+trade	22	塑胶=Sujiao;塑料=Suliao;橡胶=Xiangjiao;塑业=Suye
+trade	23	建材=Jiancai;玻璃=Boli;陶瓷=Taoci;水泥=Shuini
+trade	24	钢铁=Gangtie;金属=Jinshu;铝业=Lvye;铜业=Tongye
+trade	25	五金=Wujin;金属制品=Jinshu Zhipin;精密=Jingmi;机械=Jixie
+trade	26	电子=Dianzi;光电=Guangdian;电子科技=Dianzi Keji;智能=Zhineng
+trade	27	电气=Dianqi;照明=Zhaoming;电机=Dianji;电缆=Dianlan
+trade	28	机械=Jixie;设备=Shebei;装备=Zhuangbei;自动化=Zidonghua;机电=Jidian
+trade	29	汽车=Qiche;汽配=Qipei;汽车零部件=Qiche Lingbujian
+trade	30	船舶=Chuanbo;航空=Hangkong;车辆=Cheliang
+trade	31	家具=Jiaju;橱柜=Chugui
+trade	32	珠宝=Zhubao;玩具=Wanju;工艺品=Gongyipin;文具=Wenju
+trade	33	设备维修=Shebei Weixiu;维修=Weixiu;机电工程=Jidian Gongcheng
+trade	35	能源=Nengyuan;电力=Dianli;新能源=Xin Nengyuan;光伏=Guangfu
+trade	36	水务=Shuiwu;供水=Gongshui
+trade	37	污水处理=Wushui Chuli;环保=Huanbao
+trade	38	再生资源=Zaisheng Ziyuan;环保=Huanbao;回收=Huishou
+trade	39	环境治理=Huanjing Zhili;环境工程=Huanjing Gongcheng
+trade	41	建设=Jianshe;建筑=Jianzhu;建筑工程=Jianzhu Gongcheng;房地产开发=Fangdichan Kaifa
+trade	42	路桥=Luqiao;市政工程=Shizheng Gongcheng;工程=Gongcheng
+trade	43	装饰=Zhuangshi;装饰工程=Zhuangshi Gongcheng;安装=Anzhuang;机电安装=Jidian Anzhuang;水电=Shuidian
+trade	45	汽车销售=Qiche Xiaoshou;汽车服务=Qiche Fuwu;汽修=Qixiu
+trade	46	贸易=Maoyi;商贸=Shangmao;进出口=Jinchukou;国际贸易=Guoji Maoyi;供应链=Gongyinglian;实业=Shiye
+trade	47	商行=Shanghang;超市=Chaoshi;便利店=Bianlidian;百货=Baihuo;药房=Yaofang;商店=Shangdian
+trade	49	运输=Yunshu;物流=Wuliu;客运=Keyun;货运=Huoyun
+trade	50	航运=Hangyun;海运=Haiyun
+trade	51	航空=Hangkong
+trade	52	物流=Wuliu;仓储=Cangchu;供应链=Gongyinglian
+trade	53	快递=Kuaidi;速递=Sudi
+trade	55	酒店=Jiudian;宾馆=Binguan;民宿=Minsu
+trade	56	餐饮=Canyin;餐饮管理=Canyin Guanli;饭店=Fandian;小吃=Xiaochi;火锅=Huoguo
+trade	58	出版=Chuban;软件=Ruanjian
+trade	59	影视=Yingshi;文化传媒=Wenhua Chuanmei;传媒=Chuanmei
+trade	60	广播电视=Guangbo Dianshi
+trade	61	通信=Tongxin;网络=Wangluo
+trade	62	信息技术=Xinxi Jishu;软件=Ruanjian;科技=Keji;网络科技=Wangluo Keji
+trade	63	信息=Xinxi;数据=Shuju;互联网=Hulianwang
+trade	64	投资=Touzi;控股=Konggu;金融=Jinrong;资本=Ziben
+trade	65	保险=Baoxian
+trade	66	资产管理=Zichan Guanli;投资管理=Touzi Guanli;保险代理=Baoxian Daili
+trade	68	置业=Zhiye;房地产=Fangdichan;物业=Wuye;物业管理=Wuye Guanli
+trade	69	财务咨询=Caiwu Zixun;税务=Shuiwu;会计服务=Kuaiji Fuwu
+trade	70	企业管理=Qiye Guanli;咨询=Zixun;管理咨询=Guanli Zixun
+trade	71	工程设计=Gongcheng Sheji;建筑设计=Jianzhu Sheji;检测=Jiance;工程咨询=Gongcheng Zixun
+trade	72	生物科技=Shengwu Keji;技术研究=Jishu Yanjiu
+trade	73	广告=Guanggao;文化传播=Wenhua Chuanbo;营销策划=Yingxiao Cehua
+trade	74	设计=Sheji;摄影=Sheying;翻译=Fanyi
+trade	75	宠物医院=Chongwu Yiyuan;兽医=Shouyi
+trade	77	租赁=Zulin;汽车租赁=Qiche Zulin;设备租赁=Shebei Zulin
+trade	78	人力资源=Renli Ziyuan;劳务=Laowu
+trade	79	旅游=Lvyou;旅行社=Lvxingshe
+trade	80	保安=Baoan;安保=Anbao
+trade	81	物业服务=Wuye Fuwu;保洁=Baojie;园林绿化=Yuanlin Lvhua
+trade	82	商务服务=Shangwu Fuwu;会展=Huizhan
+trade	84	管理局=Guanliju
+trade	85	教育=Jiaoyu;培训=Peixun;教育科技=Jiaoyu Keji
+trade	86	医疗=Yiliao;诊所=Zhensuo;口腔=Kouqiang;健康=Jiankang
+trade	87	养老=Yanglao;康养=Kangyang
+trade	88	家政=Jiazheng;社会服务=Shehui Fuwu
+trade	90	文化艺术=Wenhua Yishu;演艺=Yanyi
+trade	91	博物馆=Bowuguan
+trade	92	娱乐=Yule
+trade	93	体育=Tiyu;健身=Jianshen
+trade	94	协会=Xiehui;商会=Shanghui
+trade	95	维修=Weixiu;家电维修=Jiadian Weixiu
+trade	96	美容=Meirong;美发=Meifa;洗衣=Xiyi;养生=Yangsheng

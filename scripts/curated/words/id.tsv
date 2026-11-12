@@ -1,0 +1,54 @@
+# Indonesian business-name words (curated 2026-11-10), checked against the words GLEIF's Indonesian
+# names use most (jaya, utama, sejahtera, mandiri, prima, abadi, karya, mitra, makmur, lestari,
+# perkasa, nusantara). A name is two or three such words, often with a trade: PT Karya Mandiri
+# Konstruksi, CV Sumber Rejeki; the form comes first. Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	prefix
+template	founder	{surname}:1;Toko {surname}:1
+template	founder_trade	{trade} {surname}:1
+template	descriptive	{adjective} {adjective2} {trade}:3;{place} {adjective} {trade}:1;{adjective} {trade}:1
+template	coined	{adjective} {adjective2}:3;{adjective} {adjective2} {adjective3}:2;{coined}:1
+template	initials	{initials}:1;{initials} {trade}:1
+adjective	*	Jaya:3;Utama:2.5;Sejahtera:2;Mandiri:2;Prima:2;Abadi:2;Karya:2;Mitra:2;Makmur:2;Lestari:1.5;Perkasa:1.5;Nusantara:1.5;Sinar:1.5;Sukses:1.5;Bersama:1.5;Indah:1;Agung:1;Baru:1;Cahaya:1;Mulia:1;Sentosa:1.5;Global:1;Bumi:1;Putra:1;Surya:1;Mega:1;Inti:1;Sarana:1;Persada:1;Sumber:1.5;Rejeki:1;Maju:1.5;Berkah:1;Gemilang:0.8;Mas:0.8;Pratama:1;Multi:1;Anugerah:1;Cipta:1;Dharma:0.6
+place	ID	Indo:3;Nusa:1;Jakarta:1;Bandung:0.5;Surabaya:0.6;Medan:0.4;Borneo:0.4;Bali:0.4;Java:0.3;Sumatra:0.3;Celebes:0.2
+coined_head	*	Indo;Nusa;Tri;Eka;Dwi;Panca;Sri;Bina;Aneka;Graha;Wira;Tunas
+coined_tail	*	tama;jaya;guna;karya;mas;tek;kom;nusa;sarana;loka;prima
+trade	01	Agro;Perkebunan;Pertanian;Peternakan;Agri;Sawit
+trade	02	Kehutanan;Kayu
+trade	03	Perikanan;Bahari;Samudra
+trade	B	Tambang;Mining;Energi;Resources;Mineral
+trade	C	Industri;Manufacturing;Industries
+trade	10	Pangan;Food;Makanan;Roti;Bakery
+trade	11	Minuman;Beverage
+trade	13	Tekstil
+trade	14	Garmen;Konveksi;Fashion
+trade	16	Kayu;Timber
+trade	18	Percetakan;Printing
+trade	20	Kimia;Chemical;Cat
+trade	21	Farma;Pharma
+trade	22	Plastik;Plastindo
+trade	24	Steel;Logam;Baja
+trade	25	Teknik;Logam;Engineering
+trade	29	Motor;Otomotif
+trade	31	Mebel;Furniture
+trade	D	Energi;Power;Listrik
+trade	E	Air;Lingkungan;Daur Ulang
+trade	F	Konstruksi;Bangunan;Kontraktor;Teknik;Karya
+trade	G	Niaga;Trading;Dagang;Perdagangan;Distribusi;Sentosa
+trade	45	Motor;Mobil;Otomotif
+trade	47	Toko;Mart;Swalayan;Apotek
+trade	H	Transport;Logistik;Ekspedisi;Angkutan;Transportasi
+trade	50	Pelayaran;Shipping;Samudera
+trade	51	Air;Aviasi
+trade	I	Hotel;Resort;Rumah Makan;Kuliner;Resto
+trade	J	Teknologi;Digital;Solusi;Media;Informatika;Telekomunikasi
+trade	K	Investama;Finance;Capital;Asuransi;Sekuritas;Multifinance
+trade	L	Properti;Realty;Land;Graha;Estate
+trade	M	Konsultan;Engineering;Advertising;Desain;Akuntan
+trade	N	Jasa;Servis;Rental;Wisata;Tour;Security;Outsourcing
+trade	O	Dinas
+trade	P	Pendidikan;Edukasi;Kursus;Sekolah
+trade	Q	Medika;Klinik;Farma;Husada;Sehat
+trade	R	Hiburan;Sport;Seni
+trade	S	Servis;Salon;Laundry;Jasa

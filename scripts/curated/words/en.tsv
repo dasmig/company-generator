@@ -1,0 +1,108 @@
+# English business-name words (curated 2026-11-10). Trade words were read by hand from the words
+# most over-represented in each division's names in the Companies House register (read_registers.py,
+# lift >= 3, in 40+ names), brands and place names left out. kind: style (how names are put
+# together), template (a pattern's forms, with weights), trade (per ISIC division, ";"-separated),
+# adjective, region, family, joiner, coined_head, coined_tail (syllables coined names are made of).
+# Non-Latin words carry their Latin form after "=", and so do templates with non-Latin text
+# ({surname}商店={surname}shoten). A trade key may be a section letter: it serves every division of
+# the section that has no row of its own. "word:weight" weights a word (default 1).
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:3;{surname} {family}:1
+template	founder_trade	{surname} {trade}:1
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{region} {trade}:2;{adjective} {trade}:2;{place} {trade}:2
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;and
+family	*	& Sons;& Son;& Co;Brothers;& Daughters;Family
+adjective	*	Premier;Prime;Elite;Apex;Summit;Pioneer;Quality;Precision;Advanced;Modern;Classic;Royal;Golden;Silver;Blue;Green;Red;Bright;Smart;First;Allied;United;Trusted;Express;Rapid;Total;Complete;Integrated;Strategic;Superior;Heritage;Crown;Anchor;Bridge;Oak;Cedar;Phoenix;Eagle;Falcon;Lion
+region	*	North;South;East;West;Central;National;International;Global;Northern;Southern;Eastern;Western;Coastal;Highland;Valley;Metro;City;County;Atlantic;Pacific
+coined_head	*	Nov;Vel;Ax;Zen;Lum;Ver;Kor;Tri;Nex;Ori;Sol;Bri;Cal;Dyn;Ev;Flex;Gen;Hal;Inf;Kin;Lyn;Mar;Neo;Opt;Pro;Qu;Ren;Syn;Tal;Ul;Vant;Wex;Xan;Zy
+coined_tail	*	atek;ora;ix;ion;ex;ara;ium;ity;on;ova;ent;ra;ify;lane;well;point;stone;wave;line;sphere;bridge;field;view;tech;works;labs;hub;ly
+trade	01	Farms;Farming;Agriculture;Poultry;Dairy;Livestock;Growers
+trade	02	Forestry;Timber;Tree Services;Woodland
+trade	03	Fisheries;Fishing;Seafood;Aquaculture;Shellfish
+trade	05	Coal;Mining
+trade	06	Energy;Petroleum;Oil & Gas;Exploration
+trade	07	Mining;Minerals;Metals;Resources
+trade	08	Quarries;Aggregates;Stone;Minerals;Sand & Gravel
+trade	09	Drilling;Offshore;Energy Services;Well Services
+trade	10	Bakery;Foods;Kitchen;Bakehouse;Food Company;Roasters
+trade	11	Brewery;Brewing;Distillery;Drinks;Spirits;Beverages
+trade	12	Tobacco
+trade	13	Textiles;Fabrics;Upholstery;Embroidery;Knitwear
+trade	14	Clothing;Apparel;Fashion;Workwear;Tailoring
+trade	15	Leather;Leathercraft;Footwear;Saddlery
+trade	16	Joinery;Timber;Carpentry;Woodcraft;Pallets
+trade	17	Packaging;Paper;Paper Products
+trade	18	Print;Printing;Printers;Press;Labels
+trade	19	Refining;Petroleum Products;Fuels
+trade	20	Chemicals;Coatings;Cosmetics;Paints;Fragrances
+trade	21	Pharma;Pharmaceuticals;Laboratories
+trade	22	Plastics;Mouldings;Rubber;Polymers
+trade	23	Stone;Concrete;Glass;Ceramics;Masonry
+trade	24	Steel;Metals;Castings;Foundry
+trade	25	Engineering;Fabrications;Precision Engineering;Metalwork;Welding
+trade	26	Electronics;Instruments;Systems;Technologies;Controls
+trade	27	Electrical;Lighting;Power Systems;Controls
+trade	28	Engineering;Machinery;Equipment;Automation;Hydraulics
+trade	29	Automotive;Motor Engineering;Trailers;Coachworks
+trade	30	Marine;Aerospace;Boats;Aviation;Rail Systems
+trade	31	Furniture;Kitchens;Interiors;Upholstery;Bedrooms
+trade	32	Jewellery;Products;Signs;Toys;Dental Laboratory
+trade	33	Engineering Services;Maintenance;Repairs;Plant Services;Industrial Services
+trade	35	Energy;Power;Solar;Renewables;Wind Energy
+trade	36	Water;Water Services;Water Treatment
+trade	37	Drainage;Drain Services;Wastewater
+trade	38	Waste;Recycling;Skip Hire;Waste Management;Clearance
+trade	39	Environmental;Remediation;Asbestos Services
+trade	41	Construction;Builders;Building;Homes;Developments;Building Contractors
+trade	42	Civil Engineering;Civils;Groundworks;Utilities;Surfacing
+trade	43	Electrical;Plumbing;Roofing;Heating;Scaffolding;Plastering;Decorating
+trade	45	Motors;Garage;Cars;Auto Centre;Car Sales;Tyres
+trade	46	Trading;Wholesale;Supplies;Distribution;Imports;Traders
+trade	47	Stores;Retail;Store;Shop;Market;Pharmacy;Convenience
+trade	49	Transport;Haulage;Logistics;Removals;Taxis;Coaches;Freight
+trade	50	Shipping;Marine;Maritime;Ferries;Charters
+trade	51	Aviation;Air;Air Cargo;Airways;Helicopters
+trade	52	Logistics;Storage;Warehousing;Freight Services;Cargo
+trade	53	Couriers;Courier Services;Express;Parcels;Delivery
+trade	55	Hotel;Hotels;Guest House;Lodge;Holiday Park;Inn
+trade	56	Restaurant;Catering;Cafe;Kitchen;Grill;Bistro;Takeaway
+trade	58	Publishing;Press;Books;Publications;Software
+trade	59	Productions;Films;Pictures;Studios;Records;Music
+trade	60	Radio;Broadcasting;TV;Media
+trade	61	Telecom;Communications;Networks;Telecoms;Broadband
+trade	62	Software;IT Solutions;Technologies;Digital;Systems;Consulting;Tech
+trade	63	Data;Digital;Analytics;Information Services;Web
+trade	64	Capital;Finance;Holdings;Investments;Financial;Bank
+trade	65	Insurance;Assurance;Underwriting;Life
+trade	66	Wealth Management;Financial Planning;Brokers;Mortgages;Advisers
+trade	68	Properties;Property;Estates;Lettings;Real Estate;Investments
+trade	69	Accountants;Accountancy;Solicitors;Legal;Tax Services;Bookkeeping;Law
+trade	70	Consulting;Consultancy;Advisory;Management;Partners;Group
+trade	71	Engineering;Architects;Design;Surveyors;Consulting Engineers;Inspection
+trade	72	Research;Biosciences;Laboratories;Therapeutics;Innovation
+trade	73	Marketing;Media;Creative;Advertising;Agency;Communications
+trade	74	Design;Photography;Studio;Consultancy;Translations
+trade	75	Veterinary;Vets;Animal Clinic;Veterinary Practice
+trade	77	Hire;Rentals;Plant Hire;Leasing;Car Hire
+trade	78	Recruitment;Staffing;Talent;Resourcing;Personnel
+trade	79	Travel;Tours;Holidays;Journeys;Tourism
+trade	80	Security;Protection;Investigations;Guarding;Alarms
+trade	81	Cleaning;Cleaning Services;Landscapes;Facilities;Gardening;Maintenance
+trade	82	Business Services;Events;Support Services;Office Services;Call Centre
+trade	84	Council;Authority;Agency;Public Services
+trade	85	Academy;School;Training;Learning;Tuition;College;Nursery
+trade	86	Medical;Health;Clinic;Dental;Healthcare;Physiotherapy;Practice
+trade	87	Care Home;Care;Residential Care;Living;Nursing Home
+trade	88	Care;Childcare;Nursery;Home Care;Support Services
+trade	90	Productions;Arts;Theatre;Entertainment;Music;Dance
+trade	91	Museum;Heritage;Library;Archive;Gallery
+trade	92	Gaming;Betting;Lottery;Amusements
+trade	93	Fitness;Sports;Leisure;Gym;Golf Club;Football Club
+trade	94	Association;Society;Club;Trust;Federation
+trade	95	Repairs;Repair Centre;Appliance Repairs;Computer Repairs;Phone Repairs
+trade	96	Hair;Beauty;Barbers;Salon;Spa;Nails;Dry Cleaners

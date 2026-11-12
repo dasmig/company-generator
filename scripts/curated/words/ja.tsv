@@ -1,0 +1,104 @@
+# Japanese business-name words (curated 2026-11-10). A name is a founder's surname, a place or a
+# katakana word, then the trade, then or before it 株式会社 (both orders occur, the placement is in
+# patterns.tsv), with no spaces: 山田建設株式会社, 株式会社テクノワークス. Words carry their
+# Hepburn form after "=", used for domains. Columns as in en.tsv.
+kind	key	value
+style	script	Jpan
+style	form_position	both
+style	space	none
+style	coined_join	none
+template	founder	{surname}商店={surname}shoten:2;{surname}:1
+template	founder_trade	{surname}{trade}:5
+template	descriptive	{place}{trade}:3;{adjective}{trade}:1
+template	coined	{coined}:2;{coined}{trade}:1
+template	initials	{initials}:1;{initials}{trade}:1
+surname	*	佐藤=Sato:1.5;鈴木=Suzuki:1.4;高橋=Takahashi:1.1;田中=Tanaka:1.05;伊藤=Ito:0.9;渡辺=Watanabe:0.9;山本=Yamamoto:0.87;中村=Nakamura:0.85;小林=Kobayashi:0.8;加藤=Kato:0.7;吉田=Yoshida:0.67;山田=Yamada:0.65;佐々木=Sasaki:0.55;山口=Yamaguchi:0.52;松本=Matsumoto:0.5;井上=Inoue:0.5;木村=Kimura:0.46;林=Hayashi:0.42;斎藤=Saito:0.42;清水=Shimizu:0.4;山崎=Yamazaki:0.37;森=Mori:0.37;池田=Ikeda:0.35;橋本=Hashimoto:0.35;阿部=Abe:0.35
+place	JP	東京=Tokyo:14;大阪=Osaka:8.8;横浜=Yokohama:3.8;名古屋=Nagoya:2.3;札幌=Sapporo:2;福岡=Fukuoka:1.6;神戸=Kobe:1.5;京都=Kyoto:1.5;川崎=Kawasaki:1.5;埼玉=Saitama:1.3;広島=Hiroshima:1.2;仙台=Sendai:1.1;千葉=Chiba:1;北九州=Kitakyushu:0.9;静岡=Shizuoka:0.7;新潟=Niigata:0.8;岡山=Okayama:0.7;熊本=Kumamoto:0.7;湘南=Shonan:0.5;関東=Kanto:1;関西=Kansai:1;九州=Kyushu:1;東北=Tohoku:0.6;中部=Chubu:0.6;北海道=Hokkaido:0.8;日本=Nippon:2
+adjective	*	日本=Nippon;大和=Yamato;東洋=Toyo;新=Shin;第一=Daiichi;中央=Chuo;太陽=Taiyo;富士=Fuji;旭=Asahi;三和=Sanwa;大成=Taisei;共栄=Kyoei;昭和=Showa;平成=Heisei;光=Hikari;明星=Myojo;丸=Maru;協和=Kyowa;日進=Nisshin;三光=Sanko
+coined_head	*	テクノ=Techno;ネクスト=Next;グローバル=Global;サン=Sun;エース=Ace;ユニ=Uni;ライフ=Life;プロ=Pro;ワールド=World;アイ=Ai;エコ=Eco;スマート=Smart;ジャパン=Japan;ニュー=New;トップ=Top;ベスト=Best;アート=Art;ハート=Heart
+coined_tail	*	ワン=One;ラボ=Lab;ワークス=Works;システム=System;リンク=Link;プラス=Plus;クリエイト=Create;ネット=Net;ライン=Line;パートナーズ=Partners;サービス=Service;フィールド=Field;ブリッジ=Bridge;スター=Star;ウェーブ=Wave
+trade	01	農園=Noen;農産=Nosan;ファーム=Farm;牧場=Bokujo;畜産=Chikusan
+trade	02	林業=Ringyo;木材=Mokuzai
+trade	03	水産=Suisan;漁業=Gyogyo
+trade	05	鉱業=Kogyo
+trade	06	石油=Sekiyu;資源=Shigen
+trade	07	鉱業=Kogyo;鉱山=Kozan
+trade	08	砕石=Saiseki;砂利=Jari;石材=Sekizai
+trade	09	資源開発=Shigen Kaihatsu
+trade	10	食品=Shokuhin;製菓=Seika;製パン=Seipan;フーズ=Foods;水産加工=Suisan Kako;製麺=Seimen
+trade	11	酒造=Shuzo;醸造=Jozo;飲料=Inryo
+trade	12	たばこ=Tabako
+trade	13	繊維=Seni;織物=Orimono;染工=Senko
+trade	14	縫製=Hosei;アパレル=Apparel;衣料=Iryo
+trade	15	皮革=Hikaku;製靴=Seika
+trade	16	木材=Mokuzai;製材=Seizai;木工=Mokko
+trade	17	紙器=Shiki;製紙=Seishi;紙工=Shiko
+trade	18	印刷=Insatsu;印刷所=Insatsujo
+trade	19	石油=Sekiyu
+trade	20	化学=Kagaku;化成=Kasei;塗料=Toryo;化学工業=Kagaku Kogyo
+trade	21	製薬=Seiyaku;薬品=Yakuhin
+trade	22	化成=Kasei;樹脂=Jushi;ゴム=Gomu;プラスチック=Plastic
+trade	23	窯業=Yogyo;硝子=Garasu;コンクリート=Concrete;セメント=Cement
+trade	24	製鋼=Seiko;鋳造=Chuzo;金属=Kinzoku;製鉄=Seitetsu
+trade	25	製作所=Seisakusho;工業=Kogyo;鉄工所=Tekkosho;金属工業=Kinzoku Kogyo;精工=Seiko
+trade	26	電子=Denshi;電機=Denki;精機=Seiki;システム=System
+trade	27	電機=Denki;電気=Denki;電線=Densen
+trade	28	機械=Kikai;工機=Koki;製作所=Seisakusho;機工=Kiko
+trade	29	自動車工業=Jidosha Kogyo;車体=Shatai
+trade	30	造船=Zosen;重工業=Jukogyo
+trade	31	家具=Kagu;木工所=Mokkosho
+trade	32	精工=Seiko;技研=Giken
+trade	33	メンテナンス=Maintenance;整備=Seibi;機工=Kiko
+trade	35	電力=Denryoku;エネルギー=Energy;ガス=Gas
+trade	36	水道=Suido
+trade	37	環境=Kankyo
+trade	38	環境=Kankyo;リサイクル=Recycle;資源=Shigen
+trade	39	環境=Kankyo
+trade	41	建設=Kensetsu;工務店=Komuten;住建=Juken;ホーム=Home;建築=Kenchiku
+trade	42	土木=Doboku;建設=Kensetsu;組=Gumi;舗道=Hodo
+trade	43	設備=Setsubi;電気工事=Denki Koji;塗装=Toso;工業=Kogyo;内装=Naiso;管工=Kanko
+trade	45	自動車=Jidosha;モータース=Motors;オート=Auto
+trade	46	商事=Shoji;物産=Bussan;産業=Sangyo;通商=Tsusho;商会=Shokai;貿易=Boeki
+trade	47	商店=Shoten;ストア=Store;薬局=Yakkyoku;販売=Hanbai
+trade	49	運輸=Unyu;運送=Unso;交通=Kotsu;タクシー=Taxi;物流=Butsuryu
+trade	50	海運=Kaiun;汽船=Kisen
+trade	51	航空=Koku
+trade	52	倉庫=Soko;物流=Butsuryu;ロジスティクス=Logistics
+trade	53	急便=Kyubin;配送=Haiso
+trade	55	ホテル=Hotel;旅館=Ryokan;観光=Kanko
+trade	56	フードサービス=Food Service;食堂=Shokudo;ダイニング=Dining;珈琲=Coffee
+trade	58	出版=Shuppan;ソフト=Soft
+trade	59	映像=Eizo;プロダクション=Production;企画=Kikaku
+trade	60	放送=Hoso
+trade	61	通信=Tsushin
+trade	62	システム=System;ソフト=Soft;情報システム=Joho System;テクノロジー=Technology
+trade	63	情報=Joho;データ=Data
+trade	64	ホールディングス=Holdings;キャピタル=Capital;ファイナンス=Finance
+trade	65	保険=Hoken;生命=Seimei
+trade	66	保険サービス=Hoken Service
+trade	68	不動産=Fudosan;地所=Jisho;住宅=Jutaku;エステート=Estate;興産=Kosan
+trade	69	会計=Kaikei;経理=Keiri
+trade	70	コンサルティング=Consulting;経営=Keiei
+trade	71	設計=Sekkei;技研=Giken;測量=Sokuryo;エンジニアリング=Engineering
+trade	72	研究所=Kenkyujo;技研=Giken
+trade	73	広告=Kokoku;企画=Kikaku;エージェンシー=Agency
+trade	74	デザイン=Design;写真=Shashin
+trade	75	動物病院=Dobutsu Byoin
+trade	77	リース=Lease;レンタル=Rental
+trade	78	人材=Jinzai;スタッフ=Staff
+trade	79	観光=Kanko;トラベル=Travel;旅行=Ryoko
+trade	80	警備=Keibi;警備保障=Keibi Hosho
+trade	81	ビルメンテナンス=Building Maintenance;清掃=Seiso;造園=Zoen
+trade	82	サービス=Service;企画=Kikaku
+trade	84	公社=Kosha
+trade	85	学院=Gakuin;教育=Kyoiku;塾=Juku;自動車学校=Jidosha Gakko
+trade	86	メディカル=Medical;医療=Iryo;クリニック=Clinic
+trade	87	ケア=Care;福祉=Fukushi
+trade	88	福祉=Fukushi;介護=Kaigo;保育=Hoiku
+trade	90	プロダクション=Production;企画=Kikaku
+trade	91	記念館=Kinenkan
+trade	92	アミューズメント=Amusement;遊技=Yugi
+trade	93	スポーツ=Sports;フィットネス=Fitness;ゴルフ=Golf
+trade	94	協会=Kyokai;組合=Kumiai
+trade	95	サービス=Service;修理=Shuri
+trade	96	美容室=Biyoshitsu;理容=Riyo;クリーニング=Cleaning;葬祭=Sosai

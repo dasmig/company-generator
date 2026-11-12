@@ -1,0 +1,27 @@
+# Multipliers on the patterns of patterns.tsv by the language names are written in (curated
+# 2026-11-10); a language without a row keeps them. Chinese names are mostly a place, a coined
+# trade name of two characters and the trade (上海华信贸易有限公司), rarely a person's name;
+# Japanese names keep the family name (鈴木商店) beside coined ones; Russian and other post-Soviet
+# names are often a coined word in quotes (ООО «Ромашка»); German, Italian and Turkish ones keep the
+# founder's name more often than English ones. Curated estimates, not measured.
+language	founder	founder_trade	two_founders	descriptive	coined	initials
+zh	0.15	0.25	0.05	2.2	2.0	0.3
+ja	1.3	1.5	0.2	1.0	1.0	0.5
+ko	0.5	0.7	0.1	1.3	1.5	0.8
+de	1.3	1.3	1.2	1.0	0.9	1.0
+it	1.3	1.2	1.3	1.0	0.9	1.0
+fr	1.0	1.0	0.8	1.0	1.0	1.3
+es	1.0	1.2	1.0	1.2	0.9	0.9
+pt	1.0	1.2	1.0	1.2	0.9	0.9
+tr	1.2	1.3	0.5	1.0	1.0	0.9
+ar	1.2	1.3	0.5	1.2	0.8	0.5
+fa	1.2	1.3	0.5	1.2	0.8	0.5
+ru	0.6	0.6	0.3	1.2	1.6	1.0
+uk	0.6	0.6	0.3	1.2	1.6	1.0
+bg	0.6	0.6	0.3	1.2	1.5	1.0
+sr	0.7	0.7	0.4	1.2	1.4	1.0
+th	0.7	0.8	0.3	1.3	1.2	0.8
+vi	0.6	0.7	0.2	1.4	1.3	0.8
+id	0.7	0.8	0.3	1.3	1.2	1.0
+ms	0.7	0.8	0.3	1.3	1.2	1.0
+he	1.0	1.0	1.0	1.0	1.0	1.0

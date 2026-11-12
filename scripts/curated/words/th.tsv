@@ -1,0 +1,49 @@
+# Thai business-name words (curated 2026-11-10). A name is the form's opening word, one or two
+# auspicious brand words and the trade, then the form's closing word, with no spaces inside the name:
+# บริษัท ไทยรุ่งเรืองก่อสร้าง จำกัด (the form's placement is in legal_forms.tsv). Words carry the
+# Royal Thai General System form after "=", used for domains. A section key serves every division
+# of the section that has no row of its own. Columns as in en.tsv.
+kind	key	value
+style	script	Thai
+style	form_position	both
+style	space	none
+style	coined_join	none
+template	founder	{surname}:1
+template	founder_trade	{surname}{trade}:1
+template	descriptive	{coined}{trade}:4;{place}{trade}:1
+template	coined	{coined}:2;{coined}{trade}:1
+template	initials	{initials}:1;{initials}{trade}:1
+place	TH	ไทย=Thai:4;สยาม=Siam:3;กรุงเทพ=Krungthep:1;ล้านนา=Lanna:0.5;อีสาน=Isan:0.5;อันดามัน=Andaman:0.4;เอเชีย=Asia:1
+coined_head	*	ไทย=Thai;สยาม=Siam;ศรี=Sri;ทอง=Thong;เจริญ=Charoen;ชัย=Chai;สุข=Suk;ธนา=Thana;รุ่ง=Rung;มหา=Maha;แสง=Saeng;พร=Phon;บุญ=Bun;วิทย์=Wit;กิจ=Kit;อุดม=Udom
+coined_tail	*	รุ่งเรือง=Rungrueang;เจริญ=Charoen;พัฒนา=Phatthana;มั่นคง=Mankhong;วัฒนา=Watthana;ทวี=Thawi;ชัย=Chai;กิจ=Kit;สิน=Sin;ทรัพย์=Sap;การ=Kan;ภัณฑ์=Phan;ยนต์=Yon;ไพศาล=Phaisan
+trade	A	การเกษตร=Kankaset;ฟาร์ม=Farm;อะโกร=Agro
+trade	03	ประมง=Pramong;ซีฟู้ด=Seafood
+trade	B	เหมืองแร่=Mueangrae;ปิโตรเลียม=Petroleum
+trade	C	อุตสาหกรรม=Utsahakam;แมนูแฟคเจอริ่ง=Manufacturing
+trade	10	อาหาร=Ahan;ฟู้ด=Food;เบเกอรี่=Bakery
+trade	11	เครื่องดื่ม=Khrueangduem;เบฟเวอเรจ=Beverage
+trade	13	สิ่งทอ=Singtho;เท็กซ์ไทล์=Textile
+trade	14	การ์เมนท์=Garment;แฟชั่น=Fashion
+trade	20	เคมีภัณฑ์=Khemiphan;เคมิคอล=Chemical
+trade	22	พลาสติก=Plastic
+trade	24	เหล็ก=Lek;สตีล=Steel
+trade	25	วิศวกรรม=Witsawakam;เอ็นจิเนียริ่ง=Engineering;เมทัล=Metal
+trade	29	ออโต้พาร์ท=Autoparts;ยานยนต์=Yanyon
+trade	D	พลังงาน=Phalangngan;เพาเวอร์=Power;โซลาร์=Solar
+trade	E	สิ่งแวดล้อม=Singwaetlom;รีไซเคิล=Recycle
+trade	F	ก่อสร้าง=Kosang;คอนสตรัคชั่น=Construction;วิศวกรรม=Witsawakam;การโยธา=Kanyotha
+trade	G	การค้า=Kankha;เทรดดิ้ง=Trading;พาณิชย์=Phanit;ซัพพลาย=Supply;อินเตอร์เทรด=Intertrade
+trade	45	ยานยนต์=Yanyon;มอเตอร์=Motor;ออโต้=Auto
+trade	47	มาร์ท=Mart;ร้านค้า=Rankha;เภสัช=Phesat
+trade	H	ขนส่ง=Khonsong;โลจิสติกส์=Logistics;ทรานสปอร์ต=Transport
+trade	I	โรงแรม=Rongraem;รีสอร์ท=Resort;ฟู้ด=Food;ภัตตาคาร=Phattakhan
+trade	J	เทคโนโลยี=Technology;ซอฟต์แวร์=Software;มีเดีย=Media;ดิจิทัล=Digital
+trade	K	แคปปิตอล=Capital;ไฟแนนซ์=Finance;ประกันภัย=Prakanphai;โฮลดิ้ง=Holding
+trade	L	พร็อพเพอร์ตี้=Property;เรียลเอสเตท=Realestate;แลนด์=Land;เอสเตท=Estate
+trade	M	คอนซัลแตนท์=Consultant;ที่ปรึกษา=Thiprueksa;ดีไซน์=Design;การบัญชี=Kanbanchi
+trade	N	เซอร์วิส=Service;ทัวร์=Tour;ซีเคียวริตี้=Security;เรนทัล=Rental
+trade	O	สำนักงาน=Samnakngan
+trade	P	การศึกษา=Kansueksa;เอ็ดดูเคชั่น=Education
+trade	Q	การแพทย์=Kanphaet;เมดิคอล=Medical;คลินิก=Clinic
+trade	R	สปอร์ต=Sport;เอ็นเตอร์เทนเมนท์=Entertainment
+trade	S	เซอร์วิส=Service;บิวตี้=Beauty;ซ่อมบำรุง=Sombamrung

@@ -1,0 +1,41 @@
+# Albanian business-name words (curated 2026-11-10). Albanian names (Albania and Kosovo): Hoxha Construction, Elektro Krasniqi, Agro Shpresa.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{trade} {surname}:2;{surname} {trade}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{adjective} {trade}:2;{trade} {place}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;dhe
+family	*	& Bijtë;dhe Bijtë
+adjective	*	Euro;Inter;Pro;Eko;Max;Mega;Top;Iliria;Arbëria;Dardania;Adriatik;Shqiponja;Nova;Prima;Ylli;Shpresa;Alfa;Delta;Gold
+region	*	Veri;Jug;Lindje;Perëndim;Bregdet;Dardania
+coined_head	*	Alb;Ili;Arb;Dar;Tech;Euro;Med;Kom;Agro;Neo;Vit
+coined_tail	*	tech;ex;kom;plast;tex;ia;on;ing;line;al;bau
+trade	A	Agro;Ferma;Bujqësi;Blegtori
+trade	B	Gurore;Miniera
+trade	C	Prodhim;Industri;Fabrika
+trade	10	Furra;Bulmet;Mish
+trade	D	Energji;Solar;Elektro
+trade	E	Ujësjellës;Eko;Riciklim
+trade	F	Ndërtim;Construction;Konstruksion
+trade	43	Elektro;Hidraulik;Instalime
+trade	G	Tregti;Trade;Import Export;Distribucion
+trade	45	Auto;Servis;Autoservis
+trade	47	Market;Dyqan;Farmaci
+trade	H	Transport;Logistik;Taxi
+trade	I	Hotel;Restorant;Piceri;Bar Kafe
+trade	J	Software;IT;Media;Digital;Telekom
+trade	K	Invest;Capital;Financë;Sigurime
+trade	L	Pasuri të Paluajtshme;Real Estate;Residence
+trade	M	Konsulencë;Consulting;Kontabilitet;Studio Ligjore;Projekt;Arkitekturë;Marketing
+trade	N	Shërbime;Servis;Pastrim;Siguri;Agjenci Udhëtimi;Rent a Car
+trade	O	Bashkia
+trade	P	Shkolla;Autoshkollë;Akademia;Edukim
+trade	Q	Klinikë;Poliklinikë;Dental;Medical
+trade	R	Sport;Fitnes;Art
+trade	S	Shërbime;Sallon;Bukuri;Riparime

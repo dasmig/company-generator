@@ -1,0 +1,83 @@
+# Corrections to ISO 20275 forms (curated 2026-11-10), applied after grouping.
+# code: an ISO 20275 code, or empty with "match", a regular expression on the form's names.
+# abbreviation, latin_abbreviation, name, latin_name: replace the list's own; "-" clears one.
+# share: a fixed share of the form's group, for small and large firms alike, where LEI counts
+# mislead. LEIs are held by firms that trade in financial markets, so foundations, trusts and
+# public bodies dominate the "other" group in GLEIF while associations and co-operatives dominate
+# it in registers. Several forms matched by one row share its share by their LEIs. Forms without
+# a share split what is left as before.
+# Shares are rounded from: Germany's Vereinsstatistik (about 600,000 registered associations) and
+# Genossenschaftsverband (about 7,000 co-operatives); Japan's National Tax Agency corporation
+# counts; Korea's Statistics Korea non-profit counts; INEGI's directory for Mexico; CIPC for South
+# Africa; India's Ministry of Co-operation (about 850,000 co-operative societies); IRS exempt
+# organisations for the United States; Thailand's Department of Business Development.
+country	code	match	abbreviation	latin_abbreviation	name	latin_name	share	note
+NG	FHZY		Ltd	Ltd			0.95	the list swaps the private and public abbreviations
+NG	PKBG		PLC	PLC			0.05	
+CA		sole propri|entreprise individuelle|business name|trade name	-	-				British Columbia's row lists LLP and SRL as abbreviations
+DE	QZ3L						0.60	eingetragener Verein
+DE	AZFE						0.04	eingetragene Genossenschaft
+DE	SCE1						0.06	gGmbH
+DE	V2YH						0.04	Stiftung des privaten Rechts
+DE	SQKS						0.03	Körperschaft des öffentlichen Rechts
+DE	79H0						0.05	nicht eingetragener Verein
+US		non-?profit|nonprofit					0.60	nonprofit corporations of every state
+US		statutory trust					0.03	
+US		credit union					0.02	
+US		^general partnership$					0.60	general partnerships far outnumber limited ones
+MX	5AWU						0.50	asociación civil
+MX	YRI0						0.02	public trust
+MX	RCJS						0.02	
+MX	M0SL						0.02	municipality
+ZA	J7L0						0.60	non-profit company
+ZA	R155						0.02	state-owned company
+ZA	MZT6						0.30	primary co-operative
+IN		^trust$					0.35	
+IN		cooperative society					0.35	co-operative and multistate co-operative societies
+IN		special purpose vehicle					0.01	
+IN		cooperative bank					0.005	
+IN		government					0.02	
+JP	N3JU					Sonota Setsuritsu Toki Hojin	0.07	other registered corporations
+JP	2NRQ					Chiho Kokyo Dantai	0.05	local government body
+KR	WUJC					Gonggong Danche	0.10	public body
+KR	VTH4					Biyeongri Sadan Beobin	0.35	non-profit incorporated association
+KR	AKF5					Jaedan Beobin	0.25	incorporated foundation
+KR	S1IS					Ilban Beobin Hyeophoe	0.05	
+KR	W61J					Gita Beobin	0.10	other corporation
+KR		^합자회사$				Hapja Hoesa		
+KR		^합명회사$				Hapmyeong Hoesa		
+KR		^유한책임회사$				Yuhan Chaegim Hoesa		
+KR		^유한회사$				Yuhan Hoesa		
+KR		^주식회사$				Jusik Hoesa		
+RU	AS78						0.10	advocates' bureau
+LV	5ULL						0.01	EEIG
+TH	K09K		บจก.	Co., Ltd.		Borisat Chamkat		
+TH	O0OZ		บมจ.	PCL		Borisat Mahachon Chamkat		
+TH	JUEU		หจก.	Ltd. Part.		Hang Hunsuan Chamkat		
+TH	QFXX		หสน.	Reg. Ord. Part.		Hang Hunsuan Saman Chotthabian		
+TH	FDRT					Samakhom Chotthabian	0.40	registered association
+TH	D87D					Mulanithi Chotthabian	0.30	registered foundation
+TH	N8FJ					Suan Ratchakan	0.10	government agency
+TH	VSTJ					Nitibukkhon Uen Tam Kotmai Phiset	0.10	juristic person under a special law
+TH	46FG					Changwat	0.02	province
+MM	478A		Co., Ltd.	Co., Ltd.	Private Company Limited by Shares	-		
+MM	QUC7		Public Co., Ltd.	Public Co., Ltd.	Public Company Limited by Shares	-		
+MM	3FI5		Ltd.	Ltd.	Company Limited by Guarantee	-		
+MM	G54B				Unlimited Company	-		
+MM	CPNU				Business Association	-		
+CN	UMCR					Nongmin Zhuanye Hezuoshe	0.50	farmers' specialised co-operative (about 2.2M)
+CN	B5UZ					Shiye Danwei	0.15	public institution
+CN	E4FG					Minban Feiqiye Danwei	0.12	private non-enterprise unit
+CN	GGZ5					Shehui Tuanti	0.12	social organisation
+CN	6NSC					Lvshi Zhiye Jigou	0.02	law firm
+CN	2M6Y					Jijinhui	0.01	foundation
+CN	I39S					Jiguan	0.03	government organ
+CN	RV48					Geti Gongshanghu		individual industrial and commercial household
+CN	J7SF					Youxian Hehuo Qiye		limited partnership
+KR		^개인사업자$				Gaein Saeopja		individual business
+MM	478A						0.97	private companies far outnumber public ones
+RU	J7NW						0.0	simple partnership: a contract, not a registered firm
+DE		^gesellschaft bürgerlichen rechts$					0.50	GbR: most partnerships, though few hold LEIs
+CA		non-?profit|sans but lucratif|^society					0.60	non-profit corporations and societies
+MX	VIOQ						0.005	state government
+CY	P5JT					Evropaikos Omilos Oikonomikou Skopou		EEIG: the list gives no transliteration

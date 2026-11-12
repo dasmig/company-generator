@@ -1,0 +1,44 @@
+# Latvian business-name words (curated 2026-11-10). Latvian names: Bērziņa Būvniecība SIA, Kalniņa Transports, Rīgas Elektro.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{surname} {trade}:3
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{place} {trade}:2;{adjective} {trade}:1;{region} {trade}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	un;&
+family	*	un Dēli;un Partneri
+adjective	*	Latvijas;Baltijas;Nordic;Jaunā;Euro;Inter;Pro;Eko;Max;Top;Mega;Zelta;Dzintara;Daugavas;Gaujas;Ozola
+region	*	Kurzeme;Vidzeme;Zemgale;Latgale;Baltija;Ziemeļi;Dienvidi
+coined_head	*	Lat;Balt;Nord;Tech;Euro;Med;Kom;Agro;Neo;Vit;Dzin
+coined_tail	*	tech;ex;kom;plast;tex;ia;on;ra;ar;us
+trade	A	Zemnieku Saimniecība;Lauksaimniecība;Agro
+trade	02	Mežs;Mežizstrāde
+trade	B	Karjers;Derīgie Izrakteņi
+trade	C	Ražošana;Rūpnīca
+trade	10	Maiznīca;Gaļas Pārstrāde;Piena Pārstrāde
+trade	16	Kokapstrāde;Kokzāģētava
+trade	25	Metālapstrāde;Metāls
+trade	D	Enerģija;Saules Enerģija;Elektro
+trade	E	Ūdens;Atkritumi;Pārstrāde
+trade	F	Būvniecība;Celtniecība;Būve
+trade	43	Elektro;Santehnika;Apdare;Jumti;Būvdarbi
+trade	G	Tirdzniecība;Trade;Vairumtirdzniecība;Imports
+trade	45	Auto;Autoserviss;Riepas
+trade	47	Veikals;Aptieka
+trade	H	Transports;Loģistika;Pārvadājumi;Taksometrs
+trade	I	Viesnīca;Restorāns;Kafejnīca;Pica
+trade	J	IT;Programmatūra;Software;Mediji;Digital
+trade	K	Invest;Capital;Apdrošināšana;Finanses
+trade	L	Nekustamie Īpašumi;Real Estate;Attīstība
+trade	M	Konsultācijas;Grāmatvedība;Advokātu Birojs;Projekts;Arhitekti;Reklāma;Dizains
+trade	N	Pakalpojumi;Tīrīšana;Apsardze;Noma;Ceļojumu Aģentūra
+trade	O	Pašvaldība
+trade	P	Mācību Centrs;Skola;Autoskola
+trade	Q	Klīnika;Zobārstniecība;Veselība
+trade	R	Sports;Fitness;Kultūra
+trade	S	Pakalpojumi;Frizētava;Skaistumkopšana;Remonts

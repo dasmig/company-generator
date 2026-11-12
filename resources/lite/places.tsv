@@ -1,0 +1,1515 @@
+# places for business names where the name language has none of its own: the country's largest places in address-generator (GeoNames), weighted by the square root of their population
+country_code	place	weight
+AD	Andorra la Vella	1
+AD	les Escaldes	0.881
+AD	Encamp	0.741
+AD	Sant Julià de Lòria	0.627
+AD	la Massana	0.594
+AD	Canillo	0.401
+AD	Santa Coloma	0.398
+AD	Ordino	0.387
+AE	Dubai	1
+AE	Abu Dhabi	0.69
+AE	Sharjah	0.689
+AE	Al Ain City	0.473
+AE	Ajman	0.36
+AE	Dayrah	0.325
+AE	Ras Al Khaimah	0.305
+AE	Musaffah	0.253
+AF	Kabul	1
+AF	Herāt	0.36
+AF	Kandahār	0.344
+AF	Mazār-e Sharīf	0.344
+AF	Jalālābād	0.248
+AF	Kunduz	0.191
+AF	Ghazni	0.178
+AF	Balkh	0.161
+AG	Saint John’s	1
+AG	St. Paul Parish	0.396
+AG	St. George Parish	0.395
+AG	St. Mary Parish	0.377
+AG	St. Peter Parish	0.321
+AG	St. Philip Parish	0.254
+AG	Liberta	0.222
+AG	All Saints	0.221
+AL	Tiranë	1
+AL	Durrës	0.684
+AL	Vlorë	0.525
+AL	Elbasan	0.491
+AL	Shkodër	0.478
+AL	Lushnjë	0.388
+AL	Berat	0.386
+AL	Fier-Çifçi	0.382
+AM	Yerevan	1
+AM	Malatia-Sebastia	0.363
+AM	Shengavit	0.35
+AM	Nor Nork	0.346
+AM	Kentron	0.341
+AM	Erebuni	0.337
+AM	Ajapnyak	0.328
+AM	Arabkir	0.323
+AO	Luanda	1
+AO	Lubango	0.465
+AO	Huambo	0.463
+AO	Benguela	0.447
+AO	Cabinda	0.445
+AO	Talatona	0.424
+AO	Malanje	0.405
+AO	Cazenga	0.391
+AR	Buenos Aires	1
+AR	Córdoba	0.854
+AR	Rosario	0.573
+AR	Mar del Plata	0.453
+AR	San Miguel de Tucumán	0.436
+AR	Salta	0.424
+AR	Santa Fe	0.368
+AR	Corrientes	0.346
+AT	Wien	1
+AT	Graz	0.423
+AT	Linz	0.348
+AT	Favoriten	0.345
+AT	Donaustadt	0.333
+AT	Floridsdorf	0.31
+AT	Salzburg	0.305
+AT	Innsbruck	0.28
+AU	Sydney	1
+AU	Melbourne	0.981
+AU	Brisbane	0.707
+AU	Perth	0.645
+AU	Adelaide	0.514
+AU	Gold Coast	0.34
+AU	Newcastle	0.302
+AU	Canberra	0.257
+AZ	Baku	1
+AZ	Sumqayıt	0.391
+AZ	Ganja	0.378
+AZ	Lankaran	0.32
+AZ	Tovuz	0.275
+AZ	Yevlakh	0.233
+AZ	Mingachevir	0.212
+AZ	Naxçıvan	0.203
+BA	Sarajevo	1
+BA	Banja Luka	0.563
+BA	Zenica	0.486
+BA	Tuzla	0.452
+BA	Mostar	0.387
+BA	Bihać	0.329
+BA	Ilidža	0.32
+BA	Lukavac	0.253
+BB	Bridgetown	1
+BB	White Hill	0.228
+BB	Speightstown	0.192
+BB	Oistins	0.152
+BB	Bathsheba	0.134
+BB	Hastings	0.123
+BB	Holetown	0.117
+BB	Six Cross Roads	0.101
+BD	Dhaka	1
+BD	Chattogram	0.615
+BD	Gazipur	0.508
+BD	Khulna	0.381
+BD	Rangpur	0.316
+BD	Comilla	0.315
+BD	Rajshahi	0.272
+BD	Pallabi	0.24
+BE	Brussels	1
+BE	Antwerpen	0.721
+BE	Gent	0.51
+BE	Charleroi	0.443
+BE	Liège	0.438
+BE	Anderlecht	0.397
+BE	Schaerbeek	0.361
+BE	Brugge	0.341
+BF	Ouagadougou	1
+BF	Bobo-Dioulasso	0.612
+BF	Koudougou	0.258
+BF	Saaba	0.237
+BF	Ouahigouya	0.227
+BF	Kaya	0.225
+BF	Banfora	0.221
+BF	Pouytenga	0.2
+BG	Sofia	1
+BG	Plovdiv	0.535
+BG	Varna	0.526
+BG	Burgas	0.428
+BG	Stara Zagora	0.325
+BG	Ruse	0.324
+BG	Pleven	0.28
+BG	Sliven	0.27
+BH	Al Muharraq	1
+BH	Manama	0.913
+BH	Madīnat Ḩamad	0.87
+BH	Ar Rifā‘	0.809
+BH	Sitrah	0.641
+BH	Jidd Ḩafş	0.614
+BH	Dār Kulayb	0.609
+BH	Madīnat ‘Īsá	0.464
+BI	Bujumbura	1
+BI	Gitega	0.29
+BI	Ngozi	0.283
+BI	Mpanda	0.277
+BI	Rumonge	0.269
+BI	Cibitoke	0.219
+BI	Kayanza	0.209
+BI	Cendajuru	0.205
+BJ	Cotonou	1
+BJ	Abomey-Calavi	0.754
+BJ	Porto-Novo	0.624
+BJ	Parakou	0.613
+BJ	Godomè	0.611
+BJ	Abomey	0.417
+BJ	Djougou	0.374
+BJ	Bohicon	0.372
+BN	Bandar Seri Begawan	1
+BN	Sengkurong	0.798
+BN	Mentiri	0.781
+BN	Kuala Belait	0.696
+BN	Seria	0.684
+BN	Tutong	0.545
+BN	Serasa	0.537
+BN	Liang	0.511
+BO	La Paz	1
+BO	Santa Cruz de la Sierra	0.956
+BO	Cochabamba	0.648
+BO	Sucre	0.335
+BO	Oruro	0.323
+BO	Sacaba	0.3
+BO	Quillacollo	0.293
+BO	Tarija	0.282
+BR	São Paulo	1
+BR	Rio de Janeiro	0.738
+BR	Belo Horizonte	0.468
+BR	Salvador	0.468
+BR	Fortaleza	0.44
+BR	Manaus	0.423
+BR	Brasília	0.422
+BR	Curitiba	0.396
+BS	Nassau	1
+BS	Lucaya	0.452
+BS	Freeport	0.344
+BS	Killarney	0.278
+BS	West End	0.236
+BS	Cooper’s Town	0.192
+BS	San Andros	0.185
+BS	George Town	0.179
+BT	Thimphu	1
+BT	Phuntsholing	0.529
+BT	Tsirang	0.476
+BT	Punākha	0.467
+BT	Pemagatshel	0.375
+BT	Paro	0.341
+BT	Sarpang	0.325
+BT	Geylegphug	0.316
+BW	Gaborone	1
+BW	Francistown	0.648
+BW	Mogoditshane	0.598
+BW	Maun	0.589
+BW	Molepolole	0.551
+BW	Serowe	0.475
+BW	Tlokweng	0.475
+BW	Palapye	0.462
+BY	Minsk	1
+BY	Homyel'	0.536
+BY	Hrodna	0.455
+BY	Vitebsk	0.454
+BY	Mahilyow	0.45
+BY	Brest	0.445
+BY	Bobruysk	0.345
+BY	Baranovichi	0.314
+BZ	Belize City	1
+BZ	San Pedro	0.517
+BZ	Orange Walk	0.484
+BZ	Belmopan	0.453
+BZ	San Ignacio	0.44
+BZ	Dangriga	0.39
+BZ	Corozal	0.388
+BZ	Santa Elena	0.363
+CA	Toronto	1
+CA	Montréal	0.794
+CA	Calgary	0.684
+CA	Ottawa	0.603
+CA	Edmonton	0.601
+CA	Winnipeg	0.518
+CA	Mississauga	0.507
+CA	Vancouver	0.487
+CD	Kinshasa	1
+CD	Lubumbashi	0.373
+CD	Mbuji-Mayi	0.362
+CD	Kananga	0.279
+CD	Kisangani	0.272
+CD	Bukavu	0.226
+CD	Kolwezi	0.222
+CD	Likasi	0.199
+CF	Bangui	1
+CF	Bimbo	0.655
+CF	Bégoua	0.57
+CF	Carnot	0.399
+CF	Berbérati	0.357
+CF	Bambari	0.32
+CF	Bouar	0.297
+CF	Bossangoa	0.261
+CG	Brazzaville	1
+CG	Pointe-Noire	0.722
+CG	Dolisie	0.247
+CG	Nkayi	0.228
+CG	Kayes	0.172
+CG	Impfondo	0.157
+CG	Ouesso	0.143
+CG	Owando	0.134
+CH	Zürich	1
+CH	Genève	0.697
+CH	Basel	0.654
+CH	Lausanne	0.579
+CH	Bern	0.541
+CH	Winterthur	0.519
+CH	Luzern	0.443
+CH	Sankt Gallen	0.427
+CI	Abidjan	1
+CI	Abobo	0.46
+CI	Bouaké	0.363
+CI	Korhogo	0.264
+CI	Daloa	0.258
+CI	Koumassi	0.255
+CI	San-Pédro	0.249
+CI	Gagnoa	0.209
+CL	Santiago	1
+CL	Puente Alto	0.343
+CL	Maipú	0.323
+CL	Antofagasta	0.288
+CL	Viña del Mar	0.263
+CL	Valparaíso	0.242
+CL	Ñuñoa	0.23
+CL	San Bernardo	0.227
+CM	Douala	1
+CM	Yaoundé	0.985
+CM	Bamenda	0.561
+CM	Bafoussam	0.528
+CM	Maroua	0.485
+CM	Ngaoundéré	0.422
+CM	Kumba	0.41
+CM	Nkongsamba	0.348
+CO	Bogotá	1
+CO	Cali	0.558
+CO	Medellín	0.51
+CO	Barranquilla	0.396
+CO	Cartagena	0.345
+CO	Cúcuta	0.318
+CO	Soacha	0.292
+CO	Bucaramanga	0.275
+CR	San José	1
+CR	Limón	0.434
+CR	San Francisco	0.409
+CR	Alajuela	0.377
+CR	Liberia	0.368
+CR	Paraíso	0.344
+CR	Puntarenas	0.326
+CR	San Isidro	0.323
+CU	Havana	1
+CU	Santiago de Cuba	0.507
+CU	Camagüey	0.401
+CU	Holguín	0.384
+CU	Guantánamo	0.355
+CU	Santa Clara	0.34
+CU	Almendares	0.333
+CU	Diez de Octubre	0.324
+CV	Praia	1
+CV	Mindelo	0.708
+CV	Espargos	0.422
+CV	Assomada	0.393
+CV	Tarrafal	0.313
+CV	Porto Novo	0.284
+CV	Sal Rei	0.282
+CV	São Filipe	0.271
+CY	Nicosia	1
+CY	Limassol	0.877
+CY	Larnaca	0.599
+CY	Stróvolos	0.582
+CY	Famagusta	0.461
+CY	Káto Lakatámeia	0.447
+CY	Paphos	0.424
+CY	Kyrenia	0.365
+CZ	Praha	1
+CZ	Brno	0.571
+CZ	Ostrava	0.49
+CZ	Pilsen	0.38
+CZ	Liberec	0.297
+CZ	Olomouc	0.292
+CZ	České Budějovice	0.283
+CZ	Hradec Králové	0.279
+DE	Berlin	1
+DE	Hamburg	0.734
+DE	München	0.607
+DE	Köln	0.53
+DE	Frankfurt am Main	0.436
+DE	Stuttgart	0.429
+DE	Düsseldorf	0.426
+DE	Essen	0.416
+DJ	Djibouti	1
+DJ	Ali Sabih	0.283
+DJ	Dikhil	0.229
+DJ	Tadjoura	0.177
+DJ	Arta	0.167
+DJ	Obock	0.157
+DJ	‘As ‘Êla	0.0909
+DJ	Damêrdjôg	0.0904
+DK	København	1
+DK	Århus	0.497
+DK	Odense	0.396
+DK	Aalborg	0.352
+DK	Frederiksberg	0.287
+DK	Esbjerg	0.249
+DK	Randers	0.233
+DK	Kolding	0.231
+DM	Roseau	1
+DM	Portsmouth	0.468
+DM	Marigot	0.401
+DM	Berekua	0.397
+DM	Mahaut	0.378
+DM	Saint Joseph	0.363
+DM	Wesley	0.342
+DM	Massacre	0.306
+DO	Santo Domingo	1
+DO	Santiago de los Caballeros	0.738
+DO	Santo Domingo Oeste	0.564
+DO	Santo Domingo Este	0.564
+DO	San Pedro de Macorís	0.315
+DO	La Romana	0.308
+DO	Bella Vista	0.282
+DO	San Cristóbal	0.264
+DZ	Algiers	1
+DZ	Oran	0.583
+DZ	Constantine	0.435
+DZ	Annaba	0.381
+DZ	Blida	0.375
+DZ	Batna City	0.35
+DZ	Bab Ezzouar	0.341
+DZ	Djelfa	0.335
+EC	Quito	1
+EC	Guayaquil	0.99
+EC	Cuenca	0.479
+EC	Santo Domingo de los Colorados	0.406
+EC	Ambato	0.373
+EC	Portoviejo	0.34
+EC	Eloy Alfaro	0.337
+EC	Machala	0.322
+EE	Tallinn	1
+EE	Tartu	0.482
+EE	Narva	0.372
+EE	Pärnu	0.32
+EE	Nõmme	0.316
+EE	Kohtla-Järve	0.3
+EE	Viljandi	0.21
+EE	Maardu	0.205
+EG	Cairo	1
+EG	Alexandria	0.74
+EG	Giza	0.674
+EG	Shubrā al Khaymah	0.359
+EG	Port Said	0.285
+EG	Suez	0.27
+EG	Madīnat an Naşr	0.264
+EG	Al Mansurah	0.254
+ER	Asmara	1
+ER	Keren	0.364
+ER	Himora	0.286
+ER	Massawa	0.202
+ER	Assab	0.194
+ER	Mendefera	0.178
+ER	Barentu	0.168
+ER	Adi Keyh	0.152
+ES	Madrid	1
+ES	Barcelona	0.72
+ES	Valencia	0.503
+ES	Zaragoza	0.459
+ES	Sevilla	0.459
+ES	Málaga	0.426
+ES	Murcia	0.381
+ES	Palma	0.367
+ET	Addis Ababa	1
+ET	Jijiga	0.354
+ET	Gonder	0.347
+ET	Mek'ele	0.344
+ET	Nazrēt	0.344
+ET	Warder	0.342
+ET	Awasa	0.331
+ET	Bahir Dar	0.301
+FI	Helsinki	1
+FI	Espoo	0.701
+FI	Tampere	0.629
+FI	Vantaa	0.619
+FI	Oulu	0.573
+FI	Turku	0.56
+FI	East Helsinki	0.509
+FI	Jyväskylä	0.475
+FJ	Nasinu	1
+FJ	Suva	0.917
+FJ	Lautoka	0.755
+FJ	Nadi	0.678
+FJ	Labasa	0.551
+FJ	Lami	0.517
+FJ	Sigatoka	0.438
+FJ	Ba	0.398
+FM	Weno	1
+FM	Tofol	0.836
+FM	Colonia	0.729
+FM	Palikir	0.708
+FM	Kolonia	0.662
+FM	Kolonia Town	0.64
+FM	Lelu	0.395
+FM	Nema	0.268
+FR	Paris	1
+FR	Marseille	0.64
+FR	Lyon	0.493
+FR	Toulouse	0.489
+FR	Nice	0.4
+FR	Nantes	0.39
+FR	Marne La Vallée	0.386
+FR	Strasbourg	0.358
+GA	Libreville	1
+GA	Port-Gentil	0.44
+GA	Franceville	0.396
+GA	Owendo	0.336
+GA	Oyem	0.294
+GA	Moanda	0.29
+GA	Ntoum	0.272
+GA	Lambaréné	0.235
+GB	London	1
+GB	Birmingham	0.359
+GB	Glasgow	0.264
+GB	Manchester	0.252
+GB	Sheffield	0.249
+GB	Leeds	0.245
+GB	Edinburgh	0.24
+GB	Liverpool	0.235
+GD	Saint George's	1
+GD	Gouyave	0.671
+GD	Grenville	0.575
+GD	Grand Roy	0.566
+GD	Victoria	0.548
+GD	Saint David’s	0.42
+GD	Sauteurs	0.42
+GD	Upper La Taste	0.416
+GE	Tbilisi	1
+GE	Batumi	0.422
+GE	Kutaisi	0.359
+GE	Rustavi	0.35
+GE	Sokhumi	0.25
+GE	Gori	0.2
+GE	Poti	0.198
+GE	Zugdidi	0.195
+GH	Kumasi	1
+GH	Accra	0.878
+GH	Tamale	0.427
+GH	Takoradi	0.391
+GH	Sekondi	0.335
+GH	Cape Coast	0.289
+GH	Atsiaman	0.282
+GH	Ashaiman	0.274
+GM	Serekunda	1
+GM	Brikama	0.535
+GM	Bununka Kunda	0.442
+GM	Sukuta	0.408
+GM	Talinding	0.378
+GM	Faji Kunda	0.367
+GM	Bakau	0.356
+GM	Banjul	0.331
+GN	Conakry	1
+GN	Camayenne	0.985
+GN	Nzérékoré	0.343
+GN	Kankan	0.339
+GN	Manéah	0.317
+GN	Dubréka	0.307
+GN	Kindia	0.289
+GN	Siguiri	0.277
+GQ	Bata	1
+GQ	Malabo	0.949
+GQ	Ebebiyin	0.379
+GQ	Aconibe	0.254
+GQ	Añisoc	0.243
+GQ	Luba	0.224
+GQ	Evinayong	0.221
+GQ	Mongomo	0.192
+GR	Athens	1
+GR	Thessaloníki	0.692
+GR	Pátra	0.503
+GR	Piraeus	0.496
+GR	Lárisa	0.47
+GR	Peristéri	0.459
+GR	Irákleion	0.454
+GR	Kallithéa	0.389
+GT	Guatemala City	1
+GT	Villa Nueva	0.788
+GT	Mixco	0.684
+GT	Cobán	0.462
+GT	Quetzaltenango	0.426
+GT	Jalapa	0.401
+GT	Escuintla	0.396
+GT	Villa Canales	0.395
+GW	Bissau	1
+GW	Gabú	0.335
+GW	Bafatá	0.276
+GW	Xitole	0.21
+GW	Canchungo	0.176
+GW	Bissorã	0.17
+GW	Jabicunda	0.168
+GW	Madina do Boé	0.163
+GY	Georgetown	1
+GY	Linden	0.436
+GY	New Amsterdam	0.386
+GY	Anna Regina	0.23
+GY	Corriverton	0.22
+GY	Bartica	0.218
+GY	Tuschen	0.188
+GY	Rose Hall	0.184
+HK	Hong Kong	1
+HK	New Territories	0.734
+HK	Kowloon	0.549
+HK	Hong Kong Island	0.402
+HK	Victoria	0.36
+HK	Tuen Mun	0.262
+HK	Sha Tin	0.259
+HK	Sham Shui Po	0.241
+HN	Tegucigalpa	1
+HN	San Pedro Sula	0.97
+HN	La Ceiba	0.511
+HN	Choloma	0.404
+HN	El Progreso	0.344
+HN	Ciudad Choluteca	0.299
+HN	Comayagua	0.263
+HN	Puerto Cortez	0.238
+HR	Zagreb	1
+HR	Split	0.475
+HR	Rijeka	0.403
+HR	Osijek	0.337
+HR	Zadar	0.318
+HR	Sesvete	0.289
+HR	Pula	0.281
+HR	Slavonski Brod	0.26
+HT	Port-au-Prince	1
+HT	Carrefour	0.598
+HT	Delmas	0.557
+HT	Port-de-Paix	0.498
+HT	Pétionville	0.479
+HT	Croix-des-Bouquets	0.431
+HT	Jacmel	0.334
+HT	Cap-Haïtien	0.33
+HU	Budapest	1
+HU	Pest	0.759
+HU	Buda	0.541
+HU	Debrecen	0.341
+HU	Szeged	0.304
+HU	Miskolc	0.298
+HU	Pécs	0.289
+HU	Budapest XI. kerület	0.283
+ID	Jakarta	1
+ID	Surabaya	0.58
+ID	Bekasi	0.548
+ID	Bandung	0.535
+ID	Medan	0.534
+ID	Depok	0.501
+ID	Tangerang	0.473
+ID	Palembang	0.442
+IE	Dublin	1
+IE	South Dublin	0.522
+IE	Cork	0.431
+IE	Limerick	0.303
+IE	Galway	0.285
+IE	Tallaght	0.28
+IE	Waterford	0.229
+IE	Swords	0.204
+IL	Jerusalem	1
+IL	Tel Aviv	0.667
+IL	West Jerusalem	0.642
+IL	Haifa	0.542
+IL	Rishon LeTsiyyon	0.516
+IL	Petaẖ Tiqva	0.511
+IL	Netanya	0.485
+IL	Ashdod	0.483
+IN	Mumbai	1
+IN	Delhi	0.932
+IN	Bengaluru	0.818
+IN	Hyderabad	0.742
+IN	Ahmedabad	0.708
+IN	Chennai	0.607
+IN	Kolkata	0.604
+IN	Surat	0.601
+IQ	Baghdad	1
+IQ	Al Mawşil al Jadīdah	0.535
+IQ	Al Başrah al Qadīmah	0.528
+IQ	Mosul	0.483
+IQ	Erbil	0.473
+IQ	Basrah	0.429
+IQ	Karbala	0.411
+IQ	Kirkuk	0.378
+IS	Reykjavík	1
+IS	Kópavogur	0.565
+IS	Hafnarfjörður	0.502
+IS	Reykjanesbær	0.407
+IS	Akureyri	0.402
+IS	Keflavík	0.366
+IS	Mosfellsbær	0.319
+IS	Garðabær	0.31
+IT	Roma	1
+IT	Milano	0.769
+IT	Napoli	0.626
+IT	Torino	0.604
+IT	Palermo	0.529
+IT	Genova	0.5
+IT	Bologna	0.413
+IT	Firenze	0.398
+JM	Kingston	1
+JM	New Kingston	0.789
+JM	Spanish Town	0.393
+JM	Portmore	0.331
+JM	Montego Bay	0.297
+JM	Mandeville	0.224
+JM	May Pen	0.218
+JM	Old Harbour	0.167
+JO	Amman	1
+JO	Zarqa	0.788
+JO	Irbid	0.668
+JO	Russeifa	0.459
+JO	Ḩayy Khildā	0.444
+JO	Khuraybat as Sūq	0.382
+JO	Wādī as Sīr	0.377
+JO	Ar Ramthā	0.349
+KE	Nairobi	1
+KE	Kakamega	0.652
+KE	Mombasa	0.524
+KE	Nakuru	0.36
+KE	Ruiru	0.334
+KE	Eldoret	0.329
+KE	Kisumu	0.301
+KE	Kikuyu	0.271
+KG	Bishkek	1
+KG	Osh	0.598
+KG	Jalal-Abad	0.37
+KG	Karakol	0.306
+KG	Tokmok	0.282
+KG	Uzgen	0.234
+KG	Kara-Balta	0.232
+KG	Balykchy	0.218
+KH	Phnom Penh	1
+KH	Takeo	0.732
+KH	Siem Reap	0.298
+KH	Battambang	0.275
+KH	Paoy Paet	0.251
+KH	Dangkao	0.22
+KH	Kampong Chhnang	0.219
+KH	Sihanoukville	0.215
+KI	Tarawa	1
+KI	Betio Village	0.557
+KI	Bikenibeu Village	0.391
+KI	Teaoraereke Village	0.313
+KI	Bairiki Village	0.262
+KI	Eita Village	0.239
+KI	Bonriki Village	0.229
+KI	Temaiku Village	0.223
+KM	Moroni	1
+KM	Moutsamoudou	0.593
+KM	Fomboni	0.481
+KM	Tsimbeo	0.41
+KM	Domoni	0.405
+KM	Mirontsi	0.4
+KM	Adda-Douéni	0.381
+KM	Ouani	0.367
+KN	Basseterre	1
+KN	Sandy Point Town	0.493
+KN	Fig Tree	0.476
+KN	Market Shop	0.446
+KN	Saint Paul’s	0.436
+KN	Middle Island	0.425
+KN	Nicola Town	0.399
+KN	Trinity	0.362
+KW	Al Aḩmadī	1
+KW	Ḩawallī	0.508
+KW	As Sālimīyah	0.481
+KW	Şabāḩ as Sālim	0.467
+KW	Al Farwānīyah	0.368
+KW	Al Faḩāḩīl	0.327
+KW	Kuwait City	0.307
+KW	Ar Rumaythīyah	0.302
+KZ	Almaty	1
+KZ	Shymkent	0.779
+KZ	Aktobe	0.503
+KZ	Karagandy	0.502
+KZ	Taraz	0.426
+KZ	Kyzylorda	0.424
+KZ	Astana	0.418
+KZ	Oral	0.409
+LA	Vientiane	1
+LA	Savannakhet	0.387
+LA	Pakse	0.324
+LA	Thakhèk	0.318
+LA	Ban Khoan	0.279
+LA	Ban Napè	0.274
+LA	Luang Prabang	0.256
+LA	Xam Nua	0.236
+LB	Beirut	1
+LB	Ra’s Bayrūt	0.808
+LB	Tripoli	0.346
+LB	Sidon	0.292
+LB	Tyre	0.266
+LB	Aley	0.26
+LB	Nabatîyé et Tahta	0.25
+LB	Habboûch	0.227
+LC	Gros Islet	1
+LC	Castries	0.891
+LC	Bisee	0.718
+LC	Dennery	0.707
+LC	Laborie	0.516
+LC	Choiseul	0.492
+LC	Vieux Fort	0.426
+LC	Micoud	0.368
+LI	Schaan	1
+LI	Triesen	0.934
+LI	Vaduz	0.931
+LI	Balzers	0.878
+LI	Eschen	0.862
+LI	Mauren	0.857
+LI	Triesenberg	0.664
+LI	Ruggell	0.619
+LK	Colombo	1
+LK	Dehiwala-Mount Lavinia	0.582
+LK	Maharagama	0.549
+LK	Jaffna	0.511
+LK	Moratuwa	0.51
+LK	Negombo	0.46
+LK	Pita Kotte	0.427
+LK	Sri Jayewardenepura Kotte	0.423
+LR	Monrovia	1
+LR	Gbarnga	0.236
+LR	Buchanan	0.222
+LR	Ganta	0.203
+LR	Kakata	0.184
+LR	Zwedru	0.158
+LR	Harbel	0.157
+LR	Harper	0.152
+LS	Maseru	1
+LS	Maputsoe	0.415
+LS	Mohale's Hoek	0.36
+LS	Mafeteng	0.355
+LS	Hlotse	0.35
+LS	Butha-Buthe	0.336
+LS	Mabote	0.325
+LS	Quthing	0.307
+LT	Vilnius	1
+LT	Kaunas	0.73
+LT	Klaipėda	0.564
+LT	Šiauliai	0.428
+LT	Panevėžys	0.398
+LT	Dainava (Kaunas)	0.359
+LT	Alytus	0.301
+LT	Šilainiai	0.274
+LU	Luxembourg	1
+LU	Esch-sur-Alzette	0.691
+LU	Dudelange	0.485
+LU	Bonnevoie-Sud	0.418
+LU	Belair	0.412
+LU	Limpertsberg	0.388
+LU	Gare	0.385
+LU	Kirchberg	0.374
+LV	Rīga	1
+LV	Daugavpils	0.324
+LV	Liepāja	0.301
+LV	Jelgava	0.272
+LV	Jūrmala	0.265
+LV	Ventspils	0.21
+LV	Rēzekne	0.189
+LV	Valmiera	0.175
+MA	Casablanca	1
+MA	Rabat	0.672
+MA	Fes	0.57
+MA	Tangier	0.531
+MA	Marrakesh	0.521
+MA	Salé	0.515
+MA	Agadir	0.436
+MA	Meknes	0.394
+MC	Monaco	1
+MC	Monte-Carlo	0.697
+MC	La Condamine	0.608
+MC	La Rousse	0.464
+MC	Jardin Exotique	0.394
+MC	Fontvieille	0.331
+MC	Moneghetti	0.302
+MC	Saint-Roman	0.302
+MD	Chișinău	1
+MD	Tiraspol	0.497
+MD	Bălţi	0.443
+MD	Bender	0.416
+MD	Rîbniţa	0.295
+MD	Cahul	0.233
+MD	Ungheni	0.233
+MD	Soroca	0.208
+ME	Podgorica	1
+ME	Nikšić	0.496
+ME	Herceg Novi	0.287
+ME	Pljevlja	0.287
+ME	Budva	0.276
+ME	Bar	0.274
+ME	Bijelo Polje	0.255
+ME	Cetinje	0.253
+MG	Antananarivo	1
+MG	Toamasina	0.506
+MG	Antsirabe	0.44
+MG	Mahajanga	0.439
+MG	Fianarantsoa	0.388
+MG	Toliara	0.364
+MG	Antsiranana	0.319
+MG	Sambava	0.257
+MH	Majuro	1
+MH	Ebaye	0.768
+MH	Arno	0.285
+MH	Laura	0.247
+MH	Jabor	0.217
+MH	Wotje	0.186
+MH	Mili	0.183
+MH	Namdrik	0.179
+MK	Skopje	1
+MK	Kumanovo	0.398
+MK	Prilep	0.394
+MK	Bitola	0.382
+MK	Čair	0.369
+MK	Tetovo	0.365
+MK	Kisela Voda	0.35
+MK	Veles	0.349
+ML	Bamako	1
+ML	Sikasso	0.287
+ML	Koutiala	0.227
+ML	Ségou	0.221
+ML	Kayes	0.215
+ML	Mopti	0.21
+ML	Kalaban Koro	0.187
+ML	Gao	0.177
+MM	Yangon	1
+MM	Mandalay	0.519
+MM	Nay Pyi Taw	0.455
+MM	Hlaingthaya	0.392
+MM	Mawlamyine	0.313
+MM	Kalemyo	0.279
+MM	Insein	0.235
+MM	Bago	0.234
+MN	Ulan Bator	1
+MN	Erdenet	0.34
+MN	Darhan	0.315
+MN	Choibalsan	0.23
+MN	Nalayh	0.216
+MN	Mörön	0.216
+MN	Bayanhongor	0.191
+MN	Ulaangom	0.189
+MO	Macau	1
+MO	Taipa	0.415
+MO	Sé	0.284
+MO	Luhuan	0.237
+MO	Zhuojiacun	0.192
+MO	Lai Chi Van	0.185
+MO	Jiu’ao	0.0362
+MO	Cotai	0.0215
+MR	Nouakchott	1
+MR	Nouadhibou	0.351
+MR	Kiffa	0.229
+MR	Dar Naim	0.227
+MR	Néma	0.225
+MR	Mbera	0.223
+MR	Ksar	0.221
+MR	Kaédi	0.218
+MT	San Pawl il-Baħar	1
+MT	Birkirkara	0.872
+MT	Mosta	0.856
+MT	Sliema	0.84
+MT	Qormi	0.724
+MT	Żabbar	0.699
+MT	Naxxar	0.682
+MT	San Ġwann	0.678
+MU	Port Louis	1
+MU	Vacoas	0.862
+MU	Beau Bassin-Rose Hill	0.847
+MU	Curepipe	0.712
+MU	Quatre Bornes	0.706
+MU	Triolet	0.396
+MU	Goodlands	0.368
+MU	Bel Air Rivière Sèche	0.341
+MV	Male	1
+MV	Fuvahmulah	0.328
+MV	Hithadhoo	0.309
+MV	Kulhudhuffushi	0.303
+MV	Thinadhoo	0.248
+MV	Naifaru	0.221
+MV	Hulhumale	0.22
+MV	Dhihdhoo	0.171
+MW	Lilongwe	1
+MW	Blantyre	0.899
+MW	Mzuzu	0.473
+MW	Zomba	0.326
+MW	Karonga	0.25
+MW	Kasungu	0.243
+MW	Mangochi	0.233
+MW	Salima	0.193
+MX	Ciudad de México	1
+MX	Tijuana	0.395
+MX	Iztapalapa	0.386
+MX	Puebla	0.371
+MX	Ecatepec de Morelos	0.366
+MX	Santiago de Querétaro	0.36
+MX	León de los Aldama	0.358
+MX	Ciudad Juárez	0.351
+MY	Kuala Lumpur	1
+MY	Johor Bahru	0.768
+MY	Kampung Baru Subang	0.757
+MY	Petaling Jaya	0.745
+MY	Ipoh	0.723
+MY	Shah Alam	0.714
+MY	Subang Jaya	0.698
+MY	Bukit Rahman Putra	0.646
+MZ	Maputo	1
+MZ	Matola	0.977
+MZ	Nampula	0.784
+MZ	Beira	0.74
+MZ	Chimoio	0.58
+MZ	Tete	0.533
+MZ	Quelimane	0.528
+MZ	Lichinga	0.474
+NA	Windhoek	1
+NA	Rundu	0.441
+NA	Walvis Bay	0.437
+NA	Swakopmund	0.37
+NA	Oshakati	0.335
+NA	Rehoboth	0.298
+NA	Katima Mulilo	0.295
+NA	Otjiwarongo	0.294
+NE	Niamey	1
+NE	Maradi	0.523
+NE	Zinder	0.491
+NE	Tahoua	0.347
+NE	Agadez	0.336
+NE	Arlit	0.284
+NE	Alaghsas	0.259
+NE	Birni N Konni	0.254
+NG	Lagos	1
+NG	Kano	0.565
+NG	Ibadan	0.487
+NG	Abuja	0.418
+NG	Port Harcourt	0.371
+NG	Kaduna	0.347
+NG	Benin City	0.34
+NG	Onitsha	0.318
+NI	Managua	1
+NI	León	0.385
+NI	Masaya	0.366
+NI	Chinandega	0.36
+NI	Matagalpa	0.335
+NI	Estelí	0.315
+NI	Granada	0.303
+NI	Mateare	0.251
+NL	Rotterdam	1
+NL	Amsterdam	0.924
+NL	Den Haag	0.739
+NL	Utrecht	0.658
+NL	Groningen	0.531
+NL	Eindhoven	0.521
+NL	Tilburg	0.506
+NL	Breda	0.461
+NO	Oslo	1
+NO	Bergen	0.521
+NO	Trondheim	0.447
+NO	Stavanger	0.371
+NO	Kristiansand	0.329
+NO	Drammen	0.311
+NO	Lillestrøm	0.288
+NO	Sandnes	0.281
+NP	Kathmandu	1
+NP	Pokhara	0.645
+NP	Bharatpur	0.506
+NP	Pātan	0.456
+NP	Birgañj	0.431
+NP	Biratnagar	0.412
+NP	Dhangaḍhi̇̄	0.377
+NP	Hetauda	0.369
+NR	Arijejen	1
+NR	Denigomodu	0.87
+NR	Menen	0.767
+NR	Yangor	0.727
+NR	Yaren	0.68
+NR	Boe	0.632
+NR	Baiti	0.583
+NR	Ronave	0.578
+NZ	Auckland	1
+NZ	Christchurch	0.519
+NZ	Wellington	0.5
+NZ	Manukau City	0.486
+NZ	North Shore	0.411
+NZ	Hamilton	0.352
+NZ	Tauranga	0.318
+NZ	Dunedin	0.293
+OM	Muscat	1
+OM	Seeb	0.769
+OM	Bawshar	0.693
+OM	‘Ibrī	0.453
+OM	Şalālah	0.452
+OM	Şaḩam	0.419
+OM	Rustaq	0.388
+OM	Sohar	0.369
+PA	Panamá	1
+PA	San Miguelito	0.888
+PA	Juan Díaz	0.497
+PA	David	0.448
+PA	Arraiján	0.434
+PA	Colón	0.433
+PA	Las Cumbres	0.411
+PA	La Chorrera	0.387
+PE	Lima	1
+PE	Callao	0.41
+PE	Arequipa	0.361
+PE	Trujillo	0.345
+PE	Chiclayo	0.267
+PE	Piura	0.25
+PE	Huancayo	0.243
+PE	Cusco	0.235
+PG	Port Moresby	1
+PG	Lae	0.518
+PG	Arawa	0.377
+PG	Mount Hagen	0.344
+PG	Popondetta	0.315
+PG	Madang	0.311
+PG	Kokopo	0.304
+PG	Mendi	0.304
+PH	Quezon City	1
+PH	Davao	0.774
+PH	Caloocan	0.745
+PH	Manila	0.72
+PH	Taguig	0.651
+PH	Budta	0.643
+PH	Malingao	0.603
+PH	Zamboanga	0.575
+PK	Lahore	1
+PK	Karachi	0.945
+PK	Peshawar	0.605
+PK	Faisalabad	0.541
+PK	Rawalpindi	0.508
+PK	Gujranwala	0.439
+PK	Multan	0.408
+PK	Hyderabad	0.384
+PL	Warszawa	1
+PL	Kraków	0.687
+PL	Wrocław	0.629
+PL	Łódź	0.616
+PL	Poznań	0.561
+PL	Gdańsk	0.535
+PL	Szczecin	0.482
+PL	Lublin	0.445
+PS	East Jerusalem	1
+PS	Gaza	0.978
+PS	Khān Yūnis	0.636
+PS	Jabālyā	0.627
+PS	Hebron	0.612
+PS	Nablus	0.552
+PS	Rafaḩ	0.543
+PS	Dayr al Balaḩ	0.373
+PT	Lisboa	1
+PT	Porto	0.699
+PT	Braga	0.611
+PT	Amadora	0.588
+PT	Coimbra	0.521
+PT	Leiria	0.498
+PT	Setúbal	0.478
+PT	Funchal	0.452
+PW	Koror	1
+PW	Koror Town	0.952
+PW	Medalaii Hamlet	0.404
+PW	Ngerbeched Hamlet	0.317
+PW	Ngerchemai Hamlet	0.314
+PW	Ngermid Hamlet	0.273
+PW	Meyungs Hamlet	0.259
+PW	Kloulklubed	0.224
+PY	Asunción	1
+PY	Ciudad del Este	0.451
+PY	San Lorenzo	0.392
+PY	Capiatá	0.366
+PY	Lambaré	0.292
+PY	Fernando de la Mora	0.285
+PY	Limpio	0.255
+PY	Nemby	0.253
+QA	Doha	1
+QA	Ar Rayyān	0.889
+QA	Lusail	0.759
+QA	Al Maţār al ‘Atīq	0.472
+QA	Al Manşūrah	0.436
+QA	Az̧ Z̧a‘āyin	0.397
+QA	Madīnat Khalīfah	0.359
+QA	An Najmah	0.356
+RO	București	1
+RO	Sector 3	0.453
+RO	Iaşi	0.449
+RO	Sector 6	0.443
+RO	Constanţa	0.411
+RO	Sector 2	0.393
+RO	Sector 4	0.392
+RO	Cluj-Napoca	0.391
+RS	Beograd	1
+RS	Niš	0.443
+RS	Novi Sad	0.411
+RS	Zemun	0.35
+RS	Kragujevac	0.34
+RS	Čačak	0.303
+RS	Subotica	0.28
+RS	Leskovac	0.273
+RU	Moscow	1
+RU	Saint Petersburg	0.718
+RU	Novosibirsk	0.394
+RU	Yekaterinburg	0.379
+RU	Nizhniy Novgorod	0.348
+RU	Kazan	0.346
+RU	Chelyabinsk	0.34
+RU	Omsk	0.336
+RW	Kigali	1
+RW	Gisenyi	0.39
+RW	Musanze	0.368
+RW	Nyagatare	0.297
+RW	Gitarama	0.278
+RW	Muhanga	0.27
+RW	Butare	0.236
+RW	Kibuye	0.206
+SA	Jeddah	1
+SA	Riyadh	0.946
+SA	Makkah	0.58
+SA	Madinah	0.526
+SA	Dammam	0.516
+SA	Sulţānah	0.449
+SA	Buraydah	0.398
+SA	Ta’if	0.383
+SB	Honiara	1
+SB	Panatina	0.762
+SB	Nggosi	0.68
+SB	Tandai	0.661
+SB	Kola'a	0.608
+SB	Vura	0.577
+SB	Malango	0.526
+SB	Vavaea	0.438
+SC	Victoria	1
+SC	Cascade	0.563
+SC	Perseverance	0.521
+SC	Baie Sainte Anne	0.47
+SC	Baie Lazare	0.458
+SC	Anse aux Pins	0.452
+SC	Plaisance	0.449
+SC	Glacis	0.443
+SD	Khartoum	1
+SD	Omdurman	0.968
+SD	Khartoum North	0.716
+SD	Nyala	0.535
+SD	Port Sudan	0.498
+SD	Kassala	0.451
+SD	El Obeid	0.446
+SD	Al Qadarif	0.429
+SE	Stockholm	1
+SE	Göteborg	0.634
+SE	Malmö	0.489
+SE	Uppsala	0.342
+SE	Linköping	0.332
+SE	Örebro	0.321
+SE	Sollentuna	0.304
+SE	Umeå	0.293
+SG	Singapore	1
+SG	Bedok New Town	0.222
+SG	Ulu Bedok	0.222
+SG	Tampines Estate	0.217
+SG	Jurong Town	0.216
+SG	Tampines New Town	0.215
+SG	Jurong West	0.214
+SG	Woodlands	0.213
+SI	Ljubljana	1
+SI	Maribor	0.594
+SI	Celje	0.374
+SI	Kranj	0.373
+SI	Koper	0.308
+SI	Novo Mesto	0.3
+SI	Velenje	0.299
+SI	Ptuj	0.257
+SK	Bratislava	1
+SK	Košice	0.729
+SK	Petržalka	0.515
+SK	Nitra	0.451
+SK	Prešov	0.442
+SK	Žilina	0.438
+SK	Banská Bystrica	0.42
+SK	Trnava	0.385
+SL	Freetown	1
+SL	Bo	0.466
+SL	Kenema	0.422
+SL	Koidu	0.394
+SL	Makeni	0.331
+SL	Waterloo	0.262
+SL	Njala	0.223
+SL	Lunsar	0.167
+SM	Serravalle	1
+SM	Dogana	0.87
+SM	Valdragone	0.868
+SM	Borgo Maggiore	0.833
+SM	San Marino	0.697
+SM	Domagnano	0.584
+SM	Fiorentino	0.521
+SM	Cailungo	0.474
+SN	Dakar	1
+SN	Touba	0.651
+SN	Pikine	0.575
+SN	Guédiawaye	0.353
+SN	Thiès	0.347
+SN	Kaolack	0.336
+SN	Rufisque	0.334
+SN	Mbour	0.328
+SO	Mogadishu	1
+SO	Borama	0.481
+SO	Hargeysa	0.43
+SO	Berbera	0.306
+SO	Kismayo	0.301
+SO	Marka	0.298
+SO	El Dibir	0.278
+SO	Ruqi	0.24
+SR	Paramaribo	1
+SR	Blauwgrond	0.375
+SR	Latour	0.363
+SR	Pontbuiten	0.322
+SR	Rainville	0.319
+SR	Flora	0.295
+SR	Welgelegen	0.294
+SR	Lelydorp	0.285
+SS	Juba	1
+SS	Winejok	0.816
+SS	Yei	0.761
+SS	Malakal	0.598
+SS	Wau	0.532
+SS	Kuacjok	0.416
+SS	Pajok	0.33
+SS	Gogrial	0.315
+ST	São Tomé	1
+ST	Neves	0.397
+ST	Água Izé	0.374
+ST	Folha Fede	0.354
+ST	Riboque	0.295
+ST	Almas	0.294
+ST	Pantufo	0.273
+ST	Dona Eugénia	0.26
+SV	San Salvador	1
+SV	Soyapango	0.792
+SV	San Miguel	0.685
+SV	Santa Ana	0.58
+SV	Mejicanos	0.552
+SV	Santa Tecla	0.487
+SV	Apopa	0.462
+SV	Delgado	0.369
+SZ	Manzini	1
+SZ	Mbabane	0.83
+SZ	Malkerns	0.297
+SZ	Nhlangano	0.286
+SZ	Mhlume	0.28
+SZ	Hluti	0.247
+SZ	Siteki	0.236
+SZ	Piggs Peak	0.228
+TD	N'Djamena	1
+TD	Moundou	0.38
+TD	Abéché	0.321
+TD	Sarh	0.32
+TD	Kelo	0.247
+TD	Am Timan	0.234
+TD	Doba	0.228
+TD	Pala	0.228
+TG	Lomé	1
+TG	Sokodé	0.232
+TG	Kara	0.218
+TG	Atakpamé	0.192
+TG	Kpalimé	0.185
+TG	Bassar	0.168
+TG	Dapaong	0.163
+TG	Tsévié	0.16
+TH	Bangkok	1
+TH	Samut Prakan	0.276
+TH	Mueang Nonthaburi	0.223
+TH	Chon Buri	0.207
+TH	Phra Pradaeng	0.196
+TH	Bang Khae	0.194
+TH	Hat Yai	0.194
+TH	Pak Kret	0.193
+TJ	Dushanbe	1
+TJ	Isfara	0.635
+TJ	Istaravshan	0.634
+TJ	Kŭlob	0.562
+TJ	Konibodom	0.557
+TJ	Khujand	0.53
+TJ	Bokhtar	0.404
+TJ	Qayroqqum	0.269
+TL	Dili	1
+TL	Maliana	0.383
+TL	Suai	0.379
+TL	Likisá	0.356
+TL	Aileu	0.34
+TL	Lospalos	0.338
+TL	Maubara	0.33
+TL	Baukau	0.327
+TM	Ashgabat	1
+TM	Türkmenabat	0.568
+TM	Daşoguz	0.478
+TM	Mary	0.397
+TM	Türkmenbaşy	0.355
+TM	Balkanabat	0.347
+TM	Bayramaly	0.311
+TM	Tejen	0.305
+TN	Tunis	1
+TN	Sfax	0.636
+TN	Sousse	0.566
+TN	Kairouan	0.448
+TN	Bizerte	0.447
+TN	Sukrah	0.433
+TN	Aryanah	0.406
+TN	Gabès	0.398
+TO	Nuku‘alofa	1
+TO	Mu‘a	0.417
+TO	Neiafu	0.413
+TO	Haveluloto	0.394
+TO	Tofoa-Koloua	0.393
+TO	Vainī	0.384
+TO	Ha'ateiho	0.342
+TO	Popua	0.323
+TR	Istanbul	1
+TR	Ankara	0.473
+TR	Bursa	0.444
+TR	İzmir	0.433
+TR	Gaziantep	0.368
+TR	Adana	0.34
+TR	Diyarbakır	0.338
+TR	Kayseri	0.302
+TT	Chaguanas	1
+TT	Mon Repos	0.914
+TT	San Fernando	0.907
+TT	Port of Spain	0.853
+TT	Rio Claro	0.727
+TT	Arima	0.72
+TT	Marabella	0.629
+TT	Diego Martin	0.613
+TV	Funafuti	1
+TV	Senala Village	0.421
+TV	Alapi Village	0.403
+TV	Fakaifou Village	0.399
+TV	Savave Village	0.305
+TV	Teone Village	0.292
+TV	Vaiaku Village	0.286
+TV	Motufoua School	0.283
+TZ	Dar es Salaam	1
+TZ	Mwanza	0.453
+TZ	Dodoma	0.377
+TZ	Zanzibar	0.363
+TZ	Arusha	0.339
+TZ	Mbeya	0.317
+TZ	Morogoro	0.296
+TZ	Kahama	0.29
+UA	Kyiv	1
+UA	Kharkiv	0.697
+UA	Odesa	0.587
+UA	Dnipro	0.573
+UA	Donetsk	0.553
+UA	Lviv	0.493
+UA	Zaporizhzhya	0.49
+UA	Kryvyy Rih	0.452
+UG	Kampala	1
+UG	Nansana	0.563
+UG	Kira	0.525
+UG	Bunamwaya	0.496
+UG	Kyengera	0.412
+UG	Mbarara	0.363
+UG	Kasangati	0.352
+UG	Mukono	0.337
+US	New York City	1
+US	Los Angeles	0.659
+US	Brooklyn	0.557
+US	Chicago	0.55
+US	Queens	0.513
+US	Houston	0.513
+US	Phoenix	0.433
+US	Philadelphia	0.423
+UY	Montevideo	1
+UY	Salto	0.28
+UY	Paysandú	0.24
+UY	Las Piedras	0.234
+UY	Rivera	0.226
+UY	Maldonado	0.209
+UY	Tacuarembó	0.202
+UY	Melo	0.2
+UZ	Tashkent	1
+UZ	Andijon	0.615
+UZ	Namangan	0.6
+UZ	Samarkand	0.549
+UZ	Yunusobod	0.422
+UZ	Nukus	0.41
+UZ	Fergana	0.389
+UZ	Bukhara	0.376
+VA	Vatican City	1
+VC	Kingstown	1
+VC	Calliaqua	0.994
+VC	Diamond	0.284
+VC	Redemption	0.277
+VC	Georgetown	0.262
+VC	Bottle and Glass	0.261
+VC	New Montrose	0.255
+VC	Greiggs	0.245
+VE	Caracas	1
+VE	Maracaibo	0.764
+VE	Valencia	0.735
+VE	Barquisimeto	0.643
+VE	Ciudad Guayana	0.571
+VE	Barcelona	0.521
+VE	Maturín	0.465
+VE	Maracay	0.394
+VN	Hồ Chí Minh	1
+VN	Hà Nội	0.758
+VN	Haiphong	0.433
+VN	Cần Thơ	0.328
+VN	Huế	0.314
+VN	Da Nang	0.302
+VN	Biên Hòa	0.301
+VN	Thanh Hóa	0.246
+VU	Port-Vila	1
+VU	Luganville	0.611
+VU	Norsup	0.289
+VU	Pango	0.263
+VU	Isangel	0.2
+VU	Port-Olry	0.19
+VU	Sola	0.181
+VU	Hog Harbour	0.167
+WS	Apia	1
+WS	Asau	0.405
+WS	Mulifanua	0.334
+WS	Faleula	0.253
+WS	Vaimoso	0.247
+WS	Siusega	0.235
+WS	Malie	0.233
+WS	Fasito‘outa	0.228
+XK	Pristina	1
+XK	Prizren	0.558
+XK	Mitrovicë	0.441
+XK	Gjakovë	0.414
+XK	Suva Reka	0.362
+XK	Ferizaj	0.329
+XK	Glogovac	0.326
+XK	Gjilan	0.307
+ZA	Johannesburg	1
+ZA	Cape Town	0.712
+ZA	Durban	0.595
+ZA	Pretoria	0.474
+ZA	Soweto	0.424
+ZA	Gqeberha	0.334
+ZA	Soshanguve	0.304
+ZA	Pietermaritzburg	0.299
+ZM	Lusaka	1
+ZM	Kitwe	0.549
+ZM	Ndola	0.533
+ZM	Chipata	0.384
+ZM	Solwezi	0.369
+ZM	Kabwe	0.361
+ZM	Chingola	0.341
+ZM	Luanshya	0.296
+ZW	Harare	1
+ZW	Bulawayo	0.657
+ZW	Chitungwiza	0.491
+ZW	Mutare	0.382
+ZW	Epworth	0.366
+ZW	Gweru	0.32
+ZW	Kwekwe	0.279
+ZW	Kadoma	0.276

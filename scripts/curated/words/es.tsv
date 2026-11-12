@@ -1,0 +1,103 @@
+# Spanish business-name words (curated 2026-11-10), checked against the words GLEIF's Spanish and
+# Mexican names use most (construcciones, inversiones, promociones, transportes, hermanos, hijos).
+# Spanish puts the trade first: Construcciones García, Transportes del Sur. Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2;{surname} {family}:1
+template	founder_trade	{trade} {surname}:3
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{trade} {region}:1;{trade} {place}:2;{trade} {adjective}:2;{adjective} {trade}:0.3
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{trade} {initials}:2
+joiner	*	y;&
+family	*	e Hijos;Hermanos;y Asociados;y Cía.
+adjective	*	Integrales;Generales;Modernos;Unidos;Nacionales;Globales;Internacionales;Profesionales;Avanzados;Express;Premium;Plus;Total;Pro;Ibéricos;Latinos;Andinos;del Pacífico;del Caribe;Reunidos;Asociados;Hispanos
+region	*	del Norte;del Sur;del Este;del Oeste;del Centro;de Levante;del Noroeste;del Sureste;del Pacífico;del Caribe;del Altiplano;del Valle;de la Costa;de la Sierra;del Bajío;del Golfo
+coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Nex;Ori;Sol;Cal;Dyn;Gen;Ib;Lat;Mar;Neo;Opt;Pro;Ren;Syn;Val;Vit;Ar;Ter
+coined_tail	*	ia;ex;al;ova;eo;ix;ica;ena;ora;ium;ana;ez;ur;itec;sa;mex;tec;nova
+trade	01	Agrícola;Granja;Agropecuaria;Explotaciones Agrícolas;Ganadería;Viveros;Hacienda
+trade	02	Forestal;Maderas;Explotaciones Forestales
+trade	03	Pesquera;Pesca;Acuicultura;Mariscos
+trade	05	Carbones;Minera
+trade	06	Petróleos;Hidrocarburos;Energía
+trade	07	Minera;Minería;Minerales
+trade	08	Canteras;Áridos;Graveras;Mármoles
+trade	09	Perforaciones;Servicios Petroleros
+trade	10	Panadería;Alimentos;Cárnicas;Conservas;Pastelería;Lácteos;Embutidos
+trade	11	Bodegas;Cervecería;Destilería;Vinos;Bebidas
+trade	12	Tabacos
+trade	13	Textil;Textiles;Hilaturas;Tejidos;Bordados
+trade	14	Confecciones;Moda;Textil;Uniformes
+trade	15	Calzados;Marroquinería;Curtidos;Pieles
+trade	16	Maderas;Carpintería;Aserradero;Palets
+trade	17	Cartonajes;Embalajes;Papelera;Envases
+trade	18	Gráficas;Imprenta;Artes Gráficas;Impresión
+trade	19	Refinería;Combustibles
+trade	20	Química;Químicos;Pinturas;Cosmética;Laboratorios
+trade	21	Farma;Laboratorios;Farmacéutica
+trade	22	Plásticos;Caucho;Envases Plásticos
+trade	23	Hormigones;Cerámica;Vidrios;Prefabricados;Mármoles
+trade	24	Aceros;Fundición;Metales;Siderúrgica
+trade	25	Metalúrgica;Estructuras Metálicas;Mecanizados;Carpintería Metálica;Herrería
+trade	26	Electrónica;Sistemas;Tecnologías;Instrumentación
+trade	27	Eléctrica;Iluminación;Material Eléctrico
+trade	28	Maquinaria;Industrial;Ingeniería Industrial;Automatización
+trade	29	Carrocerías;Remolques;Autopartes
+trade	30	Astilleros;Náutica;Aeronáutica
+trade	31	Muebles;Mobiliario;Cocinas;Tapicería;Ebanistería
+trade	32	Joyería;Laboratorio Dental;Ortopedia
+trade	33	Mantenimiento;Mantenimiento Industrial;Reparaciones;Servicios Industriales
+trade	35	Energía;Solar;Eólica;Renovables;Energías;Fotovoltaica
+trade	36	Aguas;Agua Potable
+trade	37	Saneamientos;Depuración
+trade	38	Reciclajes;Recuperaciones;Residuos;Chatarras;Contenedores
+trade	39	Medio Ambiente;Descontaminación
+trade	41	Construcciones;Constructora;Promociones;Edificaciones;Obras;Inmobiliaria
+trade	42	Obras Civiles;Excavaciones;Movimientos de Tierra;Pavimentos;Infraestructuras
+trade	43	Instalaciones;Fontanería;Electricidad;Reformas;Pinturas;Climatización;Albañilería
+trade	45	Automóviles;Talleres;Autos;Neumáticos;Motor;Automotriz
+trade	46	Comercial;Distribuciones;Importaciones;Comercializadora;Suministros;Trading
+trade	47	Comercial;Tienda;Farmacia;Supermercado;Abarrotes;Almacenes;Boutique
+trade	49	Transportes;Mudanzas;Autocares;Taxis;Logística;Fletes
+trade	50	Naviera;Marítima;Transportes Marítimos
+trade	51	Aviación;Aérea;Líneas Aéreas
+trade	52	Logística;Almacenes;Grúas;Operadora Logística
+trade	53	Mensajería;Paquetería;Envíos
+trade	55	Hotel;Hostal;Apartamentos;Camping;Posada;Turismo Rural
+trade	56	Restaurante;Bar;Cafetería;Pizzería;Taquería;Catering;Asador
+trade	58	Editorial;Ediciones;Publicaciones;Software
+trade	59	Producciones;Films;Audiovisuales;Estudios
+trade	60	Radio;Televisión;Comunicación
+trade	61	Telecomunicaciones;Redes;Comunicaciones
+trade	62	Informática;Sistemas;Tecnología;Soluciones;Software;Consultoría
+trade	63	Datos;Digital;Internet
+trade	64	Inversiones;Capital;Financiera;Holding;Participaciones
+trade	65	Seguros;Aseguradora
+trade	66	Correduría de Seguros;Asesores Financieros;Gestión Patrimonial
+trade	68	Inmobiliaria;Inversiones Inmobiliarias;Patrimonial;Gestión Inmobiliaria;Bienes Raíces;Alquileres
+trade	69	Asesores;Abogados;Asesoría;Gestoría;Auditores;Contadores;Asociados
+trade	70	Consultores;Consultoría;Gestión;Grupo;Consulting
+trade	71	Ingeniería;Arquitectura;Proyectos;Topografía;Estudios Técnicos
+trade	72	Investigación;Laboratorio;Biotecnología
+trade	73	Publicidad;Marketing;Comunicación;Agencia
+trade	74	Diseño;Fotografía;Estudio;Traducciones
+trade	75	Clínica Veterinaria;Veterinaria
+trade	77	Alquileres;Rent a Car;Alquiler de Maquinaria;Renting
+trade	78	Recursos Humanos;Empleo;Selección de Personal
+trade	79	Viajes;Turismo;Tours
+trade	80	Seguridad;Vigilancia;Protección
+trade	81	Limpiezas;Jardinería;Mantenimientos;Servicios Integrales
+trade	82	Servicios;Gestión;Eventos;Call Center
+trade	84	Ayuntamiento;Municipalidad;Dirección
+trade	85	Academia;Colegio;Autoescuela;Formación;Instituto;Escuela
+trade	86	Clínica;Centro Médico;Clínica Dental;Fisioterapia;Salud;Consultorio
+trade	87	Residencia;Residencia de Mayores;Geriátrico
+trade	88	Asistencia;Ayuda a Domicilio;Guardería
+trade	90	Producciones;Teatro;Espectáculos;Artes
+trade	91	Museo;Biblioteca
+trade	92	Juegos;Apuestas;Recreativos;Casino
+trade	93	Gimnasio;Club Deportivo;Deportes;Fitness
+trade	94	Asociación;Fundación;Club;Cofradía
+trade	95	Reparaciones;Servicio Técnico;Zapatería
+trade	96	Peluquería;Estética;Barbería;Lavandería;Funeraria

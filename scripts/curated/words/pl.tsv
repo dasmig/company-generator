@@ -1,0 +1,62 @@
+# Polish business-name words (curated 2026-11-10), checked against the words GLEIF's Polish names use
+# most (handlowo, usługowe, produkcyjno, przedsiębiorstwo, trans, invest, energy). Sole traders and
+# small firms often open with "Przedsiębiorstwo Handlowo-Usługowe" (P.H.U.) or "Firma":
+# P.H.U. Kowalski, Kowalski Budownictwo, Trans-Pol. Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2;Firma {surname}:1;P.H.U. {surname}:2;F.H.U. {surname}:1
+template	founder_trade	{trade} {surname}:2;{surname} {trade}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{trade} {place}:1;{adjective} {trade}:1;{trade} {region}:1
+template	coined	{coined}:2;{coined}-{trade}:1;{coined} {trade}:1
+template	initials	{initials}:1;{initials} {trade}:1
+joiner	*	i;&
+family	*	i Synowie;i Wspólnicy;i Spółka
+adjective	*	Polska;Polskie;Nowa;Nowy;Euro;Inter;Pol;Max;Mega;Pro;Eko;Expert;Profi;Top;Global;Złoty;Orzeł;Bursztyn;Wisła;Odra;Tatry
+region	*	Polska;Mazowsze;Śląsk;Pomorze;Małopolska;Wielkopolska;Podkarpacie;Kujawy;Warmia;Podlasie;Północ;Południe;Wschód;Zachód
+coined_head	*	Pol;Tech;Bud;Mar;Trans;Agro;Eko;Med;Inter;Neo;Ster;Kor;Gal;Tom;Kom;Ver;Max
+coined_tail	*	ex;pol;bud;mar;tex;tech;kom;dar;stal;plast;med;trans;max;tor;san;lux
+trade	01	Gospodarstwo Rolne;Ferma;Rolnictwo;Sady;Hodowla
+trade	02	Usługi Leśne;Leśnictwo;Drewno
+trade	03	Rybactwo;Gospodarstwo Rybackie
+trade	B	Kopalnia;Żwirownia;Kruszywa;Wydobycie
+trade	C	Produkcja;Zakład Produkcyjny;Przemysł
+trade	10	Piekarnia;Masarnia;Cukiernia;Mleczarnia;Przetwórstwo
+trade	11	Browar;Destylarnia;Napoje
+trade	13	Tekstylia
+trade	14	Odzież;Szwalnia;Moda
+trade	16	Tartak;Stolarka;Drewno
+trade	18	Drukarnia;Poligrafia;Druk
+trade	20	Chemia;Farby
+trade	22	Plast;Tworzywa Sztuczne
+trade	23	Beton;Prefabrykaty;Kamieniarstwo
+trade	24	Stal;Odlewnia;Metale
+trade	25	Metal;Ślusarstwo;Konstrukcje Stalowe;Obróbka Metali
+trade	28	Maszyny;Automatyka
+trade	29	Autobus;Przyczepy
+trade	31	Meble;Stolarstwo
+trade	32	Złotnictwo;Protetyka
+trade	33	Serwis;Naprawy;Utrzymanie Ruchu
+trade	D	Energia;Fotowoltaika;Energetyka;PV
+trade	E	Wod-Kan;Recykling;Odpady;Wywóz Nieczystości
+trade	F	Budownictwo;Bud;Usługi Budowlane;Remonty;Budowa
+trade	42	Drogownictwo;Roboty Ziemne;Infrastruktura
+trade	43	Instalacje;Elektro;Dekarstwo;Hydraulika;Wykończenia;Elektryka
+trade	G	Handel;Hurtownia;Import Export;Dystrybucja;Trade;Handlowo-Usługowe
+trade	45	Auto;Motoryzacja;Auto Serwis;Opony;Auto Części
+trade	47	Sklep;Market;Apteka;Delikatesy;Kwiaciarnia
+trade	H	Transport;Trans;Spedycja;Logistyka;Przewozy;Taxi
+trade	53	Kurier;Przesyłki
+trade	I	Hotel;Restauracja;Pizzeria;Bar;Gastronomia;Catering;Pensjonat
+trade	J	IT;Software;Systemy;Informatyka;Media;Telekom;Digital
+trade	K	Invest;Finanse;Capital;Ubezpieczenia;Kredyty
+trade	L	Nieruchomości;Development;Zarządzanie Nieruchomościami
+trade	M	Doradztwo;Consulting;Biuro Rachunkowe;Kancelaria;Projekt;Architekci;Reklama;Design
+trade	75	Lecznica dla Zwierząt;Weterynaria
+trade	N	Usługi;Serwis;Wynajem;Ochrona;Sprzątanie;Turystyka;Biuro Podróży
+trade	O	Urząd Gminy
+trade	P	Szkoła;Edukacja;Szkolenia;Szkoła Jazdy;Akademia
+trade	Q	Medyczne Centrum;Gabinet;Stomatologia;Rehabilitacja;Przychodnia
+trade	R	Sport;Fitness;Rekreacja;Sztuka
+trade	S	Usługi;Fryzjerstwo;Kosmetyka;Naprawa;Pralnia;Zakład Pogrzebowy

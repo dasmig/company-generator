@@ -1,0 +1,46 @@
+# Greek business-name words (curated 2026-11-10). Greek names are often in capitals in registers,
+# written here in title case: Γ. Παπαδόπουλος & ΣΙΑ, Κατασκευαστική Αττικής. Trade words are
+# feminine adjectives agreeing with "εταιρεία". Words carry the ELOT 743 Latin form after "=", used
+# for domains. A section key serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Grek
+style	form_position	suffix
+template	founder	{surname}:2;{surname} & ΣΙΑ={surname} & Sia:2
+template	founder_trade	{surname} {trade}:2;{trade} {surname}:1
+template	two_founders	{surname} - {surname2}:1
+template	descriptive	{trade} {place}:3;{adjective} {trade}:2
+template	coined	{coined}:2;{coined} {trade}:1
+template	initials	{initials}:1;{initials} {trade}:1
+surname	*	Παπαδόπουλος=Papadopoulos:1;Βλάχος=Vlachos:0.6;Αγγελόπουλος=Angelopoulos:0.5;Νικολάου=Nikolaou:0.6;Γεωργίου=Georgiou:0.7;Παπαγεωργίου=Papageorgiou:0.5;Οικονόμου=Oikonomou:0.5;Παπαδημητρίου=Papadimitriou:0.5;Δημητρίου=Dimitriou:0.5;Ιωάννου=Ioannou:0.6;Μακρής=Makris:0.4;Κωνσταντίνου=Konstantinou:0.5;Αντωνίου=Antoniou:0.4;Παππάς=Pappas:0.5;Χριστοδούλου=Christodoulou:0.4;Παναγιωτόπουλος=Panagiotopoulos:0.4;Κωνσταντινίδης=Konstantinidis:0.4;Αθανασίου=Athanasiou:0.4
+place	GR	Αττικής=Attikis:3;Αθηνών=Athinon:2;Θεσσαλονίκης=Thessalonikis:1.5;Ελλάδος=Ellados:2;Κρήτης=Kritis:0.8;Μακεδονίας=Makedonias:0.8;Πελοποννήσου=Peloponnisou:0.6;Αιγαίου=Aigaiou:0.6;Ηπείρου=Ipeirou:0.4;Θεσσαλίας=Thessalias:0.5
+place	CY	Κύπρου=Kyprou:3;Λευκωσίας=Lefkosias:1.5;Λεμεσού=Lemesou:1.2;Λάρνακας=Larnakas:0.6;Πάφου=Pafou:0.4
+adjective	*	Ελληνική=Elliniki;Νέα=Nea;Γενική=Geniki;Πανελλήνια=Panellinia;Διεθνής=Diethnis;Ενωμένη=Enomeni;Ολυμπιακή=Olympiaki;Αιγαίο=Aigaio;Ήλιος=Ilios;Δέλτα=Delta;Άλφα=Alfa;Ωμέγα=Omega;Πρότυπη=Protypi;Σύγχρονη=Synchroni
+coined_head	*	Ελ=El;Νεο=Neo;Τεχ=Tech;Ευρω=Evro;Ολ=Ol;Αρ=Ar;Μεγ=Meg;Ηλ=Il;Κρ=Kr;Αθ=Ath
+coined_tail	*	ιον=ion;ικα=ika;ος=os;ια=ia;εξ=ex;ων=on;ηλ=il;τεχ=tech
+trade	A	Αγροτική=Agrotiki;Γεωργική=Georgiki;Κτηνοτροφική=Ktinotrofiki
+trade	03	Αλιευτική=Alieftiki;Ιχθυοκαλλιέργειες=Ichthyokalliergeies
+trade	B	Λατομεία=Latomeia;Μεταλλευτική=Metalleftiki
+trade	C	Βιομηχανία=Viomichania;Βιομηχανική=Viomichaniki
+trade	10	Τροφίμων=Trofimon;Αρτοποιία=Artopoiia;Γαλακτοκομική=Galaktokomiki
+trade	11	Οινοποιία=Oinopoiia;Ποτοποιία=Potopoiia
+trade	D	Ενεργειακή=Energeiaki;Φωτοβολταϊκά=Fotovoltaika
+trade	E	Περιβαλλοντική=Perivallontiki;Ανακύκλωση=Anakyklosi
+trade	F	Κατασκευαστική=Kataskevastiki;Τεχνική=Techniki;Οικοδομική=Oikodomiki
+trade	43	Ηλεκτρολογική=Ilektrologiki;Υδραυλικά=Ydravlika;Τεχνική=Techniki
+trade	G	Εμπορική=Emporiki;Εισαγωγική=Eisagogiki;Διανομές=Dianomes
+trade	45	Αυτοκίνητα=Aftokinita;Συνεργείο=Synergeio
+trade	47	Μάρκετ=Market;Φαρμακείο=Farmakeio;Καταστήματα=Katastimata
+trade	H	Μεταφορική=Metaforiki;Μεταφορές=Metafores;Logistics=Logistics
+trade	50	Ναυτιλιακή=Naftiliaki;Ναυτική=Naftiki
+trade	I	Ξενοδοχειακή=Xenodocheiaki;Τουριστική=Touristiki;Εστίαση=Estiasi
+trade	J	Πληροφορική=Pliroforiki;Λογισμικό=Logismiko;Επικοινωνίες=Epikoinonies
+trade	K	Επενδυτική=Ependytiki;Ασφαλιστική=Asfalistiki;Χρηματοοικονομική=Chrimatooikonomiki
+trade	L	Κτηματική=Ktimatiki;Ακίνητα=Akinita;Αξιοποίησης Ακινήτων=Axiopoiisis Akiniton
+trade	M	Συμβουλευτική=Symvouleftiki;Μελετητική=Meletitiki;Λογιστική=Logistiki;Διαφημιστική=Diafimistiki
+trade	N	Υπηρεσίες=Ypiresies;Ταξιδιωτική=Taxidiotiki;Φύλαξη=Fylaxi;Καθαρισμοί=Katharismoi
+trade	O	Δήμος=Dimos
+trade	P	Εκπαιδευτική=Ekpaideftiki;Φροντιστήριο=Frontistirio
+trade	Q	Ιατρική=Iatriki;Διαγνωστικό Κέντρο=Diagnostiko Kentro;Οδοντιατρείο=Odontiatreio
+trade	R	Αθλητική=Athlitiki;Ψυχαγωγία=Psychagogia
+trade	S	Υπηρεσίες=Ypiresies;Κομμωτήριο=Kommotirio;Επισκευές=Episkeves

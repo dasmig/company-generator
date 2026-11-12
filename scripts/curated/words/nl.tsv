@@ -1,0 +1,103 @@
+# Dutch business-name words (curated 2026-11-10), checked against the words GLEIF's Dutch and
+# Belgian names use most (holding, beheer, vastgoed, advies, consultancy, beleggingen).
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2;{surname} {family}:1
+template	founder_trade	{surname} {trade}:2;{trade} {surname}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{trade} {place}:2;{place} {trade}:1;{adjective} {trade}:1;{trade} {region}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;en
+family	*	& Zonen;& Zn.;Gebroeders;& Co
+adjective	*	Nederlandse;Hollandse;Algemene;Nieuwe;Moderne;Eerste;Totaal;Express;Pro;Prima;Top;Euro;Inter;Royal;Oranje;Delta;Polder;Noord;Zuid
+region	*	Noord;Zuid;Oost;West;Midden;Randstad;Brabant;Limburg;Twente;Veluwe;Friesland;Holland;Vlaanderen;Kempen
+coined_head	*	Nov;Vel;Ax;Lum;Ver;Tri;Ori;Sol;Dyn;Gen;Hol;Mar;Neo;Opt;Ren;Val;Vit;Bra;Del
+coined_tail	*	ia;ex;on;ix;ica;um;tec;tex;plan;mark;veld;berg;stad;lux
+trade	01	Agrarisch Bedrijf;Boerderij;Kwekerij;Melkveebedrijf;Tuinbouw;Maatschap
+trade	02	Bosbouw;Hout;Boomverzorging
+trade	03	Visserij;Viskwekerij
+trade	05	Mijnbouw
+trade	06	Olie en Gas;Energie
+trade	07	Mijnbouw
+trade	08	Zand en Grind;Grondstoffen
+trade	09	Boortechniek
+trade	10	Bakkerij;Slagerij;Banket;Voeding;Zuivel;Vleeswaren
+trade	11	Brouwerij;Distilleerderij;Wijnhandel;Dranken
+trade	12	Tabak
+trade	13	Textiel;Weverij
+trade	14	Mode;Kleding;Confectie
+trade	15	Lederwaren;Schoenen
+trade	16	Houtbouw;Zagerij;Timmerfabriek;Houthandel
+trade	17	Verpakkingen;Papier;Karton
+trade	18	Drukkerij;Druk;Grafisch;Print
+trade	19	Raffinaderij
+trade	20	Chemie;Verf;Cosmetica
+trade	21	Farma;Pharma
+trade	22	Kunststoffen;Rubber
+trade	23	Beton;Glas;Natuursteen;Keramiek
+trade	24	Staal;Gieterij;Metaal
+trade	25	Metaalbewerking;Staalbouw;Constructie;Machinebouw;Precisietechniek
+trade	26	Elektronica;Systemen;Technologies
+trade	27	Elektrotechniek;Verlichting
+trade	28	Machinebouw;Machines;Automatisering;Installaties
+trade	29	Carrosseriebouw;Aanhangwagens
+trade	30	Scheepsbouw;Jachtbouw;Werf
+trade	31	Meubelen;Meubelmakerij;Keukens;Interieurbouw
+trade	32	Tandtechniek;Sieraden;Edelsmid
+trade	33	Onderhoud;Service;Technische Dienst;Reparatie
+trade	35	Energie;Zonne-energie;Windpark;Solar
+trade	36	Water;Waterleiding
+trade	37	Riolering;Rioolservice
+trade	38	Recycling;Afvalverwerking;Containers;Afval
+trade	39	Sanering;Milieu
+trade	41	Bouw;Bouwbedrijf;Aannemersbedrijf;Projectontwikkeling;Woningbouw
+trade	42	Grondwerk;Wegenbouw;Infra;Grond- Weg- en Waterbouw
+trade	43	Installatietechniek;Loodgieter;Elektra;Schilders;Dakdekker;Tegelwerken;Klussenbedrijf
+trade	45	Auto's;Garage;Autobedrijf;Banden;Autoservice
+trade	46	Handel;Groothandel;Import;Trading;Distributie;Handelsonderneming
+trade	47	Winkel;Shop;Apotheek;Supermarkt;Bloemen;Webshop
+trade	49	Transport;Transportbedrijf;Taxi;Logistiek;Verhuizingen;Koeriers
+trade	50	Scheepvaart;Rederij
+trade	51	Luchtvaart;Aviation
+trade	52	Logistiek;Opslag;Warehousing;Expeditie
+trade	53	Koeriersdienst;Pakketdienst
+trade	55	Hotel;Camping;Bed & Breakfast;Vakantiepark;Pension
+trade	56	Restaurant;Eetcafé;Cafetaria;Brasserie;Catering;Snackbar
+trade	58	Uitgeverij;Software
+trade	59	Producties;Film;Studio;Media
+trade	60	Omroep;Radio;TV
+trade	61	Telecom;Netwerken;Glasvezel
+trade	62	ICT;IT;Software;Automatisering;Solutions;Digital
+trade	63	Data;Online;Web
+trade	64	Holding;Beheer;Beleggingen;Investments;Capital;Participaties
+trade	65	Verzekeringen;Verzekeraar
+trade	66	Assurantiën;Financieel Advies;Hypotheken;Vermogensbeheer
+trade	68	Vastgoed;Onroerend Goed;Beheer;Vastgoedbeheer;Makelaardij
+trade	69	Advocaten;Notarissen;Accountants;Administratiekantoor;Belastingadvies
+trade	70	Advies;Consultancy;Management;Partners;Groep
+trade	71	Ingenieursbureau;Architecten;Adviesbureau;Engineering
+trade	72	Research;Laboratorium
+trade	73	Reclame;Marketing;Communicatie;Reclamebureau
+trade	74	Design;Fotografie;Vertalingen;Ontwerp
+trade	75	Dierenkliniek;Dierenarts;Dierenartsenpraktijk
+trade	77	Verhuur;Autoverhuur;Lease
+trade	78	Uitzendbureau;Detachering;Personeel;Werving
+trade	79	Reizen;Reisbureau;Tours
+trade	80	Beveiliging;Security;Bewaking
+trade	81	Schoonmaak;Schoonmaakbedrijf;Hoveniers;Facilitair;Glazenwasser
+trade	82	Diensten;Services;Evenementen;Callcenter
+trade	84	Gemeente;Provincie
+trade	85	Opleidingen;School;Rijschool;Academie;Training
+trade	86	Praktijk;Tandartspraktijk;Fysiotherapie;Huisartsenpraktijk;Zorg
+trade	87	Zorgcentrum;Woonzorg;Verpleeghuis
+trade	88	Thuiszorg;Kinderopvang;Zorg
+trade	90	Theater;Producties;Kunst;Muziek
+trade	91	Museum;Bibliotheek
+trade	92	Casino;Speelhal
+trade	93	Sportschool;Fitness;Sportvereniging;Golfclub
+trade	94	Stichting;Vereniging;Kerk
+trade	95	Reparatie;Schoenmaker;Telefoonreparatie
+trade	96	Kapsalon;Schoonheidssalon;Kapper;Uitvaartverzorging;Stomerij

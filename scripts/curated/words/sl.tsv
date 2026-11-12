@@ -1,0 +1,43 @@
+# Slovenian business-name words (curated 2026-11-10). Slovenian names: Novak Gradnje, Elektro Horvat, Avtoservis Krajnc.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{trade} {surname}:2;{surname} {trade}:2
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{adjective} {trade}:2;{trade} {place}:1;{trade} {region}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	in;&
+family	*	in Sinovi;in Partnerji
+adjective	*	Euro;Inter;Pro;Eko;Max;Mega;Top;Alpe;Adria;Triglav;Sava;Nova;Prima;Zlata;Delta;Alfa;Slovenija
+region	*	Štajerska;Gorenjska;Primorska;Dolenjska;Prekmurje;Koroška;Notranjska;Sever;Jug;Vzhod;Zahod
+coined_head	*	Alp;Slo;Tri;Sav;Tech;Euro;Med;Kom;Agro;Neo;Vit
+coined_tail	*	tech;ex;kom;plast;tex;ia;on;ing;line;mont;eko
+trade	A	Kmetija;Agro;Farma;Vinarstvo
+trade	B	Kamnolom;Gramoznica
+trade	C	Proizvodnja;Industrija;Tovarna
+trade	10	Pekarna;Mesarija;Mlekarna;Slaščičarna
+trade	16	Žaga;Les;Mizarstvo
+trade	25	Kovinarstvo;Ključavničarstvo;Kovinska Predelava
+trade	D	Energija;Solar;Elektro
+trade	E	Vodovod;Eko;Reciklaža;Komunala
+trade	F	Gradnje;Gradbeništvo;Gradbeno Podjetje
+trade	43	Elektro;Vodovodne Inštalacije;Ogrevanje;Slikopleskarstvo;Inštalacije;Krovstvo
+trade	G	Trgovina;Trade;Commerce;Distribucija
+trade	45	Avto;Avtoservis;Avtohiša;Vulkanizerstvo
+trade	47	Trgovina;Market;Lekarna;Butik
+trade	H	Prevozi;Transport;Logistika;Taxi;Špedicija
+trade	I	Hotel;Apartmaji;Restavracija;Picerija;Gostilna;Kavarna
+trade	J	Software;IT;Informatika;Media;Digital;Telekom
+trade	K	Invest;Capital;Finance;Zavarovanje
+trade	L	Nepremičnine;Real Estate;Development
+trade	M	Svetovanje;Consulting;Računovodstvo;Odvetniška Pisarna;Projektiranje;Arhitekti;Marketing
+trade	N	Storitve;Servis;Čiščenje;Varovanje;Turistična Agencija;Najem
+trade	O	Občina
+trade	P	Šola;Avtošola;Izobraževanje;Akademija
+trade	Q	Zdravstveni Center;Ambulanta;Zobozdravstvo;Fizioterapija
+trade	R	Šport;Fitnes;Kultura
+trade	S	Storitve;Frizerski Salon;Kozmetika;Popravila;Pogrebne Storitve

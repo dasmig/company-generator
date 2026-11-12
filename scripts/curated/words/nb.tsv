@@ -1,0 +1,105 @@
+# Norwegian Bokmål business-name words (curated 2026-11-10). Trade words were read by hand from the
+# words most over-represented in each division's names in the Enhetsregisteret (read_registers.py),
+# brands and place names left out; divisions the register names too few firms in come from
+# Norwegian trade vocabulary. Norwegian compounds trade words: {surname}s {trade} and {place} {trade}
+# are both common. Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2;{surname} {family}:1
+template	founder_trade	{surname} {trade}:2;{surname}s {trade}:1
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{place} {trade}:4;{region} {trade}:1;{adjective} {trade}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	&;og
+family	*	& Sønn;& Sønner;Brødrene;& Co
+adjective	*	Nye;Norsk;Nordisk;Moderne;Total;Proff;Prima;Ekte;Solid;Smart;Rask;Trygg;Fjell;Fjord;Kyst;Nord;Polar;Viking;Midnatt;Sol
+region	*	Nord;Sør;Øst;Vest;Midt;Nordland;Vestland;Sørlandet;Østlandet;Kysten;Fjellet;Dalen;Fjorden;Vika
+coined_head	*	Nor;Vik;Fjel;Ask;Bjør;Hav;Lys;Mjø;Skog;Sol;Stor;Vin;Ny;Kyr;Al;Ber;Tin;Fro
+coined_tail	*	ia;tek;ra;stad;vik;nes;heim;dal;bø;ik;on;ex;vang
+trade	01	Gård;Gårdsdrift;Gartneri;Samdrift;Landbruk;Maskinlag
+trade	02	Skog;Skogsdrift;Skogservice;Trefelling;Ved
+trade	03	Fiskeri;Havfiske;Kystfiske;Havbruk;Settefisk;Fisk
+trade	05	Kull
+trade	06	Petroleum;Olje og Gass;Energi
+trade	07	Gruver;Mineraler
+trade	08	Pukk;Grus;Pukkverk;Steinbrudd
+trade	09	Offshore;Boring;Brønnservice
+trade	10	Bakeri;Konditori;Kjøtt;Fisk;Brød;Matproduksjon
+trade	11	Bryggeri;Brenneri;Sideri
+trade	12	Tobakk
+trade	13	Tekstil;Søm;Vev
+trade	14	Klær;Søm;Design
+trade	15	Lær;Skinn
+trade	16	Sag;Høvleri;Trelast;Snekkeri
+trade	17	Emballasje;Papir
+trade	18	Trykk;Trykkeri;Grafisk
+trade	19	Raffineri
+trade	20	Kjemi;Maling
+trade	21	Farmasi;Legemidler
+trade	22	Plast;Gummi
+trade	23	Betong;Glass;Stein
+trade	24	Stål;Metall;Støperi
+trade	25	Mekaniske Verksted;Mek;Sveis;Maskinering;Stål;Industri
+trade	26	Elektronikk;Instrumenter
+trade	27	Elektro;Lys
+trade	28	Maskin;Hydraulikk;Automasjon
+trade	29	Karosseri;Henger
+trade	30	Båt;Båtbyggeri;Verft
+trade	31	Møbler;Kjøkken;Interiør;Snekkeri
+trade	32	Tannteknikk;Smykker;Dental
+trade	33	Maskinservice;Båtservice;Industriservice;Service;Verksted
+trade	35	Kraft;Kraftverk;Energi;Bioenergi;Kraftlag;Vind
+trade	36	Vannverk;Vassverk;Vannlag;Vann
+trade	37	Avløp;Avløpslag;Kloakk
+trade	38	Gjenvinning;Miljø;Renovasjon;Avfall
+trade	39	Miljø;Sanering
+trade	41	Bygg;Byggmester;Entreprenør;Tømrer;Byggservice;Hus
+trade	42	Anlegg;Asfalt;Maskin;Graving;Maskinentreprenør
+trade	43	Elektro;Rør;VVS;Mur;Maler;Tak;Bygg;Ventilasjon
+trade	45	Bil;Auto;Bilsenter;Bilverksted;Dekk
+trade	46	Engros;Import;Handel;Trading;Agentur
+trade	47	Handel;Butikk;Dagligvare;Blomster;Apotek;Sport
+trade	49	Transport;Taxi;Frakt;Buss;Kran;Logistikk;Transportservice
+trade	50	Rederi;Shipping;Ferje;Båtruter
+trade	51	Fly;Helikopter;Air
+trade	52	Logistikk;Lager;Havn;Bilberging;Parkering
+trade	53	Bud;Budservice;Distribusjon
+trade	55	Hotell;Camping;Motell;Feriesenter;Gjestehus;Hytteutleie
+trade	56	Restaurant;Pizza;Kafé;Grill;Catering;Bar;Kro
+trade	58	Forlag;Media;Programvare
+trade	59	Film;Produksjon;Studio;Lyd
+trade	60	Radio;TV
+trade	61	Fiber;Bredbånd;Telekom
+trade	62	IT;Data;Konsulent;Software;Systemer;Teknologi
+trade	63	Data;Informasjon;Web
+trade	64	Invest;Holding;Kapital;Sparebank;Finans
+trade	65	Forsikring;Pensjonskasse
+trade	66	Forsikringsmegling;Finansrådgivning;Kapitalforvaltning
+trade	68	Eiendom;Eiendomsutvikling;Bolig;Næringseiendom;Utleie;Eigedom
+trade	69	Regnskap;Regnskapskontor;Advokatfirma;Revisjon;Økonomi;Advokat
+trade	70	Rådgivning;Consulting;Konsult;Ledelse;Partner
+trade	71	Arkitekter;Ingeniør;Rådgivende Ingeniører;Takst;Prosjektering
+trade	72	Forskning;Laboratorium
+trade	73	Reklame;Reklamebyrå;Kommunikasjon;Markedsføring
+trade	74	Design;Foto;Fotograf;Interiør;Oversettelse;Takst
+trade	75	Veterinær;Dyreklinikk;Dyrlege
+trade	77	Utleie;Bilutleie;Maskinutleie
+trade	78	Bemanning;Rekruttering
+trade	79	Reiser;Turisme;Opplevelser;Reisebyrå
+trade	80	Vakt;Sikkerhet;Vekter
+trade	81	Renhold;Vaktmester;Vaktmesterservice;Eiendomsservice;Anleggsgartner;Vedlikehold
+trade	82	Tjenester;Kontorservice;Service
+trade	84	Kommune;Etat
+trade	85	Barnehage;Trafikkskole;Skole;Opplæring;Kurs
+trade	86	Legesenter;Tannlege;Fysioterapi;Klinikk;Helse;Legekontor
+trade	87	Omsorg;Bofellesskap;Sykehjem
+trade	88	Omsorg;Hjemmetjeneste;Avlastning
+trade	90	Teater;Musikk;Produksjon;Kunst
+trade	91	Museum;Bibliotek
+trade	92	Spill
+trade	93	Idrettslag;Klubb;Treningssenter;Golfklubb;Fotballklubb
+trade	94	Forening;Lag;Velforening;Stiftelse
+trade	95	Bilverksted;Reparasjon;Skomaker;Data
+trade	96	Frisør;Salong;Hudpleie;Begravelsesbyrå;Velvære;Renseri

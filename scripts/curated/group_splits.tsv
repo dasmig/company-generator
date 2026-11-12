@@ -1,0 +1,18 @@
+# Overall legal-form group splits (enterprises) for countries with a census or register total but
+# no counts by section, curated 2026-11-10 from the sources in census.tsv. The section pattern is
+# Europe's measured one, fitted to these totals (prepare_forms.py). Shares are rounded; "other"
+# holds co-operatives, associations, trusts and public bodies.
+country	sole_proprietorship	partnership	limited_liability	other	source	note
+GB	0.570	0.063	0.350	0.017	DBT Business population estimates 2025	sole 3.249M and partnerships 0.36M of 5.7M; companies split by the Companies House register
+CN	0.726	0.006	0.240	0.028	NBS Fifth National Economic Census 2023	87.995M self-employed of 121.265M units; partnerships and others from the census communiqué's enterprise breakdown
+RU	0.680	0.001	0.300	0.019	Rosstat/FTS SME register 2024	4.64M individual entrepreneurs of 6.836M
+BR	0.560	0.004	0.410	0.026	Mapa de Empresas 2024	12.6M MEI and about 1M other sole traders of 24.2M
+VN	0.860	0.001	0.130	0.009	GSO Economic Census 2021	5.3M household businesses of 6.18M
+KR	0.820	0.002	0.165	0.013	Statistics Korea, Census on Establishments 2023	individual businesses and companies by legal organisation
+JP	0.440	0.001	0.500	0.059	Economic Census for Business Activity 2021	individual proprietors, companies and other corporations
+AU	0.260	0.120	0.420	0.200	ABS Counts of Australian Businesses 2024	sole proprietors, partnerships, companies; trusts counted as other
+IN	0.940	0.020	0.030	0.010	MSME Udyam registrations 2025	proprietorships dominate Udyam; the census of 2005 gives a similar share
+ID	0.930	0.010	0.050	0.010	BPS Sensus Ekonomi 2016	non-incorporated units of 26.71M
+MX	0.850	0.003	0.130	0.017	INEGI Censos Económicos 2024	personas físicas among private establishments
+EG	0.880	0.040	0.070	0.010	CAPMAS Economic Census 2017/18	individual establishments
+US	0.640	0.040	0.280	0.040	IRS Statistics of Income 2021 (returns by entity type) and IRS exempt organisations	about 26M nonfarm sole proprietorships, 4.5M partnership returns (two thirds of them LLCs, counted here as limited liability), 6.8M corporations and 1.5M exempt organisations; Nonemployer Statistics alone would leave out every employer firm

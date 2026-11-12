@@ -1,0 +1,105 @@
+# Korean business-name words (curated 2026-11-10), checked against GLEIF's Korean names. A name is
+# a two-syllable trade name or the founder's surname, then the trade, with no space: 한빛건설,
+# 대성산업; the form (주식회사 or (주)) goes before or after (patterns.tsv). Words carry their
+# Revised Romanization after "=", used for domains. Columns as in en.tsv.
+kind	key	value
+style	script	Hang
+style	form_position	both
+style	space	none
+style	coined_join	none
+template	founder	{surname}{coined_tail}:1
+template	founder_trade	{surname}{coined_tail}{trade}:1
+template	descriptive	{coined}{trade}:4;{place}{trade}:1;{adjective}{trade}:1
+template	coined	{coined}:2;{coined}{trade}:2
+template	initials	{initials}:1;{initials}{trade}:1
+surname	*	김=Kim:21.5;이=Lee:14.7;박=Park:8.4;최=Choi:4.7;정=Jung:4.3;강=Kang:2.3;조=Cho:2.1;윤=Yoon:2.1;장=Jang:2;임=Lim:1.7;한=Han:1.5;오=Oh:1.5;서=Seo:1.5;신=Shin:1.4;권=Kwon:1.4;황=Hwang:1.4;안=Ahn:1.3;송=Song:1.3;류=Ryu:1.2;홍=Hong:1.1
+place	KR	서울=Seoul:9.4;부산=Busan:3.3;인천=Incheon:3;대구=Daegu:2.4;대전=Daejeon:1.5;광주=Gwangju:1.4;울산=Ulsan:1.1;수원=Suwon:1.2;경기=Gyeonggi:3;한국=Hanguk:3;동아=Donga:1;남도=Namdo:0.5;영남=Yeongnam:0.5;호남=Honam:0.5
+place	KP	평양=Pyeongyang:3;조선=Joseon:4;대동강=Daedonggang:1;함흥=Hamheung:0.8;청진=Cheongjin:0.7
+adjective	*	대한=Daehan;삼성=Samseong;현대=Hyeondae;동양=Dongyang;신=Sin;제일=Jeil;중앙=Jungang;태평양=Taepyeongyang;한국=Hanguk;새한=Saehan;대우=Daewoo;우리=Uri;미래=Mirae;글로벌=Global
+coined_head	*	한=Han;대=Dae;신=Shin;동=Dong;세=Se;태=Tae;성=Sung;현=Hyun;진=Jin;금=Geum;삼=Sam;일=Il;영=Young;정=Jung;광=Kwang;우=Woo;명=Myung;해=Hae;청=Chung;미=Mi
+coined_tail	*	빛=bit;진=jin;성=sung;일=il;우=woo;명=myung;호=ho;양=yang;원=won;산=san;도=do;림=rim;하=ha;강=gang;인=in;한=han;창=chang;신=shin;영=young;아=a
+trade	01	농산=Nongsan;농업=Nongeop;축산=Chuksan;영농=Yeongnong
+trade	02	임업=Imeop;조경=Jogyeong
+trade	03	수산=Susan;양식=Yangsik
+trade	05	광업=Gwangeop
+trade	06	석유=Seogyu;에너지=Energy
+trade	07	광업=Gwangeop;자원=Jawon
+trade	08	골재=Goljae;석재=Seokjae;레미콘=Remicon
+trade	09	자원개발=Jawon Gaebal
+trade	10	식품=Sikpum;푸드=Food;제과=Jegwa;수산식품=Susan Sikpum;떡=Tteok
+trade	11	주류=Juryu;양조=Yangjo;음료=Eumryo
+trade	12	연초=Yeoncho
+trade	13	섬유=Seomyu;방직=Bangjik;텍스타일=Textile
+trade	14	어패럴=Apparel;패션=Fashion;의류=Uiryu
+trade	15	피혁=Pihyeok;제화=Jehwa
+trade	16	목재=Mokjae
+trade	17	제지=Jeji;포장=Pojang;지업=Jieop
+trade	18	인쇄=Inswae;프린팅=Printing
+trade	19	정유=Jeongyu
+trade	20	화학=Hwahak;케미칼=Chemical;페인트=Paint;화장품=Hwajangpum
+trade	21	제약=Jeyak;약품=Yakpum;바이오=Bio
+trade	22	플라스틱=Plastic;고무=Gomu;산업=Saneop
+trade	23	요업=Yoeop;유리=Yuri;세라믹=Ceramic;시멘트=Cement
+trade	24	철강=Cheolgang;금속=Geumsok;제강=Jegang
+trade	25	정밀=Jeongmil;금속=Geumsok;기공=Gigong;테크=Tech;산업=Saneop
+trade	26	전자=Jeonja;테크=Tech;시스템=System
+trade	27	전기=Jeongi;전선=Jeonseon;조명=Jomyeong
+trade	28	기계=Gigye;기공=Gigong;엔지니어링=Engineering
+trade	29	자동차=Jadongcha;오토텍=Autotech;모빌리티=Mobility
+trade	30	조선=Joseon;중공업=Junggongeop
+trade	31	가구=Gagu;퍼니처=Furniture
+trade	32	정밀=Jeongmil;주얼리=Jewelry
+trade	33	정비=Jeongbi;기술=Gisul
+trade	35	에너지=Energy;전력=Jeonryeok;솔라=Solar;발전=Baljeon
+trade	36	수도=Sudo
+trade	37	환경=Hwangyeong
+trade	38	환경=Hwangyeong;자원=Jawon;리사이클링=Recycling
+trade	39	환경=Hwangyeong
+trade	41	건설=Geonseol;종합건설=Jonghap Geonseol;주택=Jutaek;개발=Gaebal
+trade	42	토건=Togeon;건설=Geonseol;토목=Tomok
+trade	43	설비=Seolbi;전기=Jeongi;인테리어=Interior;공영=Gongyeong
+trade	45	모터스=Motors;자동차=Jadongcha;오토=Auto
+trade	46	무역=Muyeok;상사=Sangsa;물산=Mulsan;유통=Yutong;트레이딩=Trading
+trade	47	상회=Sanghoe;마트=Mart;약국=Yakguk;유통=Yutong
+trade	49	운수=Unsu;물류=Mullyu;교통=Gyotong;택시=Taxi;익스프레스=Express
+trade	50	해운=Haeun;마린=Marine
+trade	51	항공=Hanggong
+trade	52	물류=Mullyu;로지스=Logis;창고=Changgo
+trade	53	택배=Taekbae;퀵=Quick
+trade	55	호텔=Hotel;관광=Gwangwang;리조트=Resort
+trade	56	푸드=Food;외식=Oesik;에프앤비=FnB
+trade	58	출판=Chulpan;소프트=Soft
+trade	59	엔터테인먼트=Entertainment;미디어=Media;프로덕션=Production
+trade	60	방송=Bangsong
+trade	61	통신=Tongsin;텔레콤=Telecom
+trade	62	정보기술=Jeongbo Gisul;소프트=Soft;시스템=System;테크=Tech;아이티=IT
+trade	63	정보=Jeongbo;데이터=Data
+trade	64	홀딩스=Holdings;인베스트먼트=Investment;캐피탈=Capital;투자=Tuja
+trade	65	보험=Boheom;생명=Saengmyeong;화재=Hwajae
+trade	66	자산운용=Jasan Unyong;에셋=Asset
+trade	68	부동산=Budongsan;개발=Gaebal;디앤씨=DnC;하우징=Housing
+trade	69	회계=Hoegye;세무=Semu
+trade	70	컨설팅=Consulting;경영=Gyeongyeong
+trade	71	엔지니어링=Engineering;건축=Geonchuk;측량=Cheungnyang
+trade	72	연구소=Yeonguso;바이오=Bio
+trade	73	애드=Ad;기획=Gihoek;커뮤니케이션=Communication
+trade	74	디자인=Design
+trade	75	동물병원=Dongmul Byeongwon
+trade	77	렌탈=Rental;리스=Lease;렌터카=Rentacar
+trade	78	인력=Inryeok;HR=HR
+trade	79	여행=Yeohaeng;투어=Tour
+trade	80	경비=Gyeongbi;시큐리티=Security
+trade	81	개발=Gaebal;시설관리=Siseol Gwalli;조경=Jogyeong
+trade	82	서비스=Service;기획=Gihoek
+trade	84	공사=Gongsa
+trade	85	교육=Gyoyuk;학원=Hagwon;에듀=Edu
+trade	86	메디칼=Medical;의원=Uiwon;헬스케어=Healthcare
+trade	87	요양=Yoyang;케어=Care
+trade	88	복지=Bokji;돌봄=Dolbom
+trade	90	엔터테인먼트=Entertainment;아트=Art
+trade	91	박물관=Bangmulgwan
+trade	92	레저=Leisure
+trade	93	스포츠=Sports;레저=Leisure;골프=Golf
+trade	94	협회=Hyeophoe;재단=Jaedan
+trade	95	서비스=Service;수리=Suri
+trade	96	헤어=Hair;뷰티=Beauty;세탁=Setak;상조=Sangjo

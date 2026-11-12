@@ -1,0 +1,65 @@
+# registration and tax numbers by country: how each is built (builder, pattern, check; see scripts/curated/schemes.tsv for the notation), the legal-form groups holding it (S, P, L, O) and its safe method; from the number survey (designs/company-generator-numbers.tsv); sources in the full tier
+key	country_code	kind	label	native_label	short	builder	display	pattern	check	groups	safe_method	from	until	params	evidence
+lei	*	lei	Legal Entity Identifier	LEI (ISO 17442)	LEI	lei			mod97_10	PLO	reserved_range			lou=lei-lou;safe_prefix=ZZZZ	issuer
+ar-cuit	AR	tax	Unique Tax Identification Code	CUIT	CUIT	ar_cuit	##-########-#	#{8}	ar_cuit	PLO	wrong_check				reference
+at-fn	AT	register	Company register number	Firmenbuchnummer (FN)	FN	at_fn				SPLO	none				reference
+at-uid	AT	vat	VAT identification number	Umsatzsteuer-Identifikationsnummer (UID)	UID	generic	ATU########	#{7}	at_uid	SPLO	wrong_check				reference
+au-abn	AU	tax	Australian Business Number	ABN	ABN	au_abn	## ### ### ###			SPLO	wrong_check				issuer
+au-acn	AU	register	Australian Company Number	ACN	ACN	generic	### ### ###	#{8}	weights:8 7 6 5 4 3 2 1:10-s%10,10=0	LO	wrong_check				issuer
+be-kbo	BE	register	Enterprise number	ondernemingsnummer / numéro d'entreprise	KBO/BCE	generic	####.###.###	[01]#{7}	be_kbo	SPLO	wrong_check				reference
+br-cnpj	BR	register	National Registry of Legal Entities number	CNPJ	CNPJ	br_cnpj	##.###.###/####-##		br_cnpj	SPLO	wrong_check			alphanumeric_from=2026-07-31	issuer
+ca-bn	CA	tax	Business Number	Business Number / numéro d'entreprise	BN	generic	######### RC0001	#{8}	luhn	SPLO	wrong_check				issuer
+ch-uid	CH	register	Enterprise identification number	UID / IDE / IDI	UID	generic	CHE-###.###.###	#{8}	weights:5 4 3 2 7 6 5 4:11-r,11=0,10=redraw	SPLO	wrong_check				issuer
+cl-rut	CL	tax	Tax roll number	RUT	RUT	generic	##.###.###-#	[5-9]#{7}	weights:3 2 7 6 5 4 3 2:11-r,11=0,10=K	PLO	wrong_check				reference
+cn-uscc	CN	register	Unified Social Credit Code	统一社会信用代码	USCC	cn_uscc			cn_uscc	SPLO	wrong_check			type=S:92,UMCR:93,B5UZ:12,I39S:11,GGZ5:51,E4FG:52,6NSC:31,*:91;county=cn-county	issuer
+co-nit	CO	tax	Tax identification number	NIT	NIT	generic	###.###.###-#	[89]#{8}	weights:41 37 29 23 19 17 13 7 3:11-r,11=0,10=1	PLO	wrong_check				reference
+cz-ico	CZ	register	Identification number	IČO	IČO	generic	########	[0-8]#{6}	weights:8 7 6 5 4 3 2:(11-r)%10	SPLO	wrong_check				reference
+de-hrn	DE	register	Commercial register number	Handelsregisternummer	HR	de_hrn			none	SPLO	none			court=de-court;section=FR3V:-,79H0:-,V2YH:-,QZ3L:VR,AZFE:GnR,S:HRA,P:HRA,L:HRB,SCE1:HRB,13AV:HRB,*:-;suffix=Charlottenburg: B	reference
+de-ustid	DE	vat	VAT identification number	Umsatzsteuer-Identifikationsnummer (USt-IdNr.)	USt-IdNr.	generic	DE#########	[1-9]#{7}	mod11_10	SPLO	wrong_check				reference
+dk-cvr	DK	register	Central Business Register number	CVR-nummer	CVR	generic	########	[1-9]#{6}	weights:2 7 6 5 4 3 2:11-r,11=0,10=redraw	SPLO	wrong_check				reference
+eg-tn	EG	tax	Tax registration number	رقم التسجيل الضريبي	TN	generic	###-###-###	#{9}	none	SPLO	none				single
+es-nif-entity	ES	tax	Tax identification number of an entity	NIF (formerly CIF)	NIF	es_nif	@########	#{7}	es_nif	PLO	wrong_check			letter=5RDO:A,DP3Q:B,R6UT:B,JB2M:B,1G29:B,S6X7:C,1ZHJ:C,TDD5:D,GJL1:D,UFBW:E,1QU8:F,SS0L:F,MDOL:G,A0J6:G,2W1A:J,S6MS:R,TUHS:Q,*:V	issuer
+fi-ytunnus	FI	register	Business ID	Y-tunnus	Y-tunnus	generic	#######-#	#{7}	weights:7 9 10 5 8 4 2:11-r,11=0,10=redraw	SPLO	wrong_check				reference
+fr-siren	FR	register	SIREN number	numéro SIREN	SIREN	generic	### ### ###		luhn	SPLO	wrong_check			anchors=fr-siren	issuer
+fr-siret	FR	register	SIRET number	numéro SIRET	SIRET	fr_siret	### ### ### #####		luhn	SPLO	wrong_check				issuer
+fr-tva	FR	vat	VAT number	numéro de TVA intracommunautaire	TVA	fr_tva	FR## #########		fr_tva	SPLO	wrong_check				reference
+gb-crn	GB	register	Company registration number	Company number	CRN	gb_crn			none	PLO	above_issued			anchors=gb-crn;series=Z0EY:OC|SO|NC,ID30:LP|SL|NL,7T8N:CE,STX7:CS,XLZV:RS,ordinary_partnership:-,AVYY:-,*:;scotland=0.085;northern_ireland=0.03	issuer
+gb-vat	GB	vat	VAT registration number	VAT number	VAT	gb_vat	GB### #### ##	#{7}	gb_vat	SPLO	wrong_check			series_9755_from=2010-01-01;registered=micro:0.45,small:0.95,medium:1,large:1	reference
+gr-afm	GR	tax	Tax registration number	ΑΦΜ	ΑΦΜ	generic	#########	[89]#{7}	weights:256 128 64 32 16 8 4 2:r%10	PLO	wrong_check				reference
+hu-adoszam	HU	tax	Tax number	adószám	adószám	hu_adoszam	########-#-##	#{7}	weights:9 7 3 1 9 7 3:(10-s%10)%10	SPLO	wrong_check			vat_code=2;county=hu-county	reference
+id-npwp	ID	tax	Taxpayer registration number	NPWP	NPWP	id_npwp				SPLO	wrong_check			type=S:04|06,*:01|02|03;kpp=001-999;new_from=2024-07-01	reference
+ie-cro	IE	register	Company number	CRO number	CRO	serial			none	LO	above_issued			range=1-800889;start=1950;power=2.6;safe=990000-999999	issuer
+ie-vat	IE	vat	VAT number	VAT number	VAT	ie_vat	IE#########			SPLO	wrong_check			second_letter_from=2013-01-01;second=A|H	reference
+il-hp	IL	register	Company number	מספר חברה (ח.פ.)	ח.פ.	il_hp	#########		luhn	PLO	wrong_check			prefix=P:55,L:51|52,O:57|58	reference
+in-cin	IN	register	Corporate Identification Number	CIN	CIN	in_cin				LO	none			state=in-state;ownership=DDKQ:PLC,L:PTC,O:NPL;listing=DDKQ:L|U,*:U	reference
+in-gstin	IN	vat	GST identification number	GSTIN	GSTIN	in_gstin			in_gstin	SPLO	wrong_check			state=in-state;registered=micro:0.3,small:0.9,medium:1,large:1	reference
+in-pan	IN	tax	Permanent Account Number	PAN	PAN	in_pan			unpublished	SPLO	none			type=S:P,P:F,L:C,W9FI:T,O:A	reference
+it-piva	IT	vat	VAT number	Partita IVA	P.IVA	it_piva	###########	#{7}	luhn	SPLO	wrong_check			office=001-100	reference
+jp-cn	JP	register	Corporate Number	法人番号	法人番号	jp_cn	#############		jp_cn	PLO	wrong_check			office=0100-4999;class=T417:01,DYQK:02,7QQ0:03,5MVV:03,IUVI:03,L:01,*:05	issuer
+ke-pin	KE	tax	KRA PIN	KRA PIN	PIN	generic	@#########@	P05#{7}@	none	SPLO	none				issuer
+kr-brn	KR	tax	Business registration number	사업자등록번호	사업자등록번호	kr_brn	###-##-#####		kr_brn	SPLO	wrong_check			office=101-699;type=S:01-79,P:81|86|87|88,L:81|86|87|88,O:82	reference
+mx-rfc-moral	MX	tax	Federal Taxpayer Registry code (legal entity)	RFC de persona moral	RFC	mx_rfc			mx_rfc	PLO	wrong_check				reference
+ng-rc	NG	register	Registration number	RC number	RC	ng_rc			none	SPLO	above_issued			prefix=S:BN,P:BN,*:RC;highest=BN:3500000,RC:2300000;start=1960;power=3;safe=9000000-9999999	single
+nl-btw	NL	vat	VAT identification number	btw-identificatienummer	btw-id	nl_btw	NL#########B##		nl_btw	SPLO	wrong_check				reference
+nl-kvk	NL	register	Chamber of Commerce number	KVK-nummer	KVK	generic	########	#{8}	none	SPLO	none				reference
+nl-rsin	NL	tax	Legal entities and partnerships information number	RSIN	RSIN	generic	#########	#{8}	weights:9 8 7 6 5 4 3 2:r,10=redraw	PLO	wrong_check				reference
+no-orgnr	NO	register	Organisation number	organisasjonsnummer	Org.nr.	generic	### ### ###		weights:3 2 7 6 5 4 3 2:11-r,11=0,10=redraw	SPLO	wrong_check			anchors=no-orgnr	reference
+nz-nzbn	NZ	register	New Zealand Business Number	NZBN	NZBN	generic	#############	94#{10}	gtin	SPLO	wrong_check				reference
+pe-ruc	PE	tax	Taxpayer registry number	RUC	RUC	generic	###########	20#{8}	weights:5 4 3 2 7 6 5 4 3 2:11-r,10=0,11=1	PLO	wrong_check				issuer
+pl-krs	PL	register	National Court Register number	numer KRS	KRS	serial	##########		none	PLO	above_issued			range=1-1205080;start=2001;power=1;safe=9000000-9999999	reference
+pl-nip	PL	tax	Tax identification number	NIP	NIP	generic	###-###-##-##	#{9}	weights:6 5 7 2 3 4 5 6 7:r,10=redraw	SPLO	wrong_check				reference
+pl-regon	PL	statistical	Statistical number	REGON	REGON	generic	#########	#{8}	weights:8 9 2 3 4 5 6 7:r,10=0	SPLO	wrong_check				issuer
+pt-nipc	PT	tax	Legal person identification number	NIPC	NIPC	generic	#########	5#{7}	weights:9 8 7 6 5 4 3 2:11-r,10=0,11=0	PLO	wrong_check				reference
+ro-cui	RO	tax	Unique registration code	CUI / CIF	CUI	generic		[1-9]#{1,8}	ro_cui	SPLO	wrong_check				reference
+ro-onrc	RO	register	Trade register number	număr de ordine în Registrul Comerțului	Nr. ORC	ro_onrc			ro_onrc	SPLO	wrong_check			prefix=S:F,O:C,*:J;county=ro-county;new_format_from=2024-07-26	reference
+ru-inn	RU	tax	Taxpayer identification number	ИНН	ИНН	ru_inn			weights:2 4 10 3 5 9 4 6 8:r%10	PLO	wrong_check			region=ru-region;inspection=01-49	reference
+ru-ogrn	RU	register	Primary State Registration Number	ОГРН	ОГРН	ru_ogrn			ru_ogrn	SPLO	wrong_check			region=ru-region;start=2002-07-01	reference
+se-orgnr	SE	register	Organisation number	organisationsnummer	Org.nr	se_orgnr	######-####		luhn	PLO	wrong_check			group=P:9,L:5,O:7|8|2	issuer
+sg-uen	SG	register	Unique Entity Number	UEN	UEN	sg_uen			sg_uen	SPLO	wrong_check			format=S:business,P:business,L:local,*:other;other_type=SS|CC|CP|MB	reference
+th-juristic	TH	register	Juristic person registration number	เลขทะเบียนนิติบุคคล	เลขทะเบียน	th_juristic	#-##-#-###-#####-#		weights:13 12 11 10 9 8 7 6 5 4 3 2:(11-r)%10	PLO	wrong_check			office=th-province;type=JUEU:3,K09K:5,O0OZ:7,P:2,L:5,*:-	single
+tr-vkn	TR	tax	Tax identification number	Vergi Kimlik Numarası	VKN	generic	##########	#{9}	tr_vkn	PLO	wrong_check				reference
+tw-ubn	TW	tax	Unified Business Number	統一編號	統一編號	generic	########	#{7}	tw_ubn	SPLO	wrong_check				reference
+ua-edrpou	UA	register	Unified state register code	код ЄДРПОУ	ЄДРПОУ	generic	########	#{7}	ua_edrpou	PLO	wrong_check				reference
+us-ein	US	tax	Employer Identification Number	EIN	EIN	us_ein	##-#######		none	SPLO	reserved_range			internet_from=2001-01-01;internet_share=0.7;internet=20 26 27 45 46 47 81 82 83 84 85 86 87 88 92 93 99;campus=01 02 03 04 05 06 10 11 12 13 14 15 16 21 22 23 24 25 30 32 33 34 35 36 37 38 39 40 41 42 43 44 48 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 71 72 73 74 75 76 77 80 90 91 94 95 98;reserved=00 07 08 09 17 18 19 28 29 49 69 70 78 79 89 96 97	issuer
+vn-mst	VN	tax	Enterprise code (tax code)	mã số doanh nghiệp / mã số thuế	MST	vn_mst	##########		vn_mst	SPLO	wrong_check			province=01|03|01-64	reference
+za-cipc	ZA	register	Company registration number	CIPC registration number	Reg. No.	za_cipc	####/######/##		none	LO	above_issued			type=GQVQ:07,XE4Z:06,4YUU:23,J7L0:08,R155:30,MZT6:24,CXWJ:24,ZE81:24,L:07,*:08;range=1-600000;safe=900000-999999	reference

@@ -1,0 +1,44 @@
+# Estonian business-name words (curated 2026-11-10). Estonian names: Tamm Ehitus OÜ, Kase Transport, Põhja Elekter.
+# A section key (A to S) serves every division of the section that has no row of its own.
+# Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname}:2
+template	founder_trade	{surname} {trade}:3
+template	two_founders	{surname} {joiner} {surname2}:1
+template	descriptive	{place} {trade}:2;{adjective} {trade}:1;{region} {trade}:1
+template	coined	{coined}:3;{coined} {trade}:2
+template	initials	{initials}:1;{initials} {trade}:2
+joiner	*	ja;&
+family	*	ja Pojad;ja Partnerid
+adjective	*	Eesti;Balti;Nordic;Uus;Euro;Inter;Pro;Eko;Max;Top;Mega;Kuld;Põhja;Lõuna;Mere;Metsa;Kalju;Tähe
+region	*	Põhja;Lõuna;Ida;Lääne;Kesk;Saare;Balti;Virumaa
+coined_head	*	Est;Balt;Nord;Tech;Euro;Med;Kom;Agro;Neo;Vit;Sil;Kal
+coined_tail	*	tech;ex;kom;plast;tex;ia;on;ra;ar;us;mets
+trade	A	Talu;Põllumajandus;Agro;Farm
+trade	02	Mets;Metsandus;Metsatööd
+trade	B	Karjäär;Kaevandus;Põlevkivi
+trade	C	Tootmine;Tehas;Tööstus
+trade	10	Pagar;Lihatööstus;Piimatööstus
+trade	16	Puit;Saeveski;Puidutööstus
+trade	25	Metall;Metallitööd;Mehaanika
+trade	D	Energia;Päike;Elekter
+trade	E	Vesi;Jäätmed;Taaskasutus
+trade	F	Ehitus;Ehitustööd;Ehitusgrupp
+trade	43	Elekter;Torutööd;Viimistlus;Katus;Ehitus
+trade	G	Kaubandus;Trade;Hulgimüük;Import
+trade	45	Auto;Autoteenindus;Rehvid
+trade	47	Pood;Kauplus;Apteek
+trade	H	Transport;Logistika;Vedu;Takso
+trade	I	Hotell;Restoran;Kohvik;Pizza
+trade	J	IT;Tarkvara;Software;Meedia;Digital
+trade	K	Invest;Capital;Kindlustus;Finants
+trade	L	Kinnisvara;Real Estate;Arendus
+trade	M	Konsultatsioonid;Raamatupidamine;Advokaadibüroo;Projekt;Arhitektid;Reklaam;Disain
+trade	N	Teenused;Puhastus;Turvas;Rent;Reisibüroo
+trade	O	Vald;Linnavalitsus
+trade	P	Koolitus;Kool;Autokool
+trade	Q	Kliinik;Hambaravi;Tervis;Füsioteraapia
+trade	R	Sport;Fitness;Kultuur
+trade	S	Teenused;Juuksur;Ilusalong;Remont

@@ -1,0 +1,40 @@
+# Malay business-name words (curated 2026-11-10). Malaysian and Bruneian names mix Malay brand words
+# with a Malay or English trade: Syarikat Maju Jaya, Bina Murni Construction Sdn Bhd. A section key
+# serves every division of the section that has no row of its own. Columns as in en.tsv.
+kind	key	value
+style	script	Latn
+style	form_position	suffix
+template	founder	{surname} Enterprise:1;Perniagaan {surname}:1
+template	founder_trade	{surname} {trade}:1
+template	descriptive	{adjective} {adjective2} {trade}:3;{adjective} {trade}:2
+template	coined	{adjective} {adjective2}:3;{coined}:1
+template	initials	{initials} {trade}:1;{initials}:1
+adjective	*	Maju:2;Jaya:2;Bina:1.5;Murni:1;Teguh:1;Setia:1;Indah:1;Gemilang:1;Cemerlang:1;Bestari:0.8;Mutiara:1;Permata:1;Wawasan:0.8;Bumi:1;Sinar:1;Kasih:0.6;Harapan:0.8;Megah:1;Sejahtera:1;Makmur:1;Berjaya:1;Utama:1;Mega:0.8;Prima:0.8;Seri:1;Damai:0.6;Intan:0.6;Delima:0.5
+place	MY	Malaysia:2;Malaya:1;Selangor:0.8;Johor:0.6;Penang:0.5;Borneo:0.5;Kelang:0.4;Melaka:0.3;Perak:0.4;Sabah:0.4;Sarawak:0.4
+place	BN	Brunei:2;Darussalam:0.5;Borneo:0.5
+coined_head	*	Tek;Sri;Bina;Indo;Mas;Sar;Pro;Neo;Tri;Multi
+coined_tail	*	tama;jaya;guna;mas;tek;kom;wira;niaga;sakti
+trade	A	Pertanian;Ladang;Agro;Perladangan;Ternakan
+trade	03	Perikanan;Akuakultur
+trade	B	Perlombongan;Kuari;Minyak dan Gas
+trade	C	Industri;Pembuatan;Manufacturing;Industries
+trade	10	Makanan;Food Industries;Roti;Bakery
+trade	25	Kejuruteraan;Engineering;Logam
+trade	D	Tenaga;Energy;Solar
+trade	E	Alam Sekitar;Pengurusan Sisa;Kitar Semula
+trade	F	Pembinaan;Construction;Kejuruteraan;Engineering;Kontraktor
+trade	G	Perniagaan;Trading;Enterprise;Niaga;Pemborong
+trade	45	Motor;Auto;Kenderaan
+trade	47	Kedai;Mart;Farmasi;Runcit
+trade	H	Pengangkutan;Logistik;Transport;Penghantaran
+trade	I	Restoran;Kedai Makan;Katering;Hotel;Resort
+trade	J	Teknologi;Technology;Digital;Solutions;Media
+trade	K	Kewangan;Capital;Insurans;Pelaburan;Holdings
+trade	L	Hartanah;Properties;Realty;Development
+trade	M	Perunding;Consultancy;Arkitek;Akauntan;Rekabentuk
+trade	N	Perkhidmatan;Services;Pelancongan;Travel;Kawalan Keselamatan;Sewaan
+trade	O	Jabatan
+trade	P	Pendidikan;Tuisyen;Akademi;Education
+trade	Q	Klinik;Medik;Kesihatan;Dental
+trade	R	Rekreasi;Sukan;Seni
+trade	S	Servis;Salun;Dobi;Perkhidmatan

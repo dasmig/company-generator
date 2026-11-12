@@ -1,0 +1,61 @@
+# Top-level domains of company websites (curated 2026-11-10). No source counts company websites by
+# TLD: these are estimates guided by the registries' published name counts (DENIC, AFNIC, Nominet,
+# SIDN, CNNIC, JPRS, Registro.br, auDA, CIRA, NIXI, ZACR; rounded figures in the notes, as known in
+# 2025) set against Verisign's .com total, and rounded. To confirm in Milestone 3's research.
+# tlds: suffix:share; "cc" is the country's own ccTLD (country-generator), a suffix with a dot
+# inside is a second-level domain the registry reserves for companies. Countries without a row take
+# the default of their region (prepare_tables.py, REGION_TLDS).
+country	tlds	note
+GB	co.uk:0.55;uk:0.08;com:0.3;net:0.03;org:0.04	Nominet: about 10M .uk names, two thirds .co.uk
+IE	cc:0.55;com:0.38;net:0.03;org:0.04
+DE	cc:0.78;com:0.15;net:0.03;org:0.02;eu:0.02	DENIC: 17.8M .de names, the most of any ccTLD after .cn
+AT	cc:0.72;com:0.2;net:0.03;org:0.02;eu:0.03
+CH	cc:0.72;com:0.21;net:0.03;org:0.02;swiss:0.02
+NL	cc:0.78;com:0.16;net:0.02;org:0.02;eu:0.02	SIDN: 6.3M .nl names
+BE	cc:0.62;com:0.27;net:0.03;org:0.02;eu:0.06
+LU	cc:0.55;com:0.33;net:0.03;org:0.02;eu:0.07
+FR	cc:0.62;com:0.3;net:0.03;org:0.03;eu:0.02	AFNIC: 4.2M .fr names
+IT	cc:0.68;com:0.26;net:0.03;org:0.02;eu:0.01
+ES	cc:0.52;com:0.4;net:0.03;org:0.03;eu:0.02
+PT	cc:0.62;com:0.31;net:0.03;org:0.02;eu:0.02
+PL	cc:0.66;com:0.19;com.pl:0.08;net:0.03;eu:0.04
+CZ	cc:0.78;com:0.16;net:0.02;eu:0.04
+SK	cc:0.72;com:0.2;net:0.02;eu:0.06
+DK	cc:0.75;com:0.2;net:0.02;eu:0.03
+SE	cc:0.65;com:0.3;net:0.02;eu:0.03
+NO	cc:0.78;com:0.18;net:0.02;org:0.02
+FI	cc:0.72;com:0.23;net:0.02;eu:0.03
+RU	cc:0.77;com:0.18;net:0.03;org:0.02	.ru holds about 5M names; .рф (0.7M) is left out, since domains are built in Latin letters
+UA	com.ua:0.45;cc:0.15;com:0.32;net:0.04;org:0.04
+US	com:0.82;net:0.05;org:0.06;us:0.03;biz:0.02;co:0.02	.com is the American default
+CA	cc:0.48;com:0.45;net:0.03;org:0.04	CIRA: 3.3M .ca names
+AU	com.au:0.72;net.au:0.05;com:0.18;org.au:0.03;au:0.02	auDA: 4.2M names, mostly .com.au
+NZ	co.nz:0.65;nz:0.07;com:0.24;org.nz:0.04
+JP	co.jp:0.42;cc:0.18;com:0.32;net:0.05;or.jp:0.03	JPRS: .co.jp is one per registered company
+KR	co.kr:0.35;cc:0.15;com:0.43;net:0.04;or.kr:0.03
+CN	cc:0.37;com.cn:0.2;com:0.38;net:0.05	CNNIC: 20M .cn names; .中国 is left out, since domains are built in Latin letters
+TW	com.tw:0.55;cc:0.08;com:0.33;net:0.04
+HK	com.hk:0.4;cc:0.15;com:0.41;net:0.04
+SG	com.sg:0.45;cc:0.1;com:0.41;net:0.04
+MY	com.my:0.5;cc:0.05;com:0.41;net:0.04
+IN	co.in:0.18;cc:0.22;com:0.52;net:0.04;org:0.04	NIXI: 3M .in names against far more .com
+PK	com.pk:0.3;cc:0.05;com:0.58;net:0.04;org:0.03
+BD	com.bd:0.2;com:0.72;net:0.04;org:0.04
+ID	co.id:0.48;cc:0.08;com:0.4;net:0.04
+TH	co.th:0.38;com:0.55;net:0.04;in.th:0.03
+VN	com.vn:0.4;cc:0.2;com:0.36;net:0.04
+PH	com.ph:0.22;ph:0.05;com:0.67;net:0.03;org:0.03
+BR	com.br:0.85;com:0.12;net.br:0.02;org.br:0.01	Registro.br: 5.3M names, nearly all .com.br
+AR	com.ar:0.78;com:0.18;net:0.02;org.ar:0.02
+MX	com.mx:0.55;cc:0.08;com:0.33;net:0.04	NIC Mexico
+CL	cc:0.72;com:0.24;net:0.02;org:0.02
+CO	com.co:0.45;cc:0.12;com:0.39;net:0.04
+PE	com.pe:0.55;cc:0.08;com:0.33;net:0.04
+TR	com.tr:0.55;cc:0.05;com:0.36;net:0.04
+IL	co.il:0.62;org.il:0.04;com:0.31;net:0.03
+ZA	co.za:0.82;com:0.14;org.za:0.02;net:0.02	ZACR: 1.3M .co.za names
+NG	com.ng:0.4;ng:0.05;com:0.5;org:0.03;net:0.02
+KE	co.ke:0.6;com:0.34;org:0.03;net:0.03
+EG	com.eg:0.3;com:0.62;net:0.04;org:0.04
+SA	com.sa:0.3;cc:0.05;com:0.6;net:0.05
+AE	cc:0.45;com:0.5;net:0.05

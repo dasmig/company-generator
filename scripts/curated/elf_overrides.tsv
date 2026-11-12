@@ -1,0 +1,316 @@
+# ISO 20275 forms whose group the name rules (elf_groups.py) miss or get wrong, read by hand
+# 2026-11-10 from the ELF code list v1.6. group "drop": not generated (branches and agencies of
+# foreign firms, funds, bankruptcy estates, condominiums, public bodies outside section O).
+code	country	group	note
+B6ES	GB	limited_liability	Public Limited Company
+4GJI	GB	other	Private Limited by Guarantee: non-profit
+IYXU	GB	other	Community Benefit Society
+E12O	GB	other	Building Society
+Q0M5	GB	drop	Unregistered Company
+LZFR	AU	other	Public Company limited by guarantee: non-profit
+C58S	IE	other	Company Limited by Guarantee: non-profit
+5AX8	IE	other	Designated Activity Company limited by guarantee
+ZJS8	IE	other	Industrial and Provident Society
+Y2L3	BW	other	Companies limited by Guarantee
+4IXL	BW	limited_liability	Close Companies
+RIYP	NG	other	Company limited by guarantee
+7IYW	PK	other	Company Limited by Guarantee
+QR25	PK	other	Company Limited by Guarantee
+J5RC	GH	other	Private Limited By Guarantee
+W9ZD	GH	other	Public Limited By Guarantee
+XWPT	GH	drop	Subsidiary Business Name
+T69Z	GH	drop	External Company
+S02Y	LS	drop	External Company
+ZCFU	KH	drop	Foreign Company
+ZE1G	PG	drop	Overseas Company
+WHCV	PG	drop	Foreign Enterprise
+YSBJ	SB	drop	Overseas Company
+ZQEN	TO	drop	Overseas Company
+QWFD	WS	drop	Overseas company
+SXY3	WS	other	Incorporated society
+6Z8B	CO	drop	Sucursal de Sociedad Extranjera
+MXMH	JP	drop	foreign company
+KXDY	MK	drop	branch of a foreign company
+OZDY	XK	drop	branch of a foreign company
+B56A	XK	drop	representative office
+K5P8	NO	other	Samvirkeforetak: co-operative
+O0EU	NO	other	Borettslag: housing co-operative
+R71C	NO	other	Sparebank: savings bank
+BJ65	NO	drop	Pensjonskasse
+KX7D	NO	other	Fylkeskommune
+8S9H	NO	other	Gjensidig forsikringsselskap
+PB3V	NO	drop	Konkursbo
+YTMC	NO	other	Interkommunalt selskap
+50TD	NO	other	Statsforetak
+9DI1	NO	other	Boligbyggelag
+ZQ0Q	NO	drop	Eierseksjonssameie
+5ZTZ	NO	other	Fylkeskommunalt foretak
+AEV1	NO	partnership	Partrederi: shipowning partnership
+Q0Q1	NO	limited_liability	Selskap med begrenset ansvar
+LJJW	NO	drop	Verdipapirfond
+O7LB	NO	other	European co-operative
+59F9	FR	partnership	Groupement foncier agricole: a société civile
+7O94	FR	partnership	Groupement forestier: a société civile
+FFQL	FR	other	Commune
+UZY3	FR	other	hospital
+G98S	FR	other	professional order
+S0X8	FR	other	Caisse de crédit agricole mutuel
+34QS	FR	other	other private legal person
+Y4VA	FR	other	Département
+W9K6	AM	limited_liability	Pʿak bazhnetirakan enkerutʿyun: closed joint-stock company
+GBI5	AM	limited_liability	Sahmanapʿak patasxanatvutʿyan enkerutʿyun: LLC
+OLTR	AM	limited_liability	Bacʿ bazhnetirakan enkerutʿyun: open joint-stock company
+S8ZK	AM	limited_liability	additional liability company
+2PRK	AM	partnership	Liakatar enkeraktsʿutʿyun: general partnership
+UGWE	AM	partnership	Vstahutʿyan vra himnvats enkeraktsutyun: limited partnership
+ILEX	AM	other	Himnadram: foundation
+J4QX	AM	drop	ministry
+BDYL	AM	other	state body
+JEMR	AM	other	union of legal persons
+PAVK	AM	other	public organisation
+K81Q	AZ	limited_liability	Açıq səhmdar cəmiyyəti: open joint-stock company
+6JHZ	AZ	limited_liability	Məhdud məsuliyyətli cəmiyyət: LLC
+M4LU	AZ	limited_liability	Qapalı səhmdar cəmiyyəti: closed joint-stock company
+SLXJ	AZ	limited_liability	dependent company
+52TH	AZ	limited_liability	subsidiary company
+HKL3	AZ	limited_liability	additional liability company
+MEJT	AZ	partnership	Tam ortaqlıq: general partnership
+U0SP	AZ	other	public association
+PITR	AZ	other	union of legal persons
+ZD74	AZ	other	foundations
+946C	BG	sole_proprietorship	Ednolichen targovets (ET)
+CTCH	BG	other	co-operative
+UFG8	BG	other	foundation
+TCGV	BG	partnership	DZZD: civil-law partnership
+3SHX	BG	other	public-benefit association
+70BS	BO	other	state enterprise
+DSML	BO	other	development finance institution
+JYAN	BO	other	intergovernmental state enterprise
+LN9O	BO	other	housing finance entity
+MGOU	BO	other	mixed enterprise
+RXJN	BO	other	mixed state enterprise
+38JQ	BO	sole_proprietorship	Empresa Unipersonal: the Bolivian sole trader
+4LKN	BR	other	Empresa Pública
+WBEC	BR	partnership	Sociedade em Comandita Simples
+XQRI	BR	partnership	Sociedade em Conta de Participação
+SMCI	BY	other	Ustanova: institution
+9X63	BY	other	unitary enterprise (mostly state-owned)
+JLR3	BY	limited_liability	additional liability company
+4OYE	CO	sole_proprietorship	Persona natural comerciante
+D2T3	CO	partnership	Empresa Asociativa de Trabajo
+KC51	CO	other	mixed-economy company
+SJB8	CO	other	agricultural processing company
+1PAD	CO	sole_proprietorship	Empresa Unipersonal
+4SFS	CR	other	autonomous institution
+4Y4D	CR	other	entity created by special law
+DUXT	CR	other	education board
+E26K	CR	partnership	Sociedad Profesional
+YW6W	CR	sole_proprietorship	Empresa Individual de Responsabilidad Limitada
+P12B	CY	drop	provident funds
+MYKG	CY	limited_liability	Dimosia Etaireia: public company
+GLCH	CY	other	associations and foundations
+233U	CY	other	co-operative
+T1JS	CY	other	public-law entities
+U24X	CY	other	co-operative credit institutions
+P5JT	CY	other	EEIG
+6TPE	EC	partnership	Compañía en nombre colectivo
+N9QH	EC	other	Compañía de Economía Mixta
+PRTB	EE	other	Mittetulundusühing: non-profit association
+LVEQ	EE	partnership	Usaldusühing: limited partnership
+1NKP	EE	other	Sihtasutus: foundation
+VSEV	EE	other	Tulundusühistu: commercial association
+I1UP	EE	partnership	Täisühing: general partnership
+3UPJ	EE	sole_proprietorship	Füüsilisest isikust ettevõtja (FIE)
+BE56	EE	other	public-law legal person
+8ZQE	EE	drop	Korteriühistu: apartment association
+J34T	EE	other	trade union
+LA47	EE	other	EEIG
+6I0P	EE	drop	building association
+JRTH	FJ	drop	Trusts and Estates
+J3VJ	GR	other	co-operative
+QSYQ	GR	other	associations and foundations
+3RHO	GR	limited_liability	Naftiki eteria: shipping company
+HKVP	GR	partnership	Astiki (Proswpiki) Eteria: civil partnership
+L6IY	GR	other	public-law legal persons
+L8D6	GR	partnership	Afanis Eteria: silent partnership
+KUQO	GR	limited_liability	pleasure-craft shipping company
+VKSR	GR	drop	co-ownership of a ship
+KPHM	GT	other	NGO
+YMB7	GT	limited_liability	Sociedad de Emprendimiento
+E1SE	HK	other	statutory body
+85VD	HK	drop	registered trustee
+12F9	HN	limited_liability	Sociedad de Capital Variable
+E7JZ	HN	sole_proprietorship	Comerciante Individual
+9D9U	HR	sole_proprietorship	Trgovac pojedinac
+ZFQS	HR	other	Ustanova: institution
+274G	HR	other	Udruga: association
+ZMY8	HR	other	Zaklada: foundation
+XQLW	HR	other	local government unit
+6RD2	HR	other	agencies and public legal persons
+TSA0	HR	other	state administration body
+6Q6D	HR	other	Catholic Church legal person
+EYKU	HR	drop	Stečajna masa: bankruptcy estate
+G5RH	HR	other	co-operatives
+BJT3	ID	partnership	Firma (Fa): general partnership
+HELT	ID	other	Yayasan: foundation
+V05A	ID	partnership	Persekutuan Perdata: civil partnership
+XFHP	ID	sole_proprietorship	Usaha Dagang (UD)
+72I6	ID	other	Koperasi: co-operative
+BUSK	ID	other	Perum: public enterprise
+3YIH	IL	partnership	Shutafut: partnership
+BY2Z	IL	other	Aguda Shitufit: co-operative society
+5Q1W	IL	sole_proprietorship	Osek Murshe: licensed dealer
+THVZ	IL	sole_proprietorship	Osek Patur: exempt dealer
+8T79	IS	partnership	Samlagsfélag: partnership
+N3JU	JP	other	other registered corporations
+2NRQ	JP	other	local public body
+R4LR	JP	drop	national government body
+WUJC	KR	other	public body
+GF7G	KR	sole_proprietorship	GaeInSaEopJa: individual business
+QU16	KR	drop	state (government)
+VTH4	KR	other	non-profit incorporated association
+AKF5	KR	other	incorporated foundation
+S1IS	KR	other	general corporate association
+W61J	KR	other	other corporation
+BW92	KR	partnership	HabJaHoeSa: limited partnership company
+AXEQ	KR	partnership	HabMyeongHoeSa: general partnership company
+5OKA	KW	limited_liability	closed joint-stock company
+3GQ5	KW	sole_proprietorship	Milkiat fardia: sole proprietorship
+8CIC	KW	other	non-profit companies
+W9RU	KW	partnership	professional company
+A338	LT	sole_proprietorship	Individualios įmonės: individual enterprise
+LUGM	LT	other	co-operative
+KWBA	LT	other	public institution
+HGMH	LT	other	charity and support funds
+5BY2	LT	other	European co-operative
+UHNL	LT	other	agricultural company
+5CIE	LT	partnership	lawyers' professional partnership
+K4GR	LT	other	budgetary institution
+BS22	LV	sole_proprietorship	Individuālais komersants (IK)
+3LCY	LV	partnership	Pilnsabiedrība: general partnership
+X7W6	MC	sole_proprietorship	Entreprise en Nom Personnel
+KHAB	MK	limited_liability	DOO: limited liability company
+DTIU	MK	limited_liability	AD: joint-stock company
+JCK1	MK	other	economic interest association
+HEXO	MK	partnership	JTD: general partnership
+VPFY	MK	sole_proprietorship	Trgovec poedinec (TP)
+T3FE	MM	limited_liability	Myanmar Companies Act company
+3FI5	MM	other	other entity
+478A	MM	other	other entity
+CPNU	MM	other	other entity
+FJK0	MM	limited_liability	Myanmar Companies Act company
+G54B	MM	other	other entity
+QUC7	MM	other	other entity
+4AJY	MU	sole_proprietorship	Business: individual business
+O786	MU	partnership	Société: civil or commercial partnership
+B0LD	MU	other	ministries and parastatals
+CIUP	NE	limited_liability	multinational company
+VAPL	NE	partnership	Société en Participations
+VRSU	NP	sole_proprietorship	Private Firm: sole proprietorship
+UZLR	NP	other	institution
+CJO4	OM	limited_liability	LLC
+HA2W	OM	limited_liability	one-person company
+EZG2	OM	limited_liability	holding company
+Z9KU	OM	partnership	joint venture
+NFYA	PA	partnership	Consorcio
+ZSWE	PT	other	regional enterprise
+P5S3	PT	other	public-law legal person
+A8CT	PT	other	public business entity
+ZILA	PT	sole_proprietorship	Estabelecimento Individual de Responsabilidade Limitada
+B4L0	QA	partnership	joint venture
+5NCK	RO	other	NGO
+DUGD	RO	sole_proprietorship	Intreprindere individuala (II)
+FJQ8	RO	sole_proprietorship	Persoana fizica autorizata (PFA)
+TH8A	RO	sole_proprietorship	Intreprindere familiala (IF)
+F0BK	RO	other	agricultural company
+Q89X	RO	other	trade union
+9O67	RS	sole_proprietorship	Preduzetnik (PR)
+6UPM	RS	other	co-operative union
+DEF6	RS	other	public enterprise
+88TX	RS	other	social enterprise
+E7W8	RS	other	co-operative
+ZPOY	RS	partnership	Ortačko društvo (o.d.)
+C3RQ	RU	drop	other forms
+4VTZ	RU	other	associations
+KZC6	RU	other	foundations
+1RJ2	RU	other	autonomous non-profit organisations
+AS78	RU	partnership	advocates' bureau
+E0VI	RU	other	state corporations
+PT6M	SA	limited_liability	capital company
+YVGA	SA	partnership	joint venture
+N10C	SA	limited_liability	variable-capital company
+SSOM	SE	drop	Bostadsrättsförening: housing co-operative
+G04R	SE	other	savings bank
+O1QI	SE	other	mutual insurance
+44CQ	SE	drop	joint property association
+QW8S	SI	sole_proprietorship	Samostojni podjetnik posameznik (s.p.)
+RAX7	SI	other	co-operative with limited liability
+HJCS	SI	other	society
+5LXY	SI	other	religious community
+6MPY	SI	other	institution
+2CTG	SI	other	co-operative
+UDQJ	SI	other	economic interest grouping
+UESF	SI	other	public fund
+14AT	SI	other	public agency
+D64E	SI	other	chamber of commerce
+FDRT	TH	other	registered association
+N8FJ	TH	other	government agency
+VSTJ	TH	other	juristic person by special law
+46FG	TH	other	province
+D87D	TH	other	registered foundation
+JUEU	TH	partnership	Hangh̄unswn camkad: limited partnership
+QFXX	TH	partnership	registered ordinary partnership
+RLSQ	TR	other	vakıf: foundation
+JMQU	TR	partnership	kollektif şirket: general partnership
+D4KQ	TR	other	body set up by special legislation
+2DY1	TR	other	public legal person
+5T3H	TR	drop	funds
+LYA0	TR	other	dernek: association
+6LI8	TW	other	for-profit incorporated association
+F5VB	TW	other	incorporated foundation
+K9SK	TW	partnership	hé huǒ: partnership
+346N	TW	other	charitable organisation
+ALDM	TW	other	co-operative
+IUOP	TW	sole_proprietorship	shāng hào: sole proprietorship
+NXHQ	UY	sole_proprietorship	Establecimiento Comercial
+ETZT	UY	sole_proprietorship	Empresa Unipersonal
+0OCP	VN	limited_liability	công ty trách nhiệm hữu hạn: LLC
+4RXL	VN	limited_liability	single-member LLC
+OMP4	VN	limited_liability	công ty cổ phần: joint-stock company
+S97E	VN	other	Hợp tác xã: co-operative
+CZPI	VN	other	state-owned enterprise
+BB0P	VN	sole_proprietorship	doanh nghiệp tư nhân: private enterprise
+KQWF	VN	drop	group of companies
+QYCU	VN	partnership	công ty hợp danh: partnership
+D37H	XK	limited_liability	SHPK: limited liability company
+Q22D	XK	limited_liability	SHA: joint-stock company
+W5H8	XK	other	public enterprise
+3YUD	XK	other	socially owned enterprise
+QZEN	XK	sole_proprietorship	Biznes Individual (BI)
+T2X0	XK	partnership	Ortakëri e Përgjithshme: general partnership
+W7KV	XK	partnership	Ortakëri e Kufizuar: limited partnership
+U89P	ZA	limited_liability	Personal Liability Company
+R155	ZA	other	State Owned Company
+N5NT	BE	drop	BVBA: abolished, converted to BV on 2024-01-01
+C609	BE	drop	EBVBA: abolished 2024
+JNAD	BE	drop	BVBA SO: abolished 2024
+8E2A	BE	drop	CVBA: abolished 2024
+2QSA	BE	drop	CVBA SO: abolished 2024
+4E5P	BE	drop	CVOA SO: abolished 2024
+EXY8	BE	drop	CVOA CD: abolished 2024
+LWV6	BE	drop	Gewone commanditaire vennootschap: renamed CommV 2019, abolished 2024
+5QS7	DK	drop	IVS: abolished 2019, converted or dissolved by 2021
+YG5M	CA	limited_liability	BC company: its name mentions unlimited liability companies, which it includes
+ECAK	CN	drop	企业 "enterprise": a catch-all with no form of its own; companies are pseudo forms
+E4YV	CN	drop	representative office of a Hong Kong, Macao or Taiwan tourism body
+1IWK	CN	drop	foreign press office
+TBG2	CN	drop	foreign tourism office
+8XAW	CN	drop	foreign cultural centre
+E4FG	CN	other	民办非企业单位: private non-enterprise unit (a non-profit)
+478A	MM	limited_liability	private company limited by shares
+QUC7	MM	limited_liability	public company limited by shares
+T3FE	MM	drop	company under the Special Company Act 1950 (state joint ventures)
+FJK0	MM	drop	company under the Special Company Act 1950 (state joint ventures)
+76ME	PH	other	nonstock corporation: non-profit
+IODM	PH	other	educational corporation
+9M15	RU	drop	the Central Bank

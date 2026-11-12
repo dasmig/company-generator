@@ -1,0 +1,54 @@
+# Ukrainian business-name words (curated 2026-11-10). As in Russian, the form comes first and the
+# name goes in guillemets: ТОВ «Будсервіс». Words carry the official Ukrainian transliteration
+# (2010) after "=", used for domains. A section key (A to S) serves every division of the section
+# that has no row of its own. Columns as in en.tsv.
+kind	key	value
+style	script	Cyrl
+style	form_position	prefix
+style	quotes	«»
+style	space	none
+style	coined_join	none
+template	founder	{surname}:1
+template	descriptive	{trade}{coined_tail}:4;{place}{trade}:2
+template	coined	{coined}:2;{coined_head}{trade}:2
+template	initials	{initials}:1;{initials}-{trade}:1
+place	UA	Укр=Ukr:5;Київ=Kyiv:2;Дніпро=Dnipro:1;Харків=Kharkiv:1;Одеса=Odesa:1;Львів=Lviv:1;Захід=Zakhid:0.5;Схід=Skhid:0.5;Поділля=Podillia:0.3
+coined_head	*	Буд=Bud;Пром=Prom;Торг=Torh;Транс=Trans;Тех=Tekh;Агро=Ahro;Енерго=Enerho;Мед=Med;Фарм=Farm;Євро=Yevro;Альфа=Alfa;Вектор=Vektor;Гранд=Hrand;Мега=Meha;Нова=Nova;Еко=Eko
+coined_tail	*	Сервіс=Servis;Інвест=Invest;Груп=Hrup;Альянс=Alians;Торг=Torh;Світ=Svit;Комплекс=Kompleks;Монтаж=Montazh;Проект=Proekt;Ресурс=Resurs;Постач=Postach;Буд=Bud;Плюс=Plius;Лайн=Lain;Систем=System;Маркет=Market;Трейд=Treid;Логістик=Lohistyk;Капітал=Kapital
+trade	A	Агро=Ahro;Агрофірма=Ahrofirma;Фермер=Fermer;Агрохолдинг=Ahrokholdynh
+trade	03	Риба=Ryba;Рибгосп=Rybhosp
+trade	B	Видобуток=Vydobutok;Кар'єр=Karier;Надра=Nadra
+trade	C	Пром=Prom;Завод=Zavod;Виробництво=Vyrobnytstvo
+trade	10	Хліб=Khlib;Молоко=Moloko;Продукт=Produkt;Харчпром=Kharchprom;М'ясо=Miaso
+trade	11	Напої=Napoi;Пиво=Pyvo;Вино=Vyno
+trade	16	Деревообробка=Derevoobrobka;Ліс=Lis
+trade	18	Друк=Druk;Поліграф=Polihraf
+trade	20	Хім=Khim;Хімпром=Khimprom
+trade	21	Фарм=Farm
+trade	22	Пласт=Plast;Полімер=Polimer
+trade	23	Бетон=Beton;Скло=Sklo
+trade	24	Метал=Metal;Сталь=Stal
+trade	25	Метал=Metal;Металоконструкція=Metalokonstruktsiia
+trade	28	Маш=Mash;Техніка=Tekhnika
+trade	31	Меблі=Mebli
+trade	D	Енерго=Enerho;Сонячна Енергія=Soniachna Enerhiia;Енергетика=Enerhetyka
+trade	E	Водоканал=Vodokanal;Еко=Eko;Втор=Vtor;Утиль=Util
+trade	F	Буд=Bud;Будівництво=Budivnytstvo;Монтаж=Montazh;Ремонт=Remont
+trade	42	Дорбуд=Dorbud;Шляхбуд=Shliakhbud
+trade	G	Торг=Torh;Трейд=Treid;Імпорт=Import;Маркет=Market;Постач=Postach
+trade	45	Авто=Avto;Автоцентр=Avtotsentr
+trade	47	Маркет=Market;Магазин=Mahazyn;Аптека=Apteka
+trade	H	Транс=Trans;Транспорт=Transport;Перевезення=Perevezennia;Логістик=Lohistyk
+trade	53	Експрес=Ekspres;Кур'єр=Kurier
+trade	I	Готель=Hotel;Кафе=Kafe;Ресторан=Restoran;Піца=Pitsa
+trade	J	Софт=Soft;ІТ=IT;Технології=Tekhnolohii;Медіа=Media;Телеком=Telekom
+trade	K	Інвест=Invest;Капітал=Kapital;Фінанс=Finans;Страхування=Strakhuvannia
+trade	L	Нерухомість=Nerukhomist;Девелопмент=Development;Ріелт=Rielt
+trade	M	Консалтинг=Konsaltynh;Аудит=Audyt;Право=Pravo;Проект=Proekt;Дизайн=Dyzain;Реклама=Reklama
+trade	75	Ветклініка=Vetklinika
+trade	N	Сервіс=Servis;Оренда=Orenda;Охорона=Okhorona;Клінінг=Klininh;Тур=Tur;Персонал=Personal
+trade	O	Адміністрація=Administratsiia
+trade	P	Освіта=Osvita;Школа=Shkola;Автошкола=Avtoshkola;Навчальний Центр=Navchalnyi Tsentr
+trade	Q	Мед=Med;Медцентр=Medtsentr;Стоматологія=Stomatolohiia;Клініка=Klinika
+trade	R	Арт=Art;Спорт=Sport;Фітнес=Fitnes
+trade	S	Сервіс=Servis;Ремонт=Remont;Краса=Krasa;Салон=Salon;Фонд=Fond
