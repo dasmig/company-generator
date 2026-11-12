@@ -731,7 +731,9 @@ TEST_CASE("to_json and signature", "[json]")
     const auto json = v.to_json();
     REQUIRE(json.starts_with(R"({"country_code":")"));
     REQUIRE(json.find(R"("signature":{"seed":"0000000000000063")") != std::string::npos);
-    REQUIRE(json.find(R"("founded":")" + v.founded_text() + "\"") != std::string::npos);
+    // Built outside REQUIRE: MSVC's preprocessor misreads a raw string next to "\"" in a macro argument (C2017).
+    const auto founded = R"("founded":")" + v.founded_text() + R"(")";
+    REQUIRE(json.find(founded) != std::string::npos);
 
     dasmig::core::json_writer w;
     w.begin_array();
