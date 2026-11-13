@@ -13,7 +13,8 @@ template	descriptive	{place} {trade}:4;{region} {trade}:1;{adjective} {trade}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;og
-family	*	& Sønn;& Sønner;Brødrene;& Co
+family	*	& Sønn;& Sønner
+family	company	& Co
 adjective	*	Nye;Norsk;Nordisk;Moderne;Total;Proff;Prima;Ekte;Solid;Smart;Rask;Trygg;Fjell;Fjord;Kyst;Nord;Polar;Viking;Midnatt;Sol
 region	*	Nord;Sør;Øst;Vest;Midt;Nordland;Vestland;Sørlandet;Østlandet;Kysten;Fjellet;Dalen;Fjorden;Vika
 coined_head	*	Nor;Vik;Fjel;Ask;Bjør;Hav;Lys;Mjø;Skog;Sol;Stor;Vin;Ny;Kyr;Al;Ber;Tin;Fro

@@ -10,10 +10,11 @@ style	quotes	«»
 style	space	none
 style	coined_join	none
 template	founder	{surname}:1
-template	founder_trade	{surname} и Партнёры={surname} i Partnery:1
+template	founder_trade	{surname} {family}:1
 template	descriptive	{trade}{coined_tail}:4;{place}{trade}:2;{trade} {region}:1
 template	coined	{coined}:2;{coined_head}{trade}:2
 template	initials	{initials}:1;{initials}-{trade}:1
+family	company	и Партнёры=i Partnery
 surname	*	Иванов=Ivanov:1.3;Смирнов=Smirnov:1.3;Кузнецов=Kuznetsov:1;Попов=Popov:0.9;Васильев=Vasilyev:0.8;Петров=Petrov:0.8;Соколов=Sokolov:0.7;Михайлов=Mikhaylov:0.6;Новиков=Novikov:0.6;Фёдоров=Fyodorov:0.55;Морозов=Morozov:0.55;Волков=Volkov:0.55;Алексеев=Alekseyev:0.5;Лебедев=Lebedev:0.5;Семёнов=Semyonov:0.45;Егоров=Yegorov:0.45;Павлов=Pavlov:0.45;Козлов=Kozlov:0.45;Степанов=Stepanov:0.4;Николаев=Nikolayev:0.4
 place	RU	Мос=Mos:3;Рос=Ros:4;Урал=Ural:2;Сиб=Sib:2;Волга=Volga:1.5;Дон=Don:1;Кубань=Kuban:1;Нева=Neva:1;Север=Sever:1.5;Юг=Yug:1;Даль=Dal:0.8;Байкал=Baykal:0.5;Татнефть=Tat:0.5
 place	BY	Бел=Bel:4;Минск=Minsk:2;Гомель=Gomel:0.5

@@ -13,7 +13,8 @@ template	descriptive	{adjective} {trade}:3;{adjective} {trade} Sanayi ve Ticaret
 template	coined	{coined}:2;{coined} {trade}:2
 template	initials	{initials} {trade}:2;{initials}:1
 joiner	*	ve;&
-family	*	ve Oğulları;Kardeşler;Grup;Aile
+family	*	ve Oğulları;Aile
+family	company	Grup;Kardeşler
 adjective	*	Anadolu;Ege;Akdeniz;Marmara;Karadeniz;Yıldız;Güneş;Doğan;Kartal;Başak;Özgür;Yeni;Mavi;Altın;Gül;Ak;Has;Öz;Uğur;Bereket;Hilal;Nur;Çağ;Kale;Ata;Türk;Star;Mega;Pro;Global
 region	*	Anadolu;Ege;Akdeniz;Marmara;Karadeniz;Trakya;Kuzey;Güney;Doğu;Batı
 coined_head	*	Tek;Net;Med;Akt;Bil;Pro;Ser;Kar;Tur;Ata;Ay;Er;Gen;Kur;Lin;Mar;Neo;Opt;Syn;Ufu

@@ -11,7 +11,8 @@ template	descriptive	{adjective} {trade}:2;{trade} {place}:1;{trade} {region}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	in;&
-family	*	in Sinovi;in Partnerji
+family	*	in Sinovi
+family	company	in Partnerji
 adjective	*	Euro;Inter;Pro;Eko;Max;Mega;Top;Alpe;Adria;Triglav;Sava;Nova;Prima;Zlata;Delta;Alfa;Slovenija
 region	*	Štajerska;Gorenjska;Primorska;Dolenjska;Prekmurje;Koroška;Notranjska;Sever;Jug;Vzhod;Zahod
 coined_head	*	Alp;Slo;Tri;Sav;Tech;Euro;Med;Kom;Agro;Neo;Vit

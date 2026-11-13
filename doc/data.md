@@ -20,7 +20,7 @@ All countries are the 199 the other Tier 5 libraries serve, keyed by `country_co
 | Table | Key | Values |
 | --- | --- | --- |
 | `isic.tsv` | section or division | the ISIC Rev. 4 titles, lower-cased as `to_string()` prints them (sections A to S; divisions 01 to 96) |
-| `countries.tsv` | country | enterprises, persons employed, the languages business names are written in, the surname culture, the evidence (and in `full` the source) of each field, the share of firms up to five years old, the share of firms without a website by size band |
+| `countries.tsv` | country | enterprises, persons employed, the languages business names are written in, the surname culture, the evidence (and in `full` the source) of each field, the share of firms up to five years old |
 | `industries.tsv` | country, ISIC Rev. 4 division | enterprises and persons employed per million of the country's total |
 | `sizes.tsv` | country, division (`lite`: section), band | share of enterprises and of persons employed, mean head count in the band |
 | `ages.tsv` | country, section, band | share of firms by age: 0 to 5 years, then 6-10, 11-15, 16-20, 21-25, 26+ |
@@ -125,13 +125,13 @@ Constraints: `from` and `until` (Germany's UG from 2008, France's SAS from 1994,
 
 ### Age
 
-The US's age shape by section and band (BDS), or the register's own (France, Norway, the UK). A class of the shape (age 0, 1, ..., 5, 6-10, ..., 26+) is spread evenly over its years; the 26+ class decays over ages 26 to 125 with a 25-year scale (curated). Countries with Eurostat's measure scale the first six classes (ages 0 to 5) by one factor per country, fitted so that the country's own mix of sections and bands gives its `young_share`. The US takes the shape as it is.
+The US's age shape by section and band (BDS), or the register's own (France, Norway, the UK). A class of the shape (age 0, 1, ..., 5, 6-10, ..., 26+) is spread evenly over its years; the 26+ class decays over ages 26 to 125 with a 25-year scale (curated). Countries with Eurostat's measure scale the first six classes (ages 0 to 5) by one factor per country, fitted so that the country's own mix of sections and bands gives its `young_share`. The US takes the shape as it is. BDS counts employer firms, and its shape gives them 0.36 up to five years old (the US's `young_share`); the US's micro band also holds the Nonemployer Statistics' firms, 97% of US draws, which take the employer micro firms' shape, so 0.43 of drawn US firms are up to five years old. No source gives nonemployers' ages by sector, so this is left as it is.
 
 A year is picked by those weights, then a day inside it, never after the reference date and never outside the legal form's dates: a form's `from` and `until` cut the weight of the years they overlap in proportion to the days left. A firm older than its form's `from` date (one that converted) is not modelled; its founding date is in the form's years.
 
 ### Name
 
-The name language by the country's shares in `countries.tsv`. A pattern (founder, founder and trade, two founders, descriptive, coined, initials) from `patterns.tsv` by the language, the group and the band, among the patterns whose parts the language has; then the language's template for the pattern, filled with surnames, trade words of the division (else its section), adjectives, regions, places and coined syllables. Surnames are the language's own, else the country's culture's from `surnames.tsv`; a Latin-script name takes a non-Latin culture's surnames in their Latin form. Places are the language's own, else the country's from `places.tsv` (for Latin-script languages). Each part is drawn from its own stream, so a given `founder_surname` or `place` changes only that part; either is used only when its script fits the language.
+The name language by the country's shares in `countries.tsv`. A pattern (founder, founder and trade, two founders, descriptive, coined, initials) from `patterns.tsv` by the language, the group and the band, among the patterns whose parts the language has; then the language's template for the pattern, filled with surnames, trade words of the division (else its section), adjectives, regions, places, family words ("& Söhne") and coined syllables. A sole trader takes no family word that names a partner or co-owners ("& Co.", "& Cie", "i Spółka", "Brothers", "Hermanos": key `company` in `words.tsv`), since a register refuses such a name as misleading (in Germany, § 18 HGB). Family words written before the surname ("Gebrüder Becker", "Gebroeders", "Brødrene") are left out, since the template puts the family word after it. Surnames are the language's own, else the country's culture's from `surnames.tsv`; a Latin-script name takes a non-Latin culture's surnames in their Latin form. Places are the language's own, else the country's from `places.tsv` (for Latin-script languages). Each part is drawn from its own stream, so a given `founder_surname` or `place` changes only that part; either is used only when its script fits the language.
 
 The legal form is written as `in_name` says where it is set (`ООО «…»`, `株式会社…` or `…株式会社`), else as its abbreviation, or its Latin abbreviation when the abbreviation's script does not fit the name, before or after the name as the language's style says. `short_name` is the name without the form.
 
@@ -139,7 +139,7 @@ The trade words were read by hand: for English, French and Norwegian from the wo
 
 ### Numbers
 
-Each country's schemes in `schemes.tsv` (64 schemes), held by the legal-form groups named in `groups` (a sole trader has no UK company number) and in force at the founding date or the reference date (`from`, `until`). They are listed register first, then statistical, tax and VAT numbers, then the LEI.
+Each country's schemes in `schemes.tsv` (63 schemes), held by the legal-form groups named in `groups` (a sole trader has no UK company number) and in force at the founding date or the reference date (`from`, `until`). They are listed register first, then statistical, tax and VAT numbers, then the LEI.
 
 - **Generic schemes** draw the pattern's digits and compute the check (Luhn, GTIN, ISO 7064 mod 11,10 and mod 97-10, weighted sums with the scheme's rule, or a named algorithm such as Belgium's or Taiwan's).
 - **Built schemes** encode the company: Mexico's RFC its initials and founding date, India's CIN its listing, division, state, year and ownership, Russia's OGRN its year and region, Spain's NIF its form, Japan's corporate number its registry office and class, South Africa's its year and type, Korea's business number its tax office and type. Numbers that share a part share it: the SIREN in the SIRET and the TVA, the ACN in the ABN, the PAN in the GSTIN, the RSIN in the Dutch VAT number.
@@ -150,7 +150,7 @@ Safe numbers: a wrong check digit, a reserved range (the 17 EIN prefixes the IRS
 
 ### Domain
 
-Every company has a domain (decision 8): the name's Latin form without the legal form, folded to ASCII (German ä, ö and ü as ae, oe and ue; the rest by `fold.tsv`), as one word or with hyphens (a quarter of firms), cut to whole words within 24 characters and not ending on a word of one or two letters, with a TLD from `domains.tsv`. Safe mode uses `.example` (RFC 2606). The `no_domain_<band>` columns of `countries.tsv` are kept but not used.
+Every company has a domain (decision 8): the name's Latin form without the legal form, folded to ASCII (German ä, ö and ü as ae, oe and ue; the rest by `fold.tsv`), as one word or with hyphens (a quarter of firms), cut to whole words within 24 characters and not ending on a word of one or two letters, with a TLD from `domains.tsv`. Safe mode uses `.example` (RFC 2606).
 
 ## Curated Estimates
 
@@ -158,7 +158,6 @@ These are set by hand and not measured; each file says so:
 
 - The name patterns by group and band, and their language tilts (`patterns.tsv`, `pattern_tilts.tsv`).
 - The TLD shares (`domains.tsv`): registries publish their own counts, not company websites by TLD.
-- The share of firms without a website: guided by Eurostat's `isoc_ciweb` (about 78%, 91% and 95% of EU firms with 10-49, 50-249 and 250+ persons had a website in 2023; recalled, not downloaded) for high-income countries; micro firms and other income groups are estimated.
 - The income-group legal-form splits, the template forms and their shares.
 
 ## Validation
@@ -188,8 +187,9 @@ A rebuild from the same downloads is byte-identical (also under a random `PYTHON
 ## Known Limitations
 
 - **Names may exist.** A name made of a common surname and a trade word ("Müller Bau GmbH") surely belongs to a real firm somewhere. Safe mode changes numbers and domains, not names; nothing in the data can rule a name out without shipping the registers.
+- **US firm ages** count nonemployers with employer firms' shapes: 0.43 of drawn US firms are up to five years old, against BDS's 0.36 for employer firms (see Age).
 - **Size outside the OECD** is the subregion's pooled distribution for most countries (82% of the population).
 - **Legal forms outside Europe** come from an overall split and Europe's odds by section and size; within groups from LEI counts, which over-represent large firms (damped, not removed).
 - **Some code ranges are estimated.** The highest Nigerian RC and BN numbers and the block numbering of some German register courts are estimated from published examples, not read from a register. Japanese registry offices, Korean tax offices, Vietnamese provinces and Indonesian tax offices are drawn from ranges, not from lists of the codes in use.
 - **A number can be held.** Outside safe mode a number passes its check and lies in the issued range, so it may belong to a real firm. Use safe mode for anything that leaves a test environment.
-- **Name grammar is simple.** Templates join words without inflection: German names avoid adjectival place forms ("Münchner") rather than build them, and a German sole trader can still be "& Co.", which a register would refuse as misleading.
+- **Name grammar is simple.** Templates join words without inflection: German names avoid adjectival place forms ("Münchner") rather than build them. A name is in one language, drawn by the country's shares, so a German firm can have an English name with a German surname ("Hoffmann Landscapes e. K."), as some do.

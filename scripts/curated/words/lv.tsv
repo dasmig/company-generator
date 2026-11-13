@@ -11,7 +11,8 @@ template	descriptive	{place} {trade}:2;{adjective} {trade}:1;{region} {trade}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	un;&
-family	*	un Dēli;un Partneri
+family	*	un Dēli
+family	company	un Partneri
 adjective	*	Latvijas;Baltijas;Nordic;Jaunā;Euro;Inter;Pro;Eko;Max;Top;Mega;Zelta;Dzintara;Daugavas;Gaujas;Ozola
 region	*	Kurzeme;Vidzeme;Zemgale;Latgale;Baltija;Ziemeļi;Dienvidi
 coined_head	*	Lat;Balt;Nord;Tech;Euro;Med;Kom;Agro;Neo;Vit;Dzin

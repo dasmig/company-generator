@@ -12,7 +12,8 @@ template	descriptive	{trade} {region}:1;{trade} {place}:3;{adjective} {trade}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;+;und
-family	*	& Söhne;& Sohn;& Co.;Gebrüder
+family	*	& Söhne;& Sohn
+family	company	& Co.
 adjective	*	Neue;Deutsche;Moderne;Allgemeine;Vereinigte;Erste;Profi;Premium;Euro;Inter;Top;Pro;Mega;Plus;Express;Alpen;Nord;Süd;Rhein;Elbe;Blau;Grün;Gold;Stern;Adler;Phönix;Kristall;Sonnen;Berg;Wald
 region	*	Nord;Süd;Ost;West;Mitte;Rhein-Main;Rheinland;Ruhr;Bayern;Franken;Schwaben;Sachsen;Nordsee;Ostsee;Alpen;Allgäu;Bodensee;Harz
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Nex;Ori;Sol;Dyn;Gen;Hel;Kin;Lin;Mar;Neo;Opt;Pro;Ren;Syn;Tec;Ul;Vit;Wen;Zen;Bra;Fal;Hor

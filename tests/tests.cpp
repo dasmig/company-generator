@@ -703,6 +703,37 @@ TEST_CASE("a given founder surname or place is used where it fits the name's scr
     }
 }
 
+TEST_CASE("a sole trader's name names no partner", "[names]")
+{
+    const auto gen = make_loaded_generator();
+    // words.tsv's family words under key "company"
+    const std::vector<std::string> partner{"& Co", "& Cie", "& C.", "y Cía.", "y Asociados", "i Spółka", "i Wspólnicy",
+                                           "a spol.", "és Társa", "& Cia", "и Партнёры", "Brothers", "Hermanos", "Frères",
+                                           "Fratelli", "Irmãos", "Gebrüder"};
+    std::size_t sole = 0;
+    std::size_t partner_names = 0;
+    for (const auto* country : {"DE", "FR", "GB", "ES", "IT", "PL", "CZ", "HU", "PT", "NL", "SE", "DK", "RU"})
+    {
+        for (std::uint64_t s = 0; s < 3000; ++s)
+        {
+            auto request = in(country);
+            request.size = size_band::small;
+            const auto c = gen.get_company(request, s);
+            const bool has = std::ranges::any_of(partner, [&](const std::string& w)
+                                                 { return c.short_name.find(w) != std::string::npos; });
+            if (c.legal_form_group == "sole_proprietorship")
+            {
+                ++sole;
+                INFO(c.name);
+                REQUIRE_FALSE(has);
+            }
+            else if (has) ++partner_names;
+        }
+    }
+    REQUIRE(sole > 500);
+    REQUIRE(partner_names > 0); // other companies still draw them
+}
+
 // ---------------------------------------------------------------------------
 // Conversion and JSON
 // ---------------------------------------------------------------------------
@@ -754,18 +785,18 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
     gen.load(std::filesystem::path{"resources/lite"});
     if (!gen.has_data()) gen.load(std::filesystem::path{"../resources/lite"});
     REQUIRE(gen.has_data());
-    REQUIRE(gen.data_hash() == 0x31249b8baf2736eeULL);
+    REQUIRE(gen.data_hash() == 0x5fa2cadd5c7a71afULL);
 
     REQUIRE(gen.get_company(company_request{}, std::uint64_t{1}).to_json() ==
-            R"({"country_code":"CN","name":"新通客运有限公司","short_name":"新通客运","isic":"49","isic_label":"land transport and transport via pipelines","isic_section":"H","size":"micro","employees":1,"legal_form":"有限公司","legal_form_code":"","legal_form_group":"limited_liability","founded":"2021-10-17","numbers":[{"scheme":"cn-uscc","label":"USCC","value":"91360981MA7WW3546H","compact":"91360981MA7WW3546H","reserved":false}],"domain":"xintongkeyun.com","evidence":"filled","signature":{"seed":"0000000000000001","data":"31249b8baf2736ee"}})");
+            R"({"country_code":"CN","name":"新通客运有限公司","short_name":"新通客运","isic":"49","isic_label":"land transport and transport via pipelines","isic_section":"H","size":"micro","employees":1,"legal_form":"有限公司","legal_form_code":"","legal_form_group":"limited_liability","founded":"2021-10-17","numbers":[{"scheme":"cn-uscc","label":"USCC","value":"91360981MA7WW3546H","compact":"91360981MA7WW3546H","reserved":false}],"domain":"xintongkeyun.com","evidence":"filled","signature":{"seed":"0000000000000001","data":"5fa2cadd5c7a71af"}})");
     REQUIRE(gen.get_company(in("DE"), std::uint64_t{2}).to_json() ==
-            R"({"country_code":"DE","name":"Finanzberatung München GmbH","short_name":"Finanzberatung München","isic":"66","isic_label":"activities auxiliary to financial service and insurance activities","isic_section":"K","size":"micro","employees":5,"legal_form":"GmbH","legal_form_code":"2HBR","legal_form_group":"limited_liability","founded":"2000-06-05","numbers":[{"scheme":"de-hrn","label":"HR","value":"Amtsgericht Oldenburg (Oldenburg) HRB 207288","compact":"Oldenburg HRB 207288","reserved":false},{"scheme":"de-ustid","label":"USt-IdNr.","value":"DE106065628","compact":"DE106065628","reserved":false},{"scheme":"lei","label":"LEI","value":"9845ZXDCJYIG1I65SF47","compact":"9845ZXDCJYIG1I65SF47","reserved":false}],"domain":"finanzberatungmuenchen.de","evidence":"measured","signature":{"seed":"0000000000000002","data":"31249b8baf2736ee"}})");
+            R"({"country_code":"DE","name":"Finanzberatung München GmbH","short_name":"Finanzberatung München","isic":"66","isic_label":"activities auxiliary to financial service and insurance activities","isic_section":"K","size":"micro","employees":5,"legal_form":"GmbH","legal_form_code":"2HBR","legal_form_group":"limited_liability","founded":"2000-06-05","numbers":[{"scheme":"de-hrn","label":"HR","value":"Amtsgericht Oldenburg (Oldenburg) HRB 207288","compact":"Oldenburg HRB 207288","reserved":false},{"scheme":"de-ustid","label":"USt-IdNr.","value":"DE106065628","compact":"DE106065628","reserved":false},{"scheme":"lei","label":"LEI","value":"9845ZXDCJYIG1I65SF47","compact":"9845ZXDCJYIG1I65SF47","reserved":false}],"domain":"finanzberatungmuenchen.de","evidence":"measured","signature":{"seed":"0000000000000002","data":"5fa2cadd5c7a71af"}})");
     REQUIRE(gen.get_company(in("BR"), std::uint64_t{3}).to_json() ==
-            R"({"country_code":"BR","name":"Genica Empreendimentos Imobiliários Ltda.","short_name":"Genica Empreendimentos Imobiliários","isic":"68","isic_label":"real estate activities","isic_section":"L","size":"micro","employees":1,"legal_form":"Ltda.","legal_form_code":"QHW1","legal_form_group":"limited_liability","founded":"2005-09-29","numbers":[{"scheme":"br-cnpj","label":"CNPJ","value":"02.413.885/0001-86","compact":"02413885000186","reserved":false}],"domain":"genica-empreendimentos.com.br","evidence":"filled","signature":{"seed":"0000000000000003","data":"31249b8baf2736ee"}})");
+            R"({"country_code":"BR","name":"Genica Empreendimentos Imobiliários Ltda.","short_name":"Genica Empreendimentos Imobiliários","isic":"68","isic_label":"real estate activities","isic_section":"L","size":"micro","employees":1,"legal_form":"Ltda.","legal_form_code":"QHW1","legal_form_group":"limited_liability","founded":"2005-09-29","numbers":[{"scheme":"br-cnpj","label":"CNPJ","value":"02.413.885/0001-86","compact":"02413885000186","reserved":false}],"domain":"genica-empreendimentos.com.br","evidence":"filled","signature":{"seed":"0000000000000003","data":"5fa2cadd5c7a71af"}})");
 
     std::uint64_t h = 0xcbf29ce484222325ULL;
     for (std::uint64_t s = 0; s < 10000; ++s) h = fnv(h, gen.get_company(company_request{}, s).to_json());
-    REQUIRE(h == 0x0eca0b4e1c618286ULL);
+    REQUIRE(h == 0xea67689b5f3914bbULL);
 }
 
 // ---------------------------------------------------------------------------
@@ -814,10 +845,9 @@ TEST_CASE("a layer can change how often a country is drawn", "[extend]")
     const auto row = [](const std::string& country, const std::string& persons)
     {
         return "country_code\tenterprises\tpersons_employed\tlanguages\tculture\tindustry_evidence\temployment_evidence\t"
-               "size_evidence\tform_evidence\tage_evidence\tyoung_share\tdomain_evidence\tno_domain_micro\t"
-               "no_domain_small\tno_domain_medium\tno_domain_large\n" +
+               "size_evidence\tform_evidence\tage_evidence\tyoung_share\tdomain_evidence\n" +
                country + "\t1000000000000\t" + persons + "\ten:1\tenglish\tmeasured\tmeasured\tmeasured\tmeasured\t"
-               "measured\t\tmeasured\t0.5\t0.2\t0.1\t0.05\n";
+               "measured\t\tmeasured\n";
     };
     gen.extend_from_string(company_table::countries, row("MC", "100"), "monaco.tsv");
     int monaco = 0;
@@ -875,7 +905,7 @@ TEST_CASE("compiled-in data needs no files and matches them", "[embed]")
 
     REQUIRE(loaded);
     REQUIRE(gen.layers(company_table::countries).front().source == "embedded:lite/countries.tsv");
-    REQUIRE(gen.data_hash() == 0x31249b8baf2736eeULL); // same as the files
+    REQUIRE(gen.data_hash() == 0x5fa2cadd5c7a71afULL); // same as the files
 }
 #endif
 
@@ -946,5 +976,5 @@ TEST_CASE("company batch: known answer of 10,000 items", "[batch][kat]")
     std::uint64_t hash = 0xcbf29ce484222325ULL;
     gen.for_each_company(request, {.count = 10000, .threads = 4}, 1,
                          [&](std::uint64_t, const company& item) { hash = fnv(hash, item.to_json()); });
-    REQUIRE(hash == 0x7e9154943f76f3b3ULL);
+    REQUIRE(hash == 0x56a60cb5fe97a869ULL);
 }

@@ -11,7 +11,8 @@ template	descriptive	{adjective} {trade}:2;{region} {trade}:1;{place} {trade}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;ja
-family	*	& Pojat;& Co
+family	*	& Pojat
+family	company	& Co
 adjective	*	Suomen;Uusi;Pohjolan;Etelä;Itä;Länsi;Keski;Nordic;Euro;Pro;Eko;Top;Kulta;Sini;Tähti;Revontuli;Kallio;Mänty
 region	*	Pohjola;Lappi;Savo;Karjala;Häme;Pohjanmaa;Uusimaa;Etelä;Pohjoinen
 coined_head	*	Suo;Nor;Lap;Sav;Kar;Tek;Lin;Vir;Hel;Pol;Ari

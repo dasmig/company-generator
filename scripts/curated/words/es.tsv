@@ -11,7 +11,8 @@ template	descriptive	{trade} {region}:1;{trade} {place}:2;{trade} {adjective}:2;
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{trade} {initials}:2
 joiner	*	y;&
-family	*	e Hijos;Hermanos;y Asociados;y Cía.
+family	*	e Hijos
+family	company	y Asociados;y Cía.;Hermanos
 adjective	*	Integrales;Generales;Modernos;Unidos;Nacionales;Globales;Internacionales;Profesionales;Avanzados;Express;Premium;Plus;Total;Pro;Ibéricos;Latinos;Andinos;del Pacífico;del Caribe;Reunidos;Asociados;Hispanos
 region	*	del Norte;del Sur;del Este;del Oeste;del Centro;de Levante;del Noroeste;del Sureste;del Pacífico;del Caribe;del Altiplano;del Valle;de la Costa;de la Sierra;del Bajío;del Golfo
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Nex;Ori;Sol;Cal;Dyn;Gen;Ib;Lat;Mar;Neo;Opt;Pro;Ren;Syn;Val;Vit;Ar;Ter

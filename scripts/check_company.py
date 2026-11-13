@@ -54,10 +54,6 @@ def check_tier(tier, info):
                 say(f"{cc}: no words for {lang}")
             elif not words[lang].get(("surname", "*")) and r["culture"] not in cultures:
                 say(f"{cc}: {lang} has no surnames and culture {r['culture']} none either")
-        for b in BANDS:
-            x = float(r[f"no_domain_{b}"])
-            if not 0 <= x <= 1:
-                say(f"{cc}: no_domain_{b} {x}")
 
     # industries: every country, valid divisions
     ind = defaultdict(dict)

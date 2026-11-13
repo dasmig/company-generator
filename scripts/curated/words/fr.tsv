@@ -11,7 +11,8 @@ template	descriptive	{trade} {adjective}:2;{trade} {region}:1;{trade} de {place}
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;et
-family	*	& Fils;Frères;& Cie;Père & Fils;Famille
+family	*	& Fils;Père & Fils;Famille
+family	company	& Cie;Frères
 adjective	*	Moderne;Nouvelle;Générale;Centrale;Royale;Grande;Française;Européenne;Internationale;Express;Prestige;Élite;Premier;Plus;Pro;Services;Solutions;Concept;Création;Tradition;Artisanale;Qualité;Avenir;Horizon;Azur;Atlantique;Alpine;Bleue;Verte;Or
 region	*	du Nord;du Sud;de l'Est;de l'Ouest;du Centre;du Sud-Ouest;du Grand Ouest;du Littoral;de la Vallée;de la Plaine;du Pays;de la Région;de la Méditerranée;de l'Atlantique;de la Montagne
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Kor;Tri;Néo;Sol;Cal;Dyn;Gen;Ori;Opt;Ren;Syn;Val;Ar;Bel;Cor;Dom;Fer;Lor;Mar;Sav;Vin

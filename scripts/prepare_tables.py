@@ -44,15 +44,6 @@ REGION_TLDS = {
     "Africa": "cc:0.25;com:0.67;net:0.04;org:0.04",
     "Oceania": "cc:0.4;com:0.54;net:0.03;org:0.03",
 }
-# The share of firms without a website by size band and income group (curated estimates, guided by
-# Eurostat's isoc_ciweb: about 78% of EU firms with 10-49 persons, 91% with 50-249 and 95% with 250+
-# had a website in 2023, as recalled, not downloaded; micro firms and poorer countries lower)
-NO_DOMAIN = {
-    "High income": (0.50, 0.22, 0.09, 0.04),
-    "Upper middle income": (0.70, 0.40, 0.20, 0.08),
-    "Lower middle income": (0.85, 0.60, 0.35, 0.15),
-    "Low income": (0.93, 0.75, 0.50, 0.25),
-}
 
 
 def band_order(b):
@@ -384,8 +375,6 @@ def main():
         rows = []
         for cc in sorted(info):
             langs, culture = names[cc]
-            inc = info[cc]["income_level"]
-            nd = NO_DOMAIN.get(inc, NO_DOMAIN["Upper middle income"])
             y = young.get(cc)
             rows.append({
                 "country_code": cc, "enterprises": round(sum(ent[cc].values())),
@@ -397,7 +386,6 @@ def main():
                 "age_evidence": "register" if cc in ("FR", "NO", "GB") else ("measured" if y else "filled"),
                 "young_share": sig(y[0], n) if y else "",
                 "domain_evidence": dom_ev[cc],
-                **{f"no_domain_{b}": nd[i] for i, b in enumerate(BANDS)},
                 "industry_source": ent_src[cc], "employment_source": emp_src[cc],
                 "size_source": size_ev.get(cc, ("", "subregion's pooled sizes"))[1],
                 "form_source": forms["sources"][cc], "age_source": y[1] if y else "",
@@ -406,11 +394,10 @@ def main():
     write_both("countries.tsv",
                "per country: enterprises and persons employed (see doc/data.md for the sources by field), the "
                "languages business names are written in (curated), the surname culture (name-generator), the "
-               "evidence of each field, the share of firms up to five years old (empty: the US shape as it is) "
-               "and the share of firms without a website by size band",
+               "evidence of each field and the share of firms up to five years old (empty: the US shape as it is)",
                ["country_code", "enterprises", "persons_employed", "languages", "culture", "industry_evidence",
                 "employment_evidence", "size_evidence", "form_evidence", "age_evidence", "young_share",
-                "domain_evidence", *[f"no_domain_{b}" for b in BANDS], "industry_source", "employment_source",
+                "domain_evidence", "industry_source", "employment_source",
                 "size_source", "form_source", "age_source"], countries_rows)
 
     # ---- industries.tsv

@@ -11,7 +11,8 @@ template	descriptive	{trade} {place}:2;{place} {trade}:1;{adjective} {trade}:1;{
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;en
-family	*	& Zonen;& Zn.;Gebroeders;& Co
+family	*	& Zonen;& Zn.
+family	company	& Co
 adjective	*	Nederlandse;Hollandse;Algemene;Nieuwe;Moderne;Eerste;Totaal;Express;Pro;Prima;Top;Euro;Inter;Royal;Oranje;Delta;Polder;Noord;Zuid
 region	*	Noord;Zuid;Oost;West;Midden;Randstad;Brabant;Limburg;Twente;Veluwe;Friesland;Holland;Vlaanderen;Kempen
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Tri;Ori;Sol;Dyn;Gen;Hol;Mar;Neo;Opt;Ren;Val;Vit;Bra;Del

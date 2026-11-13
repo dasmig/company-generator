@@ -12,7 +12,8 @@ template	descriptive	{trade} {adjective}:2;{trade} {region}:1;{trade} {place}:2
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;e
-family	*	& Filhos;e Filhos;Irmãos;& Cia
+family	*	& Filhos;e Filhos
+family	company	& Cia;Irmãos
 adjective	*	Brasil;Nacional;Geral;Moderna;Nova;Central;Unida;Global;Total;Express;Premium;Plus;Pro;Real;Ideal;Líder;Forte;Prime;Atlântico;Tropical;Sol;Estrela
 region	*	do Norte;do Sul;do Nordeste;do Centro-Oeste;do Sudeste;do Litoral;do Vale;da Serra;do Planalto;do Cerrado;do Minho;do Alentejo;do Algarve
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Tri;Ori;Sol;Cal;Dyn;Gen;Bras;Mar;Neo;Opt;Ren;Val;Vit;Ar;Ter;Lus

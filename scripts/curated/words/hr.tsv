@@ -11,7 +11,8 @@ template	descriptive	{adjective} {trade}:2;{trade} {place}:1;{trade} {region}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	i;&
-family	*	i Sinovi;i Partneri
+family	*	i Sinovi
+family	company	i Partneri
 adjective	*	Euro;Inter;Pro;Eko;Max;Mega;Top;Adria;Jadran;Dalmacija;Slavonija;Nova;Prima;Royal;Zlatna;Plava;Delta;Alfa
 region	*	Jadran;Adria;Dalmacija;Slavonija;Istra;Zagorje;Sjever;Jug;Istok;Zapad
 coined_head	*	Adr;Dal;Slav;Ist;Tech;Euro;Med;Kom;Agro;Grad;Neo;Vit

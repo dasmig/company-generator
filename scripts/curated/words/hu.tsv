@@ -4,14 +4,15 @@
 kind	key	value
 style	script	Latn
 style	form_position	suffix
-template	founder	{surname}:1;{surname} és Társa:2
+template	founder	{surname}:1;{surname} {family}:2
 template	founder_trade	{surname} {trade}:3
 template	two_founders	{surname} {joiner} {surname2}:1
 template	descriptive	{place} {trade}:1;{adjective} {trade}:2;{trade} {region}:0.5
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	és;&
-family	*	és Fia;és Társa;és Fiai
+family	*	és Fia;és Fiai
+family	company	és Társa:4
 adjective	*	Magyar;Új;Euro;Inter;Pannon;Duna;Tisza;Mátra;Hungária;Arany;Alfa;Delta;Profi;Pro;Mega;Top;Turul;Korona;Bakony
 region	*	Alföld;Dunántúl;Pannónia;Kelet;Nyugat;Észak;Dél;Balaton
 coined_head	*	Pan;Hun;Dun;Tis;Tech;Euro;Med;Kom;Agro;Ker;Neo;Vit
