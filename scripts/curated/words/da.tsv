@@ -11,7 +11,8 @@ template	descriptive	{place} {trade}:2;{adjective} {trade}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;og
-family	*	& Søn;& Sønner;& Co
+family	*	& Søn;& Sønner
+family	company	& Co
 adjective	*	Nye;Danske;Nordisk;Nord;Syd;Øst;Vest;Total;Prima;Euro;Kyst;Skov;Sol;Hav;Guld;Blå
 region	*	Jylland;Sjælland;Fyn;Nordjylland;Sønderjylland;Midtjylland;Øst;Vest
 coined_head	*	Dan;Nor;Vik;Ask;Hav;Lys;Skov;Sol;Ny;Tek;Lin

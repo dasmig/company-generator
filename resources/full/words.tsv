@@ -408,7 +408,7 @@ cs	coined_tail	*	ia		1
 cs	coined_tail	*	on		1
 cs	family	*	a syn		1
 cs	family	*	a synové		1
-cs	family	*	a spol.		1
+cs	family	company	a spol.		1
 cs	joiner	*	a		1
 cs	joiner	*	&		1
 cs	region	*	Morava		1
@@ -597,7 +597,7 @@ da	coined_tail	*	lux		1
 da	coined_tail	*	gaard		1
 da	family	*	& Søn		1
 da	family	*	& Sønner		1
-da	family	*	& Co		1
+da	family	company	& Co		1
 da	joiner	*	&		1
 da	joiner	*	og		1
 da	region	*	Jylland		1
@@ -811,8 +811,7 @@ de	coined_tail	*	berg		1
 de	coined_tail	*	stein		1
 de	family	*	& Söhne		1
 de	family	*	& Sohn		1
-de	family	*	& Co.		1
-de	family	*	Gebrüder		1
+de	family	company	& Co.		1
 de	joiner	*	&		1
 de	joiner	*	+		1
 de	joiner	*	und		1
@@ -1496,12 +1495,12 @@ en	coined_tail	*	works		1
 en	coined_tail	*	labs		1
 en	coined_tail	*	hub		1
 en	coined_tail	*	ly		1
-en	family	*	& Sons		1
-en	family	*	& Son		1
-en	family	*	& Co		1
-en	family	*	Brothers		1
-en	family	*	& Daughters		1
+en	family	*	& Sons		3
+en	family	*	& Son		2
+en	family	*	& Daughters		0.3
 en	family	*	Family		1
+en	family	company	& Co		1
+en	family	company	Brothers		1
 en	joiner	*	&		1
 en	joiner	*	and		1
 en	region	*	North		1
@@ -2030,9 +2029,9 @@ es	coined_tail	*	mex		1
 es	coined_tail	*	tec		1
 es	coined_tail	*	nova		1
 es	family	*	e Hijos		1
-es	family	*	Hermanos		1
-es	family	*	y Asociados		1
-es	family	*	y Cía.		1
+es	family	company	y Asociados		1
+es	family	company	y Cía.		1
+es	family	company	Hermanos		1
 es	joiner	*	y		1
 es	joiner	*	&		1
 es	region	*	del Norte		1
@@ -2452,7 +2451,7 @@ et	coined_tail	*	ar		1
 et	coined_tail	*	us		1
 et	coined_tail	*	mets		1
 et	family	*	ja Pojad		1
-et	family	*	ja Partnerid		1
+et	family	company	ja Partnerid		1
 et	joiner	*	ja		1
 et	joiner	*	&		1
 et	region	*	Põhja		1
@@ -2753,7 +2752,7 @@ fi	coined_tail	*	tec		1
 fi	coined_tail	*	lux		1
 fi	coined_tail	*	ko		1
 fi	family	*	& Pojat		1
-fi	family	*	& Co		1
+fi	family	company	& Co		1
 fi	joiner	*	&		1
 fi	joiner	*	ja		1
 fi	region	*	Pohjola		1
@@ -2957,10 +2956,10 @@ fr	coined_tail	*	ica		1
 fr	coined_tail	*	ence		1
 fr	coined_tail	*	ora		1
 fr	family	*	& Fils		1
-fr	family	*	Frères		1
-fr	family	*	& Cie		1
 fr	family	*	Père & Fils		1
 fr	family	*	Famille		1
+fr	family	company	& Cie		1
+fr	family	company	Frères		1
 fr	joiner	*	&		1
 fr	joiner	*	et		1
 fr	region	*	du Nord		1
@@ -3589,7 +3588,7 @@ hr	coined_tail	*	ing		1
 hr	coined_tail	*	line		1
 hr	coined_tail	*	mont		1
 hr	family	*	i Sinovi		1
-hr	family	*	i Partneri		1
+hr	family	company	i Partneri		1
 hr	joiner	*	i		1
 hr	joiner	*	&		1
 hr	region	*	Jadran		1
@@ -3762,8 +3761,8 @@ hu	coined_tail	*	on		1
 hu	coined_tail	*	nova		1
 hu	coined_tail	*	ix		1
 hu	family	*	és Fia		1
-hu	family	*	és Társa		1
 hu	family	*	és Fiai		1
+hu	family	company	és Társa		4
 hu	joiner	*	és		1
 hu	joiner	*	&		1
 hu	region	*	Alföld		1
@@ -3780,7 +3779,7 @@ hu	template	descriptive	{place} {trade}		1
 hu	template	descriptive	{adjective} {trade}		2
 hu	template	descriptive	{trade} {region}		0.5
 hu	template	founder	{surname}		1
-hu	template	founder	{surname} és Társa		2
+hu	template	founder	{surname} {family}		2
 hu	template	founder_trade	{surname} {trade}		3
 hu	template	initials	{initials}		1
 hu	template	initials	{initials} {trade}		2
@@ -4181,8 +4180,8 @@ it	coined_tail	*	ina		1
 it	coined_tail	*	ital		1
 it	family	*	& Figli		1
 it	family	*	e Figli		1
-it	family	*	Fratelli		1
-it	family	*	& C.		1
+it	family	company	& C.		1
+it	family	company	Fratelli		1
 it	joiner	*	&		1
 it	joiner	*	e		1
 it	region	*	del Nord		1
@@ -5250,7 +5249,7 @@ lt	coined_tail	*	as		1
 lt	coined_tail	*	us		1
 lt	coined_tail	*	ita		1
 lt	family	*	ir Sūnūs		1
-lt	family	*	ir Partneriai		1
+lt	family	company	ir Partneriai		1
 lt	joiner	*	ir		1
 lt	joiner	*	&		1
 lt	region	*	Žemaitija		1
@@ -5395,7 +5394,7 @@ lv	coined_tail	*	ra		1
 lv	coined_tail	*	ar		1
 lv	coined_tail	*	us		1
 lv	family	*	un Dēli		1
-lv	family	*	un Partneri		1
+lv	family	company	un Partneri		1
 lv	joiner	*	un		1
 lv	joiner	*	&		1
 lv	region	*	Kurzeme		1
@@ -5721,8 +5720,7 @@ nb	coined_tail	*	ex		1
 nb	coined_tail	*	vang		1
 nb	family	*	& Sønn		1
 nb	family	*	& Sønner		1
-nb	family	*	Brødrene		1
-nb	family	*	& Co		1
+nb	family	company	& Co		1
 nb	joiner	*	&		1
 nb	joiner	*	og		1
 nb	region	*	Nord		1
@@ -6130,8 +6128,7 @@ nl	coined_tail	*	stad		1
 nl	coined_tail	*	lux		1
 nl	family	*	& Zonen		1
 nl	family	*	& Zn.		1
-nl	family	*	Gebroeders		1
-nl	family	*	& Co		1
+nl	family	company	& Co		1
 nl	joiner	*	&		1
 nl	joiner	*	en		1
 nl	region	*	Noord		1
@@ -6512,8 +6509,8 @@ pl	coined_tail	*	tor		1
 pl	coined_tail	*	san		1
 pl	coined_tail	*	lux		1
 pl	family	*	i Synowie		1
-pl	family	*	i Wspólnicy		1
-pl	family	*	i Spółka		1
+pl	family	company	i Wspólnicy		1
+pl	family	company	i Spółka		1
 pl	joiner	*	i		1
 pl	joiner	*	&		1
 pl	region	*	Polska		1
@@ -6774,8 +6771,8 @@ pt	coined_tail	*	log		1
 pt	coined_tail	*	mix		1
 pt	family	*	& Filhos		1
 pt	family	*	e Filhos		1
-pt	family	*	Irmãos		1
-pt	family	*	& Cia		1
+pt	family	company	& Cia		1
+pt	family	company	Irmãos		1
 pt	joiner	*	&		1
 pt	joiner	*	e		1
 pt	region	*	do Norte		1
@@ -7387,6 +7384,7 @@ ru	coined_tail	*	Маркет	Market	1
 ru	coined_tail	*	Трейд	Treyd	1
 ru	coined_tail	*	Логистик	Logistik	1
 ru	coined_tail	*	Капитал	Kapital	1
+ru	family	company	и Партнёры	i Partnery	1
 ru	place	*	Евро	Yevro	2
 ru	place	*	Интер	Inter	2
 ru	place	*	Глобал	Global	1
@@ -7450,7 +7448,7 @@ ru	template	descriptive	{trade}{coined_tail}		4
 ru	template	descriptive	{place}{trade}		2
 ru	template	descriptive	{trade} {region}		1
 ru	template	founder	{surname}		1
-ru	template	founder_trade	{surname} и Партнёры	{surname} i Partnery	1
+ru	template	founder_trade	{surname} {family}		1
 ru	template	initials	{initials}		1
 ru	template	initials	{initials}-{trade}		1
 ru	trade	01	Агро	Agro	1
@@ -7708,7 +7706,7 @@ sk	coined_tail	*	ia		1
 sk	coined_tail	*	on		1
 sk	family	*	a syn		1
 sk	family	*	a synovia		1
-sk	family	*	a spol.		1
+sk	family	company	a spol.		1
 sk	joiner	*	a		1
 sk	joiner	*	&		1
 sk	region	*	Tatry		1
@@ -7866,7 +7864,7 @@ sl	coined_tail	*	line		1
 sl	coined_tail	*	mont		1
 sl	coined_tail	*	eko		1
 sl	family	*	in Sinovi		1
-sl	family	*	in Partnerji		1
+sl	family	company	in Partnerji		1
 sl	joiner	*	in		1
 sl	joiner	*	&		1
 sl	region	*	Štajerska		1
@@ -8183,7 +8181,7 @@ sr	coined_tail	*	line		1
 sr	coined_tail	*	mont		1
 sr	coined_tail	*	promet		1
 sr	family	*	i Sinovi		1
-sr	family	*	i Partneri		1
+sr	family	company	i Partneri		1
 sr	joiner	*	i		1
 sr	joiner	*	&		1
 sr	region	*	Vojvodina		1
@@ -8360,7 +8358,7 @@ sv	coined_tail	*	ex		1
 sv	coined_tail	*	lux		1
 sv	family	*	& Söner		1
 sv	family	*	& Son		1
-sv	family	*	& Co		1
+sv	family	company	& Co		1
 sv	joiner	*	&		1
 sv	joiner	*	och		1
 sv	region	*	Norrland		1
@@ -8724,9 +8722,9 @@ tr	coined_tail	*	mak		1
 tr	coined_tail	*	yap		1
 tr	coined_tail	*	port		1
 tr	family	*	ve Oğulları		1
-tr	family	*	Kardeşler		1
-tr	family	*	Grup		1
 tr	family	*	Aile		1
+tr	family	company	Grup		1
+tr	family	company	Kardeşler		1
 tr	joiner	*	ve		1
 tr	joiner	*	&		1
 tr	region	*	Anadolu		1

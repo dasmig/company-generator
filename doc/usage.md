@@ -152,7 +152,7 @@ gen.is_valid("de-ustid", "DE296418722"); // checks a number's structure and chec
 - Sequential numbers (UK company numbers, Polish KRS, ...) follow the founding year: an old firm has a low number.
 - Schemes apply to the legal-form groups that hold them (a sole trader has no UK company number) and from the dates they began.
 - An LEI is given to firms with 250 or more persons or in finance (section K), never to sole traders.
-- `is_valid(scheme, number)` accepts the printed or the compact form; it throws `std::invalid_argument` for an unknown scheme. The 64 schemes are in `resources/*/schemes.tsv`.
+- `is_valid(scheme, number)` accepts the printed or the compact form; it throws `std::invalid_argument` for an unknown scheme. The 63 schemes are in `resources/*/schemes.tsv`.
 - A country without schemes has no numbers (`evidence(country).numbers` is `"none"`).
 
 `domain` is the name's Latin form folded to ASCII (`ü` as `ue` in German), with the country's usual TLD. Every company has one.

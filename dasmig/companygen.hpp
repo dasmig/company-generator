@@ -529,7 +529,6 @@ struct country_model
     evidence_level domain_evidence{evidence_level::filled};
     std::optional<double> young_share;
     double young_scale{1.0};
-    std::array<double, band_count> no_domain{};
     std::array<double, max_divisions> ent{};   // enterprises per million by division number
     std::array<double, max_divisions> emp{};   // persons employed per million by division number
     std::array<double, section_count> section_emp{};
@@ -904,6 +903,7 @@ struct language_model
     std::array<std::vector<name_template>, pattern_count> templates;
     std::unordered_map<std::string, word_list> trade; // by division or section letter
     word_list adjective, family, joiner, coined_head, coined_tail, surname;
+    word_list family_sole; // the family words a sole trader may use (key *; key company names partners)
     std::unordered_map<std::string, word_list> region; // by country or "*"
     std::unordered_map<std::string, word_list> place;  // by country or "*"
 };
@@ -1546,8 +1546,7 @@ class cpg
             return {.key = {"country_code"},
                     .required = {"enterprises", "persons_employed", "languages", "culture", "industry_evidence",
                                  "employment_evidence", "size_evidence", "form_evidence", "age_evidence",
-                                 "young_share", "domain_evidence", "no_domain_micro", "no_domain_small",
-                                 "no_domain_medium", "no_domain_large"},
+                                 "young_share", "domain_evidence"},
                     .optional = {"industry_source", "employment_source", "size_source", "form_source", "age_source"}};
         case table::isic:
             return {.key = {"code"}, .required = {"label"}, .optional = {}};
@@ -1722,10 +1721,6 @@ class cpg
             if (!row["young_share"].empty() && number_(row, "young_share") > 1.0)
             {
                 throw row.error("young_share", "must be 0 to 1");
-            }
-            for (const auto c : {"no_domain_micro", "no_domain_small", "no_domain_medium", "no_domain_large"})
-            {
-                if (number_(row, c) > 1.0) throw row.error(c, "must be 0 to 1");
             }
             break;
         }
@@ -1965,9 +1960,6 @@ class cpg
             c.age_evidence = d::parse_evidence(row["age_evidence"]);
             c.domain_evidence = d::parse_evidence(row["domain_evidence"]);
             if (!row["young_share"].empty()) c.young_share = row.get<double>("young_share");
-            const std::array<std::string_view, d::band_count> no_domain{"no_domain_micro", "no_domain_small",
-                                                                        "no_domain_medium", "no_domain_large"};
-            for (std::size_t b = 0; b < d::band_count; ++b) c.no_domain.at(b) = row.get<double>(no_domain.at(b));
             by_code.emplace(c.code, std::move(c));
         }
 
@@ -2317,7 +2309,12 @@ class cpg
             }
             else if (kind == "trade") lang.trade[key].add(std::move(e));
             else if (kind == "adjective") lang.adjective.add(std::move(e));
-            else if (kind == "family") lang.family.add(std::move(e));
+            else if (kind == "family")
+            {
+                if (key != "*" && key != "company") throw bad_("words.tsv: family key " + key + " (must be * or company)");
+                if (key == "*") lang.family_sole.add(e);
+                lang.family.add(std::move(e));
+            }
             else if (kind == "joiner") lang.joiner.add(std::move(e));
             else if (kind == "coined_head") lang.coined_head.add(std::move(e));
             else if (kind == "coined_tail") lang.coined_tail.add(std::move(e));
@@ -3167,7 +3164,10 @@ class cpg
         if (!lang.adjective.empty()) have |= d::p_adjective | d::p_adjective2 | d::p_adjective3;
         if (region) have |= d::p_region;
         if (place || given_place) have |= d::p_place;
-        if (!lang.family.empty()) have |= d::p_family;
+        // a sole trader takes no word that names a partner or co-owners ("& Co.", "Brothers")
+        const bool sole = f.group == 0; // group_keys: 0 is sole_proprietorship
+        const d::word_list& family = sole ? lang.family_sole : lang.family;
+        if (!family.empty()) have |= d::p_family;
         if (!lang.joiner.empty()) have |= d::p_joiner;
         if (!lang.coined_head.empty()) have |= d::p_coined_head;
         if (!lang.coined_tail.empty()) have |= d::p_coined_tail;
@@ -3270,7 +3270,7 @@ class cpg
                 break;
             case d::p_region: part = pick(*region, "region"); break;
             case d::p_place: part = given_place ? name_text{*request.place, *request.place} : pick(*place, "place"); break;
-            case d::p_family: part = pick(lang.family, "family"); break;
+            case d::p_family: part = pick(family, "family"); break;
             case d::p_joiner: part = pick(lang.joiner, "joiner"); break;
             case d::p_coined_head: part = pick(lang.coined_head, "coined_head"); break;
             case d::p_coined_tail: part = pick(lang.coined_tail, "coined_tail"); break;

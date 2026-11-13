@@ -12,7 +12,8 @@ template	descriptive	{place} {trade}:2;{trade} i {place}:1;{adjective} {trade}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;och
-family	*	& Söner;& Son;& Co
+family	*	& Söner;& Son
+family	company	& Co
 adjective	*	Nya;Svenska;Nordiska;Norra;Södra;Västra;Östra;Total;Proffs;Prima;Euro;Nord;Sol;Fjäll;Skog;Sjö;Kust;Gyllene;Blå
 region	*	Norrland;Svealand;Götaland;Skåne;Väst;Öst;Mälardalen;Norrbotten;Bergslagen
 coined_head	*	Nor;Sve;Vik;Ask;Björ;Hav;Lys;Skog;Sol;Stor;Ny;Tek;Lin;Al

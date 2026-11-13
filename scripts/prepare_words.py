@@ -123,6 +123,8 @@ def check_language(data, drawn):
                 problems.append(f"{lang}: {kind} {key} {word!r} has no Latin form")
             if latin and not is_latin(latin):
                 problems.append(f"{lang}: {kind} {key} {word!r} Latin form {latin!r} is not Latin")
+        if kind == "family" and key not in ("*", "company"):
+            problems.append(f"{lang}: family key {key!r} (must be * or company)")
         if kind == "trade" and not (re.fullmatch(r"\d\d", key) or re.fullmatch(r"[A-S]", key)):
             problems.append(f"{lang}: trade key {key!r}")
         if kind == "trade" and re.fullmatch(r"\d\d", key) and key not in DIVISIONS:

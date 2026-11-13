@@ -10,7 +10,8 @@ template	descriptive	{trade} {adjective}:2;{trade} {region}:1;{trade} {place}:2
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	&;e
-family	*	& Figli;e Figli;Fratelli;& C.
+family	*	& Figli;e Figli
+family	company	& C.;Fratelli
 adjective	*	Italiana;Generale;Moderna;Nuova;Centrale;Unita;Italia;Europea;Globale;Professionale;Tecnica;Industriale;Express;Plus;Pro;Mediterranea;Adriatica;Tirrena;Alpina;Padana;Sole;Stella
 region	*	del Nord;del Sud;del Centro;del Nord Est;del Nord Ovest;dell'Adriatico;del Tirreno;della Brianza;della Riviera;della Valle;delle Lagune;delle Colline
 coined_head	*	Nov;Vel;Ax;Lum;Ver;Tri;Ori;Sol;Cal;Dyn;Gen;Ital;Mar;Neo;Opt;Ren;Val;Vit;Ar;Ter;Fer;Cor

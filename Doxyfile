@@ -2,8 +2,8 @@
 # Run: doxygen Doxyfile
 
 PROJECT_NAME           = "Company Generator"
-PROJECT_NUMBER         = 0.1.0
-PROJECT_BRIEF          = "Companies by country: industry, size, legal form, founding date, name, registration numbers and domain for C++23"
+PROJECT_NUMBER         = 1.0.0
+PROJECT_BRIEF          = "Companies that fit their country: industry, size, legal form, founding date, name, registration numbers and domain for C++23"
 PROJECT_LOGO           =
 
 OUTPUT_DIRECTORY       = doc/api

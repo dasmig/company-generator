@@ -12,7 +12,8 @@ template	descriptive	{trade} {place}:1;{adjective} {trade}:1;{trade} {region}:1
 template	coined	{coined}:2;{coined}-{trade}:1;{coined} {trade}:1
 template	initials	{initials}:1;{initials} {trade}:1
 joiner	*	i;&
-family	*	i Synowie;i Wspólnicy;i Spółka
+family	*	i Synowie
+family	company	i Wspólnicy;i Spółka
 adjective	*	Polska;Polskie;Nowa;Nowy;Euro;Inter;Pol;Max;Mega;Pro;Eko;Expert;Profi;Top;Global;Złoty;Orzeł;Bursztyn;Wisła;Odra;Tatry
 region	*	Polska;Mazowsze;Śląsk;Pomorze;Małopolska;Wielkopolska;Podkarpacie;Kujawy;Warmia;Podlasie;Północ;Południe;Wschód;Zachód
 coined_head	*	Pol;Tech;Bud;Mar;Trans;Agro;Eko;Med;Inter;Neo;Ster;Kor;Gal;Tom;Kom;Ver;Max

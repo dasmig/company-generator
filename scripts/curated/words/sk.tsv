@@ -11,7 +11,8 @@ template	descriptive	{trade} {place}:2;{adjective} {trade}:1;{trade} {region}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	a;&
-family	*	a syn;a synovia;a spol.
+family	*	a syn;a synovia
+family	company	a spol.
 adjective	*	Slovenská;Nová;Moderná;Euro;Inter;Pro;Eko;Profi;Max;Mega;Tatra;Dunaj;Váh;Zlatá;Top
 region	*	Tatry;Záhorie;Orava;Spiš;Liptov;Juh;Sever;Východ;Západ
 coined_head	*	Tech;Pro;Slov;Tat;Eko;Med;Kom;Trans;Stav;Agro;Neo;Vit

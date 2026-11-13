@@ -11,7 +11,8 @@ template	descriptive	{place} {trade}:2;{adjective} {trade}:1;{region} {trade}:1
 template	coined	{coined}:3;{coined} {trade}:2
 template	initials	{initials}:1;{initials} {trade}:2
 joiner	*	ja;&
-family	*	ja Pojad;ja Partnerid
+family	*	ja Pojad
+family	company	ja Partnerid
 adjective	*	Eesti;Balti;Nordic;Uus;Euro;Inter;Pro;Eko;Max;Top;Mega;Kuld;Põhja;Lõuna;Mere;Metsa;Kalju;Tähe
 region	*	Põhja;Lõuna;Ida;Lääne;Kesk;Saare;Balti;Virumaa
 coined_head	*	Est;Balt;Nord;Tech;Euro;Med;Kom;Agro;Neo;Vit;Sil;Kal
